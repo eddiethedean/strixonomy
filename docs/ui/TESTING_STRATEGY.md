@@ -5,7 +5,7 @@
 
 ## 1. Purpose
 
-OntoCode requires confidence across Rust core logic, frontend UX, plugins, AI workflows, and integration boundaries.
+Strixonomy requires confidence across Rust core logic, frontend UX, plugins, AI workflows, and integration boundaries.
 
 ## 2. Test Pyramid
 

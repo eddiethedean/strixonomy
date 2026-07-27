@@ -9,7 +9,7 @@ export class PluginViewPanel {
     view: PluginViewContribution
   ): Promise<void> {
     const panel = vscode.window.createWebviewPanel(
-      "ontocode.pluginView",
+      "strixonomy.pluginView",
       `${plugin.name}: ${view.title}`,
       vscode.ViewColumn.Beside,
       {

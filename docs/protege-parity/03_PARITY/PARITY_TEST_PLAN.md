@@ -3,14 +3,14 @@
 # Protégé Desktop Parity Test Plan
 
 **Status:** Normative Test Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the testing strategy required to demonstrate that
-OntoCode has achieved functional parity with Protégé Desktop.
+Strixonomy has achieved functional parity with Protégé Desktop.
 
 The objective is to verify observable ontology engineering behavior
 rather than internal implementation details.
@@ -59,7 +59,7 @@ Validate interactions between:
 
 -   Extension ↔ Language Server
 -   UI ↔ Workspace
--   Workspace ↔ OntoCore
+-   Workspace ↔ Strixonomy
 -   Parsers ↔ Serializers
 -   Plugins ↔ Host
 -   Reasoner ↔ Ontology model

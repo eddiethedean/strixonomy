@@ -66,13 +66,13 @@ export function registerV017Commands(
       } catch (error) {
         appendError(error, id);
         const message = error instanceof Error ? error.message : String(error);
-        void vscode.window.showErrorMessage(`OntoCode: ${message}`);
+        void vscode.window.showErrorMessage(`Strixonomy: ${message}`);
         return undefined;
       }
     });
   };
 
-  command("ontocode.newOntology", async () => {
+  command("strixonomy.newOntology", async () => {
     const target = await vscode.window.showSaveDialog({
       title: "New Ontology",
       filters: { "Ontology files": ["ttl", "obo"] },
@@ -81,7 +81,7 @@ export function registerV017Commands(
     if (!target) return;
     openNewOntologyPanel(context.extensionUri, target.fsPath, refresh);
   });
-  command("ontocode.openOntology", async () => {
+  command("strixonomy.openOntology", async () => {
     const selected = await vscode.window.showOpenDialog({
       canSelectMany: false,
       filters: ONTOLOGY_FILTERS,
@@ -92,38 +92,38 @@ export function registerV017Commands(
       await refresh?.();
     }
   });
-  command("ontocode.openRecent", () =>
+  command("strixonomy.openRecent", () =>
     vscode.commands.executeCommand("workbench.action.openRecent")
   );
-  command("ontocode.save", async () => {
+  command("strixonomy.save", async () => {
     await saveCoordinator.saveActive();
     await refresh?.();
   });
-  command("ontocode.saveAll", async () => {
+  command("strixonomy.saveAll", async () => {
     await saveCoordinator.saveAll();
     await refresh?.();
   });
-  command("ontocode.undo", async () => {
+  command("strixonomy.undo", async () => {
     if (await workspaceTransactionManager.undo()) {
       await refresh?.();
       return;
     }
     await vscode.commands.executeCommand("undo");
   });
-  command("ontocode.redo", async () => {
+  command("strixonomy.redo", async () => {
     if (await workspaceTransactionManager.redo()) {
       await refresh?.();
       return;
     }
     await vscode.commands.executeCommand("redo");
   });
-  command("ontocode.closeProject", () =>
+  command("strixonomy.closeProject", () =>
     vscode.commands.executeCommand("workbench.action.closeFolder")
   );
-  command("ontocode.saveAs", () => runExport(true));
-  command("ontocode.exportOntology", () => runExport(false));
+  command("strixonomy.saveAs", () => runExport(true));
+  command("strixonomy.exportOntology", () => runExport(false));
 
-  command("ontocode.searchEntities", async () => {
+  command("strixonomy.searchEntities", async () => {
     type PickItem = vscode.QuickPickItem & { iri: string };
     const qp = vscode.window.createQuickPick<PickItem>();
     qp.title = "Search Ontology Entities";
@@ -157,7 +157,7 @@ export function registerV017Commands(
           }
           qp.items = [];
           const message = err instanceof Error ? err.message : String(err);
-          void vscode.window.showErrorMessage(`OntoCode: search failed — ${message}`);
+          void vscode.window.showErrorMessage(`Strixonomy: search failed — ${message}`);
         })
         .finally(() => {
           if (my === seq) {
@@ -169,7 +169,7 @@ export function registerV017Commands(
       const picked = qp.selectedItems[0];
       if (picked) {
         focusRelay.setEntityFocus(picked.iri, "search");
-        void vscode.commands.executeCommand("ontocode.openEntity", picked.iri);
+        void vscode.commands.executeCommand("strixonomy.openEntity", picked.iri);
       }
       qp.hide();
     });
@@ -177,11 +177,11 @@ export function registerV017Commands(
     qp.show();
   });
 
-  command("ontocode.openPreferences", async () => {
+  command("strixonomy.openPreferences", async () => {
     const choice = await vscode.window.showQuickPick(
       [
         {
-          label: "General OntoCode Settings",
+          label: "General Strixonomy Settings",
           description: "Index, hierarchy, diagnostics, LSP",
           value: "settings",
         },
@@ -202,49 +202,49 @@ export function registerV017Commands(
         },
         {
           label: "Keyboard Shortcuts",
-          description: "OntoCode keybindings",
+          description: "Strixonomy keybindings",
           value: "keys",
         },
       ],
-      { title: "OntoCode Preferences", matchOnDescription: true }
+      { title: "Strixonomy Preferences", matchOnDescription: true }
     );
     if (!choice) return;
     if (choice.value === "plugins") {
-      await vscode.commands.executeCommand("ontocode.plugins.openPreferences");
+      await vscode.commands.executeCommand("strixonomy.plugins.openPreferences");
     } else if (choice.value === "keys") {
       await vscode.commands.executeCommand(
         "workbench.action.openGlobalKeybindings",
-        "ontocode"
+        "strixonomy"
       );
     } else if (choice.value === "reasoner") {
       await vscode.commands.executeCommand(
         "workbench.action.openSettings",
-        "@ext:ontocode.ontocode ontocode.reasoner"
+        "@ext:strixonomy.strixonomy strixonomy.reasoner"
       );
     } else if (choice.value === "query") {
       await vscode.commands.executeCommand(
         "workbench.action.openSettings",
-        "@ext:ontocode.ontocode ontocode.query"
+        "@ext:strixonomy.strixonomy strixonomy.query"
       );
     } else {
       await vscode.commands.executeCommand(
         "workbench.action.openSettings",
-        "@ext:ontocode.ontocode"
+        "@ext:strixonomy.strixonomy"
       );
     }
   });
 
-  command("ontocode.copyEntityIri", () => copyFocused(false));
-  command("ontocode.copyEntityShortForm", () => copyFocused(true));
+  command("strixonomy.copyEntityIri", () => copyFocused(false));
+  command("strixonomy.copyEntityShortForm", () => copyFocused(true));
 
-  command("ontocode.setActiveOntology", async () => {
+  command("strixonomy.setActiveOntology", async () => {
     const document = await pickOntologyDocument("Set Active Ontology");
     if (!document) return;
     await ontologyRegistry.activate(document.id);
     await refresh?.();
   });
 
-  command("ontocode.editOntologyMetadata", async () => {
+  command("strixonomy.editOntologyMetadata", async () => {
     const document = await pickOntologyDocument("Edit Ontology Metadata");
     if (!document) return;
     const ontologyIri = await requiredInput(
@@ -274,15 +274,15 @@ export function registerV017Commands(
     await refresh?.();
   });
 
-  command("ontocode.managePrefixes", async () => {
+  command("strixonomy.managePrefixes", async () => {
     const document = await pickOntologyDocument("Manage Prefixes");
     if (!document) return;
     openPrefixManagerPanel(context.extensionUri, document, refresh);
   });
-  command("ontocode.showMetrics", async () => {
+  command("strixonomy.showMetrics", async () => {
     const snapshot = await getCatalogSnapshot();
     const host = PanelHost.create(context.extensionUri, {
-      viewType: "ontocode.metrics",
+      viewType: "strixonomy.metrics",
       title: "Ontology Metrics",
       panel: "metrics",
     });
@@ -306,52 +306,52 @@ export function registerV017Commands(
     });
   });
 
-  command("ontocode.mergeEntities", () =>
+  command("strixonomy.mergeEntities", () =>
     runEntityRefactor(context, "merge_entities", refresh)
   );
-  command("ontocode.replaceEntity", () =>
+  command("strixonomy.replaceEntity", () =>
     runEntityRefactor(context, "replace_entity", refresh)
   );
 
-  command("ontocode.startReasoner", () => runReasoning(context, "start"));
-  command("ontocode.synchronizeReasoner", () => runReasoning(context, "synchronize"));
-  command("ontocode.classifyOntology", () => runReasoning(context, "classify"));
-  command("ontocode.checkConsistency", async () => {
+  command("strixonomy.startReasoner", () => runReasoning(context, "start"));
+  command("strixonomy.synchronizeReasoner", () => runReasoning(context, "synchronize"));
+  command("strixonomy.classifyOntology", () => runReasoning(context, "classify"));
+  command("strixonomy.checkConsistency", async () => {
     const result = await runReasoning(context, "consistency");
     if (result) {
       void vscode.window.showInformationMessage(
         result.consistent
-          ? "OntoCode: ontology is consistent"
-          : `OntoCode: ontology is inconsistent (${result.unsatisfiable.length} unsatisfiable classes)`
+          ? "Strixonomy: ontology is consistent"
+          : `Strixonomy: ontology is inconsistent (${result.unsatisfiable.length} unsatisfiable classes)`
       );
     }
   });
-  command("ontocode.stopReasoner", () => {
+  command("strixonomy.stopReasoner", () => {
     cancelActiveReasonerRequest();
     ReasonerPanel.current?.cancelActiveRun();
     void vscode.window.showInformationMessage(
-      "OntoCode: reasoner cancelled; late server results will be ignored"
+      "Strixonomy: reasoner cancelled; late server results will be ignored"
     );
   });
-  command("ontocode.configureReasoner", () =>
+  command("strixonomy.configureReasoner", () =>
     vscode.commands.executeCommand(
       "workbench.action.openSettings",
-      "@ext:ontocode.ontocode ontocode.reasoner"
+      "@ext:strixonomy.strixonomy strixonomy.reasoner"
     )
   );
 
-  command("ontocode.validateWorkspace", async () => {
+  command("strixonomy.validateWorkspace", async () => {
     const result = await indexWorkspace();
     await refresh?.();
     void vscode.window.showInformationMessage(
-      `OntoCode validation: ${result.stats.diagnostic_error_count} errors, ${result.stats.diagnostic_warning_count} warnings, ${result.stats.diagnostic_info_count} info`
+      `Strixonomy validation: ${result.stats.diagnostic_error_count} errors, ${result.stats.diagnostic_warning_count} warnings, ${result.stats.diagnostic_info_count} info`
     );
   });
-  command("ontocode.runBatchTools", () =>
+  command("strixonomy.runBatchTools", () =>
     vscode.window.withProgress(
       {
         location: vscode.ProgressLocation.Notification,
-        title: "OntoCode: validating and collecting metrics",
+        title: "Strixonomy: validating and collecting metrics",
       },
       async (progress) => {
         progress.report({ message: "Validating workspace…" });
@@ -360,24 +360,24 @@ export function registerV017Commands(
         const snapshot = await getCatalogSnapshot();
         await refresh?.();
         void vscode.window.showInformationMessage(
-          `OntoCode batch complete: ${result.stats.diagnostic_error_count} errors, ${snapshot.stats?.axiom_count ?? 0} axioms`
+          `Strixonomy batch complete: ${result.stats.diagnostic_error_count} errors, ${snapshot.stats?.axiom_count ?? 0} axioms`
         );
       }
     )
   );
 
-  command("ontocode.switchPerspective", async () => {
+  command("strixonomy.switchPerspective", async () => {
     const picked = await vscode.window.showQuickPick(
       listPerspectives(context).map((perspective) => ({
         label: perspective.name,
         description: perspective.panels.join(", "),
         perspective,
       })),
-      { title: "Switch OntoCode Perspective" }
+      { title: "Switch Strixonomy Perspective" }
     );
     if (picked) await openPerspective(context, picked.perspective);
   });
-  command("ontocode.savePerspective", async () => {
+  command("strixonomy.savePerspective", async () => {
     const name = await requiredInput("Perspective name");
     if (!name) return;
     const panels = await vscode.window.showQuickPick(
@@ -391,30 +391,30 @@ export function registerV017Commands(
     });
   });
   for (const panel of PANEL_CHOICES) {
-    command(`ontocode.show${panel.commandSuffix}`, () =>
+    command(`strixonomy.show${panel.commandSuffix}`, () =>
       openPanel(context, panel.value)
     );
   }
 
-  command("ontocode.showAbout", () => {
+  command("strixonomy.showAbout", () => {
     PanelHost.create(context.extensionUri, {
-      viewType: "ontocode.about",
-      title: "About OntoCode",
+      viewType: "strixonomy.about",
+      title: "About Strixonomy",
       panel: "about",
     });
   });
-  command("ontocode.showPluginInfo", async () => {
+  command("strixonomy.showPluginInfo", async () => {
     const plugins = await listPlugins();
     const details =
       plugins.plugins.map((plugin) => `${plugin.name} ${plugin.version}`).join(", ") ||
       "No plugins loaded";
-    void vscode.window.showInformationMessage(`OntoCode plugins: ${details}`);
+    void vscode.window.showInformationMessage(`Strixonomy plugins: ${details}`);
   });
-  command("ontocode.openErrorLog", () => openErrorLog());
-  command("ontocode.exportDiagnostics", async () => {
+  command("strixonomy.openErrorLog", () => openErrorLog());
+  command("strixonomy.exportDiagnostics", async () => {
     const snapshot = await getCatalogSnapshot();
     const target = await vscode.window.showSaveDialog({
-      defaultUri: defaultWorkspaceUri("ontocode-diagnostics.json"),
+      defaultUri: defaultWorkspaceUri("strixonomy-diagnostics.json"),
       filters: { JSON: ["json"] },
     });
     if (target) {
@@ -424,20 +424,20 @@ export function registerV017Commands(
       );
     }
   });
-  command("ontocode.openDocumentation", () =>
+  command("strixonomy.openDocumentation", () =>
     vscode.env.openExternal(
-      vscode.Uri.parse("https://ontocode-vs.readthedocs.io/en/latest/")
+      vscode.Uri.parse("https://strixonomy-vs.readthedocs.io/en/latest/")
     )
   );
-  command("ontocode.openSupport", () =>
+  command("strixonomy.openSupport", () =>
     vscode.env.openExternal(
-      vscode.Uri.parse("https://github.com/eddiethedean/ontocode/issues")
+      vscode.Uri.parse("https://github.com/eddiethedean/strixonomy/issues")
     )
   );
-  command("ontocode.openKeyboardShortcuts", () =>
+  command("strixonomy.openKeyboardShortcuts", () =>
     vscode.commands.executeCommand(
       "workbench.action.openGlobalKeybindings",
-      "ontocode"
+      "strixonomy"
     )
   );
 
@@ -450,7 +450,7 @@ export function registerV017Commands(
  */
 export function openNewOntologyDialog(targetPath: string): void {
   if (!dialogRuntime) {
-    throw new Error("OntoCode dialog commands are not registered");
+    throw new Error("Strixonomy dialog commands are not registered");
   }
   openNewOntologyPanel(
     dialogRuntime.extensionUri,
@@ -465,7 +465,7 @@ export function openNewOntologyDialog(targetPath: string): void {
  */
 export async function openPrefixManager(documentPath: string): Promise<void> {
   if (!dialogRuntime) {
-    throw new Error("OntoCode dialog commands are not registered");
+    throw new Error("Strixonomy dialog commands are not registered");
   }
   const snapshot = await getCatalogSnapshot();
   const document = snapshot.documents.find((doc) =>
@@ -487,7 +487,7 @@ function openNewOntologyPanel(
   refresh?: () => Promise<void>
 ): PanelHost {
   const host = PanelHost.create(extensionUri, {
-    viewType: "ontocode.newOntology",
+    viewType: "strixonomy.newOntology",
     title: "New Ontology",
     panel: "newOntology",
     onMessage: async (message, panel) => {
@@ -519,7 +519,7 @@ function openPrefixManagerPanel(
   refresh?: () => Promise<void>
 ): PanelHost {
   const host = PanelHost.create(extensionUri, {
-    viewType: "ontocode.prefixManager",
+    viewType: "strixonomy.prefixManager",
     title: "Prefix Manager",
     panel: "prefixManager",
     onMessage: async (message, panel) => {
@@ -570,14 +570,14 @@ async function runExport(saveAs: boolean): Promise<void> {
   });
   if (result.success) {
     void vscode.window.showInformationMessage(
-      `OntoCode: exported ${path.basename(result.output_path)}`
+      `Strixonomy: exported ${path.basename(result.output_path)}`
     );
   } else {
     const detail = result.logs?.trim();
     void vscode.window.showErrorMessage(
       detail
-        ? `OntoCode: export failed — ${detail.slice(0, 300)}`
-        : `OntoCode: export failed for ${path.basename(result.output_path)}`
+        ? `Strixonomy: export failed — ${detail.slice(0, 300)}`
+        : `Strixonomy: export failed for ${path.basename(result.output_path)}`
     );
   }
 }
@@ -585,7 +585,7 @@ async function runExport(saveAs: boolean): Promise<void> {
 async function copyFocused(shortForm: boolean): Promise<void> {
   const iri = getFocusedEntityIri();
   if (!iri) {
-    void vscode.window.showWarningMessage("OntoCode: no entity is selected");
+    void vscode.window.showWarningMessage("Strixonomy: no entity is selected");
     return;
   }
   const value = shortForm ? iri.slice(Math.max(iri.lastIndexOf("#"), iri.lastIndexOf("/")) + 1) : iri;
@@ -649,16 +649,16 @@ async function runReasoning(
   context: vscode.ExtensionContext,
   action: string
 ): Promise<RunReasonerResult | undefined> {
-  const config = vscode.workspace.getConfiguration("ontocode");
+  const config = vscode.workspace.getConfiguration("strixonomy");
   const profile = config.get<string>("reasoner.default", "el");
   const autoDetect = config.get<boolean>("reasoner.autoProfile", true);
   const titles: Record<string, string> = {
-    start: "OntoCode: Starting reasoner",
-    synchronize: "OntoCode: Synchronizing reasoner",
-    classify: "OntoCode: Classifying ontology",
-    consistency: "OntoCode: Checking consistency",
+    start: "Strixonomy: Starting reasoner",
+    synchronize: "Strixonomy: Synchronizing reasoner",
+    classify: "Strixonomy: Classifying ontology",
+    consistency: "Strixonomy: Checking consistency",
   };
-  const title = titles[action] ?? "OntoCode: Running reasoner";
+  const title = titles[action] ?? "Strixonomy: Running reasoner";
 
   if (action === "start") {
     ReasonerPanel.show(context.extensionUri);
@@ -707,7 +707,7 @@ async function runReasoning(
           const panel = ReasonerPanel.show(context.extensionUri);
           panel.presentResult(result);
         }
-        void vscode.commands.executeCommand("ontocode.refreshExplorer");
+        void vscode.commands.executeCommand("strixonomy.refreshExplorer");
         return result;
       } catch (error) {
         if (token.isCancellationRequested) {
@@ -747,16 +747,16 @@ async function openPanel(
     return;
   }
   const commandByPanel: Record<string, string> = {
-    inspector: "ontocode.showEntityInspector",
-    query: "ontocode.openQueryWorkbench",
-    explanation: "ontocode.showExplanation",
-    graph: "ontocode.openClassGraph",
-    semanticDiff: "ontocode.semanticDiff",
-    imports: "ontocode.manageImports",
+    inspector: "strixonomy.showEntityInspector",
+    query: "strixonomy.openQueryWorkbench",
+    explanation: "strixonomy.showExplanation",
+    graph: "strixonomy.openClassGraph",
+    semanticDiff: "strixonomy.semanticDiff",
+    imports: "strixonomy.manageImports",
   };
   const command = commandByPanel[panel];
   if (command) await vscode.commands.executeCommand(command);
-  else void vscode.window.showWarningMessage(`OntoCode: unknown panel "${panel}"`);
+  else void vscode.window.showWarningMessage(`Strixonomy: unknown panel "${panel}"`);
 }
 
 async function requiredInput(

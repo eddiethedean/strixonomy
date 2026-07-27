@@ -6,7 +6,7 @@
 
 The Protégé menu system provides global access to ontology project actions, editing commands, reasoner controls, refactoring tools, plugin commands, window management, and help resources. Unlike tab-specific views, menu actions usually operate at the application, project, ontology, or selected-entity level.
 
-This document describes the functional role of Protégé menus as a reverse-engineering reference for building OntoCode feature parity and modernization.
+This document describes the functional role of Protégé menus as a reverse-engineering reference for building Strixonomy feature parity and modernization.
 
 ---
 
@@ -122,7 +122,7 @@ Serializes ontology content to another file or format.
 
 Closes the Protégé application.
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] New ontology command
 - [x] Open ontology command
@@ -138,7 +138,7 @@ Closes the Protégé application.
 - [x] Serialization format selection
 - [x] File recovery support
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Git-aware save state
 - Workspace-level project files
@@ -215,7 +215,7 @@ Preference categories may include:
 - Entity display
 - New entity creation policy
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Undo
 - [x] Redo
@@ -227,7 +227,7 @@ Preference categories may include:
 - [x] Text-field editing support
 - [x] Entity-aware copy/paste
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Command palette integration
 - Multi-step undo timeline
@@ -314,7 +314,7 @@ Displays metrics such as:
 
 In multi-ontology projects, determines where new axioms and entities are added.
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Active ontology selector
 - [x] Ontology annotation editor
@@ -326,7 +326,7 @@ In multi-ontology projects, determines where new axioms and entities are added.
 - [x] Missing import diagnostics
 - [x] Reload imports
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Visual import graph
 - Import health dashboard
@@ -412,7 +412,7 @@ Potential module strategies:
 - Star module
 - Signature-based extraction
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Rename entity
 - [x] Move entity
@@ -424,7 +424,7 @@ Potential module strategies:
 - [x] Undoable refactors
 - [x] Refactor conflict warnings
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - IDE-quality rename previews
 - Refactor diff viewer
@@ -503,7 +503,7 @@ Settings may include:
 - Precomputation options
 - Logging verbosity
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Reasoner selection
 - [x] Reasoner lifecycle management
@@ -516,7 +516,7 @@ Settings may include:
 - [x] Reasoner configuration
 - [x] Long-running task cancellation (v0.18: client cancel + ignore late results; in-flight classify may still finish on server)
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Rust-native reasoner abstraction
 - Reasoner progress UI
@@ -580,7 +580,7 @@ Possible validation categories:
 
 Plugins may contribute arbitrary tool commands.
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Tool command registry
 - [x] Plugin-contributed tools
@@ -589,7 +589,7 @@ Plugins may contribute arbitrary tool commands.
 - [x] Visualization launch commands
 - [x] Batch operation support
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Scriptable command runner
 - Task pipeline automation
@@ -635,7 +635,7 @@ Moves focus to a major workspace tab.
 
 Some configurations may allow saved workspace layouts or perspectives.
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Show/hide panels
 - [x] Reset layout
@@ -645,7 +645,7 @@ Some configurations may allow saved workspace layouts or perspectives.
 - [x] Plugin-contributed views
 - [x] Floating and docked panel support
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Named workspaces
 - Modeling/reasoning/review perspectives
@@ -698,7 +698,7 @@ Shows application errors, stack traces, or diagnostic logs.
 
 Displays installed plugins and versions.
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Documentation links
 - [x] About dialog
@@ -708,7 +708,7 @@ Displays installed plugins and versions.
 - [x] Diagnostic export
 - [x] Support links
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Built-in learning mode
 - Contextual help side panel
@@ -758,7 +758,7 @@ They are essential because many Protégé workflows start from hierarchy trees, 
 - Add disjoint class
 - Add property assertion
 
-## OntoCode Parity Requirements
+## Strixonomy Parity Requirements
 
 - [x] Entity-aware context menus
 - [x] Axiom-aware context menus
@@ -767,7 +767,7 @@ They are essential because many Protégé workflows start from hierarchy trees, 
 - [x] Plugin-contributed context commands
 - [x] Keyboard-accessible context actions
 
-## OntoCode Modernization Opportunities
+## Strixonomy Modernization Opportunities
 
 - Command palette parity for every context action
 - Inline quick actions
@@ -796,7 +796,7 @@ Delete should be disabled for read-only imported entities unless the delete only
 
 Export should be enabled when an ontology project is loaded.
 
-## OntoCode Requirements
+## Strixonomy Requirements
 
 - [x] Central command registry
 - [x] Declarative enablement rules
@@ -825,7 +825,7 @@ Keyboard shortcuts make menu actions available to power users.
 - Entity deletion
 - Workspace switching
 
-## OntoCode Requirements
+## Strixonomy Requirements
 
 - [x] Shortcut registry
 - [x] User-customizable keybindings
@@ -836,7 +836,7 @@ Keyboard shortcuts make menu actions available to power users.
 
 ## Modernization Opportunity
 
-OntoCode should treat every menu action as a command with:
+Strixonomy should treat every menu action as a command with:
 
 - stable command ID
 - label
@@ -848,7 +848,7 @@ OntoCode should treat every menu action as a command with:
 - execution handler
 - plugin contribution metadata
 
-This would make OntoCode more like VS Code or JetBrains IDEs than a traditional desktop editor.
+This would make Strixonomy more like VS Code or JetBrains IDEs than a traditional desktop editor.
 
 ---
 
@@ -868,7 +868,7 @@ Protégé plugins can extend the UI by contributing menu actions, views, tabs, r
 - Reasoner menu entry
 - Help/about entry
 
-## OntoCode Requirements
+## Strixonomy Requirements
 
 - [x] Plugin command contribution API
 - [x] Plugin view contribution API
@@ -880,7 +880,7 @@ Protégé plugins can extend the UI by contributing menu actions, views, tabs, r
 
 ## Modernization Opportunity
 
-OntoCode should support plugin-defined commands through a manifest format.
+Strixonomy should support plugin-defined commands through a manifest format.
 
 Example:
 
@@ -889,7 +889,7 @@ Example:
   "contributes": {
     "commands": [
       {
-        "id": "ontocode.validateLabels",
+        "id": "strixonomy.validateLabels",
         "title": "Validate Labels",
         "category": "Ontology Quality",
         "menus": ["tools", "entity/context"],
@@ -902,9 +902,9 @@ Example:
 
 ---
 
-# Recommended OntoCode Menu Model
+# Recommended Strixonomy Menu Model
 
-OntoCode should not directly clone Protégé's menus. It should preserve feature coverage while modernizing the interaction model.
+Strixonomy should not directly clone Protégé's menus. It should preserve feature coverage while modernizing the interaction model.
 
 ## Proposed Top-Level Menus
 
@@ -948,7 +948,7 @@ A first-class plugin menu makes extension management visible and trusted.
 
 ---
 
-# OntoCode Command Architecture
+# Strixonomy Command Architecture
 
 Every menu item should be backed by a command object.
 
@@ -1070,11 +1070,11 @@ Benefits:
 
 ---
 
-# Implementation Guidance for OntoCode
+# Implementation Guidance for Strixonomy
 
 ## Minimum Viable Menu System
 
-For an early OntoCode release, implement:
+For an early Strixonomy release, implement:
 
 1. File
 2. Edit
@@ -1088,7 +1088,7 @@ Back every item with a command registry.
 
 ## Version 1.0 Menu System
 
-For OntoCode 1.0, add:
+For Strixonomy 1.0, add:
 
 - plugin-contributed commands
 - command palette
@@ -1100,7 +1100,7 @@ For OntoCode 1.0, add:
 
 ## Beyond Protégé
 
-Long-term OntoCode should support:
+Long-term Strixonomy should support:
 
 - AI-authored ontology edits as commands
 - command macros
@@ -1117,6 +1117,6 @@ Long-term OntoCode should support:
 
 Protégé's menu system is functional, mature, and deeply tied to the ontology editing workflow. Its menus expose the core capabilities needed for ontology engineering: project management, editing, active ontology configuration, refactoring, reasoning, tools, workspace layout, and help.
 
-For OntoCode, the goal should not be a pixel-for-pixel clone. The goal should be command-level feature parity with a more modern architecture. Every Protégé menu action should map to an OntoCode command, and every command should be accessible through menus, context menus, keyboard shortcuts, the command palette, plugins, and automation.
+For Strixonomy, the goal should not be a pixel-for-pixel clone. The goal should be command-level feature parity with a more modern architecture. Every Protégé menu action should map to an Strixonomy command, and every command should be accessible through menus, context menus, keyboard shortcuts, the command palette, plugins, and automation.
 
-This approach preserves Protégé's proven ontology engineering coverage while making OntoCode feel like a modern IDE for semantic systems.
+This approach preserves Protégé's proven ontology engineering coverage while making Strixonomy feel like a modern IDE for semantic systems.

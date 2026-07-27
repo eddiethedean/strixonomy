@@ -1,8 +1,8 @@
 //! Protégé Wave 3 port: OBO Foundry registry JSON model/parser.
 //! Upstream: OboFoundryContact/Entry/License/Registry/RegistryParser.
 
-use ontocore_obo::{parse_registry_json, OboFoundryRegistry};
 use std::path::PathBuf;
+use strixonomy_obo::{parse_registry_json, OboFoundryRegistry};
 
 fn fixture_path() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))

@@ -1,10 +1,10 @@
 # QUERY
 
-# OntoCode Query Subsystem Specification
+# Strixonomy Query Subsystem Specification
 
 **Subsystem:** Query Engine\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 

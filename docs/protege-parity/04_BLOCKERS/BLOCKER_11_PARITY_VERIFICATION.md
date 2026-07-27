@@ -4,7 +4,7 @@
 
 **Status:** Resolved for v0.25 (EPIC-011) — verification machinery VERIFIED; Gate 3 (all P0 VERIFIED) deferred to 1.0.0-rc `--strict-release`\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0 / infrastructure delivered in **v0.25**
+**Target Release:** Strixonomy 1.0.0 / infrastructure delivered in **v0.25**
 
 ------------------------------------------------------------------------
 
@@ -14,14 +14,14 @@ This document defines the engineering work required to transform Protégé
 parity from a documentation effort into an executable, continuously
 verified engineering process.
 
-OntoCode must be able to prove parity through automated evidence rather
+Strixonomy must be able to prove parity through automated evidence rather
 than manual claims.
 
 ------------------------------------------------------------------------
 
 # Problem Statement
 
-The repository audit and parity documentation establish *what* OntoCode
+The repository audit and parity documentation establish *what* Strixonomy
 must achieve, but the project still needs a comprehensive verification
 system that continuously validates those requirements.
 

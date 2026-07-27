@@ -3,9 +3,9 @@ mod support;
 
 use std::path::PathBuf;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_core::ParseStatus;
-use ontocore_query::{query_catalog, sparql_catalog, QueryError};
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_core::ParseStatus;
+use strixonomy_query::{query_catalog, sparql_catalog, QueryError};
 use support::fixture_catalog;
 
 #[test]
@@ -101,7 +101,7 @@ fn validate_reports_diagnostics() {
         .data()
         .diagnostics
         .iter()
-        .filter(|d| d.severity == ontocore_core::DiagnosticSeverity::Error)
+        .filter(|d| d.severity == strixonomy_core::DiagnosticSeverity::Error)
         .count();
     assert!(errors >= 1);
 }
@@ -128,7 +128,9 @@ fn fixture_rdf_xml_has_no_spurious_undefined_prefix() {
         .data()
         .diagnostics
         .iter()
-        .filter(|d| d.code == ontocore_core::DiagnosticCode::UndefinedPrefix && d.file == owl_path)
+        .filter(|d| {
+            d.code == strixonomy_core::DiagnosticCode::UndefinedPrefix && d.file == owl_path
+        })
         .collect();
     assert!(
         undefined_on_owl.is_empty(),
@@ -141,7 +143,7 @@ fn fixture_rdf_xml_has_no_spurious_undefined_prefix() {
 fn fixture_root_class_not_orphan() {
     let catalog = fixture_catalog();
     let thing_orphan = catalog.data().diagnostics.iter().any(|d| {
-        d.code == ontocore_core::DiagnosticCode::OrphanClass
+        d.code == strixonomy_core::DiagnosticCode::OrphanClass
             && d.entity_iri.as_deref() == Some("http://example.org/people#Thing")
     });
     assert!(!thing_orphan, "ex:Thing should not be flagged orphan");
@@ -174,11 +176,11 @@ fn open_buffer_diagnostics_detect_undefined_prefix() {
         .iter()
         .find(|d| {
             d.message.contains("un:")
-                && (d.code == ontocore_core::DiagnosticCode::UndefinedPrefix
-                    || d.code == ontocore_core::DiagnosticCode::ParseError)
+                && (d.code == strixonomy_core::DiagnosticCode::UndefinedPrefix
+                    || d.code == strixonomy_core::DiagnosticCode::ParseError)
         })
         .unwrap_or_else(|| panic!("expected undeclared prefix diagnostic, got: {diags:?}"));
-    assert_eq!(undef.severity, ontocore_core::DiagnosticSeverity::Error);
+    assert_eq!(undef.severity, strixonomy_core::DiagnosticSeverity::Error);
 }
 
 #[test]
@@ -212,7 +214,7 @@ fn sql_query_properties_and_axioms_tables() {
 
     let axioms = query_catalog(&catalog, "SELECT axiom_kind FROM axioms").expect("axioms");
     assert!(axioms.rows.iter().any(|row| row.get("axiom_kind").map(String::as_str)
-        == Some(ontocore_core::AXIOM_KIND_SUB_CLASS_OF)));
+        == Some(strixonomy_core::AXIOM_KIND_SUB_CLASS_OF)));
 
     let imports = query_catalog(&catalog, "SELECT import_iri FROM imports").expect("imports");
     assert!(!imports.rows.is_empty());
@@ -334,10 +336,10 @@ fn sql_json_and_csv_export() {
     let catalog = fixture_catalog();
     let result = query_catalog(&catalog, "SELECT short_name FROM classes").expect("query");
 
-    let json = ontocore_query::sql::to_json(&result).expect("json export");
+    let json = strixonomy_query::sql::to_json(&result).expect("json export");
     assert!(json.contains("Person"));
 
-    let csv = ontocore_query::sql::to_csv(&result).expect("csv export");
+    let csv = strixonomy_query::sql::to_csv(&result).expect("csv export");
     assert!(csv.contains("short_name"));
     assert!(csv.contains("Person"));
 }

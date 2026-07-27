@@ -1,6 +1,6 @@
 # Ontology concepts
 
-Short glossary for engineers new to OWL/RDF who are evaluating OntoCode.
+Short glossary for engineers new to OWL/RDF who are evaluating Strixonomy.
 
 ## Core terms
 
@@ -35,19 +35,19 @@ ex:Thing a owl:Class ;
 
 - `ex:Person` is a **class** with label `"Person"` and parent `ex:Thing`
 - `rdfs:subClassOf` is a simple **axiom** (Person is a subclass of Thing)
-- OntoCode indexes this file and shows `Person` under **Classes** in the explorer
+- Strixonomy indexes this file and shows `Person` under **Classes** in the explorer
 
-Download this pattern from [fixtures/example.ttl](https://github.com/eddiethedean/ontocode/blob/main/fixtures/example.ttl) or the [first success tutorial](guides/first-success.md).
+Download this pattern from [fixtures/example.ttl](https://github.com/eddiethedean/strixonomy/blob/main/fixtures/example.ttl) or the [first success tutorial](guides/first-success.md).
 
 ## Manchester syntax
 
-OntoCode supports subclass, equivalent, and disjoint axioms via the Manchester editor — see [Manchester editor](ontocode/manchester-editor.md).
+Strixonomy supports subclass, equivalent, and disjoint axioms via the Manchester editor — see [Manchester editor](ide/manchester-editor.md).
 
 ## Reasoning profiles
 
 | Profile | Typical use |
 |---------|-------------|
-| **EL** | OWL EL ontologies (default in OntoCode) |
+| **EL** | OWL EL ontologies (default in Strixonomy) |
 | **RL** | OWL RL materialization |
 | **RDFS** | RDFS entailment |
 | **DL** | Full OWL 2 DL via OntoLogos 1.0 (`dl` profile) |
@@ -58,12 +58,12 @@ OntoCode supports subclass, equivalent, and disjoint axioms via the Manchester e
 - **Inferred** — additional subsumption edges computed by the reasoner
 - **Combined** — asserted plus inferred edges in the explorer tree
 
-Run **OntoCode: Run Reasoner** before switching to inferred or combined mode.
+Run **Strixonomy: Run Reasoner** before switching to inferred or combined mode.
 
-## OntoCode vs OntoCore
+## Strixonomy vs Strixonomy
 
-- **OntoCode** — VS Code IDE (UI)
-- **OntoCore** — Rust semantic workspace engine (CLI, LSP, `ontocore` / `ontocore-*` crates)
+- **Strixonomy** — VS Code IDE (UI)
+- **Strixonomy** — Rust semantic workspace engine (CLI, LSP, `strixonomy` / `strixonomy-*` crates)
 
 ## Next steps
 

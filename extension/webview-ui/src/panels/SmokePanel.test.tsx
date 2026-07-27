@@ -12,7 +12,7 @@ describe("SmokePanel", () => {
       </HostProvider>
     );
 
-    expect(screen.getByRole("heading", { name: "OntoCode React" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Strixonomy React" })).toBeInTheDocument();
     expect(screen.getByText("Webview foundation is active.")).toBeInTheDocument();
 
     await waitFor(() => {

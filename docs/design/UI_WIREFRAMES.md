@@ -9,7 +9,7 @@
 [ Search   ]
 [ Source   ]
 [ Run      ]
-[ OntoCode ]  <-- new icon
+[ Strixonomy ]  <-- new icon
 ```
 
 ## 2. Ontology Explorer Sidebar

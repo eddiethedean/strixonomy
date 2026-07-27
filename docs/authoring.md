@@ -1,9 +1,9 @@
-# Ontology authoring (OntoCore v0.26)
+# Ontology authoring (Strixonomy v0.26)
 
-> **Status:** Documents behavior in **OntoCore v0.26.2**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.26.2**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
-OntoCode provides **Turtle, OBO, RDF/XML, and OWL/XML write-back** for simple edits and **Manchester** for complex class expressions. It is **not** a full Protégé replacement — see [Known limitations](known-limitations.md) and [Protégé coexistence](guides/protege-coexistence.md).
+Strixonomy provides **Turtle, OBO, RDF/XML, and OWL/XML write-back** for simple edits and **Manchester** for complex class expressions. It is **not** a full Protégé replacement — see [Known limitations](known-limitations.md) and [Protégé coexistence](guides/protege-coexistence.md).
 
 ## Supported operations
 
@@ -31,23 +31,23 @@ Full JSON reference: [patch-reference.md](patch-reference.md).
 
 - **Write-back:** Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), OWL/XML (`.owx`)
 - **Read/index:** Turtle, OBO, RDF/XML (`.owl` / `.rdf`), OWL/XML (`.owx`), JSON-LD, N-Triples, TriG
-- OWL/XML and RDF/XML support inspector/`ontocore patch` write-back via Horned re-serialize (v0.21; not byte-identical layout)
+- OWL/XML and RDF/XML support inspector/`strixonomy patch` write-back via Horned re-serialize (v0.21; not byte-identical layout)
 
 ## VS Code workflow (simple edits)
 
 ### Turtle (`.ttl`)
 
-1. Open a `.ttl` ontology and select an entity in the OntoCode explorer.
+1. Open a `.ttl` ontology and select an entity in the Strixonomy explorer.
 2. Use the **Entity Inspector** edit section: add labels, comments, parents, or delete.
 3. Use context menu **Create Class/Property/Individual** on explorer views.
-4. Changes apply via `ontocore/applyAxiomPatch` and trigger a workspace reindex.
+4. Changes apply via `strixonomy/applyAxiomPatch` and trigger a workspace reindex.
 5. VS Code undo works on saved file changes.
 
 ### OBO (`.obo`)
 
-1. Open a `.obo` file and select a term in the OntoCode explorer.
+1. Open a `.obo` file and select a term in the Strixonomy explorer.
 2. Edit name, definition, synonyms, `is_a`, and related fields in the Entity Inspector.
-3. Preview and apply — see [OBO authoring](ontocode/obo-authoring.md).
+3. Preview and apply — see [OBO authoring](ide/obo-authoring.md).
 
 ## Manchester editor
 
@@ -70,11 +70,11 @@ Add or remove `owl:imports` in Turtle ontology headers:
 1. **Ontologies** view → right-click a `.ttl` file → **Manage Imports**
 2. Add an import IRI or remove an existing one; preview and apply
 
-Guide: [Manage Imports](ontocode/manage-imports.md)
+Guide: [Manage Imports](ide/manage-imports.md)
 
 ## Editor completion and quick fixes (v0.11)
 
-In `.ttl` files, OntoCode offers:
+In `.ttl` files, Strixonomy offers:
 
 - **Completion** — triggered on `:`, `<`, and `@` for prefixes, QNames, and IRIs
 - **Quick fixes** — lightbulb actions for `undefined_prefix`, `missing_label`, and `broken_import` diagnostics
@@ -87,7 +87,7 @@ For multi-file changes (rename IRI, namespace migration, move entity, extract mo
 
 ## Query workbench
 
-Run **OntoCode: Open Query Workbench** from the Command Palette.
+Run **Strixonomy: Open Query Workbench** from the Command Palette.
 
 - Toggle **SQL**, **SPARQL**, or **DL Query** mode
 - Run queries against the indexed workspace (DL mode: Manchester class expressions — [DL Query honesty](guides/dl-query.md))
@@ -120,17 +120,17 @@ Run **OntoCode: Open Query Workbench** from the Command Palette.
 ```
 
 ```bash
-# From a folder containing example.ttl (e.g. ontocode-tutorial from first-success)
-ontocore patch ./example.ttl patches.json --preview
-ontocore patch ./example.ttl patches.json
-ontocore validate .
+# From a folder containing example.ttl (e.g. strixonomy-tutorial from first-success)
+strixonomy patch ./example.ttl patches.json --preview
+strixonomy patch ./example.ttl patches.json
+strixonomy validate .
 ```
 
 More examples: [patch-reference.md](patch-reference.md).
 
 ## Horned-OWL dual stack
 
-For Turtle files, catalog **entities and axioms** come from [Horned-OWL](https://github.com/phillord/horned-owl) via `ontocore-owl`. Oxigraph remains authoritative for triple counts and SPARQL. CI runs `owl_oxigraph_consistency` tests on fixtures.
+For Turtle files, catalog **entities and axioms** come from [Horned-OWL](https://github.com/phillord/horned-owl) via `strixonomy-owl`. Oxigraph remains authoritative for triple counts and SPARQL. CI runs `owl_oxigraph_consistency` tests on fixtures.
 
 ## Unsaved buffers
 

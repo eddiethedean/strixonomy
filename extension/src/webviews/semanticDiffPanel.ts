@@ -32,8 +32,8 @@ export class SemanticDiffPanel {
     }
 
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeSemanticDiff",
-      title: "OntoCode Semantic Diff",
+      viewType: "strixonomySemanticDiff",
+      title: "Strixonomy Semantic Diff",
       panel: "semanticDiff",
       onMessage: async (message: WebviewMessage) => {
         const panel = SemanticDiffPanel.current;
@@ -54,11 +54,11 @@ export class SemanticDiffPanel {
     if (message.type === "copyMarkdown") {
       const diff = this.lastDiff;
       if (!diff) {
-        void vscode.window.showWarningMessage("OntoCode: no diff to copy");
+        void vscode.window.showWarningMessage("Strixonomy: no diff to copy");
         return;
       }
       await vscode.env.clipboard.writeText(formatSemanticDiffMarkdown(diff));
-      void vscode.window.showInformationMessage("OntoCode: diff Markdown copied to clipboard");
+      void vscode.window.showInformationMessage("Strixonomy: diff Markdown copied to clipboard");
     }
   }
 

@@ -1,14 +1,14 @@
-# CLI reference (OntoCore v0.26)
+# CLI reference (Strixonomy v0.26)
 
-The `ontocore` binary indexes ontology workspaces and exposes query, validation, patch, and reasoning commands.
+The `strixonomy` binary indexes ontology workspaces and exposes query, validation, patch, and reasoning commands.
 
 Install (pin latest tagged release):
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
+cargo install strixonomy-cli --locked --version 0.26.2
 ```
 
-From a git clone, use `cargo run --` instead of `ontocore`.
+From a git clone, use `cargo run --` instead of `strixonomy`.
 
 ## Commands at a glance
 
@@ -44,8 +44,8 @@ Several commands accept `--format text|json|csv` (where noted). Default is `text
 Create a new Turtle or OBO ontology file with `owl:Ontology` header metadata.
 
 ```bash
-ontocore new ./people.ttl --ontology-iri 'http://example.org/people'
-ontocore new ./terms.obo --ontology-iri 'http://purl.obolibrary.org/obo/demo.owl' --force
+strixonomy new ./people.ttl --ontology-iri 'http://example.org/people'
+strixonomy new ./terms.obo --ontology-iri 'http://purl.obolibrary.org/obo/demo.owl' --force
 ```
 
 | Flag | Description |
@@ -62,8 +62,8 @@ ontocore new ./terms.obo --ontology-iri 'http://purl.obolibrary.org/obo/demo.owl
 Scan and index ontology files in a workspace. Prints catalog statistics only — use for CI scripts and machine-readable output.
 
 ```bash
-ontocore index [workspace]
-ontocore index ./ontologies --format json
+strixonomy index [workspace]
+strixonomy index ./ontologies --format json
 ```
 
 Default workspace: `.` (current directory).
@@ -75,8 +75,8 @@ Default workspace: `.` (current directory).
 Index the workspace and print catalog statistics **plus a diagnostic summary** (counts and up to 10 sample messages). Use for a quick human health check; run `validate` for full diagnostic listing and CI gating.
 
 ```bash
-ontocore inspect fixtures
-ontocore inspect /path/to/ontologies --format json
+strixonomy inspect fixtures
+strixonomy inspect /path/to/ontologies --format json
 ```
 
 **Expected output (text, `fixtures/`):** ontology/class/property counts (e.g. multiple classes including `Person`).
@@ -86,8 +86,8 @@ ontocore inspect /path/to/ontologies --format json
 Run a SQL-like query against virtual tables. See [SQL reference](sql-reference.md).
 
 ```bash
-ontocore query fixtures "SELECT short_name, labels FROM classes"
-ontocore query . "SELECT code, message FROM diagnostics WHERE severity = 'error'" --format json
+strixonomy query fixtures "SELECT short_name, labels FROM classes"
+strixonomy query . "SELECT code, message FROM diagnostics WHERE severity = 'error'" --format json
 ```
 
 **Expected output (text, `fixtures/`):** tab-separated columns plus rows (e.g. `Person` in `short_name`).
@@ -99,7 +99,7 @@ ontocore query . "SELECT code, message FROM diagnostics WHERE severity = 'error'
 Run SPARQL against indexed triples. See [SPARQL reference](sparql-reference.md).
 
 ```bash
-ontocore sparql fixtures "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
+strixonomy sparql fixtures "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
 ```
 
 **Exit:** 0 on success; non-zero on failure. Results truncate at 100,000 rows.
@@ -109,8 +109,8 @@ ontocore sparql fixtures "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
 Run a Protégé-style DL Query (Manchester class expression). See [DL Query](guides/dl-query.md).
 
 ```bash
-ontocore dl-query "Person and hasPet some Dog" --workspace fixtures --profile dl
-ontocore dl-query "Person" --mode asserted --format json
+strixonomy dl-query "Person and hasPet some Dog" --workspace fixtures --profile dl
+strixonomy dl-query "Person" --mode asserted --format json
 ```
 
 | Argument / flag | Default | Description |
@@ -128,8 +128,8 @@ ontocore dl-query "Person" --mode asserted --format json
 Index workspace and fail if diagnostic **errors** exist (warnings allowed).
 
 ```bash
-ontocore validate .
-ontocore validate /path/to/ontologies
+strixonomy validate .
+strixonomy validate /path/to/ontologies
 ```
 
 **Expected output (text, clean workspace):** diagnostic summary with **exit code 0** (warnings allowed).
@@ -142,9 +142,9 @@ Apply **Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.o
 For a one-page format matrix (index/query vs write-back), see [Supported formats](supported-formats.md). XML caveats: [OWL/XML write-back](guides/owl-xml-workflow.md).
 
 ```bash
-ontocore patch ./ontology.ttl patches.json --preview
-ontocore patch ./ontology.ttl patches.json
-ontocore patch ./ontology.owl patches.json
+strixonomy patch ./ontology.ttl patches.json --preview
+strixonomy patch ./ontology.ttl patches.json
+strixonomy patch ./ontology.owl patches.json
 ```
 
 **Exit:** 0 on success; non-zero on invalid patch or unsupported format/op.
@@ -154,9 +154,9 @@ ontocore patch ./ontology.owl patches.json
 Run [ROBOT](http://robot.obolibrary.org/) CLI subcommands. Requires Java and `robot` on `PATH` (or `--robot-path`). See [ROBOT interop guide](guides/robot-interop.md).
 
 ```bash
-ontocore robot validate path/to/ontology.owl
-ontocore robot merge --inputs a.owl --inputs b.owl --output merged.owl
-ontocore robot report path/to/ontology.owl --report report.tsv
+strixonomy robot validate path/to/ontology.owl
+strixonomy robot merge --inputs a.owl --inputs b.owl --output merged.owl
+strixonomy robot report path/to/ontology.owl --report report.tsv
 ```
 
 | Subcommand | Description |
@@ -165,7 +165,7 @@ ontocore robot report path/to/ontology.owl --report report.tsv
 | `merge` | Merge multiple ontology files |
 | `report` | Generate a ROBOT report |
 
-Optional `--robot-path` overrides the `robot` executable (same as VS Code `ontocode.robotPath`).
+Optional `--robot-path` overrides the `robot` executable (same as VS Code `strixonomy.robotPath`).
 
 **Exit:** matches ROBOT exit code (0 on success).
 
@@ -174,8 +174,8 @@ Optional `--robot-path` overrides the `robot` executable (same as VS Code `ontoc
 Run OWL classification via OntoLogos 1.0.0.
 
 ```bash
-ontocore classify ./ontologies --profile el
-ontocore classify . --profile rl --format json
+strixonomy classify ./ontologies --profile el
+strixonomy classify . --profile rl --format json
 ```
 
 **Expected output (json):** `consistent: true`, `unsatisfiable: []`, `profile_used`, `duration_ms` when ontology is consistent.
@@ -197,8 +197,8 @@ See [Reasoner guide](guides/reasoner.md) and [workspace-limits.md](workspace-lim
 Explain unsatisfiability for a class IRI (requires OntoLogos explain support).
 
 ```bash
-ontocore explain ./ontologies --class 'http://example.org#Invalid' --profile el
-ontocore explain . --class 'http://example.org#Invalid' --format json
+strixonomy explain ./ontologies --class 'http://example.org#Invalid' --profile el
+strixonomy explain . --class 'http://example.org#Invalid' --format json
 ```
 
 | Flag | Default | Description |
@@ -214,8 +214,8 @@ ontocore explain . --class 'http://example.org#Invalid' --format json
 Realize individuals (inferred types) for a workspace (ABox). Default profile is `rl`.
 
 ```bash
-ontocore realize ./ontologies --profile rl
-ontocore realize fixtures --profile dl --format json
+strixonomy realize ./ontologies --profile rl
+strixonomy realize fixtures --profile dl --format json
 ```
 
 | Flag | Default | Description |
@@ -234,12 +234,12 @@ See [Reasoner guide](guides/reasoner.md) and [realize cookbook](examples/realize
 Check whether an individual is an instance of a class.
 
 ```bash
-ontocore check-instance fixtures \
+strixonomy check-instance fixtures \
   --individual 'http://example.org/people#alice' \
   --class 'http://example.org/people#Person' \
   --profile rl
 
-ontocore check-instance . \
+strixonomy check-instance . \
   --individual 'http://example.org/people#alice' \
   --class 'http://example.org/people#Person' \
   --format json
@@ -254,12 +254,12 @@ ontocore check-instance . \
 
 **Exit:** 0 when entailed; **non-zero** when not entailed or on reasoner error.
 
-**LSP note:** Realization is a **CLI / CI** command today (`ontocore realize`). Instance checks are available via LSP `ontocore/checkInstance`. There is no LSP `realize` method — use the CLI in automation.
+**LSP note:** Realization is a **CLI / CI** command today (`strixonomy realize`). Instance checks are available via LSP `strixonomy/checkInstance`. There is no LSP `realize` method — use the CLI in automation.
 
 ### SWRL (no CLI subcommand)
 
-!!! note "No `ontocore swrl` command"
-    Author and validate SWRL via **patches**, the IDE Rule Browser, and LSP (`ontocore/listSwrlRules`, `ontocore/validateSwrlRule`, `ontocore/parseSwrlRule`). When rules are present, classify may materialize SWRL consequents. See [SWRL examples](examples/swrl.md) and [patch SWRL ops](patch-reference.md).
+!!! note "No `strixonomy swrl` command"
+    Author and validate SWRL via **patches**, the IDE Rule Browser, and LSP (`strixonomy/listSwrlRules`, `strixonomy/validateSwrlRule`, `strixonomy/parseSwrlRule`). When rules are present, classify may materialize SWRL consequents. See [SWRL examples](examples/swrl.md) and [patch SWRL ops](patch-reference.md).
 
 ### `refactor`
 
@@ -270,8 +270,8 @@ Workspace refactoring (rename / merge / replace across formats where remaps appl
 List usages of an entity IRI across the workspace.
 
 ```bash
-ontocore refactor usages fixtures 'http://example.org/people#Person'
-ontocore refactor usages . 'http://example.org/people#Person' --format json
+strixonomy refactor usages fixtures 'http://example.org/people#Person'
+strixonomy refactor usages . 'http://example.org/people#Person' --format json
 ```
 
 **Exit:** 0 on success; non-zero on index failure.
@@ -281,12 +281,12 @@ ontocore refactor usages . 'http://example.org/people#Person' --format json
 Rename an entity IRI across indexed ontology files (Turtle + format remaps for RDF/XML, OWL/XML, OBO).
 
 ```bash
-ontocore refactor rename fixtures \
+strixonomy refactor rename fixtures \
   --from 'http://example.org/people#Person' \
   --to 'http://example.org/people#Human' \
   --preview
 
-ontocore refactor rename fixtures \
+strixonomy refactor rename fixtures \
   --from 'http://example.org/people#Person' \
   --to 'http://example.org/people#Human'
 ```
@@ -303,7 +303,7 @@ ontocore refactor rename fixtures \
 Merge one entity into another (rewrite references to the keep IRI; drop the merge declaration).
 
 ```bash
-ontocore refactor merge fixtures \
+strixonomy refactor merge fixtures \
   --keep 'http://example.org/people#Person' \
   --merge 'http://example.org/people#Human' \
   --preview
@@ -321,7 +321,7 @@ ontocore refactor merge fixtures \
 Replace references to one entity with another (keeps source declaration when the target already exists).
 
 ```bash
-ontocore refactor replace fixtures \
+strixonomy refactor replace fixtures \
   --from 'http://example.org/people#OldName' \
   --to 'http://example.org/people#NewName' \
   --preview
@@ -339,7 +339,7 @@ ontocore refactor replace fixtures \
 Replace a namespace base IRI across Turtle files (`@prefix` and term IRIs).
 
 ```bash
-ontocore refactor migrate-namespace fixtures \
+strixonomy refactor migrate-namespace fixtures \
   --from 'http://example.org/people#' \
   --to 'http://example.org/v2/people#' \
   --preview
@@ -357,7 +357,7 @@ ontocore refactor migrate-namespace fixtures \
 Move an entity block to another Turtle file.
 
 ```bash
-ontocore refactor move fixtures 'http://example.org/people#Student' \
+strixonomy refactor move fixtures 'http://example.org/people#Student' \
   --to ./students.ttl \
   --preview
 ```
@@ -373,7 +373,7 @@ ontocore refactor move fixtures 'http://example.org/people#Student' \
 Extract selected entities into a new module file.
 
 ```bash
-ontocore refactor extract fixtures \
+strixonomy refactor extract fixtures \
   --entities 'http://example.org/people#Person,http://example.org/people#Student' \
   --out ./core.ttl \
   --leave-stub \
@@ -395,7 +395,7 @@ ontocore refactor extract fixtures \
 Merge one or more Turtle ontology files into a target Turtle file.
 
 ```bash
-ontocore refactor merge-ontologies fixtures \
+strixonomy refactor merge-ontologies fixtures \
   --sources ./a.ttl --sources ./b.ttl \
   --target ./combined.ttl \
   --preview
@@ -406,22 +406,22 @@ ontocore refactor merge-ontologies fixtures \
 Inline imported Turtle axioms (flatten) or remove unused `owl:imports` (cleanup heuristic).
 
 ```bash
-ontocore refactor flatten-imports fixtures --file ./root.ttl --preview
-ontocore refactor cleanup-imports fixtures --file ./root.ttl --preview
+strixonomy refactor flatten-imports fixtures --file ./root.ttl --preview
+strixonomy refactor cleanup-imports fixtures --file ./root.ttl --preview
 ```
 
 **Exit (rename / merge / replace / migrate / move / extract / ontology ops):** 0 on success; non-zero on invalid request, path jail violation, or I/O failure. With `--preview`, files are not written.
 
 ### `diff`
 
-Semantic catalog diff between git refs, directories, or indexed snapshots. See [Semantic diff guide](ontocode/semantic-diff.md).
+Semantic catalog diff between git refs, directories, or indexed snapshots. See [Semantic diff guide](ide/semantic-diff.md).
 
 ```bash
-ontocore diff HEAD..WORKTREE
-ontocore diff --left-ref main --right-ref feature --format markdown
-ontocore diff --left-ref HEAD --right-ref WORKTREE --breaking-only
-ontocore diff --left-ref ./baseline --right-ref ./candidate
-ontocore diff main..feature --pr-summary
+strixonomy diff HEAD..WORKTREE
+strixonomy diff --left-ref main --right-ref feature --format markdown
+strixonomy diff --left-ref HEAD --right-ref WORKTREE --breaking-only
+strixonomy diff --left-ref ./baseline --right-ref ./candidate
+strixonomy diff main..feature --pr-summary
 ```
 
 | Flag | Description |
@@ -435,7 +435,7 @@ ontocore diff main..feature --pr-summary
 | `--pr-summary` | Shorthand for `--format pr-summary` |
 | `--breaking-only` | Filter to likely breaking changes |
 
-**Ref tokens (CLI vs LSP):** The CLI compares **git refs** and **directories on disk** only. Use `WORKTREE` for the working-tree catalog built from disk. To compare against the **indexed in-memory catalog** (LSP / VS Code), use `ontocore/semanticDiff` with `INDEXED` or `CATALOG` (legacy alias: `WORKSPACE`). Passing `WORKSPACE` / `INDEXED` / `CATALOG` to the CLI returns an error directing you to the LSP or `WORKTREE`.
+**Ref tokens (CLI vs LSP):** The CLI compares **git refs** and **directories on disk** only. Use `WORKTREE` for the working-tree catalog built from disk. To compare against the **indexed in-memory catalog** (LSP / VS Code), use `strixonomy/semanticDiff` with `INDEXED` or `CATALOG` (legacy alias: `WORKSPACE`). Passing `WORKSPACE` / `INDEXED` / `CATALOG` to the CLI returns an error directing you to the LSP or `WORKTREE`.
 
 **Exit:** 0 on success; non-zero on git/parse/I/O errors.
 
@@ -446,8 +446,8 @@ ontocore diff main..feature --pr-summary
 Export Markdown or HTML documentation from an indexed workspace. See [Documentation export guide](guides/docs-export.md).
 
 ```bash
-ontocore docs ./fixtures --format markdown --output /tmp/onto-docs
-ontocore docs . --format html --output ./docs-out \
+strixonomy docs ./fixtures --format markdown --output /tmp/onto-docs
+strixonomy docs . --format html --output ./docs-out \
   --ontology-id http://example.org/people
 ```
 
@@ -457,7 +457,7 @@ ontocore docs . --format html --output ./docs-out \
 | `--output` / `-o` | *(required)* | Output directory |
 | `--format` | `markdown` | `markdown` or `html` |
 | `--ontology-id` | — | Limit export to one ontology IRI or document id |
-| `--plugin` | — | Exporter plugin id (e.g. `ontocode.markdown-export`); omit for built-in docs export |
+| `--plugin` | — | Exporter plugin id (e.g. `strixonomy.markdown-export`); omit for built-in docs export |
 
 Markdown `index.md` includes **Class hierarchy** and **Property index** sections (v0.13+).
 
@@ -465,13 +465,13 @@ Markdown `index.md` includes **Class hierarchy** and **Property index** sections
 
 ### `plugins`
 
-Discover, inspect, enable/disable, and run workspace plugins from `.ontocore/plugins/*.toml`. See [Plugin authoring guide](guides/plugins.md) (SDK 1.0).
+Discover, inspect, enable/disable, and run workspace plugins from `.strixonomy/plugins/*.toml`. See [Plugin authoring guide](guides/plugins.md) (SDK 1.0).
 
 #### `plugins list`
 
 ```bash
-ontocore plugins list [workspace]
-ontocore plugins list . --format json
+strixonomy plugins list [workspace]
+strixonomy plugins list . --format json
 ```
 
 **Result (text):** one line per plugin (`id`, `kind`, `version`). **Result (json):** array of plugin descriptors (includes lifecycle fields such as `state`, `enabled`, `depends_on`, `activation` when present).
@@ -481,8 +481,8 @@ ontocore plugins list . --format json
 #### `plugins info`
 
 ```bash
-ontocore plugins info <plugin_id> [workspace]
-ontocore plugins info ontocode.naming-validator . --format json
+strixonomy plugins info <plugin_id> [workspace]
+strixonomy plugins info strixonomy.naming-validator . --format json
 ```
 
 Shows lifecycle and dependency info: `state`, `activation`, `enabled`, `depends_on`, `manifest_path`.
@@ -492,8 +492,8 @@ Shows lifecycle and dependency info: `state`, `activation`, `enabled`, `depends_
 #### `plugins enable` / `plugins disable`
 
 ```bash
-ontocore plugins enable <plugin_id> [workspace]
-ontocore plugins disable <plugin_id> [workspace]
+strixonomy plugins enable <plugin_id> [workspace]
+strixonomy plugins disable <plugin_id> [workspace]
 ```
 
 `enable` activates the plugin (and dependents per activation policy). `disable` cascade-deactivates dependents.
@@ -503,9 +503,9 @@ ontocore plugins disable <plugin_id> [workspace]
 #### `plugins run`
 
 ```bash
-ontocore plugins run <plugin_id> [--action <name>] [--step <name>] [--query <text>] [--iri <iri>] [workspace]
-ontocore plugins run ontocode.naming-validator --action validate .
-ontocore plugins run my.query --action query.run --query 'SELECT short_name FROM classes' .
+strixonomy plugins run <plugin_id> [--action <name>] [--step <name>] [--query <text>] [--iri <iri>] [workspace]
+strixonomy plugins run strixonomy.naming-validator --action validate .
+strixonomy plugins run my.query --action query.run --query 'SELECT short_name FROM classes' .
 ```
 
 | Flag | Default | Description |
@@ -524,12 +524,12 @@ ontocore plugins run my.query --action query.run --query 'SELECT short_name FROM
 Run an external workflow plugin subprocess (e.g. owlmake scaffold).
 
 ```bash
-ontocore workflow --plugin owlmake --step qc [workspace]
+strixonomy workflow --plugin owlmake --step qc [workspace]
 ```
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--plugin` | *(required)* | Plugin id from `.ontocore/plugins/` |
+| `--plugin` | *(required)* | Plugin id from `.strixonomy/plugins/` |
 | `--step` | `qc` | Workflow step: `build`, `qc`, `release`, or `report` |
 | `workspace` | `.` | Workspace directory |
 

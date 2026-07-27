@@ -25,7 +25,7 @@ describe("HostContext", () => {
         <SmokePanel />
       </HostProvider>
     );
-    expect(screen.getByRole("heading", { name: "OntoCode React" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Strixonomy React" })).toBeInTheDocument();
     expect(host.messages).toContainEqual({ type: "ready", panel: "smoke" });
   });
 });

@@ -20,7 +20,7 @@ def on_startup(**kwargs: Any) -> None:
     except ImportError:
         return
 
-    if getattr(Git, "_ontocode_diff_filter_patch", False):
+    if getattr(Git, "_strixonomy_diff_filter_patch", False):
         return
 
     original = Git._call_process
@@ -31,4 +31,4 @@ def on_startup(**kwargs: Any) -> None:
         return original(self, method, *args, **kwargs)
 
     Git._call_process = _call_process  # type: ignore[method-assign]
-    Git._ontocode_diff_filter_patch = True
+    Git._strixonomy_diff_filter_patch = True

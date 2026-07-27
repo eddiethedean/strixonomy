@@ -1,4 +1,4 @@
-//! LSP integration smoke for `ontocore/runReasoner` and catalog snapshot reasoner field.
+//! LSP integration smoke for `strixonomy/runReasoner` and catalog snapshot reasoner field.
 
 use std::io::{BufRead, BufReader, Write};
 use std::path::{Path, PathBuf};
@@ -28,7 +28,7 @@ fn lsp_run_reasoner_el_profile() {
         .stdout(Stdio::piped())
         .stderr(Stdio::null())
         .spawn()
-        .expect("spawn ontocore-lsp");
+        .expect("spawn strixonomy-lsp");
 
     let stdout = child.stdout.take().expect("stdout");
     let mut stdin = child.stdin.take().expect("stdin");
@@ -69,7 +69,7 @@ fn lsp_run_reasoner_el_profile() {
     send_request(
         &mut stdin,
         2,
-        "ontocore/indexWorkspace",
+        "strixonomy/indexWorkspace",
         serde_json::json!({ "workspace_uri": workspace_uri }),
     );
     let index_resp = wait_for_id(&rx, 2, Duration::from_secs(10)).expect("index response");
@@ -78,7 +78,7 @@ fn lsp_run_reasoner_el_profile() {
     send_request(
         &mut stdin,
         3,
-        "ontocore/runReasoner",
+        "strixonomy/runReasoner",
         serde_json::json!({ "profile": "el", "auto_detect": false }),
     );
     let reasoner_resp = wait_for_id(&rx, 3, Duration::from_secs(30)).expect("runReasoner response");
@@ -90,7 +90,7 @@ fn lsp_run_reasoner_el_profile() {
     assert_eq!(result.get("consistent").and_then(|v| v.as_bool()), Some(true));
     assert!(result.get("snapshot").is_some());
 
-    send_request(&mut stdin, 4, "ontocore/getCatalogSnapshot", serde_json::json!(null));
+    send_request(&mut stdin, 4, "strixonomy/getCatalogSnapshot", serde_json::json!(null));
     let snapshot = wait_for_id(&rx, 4, Duration::from_secs(10)).expect("snapshot response");
     let reasoner = snapshot
         .get("result")
@@ -98,7 +98,7 @@ fn lsp_run_reasoner_el_profile() {
         .expect("reasoner field on snapshot after run");
     assert_eq!(reasoner.get("profile_used").and_then(|v| v.as_str()), Some("el"));
 
-    send_request(&mut stdin, 5, "ontocore/runReasoner", serde_json::json!({ "profile": "dl" }));
+    send_request(&mut stdin, 5, "strixonomy/runReasoner", serde_json::json!({ "profile": "dl" }));
     let dl_resp = wait_for_id(&rx, 5, Duration::from_secs(30)).expect("dl runReasoner response");
     if dl_resp.get("error").is_some() {
         panic!("dl runReasoner error: {dl_resp}");
@@ -107,7 +107,7 @@ fn lsp_run_reasoner_el_profile() {
     assert_eq!(dl_result.get("profile_used").and_then(|v| v.as_str()), Some("dl"));
     assert_eq!(dl_result.get("consistent").and_then(|v| v.as_bool()), Some(true));
 
-    send_request(&mut stdin, 6, "ontocore/runReasoner", serde_json::json!({ "profile": "auto" }));
+    send_request(&mut stdin, 6, "strixonomy/runReasoner", serde_json::json!({ "profile": "auto" }));
     let auto_resp =
         wait_for_id(&rx, 6, Duration::from_secs(30)).expect("auto runReasoner response");
     if auto_resp.get("error").is_some() {
@@ -203,7 +203,7 @@ fn write_lsp_message(stdin: &mut impl Write, body: &str) {
 }
 
 fn lsp_binary() -> PathBuf {
-    if let Ok(path) = std::env::var("CARGO_BIN_EXE_ontocore-lsp") {
+    if let Ok(path) = std::env::var("CARGO_BIN_EXE_strixonomy-lsp") {
         let candidate = PathBuf::from(path);
         if candidate.exists() {
             return candidate;
@@ -215,18 +215,18 @@ fn lsp_binary() -> PathBuf {
     }
 
     // When running workspace-level integration tests, Cargo does not automatically
-    // build bin targets like `ontocore-lsp`. Build it explicitly, then locate it.
+    // build bin targets like `strixonomy-lsp`. Build it explicitly, then locate it.
     let status = Command::new("cargo")
-        .args(["build", "-q", "-p", "ontocore-lsp", "--bin", "ontocore-lsp"])
+        .args(["build", "-q", "-p", "strixonomy-lsp", "--bin", "strixonomy-lsp"])
         .status()
-        .expect("cargo build ontocore-lsp");
-    assert!(status.success(), "failed to build ontocore-lsp");
+        .expect("cargo build strixonomy-lsp");
+    assert!(status.success(), "failed to build strixonomy-lsp");
 
     find_lsp_binary_in_target().unwrap_or_else(|| {
         let target_dir = std::env::var("CARGO_TARGET_DIR")
             .map(PathBuf::from)
             .unwrap_or_else(|_| Path::new(env!("CARGO_MANIFEST_DIR")).join("target"));
-        panic!("ontocore-lsp binary not found under {} after build", target_dir.display());
+        panic!("strixonomy-lsp binary not found under {} after build", target_dir.display());
     })
 }
 
@@ -236,7 +236,7 @@ fn find_lsp_binary_in_target() -> Option<PathBuf> {
         .unwrap_or_else(|_| Path::new(env!("CARGO_MANIFEST_DIR")).join("target"));
 
     for subdir in ["debug", "release"] {
-        let candidate = target_dir.join(subdir).join("ontocore-lsp");
+        let candidate = target_dir.join(subdir).join("strixonomy-lsp");
         if candidate.exists() {
             return Some(candidate);
         }

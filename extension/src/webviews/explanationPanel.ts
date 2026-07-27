@@ -27,7 +27,7 @@ export class ExplanationPanel {
     private readonly extensionUri: vscode.Uri
   ) {
     this.host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeExplanation");
+      void forgetPanelRestoreState("strixonomyExplanation");
       this.unsubscribeCatalog?.();
       ExplanationPanel.current = undefined;
     });
@@ -50,7 +50,7 @@ export class ExplanationPanel {
     classIri: string,
     profileOverride?: string
   ): Promise<void> {
-    const cfg = vscode.workspace.getConfiguration("ontocode");
+    const cfg = vscode.workspace.getConfiguration("strixonomy");
     const profile = resolveExplanationProfile({
       explicit: profileOverride,
       lastRunProfile: focusRelay.getReasoning()?.profile,
@@ -77,7 +77,7 @@ export class ExplanationPanel {
     }
 
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeExplanation",
+      viewType: "strixonomyExplanation",
       title: `Explanation: ${classIri.split(/[#/]/).pop() ?? classIri}`,
       panel: "explanation",
       onMessage: async (message: WebviewMessage) => {
@@ -100,14 +100,14 @@ export class ExplanationPanel {
       return;
     }
     if (message.type === "rerunReasoner") {
-      await vscode.commands.executeCommand("ontocode.runReasoner");
+      await vscode.commands.executeCommand("strixonomy.runReasoner");
       if (this.classIri) {
         await ExplanationPanel.show(this.extensionUri, this.classIri, this.profile);
       }
       return;
     }
     if (message.type === "openEntity") {
-      await vscode.commands.executeCommand("ontocode.openEntity", message.iri);
+      await vscode.commands.executeCommand("strixonomy.openEntity", message.iri);
     }
   }
 
@@ -123,8 +123,8 @@ export class ExplanationPanel {
       indexedAt: result.indexed_at,
       contentHash: result.content_hash,
     });
-    void rememberPanelRestoreState("ontocodeExplanation", {
-      command: "ontocode.showExplanation",
+    void rememberPanelRestoreState("strixonomyExplanation", {
+      command: "strixonomy.showExplanation",
       args: [classIri, profile],
       title: `Explanation: ${classIri.split(/[#/]/).pop() ?? classIri}`,
     });

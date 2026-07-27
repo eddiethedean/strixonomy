@@ -6,7 +6,7 @@
 
 HermiT is one of the primary OWL 2 DL reasoners integrated with Protégé. It performs automated logical inference over ontologies, allowing ontology engineers to classify classes, detect inconsistencies, infer property hierarchies, identify equivalent classes, and validate complex OWL models.
 
-This document describes how Protégé integrates HermiT and provides implementation guidance for OntoCode.
+This document describes how Protégé integrates HermiT and provides implementation guidance for Strixonomy.
 
 ---
 
@@ -197,7 +197,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -215,7 +215,7 @@ Recommended enhancements:
 
 # Reasoner Abstraction
 
-OntoCode should define a stable interface implemented by HermiT adapters and future engines.
+Strixonomy should define a stable interface implemented by HermiT adapters and future engines.
 
 Suggested capabilities:
 
@@ -267,10 +267,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should not hard-code HermiT into the UI. Instead, HermiT should be one implementation behind a reasoner service that supports interchangeable engines (such as ELK, Pellet, Rust-native reasoners, or remote reasoning services) while presenting a unified user experience.
+Strixonomy should not hard-code HermiT into the UI. Instead, HermiT should be one implementation behind a reasoner service that supports interchangeable engines (such as ELK, Pellet, Rust-native reasoners, or remote reasoning services) while presenting a unified user experience.
 
 ---
 
 # Summary
 
-HermiT is a cornerstone of Protégé's ontology engineering workflow, providing complete OWL 2 DL reasoning and automated inference. OntoCode should preserve compatibility with HermiT while modernizing execution, visualization, diagnostics, extensibility, and developer APIs through a language-agnostic reasoner abstraction.
+HermiT is a cornerstone of Protégé's ontology engineering workflow, providing complete OWL 2 DL reasoning and automated inference. Strixonomy should preserve compatibility with HermiT while modernizing execution, visualization, diagnostics, extensibility, and developer APIs through a language-agnostic reasoner abstraction.

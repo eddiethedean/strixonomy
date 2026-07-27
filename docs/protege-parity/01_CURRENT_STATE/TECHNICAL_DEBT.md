@@ -3,8 +3,8 @@
 # Technical Debt Register
 
 **Status:** Living Engineering Document\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline)\
-**Target Release:** OntoCode 1.0.0
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 

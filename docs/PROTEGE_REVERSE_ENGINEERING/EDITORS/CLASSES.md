@@ -6,7 +6,7 @@
 
 The Classes editor is the primary ontology modeling interface in Protégé. It allows users to create, organize, inspect, annotate, and define OWL classes using asserted axioms while viewing inferred classifications from a reasoner.
 
-For OntoCode, the Classes editor should achieve complete functional parity while modernizing the user experience.
+For Strixonomy, the Classes editor should achieve complete functional parity while modernizing the user experience.
 
 ---
 
@@ -178,7 +178,7 @@ Person and
 (hasPet some Dog)
 ```
 
-OntoCode should additionally provide:
+Strixonomy should additionally provide:
 
 - syntax highlighting
 - autocomplete
@@ -223,7 +223,7 @@ Supported search modes:
 - Annotation
 - Full-text
 
-Recommended OntoCode improvements:
+Recommended Strixonomy improvements:
 
 - fuzzy search
 - symbol search
@@ -300,7 +300,7 @@ Plugins should contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -365,4 +365,4 @@ Platform
 
 # Summary
 
-The Classes editor is the heart of Protégé. It combines hierarchy navigation, semantic modeling, reasoning, annotations, and validation into a unified workspace for OWL class engineering. OntoCode should preserve these capabilities while delivering a modern IDE experience with richer visualization, AI-assisted modeling, collaborative editing, and a modular React/Rust architecture.
+The Classes editor is the heart of Protégé. It combines hierarchy navigation, semantic modeling, reasoning, annotations, and validation into a unified workspace for OWL class engineering. Strixonomy should preserve these capabilities while delivering a modern IDE experience with richer visualization, AI-assisted modeling, collaborative editing, and a modular React/Rust architecture.

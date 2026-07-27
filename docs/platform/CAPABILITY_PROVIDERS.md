@@ -13,10 +13,10 @@
 | Reasoning | `ReasoningProvider` | Ontologos via LSP | v0.14 |
 | Query | `QueryProvider` | SQL/SPARQL LSP | v0.14 |
 | Refactoring | `RefactoringProvider` | LSP preview/apply | v0.14 |
-| Diagnostics | `DiagnosticsProvider` | `ontocore-diagnostics` | v0.14 |
+| Diagnostics | `DiagnosticsProvider` | `strixonomy-diagnostics` | v0.14 |
 | AI | `AIProvider` | — | v1.1+ |
 | Import/Export | `FormatProvider` | Turtle, OBO, ROBOT CLI | v0.14 |
-| Documentation | `DocsProvider` | `ontocore docs` | v0.14 |
+| Documentation | `DocsProvider` | `strixonomy docs` | v0.14 |
 
 ## TypeScript interface sketch (planned)
 
@@ -38,7 +38,7 @@ interface RefactoringProvider extends CapabilityProvider {
 }
 ```
 
-Rust-side host: see [design/PLUGIN_SPEC.md](../design/PLUGIN_SPEC.md) and [ontocore/plugin-model.md](../ontocore/plugin-model.md).
+Rust-side host: see [design/PLUGIN_SPEC.md](../design/PLUGIN_SPEC.md) and [strixonomy/plugin-model.md](../strixonomy/plugin-model.md).
 
 ## Registration
 
@@ -50,7 +50,7 @@ interface CapabilityRegistry {
 }
 ```
 
-OntoCore plugin host discovers providers from workspace config; OntoUI resolves UI contributions (inspector cards, commands) from provider metadata.
+Strixonomy plugin host discovers providers from workspace config; OntoUI resolves UI contributions (inspector cards, commands) from provider metadata.
 
 ## Permissions
 

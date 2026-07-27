@@ -4,7 +4,7 @@
 
 **Status:** Living Reference Document\
 **Purpose:** Define the end-to-end ontology engineering workflows that
-OntoCode must support to achieve functional parity with a standard
+Strixonomy must support to achieve functional parity with a standard
 Protégé Desktop installation.
 
 > This document audits complete user workflows rather than individual
@@ -16,7 +16,7 @@ Protégé Desktop installation.
 
 Users evaluate ontology editors by whether they can accomplish real
 tasks efficiently. This audit captures those tasks and maps them to
-OntoCode's implementation and parity requirements.
+Strixonomy's implementation and parity requirements.
 
 Workflow parity---not visual similarity---is the objective.
 
@@ -46,7 +46,7 @@ Workflow parity---not visual similarity---is the objective.
 
   ----------------------------------------------------------------------------------
   Workflow       Typical User Goal      Expected       Status         Priority
-                                        OntoCode                      
+                                        Strixonomy                      
                                         Equivalent                    
   -------------- ---------------------- -------------- -------------- --------------
   Create         Start a new ontology   New ontology   REVIEW         P0
@@ -120,7 +120,7 @@ Every production workflow should:
 Each workflow should ultimately reference:
 
 -   Parity requirement ID
--   OntoCode command(s)
+-   Strixonomy command(s)
 -   Responsible UI components
 -   Rust crates/services
 -   Automated tests

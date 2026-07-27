@@ -1,15 +1,15 @@
 # FORMAT_SUPPORT
 
-# OntoCode Format Support Specification
+# Strixonomy Format Support Specification
 
 **Status:** Normative Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the file formats that OntoCode must support for
+This document defines the file formats that Strixonomy must support for
 Protégé Desktop parity, the level of support required for each format,
 and the acceptance criteria used to verify compatibility.
 

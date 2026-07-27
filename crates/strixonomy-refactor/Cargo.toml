@@ -1,0 +1,26 @@
+[package]
+name = "strixonomy-refactor"
+description = "Workspace refactoring for Strixonomy (strixonomy-*) (rename, migrate, move, extract)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords.workspace = true
+categories.workspace = true
+include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE-MIT", "LICENSE-APACHE-2.0"]
+
+[dependencies]
+strixonomy-catalog = { workspace = true }
+strixonomy-core = { workspace = true }
+strixonomy-owl = { workspace = true }
+strixonomy-obo = { workspace = true }
+strixonomy-swrl = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

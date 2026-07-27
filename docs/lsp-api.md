@@ -1,9 +1,9 @@
-# OntoCore LSP API (v0.26)
+# Strixonomy LSP API (v0.26)
 
-> **Status:** Documents behavior in **OntoCore v0.26.2**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.26.2**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
-This document describes **what ships today** in `ontocore-lsp`. For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
+This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix; servers also accept legacy **`ontocore/*`** through at least 1.0 ([migration/v0.27.md](migration/v0.27.md)). For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
 
 ## Methods at a glance
 
@@ -15,47 +15,47 @@ This document describes **what ships today** in `ontocore-lsp`. For the **v1.0 t
 | `textDocument/definition` | Shipped | early |
 | `textDocument/rename` / `prepareRename` | Shipped | rename path |
 | `textDocument/semanticTokens/full` | Shipped | v0.13 |
-| `ontocore/indexWorkspace` | Shipped | early |
-| `ontocore/getCatalogSnapshot` | Shipped | early |
-| `ontocore/getEntity` | Shipped | early |
-| `ontocore/query` | Shipped | v0.5 |
-| `ontocore/sparql` | Shipped | v0.5 |
-| `ontocore/parseManchester` | Shipped | v0.5 |
-| `ontocore/applyAxiomPatch` | Shipped | early |
-| `ontocore/runReasoner` | Shipped (+ `$/cancelRequest`) | early |
-| `ontocore/getExplanation` | Shipped | v0.15 |
-| `ontocore/getGraph` | Shipped | v0.7 |
-| `ontocore/runRobot` | Shipped | v0.7 |
-| `ontocore/findUsages` | Shipped | v0.8 |
-| `ontocore/previewRefactor` / `applyRefactor` | Shipped | v0.8 |
-| `ontocore/semanticDiff` | Shipped | v0.10 |
-| `ontocore/listSqlSchema` | Shipped | v0.13 |
-| `ontocore/listPlugins` / `runPlugin` | Shipped | v0.14 |
-| `ontocore/listCommands` | Shipped | v0.17 |
-| `ontocore/getWorkspaceUiState` | Shipped | v0.17 |
-| `ontocore/getDialogSchema` | Shipped | v0.17 |
-| `ontocore/createOntology` / `exportOntology` / `setActiveOntology` / `deleteImpact` | Shipped | v0.17 |
-| `ontocore/dlQuery` / `search` | Shipped | v0.24 |
-| `ontocore/checkInstance` | Shipped | v0.23 |
-| `ontocore/listSwrlRules` / `validateSwrlRule` / `parseSwrlRule` | Shipped | v0.23 |
-| `ontocore/realize` | **Not an LSP method** — use CLI | — |
+| `strixonomy/indexWorkspace` | Shipped | early |
+| `strixonomy/getCatalogSnapshot` | Shipped | early |
+| `strixonomy/getEntity` | Shipped | early |
+| `strixonomy/query` | Shipped | v0.5 |
+| `strixonomy/sparql` | Shipped | v0.5 |
+| `strixonomy/parseManchester` | Shipped | v0.5 |
+| `strixonomy/applyAxiomPatch` | Shipped | early |
+| `strixonomy/runReasoner` | Shipped (+ `$/cancelRequest`) | early |
+| `strixonomy/getExplanation` | Shipped | v0.15 |
+| `strixonomy/getGraph` | Shipped | v0.7 |
+| `strixonomy/runRobot` | Shipped | v0.7 |
+| `strixonomy/findUsages` | Shipped | v0.8 |
+| `strixonomy/previewRefactor` / `applyRefactor` | Shipped | v0.8 |
+| `strixonomy/semanticDiff` | Shipped | v0.10 |
+| `strixonomy/listSqlSchema` | Shipped | v0.13 |
+| `strixonomy/listPlugins` / `runPlugin` | Shipped | v0.14 |
+| `strixonomy/listCommands` | Shipped | v0.17 |
+| `strixonomy/getWorkspaceUiState` | Shipped | v0.17 |
+| `strixonomy/getDialogSchema` | Shipped | v0.17 |
+| `strixonomy/createOntology` / `exportOntology` / `setActiveOntology` / `deleteImpact` | Shipped | v0.17 |
+| `strixonomy/dlQuery` / `search` | Shipped | v0.24 |
+| `strixonomy/checkInstance` | Shipped | v0.23 |
+| `strixonomy/listSwrlRules` / `validateSwrlRule` / `parseSwrlRule` | Shipped | v0.23 |
+| `strixonomy/realize` | **Not an LSP method** — use CLI | — |
 
 ## Start with the schema (recommended)
 
-If you are integrating OntoCore outside VS Code (custom editor, scripts, automation), treat the JSON schema as the **canonical, machine-readable contract** for this release:
+If you are integrating Strixonomy outside VS Code (custom editor, scripts, automation), treat the JSON schema as the **canonical, machine-readable contract** for this release:
 
 - **LSP JSON Schema:** [`lsp-protocol.schema.json`](lsp-protocol.schema.json) (ships with product **v0.26.2**)
 
 ### Schema vs product version
 
-The schema file is the wire contract for the **current product release**. Until v1.0, minor product releases may add or change fields — always pin OntoCore and consume the schema from the **same tagged release**. Historical labels such as “v0.17 schema” in older docs referred to the product release that last expanded the contract, not a separate schema versioning scheme.
+The schema file is the wire contract for the **current product release**. Until v1.0, minor product releases may add or change fields — always pin Strixonomy and consume the schema from the **same tagged release**. Historical labels such as “v0.17 schema” in older docs referred to the product release that last expanded the contract, not a separate schema versioning scheme.
 
 ### Versioning and pinning (pre-1.0)
 
 Until v1.0, minor releases may change request/response fields.
 For stable integrations:
 
-- Pin OntoCore to **0.26.2** in your tooling.
+- Pin Strixonomy to **0.26.2** in your tooling.
 - Prefer consuming `lsp-protocol.schema.json` from the same tagged release you deploy.
 
 ## Wire format
@@ -64,10 +64,10 @@ LSP JSON uses **snake_case** for enums serialized from Rust (`EntityKind`, `Pars
 
 **Reference links (implementation):**
 
-- Types: [`protocol.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-lsp/src/protocol.rs)
+- Types: [`protocol.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-lsp/src/protocol.rs)
 - JSON Schema: [`lsp-protocol.schema.json`](lsp-protocol.schema.json) — query, DL Query, search, patch, reasoner, refactor, graph, semantic diff, schema browser, PR summary, plugin payloads, SWRL, explanation alternatives.
-- Handlers: [`handlers.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-lsp/src/handlers.rs)
-- Extension client: [`client.ts` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/extension/src/lsp/client.ts)
+- Handlers: [`handlers.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-lsp/src/handlers.rs)
+- Extension client: [`client.ts` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/extension/src/lsp/client.ts)
 
 ## Transport
 
@@ -116,9 +116,9 @@ Code actions use kind `quickfix` and return workspace edits (insert text, remove
 
 ## Custom methods
 
-All custom methods use the `ontocore/` prefix.
+All custom methods use the `strixonomy/` prefix.
 
-### `ontocore/indexWorkspace`
+### `strixonomy/indexWorkspace`
 
 Rebuild the workspace catalog.
 
@@ -131,7 +131,7 @@ Rebuild the workspace catalog.
 | Field | Type | Description |
 |-------|------|-------------|
 | `workspace_uri` | string? | Workspace folder URI; omitted uses initialized workspace |
-| `disk_cache` | boolean | When `true`, persist parse snapshots under `.ontocore/cache/` (v0.10+) |
+| `disk_cache` | boolean | When `true`, persist parse snapshots under `.strixonomy/cache/` (v0.10+) |
 
 `workspace_uri` is optional; the server uses the initialized workspace folder when omitted. Legacy clients may send `workspaceUri` (camelCase); prefer `workspace_uri` for new integrations.
 
@@ -181,7 +181,7 @@ Rebuild the workspace catalog.
 }
 ```
 
-### `ontocore/getCatalogSnapshot`
+### `strixonomy/getCatalogSnapshot`
 
 Return documents, entities, and class hierarchy for the explorer UI.
 
@@ -203,7 +203,7 @@ Return documents, entities, and class hierarchy for the explorer UI.
 
 **Errors:** `NOT_INDEXED` if the workspace has not been indexed.
 
-### `ontocore/getEntity`
+### `strixonomy/getEntity`
 
 Return detailed entity information for the inspector.
 
@@ -237,7 +237,7 @@ Return detailed entity information for the inspector.
 
 **Errors:** `NOT_INDEXED`, `ENTITY_NOT_FOUND`
 
-### `ontocore/query`
+### `strixonomy/query`
 
 Run a SQL-like query against the indexed workspace catalog.
 
@@ -257,7 +257,7 @@ Run a SQL-like query against the indexed workspace catalog.
 
 **Errors:** `NOT_INDEXED`, `QUERY_FAILED`
 
-### `ontocore/sparql`
+### `strixonomy/sparql`
 
 Run SPARQL against the indexed catalog store.
 
@@ -267,11 +267,11 @@ Run SPARQL against the indexed catalog store.
 { "query": "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10" }
 ```
 
-**Result:** `TabularQueryResult` (same shape as `ontocore/query`).
+**Result:** `TabularQueryResult` (same shape as `strixonomy/query`).
 
 **Errors:** `NOT_INDEXED`, `QUERY_FAILED`
 
-### `ontocore/parseManchester`
+### `strixonomy/parseManchester`
 
 Parse and validate a Manchester class expression; return normalized text, Turtle fragment, expression tree, diagnostics, and catalog-based completion lists.
 
@@ -298,9 +298,9 @@ Parse and validate a Manchester class expression; return normalized text, Turtle
 
 **Errors:** `NOT_INDEXED`, `MANCHESTER_INVALID`
 
-### `ontocore/applyAxiomPatch`
+### `strixonomy/applyAxiomPatch`
 
-Apply patch operations to Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), or OWL/XML (`.owx`) documents. See [authoring.md](authoring.md), [OBO authoring](ontocode/obo-authoring.md), and [OWL/XML write-back](guides/owl-xml-workflow.md).
+Apply patch operations to Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), or OWL/XML (`.owx`) documents. See [authoring.md](authoring.md), [OBO authoring](ide/obo-authoring.md), and [OWL/XML write-back](guides/owl-xml-workflow.md).
 
 **Buffer-first (VS Code):** Reads the open document buffer when available, applies patches in memory, updates the buffer, writes disk, then reindexes. See [errors.md](errors.md) for `APPLIED_NOT_INDEXED`.
 
@@ -318,7 +318,7 @@ Legacy patch array (unchanged since v0.11):
 }
 ```
 
-**v0.19+ transaction envelope (optional):** same operations wrapped for `ontocore-edit` apply path. Legacy `patches` arrays remain accepted.
+**v0.19+ transaction envelope (optional):** same operations wrapped for `strixonomy-edit` apply path. Legacy `patches` arrays remain accepted.
 
 ```json
 {
@@ -348,13 +348,13 @@ Either `patches` or `transaction.changes` may be supplied (not both required). S
 
 **`EntityAxiomSummary` kinds:** `sub_class_of`, `equivalent_class`, `disjoint_class`, `domain`, `range`, `property_chain` (property chains editable via patch ops since v0.12).
 
-**Import ops (v0.11):** `add_import` and `remove_import` — see [patch-reference.md](patch-reference.md) and [Manage Imports](ontocode/manage-imports.md).
+**Import ops (v0.11):** `add_import` and `remove_import` — see [patch-reference.md](patch-reference.md) and [Manage Imports](ide/manage-imports.md).
 
 See [patch-reference.md](patch-reference.md) for CLI `ApplyPatchResult` examples and [errors.md](errors.md) for failure codes.
 
 **Errors:** `PATCH_INVALID`, `UNSUPPORTED_FORMAT`, `NOT_INDEXED`, `APPLIED_NOT_INDEXED`
 
-### `ontocore/runReasoner`
+### `strixonomy/runReasoner`
 
 Run OWL classification via OntoLogos 1.0.0 (`el`, `rl`, `rdfs`, `dl`, `auto`).
 
@@ -386,7 +386,7 @@ Run OWL classification via OntoLogos 1.0.0 (`el`, `rl`, `rdfs`, `dl`, `auto`).
 
 #### Cancelling a reasoner run (`$/cancelRequest`)
 
-Long `ontocore/runReasoner` calls honor the standard LSP notification [`$/cancelRequest`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#cancelRequest) while classification (and enrich steps) run.
+Long `strixonomy/runReasoner` calls honor the standard LSP notification [`$/cancelRequest`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#cancelRequest) while classification (and enrich steps) run.
 
 **Client:** send a notification (not a request):
 
@@ -402,7 +402,7 @@ Long `ontocore/runReasoner` calls honor the standard LSP notification [`$/cancel
 
 Cancel only applies to the active reasoner request id. Unrelated inbox messages received during classify are deferred and processed after the wait loop resumes.
 
-### `ontocore/getExplanation` (v0.15+)
+### `strixonomy/getExplanation` (v0.15+)
 
 Return an EL/RL/RDFS/DL explanation for an unsatisfiable class. Responses may include **multiple alternative justifications** and **staleness metadata** for cache invalidation.
 
@@ -423,11 +423,11 @@ Return an EL/RL/RDFS/DL explanation for an unsatisfiable class. Responses may in
 | `indexed_at` | **(v0.15+)** Unix timestamp (seconds) of the workspace index used when the explanation was generated |
 | `content_hash` | **(v0.15+)** Workspace content hash at explanation time — compare on later calls to detect stale explanations after edits |
 
-Clients should treat explanations as **stale** when `indexed_at` or `content_hash` no longer matches the current workspace snapshot. The OntoCode explanation panel shows a stale warning and offers re-run.
+Clients should treat explanations as **stale** when `indexed_at` or `content_hash` no longer matches the current workspace snapshot. The Strixonomy explanation panel shows a stale warning and offers re-run.
 
 **Errors:** `NOT_INDEXED`, `EXPLANATION_FAILED`
 
-### `ontocore/getGraph` (v0.7)
+### `strixonomy/getGraph` (v0.7)
 
 Returns graph nodes and edges for visualization webviews.
 
@@ -448,7 +448,7 @@ Returns graph nodes and edges for visualization webviews.
 
 **Errors:** `NOT_INDEXED`, `GRAPH_FAILED`, `INVALID_PARAMS` (e.g. missing `root_iri` for `neighborhood`)
 
-### `ontocore/runRobot` (v0.7)
+### `strixonomy/runRobot` (v0.7)
 
 Runs a ROBOT CLI subcommand.
 
@@ -458,7 +458,7 @@ Runs a ROBOT CLI subcommand.
 
 **Errors:** `ROBOT_FAILED` (ROBOT missing, non-zero exit, or I/O failure), `INVALID_PARAMS`
 
-### `ontocore/findUsages` (v0.8)
+### `strixonomy/findUsages` (v0.8)
 
 Return structured IRI usages across the workspace catalog and Turtle text spans.
 
@@ -468,7 +468,7 @@ Return structured IRI usages across the workspace catalog and Turtle text spans.
 
 **Errors:** `NOT_INDEXED`, `INVALID_PARAMS`
 
-### `ontocore/previewRefactor` (v0.8)
+### `strixonomy/previewRefactor` (v0.8)
 
 Build a refactor plan without writing files.
 
@@ -491,7 +491,7 @@ Build a refactor plan without writing files.
 
 **Errors:** `NOT_INDEXED`, `REFACTOR_FAILED`, `INVALID_PARAMS`
 
-### `ontocore/applyRefactor` (v0.8)
+### `strixonomy/applyRefactor` (v0.8)
 
 Apply a previously previewed refactor plan. The server re-previews from `request`, verifies the submitted `plan` matches, validates paths against the workspace jail, writes atomically, syncs open buffers, and reindexes.
 
@@ -501,9 +501,9 @@ Apply a previously previewed refactor plan. The server re-previews from `request
 
 **Errors:** `NOT_INDEXED`, `REFACTOR_FAILED`, `INVALID_PARAMS`
 
-### `ontocore/semanticDiff` (v0.10+)
+### `strixonomy/semanticDiff` (v0.10+)
 
-Compare semantic catalogs between git refs, directories, or indexed workspace snapshots. Alias: `ontocore/getSemanticDiff`.
+Compare semantic catalogs between git refs, directories, or indexed workspace snapshots. Alias: `strixonomy/getSemanticDiff`.
 
 **Params:** `SemanticDiffParams`
 
@@ -518,11 +518,11 @@ Compare semantic catalogs between git refs, directories, or indexed workspace sn
 
 When both `left_path` and `right_path` are set, git refs are ignored and directories are compared directly (paths must resolve within workspace roots).
 
-**Result:** `{ "diff": DiffResult }` — axiom-level changes, entity additions/removals, breaking-change flags. With `format: "pr-summary"`, also includes `formatted` Markdown string. See [Semantic diff guide](ontocode/semantic-diff.md).
+**Result:** `{ "diff": DiffResult }` — axiom-level changes, entity additions/removals, breaking-change flags. With `format: "pr-summary"`, also includes `formatted` Markdown string. See [Semantic diff guide](ide/semantic-diff.md).
 
 **Errors:** `INVALID_PARAMS` (bad refs, paths outside workspace, git errors), `NOT_INDEXED` (indexed-catalog ref before first index), `REASONER_FAILED` (when `reasoner: true` enrichment fails)
 
-### `ontocore/listSqlSchema` (v0.13+)
+### `strixonomy/listSqlSchema` (v0.13+)
 
 Returns SQL virtual table metadata for the Query Workbench schema browser.
 
@@ -542,9 +542,9 @@ Standard LSP semantic tokens for **Turtle** (`.ttl`) and **OBO** (`.obo`) open d
 
 Requires document text in the LSP open-document buffer (unsaved buffers supported).
 
-### `ontocore/listPlugins` (v0.14+)
+### `strixonomy/listPlugins` (v0.14+)
 
-Returns discovered workspace plugins from `.ontocore/plugins/*.toml` plus built-in registration metadata.
+Returns discovered workspace plugins from `.strixonomy/plugins/*.toml` plus built-in registration metadata.
 
 **Params:** none (uses indexed workspace root)
 
@@ -574,7 +574,7 @@ Returns discovered workspace plugins from `.ontocore/plugins/*.toml` plus built-
 !!! note "Error codes"
     Per-method error codes are documented in prose and [errors.md](errors.md). A machine-checkable enum in `lsp-protocol.schema.json` is a follow-up (not yet shipped).
 
-### `ontocore/listCommands` (v0.17+)
+### `strixonomy/listCommands` (v0.17+)
 
 Return stable command metadata for menus, toolbars, and enablement.
 
@@ -584,7 +584,7 @@ Return stable command metadata for menus, toolbars, and enablement.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | string | Command id (e.g. `ontocode.newOntology`) |
+| `id` | string | Command id (e.g. `strixonomy.newOntology`) |
 | `title` | string | Display title |
 | `category` | string | Menu category (`File`, `Edit`, …) |
 | `enablement` | string[] | Predicates: `always`, `has_ontology`, `is_dirty`, `has_selection`, `reasoner_running`, `reasoner_idle`, `can_edit_selection` |
@@ -593,7 +593,7 @@ Return stable command metadata for menus, toolbars, and enablement.
 
 **Errors:** none (empty `commands` if the server has no registered descriptors)
 
-### `ontocore/getWorkspaceUiState` (v0.17+)
+### `strixonomy/getWorkspaceUiState` (v0.17+)
 
 Return enablement inputs for the command registry.
 
@@ -609,7 +609,7 @@ Return enablement inputs for the command registry.
 
 **Errors:** none
 
-### `ontocore/getDialogSchema` (v0.17+)
+### `strixonomy/getDialogSchema` (v0.17+)
 
 **Params:** `{ "dialog_id": string }`
 
@@ -619,7 +619,7 @@ Known dialog ids include `new_ontology`, `export_ontology`, `save_as`, `prefix_m
 
 **Errors:** `INVALID_PARAMS` (unknown `dialog_id`)
 
-### `ontocore/createOntology` (v0.17+)
+### `strixonomy/createOntology` (v0.17+)
 
 Scaffold a new Turtle or OBO ontology file under the workspace.
 
@@ -629,7 +629,7 @@ Scaffold a new Turtle or OBO ontology file under the workspace.
 
 **Errors:** `INVALID_PARAMS` (workspace not initialized, path outside roots, file already exists, unsafe path), `INDEX_FAILED` (I/O failure creating the file)
 
-### `ontocore/exportOntology` (v0.17+)
+### `strixonomy/exportOntology` (v0.17+)
 
 Export/convert an ontology via ROBOT `convert`, with same-format copy fallback when ROBOT is unavailable.
 
@@ -639,7 +639,7 @@ Export/convert an ontology via ROBOT `convert`, with same-format copy fallback w
 
 **Errors:** `INVALID_PARAMS` (path outside workspace), `ROBOT_FAILED` (ROBOT unavailable and formats differ, or copy failure)
 
-### `ontocore/setActiveOntology` (v0.17+)
+### `strixonomy/setActiveOntology` (v0.17+)
 
 Set the active ontology id used for new-axiom targeting.
 
@@ -649,7 +649,7 @@ Set the active ontology id used for new-axiom targeting.
 
 **Errors:** `ENTITY_NOT_FOUND` (id not in the indexed catalog), `NOT_INDEXED`
 
-### `ontocore/deleteImpact` (v0.17+)
+### `strixonomy/deleteImpact` (v0.17+)
 
 Preview delete impact for an entity.
 
@@ -659,7 +659,7 @@ Preview delete impact for an entity.
 
 **Errors:** `NOT_INDEXED`
 
-### `ontocore/runPlugin` (v0.14+, views v0.15)
+### `strixonomy/runPlugin` (v0.14+, views v0.15)
 
 Run a plugin validate/export/workflow/**ui_view** action.
 
@@ -676,13 +676,13 @@ Run a plugin validate/export/workflow/**ui_view** action.
 
 `view_html` is populated for `ui_view` actions — HTML rendered in the plugin view panel.
 
-Plugin diagnostics use `code` values like `plugin:<id>:<code>` and LSP `source` `ontocore-plugin:<id>`. See [errors.md](errors.md#plugin-diagnostic-codes-v014).
+Plugin diagnostics use `code` values like `plugin:<id>:<code>` and LSP `source` `strixonomy-plugin:<id>`. See [errors.md](errors.md#plugin-diagnostic-codes-v014).
 
 **Errors:** `NOT_INDEXED`, `INDEX_FAILED` (plugin not found, missing permission, unsupported action, subprocess failure, or export error)
 
 `getCatalogSnapshot` includes plugin diagnostics merged after index (same wire codes).
 
-### `ontocore/dlQuery` (v0.24+)
+### `strixonomy/dlQuery` (v0.24+)
 
 Run a Manchester **class expression** DL Query (instances / subclasses / superclasses / equivalents). Named classes use hierarchy + realization; anonymous expressions inject a temporary equivalent class (never written to disk).
 
@@ -711,7 +711,7 @@ Run a Manchester **class expression** DL Query (instances / subclasses / supercl
 
 Honesty notes: [DL Query guide](guides/dl-query.md) · cookbook: [examples/dl-query.md](examples/dl-query.md).
 
-### `ontocore/search` (v0.24+)
+### `strixonomy/search` (v0.24+)
 
 Workspace entity search for QuickPick / live search UIs.
 
@@ -726,7 +726,7 @@ Workspace entity search for QuickPick / live search UIs.
 
 **Errors:** `NOT_INDEXED`
 
-### `ontocore/checkInstance` (v0.23+)
+### `strixonomy/checkInstance` (v0.23+)
 
 Check whether an individual is an instance of a class (ABox).
 
@@ -743,11 +743,11 @@ Check whether an individual is an instance of a class (ABox).
 **Errors:** `NOT_INDEXED`, `REASONER_FAILED`, `INVALID_PARAMS`
 
 !!! note "Realization is CLI-only"
-    There is no LSP `ontocore/realize` method. Use `ontocore realize` for bulk realization in CI — [CLI reference](cli-reference.md) · [realize cookbook](examples/realize.md). Instance checks use this method or `ontocore check-instance`.
+    There is no LSP `strixonomy/realize` method. Use `strixonomy realize` for bulk realization in CI — [CLI reference](cli-reference.md) · [realize cookbook](examples/realize.md). Instance checks use this method or `strixonomy check-instance`.
 
-### `ontocore/listSwrlRules` (v0.23+)
+### `strixonomy/listSwrlRules` (v0.23+)
 
-List SWRL rules found in open Turtle buffers and indexed `.ttl` documents (`ontocore:swrlRule` JSON).
+List SWRL rules found in open Turtle buffers and indexed `.ttl` documents (`strixonomy:swrlRule` JSON).
 
 **Params:** none
 
@@ -755,7 +755,7 @@ List SWRL rules found in open Turtle buffers and indexed `.ttl` documents (`onto
 
 **Errors:** none (returns an empty list when no rules are present; indexing is recommended but not required for open buffers)
 
-### `ontocore/validateSwrlRule` (v0.23+)
+### `strixonomy/validateSwrlRule` (v0.23+)
 
 Validate a SWRL rule JSON string (builtins / DLSafe diagnostics). Does not write the ontology.
 
@@ -765,9 +765,9 @@ Validate a SWRL rule JSON string (builtins / DLSafe diagnostics). Does not write
 
 **Errors:** `INVALID_PARAMS` (unparseable rule JSON)
 
-### `ontocore/parseSwrlRule` (v0.23+)
+### `strixonomy/parseSwrlRule` (v0.23+)
 
-Parse SWRL rule JSON into the OntoCore SWRL IR.
+Parse SWRL rule JSON into the Strixonomy SWRL IR.
 
 **Params:** `{ rule_json: string }`
 
@@ -790,7 +790,7 @@ Custom method failures return `LspErrorPayload` in the JSON-RPC error `data` fie
 
 These remain **target** items in [LSP_SPEC.md](design/LSP_SPEC.md) — they are **not** shipped as first-class LSP methods today:
 
-- Dedicated LSP `ontocore/realize` (use CLI `ontocore realize` / `check-instance` instead)
+- Dedicated LSP `strixonomy/realize` (use CLI `strixonomy realize` / `check-instance` instead)
 - Additional standard LSP surfaces called out as future in LSP_SPEC (beyond completion, codeAction, semantic tokens, rename/prepareRename, hover, definition)
 
-**Already shipped** (do not treat as gaps): `textDocument/completion` (v0.11), semantic tokens + `listSqlSchema` (v0.13), `prepareRename` / rename for IRI/QName, semantic diff (`ontocore/semanticDiff` + [Semantic diff guide](ontocode/semantic-diff.md)).
+**Already shipped** (do not treat as gaps): `textDocument/completion` (v0.11), semantic tokens + `listSqlSchema` (v0.13), `prepareRename` / rename for IRI/QName, semantic diff (`strixonomy/semanticDiff` + [Semantic diff guide](ide/semantic-diff.md)).

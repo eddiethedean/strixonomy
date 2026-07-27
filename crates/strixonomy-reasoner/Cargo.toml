@@ -1,0 +1,42 @@
+[package]
+name = "strixonomy-reasoner"
+description = "OntoLogos-backed reasoner facade for Strixonomy (strixonomy-*)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords.workspace = true
+categories.workspace = true
+include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE-MIT", "LICENSE-APACHE-2.0"]
+
+[dependencies]
+strixonomy-catalog = { workspace = true }
+strixonomy-core = { workspace = true }
+strixonomy-owl = { workspace = true }
+strixonomy-parser = { workspace = true }
+strixonomy-swrl = { workspace = true }
+horned-owl.workspace = true
+ontologos-bridge = { workspace = true }
+ontologos-core.workspace = true
+ontologos-dl.workspace = true
+ontologos-el.workspace = true
+ontologos-explain.workspace = true
+ontologos-facade.workspace = true
+ontologos-parser.workspace = true
+ontologos-profile.workspace = true
+ontologos-rl.workspace = true
+ontologos-swrl.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+sha2.workspace = true
+hex.workspace = true
+tempfile = "3"
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+strixonomy-catalog = { workspace = true }

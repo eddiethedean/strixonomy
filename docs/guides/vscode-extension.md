@@ -1,6 +1,6 @@
-# VS Code extension (OntoCode)
+# VS Code extension (Strixonomy)
 
 !!! note "Moved"
-    This guide has moved to **[OntoCode VS Code extension](../ontocode/vscode-extension.md)**.
+    This guide has moved to **[Strixonomy VS Code extension](../ide/vscode-extension.md)**.
 
-[Continue to OntoCode VS Code extension →](../ontocode/vscode-extension.md)
+[Continue to Strixonomy VS Code extension →](../ide/vscode-extension.md)

@@ -2,10 +2,10 @@
 
 #![allow(dead_code)]
 
-use ontocore_catalog::{IndexBuilder, OntologyCatalog};
-use ontocore_owl::PatchOp;
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
+use strixonomy_catalog::{IndexBuilder, OntologyCatalog};
+use strixonomy_owl::PatchOp;
 use tempfile::TempDir;
 
 /// Directory of synthetic Protégé-ported fixtures.
@@ -66,7 +66,7 @@ pub fn apply_patches_reindex(
     patches: &[PatchOp],
     namespaces: &BTreeMap<String, String>,
 ) -> OntologyCatalog {
-    let result = ontocore_owl::apply_patches(path, patches, false, namespaces).expect("apply");
+    let result = strixonomy_owl::apply_patches(path, patches, false, namespaces).expect("apply");
     assert!(result.applied, "expected patches applied; diagnostics={:?}", result.diagnostics);
     index_workspace(workspace)
 }

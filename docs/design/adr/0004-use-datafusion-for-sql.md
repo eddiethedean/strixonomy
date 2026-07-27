@@ -6,7 +6,7 @@
 
 ## Context
 
-OntoCore should expose ontology concepts as SQL-queryable virtual tables.
+Strixonomy should expose ontology concepts as SQL-queryable virtual tables.
 
 ## Decision
 

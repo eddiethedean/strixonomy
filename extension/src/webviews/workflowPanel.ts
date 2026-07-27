@@ -6,7 +6,7 @@ export class WorkflowPanel {
 
   private static channel(): vscode.OutputChannel {
     if (!WorkflowPanel.output) {
-      WorkflowPanel.output = vscode.window.createOutputChannel("OntoCode Workflow");
+      WorkflowPanel.output = vscode.window.createOutputChannel("Strixonomy Workflow");
     }
     return WorkflowPanel.output;
   }
@@ -29,17 +29,17 @@ export class WorkflowPanel {
       }
       if (!result.success) {
         void vscode.window.showErrorMessage(
-          `OntoCode: owlmake workflow step '${step}' failed — see Output → OntoCode Workflow`
+          `Strixonomy: owlmake workflow step '${step}' failed — see Output → Strixonomy Workflow`
         );
         return;
       }
       void vscode.window.showInformationMessage(
-        `OntoCode: owlmake workflow step '${step}' completed`
+        `Strixonomy: owlmake workflow step '${step}' completed`
       );
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       ch.appendLine(`Error: ${message}`);
-      void vscode.window.showErrorMessage(`OntoCode workflow failed: ${message}`);
+      void vscode.window.showErrorMessage(`Strixonomy workflow failed: ${message}`);
     }
   }
 }

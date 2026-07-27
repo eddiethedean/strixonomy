@@ -1,7 +1,7 @@
 # WebProtégé Features
 
 ## Purpose
-This document catalogs the major capabilities of WebProtégé and identifies modernization opportunities for OntoCode.
+This document catalogs the major capabilities of WebProtégé and identifies modernization opportunities for Strixonomy.
 
 ## Core Features
 - Browser-based ontology editing

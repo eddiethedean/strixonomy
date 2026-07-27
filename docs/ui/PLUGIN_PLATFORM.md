@@ -7,11 +7,11 @@
 > See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Plugin Platform Specification
+# Strixonomy Plugin Platform Specification
 
 ## Purpose
 
-The Plugin Platform transforms OntoCode into an ecosystem via **Capability Providers** — typed extension interfaces for reasoning, query, AI, refactoring, and more.
+The Plugin Platform transforms Strixonomy into an ecosystem via **Capability Providers** — typed extension interfaces for reasoning, query, AI, refactoring, and more.
 
 > **Architecture:** [platform/CAPABILITY_PROVIDERS.md](../platform/CAPABILITY_PROVIDERS.md) · **Engineering history:** [design/PLUGIN_SPEC.md](../design/PLUGIN_SPEC.md) · **Shipped host (v0.14+):** [Plugin authoring](../guides/plugins.md)
 
@@ -68,7 +68,7 @@ Users can review and revoke permissions.
 # Architecture
 
     +------------------------------------------------------+
-    |                 OntoCode Platform                    |
+    |                 Strixonomy Platform                    |
     +------------------------------------------------------+
     | Workspace API | Graph API | Query API | AI API       |
     | Reasoning API | UI API    | Events    | Storage API  |
@@ -294,7 +294,7 @@ Building plugins should be approachable.
 
 # Success Criteria
 
-The Plugin Platform succeeds when the community can extend OntoCode in
+The Plugin Platform succeeds when the community can extend Strixonomy in
 ways the core team never anticipated while preserving a consistent user
 experience. Every plugin should feel native, performant, secure, and
 deeply integrated with the semantic workspace rather than bolted onto

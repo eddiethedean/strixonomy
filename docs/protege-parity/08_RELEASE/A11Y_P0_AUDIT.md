@@ -1,6 +1,6 @@
 # P0 accessibility audit inventory (v0.25 / EPIC-010)
 
-Lightweight gap tags for OntoCode-owned surfaces. Host chrome (Explorer, Command Palette, Settings) is **N/A — VS Code provided**.
+Lightweight gap tags for Strixonomy-owned surfaces. Host chrome (Explorer, Command Palette, Settings) is **N/A — VS Code provided**.
 
 | Surface | Owner | Keyboard | Focus | SR | Contrast/motion | Notes |
 |---------|-------|----------|-------|----|-----------------|-------|

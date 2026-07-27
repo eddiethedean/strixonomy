@@ -1,28 +1,28 @@
-# Using OntoCore as a Rust library
+# Using Strixonomy as a Rust library
 
-Embed **OntoCore** in tools, pipelines, or custom CLIs via the [`ontocore`](https://crates.io/crates/ontocore) façade crate from **crates.io**. You do **not** need to clone this repository.
+Embed **Strixonomy** in tools, pipelines, or custom CLIs via the [`strixonomy`](https://crates.io/crates/strixonomy) façade crate from **crates.io**. You do **not** need to clone this repository.
 
-> OntoCore (previously branded **OntoIndex** / `ontoindex-*`) is implemented by the `ontocore-*` crates. See [v0.9 migration](../migration/v0.9.md).
+> Strixonomy (previously branded **OntoIndex** / `ontoindex-*`) is implemented by the `strixonomy-*` crates. See [v0.9 migration](../migration/v0.9.md).
 
 Pre-1.0: public APIs may change between minor releases until v1.0. Pin minors in production. Crates are at **0.26.x**.
 
 !!! tip "Prefer `Workspace`"
-    For new code, use the **`Workspace` API** (`ontocore = "0.26"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../ontocore/rust-api.md).
+    For new code, use the **`Workspace` API** (`strixonomy = "0.26"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../strixonomy/rust-api.md).
 
 ## crates.io first (5 minutes)
 
 1. Create a crate (or open an existing one).
-2. Add OntoCore:
+2. Add Strixonomy:
 
 ```toml
 [dependencies]
-ontocore = "0.26"
+strixonomy = "0.26"
 ```
 
 3. Point `Workspace::open` at **your** ontology directory (any folder of `.ttl` / `.obo` / other indexed formats):
 
 ```rust
-use ontocore::Workspace;
+use strixonomy::Workspace;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let ws = Workspace::open("./ontologies")?;
@@ -34,11 +34,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-4. Run with `cargo run`. First compile pulls OntoCore dependencies (can take several minutes cold).
+4. Run with `cargo run`. First compile pulls Strixonomy dependencies (can take several minutes cold).
 
-**Errors:** `Workspace::open` returns `CatalogError`; `query` / `sparql` return `QueryError`. The façade also exposes a unified [`ontocore::Error`](https://docs.rs/ontocore/latest/ontocore/enum.Error.html) for `From` conversion — see [Errors reference](../errors.md#rust-library-errors).
+**Errors:** `Workspace::open` returns `CatalogError`; `query` / `sparql` return `QueryError`. The façade also exposes a unified [`strixonomy::Error`](https://docs.rs/strixonomy/latest/strixonomy/enum.Error.html) for `From` conversion — see [Errors reference](../errors.md#rust-library-errors).
 
-Method-level params / returns / side effects: [Rust API — Workspace methods](../ontocore/rust-api.md#workspace-method-reference).
+Method-level params / returns / side effects: [Rust API — Workspace methods](../strixonomy/rust-api.md#workspace-method-reference).
 
 ## Minimal `Cargo.toml` recipes
 
@@ -46,19 +46,19 @@ Method-level params / returns / side effects: [Rust API — Workspace methods](.
 
 ```toml
 [dependencies]
-ontocore = "0.26"
+strixonomy = "0.26"
 ```
 
 **Classify + explain** (same crate — reasoner is included):
 
 ```toml
 [dependencies]
-ontocore = "0.26"
+strixonomy = "0.26"
 ```
 
 ```rust
-use ontocore::Workspace;
-use ontocore::reasoner::ReasonerId;
+use strixonomy::Workspace;
+use strixonomy::reasoner::ReasonerId;
 
 let ws = Workspace::open("./ontologies")?;
 let result = ws.classify(ReasonerId::El)?;
@@ -68,31 +68,31 @@ let result = ws.classify(ReasonerId::El)?;
 
 ```toml
 [dependencies]
-ontocore = "0.26"
-ontocore-edit = "0.26"
-ontocore-owl = "0.26"
+strixonomy = "0.26"
+strixonomy-edit = "0.26"
+strixonomy-owl = "0.26"
 ```
 
-See [Semantic transactions](#semantic-transactions-ontocore-edit) below.
+See [Semantic transactions](#semantic-transactions-strixonomy-edit) below.
 
 ## Optional: monorepo examples (clone only)
 
-In-repo examples under the unpublished `ontocode` package need a git clone:
+In-repo examples under the unpublished `strixonomy` package need a git clone:
 
 ```bash
-git clone https://github.com/eddiethedean/ontocode.git && cd ontocode
-cargo run -p ontocode --example ontocore_workspace
-cargo run -p ontocode --example workspace_operations
-cargo run -p ontocode --example error_handling
+git clone https://github.com/eddiethedean/strixonomy.git && cd strixonomy
+cargo run -p strixonomy --example strixonomy_workspace
+cargo run -p strixonomy --example workspace_operations
+cargo run -p strixonomy --example error_handling
 ```
 
-Those examples use `fixtures/` — that directory exists only in a clone, not after `cargo add ontocore`.
+Those examples use `fixtures/` — that directory exists only in a clone, not after `cargo add strixonomy`.
 
 ## Lower-level: index and query
 
 ```rust
-use ontocore::catalog::IndexBuilder;
-use ontocore::query::query_catalog;
+use strixonomy::catalog::IndexBuilder;
+use strixonomy::query::query_catalog;
 
 let catalog = IndexBuilder::new().workspace(".").build()?;
 let result = query_catalog(&catalog, "SELECT short_name, labels FROM classes")?;
@@ -100,18 +100,18 @@ let result = query_catalog(&catalog, "SELECT short_name, labels FROM classes")?;
 
 ## Crate map
 
-See [OntoCore crate map](../ontocore/crate-map.md) for the full table. Summary:
+See [Strixonomy crate map](../strixonomy/crate-map.md) for the full table. Summary:
 
 | Crate | Role |
 |-------|------|
-| `ontocore` | Public façade — `Workspace`, module re-exports |
-| `ontocore-*` | Implementation crates (stable names until v1.0) |
+| `strixonomy` | Public façade — `Workspace`, module re-exports |
+| `strixonomy-*` | Implementation crates (stable names until v1.0) |
 
 ## Classification example
 
 ```rust
-use ontocore::Workspace;
-use ontocore::reasoner::ReasonerId;
+use strixonomy::Workspace;
+use strixonomy::reasoner::ReasonerId;
 
 let ws = Workspace::open(".")?;
 let result = ws.classify(ReasonerId::El)?;
@@ -121,7 +121,7 @@ println!("consistent: {}", result.consistent);
 ## Workspace options (v0.10+)
 
 ```rust
-use ontocore::{Workspace, WorkspaceOptions};
+use strixonomy::{Workspace, WorkspaceOptions};
 
 let ws = Workspace::open_with_options(
     WorkspaceOptions::single("./ontology")
@@ -134,18 +134,18 @@ let diff = ws.diff_against_path("./baseline")?;
 | Option | Purpose |
 |--------|---------|
 | `WorkspaceOptions::single(path)` | Primary workspace root |
-| `with_disk_cache(true)` | Persist parse cache under `.ontocore/cache/` |
+| `with_disk_cache(true)` | Persist parse cache under `.strixonomy/cache/` |
 | `reindex_incremental()` | Reuse unchanged documents by content hash |
 
-Semantic diff: `ws.diff()`, `ws.diff_against_path()`, or `ontocore::diff::diff_git_refs` — see [Semantic diff](../ontocode/semantic-diff.md).
+Semantic diff: `ws.diff()`, `ws.diff_against_path()`, or `strixonomy::diff::diff_git_refs` — see [Semantic diff](../ide/semantic-diff.md).
 
-## Semantic transactions (`ontocore-edit`)
+## Semantic transactions (`strixonomy-edit`)
 
-**v0.19+** ships **`ontocore-edit`** for ordered, invertible Turtle/OBO edit batches. Use when building undo/redo, audit trails, or multi-step apply pipelines:
+**v0.19+** ships **`strixonomy-edit`** for ordered, invertible Turtle/OBO edit batches. Use when building undo/redo, audit trails, or multi-step apply pipelines:
 
 ```rust
-use ontocore_edit::Transaction;
-use ontocore_owl::PatchOp;
+use strixonomy_edit::Transaction;
+use strixonomy_owl::PatchOp;
 
 let txn = Transaction::from_turtle(vec![
     PatchOp::SetLabel {
@@ -157,13 +157,13 @@ let txn = Transaction::from_turtle(vec![
 let undo = txn.invert()?;
 ```
 
-Dependency: `ontocore-edit = "0.26"`. Full API: [Rust API — semantic transactions](../ontocore/rust-api.md#semantic-transactions-ontocore-edit-v019) · [docs.rs/ontocore-edit](https://docs.rs/ontocore-edit).
+Dependency: `strixonomy-edit = "0.26"`. Full API: [Rust API — semantic transactions](../strixonomy/rust-api.md#semantic-transactions-strixonomy-edit-v019) · [docs.rs/strixonomy-edit](https://docs.rs/strixonomy-edit).
 
 ## Next steps
 
 | Goal | Doc |
 |------|-----|
-| Method reference | [Rust API](../ontocore/rust-api.md) |
+| Method reference | [Rust API](../strixonomy/rust-api.md) |
 | Error types | [Errors](../errors.md#rust-library-errors) |
 | CLI instead of embed | [Install CLI & CI (detail)](../install-cli-ci.md) |
 | Stability expectations | [API stability](api-stability.md) |

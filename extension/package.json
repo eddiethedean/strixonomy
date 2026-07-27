@@ -1,18 +1,18 @@
 {
-  "name": "ontocode",
-  "displayName": "OntoCode",
-  "description": "Ontology IDE for VS Code powered by OntoCore. Browse, edit Turtle, query, reason (EL–DL), validate, and diff OWL/RDF/OBO ontologies from the IDE or CI.",
+  "name": "strixonomy",
+  "displayName": "Strixonomy",
+  "description": "Ontology IDE for VS Code powered by Strixonomy. Browse, edit Turtle, query, reason (EL\u2013DL), validate, and diff OWL/RDF/OBO ontologies from the IDE or CI.",
   "version": "0.26.2",
-  "publisher": "ontocode",
+  "publisher": "strixonomy",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eddiethedean/ontocode.git",
+    "url": "https://github.com/eddiethedean/strixonomy.git",
     "directory": "extension"
   },
-  "homepage": "https://ontocode-vs.readthedocs.io/en/latest/guides/first-success/",
+  "homepage": "https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/",
   "bugs": {
-    "url": "https://github.com/eddiethedean/ontocode/issues"
+    "url": "https://github.com/eddiethedean/strixonomy/issues"
   },
   "engines": {
     "vscode": "^1.85.0"
@@ -36,7 +36,7 @@
     "sparql",
     "semantic web",
     "knowledge graph",
-    "ontocore",
+    "strixonomy",
     "explorer",
     "diagnostics",
     "linter",
@@ -56,7 +56,7 @@
     "workspaceContains:**/*.nq",
     "workspaceContains:**/*.trig",
     "workspaceContains:**/*.obo",
-    "onView:ontocode.explorer.ontologies"
+    "onView:strixonomy.explorer.ontologies"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -83,659 +83,659 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "ontocode",
-          "title": "OntoCode",
+          "id": "strixonomy",
+          "title": "Strixonomy",
           "icon": "media/icon.svg"
         }
       ]
     },
     "views": {
-      "ontocode": [
+      "strixonomy": [
         {
-          "id": "ontocode.explorer.ontologies",
+          "id": "strixonomy.explorer.ontologies",
           "name": "Ontologies"
         },
         {
-          "id": "ontocode.explorer.classes",
+          "id": "strixonomy.explorer.classes",
           "name": "Classes"
         },
         {
-          "id": "ontocode.explorer.properties",
+          "id": "strixonomy.explorer.properties",
           "name": "Properties"
         },
         {
-          "id": "ontocode.explorer.individuals",
+          "id": "strixonomy.explorer.individuals",
           "name": "Individuals"
         },
         {
-          "id": "ontocode.explorer.diagnostics",
+          "id": "strixonomy.explorer.diagnostics",
           "name": "Diagnostics"
         }
       ]
     },
     "viewsWelcome": [
       {
-        "view": "ontocode.explorer.ontologies",
-        "contents": "Index the workspace to browse ontology documents.\n[Index Workspace](command:ontocode.indexWorkspace)",
-        "when": "!ontocode:hasOntology"
+        "view": "strixonomy.explorer.ontologies",
+        "contents": "Index the workspace to browse ontology documents.\n[Index Workspace](command:strixonomy.indexWorkspace)",
+        "when": "!strixonomy:hasOntology"
       },
       {
-        "view": "ontocode.explorer.classes",
-        "contents": "Index the workspace to browse classes.\n[Index Workspace](command:ontocode.indexWorkspace)",
-        "when": "!ontocode:hasOntology"
+        "view": "strixonomy.explorer.classes",
+        "contents": "Index the workspace to browse classes.\n[Index Workspace](command:strixonomy.indexWorkspace)",
+        "when": "!strixonomy:hasOntology"
       },
       {
-        "view": "ontocode.explorer.properties",
-        "contents": "Index the workspace to browse properties.\n[Index Workspace](command:ontocode.indexWorkspace)",
-        "when": "!ontocode:hasOntology"
+        "view": "strixonomy.explorer.properties",
+        "contents": "Index the workspace to browse properties.\n[Index Workspace](command:strixonomy.indexWorkspace)",
+        "when": "!strixonomy:hasOntology"
       },
       {
-        "view": "ontocode.explorer.individuals",
-        "contents": "Index the workspace to browse individuals.\n[Index Workspace](command:ontocode.indexWorkspace)",
-        "when": "!ontocode:hasOntology"
+        "view": "strixonomy.explorer.individuals",
+        "contents": "Index the workspace to browse individuals.\n[Index Workspace](command:strixonomy.indexWorkspace)",
+        "when": "!strixonomy:hasOntology"
       },
       {
-        "view": "ontocode.explorer.diagnostics",
-        "contents": "Index the workspace to see ontology diagnostics.\n[Index Workspace](command:ontocode.indexWorkspace)",
-        "when": "!ontocode:hasOntology"
+        "view": "strixonomy.explorer.diagnostics",
+        "contents": "Index the workspace to see ontology diagnostics.\n[Index Workspace](command:strixonomy.indexWorkspace)",
+        "when": "!strixonomy:hasOntology"
       }
     ],
     "commands": [
       {
-        "command": "ontocode.indexWorkspace",
-        "title": "OntoCode: Index Workspace",
+        "command": "strixonomy.indexWorkspace",
+        "title": "Strixonomy: Index Workspace",
         "icon": "$(refresh)"
       },
       {
-        "command": "ontocode.refreshExplorer",
-        "title": "OntoCode: Refresh Explorer",
+        "command": "strixonomy.refreshExplorer",
+        "title": "Strixonomy: Refresh Explorer",
         "icon": "$(refresh)"
       },
       {
-        "command": "ontocode.showEntityInspector",
-        "title": "OntoCode: Show Entity Inspector"
+        "command": "strixonomy.showEntityInspector",
+        "title": "Strixonomy: Show Entity Inspector"
       },
       {
-        "command": "ontocode.jumpToSource",
-        "title": "OntoCode: Jump to Source"
+        "command": "strixonomy.jumpToSource",
+        "title": "Strixonomy: Jump to Source"
       },
       {
-        "command": "ontocode.openDiagnostic",
-        "title": "OntoCode: Open Diagnostic"
+        "command": "strixonomy.openDiagnostic",
+        "title": "Strixonomy: Open Diagnostic"
       },
       {
-        "command": "ontocode.openEntity",
+        "command": "strixonomy.openEntity",
         "title": "Open Entity Inspector"
       },
       {
-        "command": "ontocode.createClass",
-        "title": "OntoCode: Create Class"
+        "command": "strixonomy.createClass",
+        "title": "Strixonomy: Create Class"
       },
       {
-        "command": "ontocode.createProperty",
-        "title": "OntoCode: Create Property"
+        "command": "strixonomy.createProperty",
+        "title": "Strixonomy: Create Property"
       },
       {
-        "command": "ontocode.createIndividual",
-        "title": "OntoCode: Create Individual"
+        "command": "strixonomy.createIndividual",
+        "title": "Strixonomy: Create Individual"
       },
       {
-        "command": "ontocode.deleteEntity",
-        "title": "OntoCode: Delete Entity"
+        "command": "strixonomy.deleteEntity",
+        "title": "Strixonomy: Delete Entity"
       },
       {
-        "command": "ontocode.openQueryWorkbench",
-        "title": "OntoCode: Open Query Workbench"
+        "command": "strixonomy.openQueryWorkbench",
+        "title": "Strixonomy: Open Query Workbench"
       },
       {
-        "command": "ontocode.openManchesterEditor",
-        "title": "OntoCode: Open Manchester Editor"
+        "command": "strixonomy.openManchesterEditor",
+        "title": "Strixonomy: Open Manchester Editor"
       },
       {
-        "command": "ontocode.addManchesterAxiom",
-        "title": "OntoCode: Add Manchester Axiom"
+        "command": "strixonomy.addManchesterAxiom",
+        "title": "Strixonomy: Add Manchester Axiom"
       },
       {
-        "command": "ontocode.openRuleBrowser",
-        "title": "OntoCode: Open SWRL Rule Browser"
+        "command": "strixonomy.openRuleBrowser",
+        "title": "Strixonomy: Open SWRL Rule Browser"
       },
       {
-        "command": "ontocode.openRuleEditor",
-        "title": "OntoCode: Open SWRL Rule Editor"
+        "command": "strixonomy.openRuleEditor",
+        "title": "Strixonomy: Open SWRL Rule Editor"
       },
       {
-        "command": "ontocode.runReasoner",
-        "title": "OntoCode: Run Reasoner"
+        "command": "strixonomy.runReasoner",
+        "title": "Strixonomy: Run Reasoner"
       },
       {
-        "command": "ontocode.runOwlmakeWorkflow",
-        "title": "OntoCode: Run Workflow (owlmake)"
+        "command": "strixonomy.runOwlmakeWorkflow",
+        "title": "Strixonomy: Run Workflow (owlmake)"
       },
       {
-        "command": "ontocode.plugins.runCommand",
-        "title": "OntoCode: Plugins: Run Command…"
+        "command": "strixonomy.plugins.runCommand",
+        "title": "Strixonomy: Plugins: Run Command\u2026"
       },
       {
-        "command": "ontocode.plugins.openView",
-        "title": "OntoCode: Plugins: Open View…"
+        "command": "strixonomy.plugins.openView",
+        "title": "Strixonomy: Plugins: Open View\u2026"
       },
       {
-        "command": "ontocode.plugins.openPreferences",
-        "title": "OntoCode: Plugins: Open Preferences…"
+        "command": "strixonomy.plugins.openPreferences",
+        "title": "Strixonomy: Plugins: Open Preferences\u2026"
       },
       {
-        "command": "ontocode.plugins.runContextAction",
-        "title": "OntoCode: Plugins: Run Context Action…"
+        "command": "strixonomy.plugins.runContextAction",
+        "title": "Strixonomy: Plugins: Run Context Action\u2026"
       },
       {
-        "command": "ontocode.semanticDiff",
-        "title": "OntoCode: Semantic Diff…"
+        "command": "strixonomy.semanticDiff",
+        "title": "Strixonomy: Semantic Diff\u2026"
       },
       {
-        "command": "ontocode.showExplanation",
-        "title": "OntoCode: Show Explanation"
+        "command": "strixonomy.showExplanation",
+        "title": "Strixonomy: Show Explanation"
       },
       {
-        "command": "ontocode.setHierarchyMode",
-        "title": "OntoCode: Set Hierarchy Mode"
+        "command": "strixonomy.setHierarchyMode",
+        "title": "Strixonomy: Set Hierarchy Mode"
       },
       {
-        "command": "ontocode.openClassGraph",
-        "title": "OntoCode: Open Class Graph"
+        "command": "strixonomy.openClassGraph",
+        "title": "Strixonomy: Open Class Graph"
       },
       {
-        "command": "ontocode.openPropertyGraph",
-        "title": "OntoCode: Open Property Graph"
+        "command": "strixonomy.openPropertyGraph",
+        "title": "Strixonomy: Open Property Graph"
       },
       {
-        "command": "ontocode.openObjectPropertyGraph",
-        "title": "OntoCode: Open Object Property Graph"
+        "command": "strixonomy.openObjectPropertyGraph",
+        "title": "Strixonomy: Open Object Property Graph"
       },
       {
-        "command": "ontocode.openDataPropertyGraph",
-        "title": "OntoCode: Open Data Property Graph"
+        "command": "strixonomy.openDataPropertyGraph",
+        "title": "Strixonomy: Open Data Property Graph"
       },
       {
-        "command": "ontocode.openIndividualGraph",
-        "title": "OntoCode: Open Individual Graph"
+        "command": "strixonomy.openIndividualGraph",
+        "title": "Strixonomy: Open Individual Graph"
       },
       {
-        "command": "ontocode.openImportGraph",
-        "title": "OntoCode: Open Import Graph"
+        "command": "strixonomy.openImportGraph",
+        "title": "Strixonomy: Open Import Graph"
       },
       {
-        "command": "ontocode.openDependencyGraph",
-        "title": "OntoCode: Open Dependency Graph"
+        "command": "strixonomy.openDependencyGraph",
+        "title": "Strixonomy: Open Dependency Graph"
       },
       {
-        "command": "ontocode.openGraphFromResults",
-        "title": "OntoCode: Open Graph From Results"
+        "command": "strixonomy.openGraphFromResults",
+        "title": "Strixonomy: Open Graph From Results"
       },
       {
-        "command": "ontocode.manageImports",
-        "title": "OntoCode: Manage Imports"
+        "command": "strixonomy.manageImports",
+        "title": "Strixonomy: Manage Imports"
       },
       {
-        "command": "ontocode.reloadImports",
-        "title": "OntoCode: Reload Imports"
+        "command": "strixonomy.reloadImports",
+        "title": "Strixonomy: Reload Imports"
       },
       {
-        "command": "ontocode.resetLayout",
-        "title": "OntoCode: Reset Layout"
+        "command": "strixonomy.resetLayout",
+        "title": "Strixonomy: Reset Layout"
       },
       {
-        "command": "ontocode.openNeighborhoodGraph",
-        "title": "OntoCode: Open Neighborhood Graph"
+        "command": "strixonomy.openNeighborhoodGraph",
+        "title": "Strixonomy: Open Neighborhood Graph"
       },
       {
-        "command": "ontocode.openGraph",
-        "title": "OntoCode: Open Graph"
+        "command": "strixonomy.openGraph",
+        "title": "Strixonomy: Open Graph"
       },
       {
-        "command": "ontocode.findEntityUsages",
-        "title": "OntoCode: Find Entity Usages"
+        "command": "strixonomy.findEntityUsages",
+        "title": "Strixonomy: Find Entity Usages"
       },
       {
-        "command": "ontocode.renameEntityIri",
-        "title": "OntoCode: Rename Entity IRI"
+        "command": "strixonomy.renameEntityIri",
+        "title": "Strixonomy: Rename Entity IRI"
       },
       {
-        "command": "ontocode.migrateNamespace",
-        "title": "OntoCode: Migrate Namespace"
+        "command": "strixonomy.migrateNamespace",
+        "title": "Strixonomy: Migrate Namespace"
       },
       {
-        "command": "ontocode.moveEntity",
-        "title": "OntoCode: Move Entity"
+        "command": "strixonomy.moveEntity",
+        "title": "Strixonomy: Move Entity"
       },
       {
-        "command": "ontocode.extractModule",
-        "title": "OntoCode: Extract Module"
+        "command": "strixonomy.extractModule",
+        "title": "Strixonomy: Extract Module"
       },
       {
-        "command": "ontocode.newOntology",
-        "title": "OntoCode: New Ontology",
+        "command": "strixonomy.newOntology",
+        "title": "Strixonomy: New Ontology",
         "icon": "$(new-file)"
       },
       {
-        "command": "ontocode.openOntology",
-        "title": "OntoCode: Open Ontology"
+        "command": "strixonomy.openOntology",
+        "title": "Strixonomy: Open Ontology"
       },
       {
-        "command": "ontocode.openRecent",
-        "title": "OntoCode: Open Recent"
+        "command": "strixonomy.openRecent",
+        "title": "Strixonomy: Open Recent"
       },
       {
-        "command": "ontocode.save",
-        "title": "OntoCode: Save"
+        "command": "strixonomy.save",
+        "title": "Strixonomy: Save"
       },
       {
-        "command": "ontocode.saveAll",
-        "title": "OntoCode: Save All"
+        "command": "strixonomy.saveAll",
+        "title": "Strixonomy: Save All"
       },
       {
-        "command": "ontocode.undo",
-        "title": "OntoCode: Undo"
+        "command": "strixonomy.undo",
+        "title": "Strixonomy: Undo"
       },
       {
-        "command": "ontocode.redo",
-        "title": "OntoCode: Redo"
+        "command": "strixonomy.redo",
+        "title": "Strixonomy: Redo"
       },
       {
-        "command": "ontocode.saveAs",
-        "title": "OntoCode: Save Ontology As…"
+        "command": "strixonomy.saveAs",
+        "title": "Strixonomy: Save Ontology As\u2026"
       },
       {
-        "command": "ontocode.exportOntology",
-        "title": "OntoCode: Export Ontology…"
+        "command": "strixonomy.exportOntology",
+        "title": "Strixonomy: Export Ontology\u2026"
       },
       {
-        "command": "ontocode.closeProject",
-        "title": "OntoCode: Close Project"
+        "command": "strixonomy.closeProject",
+        "title": "Strixonomy: Close Project"
       },
       {
-        "command": "ontocode.searchEntities",
-        "title": "OntoCode: Search Entities",
+        "command": "strixonomy.searchEntities",
+        "title": "Strixonomy: Search Entities",
         "icon": "$(search)"
       },
       {
-        "command": "ontocode.openPreferences",
-        "title": "OntoCode: Open Preferences",
+        "command": "strixonomy.openPreferences",
+        "title": "Strixonomy: Open Preferences",
         "icon": "$(settings-gear)"
       },
       {
-        "command": "ontocode.copyEntityIri",
-        "title": "OntoCode: Copy Entity IRI"
+        "command": "strixonomy.copyEntityIri",
+        "title": "Strixonomy: Copy Entity IRI"
       },
       {
-        "command": "ontocode.copyEntityShortForm",
-        "title": "OntoCode: Copy Entity Short Form"
+        "command": "strixonomy.copyEntityShortForm",
+        "title": "Strixonomy: Copy Entity Short Form"
       },
       {
-        "command": "ontocode.setActiveOntology",
-        "title": "OntoCode: Set Active Ontology"
+        "command": "strixonomy.setActiveOntology",
+        "title": "Strixonomy: Set Active Ontology"
       },
       {
-        "command": "ontocode.editOntologyMetadata",
-        "title": "OntoCode: Edit Ontology Metadata"
+        "command": "strixonomy.editOntologyMetadata",
+        "title": "Strixonomy: Edit Ontology Metadata"
       },
       {
-        "command": "ontocode.managePrefixes",
-        "title": "OntoCode: Manage Prefixes"
+        "command": "strixonomy.managePrefixes",
+        "title": "Strixonomy: Manage Prefixes"
       },
       {
-        "command": "ontocode.showMetrics",
-        "title": "OntoCode: Show Metrics",
+        "command": "strixonomy.showMetrics",
+        "title": "Strixonomy: Show Metrics",
         "icon": "$(graph)"
       },
       {
-        "command": "ontocode.mergeEntities",
-        "title": "OntoCode: Merge Entities"
+        "command": "strixonomy.mergeEntities",
+        "title": "Strixonomy: Merge Entities"
       },
       {
-        "command": "ontocode.replaceEntity",
-        "title": "OntoCode: Replace Entity"
+        "command": "strixonomy.replaceEntity",
+        "title": "Strixonomy: Replace Entity"
       },
       {
-        "command": "ontocode.startReasoner",
-        "title": "OntoCode: Start Reasoner"
+        "command": "strixonomy.startReasoner",
+        "title": "Strixonomy: Start Reasoner"
       },
       {
-        "command": "ontocode.stopReasoner",
-        "title": "OntoCode: Stop Reasoner"
+        "command": "strixonomy.stopReasoner",
+        "title": "Strixonomy: Stop Reasoner"
       },
       {
-        "command": "ontocode.synchronizeReasoner",
-        "title": "OntoCode: Synchronize Reasoner",
+        "command": "strixonomy.synchronizeReasoner",
+        "title": "Strixonomy: Synchronize Reasoner",
         "icon": "$(sync)"
       },
       {
-        "command": "ontocode.classifyOntology",
-        "title": "OntoCode: Classify Ontology"
+        "command": "strixonomy.classifyOntology",
+        "title": "Strixonomy: Classify Ontology"
       },
       {
-        "command": "ontocode.checkConsistency",
-        "title": "OntoCode: Check Consistency"
+        "command": "strixonomy.checkConsistency",
+        "title": "Strixonomy: Check Consistency"
       },
       {
-        "command": "ontocode.configureReasoner",
-        "title": "OntoCode: Configure Reasoner"
+        "command": "strixonomy.configureReasoner",
+        "title": "Strixonomy: Configure Reasoner"
       },
       {
-        "command": "ontocode.validateWorkspace",
-        "title": "OntoCode: Validate Workspace"
+        "command": "strixonomy.validateWorkspace",
+        "title": "Strixonomy: Validate Workspace"
       },
       {
-        "command": "ontocode.runBatchTools",
-        "title": "OntoCode: Run Batch Tools"
+        "command": "strixonomy.runBatchTools",
+        "title": "Strixonomy: Run Batch Tools"
       },
       {
-        "command": "ontocode.switchPerspective",
-        "title": "OntoCode: Switch Perspective"
+        "command": "strixonomy.switchPerspective",
+        "title": "Strixonomy: Switch Perspective"
       },
       {
-        "command": "ontocode.savePerspective",
-        "title": "OntoCode: Save Perspective"
+        "command": "strixonomy.savePerspective",
+        "title": "Strixonomy: Save Perspective"
       },
       {
-        "command": "ontocode.showInspectorPanel",
-        "title": "OntoCode: Show Inspector Panel"
+        "command": "strixonomy.showInspectorPanel",
+        "title": "Strixonomy: Show Inspector Panel"
       },
       {
-        "command": "ontocode.showQueryPanel",
-        "title": "OntoCode: Show Query Panel"
+        "command": "strixonomy.showQueryPanel",
+        "title": "Strixonomy: Show Query Panel"
       },
       {
-        "command": "ontocode.showReasonerPanel",
-        "title": "OntoCode: Show Reasoner Panel"
+        "command": "strixonomy.showReasonerPanel",
+        "title": "Strixonomy: Show Reasoner Panel"
       },
       {
-        "command": "ontocode.showExplanationPanel",
-        "title": "OntoCode: Show Explanation Panel"
+        "command": "strixonomy.showExplanationPanel",
+        "title": "Strixonomy: Show Explanation Panel"
       },
       {
-        "command": "ontocode.showGraphPanel",
-        "title": "OntoCode: Show Graph Panel"
+        "command": "strixonomy.showGraphPanel",
+        "title": "Strixonomy: Show Graph Panel"
       },
       {
-        "command": "ontocode.showSemanticDiffPanel",
-        "title": "OntoCode: Show Semantic Diff Panel"
+        "command": "strixonomy.showSemanticDiffPanel",
+        "title": "Strixonomy: Show Semantic Diff Panel"
       },
       {
-        "command": "ontocode.showImportsPanel",
-        "title": "OntoCode: Show Imports Panel"
+        "command": "strixonomy.showImportsPanel",
+        "title": "Strixonomy: Show Imports Panel"
       },
       {
-        "command": "ontocode.showAbout",
-        "title": "OntoCode: About"
+        "command": "strixonomy.showAbout",
+        "title": "Strixonomy: About"
       },
       {
-        "command": "ontocode.showPluginInfo",
-        "title": "OntoCode: Plugin Information"
+        "command": "strixonomy.showPluginInfo",
+        "title": "Strixonomy: Plugin Information"
       },
       {
-        "command": "ontocode.openErrorLog",
-        "title": "OntoCode: Open Error Log"
+        "command": "strixonomy.openErrorLog",
+        "title": "Strixonomy: Open Error Log"
       },
       {
-        "command": "ontocode.exportDiagnostics",
-        "title": "OntoCode: Export Diagnostics"
+        "command": "strixonomy.exportDiagnostics",
+        "title": "Strixonomy: Export Diagnostics"
       },
       {
-        "command": "ontocode.openDocumentation",
-        "title": "OntoCode: Open Documentation"
+        "command": "strixonomy.openDocumentation",
+        "title": "Strixonomy: Open Documentation"
       },
       {
-        "command": "ontocode.openSupport",
-        "title": "OntoCode: Open Support"
+        "command": "strixonomy.openSupport",
+        "title": "Strixonomy: Open Support"
       },
       {
-        "command": "ontocode.openKeyboardShortcuts",
-        "title": "OntoCode: Open Keyboard Shortcuts"
+        "command": "strixonomy.openKeyboardShortcuts",
+        "title": "Strixonomy: Open Keyboard Shortcuts"
       }
     ],
     "menus": {
       "view/title": [
         {
-          "command": "ontocode.refreshExplorer",
-          "when": "view =~ /^ontocode\\.explorer\\./",
+          "command": "strixonomy.refreshExplorer",
+          "when": "view =~ /^strixonomy\\.explorer\\./",
           "group": "navigation"
         },
         {
-          "command": "ontocode.newOntology",
-          "when": "view =~ /^ontocode\\.explorer\\./",
+          "command": "strixonomy.newOntology",
+          "when": "view =~ /^strixonomy\\.explorer\\./",
           "group": "navigation@1"
         },
         {
-          "command": "ontocode.searchEntities",
-          "when": "view =~ /^ontocode\\.explorer\\./ && ontocode:hasOntology",
+          "command": "strixonomy.searchEntities",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && strixonomy:hasOntology",
           "group": "navigation@2"
         },
         {
-          "command": "ontocode.synchronizeReasoner",
-          "when": "view =~ /^ontocode\\.explorer\\./ && ontocode:hasOntology",
+          "command": "strixonomy.synchronizeReasoner",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && strixonomy:hasOntology",
           "group": "navigation@3"
         },
         {
-          "command": "ontocode.showMetrics",
-          "when": "view =~ /^ontocode\\.explorer\\./ && ontocode:hasOntology",
+          "command": "strixonomy.showMetrics",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && strixonomy:hasOntology",
           "group": "navigation@4"
         },
         {
-          "command": "ontocode.openPreferences",
-          "when": "view =~ /^ontocode\\.explorer\\./",
+          "command": "strixonomy.openPreferences",
+          "when": "view =~ /^strixonomy\\.explorer\\./",
           "group": "navigation@5"
         }
       ],
       "view/item/context": [
         {
-          "command": "ontocode.jumpToSource",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.jumpToSource",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "navigation"
         },
         {
-          "command": "ontocode.openEntity",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.openEntity",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "inline"
         },
         {
-          "command": "ontocode.openNeighborhoodGraph",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.openNeighborhoodGraph",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "navigation"
         },
         {
-          "command": "ontocode.openGraph",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.openGraph",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "navigation"
         },
         {
-          "command": "ontocode.findEntityUsages",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.findEntityUsages",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "2_edit"
         },
         {
-          "command": "ontocode.renameEntityIri",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.renameEntityIri",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "2_edit"
         },
         {
-          "command": "ontocode.deleteEntity",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.deleteEntity",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "2_edit"
         },
         {
-          "command": "ontocode.manageImports",
-          "when": "view == ontocode.explorer.ontologies && viewItem == ontocodeTurtleDocument",
+          "command": "strixonomy.manageImports",
+          "when": "view == strixonomy.explorer.ontologies && viewItem == strixonomyTurtleDocument",
           "group": "2_edit"
         },
         {
-          "command": "ontocode.createClass",
-          "when": "view == ontocode.explorer.classes",
+          "command": "strixonomy.createClass",
+          "when": "view == strixonomy.explorer.classes",
           "group": "navigation"
         },
         {
-          "command": "ontocode.createIndividual",
-          "when": "view == ontocode.explorer.individuals",
+          "command": "strixonomy.createIndividual",
+          "when": "view == strixonomy.explorer.individuals",
           "group": "navigation"
         },
         {
-          "command": "ontocode.createProperty",
-          "when": "view == ontocode.explorer.properties",
+          "command": "strixonomy.createProperty",
+          "when": "view == strixonomy.explorer.properties",
           "group": "navigation"
         },
         {
-          "command": "ontocode.copyEntityIri",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.copyEntityIri",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "3_copy"
         },
         {
-          "command": "ontocode.copyEntityShortForm",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.copyEntityShortForm",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "3_copy"
         },
         {
-          "command": "ontocode.mergeEntities",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.mergeEntities",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "2_edit"
         },
         {
-          "command": "ontocode.replaceEntity",
-          "when": "view =~ /^ontocode\\.explorer\\./ && viewItem == ontocodeEntity",
+          "command": "strixonomy.replaceEntity",
+          "when": "view =~ /^strixonomy\\.explorer\\./ && viewItem == strixonomyEntity",
           "group": "2_edit"
         }
       ],
       "editor/title": [
         {
-          "command": "ontocode.newOntology",
+          "command": "strixonomy.newOntology",
           "group": "navigation@1"
         },
         {
-          "command": "ontocode.searchEntities",
-          "when": "ontocode:hasOntology",
+          "command": "strixonomy.searchEntities",
+          "when": "strixonomy:hasOntology",
           "group": "navigation@2"
         },
         {
-          "command": "ontocode.synchronizeReasoner",
-          "when": "ontocode:hasOntology",
+          "command": "strixonomy.synchronizeReasoner",
+          "when": "strixonomy:hasOntology",
           "group": "navigation@3"
         },
         {
-          "command": "ontocode.showMetrics",
-          "when": "ontocode:hasOntology",
+          "command": "strixonomy.showMetrics",
+          "when": "strixonomy:hasOntology",
           "group": "navigation@4"
         },
         {
-          "command": "ontocode.openPreferences",
+          "command": "strixonomy.openPreferences",
           "group": "navigation@5"
         }
       ],
       "explorer/context": [
         {
-          "command": "ontocode.openOntology",
-          "group": "ontocode@1"
+          "command": "strixonomy.openOntology",
+          "group": "strixonomy@1"
         },
         {
-          "command": "ontocode.newOntology",
-          "group": "ontocode@2"
+          "command": "strixonomy.newOntology",
+          "group": "strixonomy@2"
         }
       ],
       "commandPalette": [
         {
-          "command": "ontocode.saveAs",
-          "when": "ontocode:hasOntology"
+          "command": "strixonomy.saveAs",
+          "when": "strixonomy:hasOntology"
         },
         {
-          "command": "ontocode.exportOntology",
-          "when": "ontocode:hasOntology"
+          "command": "strixonomy.exportOntology",
+          "when": "strixonomy:hasOntology"
         },
         {
-          "command": "ontocode.searchEntities",
-          "when": "ontocode:hasOntology"
+          "command": "strixonomy.searchEntities",
+          "when": "strixonomy:hasOntology"
         },
         {
-          "command": "ontocode.copyEntityIri",
-          "when": "ontocode:hasSelection"
+          "command": "strixonomy.copyEntityIri",
+          "when": "strixonomy:hasSelection"
         },
         {
-          "command": "ontocode.copyEntityShortForm",
-          "when": "ontocode:hasSelection"
+          "command": "strixonomy.copyEntityShortForm",
+          "when": "strixonomy:hasSelection"
         },
         {
-          "command": "ontocode.mergeEntities",
-          "when": "ontocode:hasSelection && ontocode:canEditSelection"
+          "command": "strixonomy.mergeEntities",
+          "when": "strixonomy:hasSelection && strixonomy:canEditSelection"
         },
         {
-          "command": "ontocode.replaceEntity",
-          "when": "ontocode:hasSelection && ontocode:canEditSelection"
+          "command": "strixonomy.replaceEntity",
+          "when": "strixonomy:hasSelection && strixonomy:canEditSelection"
         },
         {
-          "command": "ontocode.stopReasoner",
-          "when": "ontocode:reasonerRunning"
+          "command": "strixonomy.stopReasoner",
+          "when": "strixonomy:reasonerRunning"
         },
         {
-          "command": "ontocode.startReasoner",
-          "when": "ontocode:hasOntology && !ontocode:reasonerRunning"
+          "command": "strixonomy.startReasoner",
+          "when": "strixonomy:hasOntology && !strixonomy:reasonerRunning"
         },
         {
-          "command": "ontocode.validateWorkspace",
-          "when": "ontocode:hasOntology"
+          "command": "strixonomy.validateWorkspace",
+          "when": "strixonomy:hasOntology"
         },
         {
-          "command": "ontocode.exportDiagnostics",
-          "when": "ontocode:hasOntology"
+          "command": "strixonomy.exportDiagnostics",
+          "when": "strixonomy:hasOntology"
         }
       ]
     },
     "keybindings": [
       {
-        "command": "ontocode.searchEntities",
+        "command": "strixonomy.searchEntities",
         "key": "ctrl+k ctrl+e",
         "mac": "cmd+k cmd+e",
-        "when": "ontocode:hasOntology"
+        "when": "strixonomy:hasOntology"
       },
       {
-        "command": "ontocode.openClassGraph",
+        "command": "strixonomy.openClassGraph",
         "key": "ctrl+g",
         "mac": "cmd+g",
-        "when": "ontocode:hasOntology"
+        "when": "strixonomy:hasOntology"
       },
       {
-        "command": "ontocode.showExplanation",
+        "command": "strixonomy.showExplanation",
         "key": "ctrl+e",
         "mac": "cmd+e",
-        "when": "ontocode:hasSelection"
+        "when": "strixonomy:hasSelection"
       },
       {
-        "command": "ontocode.synchronizeReasoner",
+        "command": "strixonomy.synchronizeReasoner",
         "key": "ctrl+shift+r",
         "mac": "cmd+shift+r",
-        "when": "ontocode:hasOntology"
+        "when": "strixonomy:hasOntology"
       },
       {
-        "command": "ontocode.showEntityInspector",
+        "command": "strixonomy.showEntityInspector",
         "key": "ctrl+3",
         "mac": "cmd+3",
-        "when": "ontocode:hasOntology"
+        "when": "strixonomy:hasOntology"
       }
     ],
     "configuration": {
-      "title": "OntoCode",
+      "title": "Strixonomy",
       "properties": {
-        "ontocode.lspPath": {
+        "strixonomy.lspPath": {
           "type": "string",
           "default": "",
-          "description": "Trusted workspaces only: path to the ontocore-lsp binary. Ignored in Restricted Mode. When empty, the bundled server or PATH is used."
+          "description": "Trusted workspaces only: path to the strixonomy-lsp binary. Ignored in Restricted Mode. When empty, the bundled server or PATH is used."
         },
-        "ontocode.autoIndexOnOpen": {
+        "strixonomy.autoIndexOnOpen": {
           "type": "boolean",
           "default": true,
           "description": "Legacy no-op. Indexing is driven by the language server on workspace open; kept for compatibility with older settings."
         },
-        "ontocode.queryHistoryLimit": {
+        "strixonomy.queryHistoryLimit": {
           "type": "number",
           "default": 20,
           "description": "Maximum number of recent queries kept in the Query Workbench history."
         },
-        "ontocode.reasoner.default": {
+        "strixonomy.reasoner.default": {
           "type": "string",
           "enum": [
             "el",
@@ -747,12 +747,12 @@
           "default": "el",
           "description": "Default reasoner profile for Run Reasoner (el, rl, rdfs, dl, auto)."
         },
-        "ontocode.reasoner.autoProfile": {
+        "strixonomy.reasoner.autoProfile": {
           "type": "boolean",
           "default": true,
           "description": "Emit profile-detection warnings when running the reasoner."
         },
-        "ontocode.hierarchy.mode": {
+        "strixonomy.hierarchy.mode": {
           "type": "string",
           "enum": [
             "asserted",
@@ -762,20 +762,20 @@
           "default": "asserted",
           "description": "Class hierarchy display mode in the explorer after classification."
         },
-        "ontocode.indexCache": {
+        "strixonomy.indexCache": {
           "type": "boolean",
           "default": false,
-          "description": "Persist ontology parse snapshots under .ontocore/cache/ (recommended gitignore)."
+          "description": "Persist ontology parse snapshots under .strixonomy/cache/ (recommended gitignore)."
         },
-        "ontocode.robotPath": {
+        "strixonomy.robotPath": {
           "type": "string",
           "default": "",
           "description": "Trusted workspaces only: path to ROBOT CLI or JAR. When empty, ROBOT is resolved from PATH."
         },
-        "ontocode.diagnostics.rules": {
+        "strixonomy.diagnostics.rules": {
           "type": "object",
           "default": {},
-          "description": "Per-rule diagnostic overrides (enabled, severity). Mirrors `.ontocore/diagnostics.toml` [rules.*] entries; file config takes precedence when present."
+          "description": "Per-rule diagnostic overrides (enabled, severity). Mirrors `.strixonomy/diagnostics.toml` [rules.*] entries; file config takes precedence when present."
         }
       }
     }

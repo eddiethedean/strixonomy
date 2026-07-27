@@ -4,20 +4,20 @@
 
 **Status:** Normative Specification (frozen)\
 **Frozen:** 2026-07-13 | Audit baseline: v0.18.2\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines exactly what **"Protégé Desktop parity"** means
-for OntoCode 1.0. It establishes the official scope of the parity
+for Strixonomy 1.0. It establishes the official scope of the parity
 program so implementation, testing, documentation, and release decisions
 are measured against a single, stable definition.
 
 This scope is based on:
 
--   The audited capabilities of the current OntoCode repository
+-   The audited capabilities of the current Strixonomy repository
 -   A standard installation of Protégé Desktop
 -   The project goal of replacing Protégé for day-to-day ontology
     engineering
@@ -39,7 +39,7 @@ The parity effort prioritizes:
 
 # In Scope
 
-OntoCode 1.0 should provide equivalent workflows for:
+Strixonomy 1.0 should provide equivalent workflows for:
 
 ## Ontology Lifecycle
 

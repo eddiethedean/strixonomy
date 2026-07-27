@@ -1,9 +1,9 @@
 # IMPLEMENTATION_PLAN
 
-# OntoCode 1.0 Protégé Parity Implementation Plan
+# Strixonomy 1.0 Protégé Parity Implementation Plan
 
 **Status:** Master Engineering Plan\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
@@ -228,7 +228,7 @@ A feature is complete only when:
 
 # Final Release Checklist
 
-Before OntoCode 1.0:
+Before Strixonomy 1.0:
 
 -   All P0 blockers closed
 -   All release gates passed

@@ -3,7 +3,7 @@
 # EPIC-011 --- Parity Verification
 
 **Epic ID:** EPIC-011\
-**GitHub:** https://github.com/eddiethedean/ontocode/issues/257\
+**GitHub:** https://github.com/eddiethedean/strixonomy/issues/257\
 **Status:** Done for v0.25 (`PAR-TST-001` VERIFIED; Gate 3 hard-fail deferred to 1.0.0-rc)\
 **Priority:** P0 (Release Blocking)\
 **Target Release:** v0.19 (skeleton), v0.25 (complete)

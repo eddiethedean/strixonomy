@@ -25,7 +25,7 @@ export class SaveCoordinator {
         return this.saveEntry(dirty[0]);
       }
       void vscode.window.showWarningMessage(
-        "OntoCode: no active ontology — use Save All or set an active ontology"
+        "Strixonomy: no active ontology — use Save All or set an active ontology"
       );
       return { saved: [], failed: [] };
     }
@@ -43,7 +43,7 @@ export class SaveCoordinator {
     }
     if (saved.length > 0) {
       void vscode.window.showInformationMessage(
-        `OntoCode: saved ${saved.length} ontolog${saved.length === 1 ? "y" : "ies"}`
+        `Strixonomy: saved ${saved.length} ontolog${saved.length === 1 ? "y" : "ies"}`
       );
     }
     return { saved, failed };

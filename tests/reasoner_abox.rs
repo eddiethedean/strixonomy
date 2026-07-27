@@ -1,9 +1,9 @@
-use ontocore_reasoner::{
+use std::path::PathBuf;
+use strixonomy_reasoner::{
     check_consistency, check_instance, classify, realize, ReasonerId, WorkspaceInputLoader,
 };
-use std::path::PathBuf;
 
-fn load(rel: &str) -> ontocore_reasoner::ReasonerInput {
+fn load(rel: &str) -> strixonomy_reasoner::ReasonerInput {
     let dir = tempfile::tempdir().expect("tempdir");
     let src = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join(rel);
     let name = src.file_name().unwrap();

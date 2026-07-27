@@ -8,6 +8,6 @@
 
 This URL is kept for legacy bookmarks. Prefer Home → Get started.
 
-## When not to use OntoCode (today)
+## When not to use Strixonomy (today)
 
-See [Known limitations](known-limitations.md) and [Protégé vs OntoCode](guides/protege-decision.md). Common deferrals: byte-identical XML layout, full SQL analytics, curated plugin marketplace.
+See [Known limitations](known-limitations.md) and [Protégé vs Strixonomy](guides/protege-decision.md). Common deferrals: byte-identical XML layout, full SQL analytics, curated plugin marketplace.

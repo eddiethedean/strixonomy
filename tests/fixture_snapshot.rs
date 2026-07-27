@@ -1,8 +1,8 @@
-use ontocore_catalog::IndexBuilder;
-use ontocore_lsp::catalog_snapshot_json;
 use serde_json::Value;
 use std::fs;
 use std::path::{Path, PathBuf};
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_lsp::catalog_snapshot_json;
 
 pub fn fixture_workspace() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("fixtures")

@@ -28,7 +28,7 @@ export class ExternalChangeRecovery {
       return;
     }
     const path = normalizeFsPath(uri.fsPath);
-    // Ignore OntoCode's own patch/save writes (#293).
+    // Ignore Strixonomy's own patch/save writes (#293).
     if (isSelfWrite(path)) {
       return;
     }
@@ -87,7 +87,7 @@ export class ExternalChangeRecovery {
       return "reload";
     }
     const picked = await vscode.window.showWarningMessage(
-      `OntoCode: "${base}" changed on disk while your buffer has unsaved edits.`,
+      `Strixonomy: "${base}" changed on disk while your buffer has unsaved edits.`,
       { modal: true },
       "Reload from disk",
       "Keep buffer",

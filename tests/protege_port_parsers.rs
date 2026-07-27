@@ -4,8 +4,8 @@
 
 mod support;
 
-use ontocore_owl::PatchOp;
 use std::collections::BTreeMap;
+use strixonomy_owl::PatchOp;
 use support::protege_port::{copy_ported_workspace, index_workspace, standard_ns};
 
 #[test]
@@ -146,7 +146,7 @@ fn parsers_idranges_minimal_fixture_loads() {
     let doc = &catalog.data().documents[0];
     assert_eq!(
         doc.parse_status,
-        ontocore_core::ParseStatus::Ok,
+        strixonomy_core::ParseStatus::Ok,
         "expected successful parse; message={:?}",
         doc.parse_message
     );

@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode AI Experience Specification
+# Strixonomy AI Experience Specification
 
 ## Purpose
 
-Artificial Intelligence is not a separate feature of OntoCode.
+Artificial Intelligence is not a separate feature of Strixonomy.
 
 It is a capability woven throughout every workflow.
 

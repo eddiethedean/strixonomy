@@ -1,13 +1,13 @@
 # Examples index
 
-Runnable examples for OntoCore CLI, Rust embedding, and OntoCode workflows.
+Runnable examples for Strixonomy CLI, Rust embedding, and Strixonomy workflows.
 
 ## CLI cookbooks (copy-paste)
 
 | Guide | Description |
 |-------|-------------|
 | [Query cookbook](queries.md) | SQL and SPARQL over virtual tables |
-| [Sample patches](patches.md) | `ontocore patch` JSON for Turtle, OBO, RDF/XML, and OWL/XML write-back |
+| [Sample patches](patches.md) | `strixonomy patch` JSON for Turtle, OBO, RDF/XML, and OWL/XML write-back |
 | [Refactoring](refactoring.md) | Rename, merge, replace, migrate, move, extract |
 | [DL Query](dl-query.md) | Manchester class expressions (CLI / Workbench DL mode) |
 | [Plugins](plugins.md) | `plugins list|info|enable|disable|run` against plugin-workspace |
@@ -18,7 +18,7 @@ Runnable examples for OntoCore CLI, Rust embedding, and OntoCode workflows.
 | [Docs export](docs-export.md) | Markdown/HTML documentation export |
 | [Index vs inspect](inspect.md) | Stats-only vs diagnostic summary |
 
-From a git clone, prefix commands with `cargo run --` (e.g. `cargo run -- query fixtures "SELECT * FROM classes"`). With `cargo install ontocore-cli`, use `ontocore` directly.
+From a git clone, prefix commands with `cargo run --` (e.g. `cargo run -- query fixtures "SELECT * FROM classes"`). With `cargo install strixonomy-cli`, use `strixonomy` directly.
 
 ## End-to-end workflow (clone)
 
@@ -34,28 +34,28 @@ Then try a patch preview: [Sample patches](patches.md). VS Code path: [First suc
 
 | Example | Run | Description |
 |---------|-----|-------------|
-| `index_and_query` | `cargo run -p ontocode --example index_and_query` | `Workspace` + SQL query on `fixtures/` |
-| `ontocore_workspace` | `cargo run -p ontocode --example ontocore_workspace` | High-level `Workspace` API |
-| `workspace_operations` | `cargo run -p ontocode --example workspace_operations` | Classify, import graph, docs export |
-| `error_handling` | `cargo run -p ontocode --example error_handling` | `ontocore::Error` handling |
-| `semantic_diff` | `cargo run -p ontocode --example semantic_diff` | Git/workspace semantic diff (optional git repo) |
+| `index_and_query` | `cargo run -p strixonomy --example index_and_query` | `Workspace` + SQL query on `fixtures/` |
+| `strixonomy_workspace` | `cargo run -p strixonomy --example strixonomy_workspace` | High-level `Workspace` API |
+| `workspace_operations` | `cargo run -p strixonomy --example workspace_operations` | Classify, import graph, docs export |
+| `error_handling` | `cargo run -p strixonomy --example error_handling` | `strixonomy::Error` handling |
+| `semantic_diff` | `cargo run -p strixonomy --example semantic_diff` | Git/workspace semantic diff (optional git repo) |
 
 ## Fixture workspaces
 
 | Location | Description |
 |----------|-------------|
-| [`fixtures/` on GitHub](https://github.com/eddiethedean/ontocode/tree/main/fixtures) | Primary tutorial corpus (`example.ttl`, `complex-classes.ttl`, …) |
-| [Fixtures README](https://github.com/eddiethedean/ontocode/blob/main/fixtures/README.md) | Per-file purpose and smoke commands |
-| [`examples/obo-workflow/`](https://github.com/eddiethedean/ontocode/tree/main/examples/obo-workflow) | Minimal OBO workspace — see [OBO workflow guide](../guides/obo-workflow.md) |
-| [`examples/protege-roundtrip/`](https://github.com/eddiethedean/ontocode/tree/main/examples/protege-roundtrip) | Protégé-style Turtle + OWL/XML / RDF/XML fixtures (v0.18) |
-| [`examples/plugin-workspace/`](https://github.com/eddiethedean/ontocode/tree/main/examples/plugin-workspace) | Sample plugin manifests — see [Plugins cookbook](plugins.md) · [Plugin authoring](../guides/plugins.md) |
+| [`fixtures/` on GitHub](https://github.com/eddiethedean/strixonomy/tree/main/fixtures) | Primary tutorial corpus (`example.ttl`, `complex-classes.ttl`, …) |
+| [Fixtures README](https://github.com/eddiethedean/strixonomy/blob/main/fixtures/README.md) | Per-file purpose and smoke commands |
+| [`examples/obo-workflow/`](https://github.com/eddiethedean/strixonomy/tree/main/examples/obo-workflow) | Minimal OBO workspace — see [OBO workflow guide](../guides/obo-workflow.md) |
+| [`examples/protege-roundtrip/`](https://github.com/eddiethedean/strixonomy/tree/main/examples/protege-roundtrip) | Protégé-style Turtle + OWL/XML / RDF/XML fixtures (v0.18) |
+| [`examples/plugin-workspace/`](https://github.com/eddiethedean/strixonomy/tree/main/examples/plugin-workspace) | Sample plugin manifests — see [Plugins cookbook](plugins.md) · [Plugin authoring](../guides/plugins.md) |
 
 Download tutorial files without cloning:
 
 ```bash
-mkdir ontocode-tutorial && cd ontocode-tutorial
-curl -fsSLO https://raw.githubusercontent.com/eddiethedean/ontocode/v0.26.2/fixtures/example.ttl
-curl -fsSLO https://raw.githubusercontent.com/eddiethedean/ontocode/v0.26.2/fixtures/complex-classes.ttl
+mkdir strixonomy-tutorial && cd strixonomy-tutorial
+curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/example.ttl
+curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/complex-classes.ttl
 ```
 
 ## VS Code tutorial
@@ -65,6 +65,6 @@ curl -fsSLO https://raw.githubusercontent.com/eddiethedean/ontocode/v0.26.2/fixt
 ## Related
 
 - [CLI reference](../cli-reference.md)
-- [Rust API](../ontocore/rust-api.md)
+- [Rust API](../strixonomy/rust-api.md)
 - [Documentation export](../guides/docs-export.md)
-- [Semantic diff](../ontocode/semantic-diff.md)
+- [Semantic diff](../ide/semantic-diff.md)

@@ -9,15 +9,15 @@
 
     See [Known limitations](../known-limitations.md) and [Reasoner guide](reasoner.md).
 
-OntoCode ships DL Query in Query Workbench **DL** mode (**v0.24+**): Manchester class expressions with the four result tabs above (asserted or inferred).
+Strixonomy ships DL Query in Query Workbench **DL** mode (**v0.24+**): Manchester class expressions with the four result tabs above (asserted or inferred).
 
 ## What ships
 
 | Surface | Detail |
 |---------|--------|
 | Query Workbench **DL** mode | Manchester class expression → Instances / Subclasses / Superclasses / Equivalents |
-| CLI | `ontocore dl-query` |
-| LSP | `ontocore/dlQuery` |
+| CLI | `strixonomy dl-query` |
+| LSP | `strixonomy/dlQuery` |
 
 Related query surfaces:
 
@@ -25,12 +25,12 @@ Related query surfaces:
 |------|-----------|
 | Catalog questions (`SELECT … FROM classes`) | Query Workbench **SQL** mode — [SQL reference](../sql-reference.md) |
 | Graph patterns | Query Workbench **SPARQL** mode — [SPARQL reference](../sparql-reference.md) |
-| Inferred types / instance checks | `ontocore realize` / `ontocore check-instance` or LSP `ontocore/checkInstance` — [realize cookbook](../examples/realize.md) |
-| Unsatisfiable classes | Reasoner panel / `ontocore classify` — [Reasoner guide](reasoner.md) |
+| Inferred types / instance checks | `strixonomy realize` / `strixonomy check-instance` or LSP `strixonomy/checkInstance` — [realize cookbook](../examples/realize.md) |
+| Unsatisfiable classes | Reasoner panel / `strixonomy classify` — [Reasoner guide](reasoner.md) |
 
 ## Open DL Query in VS Code
 
-1. **Command Palette** → **OntoCode: Open Query Workbench**
+1. **Command Palette** → **Strixonomy: Open Query Workbench**
 2. Set **Mode** to **DL Query**
 3. Enter a Manchester class expression (e.g. `Person and hasPet some Dog`)
 4. Choose asserted or inferred, then run — results appear in the four tabs
@@ -40,14 +40,14 @@ Related query surfaces:
 ## CLI
 
 ```bash
-ontocore dl-query "Person and hasPet some Dog" --workspace /path/to/ontologies --profile dl
+strixonomy dl-query "Person and hasPet some Dog" --workspace /path/to/ontologies --profile dl
 ```
 
 See [CLI reference](../cli-reference.md) and [v0.24 migration](../migration/v0.24.md).
 
 ## Gaps vs Protégé DL Query
 
-| Expectation | OntoCode today |
+| Expectation | Strixonomy today |
 |-------------|----------------|
 | HermiT-identical classification | No — OntoLogos profiles; dual-tool check when required |
 | Full Protégé DL Query tab UX | Partial — four result tabs; not a pixel clone |
@@ -57,6 +57,6 @@ Keep Protégé when you need HermiT-identical behavior or other gaps in [Known l
 
 ## Related
 
-- [Query Workbench](../ontocode/query-workbench.md)
+- [Query Workbench](../ide/query-workbench.md)
 - [Known limitations](../known-limitations.md)
 - [FAQ](../faq.md)

@@ -96,26 +96,28 @@ jobs:
             return 1
           }
 
-          publish_crate ontocore-core
-          publish_crate ontocore-parser
-          publish_crate ontocore-owl
-          publish_crate ontocore-obo
-          publish_crate ontocore-edit
-          publish_crate ontocore-diagnostics
-          publish_crate ontocore-catalog
-          publish_crate ontocore-diff
-          publish_crate ontocore-docs
-          # refactor depends on ontocore-swrl
-          publish_crate ontocore-swrl
-          publish_crate ontocore-refactor
-          publish_crate ontocore-query
-          publish_crate ontocore-reasoner
-          publish_crate ontocore-robot
-          publish_crate ontocore-plugin
-          publish_crate ontocore-plugin-naming
-          publish_crate ontocore-plugin-markdown-export
-          publish_crate ontocore-plugin-shacl
-          publish_crate ontocore-plugin-builtins
-          publish_crate ontocore-lsp
+          publish_crate strixonomy-core
+          publish_crate strixonomy-parser
+          publish_crate strixonomy-owl
+          publish_crate strixonomy-obo
+          publish_crate strixonomy-edit
+          publish_crate strixonomy-diagnostics
+          publish_crate strixonomy-catalog
+          publish_crate strixonomy-diff
+          publish_crate strixonomy-docs
+          # refactor depends on strixonomy-swrl
+          publish_crate strixonomy-swrl
+          publish_crate strixonomy-refactor
+          publish_crate strixonomy-query
+          publish_crate strixonomy-reasoner
+          publish_crate strixonomy-robot
+          publish_crate strixonomy-plugin
+          publish_crate strixonomy-plugin-naming
+          publish_crate strixonomy-plugin-markdown-export
+          publish_crate strixonomy-plugin-shacl
+          publish_crate strixonomy-plugin-builtins
+          publish_crate strixonomy-lsp
+          publish_crate strixonomy
+          publish_crate strixonomy-cli
+          # Deprecated OntoCore façade re-export (compat window through 1.0)
           publish_crate ontocore
-          publish_crate ontocore-cli

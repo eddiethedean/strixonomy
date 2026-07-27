@@ -1,0 +1,10 @@
+[plugin]
+name = "markdown-docs-exporter"
+version = "0.1.0"
+kind = "exporter"
+id = "strixonomy.markdown-export"
+api_version = "1"
+permissions = ["workspace.read", "workspace.write"]
+
+[capabilities]
+export = true

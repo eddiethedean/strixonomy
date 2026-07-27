@@ -3,10 +3,10 @@ mod support;
 #[test]
 fn validate_exits_zero_on_clean_fixtures() {
     let fixtures = support::fixture_workspace();
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["validate", fixtures.to_str().expect("fixture path")])
         .output()
-        .expect("spawn ontocore validate");
+        .expect("spawn strixonomy validate");
 
     assert!(
         output.status.success(),
@@ -27,10 +27,10 @@ fn validate_exits_zero_when_only_warnings() {
     )
     .unwrap();
 
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["validate", dir.path().to_str().expect("temp path")])
         .output()
-        .expect("spawn ontocore validate");
+        .expect("spawn strixonomy validate");
 
     assert!(
         output.status.success(),
@@ -56,10 +56,10 @@ fn validate_exits_nonzero_on_diagnostic_errors() {
     )
     .unwrap();
 
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["validate", dir.path().to_str().expect("temp path")])
         .output()
-        .expect("spawn ontocore validate");
+        .expect("spawn strixonomy validate");
 
     assert!(!output.status.success(), "expected non-zero exit on broken import fixture");
     let stderr = String::from_utf8_lossy(&output.stderr);

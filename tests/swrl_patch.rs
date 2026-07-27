@@ -1,9 +1,9 @@
 //! SWRL AddSwrlRule / RemoveSwrlRule / ReplaceSwrlRule patch round-trip on a temp Turtle file.
 
-use ontocore_owl::{apply_patches_to_text, PatchOp};
-use ontocore_swrl::rules_from_turtle_document;
 use std::collections::BTreeMap;
 use std::fs;
+use strixonomy_owl::{apply_patches_to_text, PatchOp};
+use strixonomy_swrl::rules_from_turtle_document;
 use tempfile::tempdir;
 
 fn sample_rule_json(id: &str) -> String {

@@ -43,8 +43,8 @@ describe("normalizeFsPath", () => {
       return;
     }
     assert.equal(
-      normalizeFsPath("\\\\?\\D:\\a\\ontocode\\fixtures\\example.ttl"),
-      path.resolve("D:\\a\\ontocode\\fixtures\\example.ttl")
+      normalizeFsPath("\\\\?\\D:\\a\\strixonomy\\fixtures\\example.ttl"),
+      path.resolve("D:\\a\\strixonomy\\fixtures\\example.ttl")
     );
     assert.equal(
       normalizeFsPath("\\\\?\\UNC\\server\\share\\ontology.ttl"),
@@ -60,15 +60,15 @@ describe("pathsEqual", () => {
     }
     assert.equal(
       pathsEqual(
-        "D:\\a\\ontocode\\fixtures\\example.ttl",
-        "\\\\?\\D:\\a\\ontocode\\fixtures\\example.ttl"
+        "D:\\a\\strixonomy\\fixtures\\example.ttl",
+        "\\\\?\\D:\\a\\strixonomy\\fixtures\\example.ttl"
       ),
       true
     );
     assert.equal(
       pathsEqual(
-        "d:\\a\\ontocode\\fixtures\\example.ttl",
-        "\\\\?\\D:\\a\\ontocode\\fixtures\\example.ttl"
+        "d:\\a\\strixonomy\\fixtures\\example.ttl",
+        "\\\\?\\D:\\a\\strixonomy\\fixtures\\example.ttl"
       ),
       true
     );

@@ -54,8 +54,8 @@ jobs:
         with:
           shared-key: vscode-e2e-${{ matrix.platform }}
 
-      - name: Build ontocore-lsp
-        run: cargo build -p ontocore-lsp --bins
+      - name: Build strixonomy-lsp
+        run: cargo build -p strixonomy-lsp --bins
 
       - name: Bundle LSP for extension platform
         shell: bash
@@ -64,7 +64,7 @@ jobs:
       - name: Simulate Marketplace stripping execute bit (Unix)
         if: runner.os != 'Windows'
         shell: bash
-        run: chmod -x "extension/server/${{ matrix.platform }}/ontocore-lsp"
+        run: chmod -x "extension/server/${{ matrix.platform }}/strixonomy-lsp"
 
       - uses: actions/setup-node@v4
         with:

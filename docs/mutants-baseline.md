@@ -8,13 +8,13 @@ cargo install cargo-mutants --locked
 ./scripts/run-mutants.sh --timeout 120 --jobs 2
 ```
 
-`scripts/run-mutants.sh` runs `ontocore-owl` patch mutants with
-`--test-package ontocore-owl --test-package ontocode` so workspace
+`scripts/run-mutants.sh` runs `strixonomy-owl` patch mutants with
+`--test-package strixonomy-owl --test-package strixonomy` so workspace
 `tests/owl_patch_oracles.rs` participates.
 
 ## Baseline
 
-### `ontocore-core` / `path_jail.rs` (2026-07-11 / 2026-07-12)
+### `strixonomy-core` / `path_jail.rs` (2026-07-11 / 2026-07-12)
 
 | Metric | First run | After stronger tests |
 |--------|-----------|----------------------|
@@ -28,7 +28,7 @@ Remaining misses (non-blocking): `||`/`&&` edges in `resolve_path_in_workspace` 
 Critical escape paths covered by unit tests: `ensure_extract_path_within` (`..`, absolute, empty),
 symlink escape, sibling prefix trap, multi-root outside reject, `discover_git_repo_root`.
 
-### `ontocore-owl` / `patch.rs` — critical arms (2026-07-12)
+### `strixonomy-owl` / `patch.rs` — critical arms (2026-07-12)
 
 Focused `--examine-re 'is_safe_iri|apply_one_patch'` with oracle package:
 

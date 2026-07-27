@@ -280,7 +280,7 @@ Every view should provide:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -297,7 +297,7 @@ Recommended improvements:
 
 ---
 
-# Recommended View Types for OntoCode
+# Recommended View Types for Strixonomy
 
 Navigation
 
@@ -370,4 +370,4 @@ Workspace
 
 # Summary
 
-Protégé's view architecture enables multiple synchronized perspectives on the same ontology, allowing users to navigate, inspect, edit, reason over, and visualize complex semantic models. OntoCode should preserve this flexible, dockable architecture while modernizing it with a component-based UI, richer visualizations, real-time collaboration, AI assistance, and a unified extension API.
+Protégé's view architecture enables multiple synchronized perspectives on the same ontology, allowing users to navigate, inspect, edit, reason over, and visualize complex semantic models. Strixonomy should preserve this flexible, dockable architecture while modernizing it with a component-based UI, richer visualizations, real-time collaboration, AI assistance, and a unified extension API.

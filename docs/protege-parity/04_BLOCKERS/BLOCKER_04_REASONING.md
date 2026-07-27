@@ -4,13 +4,13 @@
 
 **Status:** P0 Release Blocker\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the engineering work required for OntoCode to
+This document defines the engineering work required for Strixonomy to
 achieve functional reasoning parity with a standard Protégé Desktop
 installation.
 
@@ -22,7 +22,7 @@ Java-specific implementations.
 
 # Problem Statement
 
-The repository audit found that OntoCode already includes a strong
+The repository audit found that Strixonomy already includes a strong
 reasoning foundation with classification workflows and inferred
 hierarchies.
 

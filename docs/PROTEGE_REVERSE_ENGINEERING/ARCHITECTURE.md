@@ -3,7 +3,7 @@
 ## High-Level Design
 
 ```text
-                OntoCode
+                Strixonomy
                     │
  ┌──────────────────┼──────────────────┐
  │                  │                  │
@@ -55,4 +55,4 @@ Optional services for explanations, documentation, refactoring, and ontology aut
 
 ## Relationship to Protégé
 
-OntoCode should maintain compatibility with OWL standards and established ontology engineering workflows while replacing legacy architectural constraints with a modern, modular platform.
+Strixonomy should maintain compatibility with OWL standards and established ontology engineering workflows while replacing legacy architectural constraints with a modern, modular platform.

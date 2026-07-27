@@ -13,7 +13,7 @@ Source ontologies (indexed)
     ↓
 Profile selection (el | rl | rdfs | dl | auto)
     ↓
-ontocore/runReasoner (LSP) → Ontologos
+strixonomy/runReasoner (LSP) → Ontologos
     ↓
 ClassifyResult + unsatisfiable classes
     ↓
@@ -26,9 +26,9 @@ UI: hierarchy mode (asserted | inferred | combined)
 
 ## Implemented (v0.12)
 
-- LSP `ontocore/runReasoner`, `ontocore/getExplanation`
+- LSP `strixonomy/runReasoner`, `strixonomy/getExplanation`
 - VS Code reasoner + explanation React panels
-- CLI `ontocore classify`
+- CLI `strixonomy classify`
 - EL/RL/RDFS/DL/auto profiles via Ontologos 1.0
 
 ## Compiler-like behaviors (target)

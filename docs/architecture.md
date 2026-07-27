@@ -6,20 +6,20 @@
 >
 > | Read this | When |
 > |-----------|------|
-> | **This page** (`architecture.md`) | Product/ecosystem overview — Ontologos, OntoCore, OntoCode |
+> | **This page** (`architecture.md`) | Product/ecosystem overview — Ontologos, Strixonomy, Strixonomy |
 > | [Implementation architecture](design/ARCHITECTURE.md) | Contributor crate layout and internal modules |
-> | [Product design / UI platform](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLATFORM_ARCHITECTURE.md) | Shared **OntoUI**, OntoStudio target, design system |
-> | [Platform architecture (implementation)](https://github.com/eddiethedean/ontocode/blob/main/docs/platform/OVERVIEW.md) | OntoUI, WorkspaceStore, plugin host — **shipped v0.13–v0.17** |
+> | [Product design / UI platform](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLATFORM_ARCHITECTURE.md) | Shared **OntoUI**, OntoStudio target, design system |
+> | [Platform architecture (implementation)](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI, WorkspaceStore, plugin host — **shipped v0.13–v0.17** |
 > | [Plugin authoring](guides/plugins.md) | Workspace manifests, reference plugins, subprocess workflows (v0.17) |
-> | [OntoCore architecture](ontocore/architecture.md) | Short OntoCore stack summary (links here for detail) |
+> | [Strixonomy architecture](strixonomy/architecture.md) | Short Strixonomy stack summary (links here for detail) |
 >
 > **Contributor crate layout:** [Implementation architecture](design/ARCHITECTURE.md) (internal modules only).
 >
-> **Latest tagged: v0.26.2** — v0.26 ships today. OntoCode (VS Code) + OntoCore (CLI/LSP/library).
+> **Latest tagged: v0.26.2** — v0.26 ships today. Strixonomy (VS Code) + Strixonomy (CLI/LSP/library).
 >
-> **Planned v1.0:** curated plugin marketplace, production owlmake integration, language SDKs, MCP server. Plugin **SDK 1.0** wire is frozen today — [Plugin policy](guides/plugin-policy.md). See [Platform roadmap](roadmap.md) ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md)).
+> **Planned v1.0:** curated plugin marketplace, production owlmake integration, language SDKs, MCP server. Plugin **SDK 1.0** wire is frozen today — [Plugin policy](guides/plugin-policy.md). See [Platform roadmap](roadmap.md) ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)).
 >
-> **Planned post-1.0:** OntoStudio desktop, AI-native workflows — [UI roadmap mapping](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md).
+> **Planned post-1.0:** OntoStudio desktop, AI-native workflows — [UI roadmap mapping](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md).
 >
 > **Implementers only:** `docs/design/`, `docs/platform/`, and `docs/ui/` architecture specs are engineering targets — not the product capability matrix. Use [What ships today](SHIPPED.md) for adoption decisions.
 
@@ -31,8 +31,8 @@ External Workflow Plugins (SDK 1.0)  ← TOML + subprocess plugins; api_version 
           │
           ▼
 Applications
-├── OntoCode (VS Code)             ← ships today
-├── OntoStudio (desktop)           ← planned post v1.0 ([UI spec](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ONTOSTUDIO_DESKTOP.md))
+├── Strixonomy (VS Code)             ← ships today
+├── OntoStudio (desktop)           ← planned post v1.0 ([UI spec](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ONTOSTUDIO_DESKTOP.md))
 ├── CLI                            ← ships today
 ├── GitHub Actions (via CLI)       ← ships today
 ├── Python / TypeScript SDKs       ← planned
@@ -40,7 +40,7 @@ Applications
 └── Future Desktop/Web Apps
           │
           ▼
-      OntoCore (ships today)
+      Strixonomy (ships today)
 ────────────────────────
 Workspace Engine
 Parser
@@ -75,9 +75,9 @@ OWL • RDF • Turtle • OBO
 
 ### Ontologos
 
-Reasoning algorithms and semantic inference. OntoCore delegates classification, consistency, and explanations to Ontologos — it does not embed a separate reasoner.
+Reasoning algorithms and semantic inference. Strixonomy delegates classification, consistency, and explanations to Ontologos — it does not embed a separate reasoner.
 
-### OntoCore
+### Strixonomy
 
 Reusable semantic workspace platform: index, query, diagnostics, refactoring, and semantic diff. Consumed by the VS Code extension, CLI, and Rust library.
 
@@ -86,23 +86,23 @@ Reusable semantic workspace platform: index, query, diagnostics, refactoring, an
 - **Shipped (SDK 1.0 / v0.26):** frozen wire contract — workspace manifest discovery, reference plugins, CLI/LSP hooks, subprocess workflow runner, UI views/commands/preferences/context actions, lifecycle (`depends_on` / `activation`), provider actions (see [Plugin authoring](guides/plugins.md)).
 - **Product 1.0 targets:** curated marketplace/discovery and production owlmake hardening.
 
-OntoCore is **not** a workflow engine; build, release, and QC automation should live in external tools and workflow plugins rather than becoming core engine dependencies.
+Strixonomy is **not** a workflow engine; build, release, and QC automation should live in external tools and workflow plugins rather than becoming core engine dependencies.
 
 ### External workflow plugins (e.g. owlmake)
 
-**SDK 1.0 wire ships today; production owlmake integration is product 1.0.** [owlmake](https://github.com/INCATools/owlmake) is the reference workflow plugin design — ROBOT/ODK-style pipelines without becoming a core OntoCore dependency. Today, ROBOT interop is the `ontocore robot` CLI wrapper plus the subprocess workflow scaffold.
+**SDK 1.0 wire ships today; production owlmake integration is product 1.0.** [owlmake](https://github.com/INCATools/owlmake) is the reference workflow plugin design — ROBOT/ODK-style pipelines without becoming a core Strixonomy dependency. Today, ROBOT interop is the `strixonomy robot` CLI wrapper plus the subprocess workflow scaffold.
 
-### OntoCode
+### Strixonomy
 
-Reference IDE on top of OntoCore. Presents editing, reasoning, and diagnostics in VS Code. Plugin views, commands, preferences, and context actions ship today (SDK 1.0); marketplace-scale workflow automation remains a product **1.0** target.
+Reference IDE on top of Strixonomy. Presents editing, reasoning, and diagnostics in VS Code. Plugin views, commands, preferences, and context actions ship today (SDK 1.0); marketplace-scale workflow automation remains a product **1.0** target.
 
 ## Design Philosophy
 
 Ontologos thinks.
 
-OntoCore understands.
+Strixonomy understands.
 
-OntoCode presents.
+Strixonomy presents.
 
 Workflow plugins automate.
 
@@ -117,4 +117,4 @@ Workflow plugins automate.
 - Collaborative editing
 - JetBrains and web clients
 
-For implementation-level crate layout and diagrams, see [Implementation architecture](https://ontocode-vs.readthedocs.io/en/latest/design/ARCHITECTURE/) (also [docs/design/ARCHITECTURE.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/ARCHITECTURE.md) on GitHub).
+For implementation-level crate layout and diagrams, see [Implementation architecture](https://strixonomy-vs.readthedocs.io/en/latest/design/ARCHITECTURE/) (also [docs/design/ARCHITECTURE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/ARCHITECTURE.md) on GitHub).

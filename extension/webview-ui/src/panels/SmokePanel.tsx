@@ -13,7 +13,7 @@ export function SmokePanel(_props?: import("../workspaces/types").WorkspaceProps
     <Panel>
       <div className="oc-brand">
         <div className="oc-brand-mark" aria-hidden="true" />
-        <h1>OntoCode React</h1>
+        <h1>Strixonomy React</h1>
         <p className="oc-muted">Webview foundation is active.</p>
       </div>
     </Panel>

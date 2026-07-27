@@ -1,11 +1,11 @@
 # REFACTORING.md
 
 # Ontology Refactoring Workflow
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
-Ontology refactoring is the process of improving the internal structure of an ontology while preserving its intended semantics. Protégé provides a collection of refactoring operations through menus, context actions, and plugins. OntoCode should evolve these capabilities into an IDE-quality refactoring system comparable to modern software development environments.
+Ontology refactoring is the process of improving the internal structure of an ontology while preserving its intended semantics. Protégé provides a collection of refactoring operations through menus, context actions, and plugins. Strixonomy should evolve these capabilities into an IDE-quality refactoring system comparable to modern software development environments.
 
 ---
 
@@ -204,7 +204,7 @@ Every semantic refactoring should optionally:
 
 # Version Control
 
-OntoCode should integrate refactoring with Git.
+Strixonomy should integrate refactoring with Git.
 
 Recommended workflow:
 
@@ -257,7 +257,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -306,4 +306,4 @@ Platform
 
 # Summary
 
-Protégé provides the foundations for ontology refactoring, but many operations remain relatively manual. OntoCode should elevate refactoring to a first-class engineering capability with dependency analysis, semantic previews, Git integration, AI-assisted recommendations, and an extensible command-based architecture that makes ontology maintenance as safe and productive as modern software development.
+Protégé provides the foundations for ontology refactoring, but many operations remain relatively manual. Strixonomy should elevate refactoring to a first-class engineering capability with dependency analysis, semantic previews, Git integration, AI-assisted recommendations, and an extensible command-based architecture that makes ontology maintenance as safe and productive as modern software development.

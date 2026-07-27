@@ -6,7 +6,7 @@ export function patchFailureMessage(result: ApplyPatchResult): string {
   if (first) {
     return first.message;
   }
-  return "OntoCode: patch was not applied";
+  return "Strixonomy: patch was not applied";
 }
 
 export function hasPatchFailureDiagnostics(result: ApplyPatchResult): boolean {
@@ -20,7 +20,7 @@ export function isPatchFullySynced(result: ApplyAxiomPatchClientResult): boolean
 
 /** User-facing message when disk write succeeded but workspace-edit sync was cancelled. */
 export function patchSyncCancelledMessage(): string {
-  return "OntoCode: changes written to disk but editor sync was cancelled";
+  return "Strixonomy: changes written to disk but editor sync was cancelled";
 }
 
 /**

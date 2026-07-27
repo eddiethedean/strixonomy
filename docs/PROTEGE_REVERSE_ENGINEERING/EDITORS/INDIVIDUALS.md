@@ -6,7 +6,7 @@
 
 The Individuals editor manages OWL named individuals (instances). It allows ontology engineers to create instances of classes, assign object and data property values, define same/different individuals, annotate instances, inspect inferred types, and validate instance data.
 
-For OntoCode, this editor should preserve Protégé's capabilities while providing a modern, interactive experience for instance modeling and knowledge graph editing.
+For Strixonomy, this editor should preserve Protégé's capabilities while providing a modern, interactive experience for instance modeling and knowledge graph editing.
 
 ---
 
@@ -186,7 +186,7 @@ Supported search modes:
 - Full-text
 - Type
 
-Recommended OntoCode improvements:
+Recommended Strixonomy improvements:
 
 - Fuzzy search
 - Semantic search
@@ -261,7 +261,7 @@ Plugins should contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -317,4 +317,4 @@ Platform
 
 # Summary
 
-The Individuals editor is where ontology schemas become concrete knowledge. Protégé provides comprehensive support for instance creation, typing, property assertions, reasoning, and validation. OntoCode should retain these capabilities while introducing graph-native editing, richer validation, collaborative workflows, AI-assisted instance authoring, and a modern React/Rust architecture.
+The Individuals editor is where ontology schemas become concrete knowledge. Protégé provides comprehensive support for instance creation, typing, property assertions, reasoning, and validation. Strixonomy should retain these capabilities while introducing graph-native editing, richer validation, collaborative workflows, AI-assisted instance authoring, and a modern React/Rust architecture.

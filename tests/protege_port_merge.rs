@@ -3,9 +3,9 @@
 
 mod support;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_refactor::{apply_refactor_plan, preview_merge_entities};
 use std::collections::HashMap;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_refactor::{apply_refactor_plan, preview_merge_entities};
 use support::protege_port::{assert_parent_of, copy_ported_workspace, index_workspace};
 
 #[test]

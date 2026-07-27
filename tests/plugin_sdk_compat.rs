@@ -2,10 +2,10 @@
 //!
 //! Covers manifest schema, lifecycle order, permissions, and provider golden path.
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_plugin::{parse_manifest, PluginHost, PluginHostError, PluginLifecycleState};
-use ontocore_plugin_builtins::load_plugin_host;
 use std::path::Path;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_plugin::{parse_manifest, PluginHost, PluginHostError, PluginLifecycleState};
+use strixonomy_plugin_builtins::load_plugin_host;
 
 fn write_executable(path: &Path, body: &str) {
     std::fs::write(path, body).expect("write script");
@@ -68,13 +68,13 @@ graph = true
 fn missing_workspace_write_fails_subprocess_validate() {
     let dir = tempfile::tempdir().unwrap();
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).unwrap();
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).unwrap();
     std::fs::write(workspace.join("demo.ttl"), "@prefix ex: <http://ex/> .\nex:A a owl:Class .\n")
         .unwrap();
     let bin = workspace.join("stub.sh");
     write_executable(&bin, "#!/bin/sh\necho '{\"diagnostics\":[]}'\n");
     std::fs::write(
-        workspace.join(".ontocore/plugins/stub.toml"),
+        workspace.join(".strixonomy/plugins/stub.toml"),
         format!(
             r#"
 [plugin]
@@ -107,7 +107,7 @@ validate = true
 fn lifecycle_activation_order_and_disable_persist() {
     let dir = tempfile::tempdir().unwrap();
     let workspace = dir.path().join("ws");
-    let plugins = workspace.join(".ontocore/plugins");
+    let plugins = workspace.join(".strixonomy/plugins");
     std::fs::create_dir_all(&plugins).unwrap();
     std::fs::write(
         plugins.join("a.toml"),
@@ -162,7 +162,7 @@ graph = true
 fn provider_golden_path_discover_activate_run() {
     let dir = tempfile::tempdir().unwrap();
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).unwrap();
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).unwrap();
     std::fs::write(
         workspace.join("demo.ttl"),
         "@prefix ex: <http://ex/> .\nex:Person a owl:Class .\n",
@@ -189,7 +189,7 @@ esac
         ("graph", "graph", "org.example.graph", "graph = true"),
     ] {
         std::fs::write(
-            workspace.join(".ontocore/plugins").join(format!("{name}.toml")),
+            workspace.join(".strixonomy/plugins").join(format!("{name}.toml")),
             format!(
                 r#"
 [plugin]
@@ -279,7 +279,7 @@ permissions = ["workspace.read", "external_process"]
 fn cycle_in_depends_on_fails_discover() {
     let dir = tempfile::tempdir().unwrap();
     let workspace = dir.path().join("ws");
-    let plugins = workspace.join(".ontocore/plugins");
+    let plugins = workspace.join(".strixonomy/plugins");
     std::fs::create_dir_all(&plugins).unwrap();
     std::fs::write(
         plugins.join("a.toml"),

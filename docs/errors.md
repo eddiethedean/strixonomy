@@ -1,30 +1,30 @@
-# Errors reference (OntoCore v0.26)
+# Errors reference (Strixonomy v0.26)
 
-Unified catalog of error codes, exit behavior, and failure modes for OntoCore **v0.26.2** (latest tagged).
+Unified catalog of error codes, exit behavior, and failure modes for Strixonomy **v0.26.2** (latest tagged).
 
 ## CLI exit codes
 
 | Command | Exit 0 | Exit non-zero |
 |---------|--------|---------------|
-| `ontocore index` | Index succeeded | Index/parse/I/O failure |
-| `ontocore inspect` | Index succeeded | Index/parse/I/O failure |
-| `ontocore new` | Ontology created | Path exists (without `--force`), IRI validation failure, I/O |
-| `ontocore validate` | No diagnostic **errors** (warnings/info allowed; includes plugin validators) | One or more diagnostic **errors** (core or plugin) |
-| `ontocore query` | Query succeeded | Parse error, unsupported SQL, I/O failure |
-| `ontocore sparql` | Query succeeded (results may be truncated at row cap) | Parse error, I/O failure |
-| `ontocore dl-query` | Query succeeded | Manchester parse error, reasoner error, I/O |
-| `ontocore patch` | Patch applied or preview succeeded | Invalid patch, unsupported format, I/O failure |
-| `ontocore classify` | Consistent ontology (no unsatisfiable classes) | Unsatisfiable classes, reasoner error, I/O failure |
-| `ontocore explain` | Explanation produced | Class not found, explanation unavailable, reasoner error |
-| `ontocore realize` | Realization succeeded | Reasoner error, I/O |
-| `ontocore check-instance` | Instance **entailed** | **Not entailed**, or reasoner error |
-| `ontocore refactor` (subcommands) | Preview or apply succeeded | Invalid request, path outside workspace, I/O failure |
-| `ontocore diff` | Diff succeeded | Git/parse/I/O failure, invalid ref token |
-| `ontocore docs` | Export succeeded | Index, plugin export, or I/O failure |
-| `ontocore plugins list` | Discovery succeeded | Host/discovery failure |
-| `ontocore plugins run` | Plugin action succeeded | Host/action failure |
-| `ontocore workflow` | Workflow step succeeded | Plugin/subprocess failure |
-| `ontocore robot` | ROBOT subprocess exit 0 | ROBOT non-zero exit or spawn failure |
+| `strixonomy index` | Index succeeded | Index/parse/I/O failure |
+| `strixonomy inspect` | Index succeeded | Index/parse/I/O failure |
+| `strixonomy new` | Ontology created | Path exists (without `--force`), IRI validation failure, I/O |
+| `strixonomy validate` | No diagnostic **errors** (warnings/info allowed; includes plugin validators) | One or more diagnostic **errors** (core or plugin) |
+| `strixonomy query` | Query succeeded | Parse error, unsupported SQL, I/O failure |
+| `strixonomy sparql` | Query succeeded (results may be truncated at row cap) | Parse error, I/O failure |
+| `strixonomy dl-query` | Query succeeded | Manchester parse error, reasoner error, I/O |
+| `strixonomy patch` | Patch applied or preview succeeded | Invalid patch, unsupported format, I/O failure |
+| `strixonomy classify` | Consistent ontology (no unsatisfiable classes) | Unsatisfiable classes, reasoner error, I/O failure |
+| `strixonomy explain` | Explanation produced | Class not found, explanation unavailable, reasoner error |
+| `strixonomy realize` | Realization succeeded | Reasoner error, I/O |
+| `strixonomy check-instance` | Instance **entailed** | **Not entailed**, or reasoner error |
+| `strixonomy refactor` (subcommands) | Preview or apply succeeded | Invalid request, path outside workspace, I/O failure |
+| `strixonomy diff` | Diff succeeded | Git/parse/I/O failure, invalid ref token |
+| `strixonomy docs` | Export succeeded | Index, plugin export, or I/O failure |
+| `strixonomy plugins list` | Discovery succeeded | Host/discovery failure |
+| `strixonomy plugins run` | Plugin action succeeded | Host/action failure |
+| `strixonomy workflow` | Workflow step succeeded | Plugin/subprocess failure |
+| `strixonomy robot` | ROBOT subprocess exit 0 | ROBOT non-zero exit or spawn failure |
 
 `validate` and `classify` exit semantics are stable for CI — see [workspace-limits.md](workspace-limits.md) and [ci-integration.md](ci-integration.md).
 
@@ -34,14 +34,14 @@ Other CLI commands return non-zero on failure with a human-readable message on s
 
 | Surface | Unsatisfiable classes | Use in CI |
 |---------|----------------------|-----------|
-| `ontocore classify` | **Non-zero exit** | Fail the job when the ontology is inconsistent |
-| `ontocore/runReasoner` | **Success** with `{ "consistent": false, ... }` | Inspect `consistent` in the JSON result; do not rely on JSON-RPC error |
+| `strixonomy classify` | **Non-zero exit** | Fail the job when the ontology is inconsistent |
+| `strixonomy/runReasoner` | **Success** with `{ "consistent": false, ... }` | Inspect `consistent` in the JSON result; do not rely on JSON-RPC error |
 
-IDE flows should use `runReasoner` and show unsatisfiability in the UI. Pipelines that gate merges should prefer `ontocore classify`.
+IDE flows should use `runReasoner` and show unsatisfiability in the UI. Pipelines that gate merges should prefer `strixonomy classify`.
 
 ## LSP custom method errors (`LspErrorPayload`)
 
-Custom `ontocore/*` method failures return JSON-RPC errors with `data` containing:
+Custom `strixonomy/*` method failures return JSON-RPC errors with `data` containing:
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -55,19 +55,19 @@ Custom `ontocore/*` method failures return JSON-RPC errors with `data` containin
 | Code | When | Typical `user_action` |
 |------|------|------------------------|
 | `INVALID_PARAMS` | Malformed or unknown method parameters | Fix request JSON; see [lsp-api.md](lsp-api.md) |
-| `NOT_INDEXED` | Catalog methods called before first index | Run OntoCode: Index Workspace |
+| `NOT_INDEXED` | Catalog methods called before first index | Run Strixonomy: Index Workspace |
 | `ENTITY_NOT_FOUND` | `getEntity` / `setActiveOntology` id or IRI not in catalog | Check IRI/id spelling / re-index |
 | `PATCH_INVALID` | Patch JSON invalid or entity missing | Check patch parameters and entity IRIs |
 | `UNSUPPORTED_FORMAT` | Write-back on a read-only format | Write-back is supported for **Turtle**, **OBO**, **RDF/XML**, and **OWL/XML**. Convert JSON-LD / N-Triples / TriG before editing — see [supported-formats](supported-formats.md) |
 | `INDEX_FAILED` | Indexing failed (parse, limits, I/O) **or plugin host failure** (`listPlugins`, `runPlugin`) | Check ontology files; verify plugin manifest and subprocess entry |
 | `QUERY_FAILED` | SQL or SPARQL query failed | Check query syntax and [sql-reference](sql-reference.md) |
-| `MANCHESTER_INVALID` | Manchester expression parse failed | Fix expression; see [Manchester editor](ontocode/manchester-editor.md) |
+| `MANCHESTER_INVALID` | Manchester expression parse failed | Fix expression; see [Manchester editor](ide/manchester-editor.md) |
 | `APPLIED_NOT_INDEXED` | Patch written to buffer/disk but reindex failed | Run Index Workspace; file may already be updated (`recoverable: true`) |
 | `REASONER_FAILED` | `runReasoner` failed (profile, parse, OntoLogos error) | Try another profile or fix ontology axioms |
 | `EXPLANATION_FAILED` | `getExplanation` failed | Run reasoner first or choose another class |
 | `REFACTOR_FAILED` | Refactor preview/apply failed | Check IRIs, format coverage (rename/merge/replace vs Turtle-first ops), and preview plan |
 | `GRAPH_FAILED` | `getGraph` failed | Re-index workspace or reduce neighborhood depth |
-| `ROBOT_FAILED` | `runRobot` external process failed | Check `ontocode.robotPath` and ROBOT install |
+| `ROBOT_FAILED` | `runRobot` external process failed | Check `strixonomy.robotPath` and ROBOT install |
 
 Plugin host errors (`listPlugins`, `runPlugin`) return `INDEX_FAILED` with a message describing the plugin failure (not `INVALID_PARAMS`).
 
@@ -84,7 +84,7 @@ Successful patch/refactor apply may include `reindex_warning` in the result when
       "code": "NOT_INDEXED",
       "message": "Workspace has not been indexed yet",
       "recoverable": true,
-      "user_action": "Run OntoCode: Index Workspace"
+      "user_action": "Run Strixonomy: Index Workspace"
     }
   }
 }
@@ -92,7 +92,7 @@ Successful patch/refactor apply may include `reindex_warning` in the result when
 
 ## Patch diagnostics (`PatchDiagnostic`)
 
-When `ontocore patch` or `ontocore/applyAxiomPatch` fails validation, the result may include:
+When `strixonomy patch` or `strixonomy/applyAxiomPatch` fails validation, the result may include:
 
 ```json
 {
@@ -129,18 +129,18 @@ Query diagnostics: `SELECT code, severity, message, file FROM diagnostics WHERE 
 
 ## Plugin diagnostic codes (v0.14+)
 
-Plugin validators contribute diagnostics with wire codes `plugin:<plugin_id>:<code>` and LSP `source` `ontocore-plugin:<plugin_id>`.
+Plugin validators contribute diagnostics with wire codes `plugin:<plugin_id>:<code>` and LSP `source` `strixonomy-plugin:<plugin_id>`.
 
 | Wire code suffix | Plugin | Severity | Meaning |
 |------------------|--------|----------|---------|
-| `missing_label` | `ontocode.naming-validator` | warning | Class/property missing `rdfs:label` |
-| `iri_prefix` | `ontocode.naming-validator` | warning | IRI does not match configured prefix |
-| `shapes_missing` | `ontocode.shacl-validator` | info | SHACL shapes directory not found |
-| `shapes_empty` | `ontocode.shacl-validator` | info | No `.ttl`/`.rdf`/`.shacl` files in shapes dir |
-| `shacl_pending` | `ontocode.shacl-validator` | info | Shapes found; full rudof validation not yet integrated |
+| `missing_label` | `strixonomy.naming-validator` | warning | Class/property missing `rdfs:label` |
+| `iri_prefix` | `strixonomy.naming-validator` | warning | IRI does not match configured prefix |
+| `shapes_missing` | `strixonomy.shacl-validator` | info | SHACL shapes directory not found |
+| `shapes_empty` | `strixonomy.shacl-validator` | info | No `.ttl`/`.rdf`/`.shacl` files in shapes dir |
+| `shacl_pending` | `strixonomy.shacl-validator` | info | Shapes found; full rudof validation not yet integrated |
 | `plugin_error` | any | error | Plugin host run failure |
 
-Example: `plugin:ontocode.naming-validator:missing_label`
+Example: `plugin:strixonomy.naming-validator:missing_label`
 
 ## Workspace limit failures
 
@@ -169,21 +169,21 @@ Integrators using crates.io crates should match **method → error type** (not e
 | `Workspace::classify` / `explain` / `reasoner_input` | `ReasonerError` | Profile unsupported, axiom load failure |
 | `import_graph*` | `GraphError` | Invalid depth / request |
 | Owl / OBO patch helpers | `OwlError` / OBO errors | Patch mismatch, write-back format |
-| Façade helpers that `?`-convert | `ontocore::Error` | Unified: `Catalog` / `Query` / `Graph` / `Reasoner` / export / owl / obo variants |
+| Façade helpers that `?`-convert | `strixonomy::Error` | Unified: `Catalog` / `Query` / `Graph` / `Reasoner` / export / owl / obo variants |
 
 | Crate | Error type | docs.rs |
 |-------|------------|---------|
-| `ontocore` (façade) | `ontocore::Error` | [Error](https://docs.rs/ontocore/latest/ontocore/enum.Error.html) |
-| `ontocore-core` | `OntoCoreError` | Shared diagnostic/core failures |
-| `ontocore-catalog` | `CatalogError`, `GraphError` | Index / graph |
-| `ontocore-query` | `QueryError` | SQL/SPARQL |
-| `ontocore-owl` | `OwlError` | Turtle patches |
-| `ontocore-reasoner` | `ReasonerError` | Classify/explain |
-| `ontocore-parser` | `ParseError` | RDF syntax |
+| `strixonomy` (façade) | `strixonomy::Error` | [Error](https://docs.rs/strixonomy/latest/strixonomy/enum.Error.html) |
+| `strixonomy-core` | `StrixonomyError` | Shared diagnostic/core failures |
+| `strixonomy-catalog` | `CatalogError`, `GraphError` | Index / graph |
+| `strixonomy-query` | `QueryError` | SQL/SPARQL |
+| `strixonomy-owl` | `OwlError` | Turtle patches |
+| `strixonomy-reasoner` | `ReasonerError` | Classify/explain |
+| `strixonomy-parser` | `ParseError` | RDF syntax |
 
 **LSP mapping:** library failures often surface as `INDEX_FAILED`, `QUERY_FAILED`, `REASONER_FAILED`, or `UNSUPPORTED_FORMAT` in the table above.
 
-crates.io tutorial: [Rust library guide](guides/rust-library.md). Clone-only example: [`examples/error_handling.rs`](https://github.com/eddiethedean/ontocode/blob/main/examples/error_handling.rs).
+crates.io tutorial: [Rust library guide](guides/rust-library.md). Clone-only example: [`examples/error_handling.rs`](https://github.com/eddiethedean/strixonomy/blob/main/examples/error_handling.rs).
 
 ## Related docs
 

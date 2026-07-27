@@ -3,7 +3,7 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Graph Workspace Specification
+# Strixonomy Graph Workspace Specification
 
 ## Purpose
 

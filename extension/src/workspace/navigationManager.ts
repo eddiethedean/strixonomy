@@ -21,7 +21,7 @@ export class NavigationManager {
     const saved = context.workspaceState.get<{
       stack: NavigationEntry[];
       index: number;
-    }>("ontocode.navigation");
+    }>("strixonomy.navigation");
     if (saved?.stack?.length) {
       this.stack = saved.stack.slice(-MAX_NAV);
       this.index = Math.min(saved.index, this.stack.length - 1);
@@ -151,7 +151,7 @@ export class NavigationManager {
     if (!this.context) {
       return;
     }
-    await this.context.workspaceState.update("ontocode.navigation", {
+    await this.context.workspaceState.update("strixonomy.navigation", {
       stack: this.stack,
       index: this.index,
     });

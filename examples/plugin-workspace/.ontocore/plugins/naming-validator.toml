@@ -2,7 +2,7 @@
 name = "naming-convention-validator"
 version = "0.1.0"
 kind = "validator"
-id = "ontocode.naming-validator"
+id = "strixonomy.naming-validator"
 api_version = "1"
 permissions = ["workspace.read"]
 
@@ -14,7 +14,7 @@ diagnostics = true
 require_label = true
 
 [[ui.commands]]
-id = "ontocode.naming.check"
+id = "strixonomy.naming.check"
 title = "Check naming conventions"
 
 [[ui.inspector_cards]]

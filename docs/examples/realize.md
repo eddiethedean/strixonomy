@@ -1,12 +1,12 @@
 # Realize and instance check cookbook
 
-ABox realization and instance checking for OntoCore CLI (v0.23+). See [Reasoner guide](../guides/reasoner.md) and [CLI reference](../cli-reference.md).
+ABox realization and instance checking for Strixonomy CLI (v0.23+). See [Reasoner guide](../guides/reasoner.md) and [CLI reference](../cli-reference.md).
 
 ## Realize individuals
 
 ```bash
-ontocore realize /path/to/ontologies --profile rl
-ontocore realize /path/to/ontologies --profile dl --format json
+strixonomy realize /path/to/ontologies --profile rl
+strixonomy realize /path/to/ontologies --profile dl --format json
 ```
 
 **Text output** lists each individual with inferred `types` and `most_specific` types.
@@ -19,12 +19,12 @@ cargo run -- realize fixtures --profile rl
 ## Check instance
 
 ```bash
-ontocore check-instance fixtures \
+strixonomy check-instance fixtures \
   --individual 'http://example.org/people#alice' \
   --class 'http://example.org/people#Person' \
   --profile rl
 
-ontocore check-instance fixtures \
+strixonomy check-instance fixtures \
   --individual 'http://example.org/people#alice' \
   --class 'http://example.org/people#Person' \
   --format json

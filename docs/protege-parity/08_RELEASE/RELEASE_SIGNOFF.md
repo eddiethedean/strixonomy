@@ -1,17 +1,17 @@
 # RELEASE_SIGNOFF
 
-# OntoCode 1.0 Release Sign-off
+# Strixonomy 1.0 Release Sign-off
 
 **Directory:** 08_RELEASE\
 **Status:** Final Release Approval Record\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document is the formal approval record authorizing the public
-release of OntoCode 1.0.
+release of Strixonomy 1.0.
 
 Completion of this document indicates that all release-blocking
 requirements have been verified, all required reviews have been

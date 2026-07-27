@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Define the ontology serialization formats that a standard
 Protégé Desktop installation supports and establish the functional
-parity expectations for OntoCode.
+parity expectations for Strixonomy.
 
 > This audit focuses on user workflows (open, edit, save, round-trip),
 > not parser implementation details.

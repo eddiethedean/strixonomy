@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-OntoCode needs responsive UI while heavy ontology logic should remain in Rust.
+Strixonomy needs responsive UI while heavy ontology logic should remain in Rust.
 
 ## Decision
 Expose ontology intelligence through a Rust language server.

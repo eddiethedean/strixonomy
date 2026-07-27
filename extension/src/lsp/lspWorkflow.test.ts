@@ -1,6 +1,6 @@
 /**
  * Behavioral LSP workflows: write-back + reasoner → explanation.
- * Uses a real ontocore-lsp binary (not source-regex guards).
+ * Uses a real strixonomy-lsp binary (not source-regex guards).
  */
 import assert from "node:assert/strict";
 import * as fs from "node:fs";
@@ -176,7 +176,7 @@ async function withLspSession(
 
 describe("LSP ontology workflows", { concurrency: false }, () => {
   it("applyAxiomPatch write-back updates file and catalog label", async () => {
-    const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "ontocode-patch-"));
+    const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "strixonomy-patch-"));
     tempDirs.push(workspace);
     const ttlPath = path.join(workspace, "people.ttl");
     fs.copyFileSync(
@@ -186,11 +186,11 @@ describe("LSP ontology workflows", { concurrency: false }, () => {
     const documentUri = `file://${ttlPath}`;
 
     await withLspSession(workspace, async (session, workspaceUri) => {
-      session.send(2, "ontocore/indexWorkspace", { workspace_uri: workspaceUri });
+      session.send(2, "strixonomy/indexWorkspace", { workspace_uri: workspaceUri });
       const indexed = await session.waitForId(2);
       assert.equal(indexed.error, undefined, JSON.stringify(indexed));
 
-      session.send(3, "ontocore/applyAxiomPatch", {
+      session.send(3, "strixonomy/applyAxiomPatch", {
         document_uri: documentUri,
         preview_only: false,
         patches: [
@@ -209,10 +209,10 @@ describe("LSP ontology workflows", { concurrency: false }, () => {
       const disk = fs.readFileSync(ttlPath, "utf8");
       assert.match(disk, /WorkflowLabel/);
 
-      session.send(4, "ontocore/indexWorkspace", { workspace_uri: workspaceUri });
+      session.send(4, "strixonomy/indexWorkspace", { workspace_uri: workspaceUri });
       await session.waitForId(4);
 
-      session.send(5, "ontocore/getEntity", {
+      session.send(5, "strixonomy/getEntity", {
         iri: "http://example.org/people#Person",
       });
       const entity = await session.waitForId(5);
@@ -222,7 +222,7 @@ describe("LSP ontology workflows", { concurrency: false }, () => {
   });
 
   it("runReasoner then getExplanation agree on unsat Invalid class", async () => {
-    const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "ontocode-reason-"));
+    const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "strixonomy-reason-"));
     tempDirs.push(workspace);
     fs.copyFileSync(
       path.resolve(__dirname, "..", "..", "..", "fixtures", "reasoner-unsat.ttl"),
@@ -230,10 +230,10 @@ describe("LSP ontology workflows", { concurrency: false }, () => {
     );
 
     await withLspSession(workspace, async (session, workspaceUri) => {
-      session.send(2, "ontocore/indexWorkspace", { workspace_uri: workspaceUri });
+      session.send(2, "strixonomy/indexWorkspace", { workspace_uri: workspaceUri });
       await session.waitForId(2);
 
-      session.send(3, "ontocore/runReasoner", { profile: "el", auto_detect: false });
+      session.send(3, "strixonomy/runReasoner", { profile: "el", auto_detect: false });
       const classified = await session.waitForId(3, 60_000);
       assert.equal(classified.error, undefined, JSON.stringify(classified));
       const result = classified.result as {
@@ -248,7 +248,7 @@ describe("LSP ontology workflows", { concurrency: false }, () => {
         `expected Invalid unsatisfiable: ${JSON.stringify(result.unsatisfiable)}`
       );
 
-      session.send(4, "ontocore/getExplanation", {
+      session.send(4, "strixonomy/getExplanation", {
         class_iri: "http://example.org/reasoner-unsat#Invalid",
         profile: "el",
       });

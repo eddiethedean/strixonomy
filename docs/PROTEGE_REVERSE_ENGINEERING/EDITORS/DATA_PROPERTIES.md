@@ -6,7 +6,7 @@
 
 The Data Properties editor manages OWL data properties, which relate individuals to literal values such as strings, numbers, dates, booleans, and other XML Schema datatypes. It provides tools to model datatype semantics, define domains, organize property hierarchies, and support ontology validation and reasoning.
 
-For OntoCode, this editor should provide full functional parity with Protégé while offering a modern, component-based user experience.
+For Strixonomy, this editor should provide full functional parity with Protégé while offering a modern, component-based user experience.
 
 ---
 
@@ -166,7 +166,7 @@ Supported search modes:
 - Prefix
 - Full-text
 
-Recommended OntoCode enhancements:
+Recommended Strixonomy enhancements:
 
 - Fuzzy search
 - Symbol search
@@ -252,7 +252,7 @@ Plugins should contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -313,4 +313,4 @@ Platform
 
 # Summary
 
-The Data Properties editor enables ontology engineers to model literal-valued relationships with strong datatype semantics. Protégé provides robust editing, validation, and reasoning support for these properties. OntoCode should preserve this capability while modernizing the experience with richer datatype tooling, AI-assisted modeling, collaborative workflows, and a command-driven React/Rust architecture.
+The Data Properties editor enables ontology engineers to model literal-valued relationships with strong datatype semantics. Protégé provides robust editing, validation, and reasoning support for these properties. Strixonomy should preserve this capability while modernizing the experience with richer datatype tooling, AI-assisted modeling, collaborative workflows, and a command-driven React/Rust architecture.

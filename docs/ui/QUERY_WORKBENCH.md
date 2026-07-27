@@ -3,14 +3,14 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Query Workbench Specification
+# Strixonomy Query Workbench Specification
 
 ## Purpose
 
 The Query Workbench is the primary environment for exploring,
 validating, analyzing, and transforming semantic data. It should provide
 a developer experience comparable to JetBrains DataGrip while remaining
-tightly integrated with OntoCore's semantic model.
+tightly integrated with Strixonomy's semantic model.
 
 Rather than being "a place to run SPARQL," the Query Workbench should
 become the command center for ontology exploration.
@@ -338,5 +338,5 @@ The Query Workbench succeeds when ontology engineers think of querying
 as a natural part of daily development rather than a specialized expert
 task. It should combine the power of professional database IDEs with
 semantic awareness, rich visualizations, AI assistance, and deep
-integration into the OntoCode workspace, making it one of the primary
+integration into the Strixonomy workspace, making it one of the primary
 environments for understanding and evolving knowledge graphs.

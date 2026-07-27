@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Visual Design System
+# Strixonomy Visual Design System
 
 ## Purpose
 
-The Visual Design System defines the visual language of OntoCode. Every
+The Visual Design System defines the visual language of Strixonomy. Every
 interface, component, icon, color, animation, and layout should
 contribute to a cohesive, professional, and distraction-free engineering
 environment.
@@ -365,13 +365,13 @@ Plugin authors should inherit:
 -   motion
 -   component styles
 
-Plugins should feel native to OntoCode.
+Plugins should feel native to Strixonomy.
 
 ------------------------------------------------------------------------
 
 # Success Criteria
 
-Users should describe OntoCode as:
+Users should describe Strixonomy as:
 
 -   Modern
 -   Fast

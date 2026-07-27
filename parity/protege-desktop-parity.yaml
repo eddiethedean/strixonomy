@@ -12,7 +12,7 @@ requirements:
     source_files:
       - extension/src/commands/v017Commands.ts
       - extension/webview-ui/src/panels/NewOntologyDialog.tsx
-      - crates/ontocore/src/workspace.rs
+      - crates/strixonomy/src/workspace.rs
     test_ids:
       - extension/src/test/suite/dialogs.workflows.test.ts
       - extension/webview-ui/src/panels/NewOntologyDialog.test.tsx
@@ -47,21 +47,21 @@ requirements:
     status: COMPLETE
     owner: null
     source_files:
-      - crates/ontocore-owl/src/patch.rs
-      - crates/ontocore-edit/src/transaction.rs
-      - crates/ontocore-edit/src/adapter.rs
+      - crates/strixonomy-owl/src/patch.rs
+      - crates/strixonomy-edit/src/transaction.rs
+      - crates/strixonomy-edit/src/adapter.rs
     test_ids:
       - tests/owl_patch_oracles.rs
       - tests/protege_roundtrip.rs
       - tests/protege_port_history.rs
-      - crates/ontocore-edit/tests/transaction.rs
+      - crates/strixonomy-edit/tests/transaction.rs
     acceptance_criteria: []
     github_issue: https://github.com/eddiethedean/ontocode/issues/247
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
       - docs/protege-parity/03_PARITY/PROTEGE_TEST_PORT.md
       - docs/patch-reference.md
-    notes: Turtle apply routed through ontocore-edit Transaction (v0.20); v0.26 history/change-algebra port
+    notes: Turtle apply routed through strixonomy-edit Transaction (v0.20); v0.26 history/change-algebra port
   - id: PAR-FMT-002
     area: Formats
     title: OBO semantic round-trip
@@ -69,18 +69,18 @@ requirements:
     status: PARTIAL
     owner: null
     source_files:
-      - crates/ontocore-obo/src/apply.rs
-      - crates/ontocore-obo/src/patch.rs
-      - crates/ontocore-edit/src/transaction.rs
-      - crates/ontocore-edit/src/adapter.rs
+      - crates/strixonomy-obo/src/apply.rs
+      - crates/strixonomy-obo/src/patch.rs
+      - crates/strixonomy-edit/src/transaction.rs
+      - crates/strixonomy-edit/src/adapter.rs
     test_ids:
       - tests/obo_patch_roundtrip.rs
-      - crates/ontocore-edit/tests/transaction.rs
+      - crates/strixonomy-edit/tests/transaction.rs
     acceptance_criteria: []
     github_issue: https://github.com/eddiethedean/ontocode/issues/247
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
-    notes: OBO apply routed through ontocore-edit Transaction (v0.20)
+    notes: OBO apply routed through strixonomy-edit Transaction (v0.20)
   - id: PAR-FMT-003
     area: Formats
     title: RDF/XML write-back
@@ -88,14 +88,14 @@ requirements:
     status: COMPLETE
     owner: null
     source_files:
-      - crates/ontocore-owl/src/serialize.rs
-      - crates/ontocore-owl/src/mutate.rs
-      - crates/ontocore-owl/src/apply_xml.rs
-      - crates/ontocore-edit/src/adapter.rs
+      - crates/strixonomy-owl/src/serialize.rs
+      - crates/strixonomy-owl/src/mutate.rs
+      - crates/strixonomy-owl/src/apply_xml.rs
+      - crates/strixonomy-edit/src/adapter.rs
       - docs/design/adr/0021-deterministic-xml-serializers.md
     test_ids:
-      - crates/ontocore-owl/src/serialize.rs
-      - crates/ontocore-edit/tests/xml_writeback.rs
+      - crates/strixonomy-owl/src/serialize.rs
+      - crates/strixonomy-edit/tests/xml_writeback.rs
       - tests/protege_roundtrip.rs
     acceptance_criteria: []
     github_issue: https://github.com/eddiethedean/ontocode/issues/247
@@ -111,14 +111,14 @@ requirements:
     status: COMPLETE
     owner: null
     source_files:
-      - crates/ontocore-owl/src/serialize.rs
-      - crates/ontocore-owl/src/mutate.rs
-      - crates/ontocore-owl/src/apply_xml.rs
-      - crates/ontocore-edit/src/adapter.rs
+      - crates/strixonomy-owl/src/serialize.rs
+      - crates/strixonomy-owl/src/mutate.rs
+      - crates/strixonomy-owl/src/apply_xml.rs
+      - crates/strixonomy-edit/src/adapter.rs
       - docs/design/adr/0021-deterministic-xml-serializers.md
     test_ids:
-      - crates/ontocore-owl/src/serialize.rs
-      - crates/ontocore-edit/tests/xml_writeback.rs
+      - crates/strixonomy-owl/src/serialize.rs
+      - crates/strixonomy-edit/tests/xml_writeback.rs
       - tests/protege_roundtrip.rs
     acceptance_criteria: []
     github_issue: https://github.com/eddiethedean/ontocode/issues/247
@@ -134,10 +134,10 @@ requirements:
     status: COMPLETE
     owner: null
     source_files:
-      - crates/ontocore-owl/src/patch.rs
-      - crates/ontocore-owl/src/manchester.rs
-      - crates/ontocore-owl/src/mutate.rs
-      - crates/ontocore-edit/src/invert.rs
+      - crates/strixonomy-owl/src/patch.rs
+      - crates/strixonomy-owl/src/manchester.rs
+      - crates/strixonomy-owl/src/mutate.rs
+      - crates/strixonomy-edit/src/invert.rs
       - extension/webview-ui/src/panels/EntityInspector.tsx
     test_ids:
       - tests/owl2_authoring.rs
@@ -194,7 +194,7 @@ requirements:
     status: COMPLETE
     owner: null
     source_files:
-      - crates/ontocore-reasoner/src/lib.rs
+      - crates/strixonomy-reasoner/src/lib.rs
     test_ids:
       - tests/reasoner_el.rs
     acceptance_criteria: []
@@ -208,9 +208,9 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-reasoner/src/abox.rs
-      - crates/ontocore-reasoner/src/result.rs
-      - crates/ontocore-lsp/src/handlers.rs
+      - crates/strixonomy-reasoner/src/abox.rs
+      - crates/strixonomy-reasoner/src/result.rs
+      - crates/strixonomy-lsp/src/handlers.rs
     test_ids:
       - tests/reasoner_abox.rs
     acceptance_criteria: []
@@ -225,9 +225,9 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-reasoner/src/explain.rs
+      - crates/strixonomy-reasoner/src/explain.rs
     test_ids:
-      - crates/ontocore-reasoner/src/explain.rs
+      - crates/strixonomy-reasoner/src/explain.rs
     acceptance_criteria: []
     github_issue: https://github.com/eddiethedean/ontocode/issues/250
     documentation:
@@ -240,8 +240,8 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-query/src/lib.rs
-      - crates/ontocore-query/src/sparql.rs
+      - crates/strixonomy-query/src/lib.rs
+      - crates/strixonomy-query/src/sparql.rs
     test_ids:
       - tests/integration_test.rs
     acceptance_criteria: []
@@ -255,8 +255,8 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-reasoner/src/dl_query.rs
-      - crates/ontocore-lsp/src/handlers.rs
+      - crates/strixonomy-reasoner/src/dl_query.rs
+      - crates/strixonomy-lsp/src/handlers.rs
       - extension/webview-ui/src/panels/QueryWorkbench.tsx
     test_ids:
       - tests/dl_query.rs
@@ -273,8 +273,8 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-swrl/src/lib.rs
-      - crates/ontocore-owl/src/patch.rs
+      - crates/strixonomy-swrl/src/lib.rs
+      - crates/strixonomy-owl/src/patch.rs
       - extension/webview-ui/src/panels/RuleBrowser.tsx
       - extension/webview-ui/src/panels/RuleEditor.tsx
     test_ids:
@@ -292,16 +292,16 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-refactor/src/lib.rs
-      - crates/ontocore-refactor/src/rename.rs
-      - crates/ontocore-refactor/src/ontology.rs
-      - crates/ontocore-swrl/src/turtle.rs
+      - crates/strixonomy-refactor/src/lib.rs
+      - crates/strixonomy-refactor/src/rename.rs
+      - crates/strixonomy-refactor/src/ontology.rs
+      - crates/strixonomy-swrl/src/turtle.rs
     test_ids:
-      - crates/ontocore-refactor/tests/refactor_integration.rs
+      - crates/strixonomy-refactor/tests/refactor_integration.rs
       - tests/protege_port_merge.rs
       - tests/protege_port_refs.rs
-      - crates/ontocore-owl/src/remap.rs
-      - crates/ontocore-obo/src/remap.rs
+      - crates/strixonomy-owl/src/remap.rs
+      - crates/strixonomy-obo/src/remap.rs
     acceptance_criteria: []
     github_issue: https://github.com/eddiethedean/ontocode/issues/252
     documentation:
@@ -315,19 +315,19 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-catalog/src/graph.rs
+      - crates/strixonomy-catalog/src/graph.rs
       - extension/webview-ui/src/panels/GraphPanel.tsx
       - extension/src/webviews/graphPanel.ts
       - extension/src/commands/index.ts
     test_ids:
-      - crates/ontocore-catalog/src/graph.rs::tests
+      - crates/strixonomy-catalog/src/graph.rs::tests
       - extension/webview-ui/src/panels/GraphPanel.test.tsx
     acceptance_criteria:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_08_VISUALIZATION.md
     github_issue: https://github.com/eddiethedean/ontocode/issues/254
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_08_VISUALIZATION.md
-      - docs/ontocode/graph-view.md
+      - docs/ide/graph-view.md
       - docs/lsp-api.md
     notes: v0.25 EPIC-008 — kinds, filters, overlays, virtualization, list alternate
   - id: PAR-PLG-001
@@ -337,18 +337,18 @@ requirements:
     status: VERIFIED
     owner: null
     source_files:
-      - crates/ontocore-plugin/src/lib.rs
-      - crates/ontocore-plugin/src/host.rs
-      - crates/ontocore-plugin/src/lifecycle.rs
-      - crates/ontocore-plugin/src/manifest.rs
-      - crates/ontocore-plugin/src/traits.rs
+      - crates/strixonomy-plugin/src/lib.rs
+      - crates/strixonomy-plugin/src/host.rs
+      - crates/strixonomy-plugin/src/lifecycle.rs
+      - crates/strixonomy-plugin/src/manifest.rs
+      - crates/strixonomy-plugin/src/traits.rs
       - docs/guides/plugins.md
       - docs/guides/plugin-policy.md
       - examples/plugin-workspace/
     test_ids:
-      - crates/ontocore-plugin/src/lifecycle.rs::tests
-      - crates/ontocore-plugin/src/host.rs::tests
-      - crates/ontocore-plugin/src/manifest.rs::tests
+      - crates/strixonomy-plugin/src/lifecycle.rs::tests
+      - crates/strixonomy-plugin/src/host.rs::tests
+      - crates/strixonomy-plugin/src/manifest.rs::tests
       - tests/plugin_sdk_compat.rs
       - tests/cli_plugins_security.rs
     acceptance_criteria:

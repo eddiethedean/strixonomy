@@ -34,7 +34,7 @@ export async function showEntityUsages(iri: string): Promise<void> {
   const line = usageJumpLineIndex(picked.usage.line);
   if (!isUsageJumpLineInDocument(line, doc.lineCount)) {
     void vscode.window.showWarningMessage(
-      `OntoCode: usage line ${picked.usage.line} is out of range`
+      `Strixonomy: usage line ${picked.usage.line} is out of range`
     );
     return;
   }
@@ -207,8 +207,8 @@ export class RefactorPreviewPanel {
       return RefactorPreviewPanel.current;
     }
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeRefactorPreview",
-      title: "OntoCode Refactor Preview",
+      viewType: "strixonomyRefactorPreview",
+      title: "Strixonomy Refactor Preview",
       panel: "refactorPreview",
       onMessage: async (message: WebviewMessage) => {
         const panel = RefactorPreviewPanel.current;
@@ -228,7 +228,7 @@ export class RefactorPreviewPanel {
 
   private async handleMessage(message: WebviewMessage): Promise<void> {
     if (message.type === "openGraphFromResults") {
-      await vscode.commands.executeCommand("ontocode.openGraphFromResults", {
+      await vscode.commands.executeCommand("strixonomy.openGraphFromResults", {
         graphKind: message.graphKind,
         rootIris: message.rootIris,
         title: message.title,
@@ -246,7 +246,7 @@ export class RefactorPreviewPanel {
           });
           if (!applied) {
             void vscode.window.showWarningMessage(
-              "OntoCode: refactor wrote to disk but editor sync was cancelled"
+              "Strixonomy: refactor wrote to disk but editor sync was cancelled"
             );
             return;
           }
@@ -255,7 +255,7 @@ export class RefactorPreviewPanel {
           void vscode.window.showWarningMessage(result.reindex_warning);
         }
         void vscode.window.showInformationMessage(
-          `OntoCode: refactor applied to ${result.files_written} file(s)`
+          `Strixonomy: refactor applied to ${result.files_written} file(s)`
         );
         this.host.panel.dispose();
         if (this.onApplied) {
@@ -263,7 +263,7 @@ export class RefactorPreviewPanel {
         }
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
-        void vscode.window.showErrorMessage(`OntoCode refactor failed: ${msg}`);
+        void vscode.window.showErrorMessage(`Strixonomy refactor failed: ${msg}`);
       } finally {
         this.applying = false;
       }

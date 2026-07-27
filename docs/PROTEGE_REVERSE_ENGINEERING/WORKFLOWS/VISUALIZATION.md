@@ -1,11 +1,11 @@
 # VISUALIZATION.md
 
 # Ontology Visualization Workflow
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
-Visualization helps ontology engineers understand complex semantic structures that are difficult to interpret from hierarchical trees alone. Protégé provides visualization primarily through plugins such as OWLViz and OntoGraf. OntoCode should elevate visualization into a core capability that is tightly integrated with modeling, reasoning, debugging, and collaboration.
+Visualization helps ontology engineers understand complex semantic structures that are difficult to interpret from hierarchical trees alone. Protégé provides visualization primarily through plugins such as OWLViz and OntoGraf. Strixonomy should elevate visualization into a core capability that is tightly integrated with modeling, reasoning, debugging, and collaboration.
 
 ---
 
@@ -221,7 +221,7 @@ AI may assist with:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended features:
 
@@ -298,10 +298,10 @@ Platform
 
 # Beyond Protégé
 
-Visualization should become a first-class editing surface rather than an auxiliary plugin. OntoCode should support graph-native ontology engineering where users can model, reason, debug, refactor, and collaborate directly from interactive visualizations synchronized with every other workspace component.
+Visualization should become a first-class editing surface rather than an auxiliary plugin. Strixonomy should support graph-native ontology engineering where users can model, reason, debug, refactor, and collaborate directly from interactive visualizations synchronized with every other workspace component.
 
 ---
 
 # Summary
 
-Protégé introduced valuable graph visualizations through plugins, but visualization remains secondary to tree-based editing. OntoCode should transform visualization into a core platform capability with high-performance interactive graphs, AI-assisted exploration, collaborative editing, and deep integration with reasoning and ontology engineering workflows.
+Protégé introduced valuable graph visualizations through plugins, but visualization remains secondary to tree-based editing. Strixonomy should transform visualization into a core platform capability with high-performance interactive graphs, AI-assisted exploration, collaborative editing, and deep integration with reasoning and ontology engineering workflows.

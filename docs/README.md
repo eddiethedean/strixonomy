@@ -1,6 +1,6 @@
-# OntoCode documentation (GitHub entrypoint)
+# Strixonomy documentation (GitHub entrypoint)
 
-This folder powers the **Read the Docs** site: `https://ontocode-vs.readthedocs.io/`.
+This folder powers the **Read the Docs** site: `https://strixonomy-vs.readthedocs.io/`.
 
 > **Engineering trees on GitHub:** Folders `protege-parity/`, `PROTEGE_REVERSE_ENGINEERING/`, `ui/`, and much of `design/` are **engineering notes**, not product capability claims. For adopters use [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md) only.
 

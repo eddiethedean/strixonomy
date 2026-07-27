@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Human Interface Guidelines (HIG)
+# Strixonomy Human Interface Guidelines (HIG)
 
 ## Purpose
 
-These guidelines define the user experience standards for every OntoCode
+These guidelines define the user experience standards for every Strixonomy
 interface. Every screen, component, workflow, and interaction should
 follow these principles to create a cohesive, modern ontology
 engineering environment.
@@ -258,6 +258,6 @@ without reimplementing navigation, layout, or styling.
 
 # Success Metric
 
-A new user should be able to install OntoCode and begin exploring an
+A new user should be able to install Strixonomy and begin exploring an
 ontology within minutes, while experienced ontology engineers should
 feel they have the power and efficiency of a first-class modern IDE.

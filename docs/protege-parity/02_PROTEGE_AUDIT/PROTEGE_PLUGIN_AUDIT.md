@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Audit the extension capabilities provided by a standard
 Protégé Desktop installation and define the equivalent functionality
-required from OntoCode's native plugin platform.
+required from Strixonomy's native plugin platform.
 
 > This document evaluates functional extensibility, not Java binary
 > compatibility.
@@ -14,7 +14,7 @@ required from OntoCode's native plugin platform.
 
 # Purpose
 
-Protégé derives much of its power from its extensibility. OntoCode
+Protégé derives much of its power from its extensibility. Strixonomy
 should provide an equivalent capability through a modern, stable,
 Rust-native plugin platform.
 
@@ -37,7 +37,7 @@ that should be supported before claiming Protégé Desktop parity.
 # Plugin Categories
 
   -----------------------------------------------------------------------
-  Category          Typical Purpose   OntoCode          Status
+  Category          Typical Purpose   Strixonomy          Status
                                       Equivalent        
   ----------------- ----------------- ----------------- -----------------
   Reasoner          Classification &  Reasoner adapter  REVIEW

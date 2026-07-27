@@ -1,12 +1,12 @@
 # SHIPPED_CAPABILITIES (engineering snapshot — not product SSOT)
 
 > **Not the public capability matrix.** For adopters and evaluators, use **[`docs/SHIPPED.md`](../../SHIPPED.md)** only.
-> This file is a **Protégé-parity engineering baseline** (historically frozen around OntoCode **v0.18.2**). Do not cite it in procurement or Marketplace claims.
+> This file is a **Protégé-parity engineering baseline** (historically frozen around Strixonomy **v0.18.2**). Do not cite it in procurement or Marketplace claims.
 
 # Shipped Capabilities
 
 **Status:** Living Document (engineering)\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline — outdated relative to current tagged release)
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline — outdated relative to current tagged release)
 
 ------------------------------------------------------------------------
 
@@ -167,7 +167,7 @@ separately in `CURRENT_LIMITATIONS.md` and `PARITY_GAP_ANALYSIS.md`.
 > **Engineering baseline note:** This list was written against a **v0.18.2** audit snapshot.
 > Several items below have since shipped for product use — see **[`docs/SHIPPED.md`](../../SHIPPED.md)** before citing gaps.
 
-The following areas still need additional engineering before OntoCode 1.0
+The following areas still need additional engineering before Strixonomy 1.0
 can claim complete Protégé Desktop parity (product status may already be
 **Shipped** for pilot use — confirm in SHIPPED.md):
 

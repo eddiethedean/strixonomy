@@ -1,13 +1,13 @@
 # Migration guides
 
-Upgrade notes between OntoCode / OntoCore releases.
+Upgrade notes between Strixonomy releases (historically Strixonomy / Strixonomy).
 
 | From → To | Guide |
 |-----------|-------|
 | v0.5 → v0.6 | [Migration v0.5 → v0.6](v0.6.md) — reasoner, LSP methods, VS Code panels |
 | v0.6 → v0.7 | [Migration v0.6 → v0.7](v0.7.md) — React inspector/graphs, OBO index, ROBOT CLI |
 | v0.7 → v0.8 | [Migration v0.7 → v0.8](v0.8.md) — refactoring, React Query/Manchester panels, disjoint axioms |
-| v0.8 → v0.9 | [Migration v0.8 → v0.9](v0.9.md) — OntoCore identity, `ontocore` façade crate (no API breaks) |
+| v0.8 → v0.9 | [Migration v0.8 → v0.9](v0.9.md) — Strixonomy identity, `strixonomy` façade crate (no API breaks) |
 | v0.9 → v0.10 | [Migration v0.9 → v0.10](v0.10.md) — semantic workspace, incremental index, multi-root, semantic diff |
 | v0.10 → v0.11 | [Migration v0.10 → v0.11](v0.11.md) — completion, code actions, docs export, imports UI, Open VSX |
 | v0.11 → v0.12 | [Migration v0.11 → v0.12](v0.12.md) — authoring parity, OBO write-back, OWL/XML read, DL explanations |
@@ -29,6 +29,7 @@ Upgrade notes between OntoCode / OntoCore releases.
 | v0.25.0 → v0.26.0 | [Migration v0.25 → v0.26](v0.26.md) — Protégé Desktop JUnit behavioral test port |
 | v0.26.0 → v0.26.1 | [Migration v0.26.0 → v0.26.1](v0.26.1.md) — OWL remove/match + annotation/range/XML write-back fixes |
 | v0.26.1 → v0.26.2 | [Migration v0.26.1 → v0.26.2](v0.26.2.md) — host focus/transaction integrity + residual false positives |
+| v0.26.2 → v0.27.0 | [Migration v0.26 → v0.27](v0.27.md) — **Strixonomy rename** (Strixonomy/Strixonomy → Strixonomy) |
 
 Pre-1.0: library APIs, LSP JSON, and SQL virtual table columns may change between minor releases. See [API stability](../guides/api-stability.md) and [workspace limits](../workspace-limits.md).
 

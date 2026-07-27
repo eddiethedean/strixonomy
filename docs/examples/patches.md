@@ -1,6 +1,6 @@
 # Sample patch JSON
 
-Copy-paste example for `ontocore patch`. Full reference: [patch-reference.md](../patch-reference.md).
+Copy-paste example for `strixonomy patch`. Full reference: [patch-reference.md](../patch-reference.md).
 
 ```json
 [
@@ -23,9 +23,9 @@ Copy-paste example for `ontocore patch`. Full reference: [patch-reference.md](..
 ```
 
 ```bash
-# From a folder containing example.ttl (e.g. ontocode-tutorial from first-success)
-ontocore patch ./example.ttl patches.json --preview
-ontocore patch ./example.ttl patches.json
+# From a folder containing example.ttl (e.g. strixonomy-tutorial from first-success)
+strixonomy patch ./example.ttl patches.json --preview
+strixonomy patch ./example.ttl patches.json
 ```
 
 Download: [patches.json](patches.json)
@@ -56,8 +56,8 @@ Write synonym `scope` as OBO uppercase (`EXACT`, `RELATED`, …). See [patch ref
 ```
 
 ```bash
-ontocore patch ./terms.obo patches-obo.json --preview
-ontocore patch ./terms.obo patches-obo.json
+strixonomy patch ./terms.obo patches-obo.json --preview
+strixonomy patch ./terms.obo patches-obo.json
 ```
 
 Download: [patches-obo.json](patches-obo.json)
@@ -84,6 +84,6 @@ Download: [patches-obo.json](patches-obo.json)
 The same Turtle-shaped patch JSON applies to `.owl` / `.rdf` / `.owx` via Horned re-serialize. Prefer core ops (labels, SubClassOf, imports, create/delete). See [OWL/XML write-back](../guides/owl-xml-workflow.md) and [patch reference](../patch-reference.md).
 
 ```bash
-ontocore patch ./ontology.owl patches.json --preview
-ontocore patch ./ontology.owl patches.json
+strixonomy patch ./ontology.owl patches.json --preview
+strixonomy patch ./ontology.owl patches.json
 ```

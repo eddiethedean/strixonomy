@@ -1,11 +1,11 @@
 # DEBUGGING.md
 
 # Ontology Debugging Workflow
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
-Ontology debugging is the process of identifying, understanding, and resolving logical, structural, and modeling problems in an ontology. Protégé combines reasoners, explanation tools, validation views, and manual inspection to support debugging. OntoCode should unify these capabilities into an integrated debugging experience similar to modern software IDEs.
+Ontology debugging is the process of identifying, understanding, and resolving logical, structural, and modeling problems in an ontology. Protégé combines reasoners, explanation tools, validation views, and manual inspection to support debugging. Strixonomy should unify these capabilities into an integrated debugging experience similar to modern software IDEs.
 
 ---
 
@@ -242,7 +242,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -291,4 +291,4 @@ Platform
 
 # Summary
 
-Protégé's debugging workflow combines validation, reasoning, and explanation to help ontology engineers resolve semantic problems. OntoCode should preserve these strengths while introducing continuous validation, IDE-style diagnostics, visual explanations, AI-assisted repair suggestions, and a unified debugging experience integrated throughout the workspace.
+Protégé's debugging workflow combines validation, reasoning, and explanation to help ontology engineers resolve semantic problems. Strixonomy should preserve these strengths while introducing continuous validation, IDE-style diagnostics, visual explanations, AI-assisted repair suggestions, and a unified debugging experience integrated throughout the workspace.

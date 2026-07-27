@@ -1,6 +1,6 @@
 # MVP_BACKLOG.md
 
-## v0.1 OntoCore MVP Backlog
+## v0.1 Strixonomy MVP Backlog
 
 ### Project Setup
 - [x] Create Rust workspace
@@ -42,12 +42,12 @@
 - [x] Implement JSON export
 
 ### CLI
-- [x] `ontocore index`
-- [x] `ontocore query`
-- [x] `ontocore validate`
-- [x] `ontocore inspect`
+- [x] `strixonomy index`
+- [x] `strixonomy query`
+- [x] `strixonomy validate`
+- [x] `strixonomy inspect`
 
-## v0.2 OntoCode MVP Backlog
+## v0.2 Strixonomy MVP Backlog
 
 ### Extension Setup
 - [x] Create VS Code extension
@@ -81,7 +81,7 @@
 ## v0.3 Diagnostics Backlog
 
 ### Engine
-- [x] `ontocore-diagnostics` crate with catalog lint rules
+- [x] `strixonomy-diagnostics` crate with catalog lint rules
 - [x] `diagnostics` SQL virtual table
 - [x] Parse error locations from Oxigraph
 - [x] Open-buffer parsing for unsaved edits
@@ -95,4 +95,4 @@
 - [x] Problems panel via LSP (no client wiring required)
 
 ### CLI
-- [x] `ontocore validate` prints all diagnostics; non-zero exit on errors
+- [x] `strixonomy validate` prints all diagnostics; non-zero exit on errors

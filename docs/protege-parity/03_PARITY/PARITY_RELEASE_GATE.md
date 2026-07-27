@@ -3,14 +3,14 @@
 # Protégé Desktop Parity Release Gate
 
 **Status:** Normative Release Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the objective release criteria that must be
-satisfied before OntoCode 1.0.0 may be described as a functional
+satisfied before Strixonomy 1.0.0 may be described as a functional
 replacement for Protégé Desktop.
 
 A release gate is passed only through demonstrable evidence, not

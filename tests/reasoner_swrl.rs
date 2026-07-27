@@ -1,9 +1,9 @@
 //! SWRL classify honesty: profile skip warnings and non-injectable atom skips.
 
-use ontocore_reasoner::{classify, inject_swrl_from_turtle, ReasonerId, WorkspaceInputLoader};
 use std::path::PathBuf;
+use strixonomy_reasoner::{classify, inject_swrl_from_turtle, ReasonerId, WorkspaceInputLoader};
 
-fn load_swrl_fixture() -> ontocore_reasoner::ReasonerInput {
+fn load_swrl_fixture() -> strixonomy_reasoner::ReasonerInput {
     let dir = tempfile::tempdir().expect("tempdir");
     let src = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("tests/fixtures/swrl/basic_class_property.ttl");
@@ -15,7 +15,7 @@ fn load_swrl_fixture() -> ontocore_reasoner::ReasonerInput {
 #[test]
 fn el_profile_warns_when_swrl_present() {
     let input = load_swrl_fixture();
-    assert!(ontocore_reasoner::input_has_swrl_rules(&input), "fixture should contain SWRL");
+    assert!(strixonomy_reasoner::input_has_swrl_rules(&input), "fixture should contain SWRL");
     let result = classify(ReasonerId::El, &input, false).expect("classify");
     assert!(
         result.warnings.iter().any(|w| w.code == "swrl_skipped_for_profile"),

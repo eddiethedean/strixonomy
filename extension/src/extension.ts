@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
-import { OntoCodeApi } from "./api";
+import { StrixonomyApi } from "./api";
 import { registerCommands, refreshExplorer } from "./commands";
-import { createOntoCodeTestHooks } from "./testApi";
+import { createStrixonomyTestHooks } from "./testApi";
 import {
   getCatalogSnapshot,
   getClient,
@@ -17,6 +17,7 @@ import { ExplorerTreeProvider } from "./treeviews/explorer";
 import { registerWebviewPanelSerializers } from "./webviews/layoutPersistence";
 import { registerErrorLog } from "./logging/errorLog";
 import { initializeWorkspaceRuntime } from "./workspace";
+import { migrateFromOntoCode } from "./migration/fromOntoCode";
 
 let providers: {
   ontologies: ExplorerTreeProvider;
@@ -30,8 +31,9 @@ let diagnosticsRefreshTimer: ReturnType<typeof setTimeout> | undefined;
 
 export async function activate(
   context: vscode.ExtensionContext
-): Promise<OntoCodeApi> {
+): Promise<StrixonomyApi> {
   try {
+    await migrateFromOntoCode(context);
     await startLanguageClient(context);
 
     providers = {
@@ -44,23 +46,23 @@ export async function activate(
 
     context.subscriptions.push(
       vscode.window.registerTreeDataProvider(
-        "ontocode.explorer.ontologies",
+        "strixonomy.explorer.ontologies",
         providers.ontologies
       ),
       vscode.window.registerTreeDataProvider(
-        "ontocode.explorer.classes",
+        "strixonomy.explorer.classes",
         providers.classes
       ),
       vscode.window.registerTreeDataProvider(
-        "ontocode.explorer.properties",
+        "strixonomy.explorer.properties",
         providers.properties
       ),
       vscode.window.registerTreeDataProvider(
-        "ontocode.explorer.individuals",
+        "strixonomy.explorer.individuals",
         providers.individuals
       ),
       vscode.window.registerTreeDataProvider(
-        "ontocode.explorer.diagnostics",
+        "strixonomy.explorer.diagnostics",
         providers.diagnostics
       ),
       vscode.languages.onDidChangeDiagnostics((event) => {
@@ -70,7 +72,7 @@ export async function activate(
         const ours = event.uris.some((uri) =>
           vscode.languages
             .getDiagnostics(uri)
-            .some((d) => d.source === "ontocore")
+            .some((d) => d.source === "strixonomy" || d.source === "ontocore")
         );
         if (!ours) {
           return;
@@ -91,7 +93,7 @@ export async function activate(
 
     context.subscriptions.push(
       vscode.workspace.onDidChangeConfiguration((e) => {
-        if (e.affectsConfiguration("ontocode.hierarchy.mode") && providers) {
+        if (e.affectsConfiguration("strixonomy.hierarchy.mode") && providers) {
           void refreshExplorer(providers);
         }
       })
@@ -121,14 +123,15 @@ export async function activate(
           entity_iri: entityIri,
           document_uri: documentUri,
         }),
-      ...(process.env.ONTOCODE_TEST_FIXTURES
-        ? { __test: createOntoCodeTestHooks() }
+      ...(process.env.STRIXONOMY_TEST_FIXTURES ||
+      process.env.ONTOCODE_TEST_FIXTURES
+        ? { __test: createStrixonomyTestHooks() }
         : {}),
     };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     void vscode.window.showErrorMessage(
-      `OntoCode failed to start language server: ${message}`
+      `Strixonomy failed to start language server: ${message}`
     );
     throw err;
   }

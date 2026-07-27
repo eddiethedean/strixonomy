@@ -6,7 +6,7 @@
 
 The Object Properties editor is responsible for defining relationships between individuals in an OWL ontology. Object properties connect one individual to another and form the backbone of semantic relationships used by reasoners.
 
-For OntoCode, this editor should achieve feature parity with Protégé while providing a modern, IDE-like experience.
+For Strixonomy, this editor should achieve feature parity with Protégé while providing a modern, IDE-like experience.
 
 ---
 
@@ -210,7 +210,7 @@ Search modes:
 - Prefix
 - Full-text
 
-Recommended OntoCode enhancements:
+Recommended Strixonomy enhancements:
 
 - Fuzzy search
 - Symbol search
@@ -298,7 +298,7 @@ Plugins should contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -363,4 +363,4 @@ Platform
 
 # Summary
 
-The Object Properties editor is central to modeling semantic relationships in OWL. Protégé provides mature support for hierarchy management, logical property definitions, reasoning, and annotations. OntoCode should preserve these capabilities while introducing modern visualization, AI-assisted modeling, collaborative editing, and a command-driven architecture built on a Rust backend with a React-based UI.
+The Object Properties editor is central to modeling semantic relationships in OWL. Protégé provides mature support for hierarchy management, logical property definitions, reasoning, and annotations. Strixonomy should preserve these capabilities while introducing modern visualization, AI-assisted modeling, collaborative editing, and a command-driven architecture built on a Rust backend with a React-based UI.

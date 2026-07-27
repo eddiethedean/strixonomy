@@ -1,13 +1,13 @@
-# ADR-0001 — Use Rust for OntoCore
+# ADR-0001 — Use Rust for Strixonomy
 
 ## Status
 Accepted
 
 ## Context
-OntoCore needs high performance, safe concurrency, native binaries, good CLI ergonomics, and integration with VS Code through a language server.
+Strixonomy needs high performance, safe concurrency, native binaries, good CLI ergonomics, and integration with VS Code through a language server.
 
 ## Decision
-Use Rust as the implementation language for OntoCore.
+Use Rust as the implementation language for Strixonomy.
 
 ## Consequences
 Positive:

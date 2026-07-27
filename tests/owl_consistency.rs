@@ -1,11 +1,11 @@
 mod support;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_core::{EntityKind, AXIOM_KIND_SUB_CLASS_OF};
-use ontocore_owl::{load_turtle_text, supports_horned_load};
-use ontocore_parser::parse_ontology_text;
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_core::{EntityKind, AXIOM_KIND_SUB_CLASS_OF};
+use strixonomy_owl::{load_turtle_text, supports_horned_load};
+use strixonomy_parser::parse_ontology_text;
 
 #[test]
 fn owl_oxigraph_consistency_on_fixtures() {
@@ -16,7 +16,7 @@ fn owl_oxigraph_consistency_on_fixtures() {
         if path.extension().and_then(|e| e.to_str()) != Some("ttl") {
             continue;
         }
-        let format = ontocore_core::OntologyFormat::Turtle;
+        let format = strixonomy_core::OntologyFormat::Turtle;
         assert!(supports_horned_load(format));
         let doc_id = "doc-test";
         let text = fs::read_to_string(&path).expect("read ttl");
@@ -90,24 +90,24 @@ fn patch_roundtrip_label_and_subclass() {
     ]);
 
     let patches = vec![
-        ontocore_owl::PatchOp::AddLabel {
+        strixonomy_owl::PatchOp::AddLabel {
             entity_iri: "http://example.org/people#Person".to_string(),
             value: "Human".to_string(),
         },
-        ontocore_owl::PatchOp::AddSubClassOf {
+        strixonomy_owl::PatchOp::AddSubClassOf {
             entity_iri: "http://example.org/people#Employee".to_string(),
             parent_iri: "http://example.org/people#Person".to_string(),
         },
     ];
 
     // create Employee first
-    let create = vec![ontocore_owl::PatchOp::CreateEntity {
+    let create = vec![strixonomy_owl::PatchOp::CreateEntity {
         entity_iri: "http://example.org/people#Employee".to_string(),
-        kind: ontocore_owl::PatchEntityKind::Class,
+        kind: strixonomy_owl::PatchEntityKind::Class,
     }];
-    ontocore_owl::apply_patches(&path, &create, false, &namespaces).expect("create");
+    strixonomy_owl::apply_patches(&path, &create, false, &namespaces).expect("create");
 
-    let result = ontocore_owl::apply_patches(&path, &patches, false, &namespaces).expect("patch");
+    let result = strixonomy_owl::apply_patches(&path, &patches, false, &namespaces).expect("patch");
     assert!(result.applied);
 
     let catalog = IndexBuilder::new().workspace(dir.path()).build().expect("reindex");

@@ -40,7 +40,7 @@ Specify **hybrid authoring** for Protégé-competitive v1.0:
 
 ## 4. Manchester requirements (P0)
 
-- Parse and serialize Manchester OWL Syntax via [`horned-functional`](https://crates.io/crates/horned-functional) + [`horned-owl`](https://crates.io/crates/horned-owl) in `ontocore-owl` ([ADR-0016](adr/0016-dependency-first-implementation.md))
+- Parse and serialize Manchester OWL Syntax via [`horned-functional`](https://crates.io/crates/horned-functional) + [`horned-owl`](https://crates.io/crates/horned-owl) in `strixonomy-owl` ([ADR-0016](adr/0016-dependency-first-implementation.md))
 - Optional: evaluate [`owl-ms-language-server`](https://crates.io/crates/owl-ms-language-server) for embedded Manchester assist in webview (v0.5)
 - Autocomplete: classes, properties, individuals in scope, XSD datatypes, OBO ids ([OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md))
 - Parse errors from Horned-OWL → LSP diagnostics with file range
@@ -66,8 +66,8 @@ Patches are generated from **Horned-OWL axiom objects**, not string templates.
 
 See [LSP_SPEC.md](LSP_SPEC.md):
 
-- `ontocore/applyAxiomPatch`
-- `ontocore/parseManchester`
+- `strixonomy/applyAxiomPatch`
+- `strixonomy/parseManchester`
 
 ## 7. UI wireframes
 
@@ -78,6 +78,6 @@ See [UI_WIREFRAMES.md](UI_WIREFRAMES.md) §8–§9.
 | Milestone | Deliverable |
 |-----------|-------------|
 | v0.4a | Simple patches: labels, comments, `SubClassOf` |
-| v0.4b | `ontocore-owl` + Horned-OWL catalog integration |
+| v0.4b | `strixonomy-owl` + Horned-OWL catalog integration |
 | v0.5 | Manchester MVP (subclass + equivalent) |
 | v0.8 | Full Manchester catalog (restrictions, disjoint, property chains view) |

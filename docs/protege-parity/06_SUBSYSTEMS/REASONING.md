@@ -1,10 +1,10 @@
 # REASONING
 
-# OntoCode Reasoning Subsystem Specification
+# Strixonomy Reasoning Subsystem Specification
 
 **Subsystem:** Reasoning Engine\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 

@@ -23,7 +23,7 @@ export class GraphPanel {
     private options: GraphPanelOptions
   ) {
     host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeGraph");
+      void forgetPanelRestoreState("strixonomyGraph");
       GraphPanel.currentPanel = undefined;
     });
   }
@@ -35,10 +35,10 @@ export class GraphPanel {
   public static async show(
     extensionUri: vscode.Uri,
     options: GraphPanelOptions,
-    title = "OntoCode Graph"
+    title = "Strixonomy Graph"
   ): Promise<GraphPanel> {
     void rememberPanelRestoreState(
-      "ontocodeGraph",
+      "strixonomyGraph",
       graphRestoreState(options, title)
     );
     if (GraphPanel.currentPanel) {
@@ -50,7 +50,7 @@ export class GraphPanel {
     }
 
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeGraph",
+      viewType: "strixonomyGraph",
       title,
       panel: "graph",
       extraQuery: {
@@ -85,10 +85,10 @@ export class GraphPanel {
       await this.refresh();
     }
     if (message.type === "selectNode" || message.type === "revealInHierarchy") {
-      await vscode.commands.executeCommand("ontocode.openEntity", message.iri);
+      await vscode.commands.executeCommand("strixonomy.openEntity", message.iri);
     }
     if (message.type === "jumpToEditor") {
-      await vscode.commands.executeCommand("ontocode.jumpToSource", message.iri);
+      await vscode.commands.executeCommand("strixonomy.jumpToSource", message.iri);
     }
     if (message.type === "exportGraph") {
       const filters: Record<string, string[]> = {
@@ -98,7 +98,7 @@ export class GraphPanel {
       const defaultExt = message.format === "csv" ? "csv" : "json";
       const uri = await vscode.window.showSaveDialog({
         defaultUri: vscode.Uri.file(
-          message.suggestedName ?? `ontocode-graph.${defaultExt}`
+          message.suggestedName ?? `strixonomy-graph.${defaultExt}`
         ),
         filters,
       });
@@ -110,7 +110,7 @@ export class GraphPanel {
         Buffer.from(message.payload, "utf8")
       );
       void vscode.window.showInformationMessage(
-        `OntoCode: graph exported to ${uri.fsPath}`
+        `Strixonomy: graph exported to ${uri.fsPath}`
       );
     }
   }

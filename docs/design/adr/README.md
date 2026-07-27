@@ -6,7 +6,7 @@ Canonical ADRs live in this directory. The former `adrs/` folder was merged here
 
 | ADR | Title | Status |
 |-----|-------|--------|
-| [0001](0001-use-rust-for-ontocore.md) | Use Rust for OntoCore | Accepted |
+| [0001](0001-use-rust-for-ontocore.md) | Use Rust for Strixonomy | Accepted |
 | [0002](0002-use-horned-owl.md) | Use Horned-OWL for OWL modeling | **Superseded by ADR-0013** (v0.4b+) |
 | [0003](0003-use-oxigraph.md) | Use Oxigraph | Accepted |
 | [0004](0004-use-datafusion-for-sql.md) | Use DataFusion for SQL | **Superseded** (v0.2 uses sqlparser virtual tables) |
@@ -23,10 +23,11 @@ Canonical ADRs live in this directory. The former `adrs/` folder was merged here
 | [0015](0015-adopt-ontologos-reasoner.md) | Adopt OntoLogos as reasoner backend | Accepted |
 | [0016](0016-dependency-first-implementation.md) | Dependency-first implementation | Accepted |
 | [0017](0017-react-webview-ui.md) | Adopt React for VS Code webview panels | Accepted (shipped) |
-| [0018](0018-ontocore-platform-identity.md) | OntoCore platform identity | Accepted (v0.9) |
+| [0018](0018-ontocore-platform-identity.md) | Strixonomy platform identity | Accepted (v0.9); **brand superseded by ADR-0022** |
 | [0019](0019-obo-write-back.md) | OBO write-back via fastobo | Accepted — **implemented v0.12** (read v0.11) |
 | [0020](0020-semantic-transaction-edit-model.md) | Semantic transaction edit model | Accepted — **implemented v0.19** |
 | [0021](0021-deterministic-xml-serializers.md) | Deterministic RDF/XML and OWL/XML serializers | Accepted — **implemented v0.21** |
+| [0022](0022-strixonomy-identity.md) | Strixonomy product identity | Accepted (v0.27) |
 
 ## Current stack
 
@@ -39,14 +40,14 @@ Canonical ADRs live in this directory. The former `adrs/` folder was merged here
 
 ### v0.3 (shipped)
 
-- **Diagnostics:** in-house `ontocore-diagnostics` + Oxigraph parse errors ([ADR-0016](0016-dependency-first-implementation.md), [DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md))
+- **Diagnostics:** in-house `strixonomy-diagnostics` + Oxigraph parse errors ([ADR-0016](0016-dependency-first-implementation.md), [DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md))
 - **LSP:** `textDocument/publishDiagnostics` after reindex; `CatalogSnapshot.diagnostics`
 
 ### v1.0 target
 
 - **Dependency policy:** [DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md), [ADR-0016](0016-dependency-first-implementation.md)
-- **OWL modeling / write-back:** `horned-owl` + `horned-functional` via `ontocore-owl` ([ADR-0013](0013-dual-stack-oxigraph-horned-owl.md))
-- **Reasoning:** [OntoLogos](https://github.com/eddiethedean/ontologos) via `ontocore-reasoner` — 0.9.0 at v0.6, 1.0.0 at v1.0 ([ADR-0014](0014-rust-native-reasoners-only.md), [ADR-0015](0015-adopt-ontologos-reasoner.md))
+- **OWL modeling / write-back:** `horned-owl` + `horned-functional` via `strixonomy-owl` ([ADR-0013](0013-dual-stack-oxigraph-horned-owl.md))
+- **Reasoning:** [OntoLogos](https://github.com/eddiethedean/ontologos) via `strixonomy-reasoner` — 0.9.0 at v0.6, 1.0.0 at v1.0 ([ADR-0014](0014-rust-native-reasoners-only.md), [ADR-0015](0015-adopt-ontologos-reasoner.md))
 - **Webview UI:** React + Vite in `extension/webview-ui` ([ADR-0017](0017-react-webview-ui.md))
 - **OBO:** `fastobo` / `fastobo-owl` ([DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md))
 - **SHACL (P1):** `rudof` ([SHACL_SPEC.md](../SHACL_SPEC.md))

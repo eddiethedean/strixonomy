@@ -40,10 +40,10 @@ export class OntologyTreeItem extends vscode.TreeItem {
   ) {
     super(label, collapsibleState);
     if (nodeKind === "entity" && iri) {
-      this.contextValue = "ontocodeEntity";
+      this.contextValue = "strixonomyEntity";
       this.tooltip = iri;
       this.command = {
-        command: "ontocode.openEntity",
+        command: "strixonomy.openEntity",
         title: "Open Entity Inspector",
         arguments: [iri],
       };
@@ -61,7 +61,7 @@ export class OntologyTreeItem extends vscode.TreeItem {
     if (nodeKind === "diagnostic" && diagnostic) {
       this.tooltip = diagnostic.message;
       this.command = {
-        command: "ontocode.openDiagnostic",
+        command: "strixonomy.openDiagnostic",
         title: "Open Diagnostic",
         arguments: [diagnostic],
       };
@@ -104,7 +104,7 @@ export class ExplorerTreeProvider implements vscode.TreeDataProvider<OntologyTre
     }
 
     const hierarchyMode = hierarchyModeFromConfig(
-      vscode.workspace.getConfiguration("ontocode").get<string>("hierarchy.mode")
+      vscode.workspace.getConfiguration("strixonomy").get<string>("hierarchy.mode")
     );
 
     if (element) {
@@ -131,7 +131,7 @@ export class ExplorerTreeProvider implements vscode.TreeDataProvider<OntologyTre
           );
           item.tooltip = `${doc.path}\nParse status: ${doc.parse_status}`;
           if (doc.format === "turtle") {
-            item.contextValue = "ontocodeTurtleDocument";
+            item.contextValue = "strixonomyTurtleDocument";
           }
           return item;
         });

@@ -1,17 +1,17 @@
-# Rust & CLI (OntoCore)
+# Rust & CLI (Strixonomy)
 
 > **Canonical embedder guide:** [Rust library guide](rust-library.md) — `Workspace`, classification, transactions, and examples.
 >
-> This page is a short CLI-oriented index. For VS Code only, see [OntoCode VS Code extension](../ontocode/vscode-extension.md).
+> This page is a short CLI-oriented index. For VS Code only, see [Strixonomy VS Code extension](../ide/vscode-extension.md).
 
-**OntoCore** is the Rust semantic workspace engine: `ontocore` CLI, `ontocore-*` crates on [crates.io](https://crates.io/search?q=ontocore), and `ontocore-lsp` (bundled in the VS Code extension).
+**Strixonomy** is the Rust semantic workspace engine: `strixonomy` CLI, `strixonomy-*` crates on [crates.io](https://crates.io/search?q=strixonomy), and `strixonomy-lsp` (bundled in the VS Code extension).
 
 ## Quick start
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
-ontocore query /path/to/ontologies "SELECT * FROM classes"
-ontocore validate /path/to/ontologies
+cargo install strixonomy-cli --locked --version 0.26.2
+strixonomy query /path/to/ontologies "SELECT * FROM classes"
+strixonomy validate /path/to/ontologies
 ```
 
 **Linux CI:** prefer the [release binary](../ci-integration.md) over `cargo install` on every job.
@@ -22,27 +22,27 @@ ontocore validate /path/to/ontologies
 
 | Task | Guide / command |
 |------|-----------------|
-| Index and inspect | `ontocore inspect <workspace>` — [CLI reference](../cli-reference.md) |
-| SQL virtual tables | `ontocore query` — [OntoCore SQL views](../ontocore/sql-views.md) |
-| SPARQL | `ontocore sparql` — [SPARQL reference](../sparql-reference.md) |
-| Lint / CI gate | `ontocore validate` — [CI integration](../ci-integration.md) |
-| EL / RL / RDFS classify | `ontocore classify` — [Reasoner](reasoner.md) |
-| Turtle / OBO patches | `ontocore patch` — [Patch reference](../patch-reference.md) |
-| Workspace refactor | `ontocore refactor` — [Refactoring guide](refactoring.md) |
+| Index and inspect | `strixonomy inspect <workspace>` — [CLI reference](../cli-reference.md) |
+| SQL virtual tables | `strixonomy query` — [Strixonomy SQL views](../strixonomy/sql-views.md) |
+| SPARQL | `strixonomy sparql` — [SPARQL reference](../sparql-reference.md) |
+| Lint / CI gate | `strixonomy validate` — [CI integration](../ci-integration.md) |
+| EL / RL / RDFS classify | `strixonomy classify` — [Reasoner](reasoner.md) |
+| Turtle / OBO patches | `strixonomy patch` — [Patch reference](../patch-reference.md) |
+| Workspace refactor | `strixonomy refactor` — [Refactoring guide](refactoring.md) |
 
 ## Rust library embedding
 
 | Topic | Guide |
 |-------|-------|
 | **Start here** | [Rust library guide](rust-library.md) |
-| API crosswalk | [Rust API reference](../ontocore/rust-api.md) |
-| Crate map | [ontocore/crate-map.md](../ontocore/crate-map.md) |
-| `Workspace` example | [`examples/ontocore_workspace.rs`](https://github.com/eddiethedean/ontocode/blob/main/examples/ontocore_workspace.rs) |
+| API crosswalk | [Rust API reference](../strixonomy/rust-api.md) |
+| Crate map | [strixonomy/crate-map.md](../strixonomy/crate-map.md) |
+| `Workspace` example | [`examples/strixonomy_workspace.rs`](https://github.com/eddiethedean/strixonomy/blob/main/examples/strixonomy_workspace.rs) |
 
-Primary dependency: `ontocore = "0.26"`.
+Primary dependency: `strixonomy = "0.26"`.
 
 ## Related
 
-- [OntoCore overview](../ontocore/index.md)
+- [Strixonomy overview](../strixonomy/index.md)
 - [Which artifact?](which-artifact.md)
 - [API stability (pre-1.0)](api-stability.md)

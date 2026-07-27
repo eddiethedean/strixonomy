@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Audit the user interface concepts, interaction patterns,
 and usability expectations of a standard Protégé Desktop installation
-and define the equivalent experience required for OntoCode 1.0.
+and define the equivalent experience required for Strixonomy 1.0.
 
 > This audit focuses on **user outcomes and interaction quality**, not
 > reproducing Protégé's Swing interface.
@@ -14,7 +14,7 @@ and define the equivalent experience required for OntoCode 1.0.
 
 # Purpose
 
-OntoCode aims to replace Protégé as an ontology engineering environment
+Strixonomy aims to replace Protégé as an ontology engineering environment
 while embracing modern IDE-native UX. UI parity therefore means users
 can efficiently complete the same ontology engineering tasks, even if
 the interface differs.
@@ -35,7 +35,7 @@ the interface differs.
 # Primary UI Areas
 
   -----------------------------------------------------------------------
-  Area              Protégé Purpose   OntoCode          Status
+  Area              Protégé Purpose   Strixonomy          Status
                                       Equivalent        
   ----------------- ----------------- ----------------- -----------------
   Ontology          Overall editing   VS Code           REVIEW
@@ -158,7 +158,7 @@ The UI is considered parity-complete when:
 
 # Acceptable Differences
 
-OntoCode is **not** required to reproduce:
+Strixonomy is **not** required to reproduce:
 
 -   Swing layouts
 -   Docking behavior

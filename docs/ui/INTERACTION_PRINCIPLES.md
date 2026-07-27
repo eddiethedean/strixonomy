@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Interaction Principles
+# Strixonomy Interaction Principles
 
 ## Purpose
 
-This document defines how OntoCode should *feel* to use. Every
+This document defines how Strixonomy should *feel* to use. Every
 interaction should reinforce speed, clarity, confidence, and semantic
 awareness. The goal is to create an IDE that feels closer to JetBrains,
 Cursor, and Figma than to traditional ontology editors.
@@ -263,7 +263,7 @@ Every error should answer:
 -   What happened?
 -   Why?
 -   What can I do?
--   Can OntoCode help fix it?
+-   Can Strixonomy help fix it?
 
 Never expose raw parser failures without interpretation.
 
@@ -303,5 +303,5 @@ Consistency builds user confidence.
 # Success Criteria
 
 A successful interaction model is one where users quickly stop thinking
-about *how* to operate OntoCode and instead focus entirely on
+about *how* to operate Strixonomy and instead focus entirely on
 understanding, editing, validating, and evolving their knowledge model.

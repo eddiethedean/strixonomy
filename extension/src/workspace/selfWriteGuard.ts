@@ -1,11 +1,11 @@
 import { normalizeFsPath, pathIdentityKey } from "../utils/pathUnder";
 
-/** Default window where FS watcher events for OntoCode's own writes are ignored (#293). */
+/** Default window where FS watcher events for Strixonomy's own writes are ignored (#293). */
 export const SELF_WRITE_TTL_MS = 2500;
 
 const selfWriteUntil = new Map<string, number>();
 
-/** Mark a filesystem path as written by OntoCode (patch/save) for a short TTL. */
+/** Mark a filesystem path as written by Strixonomy (patch/save) for a short TTL. */
 export function noteSelfWrite(
   fsPath: string,
   ttlMs: number = SELF_WRITE_TTL_MS,
@@ -30,7 +30,7 @@ export function noteSelfWrites(
   }
 }
 
-/** True when `fsPath` was recently written by OntoCode and should not trigger recovery. */
+/** True when `fsPath` was recently written by Strixonomy and should not trigger recovery. */
 export function isSelfWrite(fsPath: string, now: number = Date.now()): boolean {
   const key = pathIdentityKey(fsPath);
   const until = selfWriteUntil.get(key);

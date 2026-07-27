@@ -16,7 +16,7 @@ v0.6+ adapters are **Rust-native only**, delegating to **[OntoLogos](https://git
 ## Consequences
 Positive:
 - pluggable reasoner profiles (EL / RL / RDFS / DL)
-- avoids maintaining a monolithic reasoner in OntoCore — `ontocore-reasoner` is a thin facade
+- avoids maintaining a monolithic reasoner in Strixonomy — `strixonomy-reasoner` is a thin facade
 - Rust adapters ship inside the binary — no external runtime
 - shared HermiT conformance suite with OntoLogos
 

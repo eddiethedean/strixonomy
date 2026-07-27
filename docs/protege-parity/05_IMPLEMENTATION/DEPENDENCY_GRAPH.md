@@ -1,9 +1,9 @@
 # DEPENDENCY_GRAPH
 
-# OntoCode 1.0 Protégé Parity Dependency Graph
+# Strixonomy 1.0 Protégé Parity Dependency Graph
 
 **Status:** Master Architecture Dependency Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ Reasoning     SWRL     Refactoring    Query   Serializer Support
         Parity Verification (B11)
                          │
                          ▼
-                 OntoCode 1.0 Release
+                 Strixonomy 1.0 Release
 ```
 
 ------------------------------------------------------------------------

@@ -20,7 +20,7 @@ Read:
 
 1. Create extension/webview-ui/src/capabilities/types.ts with CapabilityProvider base + ReasoningProvider, QueryProvider stubs
 2. Create extension/webview-ui/src/capabilities/registry.ts with register/list
-3. Register built-in 'ontocore' stubs that delegate to existing LSP calls
+3. Register built-in 'strixonomy' stubs that delegate to existing LSP calls
 4. Add capabilities/registry.test.ts
 
 ## Acceptance criteria

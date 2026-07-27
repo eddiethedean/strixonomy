@@ -1,6 +1,6 @@
-# OntoCore + OntoCode Documentation Package
+# Strixonomy + Strixonomy Documentation Package
 
-> **Note:** This folder contains **engineering specs, ADRs, and shipped milestone detail**. Canonical platform direction lives in **[Vision](../vision.md)**, **[Architecture](../architecture.md)**, and **[Roadmap](../roadmap.md)** ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md)). For **what ships in v0.26.2**, see [What ships today](../SHIPPED.md).
+> **Note:** This folder contains **engineering specs, ADRs, and shipped milestone detail**. Canonical platform direction lives in **[Vision](../vision.md)**, **[Architecture](../architecture.md)**, and **[Roadmap](../roadmap.md)** ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)). For **what ships in v0.26.2**, see [What ships today](../SHIPPED.md).
 
 ## Documentation layers
 
@@ -8,39 +8,39 @@
 |-------|-------|----------|
 | **Platform** | [vision.md](../vision.md), [architecture.md](../architecture.md), [roadmap.md](../roadmap.md) | Everyone — mission, ecosystem, forward plan |
 | **Shipped** | [SHIPPED.md](../SHIPPED.md), guides, reference | Users evaluating current capabilities |
-| **Product design (UI)** | [ui/README.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/README.md) — [ROADMAP_MAPPING.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md) | Designers, frontend contributors — UX specs mapped to releases |
+| **Product design (UI)** | [ui/README.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) — [ROADMAP_MAPPING.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md) | Designers, frontend contributors — UX specs mapped to releases |
 | **Engineering** | `docs/design/` (this folder) | Contributors — specs, ADRs, v0.1–v0.11 milestones |
 
 For **user-facing guides**, pick a path:
 
 | Path | Audience | Start |
 |------|----------|-------|
-| [VS Code extension](https://ontocode-vs.readthedocs.io/en/latest/ontocode/vscode-extension/) | Explorer, inspector, Query Workbench, reasoner panels | [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or VSIX — no Rust required |
-| [Rust & CLI](https://ontocode-vs.readthedocs.io/en/latest/guides/rust-crates/) | `ontocore` CLI, crates.io libraries, CI, LSP integrators | `cargo install ontocore-cli` |
+| [VS Code extension](https://strixonomy-vs.readthedocs.io/en/latest/ide/vscode-extension/) | Explorer, inspector, Query Workbench, reasoner panels | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or VSIX — no Rust required |
+| [Rust & CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/) | `strixonomy` CLI, crates.io libraries, CI, LSP integrators | `cargo install strixonomy-cli` |
 
-[Documentation home](https://ontocode-vs.readthedocs.io/en/latest/) · [What ships today](../SHIPPED.md)
+[Documentation home](https://strixonomy-vs.readthedocs.io/en/latest/) · [What ships today](../SHIPPED.md)
 
 Two related products:
 
-1. **OntoCore** — Rust semantic workspace engine (`ontocore-*` crates).
-2. **OntoCode** — VS Code extension (explorer, diagnostics, Turtle + Manchester authoring, Query Workbench, reasoner).
+1. **Strixonomy** — Rust semantic workspace engine (`strixonomy-*` crates).
+2. **Strixonomy** — VS Code extension (explorer, diagnostics, Turtle + Manchester authoring, Query Workbench, reasoner).
 
-**Sibling project:** [OntoLogos](https://github.com/eddiethedean/ontologos) — Rust ontology reasoner. OntoCode delegates reasoning to OntoLogos per [ADR-0015](adr/0015-adopt-ontologos-reasoner.md).
+**Sibling project:** [OntoLogos](https://github.com/eddiethedean/ontologos) — Rust ontology reasoner. Strixonomy delegates reasoning to OntoLogos per [ADR-0015](adr/0015-adopt-ontologos-reasoner.md).
 
-**Dependency policy:** [ADR-0016](adr/0016-dependency-first-implementation.md) — thin `ontocore-*` facades over mature crates. Inventory: [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md). Licenses: [LICENSES.md](LICENSES.md).
+**Dependency policy:** [ADR-0016](adr/0016-dependency-first-implementation.md) — thin `strixonomy-*` facades over mature crates. Inventory: [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md). Licenses: [LICENSES.md](LICENSES.md).
 
 ## v1.0 exit bar
 
-**[protege-parity program](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/README.md)** — authoritative 1.0 engineering plan ([PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)). **[PROTEGE_PARITY.md](PROTEGE_PARITY.md)** — historical v0.18 P0/P1/P2 checklist. Forward plan: [Roadmap § OntoCode 1.0](../roadmap.md#ontocode-10-modern-protege-replacement).
+**[protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md)** — authoritative 1.0 engineering plan ([PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)). **[PROTEGE_PARITY.md](PROTEGE_PARITY.md)** — historical v0.18 P0/P1/P2 checklist. Forward plan: [Roadmap § Strixonomy 1.0](../roadmap.md#strixonomy-10-modern-protege-replacement).
 
 ## Document status
 
 Many specs describe **target** behavior. Check the banner at the top of each doc, or:
 
-- **Implemented v0.6 LSP:** [LSP API](https://ontocode-vs.readthedocs.io/en/latest/lsp-api/) — includes `query`, `sparql`, `parseManchester`, `runReasoner`, `getExplanation`
-- **Implemented reasoner:** [Reasoner guide](https://ontocode-vs.readthedocs.io/en/latest/guides/reasoner/)
-- **Implemented SQL tables:** [SQL reference](https://ontocode-vs.readthedocs.io/en/latest/sql-reference/)
-- **Implemented authoring:** [authoring guide](https://ontocode-vs.readthedocs.io/en/latest/authoring/)
+- **Implemented v0.6 LSP:** [LSP API](https://strixonomy-vs.readthedocs.io/en/latest/lsp-api/) — includes `query`, `sparql`, `parseManchester`, `runReasoner`, `getExplanation`
+- **Implemented reasoner:** [Reasoner guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/reasoner/)
+- **Implemented SQL tables:** [SQL reference](https://strixonomy-vs.readthedocs.io/en/latest/sql-reference/)
+- **Implemented authoring:** [authoring guide](https://strixonomy-vs.readthedocs.io/en/latest/authoring/)
 - **ADRs (canonical):** [adr/README.md](adr/README.md)
 
 ## Documents
@@ -51,7 +51,7 @@ Many specs describe **target** behavior. Check the banner at the top of each doc
 - [ROADMAP.md](ROADMAP.md) — **engineering milestones v0.1–v0.11 (shipped detail)**
 - [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md) — **external crate inventory**
 - [LICENSES.md](LICENSES.md) — third-party license summary
-- [protege-parity program](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/README.md) — **1.0 engineering program**
+- [protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) — **1.0 engineering program**
 - [PROTEGE_PARITY.md](PROTEGE_PARITY.md) — historical v0.18 compete checklist
 - [v1.0_BACKLOG.md](v1.0_BACKLOG.md) — implementation backlog
 
@@ -65,12 +65,12 @@ Many specs describe **target** behavior. Check the banner at the top of each doc
 - [SHACL_SPEC.md](SHACL_SPEC.md) — SHACL validation (P1)
 - [SEMANTIC_DIFF_SPEC.md](SEMANTIC_DIFF_SPEC.md) — semantic ontology diff
 - [LSP_SPEC.md](LSP_SPEC.md) — target language server (v1.0 methods)
-- [PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md) — plugin system
+- [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) — plugin system
 
 ### UX
 
-- [UI specification pack](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/README.md) — product design, design system, workspace model, AI/plugin UX (**target**; see [ROADMAP_MAPPING.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md) for shipped vs planned)
-- [UI_WIREFRAMES.md](UI_WIREFRAMES.md) — text-based VS Code wireframes (legacy; see [WORKSPACE_WIREFRAMES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md))
+- [UI specification pack](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) — product design, design system, workspace model, AI/plugin UX (**target**; see [ROADMAP_MAPPING.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md) for shipped vs planned)
+- [UI_WIREFRAMES.md](UI_WIREFRAMES.md) — text-based VS Code wireframes (legacy; see [WORKSPACE_WIREFRAMES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md))
 - [OntoCode_React_UI_Integration_Plan.md](OntoCode_React_UI_Integration_Plan.md) — **React webview migration** (v0.7a → v1.0, [ADR-0017](adr/0017-react-webview-ui.md); panels shipped v0.7–v0.11)
 
 ### Historical / backlog

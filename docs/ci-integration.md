@@ -1,10 +1,10 @@
 # CI integration
 
-Run OntoCore validation in continuous integration to catch ontology lint and parse errors before merge.
+Run Strixonomy validation in continuous integration to catch ontology lint and parse errors before merge.
 
 ## Exit codes
 
-`ontocore validate` follows the rules in [workspace-limits.md](workspace-limits.md):
+`strixonomy validate` follows the rules in [workspace-limits.md](workspace-limits.md):
 
 | Outcome | Exit code |
 |---------|-----------|
@@ -35,15 +35,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download ontocore CLI, verify checksum, validate
+      - name: Download strixonomy CLI, verify checksum, validate
         run: |
           VERSION=0.26.2
-          ASSET="ontocore-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-          BIN="ontocore-v${VERSION}-x86_64-unknown-linux-gnu"
+          ASSET="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+          BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
           curl -fsSL -o "${ASSET}" \
-            "https://github.com/eddiethedean/ontocode/releases/download/v${VERSION}/${ASSET}"
+            "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/${ASSET}"
           curl -fsSL -o SHA256SUMS \
-            "https://github.com/eddiethedean/ontocode/releases/download/v${VERSION}/SHA256SUMS"
+            "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/SHA256SUMS"
           grep "${ASSET}" SHA256SUMS | sha256sum -c -
           tar xzf "${ASSET}"
           chmod +x "${BIN}"
@@ -70,11 +70,11 @@ Use when you need a platform without a release tarball, or when developing again
         with:
           workspaces: ""
 
-      - name: Install ontocore CLI
-        run: cargo install ontocore-cli --locked --version 0.26.2
+      - name: Install strixonomy CLI
+        run: cargo install strixonomy-cli --locked --version 0.26.2
 
       - name: Validate ontology files
-        run: ontocore validate .
+        run: strixonomy validate .
 ```
 
 First install on a cold runner can take **15–30+ minutes** without cache. Prefer the release binary on Linux x64 when possible.
@@ -89,9 +89,9 @@ Fail the job when EL classification finds unsatisfiable classes:
           - name: Classify ontologies (EL)
             run: |
               VERSION=0.26.2
-              BIN="ontocore-v${VERSION}-x86_64-unknown-linux-gnu"
+              BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
               curl -fsSL -o "${BIN}.tar.gz" \
-                "https://github.com/eddiethedean/ontocode/releases/download/v${VERSION}/ontocore-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+                "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
               tar xzf "${BIN}.tar.gz"
               chmod +x "${BIN}"
               ./"${BIN}" classify . --profile el --format json
@@ -100,11 +100,11 @@ Fail the job when EL classification finds unsatisfiable classes:
 === "cargo install"
 
     ```yaml
-          - name: Install ontocore CLI
-            run: cargo install ontocore-cli --locked --version 0.26.2
+          - name: Install strixonomy CLI
+            run: cargo install strixonomy-cli --locked --version 0.26.2
 
           - name: Classify ontologies (EL)
-            run: ontocore classify . --profile el --format json
+            run: strixonomy classify . --profile el --format json
     ```
 
 `classify` exits **non-zero** when `consistent` is false. See [workspace-limits.md](workspace-limits.md) and [Reasoner guide](guides/reasoner.md).
@@ -112,7 +112,7 @@ Fail the job when EL classification finds unsatisfiable classes:
 ## Query diagnostics in CI
 
 ```bash
-ontocore query . "SELECT code, severity, message, file FROM diagnostics WHERE severity = 'error'"
+strixonomy query . "SELECT code, severity, message, file FROM diagnostics WHERE severity = 'error'"
 ```
 
 Use `--format json` for machine-readable output.
@@ -122,9 +122,9 @@ Use `--format json` for machine-readable output.
 Apply Turtle patches in CI (preview first):
 
 ```bash
-ontocore patch ./ontology.ttl patches.json --preview
-ontocore patch ./ontology.ttl patches.json
-ontocore validate .
+strixonomy patch ./ontology.ttl patches.json --preview
+strixonomy patch ./ontology.ttl patches.json
+strixonomy validate .
 ```
 
 Patch format: [patch-reference.md](patch-reference.md).
@@ -137,18 +137,18 @@ Compare git refs in pull requests (requires a git checkout with history):
       - name: Semantic diff (breaking changes only)
         run: |
           VERSION=0.26.2
-          BIN="ontocore-v${VERSION}-x86_64-unknown-linux-gnu"
+          BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
           curl -fsSL -o "${BIN}.tar.gz" \
-            "https://github.com/eddiethedean/ontocode/releases/download/v${VERSION}/ontocore-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+            "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
           tar xzf "${BIN}.tar.gz"
           chmod +x "${BIN}"
           ./"${BIN}" diff --format markdown --breaking-only HEAD..WORKTREE
 ```
 
-See [Semantic diff guide](ontocode/semantic-diff.md) for ref syntax and VS Code panel usage.
+See [Semantic diff guide](ide/semantic-diff.md) for ref syntax and VS Code panel usage.
 
 ## Tips
 
-- Index only the ontology subtree if the repo is large: `ontocore validate ./src/ontologies`
+- Index only the ontology subtree if the repo is large: `strixonomy validate ./src/ontologies`
 - Resource limits apply — see [workspace-limits.md](workspace-limits.md)
-- For VS Code-only workflows, the same rules apply via `ontocore validate` in CI; the extension is not required in the pipeline
+- For VS Code-only workflows, the same rules apply via `strixonomy validate` in CI; the extension is not required in the pipeline

@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 import type {
   DialogPanelKind,
   InjectablePanelKind,
-  OntoCodeTestHooks,
+  StrixonomyTestHooks,
 } from "./api";
 import {
   openNewOntologyDialog as openNewOntologyDialogAt,
@@ -52,18 +52,18 @@ function requireHost(
 }
 
 function extensionUri(): vscode.Uri {
-  const ext = vscode.extensions.getExtension("ontocode.ontocode");
+  const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
   if (!ext) {
-    throw new Error("OntoCode extension is not loaded");
+    throw new Error("Strixonomy extension is not loaded");
   }
   return ext.extensionUri;
 }
 
 /** Test hooks exposed when ONTOCODE_TEST_FIXTURES is set (VS Code e2e). */
-export function createOntoCodeTestHooks(): OntoCodeTestHooks {
+export function createStrixonomyTestHooks(): StrixonomyTestHooks {
   return {
     async openEntityInspector(iri: string): Promise<void> {
-      await vscode.commands.executeCommand("ontocode.showEntityInspector", iri);
+      await vscode.commands.executeCommand("strixonomy.showEntityInspector", iri);
     },
 
     getInspectorWebviewHtml(): string | undefined {
@@ -90,7 +90,7 @@ export function createOntoCodeTestHooks(): OntoCodeTestHooks {
     },
 
     async openQueryWorkbench(): Promise<void> {
-      await vscode.commands.executeCommand("ontocode.openQueryWorkbench");
+      await vscode.commands.executeCommand("strixonomy.openQueryWorkbench");
     },
 
     getQueryWorkbenchWebviewHtml(): string | undefined {
@@ -117,7 +117,7 @@ export function createOntoCodeTestHooks(): OntoCodeTestHooks {
     },
 
     async openEntity(iri: string): Promise<void> {
-      await vscode.commands.executeCommand("ontocode.openEntity", iri);
+      await vscode.commands.executeCommand("strixonomy.openEntity", iri);
     },
 
     getInspectorLoadedIri(): string | undefined {

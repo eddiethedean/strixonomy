@@ -1,20 +1,20 @@
-# OntoCode Product Design Specification
+# Strixonomy Product Design Specification
 
 > **Document type:** Product design specification pack (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-This specification pack defines the product, UX, technical architecture, design system, state model, plugin platform, AI experience, and implementation roadmap for OntoCode and the broader Ontologos semantic engineering platform.
+This specification pack defines the product, UX, technical architecture, design system, state model, plugin platform, AI experience, and implementation roadmap for Strixonomy and the broader Ontologos semantic engineering platform.
 
 > **Integrated with repo plans:** [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) — **master checklist** for every Product Roadmap 2.0 item mapped to releases. For **what ships today**, see [SHIPPED.md](../SHIPPED.md).
 
 ## Primary Goal
 
-Move OntoCode beyond a VS Code ontology extension into a first-class semantic engineering IDE and platform.
+Move Strixonomy beyond a VS Code ontology extension into a first-class semantic engineering IDE and platform.
 
 ## Product Stack
 
-- **OntoCore**: Rust semantic workspace engine.
-- **OntoCode**: VS Code extension experience.
+- **Strixonomy**: Rust semantic workspace engine.
+- **Strixonomy**: VS Code extension experience.
 - **OntoUI** — Shared React UI platform ([platform/ONTOUI.md](../platform/ONTOUI.md)) — **v0.13 foundation shipped**
 - **OntoStudio**: Future standalone desktop application (**planned**).
 - **Plugin Platform**: Capability Provider ecosystem (**planned** v0.14).

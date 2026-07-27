@@ -173,7 +173,7 @@ export class PanelHost {
           await options.onMessage(data, panel);
         } catch (err) {
           const message = err instanceof Error ? err.message : String(err);
-          void vscode.window.showErrorMessage(`OntoCode: ${message}`);
+          void vscode.window.showErrorMessage(`Strixonomy: ${message}`);
         }
       }
     };

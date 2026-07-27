@@ -5,7 +5,7 @@
 
 ## 1. Standard
 
-OntoCode targets WCAG 2.2 AA.
+Strixonomy targets WCAG 2.2 AA.
 
 ## 2. Keyboard Accessibility
 

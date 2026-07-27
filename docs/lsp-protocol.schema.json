@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/eddiethedean/ontocode/docs/lsp-protocol.schema.json",
-  "title": "OntoCore LSP protocol (v0.24)",
-  "description": "JSON Schema for ontocore/* custom LSP method payloads (v0.24). Method routing is documented in lsp-api.md. Standard LSP textDocument/semanticTokens/full is documented in lsp-api.md but not duplicated here.",
+  "$id": "https://github.com/eddiethedean/strixonomy/docs/lsp-protocol.schema.json",
+  "title": "Strixonomy LSP protocol (v0.24)",
+  "description": "JSON Schema for strixonomy/* custom LSP method payloads (v0.24). Method routing is documented in lsp-api.md. Standard LSP textDocument/semanticTokens/full is documented in lsp-api.md but not duplicated here.",
   "definitions": {
     "EntityKind": {
       "type": "string",

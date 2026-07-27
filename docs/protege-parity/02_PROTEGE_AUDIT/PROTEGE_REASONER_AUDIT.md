@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Audit the reasoning capabilities exposed by a standard
 Protégé Desktop installation and define the equivalent functionality
-required for OntoCode 1.0.
+required for Strixonomy 1.0.
 
 > This audit evaluates reasoning workflows and observable behavior
 > rather than matching any specific Java reasoner implementation.
@@ -15,7 +15,7 @@ required for OntoCode 1.0.
 # Purpose
 
 Protégé supports multiple OWL reasoners through a common interface.
-OntoCode achieves parity by providing equivalent reasoning workflows
+Strixonomy achieves parity by providing equivalent reasoning workflows
 through its native Rust-based reasoning architecture and adapters.
 
 The goal is functional equivalence for ontology engineers, not
@@ -36,7 +36,7 @@ implementation compatibility.
 # Core Reasoning Workflows
 
   -----------------------------------------------------------------------------------
-  Workflow          Protégé Capability          OntoCode            Status
+  Workflow          Protégé Capability          Strixonomy            Status
                                                 Expectation         
   ----------------- --------------------------- ------------------- -----------------
   Select reasoner   Choose installed reasoner   Native              REVIEW

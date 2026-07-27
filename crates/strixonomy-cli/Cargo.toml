@@ -1,0 +1,40 @@
+[package]
+name = "strixonomy-cli"
+description = "CLI for Strixonomy (strixonomy-*) ontology indexing and querying"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords.workspace = true
+categories.workspace = true
+include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE-MIT", "LICENSE-APACHE-2.0"]
+default-run = "strixonomy"
+
+[[bin]]
+name = "strixonomy"
+path = "src/main.rs"
+
+[[bin]]
+name = "ontocore"
+path = "src/main.rs"
+
+[dependencies]
+strixonomy-catalog = { workspace = true }
+strixonomy-core = { workspace = true }
+strixonomy-edit = { workspace = true }
+strixonomy-owl = { workspace = true }
+strixonomy-obo = { workspace = true }
+strixonomy-query = { workspace = true }
+strixonomy-reasoner = { workspace = true }
+strixonomy-refactor = { workspace = true }
+strixonomy-robot = { workspace = true }
+strixonomy-diff = { workspace = true }
+strixonomy-docs = { workspace = true }
+strixonomy-plugin-builtins = { workspace = true }
+anyhow.workspace = true
+clap.workspace = true
+serde_json.workspace = true

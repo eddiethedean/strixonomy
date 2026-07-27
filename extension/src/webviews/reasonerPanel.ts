@@ -36,7 +36,7 @@ export class ReasonerPanel {
 
   private constructor(private readonly host: PanelHost) {
     this.host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeReasoner");
+      void forgetPanelRestoreState("strixonomyReasoner");
       ReasonerPanel.current = undefined;
     });
   }
@@ -46,17 +46,17 @@ export class ReasonerPanel {
   }
 
   public static show(extensionUri: vscode.Uri): ReasonerPanel {
-    void rememberPanelRestoreState("ontocodeReasoner", {
-      command: "ontocode.classifyOntology",
-      title: "OntoCode Reasoner",
+    void rememberPanelRestoreState("strixonomyReasoner", {
+      command: "strixonomy.classifyOntology",
+      title: "Strixonomy Reasoner",
     });
     if (ReasonerPanel.current) {
       ReasonerPanel.current.host.panel.reveal(vscode.ViewColumn.Beside);
       return ReasonerPanel.current;
     }
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeReasoner",
-      title: "OntoCode Reasoner",
+      viewType: "strixonomyReasoner",
+      title: "Strixonomy Reasoner",
       panel: "reasoner",
       onMessage: async (message: WebviewMessage) => {
         const panel = ReasonerPanel.current;
@@ -71,7 +71,7 @@ export class ReasonerPanel {
   }
 
   public async runWithDefaults(): Promise<void> {
-    const cfg = vscode.workspace.getConfiguration("ontocode");
+    const cfg = vscode.workspace.getConfiguration("strixonomy");
     const profile = cfg.get<string>("reasoner.default") ?? "el";
     const autoDetect = cfg.get<boolean>("reasoner.autoProfile") ?? true;
     await this.run(profile, autoDetect, ++this.runId);
@@ -113,7 +113,7 @@ export class ReasonerPanel {
       const profile =
         this.lastResult?.profile_used ?? focusRelay.getReasoning()?.profile;
       await vscode.commands.executeCommand(
-        "ontocode.showExplanation",
+        "strixonomy.showExplanation",
         message.classIri,
         profile
       );
@@ -121,9 +121,9 @@ export class ReasonerPanel {
     }
     if (message.type === "showInferredHierarchy") {
       await vscode.workspace
-        .getConfiguration("ontocode")
+        .getConfiguration("strixonomy")
         .update("hierarchy.mode", "combined", vscode.ConfigurationTarget.Workspace);
-      void vscode.commands.executeCommand("ontocode.refreshExplorer");
+      void vscode.commands.executeCommand("strixonomy.refreshExplorer");
     }
   }
 
@@ -158,7 +158,7 @@ export class ReasonerPanel {
         result: toPayload(result),
         summary: summarizeResult(result),
       });
-      void vscode.commands.executeCommand("ontocode.refreshExplorer");
+      void vscode.commands.executeCommand("strixonomy.refreshExplorer");
     } catch (err) {
       if (runId !== this.runId) {
         return;

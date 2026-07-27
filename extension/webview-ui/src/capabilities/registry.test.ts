@@ -10,7 +10,7 @@ describe("capability registry", () => {
   it("registers built-in ontocore provider", () => {
     registerBuiltinProviders();
     const providers = list();
-    expect(providers.some((p) => p.id === "ontocore")).toBe(true);
+    expect(providers.some((p) => p.id === "strixonomy")).toBe(true);
   });
 
   it("lists providers by capability kind", () => {

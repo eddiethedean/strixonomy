@@ -1,19 +1,19 @@
-//! Match structured errors from the OntoCore façade and underlying crates.
+//! Match structured errors from the Strixonomy façade and underlying crates.
 //!
 //! Run from the repository root:
 //!
 //! ```bash
-//! cargo run -p ontocode --example error_handling
+//! cargo run -p strixonomy-workspace --example error_handling
 //! ```
 
-use ontocore::{Error, Workspace};
-use ontocore_parser::{parse_ontology_file, ParseError};
 use std::path::Path;
+use strixonomy::{Error, Workspace};
+use strixonomy_parser::{parse_ontology_file, ParseError};
 
 fn main() {
     let missing = Path::new("fixtures/does-not-exist.ttl");
     if let Err(err) =
-        parse_ontology_file(missing, ontocore_core::OntologyFormat::Turtle, "doc-1", "h", 0)
+        parse_ontology_file(missing, strixonomy_core::OntologyFormat::Turtle, "doc-1", "h", 0)
     {
         match err {
             ParseError::Io(_) => eprintln!("parse: file not found or unreadable"),
@@ -27,7 +27,7 @@ fn main() {
         match err {
             Error::Catalog(catalog) => eprintln!("catalog: {catalog}"),
             Error::Query(query) => eprintln!("query: {query}"),
-            other => eprintln!("ontocore: {other}"),
+            other => eprintln!("strixonomy: {other}"),
         }
     }
 }

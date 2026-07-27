@@ -1,4 +1,4 @@
-//! CLI integration test for `ontocore diff --pr-summary`.
+//! CLI integration test for `strixonomy diff --pr-summary`.
 
 mod support;
 
@@ -15,7 +15,7 @@ fn diff_pr_summary_emits_markdown_between_directories() {
     )
     .unwrap();
 
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args([
             "diff",
             "--left-ref",
@@ -25,12 +25,12 @@ fn diff_pr_summary_emits_markdown_between_directories() {
             "--pr-summary",
         ])
         .output()
-        .expect("spawn ontocore diff");
+        .expect("spawn strixonomy diff");
 
     assert!(output.status.success(), "diff failed: {}", String::from_utf8_lossy(&output.stderr));
     let stdout = String::from_utf8_lossy(&output.stdout);
     assert!(stdout.contains("## Ontology changes"), "expected PR summary header");
-    assert!(stdout.contains("ontocore diff --pr-summary"));
+    assert!(stdout.contains("strixonomy diff --pr-summary"));
     assert!(
         stdout.contains("Entities") || stdout.contains("entity"),
         "expected entity section in summary: {stdout}"

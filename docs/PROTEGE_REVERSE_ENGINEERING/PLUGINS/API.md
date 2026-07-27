@@ -1,13 +1,13 @@
 # API.md
 
-# OntoCode Plugin API
-## Reverse Engineering Specification for Protégé Plugins and Design Blueprint for OntoCode
+# Strixonomy Plugin API
+## Reverse Engineering Specification for Protégé Plugins and Design Blueprint for Strixonomy
 
 ## Purpose
 
-Protégé exposes an extensible Java-based plugin system that allows third parties to contribute views, tabs, reasoners, renderers, menu items, and tools. OntoCode should preserve this extensibility while replacing the Java-centric architecture with a language-agnostic, versioned plugin platform.
+Protégé exposes an extensible Java-based plugin system that allows third parties to contribute views, tabs, reasoners, renderers, menu items, and tools. Strixonomy should preserve this extensibility while replacing the Java-centric architecture with a language-agnostic, versioned plugin platform.
 
-This document defines the conceptual Plugin API for OntoCode.
+This document defines the conceptual Plugin API for Strixonomy.
 
 ---
 
@@ -28,7 +28,7 @@ The Plugin API should:
 
 ```text
 +----------------------+
-|      OntoCode        |
+|      Strixonomy        |
 +----------------------+
 | Plugin Host          |
 | Command Registry     |
@@ -279,7 +279,7 @@ Plugins must:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -324,4 +324,4 @@ Infrastructure
 
 # Summary
 
-Protégé demonstrated the value of an extensible plugin ecosystem, but its Java-centric architecture limits accessibility and modernization. OntoCode should provide a stable, language-agnostic plugin API that enables Rust, TypeScript, and Python extensions while integrating seamlessly with commands, views, reasoning, validation, AI, and collaboration features.
+Protégé demonstrated the value of an extensible plugin ecosystem, but its Java-centric architecture limits accessibility and modernization. Strixonomy should provide a stable, language-agnostic plugin API that enables Rust, TypeScript, and Python extensions while integrating seamlessly with commands, views, reasoning, validation, AI, and collaboration features.

@@ -6,7 +6,7 @@ Accepted — **implemented v0.13** (Zustand store in `extension/webview-ui/src/s
 
 ## Context
 
-Per-panel React state causes duplicate LSP fetches and inconsistent entity context between inspector and graph. [ui/STATE_MANAGEMENT.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/STATE_MANAGEMENT.md) specifies a global store — **shipped in v0.13**.
+Per-panel React state causes duplicate LSP fetches and inconsistent entity context between inspector and graph. [ui/STATE_MANAGEMENT.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/STATE_MANAGEMENT.md) specifies a global store — **shipped in v0.13**.
 
 ## Decision
 
@@ -22,5 +22,5 @@ Implementation: centralized store module in `extension/webview-ui/src/store/` (l
 
 ## References
 
-- [platform/WORKSPACE_RUNTIME.md](https://github.com/eddiethedean/ontocode/blob/main/docs/platform/WORKSPACE_RUNTIME.md)
+- [platform/WORKSPACE_RUNTIME.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/WORKSPACE_RUNTIME.md)
 - [adr/0003-current-focus-central-ux.md](0003-current-focus-central-ux.md)

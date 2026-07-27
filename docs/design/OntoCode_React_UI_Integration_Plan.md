@@ -1,4 +1,4 @@
-# OntoCode React UI Integration Plan
+# Strixonomy React UI Integration Plan
 
 > **Status: Historical.** React + Vite foundation and panel migration **shipped** (v0.7a–v0.13+). Do **not** treat this as a current implementation plan.
 >
@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This document defines the strategy for migrating OntoCode's existing VS Code webviews to a modern React-based architecture while preserving the existing TypeScript extension host and Rust backend services.
+This document defines the strategy for migrating Strixonomy's existing VS Code webviews to a modern React-based architecture while preserving the existing TypeScript extension host and Rust backend services.
 
 ---
 
@@ -338,11 +338,11 @@ Requirements:
 
 ## Long-Term Vision
 
-Transform OntoCode into a modern ontology engineering platform that combines:
+Transform Strixonomy into a modern ontology engineering platform that combines:
 
 - Rust performance
 - VS Code extensibility
 - React user experience
 - Enterprise-grade ontology tooling
 
-while positioning OntoCode as a credible long-term replacement for traditional ontology desktop tools.
+while positioning Strixonomy as a credible long-term replacement for traditional ontology desktop tools.

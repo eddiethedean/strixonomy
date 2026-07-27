@@ -1,8 +1,8 @@
 # Plugin workspace example (SDK 1.0)
 
-Minimal ontology folder with `.ontocore/plugins/` manifests for OntoCore Plugin SDK 1.0 — UI contributions, lifecycle deps, and reference providers.
+Minimal ontology folder with `.strixonomy/plugins/` manifests for Strixonomy Plugin SDK 1.0 — UI contributions, lifecycle deps, and reference providers.
 
-Full authoring guide: [Plugin authoring](https://ontocode-vs.readthedocs.io/en/latest/guides/plugins/).
+Full authoring guide: [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/).
 
 ## Layout
 
@@ -11,7 +11,7 @@ plugin-workspace/
   demo.ttl
   demo_ui_view.sh
   demo_providers.sh
-  .ontocore/plugins/
+  .strixonomy/plugins/
     naming-validator.toml
     demo-ui-view.toml
     demo-reasoner.toml
@@ -37,11 +37,11 @@ cargo run -- validate examples/plugin-workspace
 ## VS Code
 
 1. **File → Open Folder…** → `examples/plugin-workspace`
-2. Run **OntoCode: Index Workspace**
+2. Run **Strixonomy: Index Workspace**
 3. Use **Plugins: Open View…** / **Plugins: Run Command…** for UI contributions
 
 ## Notes
 
 - Workspace-local plugins (not a marketplace).
-- Subprocess `entry` binaries live next to the workspace root; symlinks under `.ontocore/plugins/` resolve them without `..` in the manifest.
-- `depends_on` / disable cascade: `ontocore plugins disable org.example.demo-reasoner` also disables `demo-graph`.
+- Subprocess `entry` binaries live next to the workspace root; symlinks under `.strixonomy/plugins/` resolve them without `..` in the manifest.
+- `depends_on` / disable cascade: `strixonomy plugins disable org.example.demo-reasoner` also disables `demo-graph`.

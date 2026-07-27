@@ -1,16 +1,16 @@
 # IMPLEMENTATION_CHECKLIST
 
-# OntoCode 1.0 Implementation Checklist
+# Strixonomy 1.0 Implementation Checklist
 
 **Status:** Master Engineering Checklist\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This checklist provides a single, actionable view of all implementation
-work required to achieve OntoCode 1.0 with verified Protégé Desktop
+work required to achieve Strixonomy 1.0 with verified Protégé Desktop
 parity. It complements the roadmap and blocker documents by tracking
 completion at a practical level.
 

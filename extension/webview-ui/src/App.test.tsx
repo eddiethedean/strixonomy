@@ -14,7 +14,7 @@ describe("App", () => {
   it("renders smoke panel by default", () => {
     window.history.replaceState({}, "", "/");
     renderApp();
-    expect(screen.getByRole("heading", { name: "OntoCode React" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Strixonomy React" })).toBeInTheDocument();
   });
 
   it("routes to query workbench panel", () => {
@@ -69,7 +69,7 @@ describe("App", () => {
   it("falls back to smoke for unknown panel param", () => {
     setPanelQuery("unknown");
     renderApp();
-    expect(screen.getByRole("heading", { name: "OntoCode React" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Strixonomy React" })).toBeInTheDocument();
   });
 
   it("routes to inspector after host location bootstrap (VS Code webview)", () => {

@@ -29,7 +29,7 @@ What a user can do after this ships (demo script in 1–3 bullets).
 |------|--------|
 | `extension/webview-ui/src/...` | … |
 | `extension/src/...` | … |
-| `crates/...` | … (if OntoCore) |
+| `crates/...` | … (if Strixonomy) |
 
 ### Acceptance criteria
 

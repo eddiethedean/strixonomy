@@ -5,21 +5,21 @@
 IDE tutorial: [First success (~10 min)](guides/first-success.md). Canonical product install: [Install](install.md).
 
 !!! note "First `cargo install` or clone build"
-    A cold Rust toolchain may take **15–30+ minutes** to compile OntoCore on first run. The VS Code extension bundles `ontocore-lsp` and does not require Rust. **Linux x64 CI should prefer the release tarball** ([CI integration](ci-integration.md)) over `cargo install`.
+    A cold Rust toolchain may take **15–30+ minutes** to compile Strixonomy on first run. The VS Code extension bundles `strixonomy-lsp` and does not require Rust. **Linux x64 CI should prefer the release tarball** ([CI integration](ci-integration.md)) over `cargo install`.
 
 !!! note "Linux arm64 and non-x64"
-    Prebuilt CLI tarballs are **`x86_64-unknown-linux-gnu` only**. On Linux arm64 (and other unsupported targets), use `cargo install ontocore-cli --locked --version 0.26.2` or the language server bundled in the VSIX — see [platform compatibility](guides/platform-compatibility.md).
+    Prebuilt CLI tarballs are **`x86_64-unknown-linux-gnu` only**. On Linux arm64 (and other unsupported targets), use `cargo install strixonomy-cli --locked --version 0.26.2` or the language server bundled in the VSIX — see [platform compatibility](guides/platform-compatibility.md).
 
 ## Install matrix (CLI)
 
 | Method | Linux x64 | macOS | Windows | Needs Rust? |
 |--------|-----------|-------|---------|-------------|
-| `cargo install ontocore-cli --locked --version 0.26.2` | Yes | Yes | Yes | Yes (1.88+) |
-| Release CLI tarball (`ontocore-v*-x86_64-unknown-linux-gnu`) | Yes | No | No | No |
+| `cargo install strixonomy-cli --locked --version 0.26.2` | Yes | Yes | Yes | Yes (1.88+) |
+| Release CLI tarball (`strixonomy-v*-x86_64-unknown-linux-gnu`) | Yes | No | No | No |
 | Git clone + `cargo run --` | Yes | Yes | Yes | Yes (1.88+) |
 
 !!! note "SQL-like queries"
-    `ontocore query` uses **catalog SQL (subset)** — single-table `SELECT`, limited `WHERE`. Not full SQL — see [SQL reference](sql-reference.md) and [Known limitations](known-limitations.md).
+    `strixonomy query` uses **catalog SQL (subset)** — single-table `SELECT`, limited `WHERE`. Not full SQL — see [SQL reference](sql-reference.md) and [Known limitations](known-limitations.md).
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ IDE tutorial: [First success (~10 min)](guides/first-success.md). Canonical prod
 | **macOS** | Xcode Command Line Tools: `xcode-select --install` |
 | **Linux** | Usually covered by distro `build-essential` / equivalent |
 
-After `cargo install`, ensure `~/.cargo/bin` is on your `PATH`. If you see `ontocore: command not found`, run:
+After `cargo install`, ensure `~/.cargo/bin` is on your `PATH`. If you see `strixonomy: command not found`, run:
 
 ```bash
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -48,8 +48,8 @@ Add that line to your shell profile (`~/.bashrc`, `~/.zshrc`, etc.) for persiste
 ## Clone + CLI (development)
 
 ```bash
-git clone https://github.com/eddiethedean/ontocode.git
-cd ontocode
+git clone https://github.com/eddiethedean/strixonomy.git
+cd strixonomy
 
 # Sample fixture ontology (debug build is fine for smoke tests)
 cargo run -- inspect fixtures
@@ -62,7 +62,7 @@ The `fixtures/` directory is included in the repository for examples and tests.
 ## `cargo install` (no clone)
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
+cargo install strixonomy-cli --locked --version 0.26.2
 ```
 
 **Version pinning:** Always pin an exact release in CI with `--version 0.26.2` (see [TAGGED_RELEASE](TAGGED_RELEASE)). Prefer `--locked` for reproducible crates.io installs — see [API stability](guides/api-stability.md) and [release integrity](release-integrity.md). For a longer macOS/Windows walkthrough, see [Install CLI](guides/install-cli.md).
@@ -70,35 +70,35 @@ cargo install ontocore-cli --locked --version 0.26.2
 Use **your own ontology directory** — there is no `fixtures/` folder outside a clone:
 
 ```bash
-ontocore inspect /path/to/your/ontologies
-ontocore query /path/to/your/ontologies "SELECT * FROM classes"
-ontocore validate /path/to/your/ontologies
+strixonomy inspect /path/to/your/ontologies
+strixonomy query /path/to/your/ontologies "SELECT * FROM classes"
+strixonomy validate /path/to/your/ontologies
 ```
 
 ## Release binaries (no Rust)
 
-**CLI pre-builds are Linux x64 only.** On macOS or Windows, use `cargo install ontocore-cli` or install the VS Code extension (bundled LSP). Full CI copy-paste: [CI integration](ci-integration.md).
+**CLI pre-builds are Linux x64 only.** On macOS or Windows, use `cargo install strixonomy-cli` or install the VS Code extension (bundled LSP). Full CI copy-paste: [CI integration](ci-integration.md).
 
-1. Open [GitHub Releases](https://github.com/eddiethedean/ontocode/releases) for the latest **v0.26.x** tag.
-2. Download `ontocore-v<version>-x86_64-unknown-linux-gnu.tar.gz`.
+1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) for the latest **v0.26.x** tag.
+2. Download `strixonomy-v<version>-x86_64-unknown-linux-gnu.tar.gz`.
 3. Verify with `SHA256SUMS` — see [release-integrity.md](release-integrity.md).
 4. Extract and run (replace `0.26.2` with your tag):
 
 ```bash
 VERSION=0.26.2
-ASSET="ontocore-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-BIN="ontocore-v${VERSION}-x86_64-unknown-linux-gnu"
+ASSET="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
 tar xzf "${ASSET}"
 chmod +x "${BIN}"
 ./"${BIN}" query /path/to/ontologies "SELECT * FROM classes"
 ./"${BIN}" validate /path/to/ontologies
 ```
 
-> **Note:** The extracted binary is versioned (not plain `ontocore`).
+> **Note:** The extracted binary is versioned (not plain `strixonomy`).
 
 ### Air-gapped / offline CLI
 
-1. Download the Linux CLI tarball (and `SHA256SUMS` / `NOTICES`) from [GitHub Releases](https://github.com/eddiethedean/ontocode/releases) on a connected machine.
+1. Download the Linux CLI tarball (and `SHA256SUMS` / `NOTICES`) from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) on a connected machine.
 2. Transfer artifacts to the offline environment.
 3. Extract and run the versioned binary as above — see [Enterprise deployment](guides/enterprise-deployment.md).
 

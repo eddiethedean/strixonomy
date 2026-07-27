@@ -6,13 +6,13 @@ Accepted (shipped — React webview panels in production since mid-0.x)
 
 ## Context
 
-OntoCode v0.5–v0.6 ships webview panels (entity inspector, query workbench, Manchester editor, reasoner, explanation) as hand-written HTML/CSS/JavaScript in the TypeScript extension host. This works for MVP delivery but becomes harder to maintain as panels grow in complexity (graphs, semantic diff, refactoring previews, large result tables).
+Strixonomy v0.5–v0.6 ships webview panels (entity inspector, query workbench, Manchester editor, reasoner, explanation) as hand-written HTML/CSS/JavaScript in the TypeScript extension host. This works for MVP delivery but becomes harder to maintain as panels grow in complexity (graphs, semantic diff, refactoring previews, large result tables).
 
-The extension host must remain a thin orchestration layer per [ADR-0007](0007-language-server-boundary.md): ontology intelligence stays in Rust (`ontocore-lsp`); TypeScript owns VS Code API integration only.
+The extension host must remain a thin orchestration layer per [ADR-0007](0007-language-server-boundary.md): ontology intelligence stays in Rust (`strixonomy-lsp`); TypeScript owns VS Code API integration only.
 
 ## Decision
 
-Migrate OntoCode webview panels to a **React + TypeScript** application built with **Vite**, loaded inside VS Code webviews via a typed message protocol between the extension host and the React app.
+Migrate Strixonomy webview panels to a **React + TypeScript** application built with **Vite**, loaded inside VS Code webviews via a typed message protocol between the extension host and the React app.
 
 - **Extension host** (`extension/src/`): commands, tree views, LSP client, webview lifecycle, CSP nonces, `postMessage` bridge.
 - **React app** (`extension/webview-ui/`): panel UI, state, forms, tables, graph rendering, theme-aware styling.
@@ -39,4 +39,4 @@ Negative:
 
 - [OntoCode_React_UI_Integration_Plan.md](../OntoCode_React_UI_Integration_Plan.md)
 - [ROADMAP.md](../ROADMAP.md) — v0.7a through v1.0 React milestones
-- [ARCHITECTURE.md](../ARCHITECTURE.md) §5 OntoCode internal modules
+- [ARCHITECTURE.md](../ARCHITECTURE.md) §5 Strixonomy internal modules

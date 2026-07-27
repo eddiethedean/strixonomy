@@ -1,16 +1,16 @@
 # EPIC_INDEX
 
-# OntoCode Engineering Epic Index
+# Strixonomy Engineering Epic Index
 
 **Status:** Master Epic Registry\
-**Scope:** OntoCode 1.x Development
+**Scope:** Strixonomy 1.x Development
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document serves as the master index of engineering epics for
-OntoCode. It groups related work into large, trackable initiatives that
+Strixonomy. It groups related work into large, trackable initiatives that
 can be decomposed into milestones, features, and implementation tasks.
 
 Each epic should map to one or more GitHub epics and ultimately to
@@ -22,17 +22,17 @@ parity requirements, implementation evidence, and release milestones.
 
 | Epic ID | Epic | Target release | GitHub | Primary Documents |
 |---------|------|----------------|--------|-------------------|
-| EPIC-001 | Format Independence | v0.19, v0.21 | [#247](https://github.com/eddiethedean/ontocode/issues/247) | BLOCKER_01_FORMAT_INDEPENDENCE.md |
-| EPIC-002 | OWL 2 Authoring | v0.22 | [#248](https://github.com/eddiethedean/ontocode/issues/248) | BLOCKER_02_OWL2_AUTHORING.md |
-| EPIC-003 | Workspace Runtime | v0.20 | [#249](https://github.com/eddiethedean/ontocode/issues/249) | BLOCKER_03_WORKSPACE.md |
-| EPIC-004 | Reasoning | v0.23 | [#250](https://github.com/eddiethedean/ontocode/issues/250) | BLOCKER_04_REASONING.md |
-| EPIC-005 | SWRL | v0.23 | [#251](https://github.com/eddiethedean/ontocode/issues/251) | BLOCKER_05_SWRL.md |
-| EPIC-006 | Semantic Refactoring | v0.24 | [#252](https://github.com/eddiethedean/ontocode/issues/252) | BLOCKER_06_REFACTORING.md |
-| EPIC-007 | Query Engine | v0.24 | [#253](https://github.com/eddiethedean/ontocode/issues/253) | BLOCKER_07_QUERY.md |
-| EPIC-008 | Visualization | v0.25 | [#254](https://github.com/eddiethedean/ontocode/issues/254) | BLOCKER_08_VISUALIZATION.md |
-| EPIC-009 | Plugin Platform | v0.25 | [#255](https://github.com/eddiethedean/ontocode/issues/255) | BLOCKER_09_PLUGIN_PLATFORM.md |
-| EPIC-010 | Accessibility | v0.25 | [#256](https://github.com/eddiethedean/ontocode/issues/256) | BLOCKER_10_ACCESSIBILITY.md |
-| EPIC-011 | Parity Verification | v0.19 (skeleton), v0.25 (complete) | [#257](https://github.com/eddiethedean/ontocode/issues/257) | BLOCKER_11_PARITY_VERIFICATION.md |
+| EPIC-001 | Format Independence | v0.19, v0.21 | [#247](https://github.com/eddiethedean/strixonomy/issues/247) | BLOCKER_01_FORMAT_INDEPENDENCE.md |
+| EPIC-002 | OWL 2 Authoring | v0.22 | [#248](https://github.com/eddiethedean/strixonomy/issues/248) | BLOCKER_02_OWL2_AUTHORING.md |
+| EPIC-003 | Workspace Runtime | v0.20 | [#249](https://github.com/eddiethedean/strixonomy/issues/249) | BLOCKER_03_WORKSPACE.md |
+| EPIC-004 | Reasoning | v0.23 | [#250](https://github.com/eddiethedean/strixonomy/issues/250) | BLOCKER_04_REASONING.md |
+| EPIC-005 | SWRL | v0.23 | [#251](https://github.com/eddiethedean/strixonomy/issues/251) | BLOCKER_05_SWRL.md |
+| EPIC-006 | Semantic Refactoring | v0.24 | [#252](https://github.com/eddiethedean/strixonomy/issues/252) | BLOCKER_06_REFACTORING.md |
+| EPIC-007 | Query Engine | v0.24 | [#253](https://github.com/eddiethedean/strixonomy/issues/253) | BLOCKER_07_QUERY.md |
+| EPIC-008 | Visualization | v0.25 | [#254](https://github.com/eddiethedean/strixonomy/issues/254) | BLOCKER_08_VISUALIZATION.md |
+| EPIC-009 | Plugin Platform | v0.25 | [#255](https://github.com/eddiethedean/strixonomy/issues/255) | BLOCKER_09_PLUGIN_PLATFORM.md |
+| EPIC-010 | Accessibility | v0.25 | [#256](https://github.com/eddiethedean/strixonomy/issues/256) | BLOCKER_10_ACCESSIBILITY.md |
+| EPIC-011 | Parity Verification | v0.19 (skeleton), v0.25 (complete) | [#257](https://github.com/eddiethedean/strixonomy/issues/257) | BLOCKER_11_PARITY_VERIFICATION.md |
 
 Release plan: [PRE_1_0_PHASES.md](PRE_1_0_PHASES.md)
 

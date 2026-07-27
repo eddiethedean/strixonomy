@@ -1,14 +1,14 @@
 # Release integrity
 
-How to verify OntoCode / OntoCore release artifacts from [GitHub Releases](https://github.com/eddiethedean/ontocode/releases).
+How to verify Strixonomy / Strixonomy release artifacts from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
 
 ## Checksums
 
 Each release includes `SHA256SUMS` with SHA-256 hashes of:
 
-- `ontocore-v<version>-x86_64-unknown-linux-gnu.tar.gz` (CLI binary, Linux x64)
-- `ontocore-lsp-v<version>-<platform>.tar.gz` / `.zip` (per-platform LSP)
-- `ontocode-v<version>.vsix` (VS Code extension; example: `ontocode-v0.26.2.vsix`)
+- `strixonomy-v<version>-x86_64-unknown-linux-gnu.tar.gz` (CLI binary, Linux x64)
+- `strixonomy-lsp-v<version>-<platform>.tar.gz` / `.zip` (per-platform LSP)
+- `strixonomy-v<version>.vsix` (VS Code extension; example: `strixonomy-v0.26.2.vsix`)
 - `NOTICES` (third-party license summary)
 
 Verify after download:
@@ -23,12 +23,12 @@ On Linux you may use `sha256sum -c SHA256SUMS` instead.
 
 ```bash
 VERSION=0.26.2   # replace with the release tag you are verifying
-curl -fsSLO "https://github.com/eddiethedean/ontocode/releases/download/v${VERSION}/SHA256SUMS"
-curl -fsSLO "https://github.com/eddiethedean/ontocode/releases/download/v${VERSION}/ontocore-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+curl -fsSLO "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/SHA256SUMS"
+curl -fsSLO "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
 sha256sum -c SHA256SUMS
-tar xzf "ontocore-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-chmod +x "ontocore-v${VERSION}-x86_64-unknown-linux-gnu"
-./ontocore-v${VERSION}-x86_64-unknown-linux-gnu --version
+tar xzf "strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+chmod +x "strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
+./strixonomy-v${VERSION}-x86_64-unknown-linux-gnu --version
 ```
 
 ## crates.io
@@ -36,22 +36,22 @@ chmod +x "ontocore-v${VERSION}-x86_64-unknown-linux-gnu"
 Rust crates are published from CI using a restricted `CARGO_REGISTRY_TOKEN`. Install with:
 
 ```bash
-cargo install ontocore-cli --locked
+cargo install strixonomy-cli --locked
 ```
 
 Prefer `--locked` so dependency versions match the published crate.
 
 ## VS Code extension
 
-1. Download the `.vsix` from the release matching your platform (multi-platform VSIX bundles `ontocore-lsp`).
+1. Download the `.vsix` from the release matching your platform (multi-platform VSIX bundles `strixonomy-lsp`).
 2. Verify against `SHA256SUMS`.
 3. Install via **Extensions → Install from VSIX…**
 
-`ontocode.lspPath` is a **trusted-admin** setting. In VS Code **Restricted Mode** (untrusted workspace), the extension ignores workspace `lspPath` and uses the bundled server.
+`strixonomy.lspPath` is a **trusted-admin** setting. In VS Code **Restricted Mode** (untrusted workspace), the extension ignores workspace `lspPath` and uses the bundled server.
 
 ## Dependency auditing
 
-CI runs `cargo audit` on the Rust workspace (see [`.cargo/audit.toml`](https://github.com/eddiethedean/ontocode/blob/main/.cargo/audit.toml) for documented ignores of transitive advisories that cannot be upgraded in-tree). Report vulnerable dependencies via [security.md](security.md).
+CI runs `cargo audit` on the Rust workspace (see [`.cargo/audit.toml`](https://github.com/eddiethedean/strixonomy/blob/main/.cargo/audit.toml) for documented ignores of transitive advisories that cannot be upgraded in-tree). Report vulnerable dependencies via [security.md](security.md).
 
 ## Future: signed artifacts
 

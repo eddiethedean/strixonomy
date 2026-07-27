@@ -3,8 +3,8 @@
 
 mod support;
 
-use ontocore_catalog::{load_xml_catalog, parse_xml_catalog};
-use ontocore_refactor::resolve_import_document;
+use strixonomy_catalog::{load_xml_catalog, parse_xml_catalog};
+use strixonomy_refactor::resolve_import_document;
 use support::protege_port::{copy_ported_tree, index_workspace, ported_dir};
 
 #[test]

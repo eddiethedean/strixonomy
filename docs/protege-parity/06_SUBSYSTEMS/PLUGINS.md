@@ -1,16 +1,16 @@
 # PLUGINS
 
-# OntoCode Plugin Platform Subsystem Specification
+# Strixonomy Plugin Platform Subsystem Specification
 
 **Subsystem:** Plugin Platform\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-The Plugin Platform enables OntoCode to be extended through stable,
+The Plugin Platform enables Strixonomy to be extended through stable,
 versioned APIs without modifying the core application. It provides a
 secure, discoverable, and workspace-aware extension model for ontology
 engineering.

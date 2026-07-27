@@ -1,6 +1,6 @@
-use ontocore_reasoner::{run_dl_query, DlQueryMode, ReasonerId, WorkspaceInputLoader};
 use std::collections::BTreeMap;
 use std::path::PathBuf;
+use strixonomy_reasoner::{run_dl_query, DlQueryMode, ReasonerId, WorkspaceInputLoader};
 
 fn fixture_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("fixtures")

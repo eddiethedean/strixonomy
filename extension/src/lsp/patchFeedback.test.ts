@@ -23,7 +23,7 @@ describe("patchFeedback", () => {
     const result: ApplyPatchResult = { applied: false };
     assert.equal(
       patchFailureMessage(result),
-      "OntoCode: patch was not applied"
+      "Strixonomy: patch was not applied"
     );
     assert.equal(hasPatchFailureDiagnostics(result), false);
   });

@@ -8,7 +8,7 @@
 - Notifications
 - Shared URLs
 
-## OntoCode Enhancements
+## Strixonomy Enhancements
 - Live cursors
 - CRDT/OT synchronization
 - AI review summaries

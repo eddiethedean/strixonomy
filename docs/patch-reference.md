@@ -1,13 +1,13 @@
-# Patch reference (OntoCore v0.26)
+# Patch reference (Strixonomy v0.26)
 
-> **Status:** Documents behavior in **OntoCore v0.26**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.26**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
-Patch write-back uses a JSON array of patch operations. The CLI (`ontocore patch`) and LSP (`ontocore/applyAxiomPatch`) accept the same envelope; operation sets differ by file extension.
+Patch write-back uses a JSON array of patch operations. The CLI (`strixonomy patch`) and LSP (`strixonomy/applyAxiomPatch`) accept the same envelope; operation sets differ by file extension.
 
 Supported formats: **Turtle (`.ttl`)**, **OBO (`.obo`)**, **RDF/XML (`.owl`/`.rdf`)**, **OWL/XML (`.owx`)**. XML uses full-document re-serialize ([ADR-0021](design/adr/0021-deterministic-xml-serializers.md)). See [Supported formats](supported-formats.md).
 
-**Apply path (v0.20):** inbound patch JSON is wrapped as an `ontocore_edit::Transaction` and applied through format adapters (`TurtleAdapter` / `OboAdapter`) before the existing `apply_patches_to_text` engines run. Legacy patch arrays remain accepted; an optional forward envelope `{ "transaction": { "changes": [...] } }` is also supported:
+**Apply path (v0.20):** inbound patch JSON is wrapped as an `strixonomy_edit::Transaction` and applied through format adapters (`TurtleAdapter` / `OboAdapter`) before the existing `apply_patches_to_text` engines run. Legacy patch arrays remain accepted; an optional forward envelope `{ "transaction": { "changes": [...] } }` is also supported:
 
 ```json
 {
@@ -26,7 +26,7 @@ Supported formats: **Turtle (`.ttl`)**, **OBO (`.obo`)**, **RDF/XML (`.owl`/`.rd
 
 Most callers still pass a bare JSON **array** of ops (CLI `--file` / LSP `patches`).
 
-**Source of truth:** [`patch.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-owl/src/patch.rs)
+**Source of truth:** [`patch.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-owl/src/patch.rs)
 
 ## Format
 
@@ -104,7 +104,7 @@ Most callers still pass a bare JSON **array** of ops (CLI `--file` / LSP `patche
 
 ### SWRL operations (v0.24)
 
-SWRL rules are stored as ontology annotations (`ontocore:swrlRule` JSON). Prefer the Rule Browser / Rule Editor in VS Code for interactive authoring; use patches for CI and scripts.
+SWRL rules are stored as ontology annotations (`strixonomy:swrlRule` JSON). Prefer the Rule Browser / Rule Editor in VS Code for interactive authoring; use patches for CI and scripts.
 
 | `op` | Required fields | Description |
 |------|-----------------|-------------|
@@ -122,7 +122,7 @@ SWRL rules are stored as ontology annotations (`ontocore:swrlRule` JSON). Prefer
 }
 ```
 
-See [SWRL cookbook](examples/swrl.md). LSP helpers: `ontocore/listSwrlRules`, `ontocore/validateSwrlRule`, `ontocore/parseSwrlRule` ([LSP API](lsp-api.md)).
+See [SWRL cookbook](examples/swrl.md). LSP helpers: `strixonomy/listSwrlRules`, `strixonomy/validateSwrlRule`, `strixonomy/parseSwrlRule` ([LSP API](lsp-api.md)).
 
 ## OBO operations (`.obo`)
 
@@ -293,13 +293,13 @@ Same Turtle-shaped `PatchOp` JSON applies via Horned load → mutate → full-do
 
 ```bash
 # Preview changes (stdout JSON, no write)
-ontocore patch ./ontology.ttl patches.json --preview
+strixonomy patch ./ontology.ttl patches.json --preview
 
 # Apply patches
-ontocore patch ./ontology.ttl patches.json
+strixonomy patch ./ontology.ttl patches.json
 
 # Validate after apply
-ontocore validate .
+strixonomy validate .
 ```
 
 ### Response shape (`ApplyPatchResult`)
@@ -319,7 +319,7 @@ ontocore validate .
 
 ## LSP usage
 
-Method: `ontocore/applyAxiomPatch`
+Method: `strixonomy/applyAxiomPatch`
 
 ```json
 {

@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Entity Editor Specification
+# Strixonomy Entity Editor Specification
 
 ## Purpose
 
-The Entity Editor is the primary workspace of OntoCode. It replaces the
+The Entity Editor is the primary workspace of Strixonomy. It replaces the
 fragmented editing experience of traditional ontology tools with a
 unified, context-aware editor centered on a single semantic entity.
 
@@ -529,6 +529,6 @@ Timeline entries
 A user should be able to spend an entire ontology engineering session
 inside the Entity Editor without feeling the need to constantly switch
 windows or hunt through disconnected panels. The editor should become
-the natural center of the OntoCode experience, bringing together
+the natural center of the Strixonomy experience, bringing together
 editing, reasoning, documentation, history, AI assistance, and semantic
 navigation in one coherent workspace.

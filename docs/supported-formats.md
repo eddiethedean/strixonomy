@@ -2,11 +2,11 @@
 
 > **Latest tagged release: v0.26.2** — canonical capability matrix: [What ships today](SHIPPED.md).
 
-This page is the canonical reference for **what OntoCode/OntoCore can do with each file format** today.
+This page is the canonical reference for **what Strixonomy/Strixonomy can do with each file format** today.
 
 ## Quick summary
 
-- **Write-back (edit in OntoCode / patch)**: **Turtle (`.ttl`)**, **OBO (`.obo`)**, **RDF/XML (`.owl` / `.rdf`)**, **OWL/XML (`.owx`)**
+- **Write-back (edit in Strixonomy / patch)**: **Turtle (`.ttl`)**, **OBO (`.obo`)**, **RDF/XML (`.owl` / `.rdf`)**, **OWL/XML (`.owx`)**
 - **Read-only (index/query/browse)**: **JSON-LD**, **N-Triples**, **N-Quads**, **TriG**
 
 ## Capability matrix
@@ -28,7 +28,7 @@ This page is the canonical reference for **what OntoCode/OntoCore can do with ea
 
 ## Why some formats remain read-only
 
-OntoCode write-back focuses on formats with a safe round-trip path:
+Strixonomy write-back focuses on formats with a safe round-trip path:
 
 - **Turtle** — primary span-preserving write-back.
 - **OBO** — stanza-preserving write-back for common term workflows.
@@ -41,6 +41,6 @@ See also:
 - [First success tutorial](guides/first-success.md)
 - [Capabilities by format](guides/capabilities-by-format.md)
 - [Authoring guide](authoring.md)
-- [OBO authoring](ontocode/obo-authoring.md)
+- [OBO authoring](ide/obo-authoring.md)
 - [OWL/XML workflow](guides/owl-xml-workflow.md)
 - [Patch reference](patch-reference.md)

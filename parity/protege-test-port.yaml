@@ -125,7 +125,7 @@ entries:
       - "multi-ontology undo/redo of axiom add/remove"
     ontocode_tests:
       - tests/protege_port_history.rs
-      - crates/ontocore-edit/tests/transaction.rs
+      - crates/strixonomy-edit/tests/transaction.rs
   - class: ChangeListMinimizer_TestCase
     module: protege-editor-owl
     path: protege-editor-owl/src/test/java/org/protege/editor/owl/model/ChangeListMinimizer_TestCase.java
@@ -147,7 +147,7 @@ entries:
       - "delete source declaration"
     ontocode_tests:
       - tests/protege_port_merge.rs
-      - crates/ontocore-refactor/tests/refactor_integration.rs
+      - crates/strixonomy-refactor/tests/refactor_integration.rs
   - class: EntityDeprecator_TestCase
     module: protege-editor-owl
     path: protege-editor-owl/src/test/java/org/protege/editor/owl/model/deprecation/EntityDeprecator_TestCase.java
@@ -224,7 +224,7 @@ entries:
       - "find axioms/usages mentioning entity"
     ontocode_tests:
       - tests/protege_port_refs.rs
-      - crates/ontocore-refactor/tests/refactor_integration.rs
+      - crates/strixonomy-refactor/tests/refactor_integration.rs
   - class: DefinedClassPredicate_TestCase
     module: protege-editor-owl
     path: protege-editor-owl/src/test/java/org/protege/editor/owl/model/util/DefinedClassPredicate_TestCase.java
@@ -321,7 +321,7 @@ entries:
     area: formats
     ontocode_tests:
       - tests/protege_roundtrip.rs
-      - crates/ontocore-owl/src/serialize.rs
+      - crates/strixonomy-owl/src/serialize.rs
     notes: "Format routing already covered by OntoCode write-back oracles"
   - class: AnnotationProvider_TestCase
     module: protege-editor-owl

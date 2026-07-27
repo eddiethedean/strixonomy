@@ -1,6 +1,6 @@
 # Performance and sizing
 
-Guidance for sizing OntoCore workspaces and planning pilots. **v0.13 adds CI smoke benchmarks** (`tests/bench_index.rs`); large-ontology targets use optional fixtures from `scripts/fetch-bench-fixtures.sh`.
+Guidance for sizing Strixonomy workspaces and planning pilots. **v0.13 adds CI smoke benchmarks** (`tests/bench_index.rs`); large-ontology targets use optional fixtures from `scripts/fetch-bench-fixtures.sh`.
 
 Hard limits: [workspace limits](../workspace-limits.md). Pilot criteria: [production readiness](production-readiness.md).
 
@@ -18,7 +18,7 @@ Hard limits: [workspace limits](../workspace-limits.md). Pilot criteria: [produc
 
 ## Sizing tiers (qualitative)
 
-Use these tiers to choose pilot scope. **Run `ontocore inspect` on your repo** to measure actual counts.
+Use these tiers to choose pilot scope. **Run `strixonomy inspect` on your repo** to measure actual counts.
 
 | Tier | Files | Triples (order of magnitude) | Typical profile | Current fit |
 |------|-------|------------------------------|-----------------|-------------|
@@ -47,7 +47,7 @@ Large-ontology targets (GO subset ~5k classes, SNOMED EL sample): download via `
 
 ## Reference measurement (tutorial fixtures)
 
-Measured with `ontocore inspect fixtures --format json` on release **0.26.2** (repository tutorial corpus):
+Measured with `strixonomy inspect fixtures --format json` on release **0.26.2** (repository tutorial corpus):
 
 | Metric | Value |
 |--------|-------|
@@ -72,13 +72,13 @@ ONTO=/path/to/ontologies
 VERSION=0.26.2
 
 # Catalog stats
-time ./ontocore-v${VERSION}-x86_64-unknown-linux-gnu inspect "$ONTO" --format json
+time ./strixonomy-v${VERSION}-x86_64-unknown-linux-gnu inspect "$ONTO" --format json
 
 # Validation (full index + lint)
-time ./ontocore-v${VERSION}-x86_64-unknown-linux-gnu validate "$ONTO"
+time ./strixonomy-v${VERSION}-x86_64-unknown-linux-gnu validate "$ONTO"
 
 # Optional: classification
-time ./ontocore-v${VERSION}-x86_64-unknown-linux-gnu classify "$ONTO" --profile el --format json
+time ./strixonomy-v${VERSION}-x86_64-unknown-linux-gnu classify "$ONTO" --profile el --format json
 ```
 
 Record:
@@ -117,7 +117,7 @@ Running **reasoner + full index** uses more memory than `validate` alone. Size C
 For very large repos in CI, point commands at a **subdirectory**:
 
 ```bash
-ontocore validate ./src/ontologies
+strixonomy validate ./src/ontologies
 ```
 
 ## VS Code interactive use

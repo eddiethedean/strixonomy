@@ -9,7 +9,7 @@
 
 ## 1. Purpose
 
-The plugin API allows third-party developers to extend OntoCode while preserving performance, security, and UX consistency.
+The plugin API allows third-party developers to extend Strixonomy while preserving performance, security, and UX consistency.
 
 ## 2. Manifest
 

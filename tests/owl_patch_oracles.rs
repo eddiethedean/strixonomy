@@ -5,10 +5,10 @@
 
 mod support;
 
-use ontocore_core::{AXIOM_KIND_CLASS_ASSERTION, AXIOM_KIND_DOMAIN, AXIOM_KIND_PROPERTY_CHAIN};
-use ontocore_owl::{PatchEntityKind, PatchOp};
 use std::collections::BTreeMap;
 use std::path::PathBuf;
+use strixonomy_core::{AXIOM_KIND_CLASS_ASSERTION, AXIOM_KIND_DOMAIN, AXIOM_KIND_PROPERTY_CHAIN};
+use strixonomy_owl::{PatchEntityKind, PatchOp};
 
 fn fixture(name: &str) -> String {
     let path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("fixtures").join(name);

@@ -1,17 +1,17 @@
 # CONFORMANCE_REPORT
 
-# OntoCode 1.0 Protégé Parity Conformance Report
+# Strixonomy 1.0 Protégé Parity Conformance Report
 
 **Directory:** 08_RELEASE\
 **Status:** Release Certification Report Template\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document is the authoritative release report demonstrating that
-OntoCode conforms to the Protégé parity requirements defined for the 1.0
+Strixonomy conforms to the Protégé parity requirements defined for the 1.0
 release.
 
 Unlike planning documents, this report records the objective evidence

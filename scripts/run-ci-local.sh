@@ -108,7 +108,7 @@ run_rust_and_extension_steps() {
     cargo clippy --workspace --all-targets --all-features -- -D warnings
 
   run_step "cargo test" bash -c '
-    cargo build -p ontocore-lsp -p ontocore-cli --bins
+    cargo build -p strixonomy-lsp -p strixonomy-cli --bins
     cargo test --workspace
   '
 
@@ -122,29 +122,29 @@ run_rust_and_extension_steps() {
 
   run_step "release build" bash -c '
     set -euo pipefail
-    cargo build --release --locked -p ontocore-cli -p ontocore-lsp --bins
-    ./target/release/ontocore inspect fixtures
+    cargo build --release --locked -p strixonomy-cli -p strixonomy-lsp --bins
+    ./target/release/strixonomy inspect fixtures
   '
 
   run_step "LSP smoke + reasoner tests" bash -c '
-    cargo build --locked -p ontocore-lsp --bins
-    cargo test -p ontocode --test lsp_smoke
-    cargo test -p ontocode --test lsp_reasoner
+    cargo build --locked -p strixonomy-lsp --bins
+    cargo test -p strixonomy-workspace --test lsp_smoke
+    cargo test -p strixonomy-workspace --test lsp_reasoner
   '
 
   run_step "crate packaging dry-run" bash -c '
     set -euo pipefail
-    cargo publish -p ontocore-core --dry-run --allow-dirty
-    cargo publish -p ontocore-robot --dry-run --allow-dirty
-    cargo build -p ontocore-obo -p ontocore-diagnostics -p ontocore-owl -p ontocore-cli -p ontocore
+    cargo publish -p strixonomy-core --dry-run --allow-dirty
+    cargo publish -p strixonomy-robot --dry-run --allow-dirty
+    cargo build -p strixonomy-obo -p strixonomy-diagnostics -p strixonomy-owl -p strixonomy-cli -p strixonomy
   '
 
-  # mkdocs/audit in PARALLEL=1 mode can starve ontocore-lsp cold starts (>20s initialize).
+  # mkdocs/audit in PARALLEL=1 mode can starve strixonomy-lsp cold starts (>20s initialize).
   wait_bg_steps_if_pending
 
   run_step "extension jobs (unit + e2e)" bash -c "
     set -euo pipefail
-    cargo build -p ontocore-lsp --bins
+    cargo build -p strixonomy-lsp --bins
 
     cd extension
     npm ci
@@ -153,21 +153,21 @@ run_rust_and_extension_steps() {
     npm --prefix webview-ui test
 
     npm run compile
-    ONTOCORE_LSP_BIN=\"$ROOT/target/debug/ontocore-lsp\" npm test
+    STRIXONOMY_LSP_BIN=\"$ROOT/target/debug/strixonomy-lsp\" npm test
 
     mkdir -p \"server/linux-x64\"
-    cp \"$ROOT/target/debug/ontocore-lsp\" \"server/linux-x64/ontocore-lsp\"
-    chmod +x \"server/linux-x64/ontocore-lsp\"
-    npx vsce package --no-dependencies -o /tmp/ontocode-ci-local.vsix
-    rm -rf /tmp/ontocode-vsix-unpack-local
-    unzip -q /tmp/ontocode-ci-local.vsix -d /tmp/ontocode-vsix-unpack-local
-    export ONTOCODE_E2E_EXTENSION_ROOT=/tmp/ontocode-vsix-unpack-local/extension
-    export ONTOCORE_LSP_BIN=\"$ROOT/target/debug/ontocore-lsp\"
+    cp \"$ROOT/target/debug/strixonomy-lsp\" \"server/linux-x64/strixonomy-lsp\"
+    chmod +x \"server/linux-x64/strixonomy-lsp\"
+    npx vsce package --no-dependencies -o /tmp/strixonomy-ci-local.vsix
+    rm -rf /tmp/strixonomy-vsix-unpack-local
+    unzip -q /tmp/strixonomy-ci-local.vsix -d /tmp/strixonomy-vsix-unpack-local
+    export STRIXONOMY_E2E_EXTENSION_ROOT=/tmp/strixonomy-vsix-unpack-local/extension
+    export STRIXONOMY_LSP_BIN=\"$ROOT/target/debug/strixonomy-lsp\"
     npm test
 
     cd \"$ROOT\"
     ./scripts/prepare-extension-server.sh '${EXT_PLATFORM}'
-    chmod -x \"extension/server/${EXT_PLATFORM}/ontocore-lsp\"
+    chmod -x \"extension/server/${EXT_PLATFORM}/strixonomy-lsp\"
     cd extension
     npm run compile
     npm run compile:vscode-test
@@ -178,6 +178,7 @@ run_rust_and_extension_steps() {
 if [[ "$PARALLEL" == "0" ]]; then
   run_step "rustfmt" cargo fmt --all -- --check
   run_step "documentation version sync" ./scripts/check-doc-versions.sh
+  run_step "strixonomy rename audit" ./scripts/check-strixonomy-rename.sh
   run_step "parity manifest validation" python3 scripts/validate-parity-manifest.py --paths
   run_step "protege test-port inventory" python3 scripts/validate-protege-test-port.py
   run_step "parity release-gate report" python3 scripts/check-parity-release-gate.py
@@ -192,6 +193,7 @@ else
   # Overlap cheap / non-cargo jobs with the shared-target Rust pipeline.
   run_bg_step "rustfmt" "rustfmt" cargo fmt --all -- --check
   run_bg_step "documentation version sync" "doc-versions" ./scripts/check-doc-versions.sh
+  run_bg_step "strixonomy rename audit" "rename-audit" ./scripts/check-strixonomy-rename.sh
   run_bg_step "parity verification (EPIC-011)" "parity-manifest" bash -c '
     python3 scripts/validate-parity-manifest.py --paths &&
     python3 scripts/validate-protege-test-port.py &&
@@ -209,7 +211,7 @@ fi
 
 # MSRV uses a different toolchain; run after the main pipeline to avoid lock contention.
 run_step "MSRV (1.88)" bash -c '
-  rustup run 1.88 cargo build -p ontocore-lsp -p ontocore-cli --bins
+  rustup run 1.88 cargo build -p strixonomy-lsp -p strixonomy-cli --bins
   rustup run 1.88 cargo test --workspace
 '
 

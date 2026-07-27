@@ -6,7 +6,7 @@
 
 The DL Query view allows ontology engineers to execute Description Logic (DL) expressions against the active ontology and inspect the inferred results produced by the currently selected reasoner. It provides an interactive way to explore an ontology without writing SPARQL or modifying ontology axioms.
 
-For OntoCode, the DL Query editor should preserve Protégé's capabilities while adding modern editing, visualization, AI assistance, and richer result exploration.
+For Strixonomy, the DL Query editor should preserve Protégé's capabilities while adding modern editing, visualization, AI assistance, and richer result exploration.
 
 ---
 
@@ -203,7 +203,7 @@ Plugins should be able to contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -266,10 +266,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should evolve the DL Query experience into a semantic query workbench supporting reusable queries, notebooks, natural-language prompting, visualization, AI-assisted query authoring, and integration with SPARQL and graph exploration.
+Strixonomy should evolve the DL Query experience into a semantic query workbench supporting reusable queries, notebooks, natural-language prompting, visualization, AI-assisted query authoring, and integration with SPARQL and graph exploration.
 
 ---
 
 # Summary
 
-The DL Query view is an essential exploratory tool in Protégé, allowing ontology engineers to interrogate inferred knowledge using Description Logic expressions. OntoCode should retain compatibility with Manchester Syntax while providing a modern editor, richer diagnostics, AI assistance, reusable query workflows, and deep integration with visualization and reasoning services.
+The DL Query view is an essential exploratory tool in Protégé, allowing ontology engineers to interrogate inferred knowledge using Description Logic expressions. Strixonomy should retain compatibility with Manchester Syntax while providing a modern editor, richer diagnostics, AI assistance, reusable query workflows, and deep integration with visualization and reasoning services.

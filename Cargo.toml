@@ -1,42 +1,44 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/ontocore",
-    "crates/ontocore-core",
-    "crates/ontocore-parser",
-    "crates/ontocore-owl",
-    "crates/ontocore-obo",
-    "crates/ontocore-catalog",
-    "crates/ontocore-diagnostics",
-    "crates/ontocore-query",
-    "crates/ontocore-reasoner",
-    "crates/ontocore-robot",
-    "crates/ontocore-refactor",
-    "crates/ontocore-diff",
-    "crates/ontocore-docs",
-    "crates/ontocore-edit",
-    "crates/ontocore-cli",
-    "crates/ontocore-lsp",
-    "crates/ontocore-plugin",
-    "crates/ontocore-plugin-naming",
-    "crates/ontocore-plugin-markdown-export",
-    "crates/ontocore-plugin-shacl",
-    "crates/ontocore-plugin-builtins",
-    "crates/ontocore-swrl",
+    "crates/strixonomy",
+    "crates/strixonomy-core",
+    "crates/strixonomy-parser",
+    "crates/strixonomy-owl",
+    "crates/strixonomy-obo",
+    "crates/strixonomy-catalog",
+    "crates/strixonomy-diagnostics",
+    "crates/strixonomy-query",
+    "crates/strixonomy-reasoner",
+    "crates/strixonomy-robot",
+    "crates/strixonomy-refactor",
+    "crates/strixonomy-diff",
+    "crates/strixonomy-docs",
+    "crates/strixonomy-edit",
+    "crates/strixonomy-cli",
+    "crates/strixonomy-lsp",
+    "crates/strixonomy-plugin",
+    "crates/strixonomy-plugin-naming",
+    "crates/strixonomy-plugin-markdown-export",
+    "crates/strixonomy-plugin-shacl",
+    "crates/strixonomy-plugin-builtins",
+    "crates/strixonomy-swrl",
+    "crates/compat/ontocore",
 ]
-default-members = ["crates/ontocore-cli"]
+default-members = ["crates/strixonomy-cli"]
 
 # Unpublished workspace shell: integration tests and examples only.
-# `cargo run --` runs the `ontocore` CLI (default-member), not this package as a library.
+# `cargo run --` runs the `strixonomy` CLI (default-member), not this package as a library.
+# Package name must not collide with the published façade crate `strixonomy`.
 [package]
-name = "ontocode"
+name = "strixonomy-workspace"
 version = "0.26.2"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 publish = false
 
 [dependencies]
-ontocore = { workspace = true }
+strixonomy = { workspace = true }
 
 [[example]]
 name = "index_and_query"
@@ -47,8 +49,8 @@ name = "error_handling"
 path = "examples/error_handling.rs"
 
 [[example]]
-name = "ontocore_workspace"
-path = "examples/ontocore_workspace.rs"
+name = "strixonomy_workspace"
+path = "examples/strixonomy_workspace.rs"
 
 [[example]]
 name = "semantic_diff"
@@ -59,20 +61,20 @@ name = "workspace_operations"
 path = "examples/workspace_operations.rs"
 
 [dev-dependencies]
-ontocore = { workspace = true }
-ontocore-catalog = { workspace = true }
-ontocore-core = { workspace = true }
-ontocore-parser = { workspace = true }
-ontocore-query = { workspace = true }
-ontocore-lsp = { workspace = true }
-ontocore-reasoner = { workspace = true }
-ontocore-owl = { workspace = true }
-ontocore-obo = { workspace = true }
-ontocore-swrl = { workspace = true }
-ontocore-plugin = { workspace = true }
-ontocore-plugin-builtins = { workspace = true }
-ontocore-refactor = { workspace = true }
-ontocore-edit = { workspace = true }
+strixonomy = { workspace = true }
+strixonomy-catalog = { workspace = true }
+strixonomy-core = { workspace = true }
+strixonomy-parser = { workspace = true }
+strixonomy-query = { workspace = true }
+strixonomy-lsp = { workspace = true }
+strixonomy-reasoner = { workspace = true }
+strixonomy-owl = { workspace = true }
+strixonomy-obo = { workspace = true }
+strixonomy-swrl = { workspace = true }
+strixonomy-plugin = { workspace = true }
+strixonomy-plugin-builtins = { workspace = true }
+strixonomy-refactor = { workspace = true }
+strixonomy-edit = { workspace = true }
 serde_json.workspace = true
 fastobo.workspace = true
 regex = "1"
@@ -83,34 +85,34 @@ version = "0.26.2"
 edition = "2021"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/eddiethedean/ontocode"
-homepage = "https://github.com/eddiethedean/ontocode"
-authors = ["OntoCode Contributors"]
+repository = "https://github.com/eddiethedean/strixonomy"
+homepage = "https://github.com/eddiethedean/strixonomy"
+authors = ["Strixonomy Contributors"]
 keywords = ["ontology", "owl", "rdf", "sparql", "turtle"]
 categories = ["command-line-utilities", "science", "parser-implementations"]
 
 [workspace.dependencies]
-ontocore = { path = "crates/ontocore", version = "0.26.2" }
-ontocore-core = { path = "crates/ontocore-core", version = "0.26.2" }
-ontocore-parser = { path = "crates/ontocore-parser", version = "0.26.2" }
-ontocore-owl = { path = "crates/ontocore-owl", version = "0.26.2" }
-ontocore-obo = { path = "crates/ontocore-obo", version = "0.26.2" }
-ontocore-catalog = { path = "crates/ontocore-catalog", version = "0.26.2" }
-ontocore-diagnostics = { path = "crates/ontocore-diagnostics", version = "0.26.2" }
-ontocore-query = { path = "crates/ontocore-query", version = "0.26.2" }
-ontocore-lsp = { path = "crates/ontocore-lsp", version = "0.26.2" }
-ontocore-reasoner = { path = "crates/ontocore-reasoner", version = "0.26.2" }
-ontocore-robot = { path = "crates/ontocore-robot", version = "0.26.2" }
-ontocore-refactor = { path = "crates/ontocore-refactor", version = "0.26.2" }
-ontocore-diff = { path = "crates/ontocore-diff", version = "0.26.2" }
-ontocore-docs = { path = "crates/ontocore-docs", version = "0.26.2" }
-ontocore-plugin = { path = "crates/ontocore-plugin", version = "0.26.2" }
-ontocore-plugin-naming = { path = "crates/ontocore-plugin-naming", version = "0.26.2" }
-ontocore-plugin-markdown-export = { path = "crates/ontocore-plugin-markdown-export", version = "0.26.2" }
-ontocore-plugin-shacl = { path = "crates/ontocore-plugin-shacl", version = "0.26.2" }
-ontocore-edit = { path = "crates/ontocore-edit", version = "0.26.2" }
-ontocore-plugin-builtins = { path = "crates/ontocore-plugin-builtins", version = "0.26.2" }
-ontocore-swrl = { path = "crates/ontocore-swrl", version = "0.26.2" }
+strixonomy = { path = "crates/strixonomy", version = "0.26.2" }
+strixonomy-core = { path = "crates/strixonomy-core", version = "0.26.2" }
+strixonomy-parser = { path = "crates/strixonomy-parser", version = "0.26.2" }
+strixonomy-owl = { path = "crates/strixonomy-owl", version = "0.26.2" }
+strixonomy-obo = { path = "crates/strixonomy-obo", version = "0.26.2" }
+strixonomy-catalog = { path = "crates/strixonomy-catalog", version = "0.26.2" }
+strixonomy-diagnostics = { path = "crates/strixonomy-diagnostics", version = "0.26.2" }
+strixonomy-query = { path = "crates/strixonomy-query", version = "0.26.2" }
+strixonomy-lsp = { path = "crates/strixonomy-lsp", version = "0.26.2" }
+strixonomy-reasoner = { path = "crates/strixonomy-reasoner", version = "0.26.2" }
+strixonomy-robot = { path = "crates/strixonomy-robot", version = "0.26.2" }
+strixonomy-refactor = { path = "crates/strixonomy-refactor", version = "0.26.2" }
+strixonomy-diff = { path = "crates/strixonomy-diff", version = "0.26.2" }
+strixonomy-docs = { path = "crates/strixonomy-docs", version = "0.26.2" }
+strixonomy-plugin = { path = "crates/strixonomy-plugin", version = "0.26.2" }
+strixonomy-plugin-naming = { path = "crates/strixonomy-plugin-naming", version = "0.26.2" }
+strixonomy-plugin-markdown-export = { path = "crates/strixonomy-plugin-markdown-export", version = "0.26.2" }
+strixonomy-plugin-shacl = { path = "crates/strixonomy-plugin-shacl", version = "0.26.2" }
+strixonomy-edit = { path = "crates/strixonomy-edit", version = "0.26.2" }
+strixonomy-plugin-builtins = { path = "crates/strixonomy-plugin-builtins", version = "0.26.2" }
+strixonomy-swrl = { path = "crates/strixonomy-swrl", version = "0.26.2" }
 
 git2 = { version = "0.20", features = ["vendored-openssl"] }
 

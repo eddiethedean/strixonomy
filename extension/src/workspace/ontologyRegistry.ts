@@ -11,8 +11,8 @@ import {
   type OntologyRole,
 } from "./types";
 
-const ACTIVE_ONTOLOGY_KEY = "ontocode.activeOntology";
-const REGISTRY_VERSION_KEY = "ontocode.registryVersions";
+const ACTIVE_ONTOLOGY_KEY = "strixonomy.activeOntology";
+const REGISTRY_VERSION_KEY = "strixonomy.registryVersions";
 
 export class OntologyRegistry {
   private entries = new Map<string, OntologyRegistryEntry>();
@@ -389,7 +389,7 @@ export class OntologyRegistry {
     workspaceEventBus.publish("OntologyActivated", entry);
     if (!options?.silent) {
       void vscode.window.showInformationMessage(
-        `OntoCode: active ontology set to ${entry.path.split("/").pop()}`
+        `Strixonomy: active ontology set to ${entry.path.split("/").pop()}`
       );
     }
     return entry;

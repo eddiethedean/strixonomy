@@ -1,0 +1,14 @@
+[plugin]
+name = "naming-convention-validator"
+version = "0.1.0"
+kind = "validator"
+id = "strixonomy.naming-validator"
+api_version = "1"
+permissions = ["workspace.read"]
+
+[capabilities]
+validate = true
+diagnostics = true
+
+[config]
+require_label = true

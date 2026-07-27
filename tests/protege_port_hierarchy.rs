@@ -4,9 +4,9 @@
 
 mod support;
 
-use ontocore_core::AXIOM_KIND_SUB_OBJECT_PROPERTY_OF;
-use ontocore_owl::{PatchEntityKind, PatchOp};
 use std::collections::BTreeMap;
+use strixonomy_core::AXIOM_KIND_SUB_OBJECT_PROPERTY_OF;
+use strixonomy_owl::{PatchEntityKind, PatchOp};
 use support::protege_port::{
     apply_patches_reindex, assert_not_parent_of, assert_parent_of, copy_ported_workspace,
     index_workspace, parse_tabbed_hierarchy, ported_dir, property_parents, standard_ns,
@@ -28,7 +28,7 @@ fn hierarchy_two_eq_equivalent_classes_fixture() {
     let a = "http://example.org/twoeq#A";
     let b = "http://example.org/twoeq#B";
     let hit = catalog.data().axioms.iter().any(|ax| {
-        ax.axiom_kind == ontocore_core::AXIOM_KIND_EQUIVALENT_CLASS
+        ax.axiom_kind == strixonomy_core::AXIOM_KIND_EQUIVALENT_CLASS
             && ((ax.subject == a && ax.object == b) || (ax.subject == b && ax.object == a))
     }) || catalog.data().axioms.iter().any(|ax| {
         (ax.subject == a || ax.object == a)

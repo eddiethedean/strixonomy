@@ -1,13 +1,13 @@
 # ONTOGRAF.md
 
 # OntoGraf Reverse Engineering Specification
-## Plugin Analysis and Design Blueprint for OntoCode
+## Plugin Analysis and Design Blueprint for Strixonomy
 
 ## Purpose
 
 OntoGraf is a Protégé visualization plugin that provides interactive graph exploration of ontology entities and their relationships. Unlike OWLViz, which primarily focuses on class hierarchies, OntoGraf enables exploration of arbitrary relationships among classes, properties, individuals, and imports.
 
-OntoCode should preserve OntoGraf's exploratory capabilities while evolving them into a modern graph-native ontology engineering environment.
+Strixonomy should preserve OntoGraf's exploratory capabilities while evolving them into a modern graph-native ontology engineering environment.
 
 ---
 
@@ -202,7 +202,7 @@ AI may assist by:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -246,10 +246,10 @@ Platform
 
 # Beyond OntoGraf
 
-OntoCode should transform graph visualization from a passive exploration tool into an active ontology engineering surface where users can create, edit, refactor, validate, reason over, and collaborate directly within the graph.
+Strixonomy should transform graph visualization from a passive exploration tool into an active ontology engineering surface where users can create, edit, refactor, validate, reason over, and collaborate directly within the graph.
 
 ---
 
 # Summary
 
-OntoGraf expanded Protégé's visualization capabilities by enabling interactive exploration of ontology relationships beyond simple class hierarchies. OntoCode should preserve these strengths while integrating graph editing, reasoning, AI assistance, collaboration, and high-performance visualization into a unified ontology engineering platform.
+OntoGraf expanded Protégé's visualization capabilities by enabling interactive exploration of ontology relationships beyond simple class hierarchies. Strixonomy should preserve these strengths while integrating graph editing, reasoning, AI assistance, collaboration, and high-performance visualization into a unified ontology engineering platform.

@@ -146,7 +146,7 @@ Initialize host adapter
 ↓
 Load workspace
 ↓
-Initialize OntoCore session
+Initialize Strixonomy session
 ↓
 Activate required plugins
 ↓

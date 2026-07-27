@@ -2,7 +2,7 @@
 
 ## Objective
 
-This project reverse-engineers the functionality of Protégé and WebProtégé to create a comprehensive functional specification for OntoCode.
+This project reverse-engineers the functionality of Protégé and WebProtégé to create a comprehensive functional specification for Strixonomy.
 
 ## Scope
 

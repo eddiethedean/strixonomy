@@ -4,14 +4,14 @@
 
 ## Scope
 
-OntoStudio is a **future standalone desktop app**. It reuses OntoUI and OntoCore — it does not fork React components or duplicate semantic logic.
+OntoStudio is a **future standalone desktop app**. It reuses OntoUI and Strixonomy — it does not fork React components or duplicate semantic logic.
 
 ## Reuse matrix
 
 | Asset | Reuse strategy |
 |-------|----------------|
 | **OntoUI** | Same npm package / monorepo workspace; WorkspaceHost = Electron/Tauri adapter |
-| **OntoCore** | Bundled `ontocore-lsp` or in-process library (TBD) |
+| **Strixonomy** | Bundled `strixonomy-lsp` or in-process library (TBD) |
 | **Design tokens** | Shared [DESIGN_TOKENS.json](../ui/DESIGN_TOKENS.json) |
 | **Workspaces** | Same Entity, Graph, Query, Reasoning workspaces |
 | **Capability Providers** | Same plugin API; desktop marketplace |
@@ -33,7 +33,7 @@ OntoStudio is a **future standalone desktop app**. It reuses OntoUI and OntoCore
 ## Implementation order
 
 1. OntoUI host-agnostic ([ONTOUI.md](ONTOUI.md)) — **prerequisite**
-2. WorkspaceStore + workspaces in OntoCode — **v0.13–v1.0**
+2. WorkspaceStore + workspaces in Strixonomy — **v0.13–v1.0**
 3. Extract OntoUI package if needed for desktop bundling
 4. OntoStudio shell prototype — **post v1.0**
 

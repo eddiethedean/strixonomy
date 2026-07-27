@@ -1,7 +1,7 @@
 mod support;
 
-use ontocore_reasoner::{classify, ReasonerId, WorkspaceInputLoader};
 use std::path::PathBuf;
+use strixonomy_reasoner::{classify, ReasonerId, WorkspaceInputLoader};
 
 fn el_only_workspace() -> (tempfile::TempDir, PathBuf) {
     let dir = tempfile::tempdir().expect("tempdir");
@@ -15,7 +15,7 @@ fn el_only_workspace() -> (tempfile::TempDir, PathBuf) {
 }
 
 fn has_edge(
-    edges: &[ontocore_catalog::SubclassEdge],
+    edges: &[strixonomy_catalog::SubclassEdge],
     child_suffix: &str,
     parent_suffix: &str,
 ) -> bool {

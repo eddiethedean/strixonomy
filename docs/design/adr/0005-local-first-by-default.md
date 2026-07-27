@@ -7,7 +7,7 @@ Accepted
 Ontology repositories can be sensitive and proprietary.
 
 ## Decision
-OntoCore and OntoCode operate locally by default with no telemetry and no cloud sync.
+Strixonomy and Strixonomy operate locally by default with no telemetry and no cloud sync.
 
 ## Consequences
 Positive:

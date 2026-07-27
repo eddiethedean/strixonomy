@@ -3,7 +3,7 @@
 # Current Repository Limitations
 
 **Status:** Living Document\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline)
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline)
 
 ------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ repository audit. It is intentionally descriptive rather than
 aspirational: each limitation reflects the current implementation, not
 planned functionality.
 
-The purpose is to provide a realistic assessment of where OntoCode still
+The purpose is to provide a realistic assessment of where Strixonomy still
 differs from Protégé Desktop and to guide engineering priorities for the
 1.0 release.
 

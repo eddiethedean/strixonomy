@@ -3,7 +3,7 @@
 # EPIC-009 --- Plugin Platform
 
 **Epic ID:** EPIC-009\
-**GitHub:** https://github.com/eddiethedean/ontocode/issues/255\
+**GitHub:** https://github.com/eddiethedean/strixonomy/issues/255\
 **Status:** Done for v0.25 (SDK 1.0 shipped; `PAR-PLG-001` VERIFIED)\
 **Priority:** P0 (Release Blocking)\
 **Target Release:** v0.25

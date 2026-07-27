@@ -1,13 +1,13 @@
 # EXPLANATION.md
 
 # Explanation Plugin Reverse Engineering Specification
-## Protégé Explanation Framework and OntoCode Design Blueprint
+## Protégé Explanation Framework and Strixonomy Design Blueprint
 
 ## Purpose
 
 The Explanation plugin helps ontology engineers understand *why* a logical consequence exists or *why* an ontology is inconsistent. It bridges the gap between automated reasoning and human understanding by presenting one or more minimal sets of axioms (justifications) that entail a selected inference.
 
-OntoCode should preserve this capability while providing richer visualizations, AI-assisted explanations, and deeper integration with the editing workflow.
+Strixonomy should preserve this capability while providing richer visualizations, AI-assisted explanations, and deeper integration with the editing workflow.
 
 ---
 
@@ -205,7 +205,7 @@ Plugins may contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -246,10 +246,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should elevate explanations from a diagnostic tool to an interactive reasoning workspace where users can inspect, visualize, discuss, annotate, and repair logical consequences with assistance from AI and collaborative review workflows.
+Strixonomy should elevate explanations from a diagnostic tool to an interactive reasoning workspace where users can inspect, visualize, discuss, annotate, and repair logical consequences with assistance from AI and collaborative review workflows.
 
 ---
 
 # Summary
 
-Protégé's Explanation plugin is essential for understanding the results of automated reasoning. By presenting minimal justifications for inferences and inconsistencies, it enables ontology engineers to debug and refine their models. OntoCode should preserve these capabilities while adding modern visualization, AI-assisted interpretation, collaboration, and richer developer APIs.
+Protégé's Explanation plugin is essential for understanding the results of automated reasoning. By presenting minimal justifications for inferences and inconsistencies, it enables ontology engineers to debug and refine their models. Strixonomy should preserve these capabilities while adding modern visualization, AI-assisted interpretation, collaboration, and richer developer APIs.

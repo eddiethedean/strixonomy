@@ -1,4 +1,4 @@
-# Install OntoCode and OntoCore
+# Install Strixonomy and Strixonomy
 
 **Canonical install page.** Extension first (most users). CLI and CI are optional.
 
@@ -10,13 +10,13 @@
 | Which binary / crate do I need? | [Which artifact?](guides/which-artifact.md) |
 
 !!! tip "Most IDE users never need Rust"
-    The OntoCode extension bundles `ontocore-lsp`. Install the extension and skip the CLI unless you need `ontocore` for CI, scripting, or validation outside the editor.
+    The Strixonomy extension bundles `strixonomy-lsp`. Install the extension and skip the CLI unless you need `strixonomy` for CI, scripting, or validation outside the editor.
 
 !!! tip "Docs vs Marketplace"
     Read the Docs `latest` may describe work **after** the last tag. Pins follow [`docs/TAGGED_RELEASE`](TAGGED_RELEASE) (**0.26.2**). See [Versions & channels](guides/versions-and-channels.md).
 
 !!! warning "Wrong crate name"
-    The GitHub repo is `ontocode`. The CLI crate is **`ontocore-cli`** (`ontocore` binary). Do **not** run `cargo install ontocode`.
+    The GitHub repo is `strixonomy`. The CLI crate is **`strixonomy-cli`** (`strixonomy` binary). Do **not** run `cargo install strixonomy`.
 
 Canonical pin: **`0.26.2`** ([TAGGED_RELEASE](TAGGED_RELEASE)).
 
@@ -24,13 +24,13 @@ Canonical pin: **`0.26.2`** ([TAGGED_RELEASE](TAGGED_RELEASE)).
 
 | Method | Platforms | Needs Rust? |
 |--------|-----------|-------------|
-| [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) / [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) | Linux, macOS, Windows | No |
-| Release VSIX (`ontocode-v0.26.2.vsix`) | Same | No |
+| [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) / [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) | Linux, macOS, Windows | No |
+| Release VSIX (`strixonomy-v0.26.2.vsix`) | Same | No |
 
-1. Install **OntoCode** (`ontocode.ontocode`).
+1. Install **Strixonomy** (`strixonomy.strixonomy`).
 2. If the store lags the latest GitHub tag, install the VSIX — [Marketplace lag playbook](guides/versions-and-channels.md#when-marketplace-lags-github).
 3. Open a folder of `.ttl` / `.obo` / `.owl` / `.rdf` / `.owx` files.
-4. Open the **OntoCode** activity bar.
+4. Open the **Strixonomy** activity bar.
 
 Full steps (Trust, offline, custom `lspPath`): [VS Code install details](vscode-install.md).
 
@@ -40,7 +40,7 @@ Full steps (Trust, offline, custom `lspPath`): [VS Code install details](vscode-
 
 | Method | Linux x64 | macOS | Windows | Needs Rust? |
 |--------|-----------|-------|---------|-------------|
-| `cargo install ontocore-cli --locked --version 0.26.2` | Yes | Yes | Yes | Yes (1.88+) |
+| `cargo install strixonomy-cli --locked --version 0.26.2` | Yes | Yes | Yes | Yes (1.88+) |
 | Release CLI tarball | Yes | No | No | No |
 | Git clone + `cargo run --` | Yes | Yes | Yes | Yes (1.88+) |
 
@@ -52,22 +52,22 @@ Full steps (Trust, offline, custom `lspPath`): [VS Code install details](vscode-
 Prerequisites: Rust **1.88+**; Windows needs [MSVC Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/); macOS needs Xcode CLT (`xcode-select --install`).
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
+cargo install strixonomy-cli --locked --version 0.26.2
 export PATH="$HOME/.cargo/bin:$PATH"
-ontocore validate /path/to/your/ontologies
+strixonomy validate /path/to/your/ontologies
 ```
 
 Longer macOS/Windows walkthrough: [Install CLI](guides/install-cli.md).
 
 ### Linux x64 release tarball (CI preferred)
 
-See [CI integration](ci-integration.md) — download `ontocore-v0.26.2-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
+See [CI integration](ci-integration.md) — download `strixonomy-v0.26.2-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
 
 ### From a clone
 
 ```bash
-git clone https://github.com/eddiethedean/ontocode.git
-cd ontocode
+git clone https://github.com/eddiethedean/strixonomy.git
+cd strixonomy
 cargo run -- validate fixtures
 ```
 

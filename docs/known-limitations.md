@@ -1,6 +1,6 @@
 # Known limitations
 
-> **Latest tagged release: v0.26.2.** Pin CI to a tagged version from [GitHub Releases](https://github.com/eddiethedean/ontocode/releases) or crates.io — see [What ships today](SHIPPED.md) and [Versions & channels](guides/versions-and-channels.md). **Not a full Protégé replacement today** — coexistence and pilot workflows are the supported path until **1.0**.
+> **Latest tagged release: v0.26.2.** Pin CI to a tagged version from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) or crates.io — see [What ships today](SHIPPED.md) and [Versions & channels](guides/versions-and-channels.md). **Not a full Protégé replacement today** — coexistence and pilot workflows are the supported path until **1.0**.
 
 Honest limits for evaluators and new users.
 
@@ -19,15 +19,15 @@ Axiom annotations on XML match named entities (`axiom_op` + `subject_iri` + opti
 
 ## Catalog SQL (subset)
 
-`ontocore query` and Query Workbench **SQL mode** are **not** full SQL. Supported: single-table `SELECT`, limited `WHERE` (`=`, `!=`, `AND`, `OR`, booleans). **No** `JOIN`, `GROUP BY`, `ORDER BY`, or `LIMIT`. Prefer [SPARQL](sparql-reference.md) for graph patterns. Details: [SQL reference](sql-reference.md).
+`strixonomy query` and Query Workbench **SQL mode** are **not** full SQL. Supported: single-table `SELECT`, limited `WHERE` (`=`, `!=`, `AND`, `OR`, booleans). **No** `JOIN`, `GROUP BY`, `ORDER BY`, or `LIMIT`. Prefer [SPARQL](sparql-reference.md) for graph patterns. Details: [SQL reference](sql-reference.md).
 
 ## CLI binaries
 
 | Platform | Prebuilt CLI tarball | Recommended install |
 |----------|----------------------|---------------------|
-| Linux x64 | Yes (GitHub Releases) | Tarball or `cargo install ontocore-cli --locked` |
-| macOS | No | `cargo install ontocore-cli --locked` (Rust **1.88+**; first build 15–30+ min) |
-| Windows | No | `cargo install ontocore-cli --locked` |
+| Linux x64 | Yes (GitHub Releases) | Tarball or `cargo install strixonomy-cli --locked` |
+| macOS | No | `cargo install strixonomy-cli --locked` (Rust **1.88+**; first build 15–30+ min) |
+| Windows | No | `cargo install strixonomy-cli --locked` |
 
 Interactive editing does **not** need the CLI — use the [VS Code / Cursor extension](vscode-install.md) (bundled language server on all platforms).
 
@@ -37,11 +37,11 @@ Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`)
 
 ## API stability (pre-1.0)
 
-Published crates are **0.26.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin in CI: `cargo install ontocore-cli --locked --version 0.26.2`.
+Published crates are **0.26.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin in CI: `cargo install strixonomy-cli --locked --version 0.26.2`.
 
 ## Reasoning
 
-EL / RL / RDFS / DL classification ships via **Ontologos 1.x** (crates pinned in the workspace). Explanations are **DL-first** for the DL profile (with EL/RL/RDFS alternatives). Realization and instance checking ship in v0.23. **DL Query** (Workbench DL mode, `ontocore dl-query`, LSP `ontocore/dlQuery`) ships in v0.24. **Stop** sets an engine cancel flag and ignores late results. See [Reasoner guide](guides/reasoner.md) and [DL Query](guides/dl-query.md).
+EL / RL / RDFS / DL classification ships via **Ontologos 1.x** (crates pinned in the workspace). Explanations are **DL-first** for the DL profile (with EL/RL/RDFS alternatives). Realization and instance checking ship in v0.23. **DL Query** (Workbench DL mode, `strixonomy dl-query`, LSP `strixonomy/dlQuery`) ships in v0.24. **Stop** sets an engine cancel flag and ignores late results. See [Reasoner guide](guides/reasoner.md) and [DL Query](guides/dl-query.md).
 
 ## Refactoring
 
@@ -55,9 +55,9 @@ Webview **tabs** survive VS Code reload. Restored tabs offer **Reopen panel** us
 
 Graphs may be **truncated** (badge in the Graph panel). Prefer narrower search, lower neighborhood depth, or asserted-only mode. See [workspace limits](workspace-limits.md).
 
-## When not to use OntoCode today
+## When not to use Strixonomy today
 
-- You need **byte-identical OWL/XML or RDF/XML** that matches Protégé layout — OntoCode re-serializes for semantic fidelity (ADR-0021); use Protégé when layout identity matters.
+- You need **byte-identical OWL/XML or RDF/XML** that matches Protégé layout — Strixonomy re-serializes for semantic fidelity (ADR-0021); use Protégé when layout identity matters.
 - You need **JSON-LD / TriG / N-Triples write-back** — still read-only; use Turtle or convert.
 - You need **move / extract / ontology-merge refactor on non-Turtle files** — those operations stay Turtle-first (rename/merge/replace already multi-format). See [v0.24 migration](migration/v0.24.md).
 - You need **full SQL analytics** — use SPARQL or an external store.

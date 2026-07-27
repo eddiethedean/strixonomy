@@ -1,10 +1,10 @@
 # REFACTORING
 
-# OntoCode Refactoring Subsystem Specification
+# Strixonomy Refactoring Subsystem Specification
 
 **Subsystem:** Semantic Refactoring Engine\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 

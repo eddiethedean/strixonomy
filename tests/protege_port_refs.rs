@@ -3,10 +3,10 @@
 
 mod support;
 
-use ontocore_core::AXIOM_KIND_EQUIVALENT_CLASS;
-use ontocore_owl::PatchOp;
-use ontocore_refactor::find_usages;
 use std::collections::BTreeMap;
+use strixonomy_core::AXIOM_KIND_EQUIVALENT_CLASS;
+use strixonomy_owl::PatchOp;
+use strixonomy_refactor::find_usages;
 use support::protege_port::{index_workspace, standard_ns};
 
 fn dep_ns() -> BTreeMap<String, String> {

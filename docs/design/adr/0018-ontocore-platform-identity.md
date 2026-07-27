@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted (v0.9.0)
+Accepted (v0.9.0) — **brand identity superseded by [ADR-0022](0022-strixonomy-identity.md)** (v0.27 Strixonomy). This ADR remains the historical record of the OntoIndex → OntoCore rename.
 
 ## Context
 
@@ -37,7 +37,7 @@ Splitting into a separate repository prematurely would create churn while APIs a
 
 ## References
 
-- [OntoCore roadmap](../../ontocore/roadmap.md)
+- [OntoCore roadmap](../../strixonomy/roadmap.md)
 - [Migration v0.9](../../migration/v0.9.md)
 - [ARCHITECTURE.md](../ARCHITECTURE.md)
 - [ROADMAP.md](../ROADMAP.md) v0.9 section

@@ -2,28 +2,28 @@ import * as assert from "assert";
 import * as vscode from "vscode";
 import { FIXTURE_IRIS, fixturesWorkspaceUri } from "./helpers";
 
-interface OntoCodeTestHooks {
+interface StrixonomyTestHooks {
   openEntity(iri: string): Promise<void>;
   waitForInspectorIri(iri: string, timeoutMs?: number): Promise<void>;
   disposeAllPanels(): Promise<void>;
   getCanonicalFocus(): { kind: string; id: string; source?: string } | null;
 }
 
-interface OntoCodeTestApi {
+interface StrixonomyTestApi {
   indexWorkspace(workspaceUri?: string): Promise<unknown>;
-  __test: OntoCodeTestHooks;
+  __test: StrixonomyTestHooks;
 }
 
 suite("Focus relay sync (VS Code e2e)", () => {
-  let api: OntoCodeTestApi;
+  let api: StrixonomyTestApi;
 
   suiteSetup(async function () {
     this.timeout(120_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     const activated = await ext.activate();
     assert.ok(activated.__test, "ONTOCODE_TEST_FIXTURES must enable __test hooks");
-    api = activated as OntoCodeTestApi;
+    api = activated as StrixonomyTestApi;
   });
 
   setup(async () => {

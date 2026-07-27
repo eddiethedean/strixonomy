@@ -21,7 +21,7 @@ fn patch_complex_subclass_manchester() {
     let patch_file = tmp.path().join("patch.json");
     fs::write(&patch_file, serde_json::to_string(&patch).unwrap()).unwrap();
 
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["patch", dst.to_str().unwrap(), patch_file.to_str().unwrap()])
         .output()
         .expect("run patch");
@@ -34,7 +34,7 @@ fn patch_complex_subclass_manchester() {
         "expected new restriction in Turtle output"
     );
 
-    let validate = support::ontocore_cmd()
+    let validate = support::strixonomy_cmd()
         .args(["validate", dst.to_str().unwrap()])
         .output()
         .expect("validate");

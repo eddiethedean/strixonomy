@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
 import { FIXTURE_IRIS, fixturesWorkspaceUri, pathsEqual } from "./helpers";
 
-interface OntoCodeTestHooks {
+interface StrixonomyTestHooks {
   openEntityInspector(iri: string): Promise<void>;
   waitForInspectorReady(timeoutMs?: number): Promise<void>;
   waitForInspectorIri(iri: string, timeoutMs?: number): Promise<void>;
@@ -23,7 +23,7 @@ interface OntoCodeTestHooks {
   disposePanel(panel: "newOntology" | "prefixManager"): Promise<void>;
 }
 
-interface OntoCodeTestApi {
+interface StrixonomyTestApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<{
     stats: { error_count: number; class_count: number };
@@ -45,7 +45,7 @@ interface OntoCodeTestApi {
       }>;
     };
   }>;
-  __test: OntoCodeTestHooks;
+  __test: StrixonomyTestHooks;
 }
 
 function fixturesDir(): string {
@@ -76,15 +76,15 @@ async function restoreFixtureFile(
 }
 
 suite("Dialog workflows (VS Code e2e)", () => {
-  let api: OntoCodeTestApi;
+  let api: StrixonomyTestApi;
 
   suiteSetup(async function () {
     this.timeout(120_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     const activated = await ext.activate();
     assert.ok(activated.__test, "ONTOCODE_TEST_FIXTURES must enable __test hooks");
-    api = activated as OntoCodeTestApi;
+    api = activated as StrixonomyTestApi;
   });
 
   setup(async () => {

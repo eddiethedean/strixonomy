@@ -5,13 +5,13 @@
 **Epic ID:** EPIC-100\
 **Status:** Planned (Post-1.0)\
 **Priority:** P1\
-**Target Release:** OntoCode 1.x
+**Target Release:** Strixonomy 1.x
 
 ------------------------------------------------------------------------
 
 # Objective
 
-Transform OntoCode from a feature-complete Protégé replacement into an
+Transform Strixonomy from a feature-complete Protégé replacement into an
 AI-native ontology engineering platform by integrating intelligent
 assistants throughout the authoring, reasoning, validation, refactoring,
 and documentation workflows.
@@ -28,7 +28,7 @@ through the semantic transaction system.
 -   Lowers the learning curve for new users
 -   Improves ontology quality through intelligent suggestions
 -   Automates repetitive engineering tasks
--   Differentiates OntoCode beyond Protégé
+-   Differentiates Strixonomy beyond Protégé
 
 ------------------------------------------------------------------------
 

@@ -1,8 +1,8 @@
-use ontocore_catalog::{IndexBuilder, OntologyCatalog};
-use ontocore_owl::PatchOp;
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 use std::process::Command;
+use strixonomy_catalog::{IndexBuilder, OntologyCatalog};
+use strixonomy_owl::PatchOp;
 
 pub mod protege_port;
 
@@ -42,14 +42,14 @@ pub fn reapply_and_reindex(
     patches: &[PatchOp],
     namespaces: &BTreeMap<String, String>,
 ) -> OntologyCatalog {
-    let result = ontocore_owl::apply_patches(path, patches, false, namespaces).expect("apply");
+    let result = strixonomy_owl::apply_patches(path, patches, false, namespaces).expect("apply");
     assert!(result.applied, "expected patches applied; diagnostics={:?}", result.diagnostics);
     IndexBuilder::new().workspace(workspace).build().expect("reindex")
 }
 
 #[allow(dead_code)]
-pub fn ontocore_binary() -> PathBuf {
-    if let Ok(path) = std::env::var("CARGO_BIN_EXE_ontocore") {
+pub fn strixonomy_binary() -> PathBuf {
+    if let Ok(path) = std::env::var("CARGO_BIN_EXE_strixonomy") {
         let candidate = PathBuf::from(path);
         if candidate.exists() {
             return candidate;
@@ -64,7 +64,7 @@ pub fn ontocore_binary() -> PathBuf {
 
     for target_dir in &target_dirs {
         for subdir in ["debug", "release"] {
-            let candidate = target_dir.join(subdir).join("ontocore");
+            let candidate = target_dir.join(subdir).join("strixonomy");
             if candidate.exists() {
                 return candidate;
             }
@@ -72,13 +72,13 @@ pub fn ontocore_binary() -> PathBuf {
     }
 
     panic!(
-        "ontocore binary not found under {:?} (run `cargo build -p ontocore-cli` first, or add ontocore-cli as a dev-dependency)",
+        "strixonomy binary not found under {:?} (run `cargo build -p strixonomy-cli` first, or add strixonomy-cli as a dev-dependency)",
         target_dirs
     );
 }
 
-/// Spawn the prebuilt `ontocore` CLI (avoids `cargo run` re-linking on every test invocation).
+/// Spawn the prebuilt `strixonomy` CLI (avoids `cargo run` re-linking on every test invocation).
 #[allow(dead_code)]
-pub fn ontocore_cmd() -> Command {
-    Command::new(ontocore_binary())
+pub fn strixonomy_cmd() -> Command {
+    Command::new(strixonomy_binary())
 }

@@ -1,21 +1,21 @@
 # WORKSPACE
 
-# OntoCode Workspace Subsystem Specification
+# Strixonomy Workspace Subsystem Specification
 
 **Subsystem:** Workspace Runtime\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-The Workspace subsystem is the central runtime of OntoCode. It manages
+The Workspace subsystem is the central runtime of Strixonomy. It manages
 the lifecycle of ontologies, coordinates semantic transactions,
 synchronizes application state, and provides the shared execution
 environment used by every major subsystem.
 
-Unlike Protégé's document-centric architecture, OntoCode's Workspace
+Unlike Protégé's document-centric architecture, Strixonomy's Workspace
 acts as the orchestration layer for the entire application.
 
 ------------------------------------------------------------------------

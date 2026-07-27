@@ -1,19 +1,19 @@
 # MIGRATION_PLAN
 
-# Protégé to OntoCode Migration Plan
+# Protégé to Strixonomy Migration Plan
 
 **Status:** Migration Strategy\
-**Target:** OntoCode 1.0.0
+**Target:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the strategy for migrating users, ontologies,
-workflows, and plugins from Protégé to OntoCode with minimal disruption.
+workflows, and plugins from Protégé to Strixonomy with minimal disruption.
 
-The goal is to make OntoCode a drop-in replacement for the majority of
-Protégé users while providing a clear path to adopt OntoCode-specific
+The goal is to make Strixonomy a drop-in replacement for the majority of
+Protégé users while providing a clear path to adopt Strixonomy-specific
 capabilities.
 
 ------------------------------------------------------------------------
@@ -59,14 +59,14 @@ capabilities.
 
 ## Phase 3 --- Workflow Migration
 
--   Map Protégé menus to OntoCode commands
+-   Map Protégé menus to Strixonomy commands
 -   Map keyboard shortcuts
 -   Provide onboarding guides
 -   Provide command palette aliases
 
 ## Phase 4 --- Extension Migration
 
--   Document equivalent OntoCode plugins
+-   Document equivalent Strixonomy plugins
 -   Publish SDK migration guide
 -   Provide reference implementations
 

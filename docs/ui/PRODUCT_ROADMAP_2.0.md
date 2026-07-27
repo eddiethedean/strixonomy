@@ -348,7 +348,7 @@ Capability Provider plugin host MVP with manifest and inspector cards.
 
 ### Technical scope
 
-- OntoCore plugin runtime
+- Strixonomy plugin runtime
 - Capability Provider TS/Rust interfaces
 - Reference plugins (naming, Markdown export, SHACL)
 
@@ -375,12 +375,12 @@ Review workspace, semantic PR summaries, validation reports.
 ### User-visible outcome
 
 - Semantic diff panel (shipped)
-- PR summary from CLI/LSP (v0.13 OntoCore)
+- PR summary from CLI/LSP (v0.13 Strixonomy)
 - Review workspace MVP (v1.0)
 
 ### Acceptance criteria
 
-- [ ] PR summary in `ontocore diff` documented and tested
+- [ ] PR summary in `strixonomy diff` documented and tested
 - [ ] Review workspace spec items in ROADMAP_MAPPING tracked
 
 ### Dependencies
@@ -404,4 +404,4 @@ Full milestones for Phases 10–12 will be added when OntoUI platform (Phases 0�
 
 ## Success metric
 
-OntoCode becomes the default modern environment for ontology and knowledge graph engineering — measured by adoption, Protégé parity P0 closure, and plugin ecosystem growth.
+Strixonomy becomes the default modern environment for ontology and knowledge graph engineering — measured by adoption, Protégé parity P0 closure, and plugin ecosystem growth.

@@ -1,15 +1,15 @@
 # UI_WORKFLOWS
 
-# OntoCode UI Workflow Specification
+# Strixonomy UI Workflow Specification
 
 **Status:** Normative UX Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the canonical user workflows required for OntoCode
+This document defines the canonical user workflows required for Strixonomy
 to achieve functional Protégé Desktop parity while taking advantage of a
 modern IDE-native interface.
 

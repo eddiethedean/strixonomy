@@ -1,7 +1,7 @@
 //! OBO patch round-trip integration test.
 
-use ontocore_obo::{apply_patches_to_text, OboPatchOp};
 use std::path::PathBuf;
+use strixonomy_obo::{apply_patches_to_text, OboPatchOp};
 
 fn obo_fixture() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("examples/obo-workflow/demo.obo")

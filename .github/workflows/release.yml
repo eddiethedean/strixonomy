@@ -115,21 +115,21 @@ jobs:
         with:
           shared-key: release-lsp-${{ matrix.bundle_dir }}
 
-      - name: Build ontocore-lsp
+      - name: Build strixonomy-lsp
         shell: bash
         run: |
           set -euo pipefail
           if [ -n "${{ matrix.rust_target }}" ]; then
-            cargo build --release -p ontocore-lsp --bins --target "${{ matrix.rust_target }}"
-            BIN="target/${{ matrix.rust_target }}/release/ontocore-lsp${{ matrix.binary_ext }}"
+            cargo build --release -p strixonomy-lsp --bins --target "${{ matrix.rust_target }}"
+            BIN="target/${{ matrix.rust_target }}/release/strixonomy-lsp${{ matrix.binary_ext }}"
           else
-            cargo build --release -p ontocore-lsp --bins
-            BIN="target/release/ontocore-lsp${{ matrix.binary_ext }}"
+            cargo build --release -p strixonomy-lsp --bins
+            BIN="target/release/strixonomy-lsp${{ matrix.binary_ext }}"
           fi
           mkdir -p "bundle/${{ matrix.bundle_dir }}"
-          cp "${BIN}" "bundle/${{ matrix.bundle_dir }}/ontocore-lsp${{ matrix.binary_ext }}"
+          cp "${BIN}" "bundle/${{ matrix.bundle_dir }}/strixonomy-lsp${{ matrix.binary_ext }}"
           if [ "${{ runner.os }}" != "Windows" ]; then
-            chmod +x "bundle/${{ matrix.bundle_dir }}/ontocore-lsp${{ matrix.binary_ext }}"
+            chmod +x "bundle/${{ matrix.bundle_dir }}/strixonomy-lsp${{ matrix.binary_ext }}"
           fi
 
       - uses: actions/upload-artifact@v4
@@ -239,29 +239,31 @@ jobs:
             return 1
           }
 
-          publish_crate ontocore-core
-          publish_crate ontocore-parser
-          publish_crate ontocore-owl
-          publish_crate ontocore-obo
-          publish_crate ontocore-edit
-          publish_crate ontocore-diagnostics
-          publish_crate ontocore-catalog
-          publish_crate ontocore-diff
-          publish_crate ontocore-docs
-          # refactor depends on ontocore-swrl (must publish before refactor)
-          publish_crate ontocore-swrl
-          publish_crate ontocore-refactor
-          publish_crate ontocore-query
-          publish_crate ontocore-reasoner
-          publish_crate ontocore-robot
-          publish_crate ontocore-plugin
-          publish_crate ontocore-plugin-naming
-          publish_crate ontocore-plugin-markdown-export
-          publish_crate ontocore-plugin-shacl
-          publish_crate ontocore-plugin-builtins
-          publish_crate ontocore-lsp
+          publish_crate strixonomy-core
+          publish_crate strixonomy-parser
+          publish_crate strixonomy-owl
+          publish_crate strixonomy-obo
+          publish_crate strixonomy-edit
+          publish_crate strixonomy-diagnostics
+          publish_crate strixonomy-catalog
+          publish_crate strixonomy-diff
+          publish_crate strixonomy-docs
+          # refactor depends on strixonomy-swrl (must publish before refactor)
+          publish_crate strixonomy-swrl
+          publish_crate strixonomy-refactor
+          publish_crate strixonomy-query
+          publish_crate strixonomy-reasoner
+          publish_crate strixonomy-robot
+          publish_crate strixonomy-plugin
+          publish_crate strixonomy-plugin-naming
+          publish_crate strixonomy-plugin-markdown-export
+          publish_crate strixonomy-plugin-shacl
+          publish_crate strixonomy-plugin-builtins
+          publish_crate strixonomy-lsp
+          publish_crate strixonomy
+          publish_crate strixonomy-cli
+          # Deprecated OntoCore façade re-export (compat window through 1.0)
           publish_crate ontocore
-          publish_crate ontocore-cli
 
           echo "Disk after crate publish:"
           df -h
@@ -296,7 +298,7 @@ jobs:
           shared-key: release-package
 
       - name: Build CLI release binary
-        run: cargo build --release --locked -p ontocore-cli --bins
+        run: cargo build --release --locked -p strixonomy-cli --bins
 
       - name: Download multi-platform LSP binaries
         uses: actions/download-artifact@v4
@@ -309,22 +311,22 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          cp target/release/ontocore "dist/ontocore-${GITHUB_REF_NAME}-x86_64-unknown-linux-gnu"
-          tar -czf "dist/ontocore-${GITHUB_REF_NAME}-x86_64-unknown-linux-gnu.tar.gz" \
-            -C dist "ontocore-${GITHUB_REF_NAME}-x86_64-unknown-linux-gnu"
+          cp target/release/strixonomy "dist/strixonomy-${GITHUB_REF_NAME}-x86_64-unknown-linux-gnu"
+          tar -czf "dist/strixonomy-${GITHUB_REF_NAME}-x86_64-unknown-linux-gnu.tar.gz" \
+            -C dist "strixonomy-${GITHUB_REF_NAME}-x86_64-unknown-linux-gnu"
 
           for dir in extension/server/*/; do
             platform="$(basename "${dir}")"
-            bin="${dir}ontocore-lsp"
-            exe="${dir}ontocore-lsp.exe"
+            bin="${dir}strixonomy-lsp"
+            exe="${dir}strixonomy-lsp.exe"
             if [ -f "${bin}" ]; then
-              cp "${bin}" "dist/ontocore-lsp-${GITHUB_REF_NAME}-${platform}"
-              tar -czf "dist/ontocore-lsp-${GITHUB_REF_NAME}-${platform}.tar.gz" \
-                -C dist "ontocore-lsp-${GITHUB_REF_NAME}-${platform}"
+              cp "${bin}" "dist/strixonomy-lsp-${GITHUB_REF_NAME}-${platform}"
+              tar -czf "dist/strixonomy-lsp-${GITHUB_REF_NAME}-${platform}.tar.gz" \
+                -C dist "strixonomy-lsp-${GITHUB_REF_NAME}-${platform}"
             elif [ -f "${exe}" ]; then
-              cp "${exe}" "dist/ontocore-lsp-${GITHUB_REF_NAME}-${platform}.exe"
-              (cd dist && zip -q "ontocore-lsp-${GITHUB_REF_NAME}-${platform}.zip" \
-                "ontocore-lsp-${GITHUB_REF_NAME}-${platform}.exe")
+              cp "${exe}" "dist/strixonomy-lsp-${GITHUB_REF_NAME}-${platform}.exe"
+              (cd dist && zip -q "strixonomy-lsp-${GITHUB_REF_NAME}-${platform}.zip" \
+                "strixonomy-lsp-${GITHUB_REF_NAME}-${platform}.exe")
             fi
           done
 
@@ -344,7 +346,7 @@ jobs:
           cd extension
           npm ci
           npm run compile
-          npx vsce package --no-dependencies -o "../dist/ontocode-${GITHUB_REF_NAME}.vsix"
+          npx vsce package --no-dependencies -o "../dist/strixonomy-${GITHUB_REF_NAME}.vsix"
           rm -rf node_modules webview-ui/node_modules
           echo "Disk after VSIX packaging:"
           df -h
@@ -359,7 +361,7 @@ jobs:
             exit 0
           fi
           npm install -g ovsx
-          ovsx publish "dist/ontocode-${GITHUB_REF_NAME}.vsix" -p "${OVSX_PAT}"
+          ovsx publish "dist/strixonomy-${GITHUB_REF_NAME}.vsix" -p "${OVSX_PAT}"
 
       - name: Generate SHA256SUMS
         run: |
@@ -385,7 +387,7 @@ jobs:
             gh release upload "${GITHUB_REF_NAME}" "${assets[@]}" --clobber
           else
             gh release create "${GITHUB_REF_NAME}" \
-              --title "OntoCode ${GITHUB_REF_NAME}" \
+              --title "Strixonomy ${GITHUB_REF_NAME}" \
               --generate-notes \
               "${assets[@]}"
           fi

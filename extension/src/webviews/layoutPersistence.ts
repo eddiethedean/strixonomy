@@ -11,8 +11,8 @@ import {
 export type { PanelRestoreState, Perspective };
 export { PERSPECTIVES };
 
-const PERSPECTIVE_KEY = "ontocode.perspectives";
-const PANEL_STATE_KEY = "ontocode.panelRestoreState";
+const PERSPECTIVE_KEY = "strixonomy.perspectives";
+const PANEL_STATE_KEY = "strixonomy.panelRestoreState";
 
 let extensionContext: vscode.ExtensionContext | undefined;
 

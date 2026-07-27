@@ -3,7 +3,7 @@
 # EPIC-005 --- SWRL
 
 **Epic ID:** EPIC-005\
-**GitHub:** https://github.com/eddiethedean/ontocode/issues/251\
+**GitHub:** https://github.com/eddiethedean/strixonomy/issues/251\
 **Status:** Complete (v0.23.0)\
 **Priority:** P0 (Release Blocking)\
 **Target Release:** v0.23

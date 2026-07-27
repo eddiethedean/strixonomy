@@ -3,14 +3,14 @@
 # Implementation Evidence Registry
 
 **Status:** Living Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document is the authoritative mapping between Protégé parity
-requirements and the actual OntoCode implementation.
+requirements and the actual Strixonomy implementation.
 
 A feature is **not considered implemented** because it appears in
 documentation or a roadmap. Every parity claim must be backed by
@@ -62,7 +62,7 @@ Every parity feature should reference:
   -------------------------------------------------------------------------------------------------------------------------
   Requirement    Capability   Status            Crates              Primary Files    UI      Tests   Docs    Notes
   -------------- ------------ ----------------- ------------------- ---------------- ------- ------- ------- --------------
-  PAR-LIFE-001   Ontology     PARTIAL           ontocore-cli,       TBD              ✓       TBD     ✓       Verify
+  PAR-LIFE-001   Ontology     PARTIAL           strixonomy-cli,       TBD              ✓       TBD     ✓       Verify
                  lifecycle                      extension                                                    multi-format
                                                                                                              persistence.
 
@@ -70,62 +70,62 @@ Every parity feature should reference:
                  ontology                       workspace/          sessionPersistence                 registry +
                                                                                                              session restore
 
-  PAR-FMT-001    Turtle       IMPLEMENTED       ontocore-edit,      transaction.rs,  ✓       ✓       ✓       v0.19:
-                 write-back                     ontocore-owl        adapter.rs,                         transaction
+  PAR-FMT-001    Turtle       IMPLEMENTED       strixonomy-edit,      transaction.rs,  ✓       ✓       ✓       v0.19:
+                 write-back                     strixonomy-owl        adapter.rs,                         transaction
                                                                                         patch.rs               apply path.
 
-  PAR-FMT-002    OBO          IMPLEMENTED       ontocore-edit,      transaction.rs,  ✓       ✓       ✓       v0.19:
-                 write-back                     ontocore-obo        adapter.rs,                         transaction
+  PAR-FMT-002    OBO          IMPLEMENTED       strixonomy-edit,      transaction.rs,  ✓       ✓       ✓       v0.19:
+                 write-back                     strixonomy-obo        adapter.rs,                         transaction
                                                                                         patch.rs               apply path.
 
-  PAR-FMT-003    RDF/XML      COMPLETE          ontocore-owl        serialize.rs,    ✓       ✓       ✓       Horned
-                 write-back                     ontocore-edit       mutate.rs,                         RDF/XML
+  PAR-FMT-003    RDF/XML      COMPLETE          strixonomy-owl        serialize.rs,    ✓       ✓       ✓       Horned
+                 write-back                     strixonomy-edit       mutate.rs,                         RDF/XML
                                                                     apply_xml.rs,                      re-serialize
                                                                     adapter.rs                         (v0.21).
 
-  PAR-FMT-004    OWL/XML      COMPLETE          ontocore-owl        serialize.rs,    ✓       ✓       ✓       Horned
-                 write-back                     ontocore-edit       mutate.rs,                         OWL/XML
+  PAR-FMT-004    OWL/XML      COMPLETE          strixonomy-owl        serialize.rs,    ✓       ✓       ✓       Horned
+                 write-back                     strixonomy-edit       mutate.rs,                         OWL/XML
                                                                     apply_xml.rs,                      re-serialize
                                                                     adapter.rs                         (v0.21).
 
-  PAR-OWL-001    OWL 2        PARTIAL           ontocore-owl        patch.rs,        ✓       TBD     ✓       Target
+  PAR-OWL-001    OWL 2        PARTIAL           strixonomy-owl        patch.rs,        ✓       TBD     ✓       Target
                  authoring                                          manchester.rs                       v0.22.
 
   PAR-WS-001     Workspace    IMPLEMENTED       extension           workspaceRuntime ✓       ✓       ✓       v0.20
                  model                          workspace/          saveCoordinator                  workspace
                                                                                                              runtime
 
-  PAR-RSN-001    Reasoning    IMPLEMENTED       ontocore-reasoner   lib.rs           ✓       ✓       ✓       EL
+  PAR-RSN-001    Reasoning    IMPLEMENTED       strixonomy-reasoner   lib.rs           ✓       ✓       ✓       EL
                  classify                                                                                    classification.
 
-  PAR-RSN-002    ABox         VERIFIED          ontocore-reasoner   abox.rs          ✓       ✓       ✓       v0.23.0
+  PAR-RSN-002    ABox         VERIFIED          strixonomy-reasoner   abox.rs          ✓       ✓       ✓       v0.23.0
                  reasoning                      lsp                                                 realization,
                                                                                                     instance check.
 
-  PAR-RSN-003    DL           VERIFIED          ontocore-reasoner   explain.rs       ✓       ✓       ✓       v0.23.0
+  PAR-RSN-003    DL           VERIFIED          strixonomy-reasoner   explain.rs       ✓       ✓       ✓       v0.23.0
                  explanations                                                                                DL-first.
 
-  PAR-QRY-001    SPARQL       IMPLEMENTED       ontocore-query      lib.rs           ✓       TBD     ✓       Query
+  PAR-QRY-001    SPARQL       IMPLEMENTED       strixonomy-query      lib.rs           ✓       TBD     ✓       Query
                  query                                                                                       workbench.
 
-  PAR-QRY-002    DL Query     VERIFIED          ontocore-reasoner   dl_query.rs      ✓       ✓       ✓       v0.24.0
+  PAR-QRY-002    DL Query     VERIFIED          strixonomy-reasoner   dl_query.rs      ✓       ✓       ✓       v0.24.0
                  workflow                       lsp / extension                              Workbench DL;
                                                                                                              CLI/LSP.
 
-  PAR-SWRL-001   SWRL         VERIFIED          ontocore-swrl       lib.rs           ✓       ✓       ✓       v0.23.0
+  PAR-SWRL-001   SWRL         VERIFIED          strixonomy-swrl       lib.rs           ✓       ✓       ✓       v0.23.0
                                                                                                              Rule Browser.
 
-  PAR-REF-001    Semantic     VERIFIED          ontocore-refactor   lib.rs,          ✓       ✓       ✓       v0.24
+  PAR-REF-001    Semantic     VERIFIED          strixonomy-refactor   lib.rs,          ✓       ✓       ✓       v0.24
                  refactoring                                        rename.rs,                               rename/merge/replace
                                                                     ontology.rs                              multi-format;
                                                                                                              move/extract Turtle-first.
 
-  PAR-VIS-001    Graph        VERIFIED          ontocore-catalog    graph.rs         ✓       ✓       ✓       v0.25
+  PAR-VIS-001    Graph        VERIFIED          strixonomy-catalog    graph.rs         ✓       ✓       ✓       v0.25
                  visualization                  extension           GraphPanel.tsx                           EPIC-008 kinds,
                                                                     GraphPanel.test                          filters, overlays,
                                                                                                              virt, list view.
 
-  PAR-PLG-001    Plugin SDK   VERIFIED          ontocore-plugin     host.rs,         ✓       ✓       ✓       v0.25
+  PAR-PLG-001    Plugin SDK   VERIFIED          strixonomy-plugin     host.rs,         ✓       ✓       ✓       v0.25
                                                                     lifecycle.rs,                            EPIC-009 SDK 1.0;
                                                                     manifest.rs                              providers +
                                                                     plugin_sdk_compat                        compat harness.
@@ -146,8 +146,8 @@ Every parity feature should reference:
 
 | Deliverable | Evidence |
 |-------------|----------|
-| `ontocore-edit` crate with `Transaction`, `SemanticChange`, invert/compose/validate | `crates/ontocore-edit/` |
-| Turtle/OBO LSP + CLI apply routed through transactions | `crates/ontocore-lsp/src/handlers.rs`, `crates/ontocore-cli/src/main.rs` |
+| `strixonomy-edit` crate with `Transaction`, `SemanticChange`, invert/compose/validate | `crates/strixonomy-edit/` |
+| Turtle/OBO LSP + CLI apply routed through transactions | `crates/strixonomy-lsp/src/handlers.rs`, `crates/strixonomy-cli/src/main.rs` |
 | ADR for semantic transaction model | `docs/design/adr/0020-semantic-transaction-edit-model.md` |
 | Parity manifest + validator in CI | `parity/protege-desktop-parity.yaml`, `scripts/validate-parity-manifest.py` |
 | GitHub epics EPIC-001…011 | [EPIC_INDEX.md](07_BACKLOG/EPIC_INDEX.md) |

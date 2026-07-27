@@ -19,8 +19,8 @@ describe("layoutPersistenceLogic", () => {
   });
 
   it("falls back to default reopen commands when no saved state", () => {
-    const restore = resolvePanelRestoreState(undefined, "ontocodeQueryWorkbench");
-    assert.equal(restore?.command, "ontocode.openQueryWorkbench");
+    const restore = resolvePanelRestoreState(undefined, "strixonomyQueryWorkbench");
+    assert.equal(restore?.command, "strixonomy.openQueryWorkbench");
   });
 
   it("sanitize without defaults leaves missing session panels empty", () => {
@@ -28,19 +28,19 @@ describe("layoutPersistenceLogic", () => {
     // not resolvePanelRestoreState — otherwise DEFAULT_REOPEN reopens reasoner/diff.
     assert.equal(sanitizePanelRestoreState(undefined), undefined);
     assert.equal(
-      sanitizePanelRestoreState({ command: "ontocode.runReasoner" })?.command,
-      "ontocode.runReasoner"
+      sanitizePanelRestoreState({ command: "strixonomy.runReasoner" })?.command,
+      "strixonomy.runReasoner"
     );
   });
 
   it("prefers saved restore state over defaults", () => {
     const saved: PanelRestoreState = {
-      command: "ontocode.showExplanation",
+      command: "strixonomy.showExplanation",
       args: ["http://example.org#A", "el"],
       title: "Explanation: A",
     };
     assert.deepEqual(
-      resolvePanelRestoreState({ ontocodeExplanation: saved }, "ontocodeExplanation"),
+      resolvePanelRestoreState({ strixonomyExplanation: saved }, "strixonomyExplanation"),
       saved
     );
   });
@@ -48,9 +48,9 @@ describe("layoutPersistenceLogic", () => {
   it("rejects non-allowlisted restore commands (#309)", () => {
     assert.equal(isAllowedPanelRestoreCommand("workbench.action.terminal.new"), false);
     assert.equal(isAllowedPanelRestoreCommand("vscode.open"), false);
-    assert.equal(isAllowedPanelRestoreCommand("ontocode.showEntityInspector"), true);
-    assert.equal(isAllowedPanelRestoreCommand("ontocode.openEntity"), true);
-    assert.equal(isAllowedPanelRestoreCommand("ontocode.evil;rm"), false);
+    assert.equal(isAllowedPanelRestoreCommand("strixonomy.showEntityInspector"), true);
+    assert.equal(isAllowedPanelRestoreCommand("strixonomy.openEntity"), true);
+    assert.equal(isAllowedPanelRestoreCommand("strixonomy.evil;rm"), false);
     assert.equal(
       sanitizePanelRestoreState({
         command: "workbench.action.terminal.new",
@@ -63,47 +63,47 @@ describe("layoutPersistenceLogic", () => {
   it("falls back to default when saved restore command is not allowlisted", () => {
     const restore = resolvePanelRestoreState(
       {
-        ontocodeInspector: {
+        strixonomyInspector: {
           command: "workbench.action.terminal.new",
           args: ["--dangerous"],
         },
       },
-      "ontocodeInspector"
+      "strixonomyInspector"
     );
-    assert.deepEqual(restore, DEFAULT_REOPEN.ontocodeInspector);
+    assert.deepEqual(restore, DEFAULT_REOPEN.strixonomyInspector);
   });
 
   it("graphRestoreState maps graphKind to restore commands", () => {
     assert.deepEqual(graphRestoreState({ graphKind: "class" }, "Class Graph"), {
-      command: "ontocode.openClassGraph",
+      command: "strixonomy.openClassGraph",
       title: "Class Graph",
     });
     assert.deepEqual(graphRestoreState({ graphKind: "property" }, "Property Graph"), {
-      command: "ontocode.openPropertyGraph",
+      command: "strixonomy.openPropertyGraph",
       title: "Property Graph",
     });
     assert.deepEqual(
       graphRestoreState({ graphKind: "object_property" }, "Object Property Graph"),
       {
-        command: "ontocode.openObjectPropertyGraph",
+        command: "strixonomy.openObjectPropertyGraph",
         title: "Object Property Graph",
       }
     );
     assert.deepEqual(
       graphRestoreState({ graphKind: "data_property" }, "Data Property Graph"),
       {
-        command: "ontocode.openDataPropertyGraph",
+        command: "strixonomy.openDataPropertyGraph",
         title: "Data Property Graph",
       }
     );
     assert.deepEqual(graphRestoreState({ graphKind: "import" }, "Import Graph"), {
-      command: "ontocode.openImportGraph",
+      command: "strixonomy.openImportGraph",
       title: "Import Graph",
     });
     assert.deepEqual(
       graphRestoreState({ graphKind: "dependency" }, "Dependency Graph"),
       {
-        command: "ontocode.openDependencyGraph",
+        command: "strixonomy.openDependencyGraph",
         title: "Dependency Graph",
       }
     );
@@ -113,7 +113,7 @@ describe("layoutPersistenceLogic", () => {
         "Individual"
       ),
       {
-        command: "ontocode.openIndividualGraph",
+        command: "strixonomy.openIndividualGraph",
         args: ["http://ex#Alice"],
         title: "Individual",
       }
@@ -124,7 +124,7 @@ describe("layoutPersistenceLogic", () => {
         "Neighborhood"
       ),
       {
-        command: "ontocode.openNeighborhoodGraph",
+        command: "strixonomy.openNeighborhoodGraph",
         args: ["http://ex.org#Person"],
         title: "Neighborhood",
       }
@@ -136,7 +136,7 @@ describe("layoutPersistenceLogic", () => {
       true
     );
     assert.equal(
-      isAllowedPanelRestoreCommand("ontocode.openObjectPropertyGraph"),
+      isAllowedPanelRestoreCommand("strixonomy.openObjectPropertyGraph"),
       true
     );
   });

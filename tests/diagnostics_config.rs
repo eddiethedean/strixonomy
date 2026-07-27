@@ -1,12 +1,12 @@
-//! v0.13 configurable diagnostics via `.ontocore/diagnostics.toml`.
+//! v0.13 configurable diagnostics via `.strixonomy/diagnostics.toml`.
 
 mod support;
 
 use std::path::PathBuf;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_core::DiagnosticCode;
-use ontocore_query::query_catalog;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_core::DiagnosticCode;
+use strixonomy_query::query_catalog;
 
 fn diagnostics_fixture_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/diagnostics")
@@ -18,9 +18,9 @@ fn disabled_rule_filters_diagnostics_from_index() {
     for name in ["lint-broken-import.ttl", "lint-orphan.ttl"] {
         std::fs::copy(diagnostics_fixture_dir().join(name), dir.path().join(name)).unwrap();
     }
-    std::fs::create_dir_all(dir.path().join(".ontocore")).unwrap();
+    std::fs::create_dir_all(dir.path().join(".strixonomy")).unwrap();
     std::fs::write(
-        dir.path().join(".ontocore/diagnostics.toml"),
+        dir.path().join(".strixonomy/diagnostics.toml"),
         r#"
 [rules.broken_import]
 enabled = false
@@ -48,9 +48,9 @@ fn severity_override_promotes_missing_label_to_error() {
         dir.path().join("dup.ttl"),
     )
     .unwrap();
-    std::fs::create_dir_all(dir.path().join(".ontocore")).unwrap();
+    std::fs::create_dir_all(dir.path().join(".strixonomy")).unwrap();
     std::fs::write(
-        dir.path().join(".ontocore/diagnostics.toml"),
+        dir.path().join(".strixonomy/diagnostics.toml"),
         r#"
 [rules.missing_label]
 severity = "error"
@@ -67,7 +67,7 @@ severity = "error"
         .collect();
     assert!(!missing.is_empty(), "expected missing_label diagnostics");
     assert!(
-        missing.iter().all(|d| d.severity == ontocore_core::DiagnosticSeverity::Error),
+        missing.iter().all(|d| d.severity == strixonomy_core::DiagnosticSeverity::Error),
         "missing_label should be promoted to error"
     );
 

@@ -1,7 +1,7 @@
 # Feature Matrix
 
 ## Purpose
-Track OntoCode feature parity against Protégé and WebProtégé.
+Track Strixonomy feature parity against Protégé and WebProtégé.
 
 ## Current Estimate
 

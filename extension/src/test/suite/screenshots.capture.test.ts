@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
 import { FIXTURE_IRIS, fixturesWorkspaceUri } from "./helpers";
 
-interface OntoCodeTestHooks {
+interface StrixonomyTestHooks {
   openEntityInspector(iri: string): Promise<void>;
   waitForInspectorReady(timeoutMs?: number): Promise<void>;
   openQueryWorkbench(): Promise<void>;
@@ -20,17 +20,17 @@ interface OntoCodeTestHooks {
   disposeAllPanels(): Promise<void>;
 }
 
-interface OntoCodeTestApi {
+interface StrixonomyTestApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<{
     stats: { error_count: number; class_count: number };
   }>;
-  __test: OntoCodeTestHooks;
+  __test: StrixonomyTestHooks;
 }
 
 const CAPTURE = process.env.ONTOCODE_CAPTURE_SCREENSHOTS === "1";
 
-suite("OntoCode screenshot capture", function () {
+suite("Strixonomy screenshot capture", function () {
   if (!CAPTURE) {
     // Keep normal e2e fast; enable via scripts/capture-screenshots.sh
     return;
@@ -38,15 +38,15 @@ suite("OntoCode screenshot capture", function () {
 
   this.timeout(180_000);
 
-  let api: OntoCodeTestApi;
+  let api: StrixonomyTestApi;
 
   suiteSetup(async function () {
     this.timeout(180_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     const activated = await ext.activate();
     assert.ok(activated.__test, "ONTOCODE_TEST_FIXTURES must enable __test hooks");
-    api = activated as OntoCodeTestApi;
+    api = activated as StrixonomyTestApi;
 
     const client = api.getClient();
     assert.ok(client, "language client should start");
@@ -66,8 +66,8 @@ suite("OntoCode screenshot capture", function () {
       "screenshot workspace should index classes"
     );
 
-    // Prefer a real editor + OntoCode activity bar for marketing shots.
-    await vscode.commands.executeCommand("workbench.view.extension.ontocode");
+    // Prefer a real editor + Strixonomy activity bar for marketing shots.
+    await vscode.commands.executeCommand("workbench.view.extension.strixonomy");
     const folders = vscode.workspace.workspaceFolders;
     assert.ok(folders && folders.length > 0, "workspace folder required");
     const ttl = vscode.Uri.joinPath(folders[0].uri, "example.ttl");
@@ -89,7 +89,7 @@ suite("OntoCode screenshot capture", function () {
 
   test("capture explorer + entity inspector", async () => {
     await api.__test.disposeAllPanels();
-    await vscode.commands.executeCommand("workbench.view.extension.ontocode");
+    await vscode.commands.executeCommand("workbench.view.extension.strixonomy");
     await api.__test.openEntityInspector(FIXTURE_IRIS.person);
     await api.__test.waitForInspectorReady();
     await api.__test.settle(2000);

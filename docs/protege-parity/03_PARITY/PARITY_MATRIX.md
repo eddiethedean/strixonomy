@@ -3,14 +3,14 @@
 # Protégé Desktop Parity Matrix
 
 **Status:** Living Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 The parity matrix is the canonical source of truth for tracking
-OntoCode's progress toward full Protégé Desktop parity.
+Strixonomy's progress toward full Protégé Desktop parity.
 
 Unlike the feature inventory, which lists Protégé capabilities, this
 document maps each requirement to its implementation status, evidence,
@@ -93,7 +93,7 @@ Every row should ultimately link to:
 
 # Release Rule
 
-OntoCode 1.0 may claim Protégé Desktop parity only when:
+Strixonomy 1.0 may claim Protégé Desktop parity only when:
 
 -   Every P0 requirement is VERIFIED.
 -   Release gates are satisfied.

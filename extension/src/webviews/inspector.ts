@@ -62,7 +62,7 @@ export class EntityInspectorPanel {
     this.host = host;
     this.extensionUri = extensionUri;
     host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeInspector");
+      void forgetPanelRestoreState("strixonomyInspector");
       EntityInspectorPanel.currentPanel = undefined;
     });
   }
@@ -79,8 +79,8 @@ export class EntityInspectorPanel {
     onRefresh?: RefreshFn,
     requestId?: number
   ): EntityInspectorPanel {
-    void rememberPanelRestoreState("ontocodeInspector", {
-      command: "ontocode.openEntity",
+    void rememberPanelRestoreState("strixonomyInspector", {
+      command: "strixonomy.openEntity",
       args: [detail.entity.iri],
       title: panelTitle(detail),
     });
@@ -97,7 +97,7 @@ export class EntityInspectorPanel {
     }
 
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeInspector",
+      viewType: "strixonomyInspector",
       title: panelTitle(detail),
       panel: "inspector",
       onMessage: async (message: WebviewMessage) => {
@@ -170,7 +170,7 @@ export class EntityInspectorPanel {
 
   private async handleMessage(message: WebviewMessage): Promise<void> {
     if (message.type === "jumpToSource" && this.iri) {
-      await vscode.commands.executeCommand("ontocode.jumpToSource", this.iri);
+      await vscode.commands.executeCommand("strixonomy.jumpToSource", this.iri);
     }
     if (message.type === "applyPatch") {
       if (!this.documentUri) {
@@ -181,7 +181,7 @@ export class EntityInspectorPanel {
       const parsed = parseApplyPatchMessage(message, this.iri, this.oboId);
       if (!parsed) {
         void vscode.window.showErrorMessage(
-          "OntoCode: ignored invalid applyPatch message from webview"
+          "Strixonomy: ignored invalid applyPatch message from webview"
         );
         return;
       }
@@ -193,7 +193,7 @@ export class EntityInspectorPanel {
         axiomKind === "disjoint_class"
           ? (message.axiom.other_iri ?? message.axiom.manchester ?? "")
           : (message.axiom.manchester ?? "");
-      await vscode.commands.executeCommand("ontocode.openManchesterEditor", {
+      await vscode.commands.executeCommand("strixonomy.openManchesterEditor", {
         iri: this.iri,
         documentUri: this.documentUri,
         axiomKind,
@@ -202,7 +202,7 @@ export class EntityInspectorPanel {
       });
     }
     if (message.type === "addManchesterAxiom" && this.iri && this.documentUri) {
-      await vscode.commands.executeCommand("ontocode.openManchesterEditor", {
+      await vscode.commands.executeCommand("strixonomy.openManchesterEditor", {
         iri: this.iri,
         documentUri: this.documentUri,
         mode: "add",
@@ -215,7 +215,7 @@ export class EntityInspectorPanel {
       });
     }
     if (message.type === "selectNode" || message.type === "openEntity") {
-      await vscode.commands.executeCommand("ontocode.openEntity", message.iri);
+      await vscode.commands.executeCommand("strixonomy.openEntity", message.iri);
     }
     if (message.type === "findUsages" && this.iri) {
       const { showEntityUsages } = await import("./refactorPreview");
@@ -226,7 +226,7 @@ export class EntityInspectorPanel {
       const fromIri = this.iri;
       await renameEntityIri(this.extensionUri, fromIri, async (newIri) => {
         if (newIri) {
-          await vscode.commands.executeCommand("ontocode.openEntity", newIri);
+          await vscode.commands.executeCommand("strixonomy.openEntity", newIri);
         } else if (fromIri) {
           await this.loadEntity(fromIri);
         }
@@ -301,12 +301,12 @@ export class EntityInspectorPanel {
         if (this.onRefresh) {
           await this.onRefresh();
         }
-        void vscode.window.showInformationMessage("OntoCode: entity deleted");
+        void vscode.window.showInformationMessage("Strixonomy: entity deleted");
         return;
       }
       if (result.reindex_warning) {
         void vscode.window.showWarningMessage(
-          `OntoCode: changes saved but reindex failed — ${result.reindex_warning}`
+          `Strixonomy: changes saved but reindex failed — ${result.reindex_warning}`
         );
       }
       if (result.entity_detail) {
@@ -325,12 +325,12 @@ export class EntityInspectorPanel {
         await this.onRefresh();
       }
       if (isPatchFullySynced(result)) {
-        void vscode.window.showInformationMessage("OntoCode: changes applied");
+        void vscode.window.showInformationMessage("Strixonomy: changes applied");
       }
       // editor_synced:false already warned in applyAxiomPatch client helper
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      this.postPatchError(`OntoCode: patch failed — ${msg}`);
+      this.postPatchError(`Strixonomy: patch failed — ${msg}`);
     } finally {
       this.applying = false;
     }

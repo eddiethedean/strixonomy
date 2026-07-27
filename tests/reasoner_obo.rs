@@ -1,7 +1,7 @@
 mod support;
 
-use ontocore_reasoner::{classify, ReasonerId, WorkspaceInputLoader};
 use std::path::PathBuf;
+use strixonomy_reasoner::{classify, ReasonerId, WorkspaceInputLoader};
 
 fn obo_workspace() -> (tempfile::TempDir, PathBuf) {
     let dir = tempfile::tempdir().expect("tempdir");

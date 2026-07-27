@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Fail if product-primary surfaces still use OntoCode/OntoCore as the *current*
+# product identity outside an allowlist (historical docs, migration, compat, dual-read).
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+ALLOW_REGEX='(scripts/check-strixonomy-rename\.sh|scripts/check-doc-versions\.sh|scripts/parity_|scripts/check-parity|parity/|examples/protege-roundtrip/|tests/protege_port_|docs/migration/|docs/design/adr/0018|docs/design/adr/0022|docs/design/v0\.27|docs/changelog|CHANGELOG\.md|crates/compat/|ontocode\.dev/ns#swrlRule|OntoIndex|historical|superseded|deprecated|compat window|legacy|Legacy OntoCore|OntoCore →|OntoCode →|OntoCore name|OntoCore/Strixonomy|migratedFromOntoCode|fromOntoCode|migration/v0\.|PRE_1_0|ROADMAP\.md|docs/roadmap\.md|docs/protege-parity/|docs/PROTEGE_REVERSE|docs/design/v0\.|mutants\.|site/|target/|Cargo\.lock|node_modules|extension/(dist|out)/|webview-ui/dist|\.git/|LICENSE|name = "ontocore"|name = "ontocore-lsp"|argv0|warn_if_legacy|dual-read|dual.bin|compatibility|abbreviate_string)'
+
+FAIL=0
+
+check_pattern() {
+  local pattern="$1"
+  local label="$2"
+  local hits
+  hits="$(rg -n --hidden \
+    --glob '!target/**' --glob '!site/**' --glob '!node_modules/**' \
+    --glob '!mutants.out*/**' --glob '!.git/**' --glob '!Cargo.lock' \
+    --glob '!extension/out/**' --glob '!extension/dist/**' \
+    --glob '!extension/webview-ui/dist/**' \
+    -e "$pattern" . 2>/dev/null | grep -Ev "$ALLOW_REGEX" || true)"
+  if [[ -n "$hits" ]]; then
+    echo "FAIL: stale $label found outside allowlist:" >&2
+    echo "$hits" | head -40 >&2
+    FAIL=1
+  else
+    echo "ok: no unexpected $label"
+  fi
+}
+
+check_pattern '\bOntoCode\b' 'OntoCode brand'
+check_pattern '\bOntoCore\b' 'OntoCore brand'
+check_pattern 'ontocode\.ontocode' 'legacy extension id'
+check_pattern '"publisher": "ontocode"' 'legacy publisher'
+check_pattern 'name = "ontocore-cli"' 'legacy CLI package'
+
+if rg -n 'const CACHE_DIR: &str = "\.ontocore' crates --glob '!**/compat/**' 2>/dev/null | grep -v allow; then
+  echo "FAIL: primary cache still .ontocore" >&2
+  FAIL=1
+else
+  echo "ok: primary cache path"
+fi
+
+if [[ "$FAIL" -ne 0 ]]; then
+  exit 1
+fi
+echo "Strixonomy rename audit passed."

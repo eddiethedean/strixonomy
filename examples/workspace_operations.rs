@@ -3,12 +3,12 @@
 //! Run from the repository root:
 //!
 //! ```bash
-//! cargo run -p ontocode --example workspace_operations
+//! cargo run -p strixonomy-workspace --example workspace_operations
 //! ```
 
-use ontocore::docs::ExportOptions;
-use ontocore::reasoner::ReasonerId;
-use ontocore::Workspace;
+use strixonomy::docs::ExportOptions;
+use strixonomy::reasoner::ReasonerId;
+use strixonomy::Workspace;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let workspace = std::path::Path::new("fixtures");
@@ -27,7 +27,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         classification.unsatisfiable.len()
     );
 
-    let out = std::env::temp_dir().join("ontocore-workspace-ops-docs");
+    let out = std::env::temp_dir().join("strixonomy-workspace-ops-docs");
     ws.export_docs(ExportOptions::markdown(&out))?;
     println!("Exported Markdown docs to {}", out.display());
 

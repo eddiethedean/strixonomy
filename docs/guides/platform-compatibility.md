@@ -1,6 +1,6 @@
 # Platform and VS Code compatibility
 
-Supported platforms and environments for OntoCode **v0.26.2** (latest tagged). This page states **what is documented and tested in project CI** — not a formal certification.
+Supported platforms and environments for Strixonomy **v0.26.2** (latest tagged). This page states **what is documented and tested in project CI** — not a formal certification.
 
 Canonical matrix: [What ships today](../SHIPPED.md).
 
@@ -10,16 +10,16 @@ Canonical matrix: [What ships today](../SHIPPED.md).
 |-------------|------------------|
 | Minimum VS Code | **1.85+** — [enterprise deployment](enterprise-deployment.md), [vscode-install](../vscode-install.md) |
 | Maximum VS Code tested | **Not documented** — test your target VS Code version in pilot |
-| Marketplace ID | `ontocode.ontocode` |
-| Open VSX ID | `ontocode.ontocode` — [open-vsx.org/extension/ontocode/ontocode](https://open-vsx.org/extension/ontocode/ontocode) (Cursor, v0.11+) |
+| Marketplace ID | `strixonomy.strixonomy` |
+| Open VSX ID | `strixonomy.strixonomy` — [open-vsx.org/extension/strixonomy/strixonomy](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor, v0.11+) |
 | Offline install | Release VSIX + SHA256 — [release integrity](../release-integrity.md) |
-| Workspace trust | **Required** for custom `ontocode.lspPath`; Restricted Mode uses bundled LSP |
+| Workspace trust | **Required** for custom `strixonomy.lspPath`; Restricted Mode uses bundled LSP |
 
 Extension CI runs VS Code E2E on **1.85.0** and stable across Linux, macOS, Windows (see `.github/workflows/extension-vscode-e2e.yml`).
 
-## Bundled language server (`ontocore-lsp`)
+## Bundled language server (`strixonomy-lsp`)
 
-Release VSIX bundles `ontocore-lsp` for:
+Release VSIX bundles `strixonomy-lsp` for:
 
 | OS | Architecture (documented) |
 |----|-------------------------|
@@ -31,11 +31,11 @@ No separate LSP install required for standard Marketplace, Open VSX, or VSIX use
 
 ## CLI release binaries
 
-| Platform | Pre-built `ontocore` CLI on GitHub Releases |
+| Platform | Pre-built `strixonomy` CLI on GitHub Releases |
 |----------|-----------------------------------------------|
 | Linux x64 | **Yes** |
 | Linux arm64 | **No** — use `cargo install` or VSIX-bundled LSP only |
-| macOS | **No** — use `cargo install ontocore-cli --locked` |
+| macOS | **No** — use `cargo install strixonomy-cli --locked` |
 | Windows | **No** — use `cargo install` or CI on Linux runners |
 
 Pin version: `VERSION=0.26.2` — [Install CLI & CI (detail)](../install-cli-ci.md).
@@ -60,7 +60,7 @@ Pin version: `VERSION=0.26.2` — [Install CLI & CI (detail)](../install-cli-ci.
 Pilot checklist for Remote-SSH:
 
 1. Install VSIX on the **remote** VS Code server
-2. Confirm bundled `ontocore-lsp` matches remote OS/architecture
+2. Confirm bundled `strixonomy-lsp` matches remote OS/architecture
 3. Open ontology folder on remote filesystem
 4. Re-run [First success](first-success.md)
 
@@ -77,8 +77,8 @@ Ensure each workspace root contains ontology files you expect in the explorer.
 
 | Tool | When required |
 |------|---------------|
-| Java + ROBOT | `ontocore robot` and LSP `runRobot` — [ROBOT interop](robot-interop.md) |
-| Java | Not required for core OntoCore/OntoCode paths |
+| Java + ROBOT | `strixonomy robot` and LSP `runRobot` — [ROBOT interop](robot-interop.md) |
+| Java | Not required for core Strixonomy/Strixonomy paths |
 
 ## Related
 

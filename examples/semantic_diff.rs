@@ -1,7 +1,7 @@
 //! Compare ontology workspaces or git refs with semantic diff.
 
-use ontocore::diff::{diff_git_refs, format_diff_text, parse_git_range};
-use ontocore::Workspace;
+use strixonomy::diff::{diff_git_refs, format_diff_text, parse_git_range};
+use strixonomy::Workspace;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let fixtures = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("fixtures");

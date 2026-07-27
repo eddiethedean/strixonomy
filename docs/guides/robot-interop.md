@@ -1,6 +1,6 @@
 # ROBOT interop
 
-OntoCore v0.19.0 wraps the [ROBOT](http://robot.obolibrary.org/) CLI for validate, merge, and report workflows. ROBOT runs as an **external Java process** — OntoCore does not embed a JVM.
+Strixonomy v0.19.0 wraps the [ROBOT](http://robot.obolibrary.org/) CLI for validate, merge, and report workflows. ROBOT runs as an **external Java process** — Strixonomy does not embed a JVM.
 
 Canonical capability matrix: [What ships today](../SHIPPED.md).
 
@@ -10,7 +10,7 @@ Canonical capability matrix: [What ships today](../SHIPPED.md).
 |-------------|-------|
 | **Java** | ROBOT requires a JRE on the agent or developer machine |
 | **`robot` on PATH** | Or set an explicit path (see below) |
-| **OntoCore 0.19.0+** | `ontocore robot` subcommand or LSP `ontocore/runRobot` |
+| **Strixonomy 0.19.0+** | `strixonomy robot` subcommand or LSP `strixonomy/runRobot` |
 
 Install ROBOT from [robot.obolibrary.org](http://robot.obolibrary.org/).
 
@@ -18,43 +18,43 @@ Install ROBOT from [robot.obolibrary.org](http://robot.obolibrary.org/).
 
 ```bash
 # Validate
-ontocore robot validate path/to/ontology.owl
+strixonomy robot validate path/to/ontology.owl
 
 # Merge
-ontocore robot merge --inputs a.owl --inputs b.owl --output merged.owl
+strixonomy robot merge --inputs a.owl --inputs b.owl --output merged.owl
 
 # Report
-ontocore robot report path/to/ontology.owl --report report.tsv
+strixonomy robot report path/to/ontology.owl --report report.tsv
 ```
 
 Override the executable:
 
 ```bash
-ontocore robot validate demo.obo --robot-path /opt/robot/robot.jar
+strixonomy robot validate demo.obo --robot-path /opt/robot/robot.jar
 ```
 
 Full flag reference: [CLI reference](../cli-reference.md#robot).
 
 ## VS Code
 
-Set **`ontocode.robotPath`** in settings to the `robot` executable or JAR when it is not on `PATH`. Trusted workspaces only (ignored in Restricted Mode).
+Set **`strixonomy.robotPath`** in settings to the `robot` executable or JAR when it is not on `PATH`. Trusted workspaces only (ignored in Restricted Mode).
 
-LSP clients can call `ontocore/runRobot` — see [LSP API](../lsp-api.md).
+LSP clients can call `strixonomy/runRobot` — see [LSP API](../lsp-api.md).
 
 ## CI recipe
 
 ```yaml
-- name: Install OntoCore
-  run: cargo install ontocore-cli --locked --version 0.26.2
+- name: Install Strixonomy
+  run: cargo install strixonomy-cli --locked --version 0.26.2
 
-- name: OntoCore validate
-  run: ontocore validate ./ontologies
+- name: Strixonomy validate
+  run: strixonomy validate ./ontologies
 
 - name: ROBOT validate
-  run: ontocore robot validate ./ontologies/core.owl
+  run: strixonomy robot validate ./ontologies/core.owl
 ```
 
-Example with OBO fixtures: [`examples/obo-workflow/`](https://github.com/eddiethedean/ontocode/tree/main/examples/obo-workflow).
+Example with OBO fixtures: [`examples/obo-workflow/`](https://github.com/eddiethedean/strixonomy/tree/main/examples/obo-workflow).
 
 ## Security note
 

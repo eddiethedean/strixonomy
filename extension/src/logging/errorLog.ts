@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 let channel: vscode.OutputChannel | undefined;
 
 export function getErrorLog(): vscode.OutputChannel {
-  channel ??= vscode.window.createOutputChannel("OntoCode");
+  channel ??= vscode.window.createOutputChannel("Strixonomy");
   return channel;
 }
 

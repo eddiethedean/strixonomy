@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an enhancement for OntoCode or OntoCore
+about: Suggest an enhancement for Strixonomy
 title: ''
 labels: enhancement
 assignees: ''
@@ -8,8 +8,8 @@ assignees: ''
 
 ## Component
 
-- [ ] OntoCore CLI / library
-- [ ] OntoCode VS Code extension
+- [ ] Strixonomy CLI / library
+- [ ] Strixonomy VS Code extension
 - [ ] LSP / editor integration
 - [ ] Documentation
 - [ ] Other

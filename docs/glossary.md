@@ -1,33 +1,33 @@
 # Glossary
 
-Canonical terminology for OntoCode, OntoCore, OntoUI, and the Ontologos platform. Use these terms consistently in planning, architecture, and implementation docs.
+Canonical terminology for Strixonomy, Strixonomy, OntoUI, and the Ontologos platform. Use these terms consistently in planning, architecture, and implementation docs.
 
 | Term | Definition | Status |
 |------|------------|--------|
-| **OntoCore** | Rust semantic workspace engine — indexing, queries, diagnostics, reasoning integration, refactoring, CLI, LSP, plugin host | **Implemented** (v0.26) |
-| **OntoCode** | VS Code extension — host shell, commands, LSP client, webview hosting | **Implemented** (v0.26) |
+| **Strixonomy** | Rust semantic workspace engine — indexing, queries, diagnostics, reasoning integration, refactoring, CLI, LSP, plugin host | **Implemented** (v0.26) |
+| **Strixonomy** | VS Code extension — host shell, commands, LSP client, webview hosting | **Implemented** (v0.26) |
 | **OntoUI** | Shared React UI platform — component library, design tokens, workspace runtime; lives in `extension/webview-ui/` | **Partial** — WorkspaceStore + focus relay **shipped v0.13**; plugin inspector cards **shipped v0.14** |
-| **OntoStudio** | Future standalone desktop application reusing OntoUI + OntoCore | **Planned** (post v1.0) |
+| **OntoStudio** | Future standalone desktop application reusing OntoUI + Strixonomy | **Planned** (post v1.0) |
 | **Workspace** | Task-oriented product surface (Entity, Graph, Query, Reasoning, Refactoring, …) — **not** a VS Code workspace folder | **Partial** — cross-panel focus sync shipped v0.13; surfaces remain webview panels |
 | **Current Focus** | Active semantic object (entity, axiom, query, diagnostic, graph node) that drives UI synchronization | **Shipped** (v0.13) |
 | **WorkspaceStore** | Single source of truth for OntoUI global state | **Shipped** (v0.26) |
 | **WorkspaceRegistry** | Registry mapping workspace type → factory / component | **Partial** — capability registry shipped v0.14 |
 | **WorkspaceHost** | Host adapter bridging OntoUI to a shell (VS Code webview, future Electron/Tauri) | **Partial** — VS Code extension host only |
 | **Capability Provider** | Plugin-provided implementation of a platform capability (reasoning, querying, AI, refactoring, diagnostics, import/export) | **Shipped** (v0.14) — MVP registry + inspector cards |
-| **Plugin host** | OntoCore runtime that discovers workspace manifests and runs in-process or subprocess plugins | **Shipped** (v0.14) |
-| **Ontologos** | External OWL reasoner (EL/RL/RDFS/DL) integrated via `ontocore-reasoner` | **Implemented** (v0.9+) |
+| **Plugin host** | Strixonomy runtime that discovers workspace manifests and runs in-process or subprocess plugins | **Shipped** (v0.14) |
+| **Ontologos** | External OWL reasoner (EL/RL/RDFS/DL) integrated via `strixonomy-reasoner` | **Implemented** (v0.9+) |
 
 ## Disambiguation
 
 | Avoid | Use instead |
 |-------|-------------|
 | "VS Code workspace" when meaning product UI | **Workspace** (product) or "VS Code workspace folder" |
-| "Shared React UI" / "Frontend platform" | **OntoUI** (implementers); say "OntoCode panels" for end users |
+| "Shared React UI" / "Frontend platform" | **OntoUI** (implementers); say "Strixonomy panels" for end users |
 | "SQL" without qualification | **catalog SQL (subset)** |
 | "Plugin" (generic) | **Capability Provider** when referring to extensibility interfaces |
 | "Panel" (long-term) | **Workspace** (product surface); "panel" OK for current webview implementation |
-| `cargo install ontocode` | `cargo install ontocore-cli` (repo is `ontocode`; CLI crate is `ontocore-cli`) |
-| OntoIndex / `ontoindex` | **OntoCore** / `ontocore` (renamed in v0.9) |
+| `cargo install strixonomy` | `cargo install strixonomy-cli` (repo is `strixonomy`; CLI crate is `strixonomy-cli`) |
+| OntoIndex / `ontoindex` | **Strixonomy** / `strixonomy` (renamed in v0.9) |
 | OntoLogos (alternate casing) | **Ontologos** |
 
 ## See also

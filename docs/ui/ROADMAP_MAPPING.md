@@ -2,9 +2,9 @@
 
 > **Document type:** Engineering / design mapping (GitHub). **Not** the evaluator capability matrix — use [What ships today](../SHIPPED.md) for adoption decisions.
 >
-> **Purpose:** Connect the [Product Roadmap 2.0](PRODUCT_ROADMAP_2.0.md) UX phases to **shipped** OntoCore/OntoCode releases and **planned** platform milestones.
+> **Purpose:** Connect the [Product Roadmap 2.0](PRODUCT_ROADMAP_2.0.md) UX phases to **shipped** Strixonomy/Strixonomy releases and **planned** platform milestones.
 >
-> **Canonical shipped matrix:** [What ships today](../SHIPPED.md) · **Platform roadmap:** [GitHub ROADMAP.md](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md) · **v1.0 checklist:** [v1.0_BACKLOG.md](../design/v1.0_BACKLOG.md)
+> **Canonical shipped matrix:** [What ships today](../SHIPPED.md) · **Platform roadmap:** [GitHub ROADMAP.md](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) · **v1.0 checklist:** [v1.0_BACKLOG.md](../design/v1.0_BACKLOG.md)
 
 ## How to use this document
 
@@ -19,8 +19,8 @@
 
 | Layer | Document | Repo status |
 |-------|----------|-------------|
-| OntoCore engine | [PLATFORM_ARCHITECTURE.md](PLATFORM_ARCHITECTURE.md) | **Shipped** — `ontocore-*` crates |
-| OntoCode VS Code | [PRODUCT_DESIGN_SPECIFICATION.md](PRODUCT_DESIGN_SPECIFICATION.md) | **Shipped** — `extension/` + React `webview-ui/` |
+| Strixonomy engine | [PLATFORM_ARCHITECTURE.md](PLATFORM_ARCHITECTURE.md) | **Shipped** — `strixonomy-*` crates |
+| Strixonomy VS Code | [PRODUCT_DESIGN_SPECIFICATION.md](PRODUCT_DESIGN_SPECIFICATION.md) | **Shipped** — `extension/` + React `webview-ui/` |
 | Shared React UI | [COMPONENT_LIBRARY.md](COMPONENT_LIBRARY.md), [UX_PATTERNS.md](UX_PATTERNS.md) | **Partial** — per-panel React webviews; no shared WorkspaceStore yet |
 | OntoStudio desktop | [ONTOSTUDIO_DESKTOP.md](ONTOSTUDIO_DESKTOP.md) | **Planned** — post v1.0 |
 | Plugin platform | [PLUGIN_PLATFORM.md](PLUGIN_PLATFORM.md), [PLUGIN_API_SPEC.md](PLUGIN_API_SPEC.md) | **Planned** — v0.14 |
@@ -84,7 +84,7 @@ Every item from [PRODUCT_ROADMAP_2.0.md](PRODUCT_ROADMAP_2.0.md), with release a
 | **6** | Undo/redo integration | Planned | v1.0 | VS Code undo on file writes |
 | **7** | AI sidebar | Planned | v1.1 | [AI_EXPERIENCE.md](AI_EXPERIENCE.md) |
 | **7** | Inline suggestions | Planned | v1.1 | [AI_EXPERIENCE.md](AI_EXPERIENCE.md) |
-| **7** | Generate documentation | Partial | v1.1 | `ontocore docs` shipped v0.11; AI assist v1.1 |
+| **7** | Generate documentation | Partial | v1.1 | `strixonomy docs` shipped v0.11; AI assist v1.1 |
 | **7** | Review ontology | Planned | v1.1 | [AI_EXPERIENCE.md](AI_EXPERIENCE.md) |
 | **7** | Repair diagnostics | Planned | v1.1 | [AI_EXPERIENCE.md](AI_EXPERIENCE.md) |
 | **7** | Project-wide AI tasks | Planned | v1.1 | [AI_ORCHESTRATION_ARCHITECTURE.md](AI_ORCHESTRATION_ARCHITECTURE.md) |
@@ -114,7 +114,7 @@ Every item from [PRODUCT_ROADMAP_2.0.md](PRODUCT_ROADMAP_2.0.md), with release a
 | **11** | Community templates | Planned | v1.2 | — |
 | **11** | Enterprise adoption guides | Shipped | v0.11+ | [enterprise-eval](../guides/enterprise-eval.md) |
 | **12** | Browser client | Planned | v1.3 (Post-1.2 Era I) | [PLATFORM_ARCHITECTURE.md](PLATFORM_ARCHITECTURE.md) · [ROADMAP.md Era I](../../ROADMAP.md) |
-| **12** | OntoCore WASM (backendless browser engine) | Planned | v1.3 | [ROADMAP.md Era I](../../ROADMAP.md) |
+| **12** | Strixonomy WASM (backendless browser engine) | Planned | v1.3 | [ROADMAP.md Era I](../../ROADMAP.md) |
 | **12** | React app (no backend) — static SPA | Planned | v1.3 | [ROADMAP.md Era I](../../ROADMAP.md) |
 | **12** | Cloud sync | Planned | Post-1.2 | [PLATFORM_ARCHITECTURE.md](PLATFORM_ARCHITECTURE.md) |
 | **12** | Team workspaces | Planned | Post-1.2 | [COLLABORATION.md](COLLABORATION.md) |
@@ -151,7 +151,7 @@ Every item from [PRODUCT_ROADMAP_2.0.md](PRODUCT_ROADMAP_2.0.md), with release a
 | Refactor + reasoning store slices | 5, 6 | P0 / P1 |
 | Query schema browser | 3 | P1 |
 | Horned-OWL axiom virtual tables | 3 | P1 |
-| Semantic PR summary (`ontocore diff --pr-summary`) | 9 | P1 |
+| Semantic PR summary (`strixonomy diff --pr-summary`) | 9 | P1 |
 | Accessibility + webview tests | supporting | P1 |
 
 Full list: [roadmap.md § v0.13](../roadmap.md)
@@ -223,7 +223,7 @@ Full list: [roadmap.md § v1.2](../roadmap.md)
 | Local AI support | 10 |
 | Enterprise packaging | 10 |
 | Browser client (hosted service + React app no-backend) | 12 |
-| OntoCore WASM MVP (engine for React app no-backend) | 12 |
+| Strixonomy WASM MVP (engine for React app no-backend) | 12 |
 | React app (no backend) — static SPA | 12 |
 | Cloud sync + team workspaces | 12 |
 | Distributed reasoning | 12 |

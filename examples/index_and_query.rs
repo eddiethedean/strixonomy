@@ -3,10 +3,10 @@
 //! Run from the repository root:
 //!
 //! ```bash
-//! cargo run -p ontocode --example index_and_query
+//! cargo run -p strixonomy-workspace --example index_and_query
 //! ```
 
-use ontocore::Workspace;
+use strixonomy::Workspace;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let workspace = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("fixtures");

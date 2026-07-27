@@ -1,9 +1,9 @@
 # Workspace resource limits
 
-OntoCore (`ontocore-*`) enforces limits to keep local indexing predictable and to reduce DoS risk when
+Strixonomy (`strixonomy-*`) enforces limits to keep local indexing predictable and to reduce DoS risk when
 opening untrusted ontology repositories.
 
-Constants live in [`limits.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-core/src/limits.rs).
+Constants live in [`limits.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-core/src/limits.rs).
 
 ## Recommended workspace size
 
@@ -29,7 +29,7 @@ indexing improvements.
 | SQL result rows | **100,000** — **silently truncated** (no error) |
 | SPARQL result rows | **100,000** — **silently truncated** (no error) |
 
-LSP `ontocore/query` and `ontocore/sparql` set `truncated: true` on `TabularQueryResult` when the cap is hit.
+LSP `strixonomy/query` and `strixonomy/sparql` set `truncated: true` on `TabularQueryResult` when the cap is hit.
 
 ## Graph visualization limits
 
@@ -40,7 +40,7 @@ LSP `ontocore/query` and `ontocore/sparql` set `truncated: true` on `TabularQuer
 
 When either cap is hit, `GraphPayload.truncated` is `true` and the graph panel shows a truncation badge. Prefer neighborhood graphs rooted at a specific entity, lower `depth`, or apply ontology / kind / namespace filters.
 
-## `ontocore validate` exit codes
+## `strixonomy validate` exit codes
 
 | Outcome | Exit code |
 |---------|-----------|
@@ -49,7 +49,7 @@ When either cap is hit, `GraphPayload.truncated` is `true` and the graph panel s
 
 Warnings and info diagnostics are printed to stderr but do not fail CI.
 
-## `ontocore classify` exit codes
+## `strixonomy classify` exit codes
 
 | Outcome | Exit code |
 |---------|-----------|

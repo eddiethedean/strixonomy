@@ -5,7 +5,7 @@ import { WorkflowPanel } from "../webviews/workflowPanel";
 import { PluginViewPanel } from "../webviews/pluginViewPanel";
 
 const registered = new Map<string, vscode.Disposable>();
-const output = vscode.window.createOutputChannel("OntoCode Plugins");
+const output = vscode.window.createOutputChannel("Strixonomy Plugins");
 
 function actionForPluginKind(kind: string): "validate" | "export" | "workflow" {
   switch (kind) {
@@ -37,7 +37,7 @@ export async function refreshPluginCommands(
 
   for (const plugin of plugins) {
     for (const cmd of plugin.ui.commands) {
-      const commandId = `ontocode.plugin.${cmd.id}`;
+      const commandId = `strixonomy.plugin.${cmd.id}`;
       const disposable = vscode.commands.registerCommand(commandId, async () => {
         output.appendLine(`Running plugin command: ${plugin.id} — ${cmd.title}`);
         output.show(true);
@@ -61,12 +61,12 @@ export async function refreshPluginCommands(
         }
         if (!result.success) {
           void vscode.window.showErrorMessage(
-            `OntoCode plugin failed: ${plugin.name} — ${cmd.title}`
+            `Strixonomy plugin failed: ${plugin.name} — ${cmd.title}`
           );
           return;
         }
         void vscode.window.showInformationMessage(
-          `OntoCode plugin ran: ${plugin.name} — ${cmd.title}`
+          `Strixonomy plugin ran: ${plugin.name} — ${cmd.title}`
         );
       });
       registered.set(commandId, disposable);
@@ -74,7 +74,7 @@ export async function refreshPluginCommands(
     }
 
     for (const view of plugin.ui.views ?? []) {
-      const commandId = `ontocode.plugin.view.${plugin.id}.${view.id}`;
+      const commandId = `strixonomy.plugin.view.${plugin.id}.${view.id}`;
       const disposable = vscode.commands.registerCommand(commandId, async () => {
         await PluginViewPanel.open(context.extensionUri, plugin, view);
       });

@@ -6,7 +6,7 @@
 
 ELK is a high-performance OWL reasoner designed primarily for the OWL 2 EL profile. Within Protégé it is commonly used for very large ontologies—especially biomedical ontologies—where fast incremental classification is more important than supporting the full OWL 2 DL language.
 
-For OntoCode, ELK should be supported as a first-class pluggable reasoner optimized for speed, scalability, and interactive modeling.
+For Strixonomy, ELK should be supported as a first-class pluggable reasoner optimized for speed, scalability, and interactive modeling.
 
 ---
 
@@ -108,7 +108,7 @@ Small ontology changes should trigger fast incremental updates rather than compl
 
 # Profile Awareness
 
-OntoCode should provide:
+Strixonomy should provide:
 
 - EL profile validation
 - Unsupported construct highlighting
@@ -184,7 +184,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -200,7 +200,7 @@ Recommended enhancements:
 
 # Reasoner Service Interface
 
-ELK should implement the common OntoCode reasoner interface:
+ELK should implement the common Strixonomy reasoner interface:
 
 - initialize()
 - classify()
@@ -248,10 +248,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should automatically recommend ELK for large EL-profile ontologies and seamlessly switch to more expressive reasoners when users require full OWL 2 DL support. A unified reasoner service should make these transitions transparent while preserving a consistent user experience.
+Strixonomy should automatically recommend ELK for large EL-profile ontologies and seamlessly switch to more expressive reasoners when users require full OWL 2 DL support. A unified reasoner service should make these transitions transparent while preserving a consistent user experience.
 
 ---
 
 # Summary
 
-ELK is the performance-focused reasoner in the Protégé ecosystem, providing exceptionally fast classification for OWL 2 EL ontologies. OntoCode should preserve ELK compatibility while enhancing profile awareness, diagnostics, visualization, and incremental reasoning through a modern Rust-based reasoner abstraction and responsive React interface.
+ELK is the performance-focused reasoner in the Protégé ecosystem, providing exceptionally fast classification for OWL 2 EL ontologies. Strixonomy should preserve ELK compatibility while enhancing profile awareness, diagnostics, visualization, and incremental reasoning through a modern Rust-based reasoner abstraction and responsive React interface.

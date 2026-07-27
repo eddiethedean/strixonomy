@@ -99,11 +99,11 @@ Formats: **TTL** = Turtle · **XML** = RDF/XML + OWL/XML · **OBO** = not OWL2 s
 
 ## Wire sync checklist
 
-- [x] `crates/ontocore-owl/src/bridge.rs` catalog projection (+ axiom annotations)
-- [x] `crates/ontocore-owl/src/patch.rs` `PatchOp`
-- [x] `crates/ontocore-edit/src/invert.rs`
-- [x] `crates/ontocore-owl/src/mutate.rs` / `apply_xml.rs`
-- [x] `crates/ontocore-owl/src/manchester.rs`
+- [x] `crates/strixonomy-owl/src/bridge.rs` catalog projection (+ axiom annotations)
+- [x] `crates/strixonomy-owl/src/patch.rs` `PatchOp`
+- [x] `crates/strixonomy-edit/src/invert.rs`
+- [x] `crates/strixonomy-owl/src/mutate.rs` / `apply_xml.rs`
+- [x] `crates/strixonomy-owl/src/manchester.rs`
 - [x] `docs/patch-reference.md`
 - [x] `extension/src/lsp/protocol.ts` + webview messages
 - [x] Inspector / Manchester UI

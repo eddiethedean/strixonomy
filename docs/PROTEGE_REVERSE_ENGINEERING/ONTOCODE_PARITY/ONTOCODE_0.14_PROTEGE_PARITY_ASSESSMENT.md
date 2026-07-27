@@ -1,8 +1,8 @@
-# OntoCode 0.14 Protégé Parity Assessment
+# Strixonomy 0.14 Protégé Parity Assessment
 
 ## Executive Summary
 
-Based on the current OntoCode 0.14 repository, the project has progressed well beyond an early prototype. Core ontology engineering capabilities are largely in place, and the remaining work is concentrated in several large platform-level initiatives rather than numerous isolated features.
+Based on the current Strixonomy 0.14 repository, the project has progressed well beyond an early prototype. Core ontology engineering capabilities are largely in place, and the remaining work is concentrated in several large platform-level initiatives rather than numerous isolated features.
 
 Estimated parity:
 
@@ -31,7 +31,7 @@ Estimated parity:
 
 # Areas Already Beyond Protégé
 
-OntoCode already exceeds Protégé in several important areas:
+Strixonomy already exceeds Protégé in several important areas:
 
 - Semantic diff
 - Git-oriented workflows
@@ -241,10 +241,10 @@ Current estimates:
 | Core ontology engineering | ~95% |
 | Protégé Desktop parity | ~88–90% |
 | WebProtégé parity | ~10–15% |
-| Full OntoCode platform vision | ~55–60% |
+| Full Strixonomy platform vision | ~55–60% |
 
 ## Conclusion
 
-OntoCode is no longer primarily missing ontology editing features. The remaining work is centered on platform maturity: plugins, collaboration, visualization, workspace management, and the standalone OntoStudio application.
+Strixonomy is no longer primarily missing ontology editing features. The remaining work is centered on platform maturity: plugins, collaboration, visualization, workspace management, and the standalone OntoStudio application.
 
-Completing those initiatives will position OntoCode as a modern successor to Protégé rather than simply an alternative editor.
+Completing those initiatives will position Strixonomy as a modern successor to Protégé rather than simply an alternative editor.

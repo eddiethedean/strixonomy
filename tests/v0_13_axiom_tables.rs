@@ -4,8 +4,8 @@ mod support;
 
 use std::path::PathBuf;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_query::query_catalog;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_query::query_catalog;
 
 fn complex_classes_workspace() -> PathBuf {
     support::fixture_workspace()
@@ -84,7 +84,7 @@ fn list_sql_schema_matches_queryable_axiom_tables() {
     let catalog =
         IndexBuilder::new().workspace(complex_classes_workspace()).build().expect("index fixtures");
 
-    let schema = ontocore_query::list_sql_schema(&catalog);
+    let schema = strixonomy_query::list_sql_schema(&catalog);
     let names: Vec<_> = schema.iter().map(|t| t.name.as_str()).collect();
     for table in [
         "restrictions",

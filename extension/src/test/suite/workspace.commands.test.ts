@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
 import { FIXTURE_IRIS, fixturesWorkspaceUri } from "./helpers";
 
-interface OntoCodeApi {
+interface StrixonomyApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<{
     stats: { error_count: number; class_count: number };
@@ -17,13 +17,13 @@ interface OntoCodeApi {
   }>;
 }
 
-suite("OntoCode workspace commands (VS Code e2e)", () => {
-  let api: OntoCodeApi;
+suite("Strixonomy workspace commands (VS Code e2e)", () => {
+  let api: StrixonomyApi;
 
   suiteSetup(async function () {
     this.timeout(120_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     api = await ext.activate();
     assert.ok(ext.isActive, "extension should be active after activate()");
   });
@@ -32,7 +32,7 @@ suite("OntoCode workspace commands (VS Code e2e)", () => {
     this.timeout(60_000);
     const workspaceUri = fixturesWorkspaceUri();
 
-    await vscode.commands.executeCommand("ontocode.indexWorkspace");
+    await vscode.commands.executeCommand("strixonomy.indexWorkspace");
 
     const snapshot = await api.getCatalogSnapshot();
     assert.ok(snapshot.documents.length > 0, "catalog should list ontology documents");
@@ -46,7 +46,7 @@ suite("OntoCode workspace commands (VS Code e2e)", () => {
     this.timeout(60_000);
     await api.indexWorkspace(fixturesWorkspaceUri());
 
-    await vscode.commands.executeCommand("ontocode.refreshExplorer");
+    await vscode.commands.executeCommand("strixonomy.refreshExplorer");
 
     const snapshot = await api.getCatalogSnapshot();
     assert.ok(

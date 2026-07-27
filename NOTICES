@@ -1,7 +1,7 @@
-OntoCode / OntoCore third-party notices (v0.26.2)
+Strixonomy / Strixonomy third-party notices (v0.26.2)
 
-This product includes software developed by third parties. OntoCore and
-OntoCode are licensed under MIT OR Apache-2.0 at your option (see LICENSE-MIT
+This product includes software developed by third parties. Strixonomy and
+Strixonomy are licensed under MIT OR Apache-2.0 at your option (see LICENSE-MIT
 and LICENSE-APACHE-2.0 in this repository).
 
 Direct runtime dependencies (v0.26.2 workspace):
@@ -10,10 +10,10 @@ Direct runtime dependencies (v0.26.2 workspace):
 - sqlparser (Apache-2.0) — https://github.com/sqlparser-rs/sqlparser-rs
 - ignore (Unlicense OR MIT) — https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore
 - horned-owl (LGPL-3.0) — https://github.com/phillord/horned-owl
-  Linked via ontocore-owl for OWL modeling and Turtle write-back. If you
+  Linked via strixonomy-owl for OWL modeling and Turtle write-back. If you
   distribute binaries, comply with LGPL-3.0 (source offer, license text).
 - OntoLogos crates (MIT OR Apache-2.0) — https://github.com/eddiethedean/ontologos
-  Linked via ontocore-reasoner for EL/RL/RDFS/DL classification.
+  Linked via strixonomy-reasoner for EL/RL/RDFS/DL classification.
 - reasonable (BSD-3-Clause) — https://github.com/gtfierro/reasonable
   Transitive via OntoLogos.
 - fastobo, fastobo-owl, fastobo-validator (MIT) — https://github.com/fastobo

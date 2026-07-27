@@ -23,7 +23,7 @@ Use a **dual stack**:
 | **RDF / SPARQL** | Oxigraph | Parse/store triples, SPARQL, triple counts, fast scan |
 | **OWL modeling** | Horned-OWL | OWL 2 axiom model, Manchester syntax, class expressions, edit/diff round-trip |
 
-New crate: **`ontocore-owl`** — Horned-OWL facade (`horned-owl` + `horned-functional` direct per [ADR-0016](0016-dependency-first-implementation.md) Appendix A). Reasoning loads via `ontologos-parser` in `ontocore-reasoner`, not in `ontocore-owl`.
+New crate: **`strixonomy-owl`** — Horned-OWL facade (`horned-owl` + `horned-functional` direct per [ADR-0016](0016-dependency-first-implementation.md) Appendix A). Reasoning loads via `ontologos-parser` in `strixonomy-reasoner`, not in `strixonomy-owl`.
 
 ### Data flow
 

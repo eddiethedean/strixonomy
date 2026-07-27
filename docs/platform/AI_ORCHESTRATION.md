@@ -18,7 +18,7 @@ Idle → ContextBuilt → ProposalGenerated → PatchValidated → PreviewShown
 |-------|-------------|
 | `ContextBuilt` | Current Focus, entity, diagnostics, graph neighborhood assembled |
 | `ProposalGenerated` | Model returns structured patch or refactor ops |
-| `PatchValidated` | OntoCore validates ops against catalog |
+| `PatchValidated` | Strixonomy validates ops against catalog |
 | `PreviewShown` | User sees diff / impact summary (**required**) |
 | `Applied` | LSP `applyAxiomPatch` or refactor apply after explicit approval |
 

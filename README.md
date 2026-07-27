@@ -1,38 +1,38 @@
-# OntoCode
+# Strixonomy
 
-**OntoCode** edits OWL/RDF/OBO ontologies in VS Code (**1.85+**). Install the [extension](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) (publisher **OntoCode**, id `ontocode.ontocode`), open a folder of `.ttl` / `.obo` / `.owl` files, and use the **OntoCode** activity bar.
+**Strixonomy** edits OWL/RDF/OBO ontologies in VS Code (**1.85+**). Install the [extension](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (publisher **Strixonomy**, id `strixonomy.strixonomy`), open a folder of `.ttl` / `.obo` / `.owl` files, and use the **Strixonomy** activity bar.
 
-**Next:** [First success (~10 min)](https://ontocode-vs.readthedocs.io/en/latest/guides/first-success/) — no clone required.
+**Next:** [First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/) — no clone required.
 
-**Current release: v0.26.2** · [What ships today](https://ontocode-vs.readthedocs.io/en/latest/SHIPPED/) · [Changelog](CHANGELOG.md) · [Docs](https://ontocode-vs.readthedocs.io/en/latest/)
+**Current release: v0.26.2** · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy-vs.readthedocs.io/en/latest/)
 
-[![CI](https://github.com/eddiethedean/ontocode/actions/workflows/ci.yml/badge.svg)](https://github.com/eddiethedean/ontocode/actions/workflows/ci.yml)
-[![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](https://github.com/eddiethedean/ontocode/blob/main/LICENSE-MIT)
-[![Docs](https://readthedocs.org/projects/ontocode-vs/badge/?version=latest)](https://ontocode-vs.readthedocs.io/en/latest/)
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/ontocode.ontocode.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode)
-[![Open VSX](https://img.shields.io/open-vsx/v/ontocode/ontocode)](https://open-vsx.org/extension/ontocode/ontocode)
-[![crates.io](https://img.shields.io/crates/v/ontocore?logo=rust)](https://crates.io/crates/ontocore)
+[![CI](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml/badge.svg)](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](https://github.com/eddiethedean/strixonomy/blob/main/LICENSE-MIT)
+[![Docs](https://readthedocs.org/projects/strixonomy-vs/badge/?version=latest)](https://strixonomy-vs.readthedocs.io/en/latest/)
+[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
+[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
+[![crates.io](https://img.shields.io/crates/v/strixonomy?logo=rust)](https://crates.io/crates/strixonomy)
 
-![OntoCode product tour](docs/assets/screenshots/product-tour.gif)
+![Strixonomy product tour](docs/assets/screenshots/product-tour.gif)
 
 ## Start here
 
-**Primary path:** Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) → **[First success (~10 min)](https://ontocode-vs.readthedocs.io/en/latest/guides/first-success/)**.
+**Primary path:** Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)**.
 
 | I want to… | Start here |
 |------------|------------|
-| **Edit ontologies in VS Code** | **[First success (~10 min)](https://ontocode-vs.readthedocs.io/en/latest/guides/first-success/)** |
-| **CI / automation only** | **Linux x64:** release tarball → [CI guide](https://ontocode-vs.readthedocs.io/en/latest/ci-integration/). **macOS/Windows:** [Install CLI](https://ontocode-vs.readthedocs.io/en/latest/guides/install-cli/) (`cargo install` 15–30+ min — not needed for the IDE) |
-| Decide if it fits | [Known limitations](https://ontocode-vs.readthedocs.io/en/latest/known-limitations/) · [What ships today](https://ontocode-vs.readthedocs.io/en/latest/SHIPPED/) · [Versions & channels](https://ontocode-vs.readthedocs.io/en/latest/guides/versions-and-channels/) · [Evaluate pack](https://ontocode-vs.readthedocs.io/en/latest/guides/enterprise-eval/) |
-| Try examples | [Examples](https://ontocode-vs.readthedocs.io/en/latest/examples/) · repo [`examples/`](examples/) |
-| Embed in Rust | [Rust library guide](https://ontocode-vs.readthedocs.io/en/latest/guides/rust-library/) |
+| **Edit ontologies in VS Code** | **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)** |
+| **CI / automation only** | **Linux x64:** release tarball → [CI guide](https://strixonomy-vs.readthedocs.io/en/latest/ci-integration/). **macOS/Windows:** [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/) (`cargo install` 15–30+ min — not needed for the IDE) |
+| Decide if it fits | [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Versions & channels](https://strixonomy-vs.readthedocs.io/en/latest/guides/versions-and-channels/) · [Evaluate pack](https://strixonomy-vs.readthedocs.io/en/latest/guides/enterprise-eval/) |
+| Try examples | [Examples](https://strixonomy-vs.readthedocs.io/en/latest/examples/) · repo [`examples/`](examples/) |
+| Embed in Rust | [Rust library guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-library/) |
 | Contribute | [CONTRIBUTING.md](CONTRIBUTING.md) |
 
-Full documentation: **[Read the Docs](https://ontocode-vs.readthedocs.io/en/latest/)**. You do not need to clone this repo to use the extension or installed CLI.
+Full documentation: **[Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/)**. You do not need to clone this repo to use the extension or installed CLI.
 
 ## See it in action
 
-[Feature tour](https://ontocode-vs.readthedocs.io/en/latest/ontocode/feature-tour/) · [First success](https://ontocode-vs.readthedocs.io/en/latest/guides/first-success/) (~10 min, no clone)
+[Feature tour](https://strixonomy-vs.readthedocs.io/en/latest/ide/feature-tour/) · [First success](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/) (~10 min, no clone)
 
 <p>
 <img src="docs/assets/screenshots/explorer-inspector.png" alt="Explorer and Entity Inspector" width="48%" />
@@ -43,39 +43,39 @@ Full documentation: **[Read the Docs](https://ontocode-vs.readthedocs.io/en/late
 
 | Install | Command / link |
 |---------|----------------|
-| **VS Code extension** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or [GitHub Releases](https://github.com/eddiethedean/ontocode/releases) `ontocode-v0.26.2.vsix` |
-| **CLI (Linux x64)** | Release tarball — full steps: [CI integration](https://ontocode-vs.readthedocs.io/en/latest/ci-integration/) |
-| **CLI (macOS/Windows)** | `cargo install ontocore-cli --locked --version 0.26.2` (Rust 1.88+; 15–30+ min cold) — [Install CLI](https://ontocode-vs.readthedocs.io/en/latest/guides/install-cli/) |
-| **Crates** | [`ontocore`](https://crates.io/crates/ontocore) on [crates.io](https://crates.io/search?q=ontocore) |
+| **VS Code extension** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) `strixonomy-v0.26.2.vsix` |
+| **CLI (Linux x64)** | Release tarball — full steps: [CI integration](https://strixonomy-vs.readthedocs.io/en/latest/ci-integration/) |
+| **CLI (macOS/Windows)** | `cargo install strixonomy-cli --locked --version 0.26.2` (Rust 1.88+; 15–30+ min cold) — [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/) |
+| **Crates** | [`strixonomy`](https://crates.io/crates/strixonomy) on [crates.io](https://crates.io/search?q=strixonomy) |
 
-Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI — the extension bundles `ontocore-lsp`.
+Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`.
 
-> **Names:** **OntoCode** = VS Code extension. **OntoCore** = Rust engine (`ontocore` CLI + `ontocore-lsp`). **Ontologos** = external reasoner. This GitHub repo is `ontocode` — install the CLI with **`cargo install ontocore-cli`**, not `ontocode`.
+> **Names:** **Strixonomy** = VS Code extension. **Strixonomy** = Rust engine (`strixonomy` CLI + `strixonomy-lsp`). **Ontologos** = external reasoner. This GitHub repo is `strixonomy` — install the CLI with **`cargo install strixonomy-cli`**, not `strixonomy`.
 
-**Editable today:** Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`). XML saves are **semantic re-serialize** (not byte-identical to Protégé). JSON-LD / N-Triples / TriG remain read-only — [Supported formats](https://ontocode-vs.readthedocs.io/en/latest/supported-formats/) · [Known limitations](https://ontocode-vs.readthedocs.io/en/latest/known-limitations/).
+**Editable today:** Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`). XML saves are **semantic re-serialize** (not byte-identical to Protégé). JSON-LD / N-Triples / TriG remain read-only — [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/) · [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/).
 
-Evaluators: use [What ships today](https://ontocode-vs.readthedocs.io/en/latest/SHIPPED/) and [Known limitations](https://ontocode-vs.readthedocs.io/en/latest/known-limitations/) as the capability source of truth. GitHub trees `docs/protege-parity/` and `docs/PROTEGE_REVERSE_ENGINEERING/` are engineering notes, not product claims.
+Evaluators: use [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) and [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) as the capability source of truth. GitHub trees `docs/protege-parity/` and `docs/PROTEGE_REVERSE_ENGINEERING/` are engineering notes, not product claims.
 
 ## Quick start
 
-**VS Code:** Install [OntoCode](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) → open a folder of **`.ttl` / `.obo` / `.owl` / `.rdf` / `.owx`** (editable) or JSON-LD / TriG / N-Triples (browse/query only) → click the **OntoCode** activity bar. Edit in the Entity Inspector. XML write-back is semantic re-serialize — see [OWL/XML and RDF/XML write-back](https://ontocode-vs.readthedocs.io/en/latest/guides/owl-xml-workflow/) and [Supported formats](https://ontocode-vs.readthedocs.io/en/latest/supported-formats/).
+**VS Code:** Install [Strixonomy](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → open a folder of **`.ttl` / `.obo` / `.owl` / `.rdf` / `.owx`** (editable) or JSON-LD / TriG / N-Triples (browse/query only) → click the **Strixonomy** activity bar. Edit in the Entity Inspector. XML write-back is semantic re-serialize — see [OWL/XML and RDF/XML write-back](https://strixonomy-vs.readthedocs.io/en/latest/guides/owl-xml-workflow/) and [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/).
 
-> **Workspace Trust:** The **bundled** language server works in Restricted Mode. **Do not Trust the workspace** unless you configured `ontocode.lspPath` or `ontocode.robotPath`.
+> **Workspace Trust:** The **bundled** language server works in Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
 
 **CI / automation only (not required for the IDE):**
 
-- **Linux x64:** [CI integration](https://ontocode-vs.readthedocs.io/en/latest/ci-integration/) — download tarball, verify checksums, run the versioned binary.
-- **macOS/Windows or from source:** [Install CLI](https://ontocode-vs.readthedocs.io/en/latest/guides/install-cli/). Cold `cargo install` may take **15–30+ minutes** (Rust 1.88+).
+- **Linux x64:** [CI integration](https://strixonomy-vs.readthedocs.io/en/latest/ci-integration/) — download tarball, verify checksums, run the versioned binary.
+- **macOS/Windows or from source:** [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/). Cold `cargo install` may take **15–30+ minutes** (Rust 1.88+).
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
-ontocore validate /path/to/ontologies
+cargo install strixonomy-cli --locked --version 0.26.2
+strixonomy validate /path/to/ontologies
 ```
 
 **From a clone (same smoke command everywhere):**
 
 ```bash
-git clone https://github.com/eddiethedean/ontocode.git && cd ontocode
+git clone https://github.com/eddiethedean/strixonomy.git && cd strixonomy
 cargo run -- validate fixtures
 ```
 
@@ -83,7 +83,7 @@ cargo run -- validate fixtures
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│  OntoCode (VS Code) ──ontocore-lsp──► OntoCore (Rust engine) │
+│  Strixonomy (VS Code) ──strixonomy-lsp──► Strixonomy (Rust engine) │
 │  index · query · diagnostics · refactor · diff · CLI · LSP   │
 └──────────────┬─────────────────────────────┬───────────────────┘
                ▼                             ▼
@@ -93,9 +93,9 @@ cargo run -- validate fixtures
         └─────────────┘              └──────────────────┘
 ```
 
-Platform docs: [Vision](https://ontocode-vs.readthedocs.io/en/latest/vision/) · [Architecture](ARCHITECTURE.md) · [Roadmap hub](https://ontocode-vs.readthedocs.io/en/latest/roadmap-hub/) · [Protégé vs OntoCode](https://ontocode-vs.readthedocs.io/en/latest/guides/protege-decision/)
+Platform docs: [Vision](https://strixonomy-vs.readthedocs.io/en/latest/vision/) · [Architecture](ARCHITECTURE.md) · [Roadmap hub](https://strixonomy-vs.readthedocs.io/en/latest/roadmap-hub/) · [Protégé vs Strixonomy](https://strixonomy-vs.readthedocs.io/en/latest/guides/protege-decision/)
 
-**v0.26.2** adds Protégé-aligned edit/hierarchy oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy support. **Not a Protégé replacement** — see [Known limitations](https://ontocode-vs.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://ontocode-vs.readthedocs.io/en/latest/SHIPPED/), [v0.26 migration](docs/migration/v0.26.md).
+**v0.26.2** adds Protégé-aligned edit/hierarchy oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy support. **Not a Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/), [v0.26 migration](docs/migration/v0.26.md).
 
 ## Development
 
@@ -103,8 +103,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Quick checks:
 
 ```bash
 cargo test --workspace
-cargo build -p ontocore-lsp --bins
-cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/ontocore-lsp npm test
+cargo build -p strixonomy-lsp --bins
+cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm test
 cd extension/webview-ui && npm ci && npm test
 cargo fmt --all && cargo clippy --workspace --all-targets --all-features -- -D warnings
 ```
@@ -113,4 +113,4 @@ cargo fmt --all && cargo clippy --workspace --all-targets --all-features -- -D w
 
 ## License
 
-MIT OR Apache-2.0. Third-party licenses: [LICENSES](https://ontocode-vs.readthedocs.io/en/latest/design/LICENSES/). Security: [security policy](https://ontocode-vs.readthedocs.io/en/latest/security/).
+MIT OR Apache-2.0. Third-party licenses: [LICENSES](https://strixonomy-vs.readthedocs.io/en/latest/design/LICENSES/). Security: [security policy](https://strixonomy-vs.readthedocs.io/en/latest/security/).

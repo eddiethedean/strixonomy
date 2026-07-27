@@ -4,8 +4,8 @@
 
 mod support;
 
-use ontocore_owl::PatchOp;
 use std::collections::BTreeMap;
+use strixonomy_owl::PatchOp;
 use support::protege_port::{
     apply_patches_reindex, copy_ported_tree, index_workspace, standard_ns,
 };

@@ -5,9 +5,9 @@
 **Status:** Living Reference Document\
 **Purpose:** Audit keyboard shortcuts and keyboard-driven workflows in a
 standard Protégé Desktop installation and define equivalent expectations
-for OntoCode.
+for Strixonomy.
 
-> Functional keyboard accessibility is the goal. OntoCode is not
+> Functional keyboard accessibility is the goal. Strixonomy is not
 > required to duplicate Protégé's exact key bindings, especially when
 > running inside VS Code/Cursor where IDE shortcuts take precedence.
 
@@ -36,7 +36,7 @@ for OntoCode.
 ## File Operations
 
   -----------------------------------------------------------------------
-  Workflow          Protégé Shortcut  OntoCode          Status
+  Workflow          Protégé Shortcut  Strixonomy          Status
                                       Equivalent        
   ----------------- ----------------- ----------------- -----------------
   New ontology      Platform          VS Code command / REVIEW

@@ -104,7 +104,7 @@ function bootRegistry(): void {
     },
     {
       id: "about",
-      title: "About OntoCode",
+      title: "About Strixonomy",
       panelKind: "about",
       component: AboutPanel,
     },

@@ -111,16 +111,16 @@ if [[ "$VERSION" != "$TAGGED_VERSION" ]]; then
 fi
 check_file_contains "docs/release-integrity.md" "VERSION=${TAGGED_VERSION}" "release-integrity example version"
 check_file_contains "docs/TAGGED_RELEASE" "${TAGGED_VERSION}" "TAGGED_RELEASE file"
-check_file_contains "mkdocs.yml" "site_url: https://ontocode-vs.readthedocs.io/" "mkdocs site_url matches RTD"
-check_file_contains "README.md" "readthedocs.org/projects/ontocode-vs/badge" "RTD docs badge slug"
+check_file_contains "mkdocs.yml" "site_url: https://strixonomy-vs.readthedocs.io/" "mkdocs site_url matches RTD"
+check_file_contains "README.md" "readthedocs.org/projects/strixonomy-vs/badge" "RTD docs badge slug"
 
 # Reference page titles must match latest tagged release (public install target)
 for file in docs/authoring.md docs/sql-reference.md docs/sparql-reference.md docs/patch-reference.md docs/cli-reference.md docs/errors.md; do
-  if grep -qE "^# .+ \(OntoCore v0\.5\)" "$file"; then
+  if grep -qE "^# .+ \(Strixonomy v0\.5\)" "$file"; then
     echo "FAIL: stale v0.5 title in $file" >&2
     fail=1
-  elif ! grep -qE "^# .+ \(Onto(Index|Core) v${TAGGED_MINOR}\)" "$file"; then
-    echo "FAIL: reference title in $file should mention OntoCore v${TAGGED_MINOR} (latest tagged)" >&2
+  elif ! grep -qE "^# .+ \(Strixonomy v${TAGGED_MINOR}\)" "$file"; then
+    echo "FAIL: reference title in $file should mention Strixonomy v${TAGGED_MINOR} (latest tagged)" >&2
     fail=1
   else
     echo "ok: reference title $file"
@@ -297,7 +297,7 @@ USER_FACING_DOCS=(
   docs/security.md
 )
 for file in "${USER_FACING_DOCS[@]}"; do
-  if grep -qE '0\.7\.x \(current\)|ships in v0\.7\.0|OntoCore v0\.7\.0|OntoCode v0\.7\.0|at \*\*0\.7\.x\*\*' "$file" 2>/dev/null; then
+  if grep -qE '0\.7\.x \(current\)|ships in v0\.7\.0|Strixonomy v0\.7\.0|Strixonomy v0\.7\.0|at \*\*0\.7\.x\*\*' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.7.x current-release claim in $file" >&2
     fail=1
   fi
@@ -308,7 +308,7 @@ fi
 
 # User-facing docs must not claim 0.8.x is the current release
 for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md; do
-  if grep -qE '0\.8\.x \(current\)|ships in v0\.8\.0|OntoCore v0\.8\.0|OntoCode v0\.8\.0|at \*\*0\.8\.x\*\*' "$file" 2>/dev/null; then
+  if grep -qE '0\.8\.x \(current\)|ships in v0\.8\.0|Strixonomy v0\.8\.0|Strixonomy v0\.8\.0|at \*\*0\.8\.x\*\*' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.8.x current-release claim in $file" >&2
     fail=1
   fi
@@ -319,7 +319,7 @@ fi
 
 # User-facing docs must not claim 0.9.x is the current release
 for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md; do
-  if grep -qE '0\.9\.x \(current\)|0\.9\.0 \| Current|ships in v0\.9\.0|OntoCore v0\.9\.0|OntoCode v0\.9\.0|at \*\*0\.9\.x\*\*|for OntoCode \*\*v0\.9\.0\*\*|OntoCore \*\*v0\.9\.0\*\*' "$file" 2>/dev/null; then
+  if grep -qE '0\.9\.x \(current\)|0\.9\.0 \| Current|ships in v0\.9\.0|Strixonomy v0\.9\.0|Strixonomy v0\.9\.0|at \*\*0\.9\.x\*\*|for Strixonomy \*\*v0\.9\.0\*\*|Strixonomy \*\*v0\.9\.0\*\*' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.9.x current-release claim in $file" >&2
     fail=1
   fi
@@ -329,8 +329,8 @@ if [[ "$fail" -eq 0 ]]; then
 fi
 
 # User-facing docs must not claim 0.10.x is the current release
-for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/ontocore/index.md docs/ontocore/rust-api.md docs/ontocode/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ontocode/semantic-diff.md; do
-  if grep -qE '0\.10\.x \(current\)|0\.10\.0 \| Current|ships in v0\.10\.0|OntoCore v0\.10\.0|OntoCode v0\.10\.0|at \*\*0\.10\.x\*\*|for OntoCode \*\*v0\.10\.0\*\*|OntoCore \*\*v0\.10\.0\*\*|Current release: v0\.10\.0|What v0\.10\.0 delivers|OntoCode v0\.10 is|OntoCode v0\.10 targets|OntoCode v0\.10 supports|evaluating OntoCode \*\*v0\.10\*\*|OntoCode \*\*v0\.10\*\*|OntoCore v0\.10\.0|OntoCode v0\.10\.0\+' "$file" 2>/dev/null; then
+for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/strixonomy/index.md docs/strixonomy/rust-api.md docs/ide/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ide/semantic-diff.md; do
+  if grep -qE '0\.10\.x \(current\)|0\.10\.0 \| Current|ships in v0\.10\.0|Strixonomy v0\.10\.0|Strixonomy v0\.10\.0|at \*\*0\.10\.x\*\*|for Strixonomy \*\*v0\.10\.0\*\*|Strixonomy \*\*v0\.10\.0\*\*|Current release: v0\.10\.0|What v0\.10\.0 delivers|Strixonomy v0\.10 is|Strixonomy v0\.10 targets|Strixonomy v0\.10 supports|evaluating Strixonomy \*\*v0\.10\*\*|Strixonomy \*\*v0\.10\*\*|Strixonomy v0\.10\.0|Strixonomy v0\.10\.0\+' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.10.x current-release claim in $file" >&2
     fail=1
   fi
@@ -340,8 +340,8 @@ if [[ "$fail" -eq 0 ]]; then
 fi
 
 # User-facing docs must not claim 0.11.0 is the current release (0.11.3+)
-for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/ontocore/index.md docs/ontocore/rust-api.md docs/ontocode/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ontocode/semantic-diff.md docs/SHIPPED.md docs/index.md README.md extension/README.md; do
-  if grep -qE '0\.11\.0 \| Current|Current release: v0\.11\.0|What ships today \(v0\.11\.0\)|ships in v0\.11\.0|OntoCore v0\.11\.0|OntoCode v0\.11\.0|for OntoCode \*\*v0\.11\.0\*\*|OntoCore \*\*v0\.11\.0\*\*|documentation · v0\.11\.0' "$file" 2>/dev/null; then
+for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/strixonomy/index.md docs/strixonomy/rust-api.md docs/ide/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ide/semantic-diff.md docs/SHIPPED.md docs/index.md README.md extension/README.md; do
+  if grep -qE '0\.11\.0 \| Current|Current release: v0\.11\.0|What ships today \(v0\.11\.0\)|ships in v0\.11\.0|Strixonomy v0\.11\.0|Strixonomy v0\.11\.0|for Strixonomy \*\*v0\.11\.0\*\*|Strixonomy \*\*v0\.11\.0\*\*|documentation · v0\.11\.0' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.11.0 current-release claim in $file" >&2
     fail=1
   fi
@@ -351,8 +351,8 @@ if [[ "$fail" -eq 0 ]]; then
 fi
 
 # User-facing docs must not claim 0.11.1 is the current release (0.11.3+)
-for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/ontocore/index.md docs/ontocore/rust-api.md docs/ontocode/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ontocode/semantic-diff.md docs/SHIPPED.md docs/index.md README.md extension/README.md; do
-  if grep -qE '0\.11\.1 \| Current|Current release: v0\.11\.1|What ships today \(v0\.11\.1\)|ships in v0\.11\.1|OntoCore v0\.11\.1|OntoCode v0\.11\.1|for OntoCode \*\*v0\.11\.1\*\*|OntoCore \*\*v0\.11\.1\*\*|documentation · v0\.11\.1|What.s included in v0\.11\.1' "$file" 2>/dev/null; then
+for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/strixonomy/index.md docs/strixonomy/rust-api.md docs/ide/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ide/semantic-diff.md docs/SHIPPED.md docs/index.md README.md extension/README.md; do
+  if grep -qE '0\.11\.1 \| Current|Current release: v0\.11\.1|What ships today \(v0\.11\.1\)|ships in v0\.11\.1|Strixonomy v0\.11\.1|Strixonomy v0\.11\.1|for Strixonomy \*\*v0\.11\.1\*\*|Strixonomy \*\*v0\.11\.1\*\*|documentation · v0\.11\.1|What.s included in v0\.11\.1' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.11.1 current-release claim in $file" >&2
     fail=1
   fi
@@ -362,8 +362,8 @@ if [[ "$fail" -eq 0 ]]; then
 fi
 
 # User-facing docs must not claim 0.11.2 is the current release (0.11.3+)
-for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/ontocore/index.md docs/ontocore/rust-api.md docs/ontocode/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ontocode/semantic-diff.md docs/SHIPPED.md docs/index.md README.md extension/README.md; do
-  if grep -qE '0\.11\.2 \| Current|Current release: v0\.11\.2|What ships today \(v0\.11\.2\)|ships in v0\.11\.2|OntoCore v0\.11\.2|OntoCode v0\.11\.2|for OntoCode \*\*v0\.11\.2\*\*|OntoCore \*\*v0\.11\.2\*\*|documentation · v0\.11\.2|What.s included in v0\.11\.2' "$file" 2>/dev/null; then
+for file in "${USER_FACING_DOCS[@]}" docs/guides/protege-decision.md docs/guides/production-evidence.md docs/guides/release-timeline.md docs/guides/platform-compatibility.md docs/guides/obo-workflow.md docs/guides/lgpl-compliance.md docs/authoring.md docs/patch-reference.md docs/guides/enterprise-eval.md docs/guides/protege-migration.md docs/guides/protege-coexistence.md docs/strixonomy/index.md docs/strixonomy/rust-api.md docs/ide/feature-tour.md docs/architecture.md docs/vision.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md docs/guides/robot-interop.md docs/guides/enterprise-deployment.md docs/guides/performance-sizing.md docs/ci-integration.md docs/guides/first-success.md docs/ide/semantic-diff.md docs/SHIPPED.md docs/index.md README.md extension/README.md; do
+  if grep -qE '0\.11\.2 \| Current|Current release: v0\.11\.2|What ships today \(v0\.11\.2\)|ships in v0\.11\.2|Strixonomy v0\.11\.2|Strixonomy v0\.11\.2|for Strixonomy \*\*v0\.11\.2\*\*|Strixonomy \*\*v0\.11\.2\*\*|documentation · v0\.11\.2|What.s included in v0\.11\.2' "$file" 2>/dev/null; then
     echo "FAIL: stale 0.11.2 current-release claim in $file" >&2
     fail=1
   fi
@@ -388,58 +388,58 @@ if [[ "$fail" -eq 0 ]]; then
   echo "ok: no stale 0.15.x current-release claims in user-facing docs"
 fi
 
-# Reference status banners must not contradict OntoCore v{N} titles
+# Reference status banners must not contradict Strixonomy v{N} titles
 for file in docs/authoring.md docs/sql-reference.md docs/sparql-reference.md docs/patch-reference.md docs/lsp-api.md docs/errors.md docs/webview-protocol.md; do
-  if grep -qE 'OntoCore v0\.8' "$file" 2>/dev/null; then
-    echo "FAIL: stale OntoCore v0.8 status banner in $file" >&2
+  if grep -qE 'Strixonomy v0\.8' "$file" 2>/dev/null; then
+    echo "FAIL: stale Strixonomy v0.8 status banner in $file" >&2
     fail=1
   fi
-  if grep -qE 'OntoCore v0\.9' "$file" 2>/dev/null; then
-    echo "FAIL: stale OntoCore v0.9 status banner in $file" >&2
+  if grep -qE 'Strixonomy v0\.9' "$file" 2>/dev/null; then
+    echo "FAIL: stale Strixonomy v0.9 status banner in $file" >&2
     fail=1
   fi
-  if grep -qE 'OntoCore v0\.10' "$file" 2>/dev/null; then
-    echo "FAIL: stale OntoCore v0.10 status banner in $file" >&2
+  if grep -qE 'Strixonomy v0\.10' "$file" 2>/dev/null; then
+    echo "FAIL: stale Strixonomy v0.10 status banner in $file" >&2
     fail=1
   fi
-  if grep -qE 'OntoCore v0\.11\.0' "$file" 2>/dev/null; then
-    echo "FAIL: stale OntoCore v0.11.0 status banner in $file" >&2
+  if grep -qE 'Strixonomy v0\.11\.0' "$file" 2>/dev/null; then
+    echo "FAIL: stale Strixonomy v0.11.0 status banner in $file" >&2
     fail=1
   fi
-  if grep -qE 'OntoCore v0\.11\.1' "$file" 2>/dev/null; then
-    echo "FAIL: stale OntoCore v0.11.1 status banner in $file" >&2
+  if grep -qE 'Strixonomy v0\.11\.1' "$file" 2>/dev/null; then
+    echo "FAIL: stale Strixonomy v0.11.1 status banner in $file" >&2
     fail=1
   fi
-  if grep -qE 'OntoCore v0\.11\.2' "$file" 2>/dev/null; then
-    echo "FAIL: stale OntoCore v0.11.2 status banner in $file" >&2
+  if grep -qE 'Strixonomy v0\.11\.2' "$file" 2>/dev/null; then
+    echo "FAIL: stale Strixonomy v0.11.2 status banner in $file" >&2
     fail=1
   fi
 done
 if [[ "$fail" -eq 0 ]]; then
-  echo "ok: reference pages have no OntoCore v0.8/v0.9/v0.10/v0.11.0/v0.11.1/v0.11.2 banners"
+  echo "ok: reference pages have no Strixonomy v0.8/v0.9/v0.10/v0.11.0/v0.11.1/v0.11.2 banners"
 fi
 
-check_file_contains ".github/workflows/release.yml" "publish_crate ontocore-obo" "release.yml publishes ontocore-obo"
-check_file_contains ".github/workflows/release.yml" "publish_crate ontocore-edit" "release.yml publishes ontocore-edit"
-check_file_contains ".github/workflows/release.yml" "publish_crate ontocore-swrl" "release.yml publishes ontocore-swrl"
+check_file_contains ".github/workflows/release.yml" "publish_crate strixonomy-obo" "release.yml publishes strixonomy-obo"
+check_file_contains ".github/workflows/release.yml" "publish_crate strixonomy-edit" "release.yml publishes strixonomy-edit"
+check_file_contains ".github/workflows/release.yml" "publish_crate strixonomy-swrl" "release.yml publishes strixonomy-swrl"
 # refactor depends on swrl — publish order must list swrl first
-if ! awk '/publish_crate ontocore-swrl/{s=NR} /publish_crate ontocore-refactor/{r=NR} END{exit !(s && r && s < r)}' .github/workflows/release.yml; then
-  echo "FAIL: release.yml must publish ontocore-swrl before ontocore-refactor" >&2
+if ! awk '/publish_crate strixonomy-swrl/{s=NR} /publish_crate strixonomy-refactor/{r=NR} END{exit !(s && r && s < r)}' .github/workflows/release.yml; then
+  echo "FAIL: release.yml must publish strixonomy-swrl before strixonomy-refactor" >&2
   fail=1
 else
-  echo "ok: release.yml publishes ontocore-swrl before ontocore-refactor"
+  echo "ok: release.yml publishes strixonomy-swrl before strixonomy-refactor"
 fi
-check_file_contains ".github/workflows/release.yml" "publish_crate ontocore" "release.yml publishes ontocore"
+check_file_contains ".github/workflows/release.yml" "publish_crate strixonomy" "release.yml publishes strixonomy"
 
-# docs/contributing.md should track root CONTRIBUTING.md (OntoCore branding)
-if ! grep -q 'OntoCore' docs/contributing.md; then
-  echo "FAIL: docs/contributing.md missing OntoCore branding" >&2
+# docs/contributing.md should track root CONTRIBUTING.md (Strixonomy branding)
+if ! grep -q 'Strixonomy' docs/contributing.md; then
+  echo "FAIL: docs/contributing.md missing Strixonomy branding" >&2
   fail=1
-elif ! grep -q 'OntoCore' CONTRIBUTING.md; then
-  echo "FAIL: CONTRIBUTING.md missing OntoCore branding" >&2
+elif ! grep -q 'Strixonomy' CONTRIBUTING.md; then
+  echo "FAIL: CONTRIBUTING.md missing Strixonomy branding" >&2
   fail=1
 else
-  echo "ok: contributing docs OntoCore branding"
+  echo "ok: contributing docs Strixonomy branding"
 fi
 
 WEBVIEW_PKG_VERSION="$(grep -m1 -E '"version"' extension/webview-ui/package.json | sed -E 's/.*"([^"]+)".*/\1/')"
@@ -488,7 +488,7 @@ if grep -qE 'DL Query \(Workbench DL mode' docs/SHIPPED.md 2>/dev/null \
 fi
 
 # CLI refactor merge/replace must not be documented as IDE-only
-if grep -qE 'no.*\`ontocore refactor merge\`|IDE-only:.*Merge entities' docs/cli-reference.md docs/guides/refactoring.md 2>/dev/null; then
+if grep -qE 'no.*\`strixonomy refactor merge\`|IDE-only:.*Merge entities' docs/cli-reference.md docs/guides/refactoring.md 2>/dev/null; then
   echo "FAIL: cli-reference/refactoring still claim merge/replace are IDE-only" >&2
   fail=1
 else
@@ -510,7 +510,7 @@ else
 fi
 
 # v0.8 docs added in adoption review
-for file in docs/guides/refactoring.md docs/migration/v0.8.md docs/migration/v0.9.md docs/migration/v0.10.md docs/examples/refactoring.md docs/ontocode/semantic-diff.md docs/ontocore/rust-api.md docs/guides/protege-migration.md docs/ontocode/feature-tour.md; do
+for file in docs/guides/refactoring.md docs/migration/v0.8.md docs/migration/v0.9.md docs/migration/v0.10.md docs/examples/refactoring.md docs/ide/semantic-diff.md docs/strixonomy/rust-api.md docs/guides/protege-migration.md docs/ide/feature-tour.md; do
   if [[ ! -f "$file" ]]; then
     echo "FAIL: missing required doc $file" >&2
     fail=1
@@ -542,8 +542,8 @@ if grep -q 'getSemanticDiff.*Not implemented\|not implemented yet.*getSemanticDi
 else
   echo "ok: lsp-api semanticDiff documented"
 fi
-if ! grep -q 'ontocore/semanticDiff' docs/lsp-api.md; then
-  echo "FAIL: docs/lsp-api.md missing ontocore/semanticDiff section" >&2
+if ! grep -q 'strixonomy/semanticDiff' docs/lsp-api.md; then
+  echo "FAIL: docs/lsp-api.md missing strixonomy/semanticDiff section" >&2
   fail=1
 fi
 
@@ -562,19 +562,19 @@ else
 fi
 
 check_file_contains "docs/guides/production-readiness.md" "${TAGGED_MINOR}\.x \\(latest tagged\\)" "production-readiness tagged minor"
-check_file_contains "docs/ontocore/index.md" "v${TAGGED_VERSION}" "ontocore index tagged version"
-check_file_contains "docs/ontocore/rust-api.md" "ontocore = \"${TAGGED_MINOR}\"" "rust-api version pin"
-check_file_contains "docs/ontocore/crate-map.md" "ontocore = \"${TAGGED_MINOR}\"" "crate-map version pin"
-check_file_contains "docs/ontocode/manage-imports.md" "Manage Imports" "manage-imports guide"
-check_file_contains "mkdocs.yml" "ontocode/manage-imports.md" "mkdocs manage-imports guide"
+check_file_contains "docs/strixonomy/index.md" "v${TAGGED_VERSION}" "ontocore index tagged version"
+check_file_contains "docs/strixonomy/rust-api.md" "strixonomy = \"${TAGGED_MINOR}\"" "rust-api version pin"
+check_file_contains "docs/strixonomy/crate-map.md" "strixonomy = \"${TAGGED_MINOR}\"" "crate-map version pin"
+check_file_contains "docs/ide/manage-imports.md" "Manage Imports" "manage-imports guide"
+check_file_contains "mkdocs.yml" "ide/manage-imports.md" "mkdocs manage-imports guide"
 check_file_contains "mkdocs.yml" "migration/v0.14.md" "mkdocs v0.14 migration guide"
 check_file_contains "mkdocs.yml" "migration/v0.17.md" "mkdocs v0.17 migration guide"
 check_file_contains "mkdocs.yml" "migration/v0.18.md" "mkdocs v0.18 migration guide"
 check_file_contains "mkdocs.yml" "v0\\.15 → v0\\.16" "mkdocs v0.16 migration in Help nav"
 check_file_contains "docs/guides/production-readiness.md" "v${TAGGED_VERSION}" "production-readiness version"
-check_file_contains "mkdocs.yml" "ontocore/rust-api.md" "mkdocs Rust API reference"
+check_file_contains "mkdocs.yml" "strixonomy/rust-api.md" "mkdocs Rust API reference"
 check_file_contains "mkdocs.yml" "guides/protege-migration.md" "mkdocs Protégé migration guide"
-check_file_contains "mkdocs.yml" "ontocode/feature-tour.md" "mkdocs feature tour"
+check_file_contains "mkdocs.yml" "ide/feature-tour.md" "mkdocs feature tour"
 check_file_contains "mkdocs.yml" "guides/plugins.md" "mkdocs plugins guide"
 check_file_contains "mkdocs.yml" "guides/docs-export.md" "mkdocs docs export guide"
 check_file_contains "mkdocs.yml" "guides/which-artifact.md" "mkdocs which-artifact guide"
@@ -584,10 +584,10 @@ check_file_contains "mkdocs.yml" "documentation-index.md" "mkdocs documentation 
 check_file_contains "mkdocs.yml" "guides/plugins.md" "mkdocs plugins guide in Contribute"
 check_file_contains "mkdocs.yml" "known-limitations.md" "mkdocs known limitations"
 check_file_contains "mkdocs.yml" "Reference:" "mkdocs Reference tab"
-check_file_contains "docs/guides/rust-crates.md" "ontocore = \"${TAGGED_MINOR}\"" "rust-crates version pin"
+check_file_contains "docs/guides/rust-crates.md" "strixonomy = \"${TAGGED_MINOR}\"" "rust-crates version pin"
 
 # Stale protege-coexistence version banner
-if grep -qE 'evaluating OntoCode \*\*v0\.6\*\*|v0\.6 support' docs/guides/protege-coexistence.md; then
+if grep -qE 'evaluating Strixonomy \*\*v0\.6\*\*|v0\.6 support' docs/guides/protege-coexistence.md; then
   echo "FAIL: stale v0.6 content in docs/guides/protege-coexistence.md" >&2
   fail=1
 else
@@ -646,8 +646,8 @@ STALE_WRITEBACK_FILES=(
   docs/troubleshooting.md
   docs/vscode-install.md
   docs/authoring.md
-  docs/ontocode/feature-tour.md
-  docs/ontocode/obo-authoring.md
+  docs/ide/feature-tour.md
+  docs/ide/obo-authoring.md
   docs/patch-reference.md
   docs/cli-reference.md
   docs/lsp-api.md
@@ -665,7 +665,7 @@ for f in "${STALE_WRITEBACK_FILES[@]}"; do
 done
 
 # Crate READMEs must not advertise the previous minor as "Current version"
-if grep -qE 'Current version: 0\.20\.0|--version 0\.20\.0' crates/ontocore*/README.md crates/ontocore/README.md 2>/dev/null; then
+if grep -qE 'Current version: 0\.20\.0|--version 0\.20\.0' crates/strixonomy*/README.md crates/strixonomy/README.md 2>/dev/null; then
   echo "FAIL: crate README still pins 0.20.0 (expected ${TAGGED_VERSION})" >&2
   fail=1
 else
@@ -688,11 +688,11 @@ else
   echo "ok: migration index versions"
 fi
 
-if ! grep -qF -- "--version ${TAGGED_VERSION}" crates/ontocore-cli/README.md; then
-  echo "FAIL: ontocore-cli README missing --version ${TAGGED_VERSION}" >&2
+if ! grep -qF -- "--version ${TAGGED_VERSION}" crates/strixonomy-cli/README.md; then
+  echo "FAIL: strixonomy-cli README missing --version ${TAGGED_VERSION}" >&2
   fail=1
 else
-  echo "ok: ontocore-cli README install pin"
+  echo "ok: strixonomy-cli README install pin"
 fi
 
 # release-integrity must not pin an old example version
@@ -729,27 +729,27 @@ else
   echo "ok: no dead onto-code RTD slug"
 fi
 
-if rg -q 'https://ontocode-vs\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}"; then
+if rg -q 'https://strixonomy-vs\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}"; then
   echo "FAIL: absolute RTD URLs must not use .md extension (use trailing slash paths)" >&2
-  rg -n 'https://ontocode-vs\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}" >&2 || true
+  rg -n 'https://strixonomy-vs\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}" >&2 || true
   fail=1
 else
   echo "ok: RTD URLs without .md extension"
 fi
 
-if rg -q 'https://ontocode-vs\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs; then
+if rg -q 'https://strixonomy-vs\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs; then
   echo "FAIL: RTD page URLs must include /en/latest/ (not bare project root)" >&2
-  rg -n 'https://ontocode-vs\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs >&2 || true
+  rg -n 'https://strixonomy-vs\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs >&2 || true
   fail=1
 else
   echo "ok: RTD page URLs use /en/latest/"
 fi
 
 check_file_contains "extension/package.json" "guides/first-success/" "extension homepage first-success tutorial"
-check_file_contains "extension/README.md" "ontocode/vscode-extension/" "extension README VS Code docs path"
-check_file_contains "docs/guides/vscode-extension.md" "ontocode/vscode-extension" "vscode hub redirect"
-check_file_contains "docs/guides/rust-crates.md" "ontocode/vscode-extension" "rust hub cross-link"
-check_file_contains "crates/ontocore-cli/src/main.rs" "OntoCode v${VERSION%.*}" "CLI about string version"
+check_file_contains "extension/README.md" "ide/vscode-extension/" "extension README VS Code docs path"
+check_file_contains "docs/guides/vscode-extension.md" "ide/vscode-extension" "vscode hub redirect"
+check_file_contains "docs/guides/rust-crates.md" "ide/vscode-extension" "rust hub cross-link"
+check_file_contains "crates/strixonomy-cli/src/main.rs" "Strixonomy v${VERSION%.*}" "CLI about string version"
 check_file_contains "docs/changelog.md" "v${VERSION}" "docs changelog current release"
 
 for pair in "VISION.md:docs/vision.md:Build the modern open-source platform" \
@@ -808,28 +808,28 @@ fi
 
 # User-facing crate pins must not reference a previous minor release
 CRATE_PIN_PATHS=(docs README.md extension crates CONTRIBUTING.md)
-if rg -q 'ontocore = "0\.9"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null; then
-  echo "FAIL: stale ontocore = \"0.9\" pin found outside migration/design/changelog" >&2
-  rg -n 'ontocore = "0\.9"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null || true
+if rg -q 'strixonomy = "0\.9"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null; then
+  echo "FAIL: stale strixonomy = \"0.9\" pin found outside migration/design/changelog" >&2
+  rg -n 'strixonomy = "0\.9"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null || true
   fail=1
 else
-  echo "ok: no stale ontocore = \"0.9\" user-facing pins"
+  echo "ok: no stale strixonomy = \"0.9\" user-facing pins"
 fi
 
-if rg -q 'ontocore = "0\.10"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null; then
-  echo "FAIL: stale ontocore = \"0.10\" pin found outside migration/design/changelog" >&2
-  rg -n 'ontocore = "0\.10"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null || true
+if rg -q 'strixonomy = "0\.10"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null; then
+  echo "FAIL: stale strixonomy = \"0.10\" pin found outside migration/design/changelog" >&2
+  rg -n 'strixonomy = "0\.10"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null || true
   fail=1
 else
-  echo "ok: no stale ontocore = \"0.10\" user-facing pins"
+  echo "ok: no stale strixonomy = \"0.10\" user-facing pins"
 fi
 
-if rg -q 'ontocore = "0\.11"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null; then
-  echo "FAIL: stale ontocore = \"0.11\" pin found outside migration/design/changelog" >&2
-  rg -n 'ontocore = "0\.11"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null || true
+if rg -q 'strixonomy = "0\.11"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null; then
+  echo "FAIL: stale strixonomy = \"0.11\" pin found outside migration/design/changelog" >&2
+  rg -n 'strixonomy = "0\.11"' "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' 2>/dev/null || true
   fail=1
 else
-  echo "ok: no stale ontocore = \"0.11\" user-facing pins"
+  echo "ok: no stale strixonomy = \"0.11\" user-facing pins"
 fi
 
 # Stale crate pins for previous minors (0.14–0.18) when current is newer
@@ -837,14 +837,14 @@ PREV_MINOR_MAJOR="${MINOR_VERSION%%.*}"
 PREV_MINOR_MINOR="${MINOR_VERSION#*.}"
 if [[ "$PREV_MINOR_MAJOR" == "0" ]] && [[ "$PREV_MINOR_MINOR" -ge 17 ]]; then
   for stale in 14 15 16 17 18; do
-    if rg -q "ontocore = \"0\\.${stale}\"" "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' --glob '!**/CHANGELOG.md' 2>/dev/null; then
-      echo "FAIL: stale ontocore = \"0.${stale}\" pin found outside migration/design/changelog" >&2
-      rg -n "ontocore = \"0\\.${stale}\"" "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' --glob '!**/CHANGELOG.md' 2>/dev/null || true
+    if rg -q "strixonomy = \"0\\.${stale}\"" "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' --glob '!**/CHANGELOG.md' 2>/dev/null; then
+      echo "FAIL: stale strixonomy = \"0.${stale}\" pin found outside migration/design/changelog" >&2
+      rg -n "strixonomy = \"0\\.${stale}\"" "${CRATE_PIN_PATHS[@]}" --glob '!**/migration/**' --glob '!**/design/**' --glob '!**/changelog.md' --glob '!**/CHANGELOG.md' 2>/dev/null || true
       fail=1
     fi
   done
   if [[ "$fail" -eq 0 ]]; then
-    echo "ok: no stale ontocore = \"0.14\"–\"0.18\" user-facing pins"
+    echo "ok: no stale strixonomy = \"0.14\"–\"0.18\" user-facing pins"
   fi
 fi
 
@@ -872,7 +872,7 @@ else
   echo "ok: no stale v0.14–v0.16 release tag references"
 fi
 check_file_contains "docs/install-cli-ci.md" "latest \\*\\*v${TAGGED_MINOR}\\.x\\*\\* tag" "install-cli-ci Path D current tag"
-check_file_contains "docs/guides/which-artifact.md" "ontocore = \"${TAGGED_MINOR}\"" "which-artifact crate pin"
+check_file_contains "docs/guides/which-artifact.md" "strixonomy = \"${TAGGED_MINOR}\"" "which-artifact crate pin"
 check_file_contains "docs/guides/api-stability.md" "Published crates use \\*\\*${TAGGED_MINOR}\\.x\\*\\*" "api-stability published crates minor"
 check_file_contains "docs/ci-integration.md" "VERSION=${TAGGED_VERSION}" "ci-integration release binary pin"
 check_file_contains "docs/faq.md" "version ${TAGGED_VERSION}" "faq CI version pin"
@@ -886,7 +886,7 @@ else
 fi
 
 # start.md must not list multi-root support under 'When not to use'
-if grep -A20 'When not to use OntoCode' docs/start.md | grep -qE 'Multi-root VS Code workspaces are supported'; then
+if grep -A20 'When not to use Strixonomy' docs/start.md | grep -qE 'Multi-root VS Code workspaces are supported'; then
   echo "FAIL: docs/start.md lists multi-root under 'When not to use'" >&2
   fail=1
 else
@@ -952,7 +952,7 @@ if rg -q 'ontocore alias is planned' docs --glob '!**/migration/**' --glob '!**/
   rg -n 'ontocore alias is planned' docs --glob '!**/migration/**' --glob '!**/design/**' 2>/dev/null || true
   fail=1
 else
-  echo "ok: no stale ontocore alias notes"
+  echo "ok: no stale strixonomy alias notes"
 fi
 
 # MkDocs strict: markdown links must not point at directories (use README.md)
@@ -984,7 +984,7 @@ else
 fi
 
 # LSP API must document OBO write-back alongside Turtle
-for file in docs/lsp-api.md docs/ontocore/lsp.md; do
+for file in docs/lsp-api.md docs/strixonomy/lsp.md; do
   if grep -qE 'applyAxiomPatch.*Turtle write-back|Turtle write-back only|true` for Turtle write-back' "$file" 2>/dev/null; then
     echo "FAIL: $file still implies Turtle-only applyAxiomPatch" >&2
     fail=1
@@ -1013,11 +1013,11 @@ fi
 check_file_contains "docs/roadmap-hub.md" "v${VERSION}" "roadmap-hub current release"
 check_file_contains "docs/guides/api-stability.md" "API stability" "api stability page"
 check_file_contains "docs/guides/legacy-guide-urls.md" "Legacy guide URLs" "legacy guide redirects page"
-check_file_contains "docs/ontocode/obo-authoring.md" "OBO authoring" "obo authoring guide"
+check_file_contains "docs/ide/obo-authoring.md" "OBO authoring" "obo authoring guide"
 check_file_contains "mkdocs.yml" "roadmap-hub.md" "mkdocs roadmap hub"
 check_file_contains "mkdocs.yml" "guides/api-stability.md" "mkdocs api stability"
 check_file_contains "mkdocs.yml" "guides/legacy-guide-urls.md" "mkdocs legacy redirects"
-check_file_contains "mkdocs.yml" "ontocode/obo-authoring.md" "mkdocs obo authoring"
+check_file_contains "mkdocs.yml" "ide/obo-authoring.md" "mkdocs obo authoring"
 
 check_file_contains "docs/cursor-prompts/README.md" "Cursor implementation prompts" "cursor prompts index"
 check_file_contains "docs/platform/OVERVIEW.md" "Platform overview" "platform overview"
@@ -1044,7 +1044,7 @@ check_file_contains "docs/ui/README.md" "OntoUI" "ui readme OntoUI term"
 check_file_contains "mkdocs.yml" "guides/owl-xml-workflow.md" "mkdocs owl-xml workflow guide"
 check_file_contains "mkdocs.yml" "v0\\.14 → v0\\.15" "mkdocs v0.15 migration in Help nav"
 check_file_contains "docs/guides/owl-xml-workflow.md" "Horned full-document re-serialize" "owl-xml workflow guide"
-check_file_contains "docs/ontocore/rust-api.md" "Book ↔ docs.rs crosswalk" "rust-api docs.rs crosswalk"
+check_file_contains "docs/strixonomy/rust-api.md" "Book ↔ docs.rs crosswalk" "rust-api docs.rs crosswalk"
 check_file_contains "docs/troubleshooting.md" "Where to start" "troubleshooting decision tree"
 check_file_contains "docs/platform/OVERVIEW.md" "v0.20 foundation shipped" "platform overview shipped banner"
 
@@ -1063,7 +1063,7 @@ else
   echo "ok: vision banner sync v${VERSION%.*}"
 fi
 
-check_file_contains "docs/glossary.md" "\\*\\*Implemented\\*\\* \\(v${TAGGED_MINOR}\\)" "glossary OntoCore/OntoCode version"
+check_file_contains "docs/glossary.md" "\\*\\*Implemented\\*\\* \\(v${TAGGED_MINOR}\\)" "glossary OntoCore/Strixonomy version"
 check_file_contains "docs/glossary.md" "\\*\\*Shipped\\*\\* \\(v${TAGGED_MINOR}\\)" "glossary WorkspaceStore shipped"
 check_file_contains "docs/vscode-install.md" "1.85" "vscode-install minimum VS Code version"
 check_file_contains "docs/documentation-index.md" "Shipped v${TAGGED_MINOR}" "documentation-index OntoUI shipped"
@@ -1076,12 +1076,12 @@ fi
 check_file_contains "CONTRIBUTING.md" "build-docs.sh" "contributing documents build-docs script"
 check_file_contains "CONTRIBUTING.md" "run-ci-local.sh" "contributing documents local CI script"
 check_file_contains "docs/internals.md" "Extension-only" "internals extension-only path"
-check_file_contains "docs/guides/lsp-hello-world.md" "ontocore-lsp" "lsp hello-world guide"
+check_file_contains "docs/guides/lsp-hello-world.md" "strixonomy-lsp" "lsp hello-world guide"
 check_file_contains "mkdocs.yml" "guides/extension-development.md" "mkdocs extension development guide"
 check_file_contains "mkdocs.yml" "guides/lsp-hello-world.md" "mkdocs lsp hello-world guide"
 check_file_contains "docs/guides/extension-development.md" "extension/" "extension development guide"
-check_file_contains "crates/ontocore-plugin/README.md" "Plugin SDK 1.0" "plugin README SDK 1.0 banner"
-check_file_contains "crates/ontocore-obo/README.md" "ontocore-obo" "ontocore-obo README"
+check_file_contains "crates/strixonomy-plugin/README.md" "Plugin SDK 1.0" "plugin README SDK 1.0 banner"
+check_file_contains "crates/strixonomy-obo/README.md" "strixonomy-obo" "strixonomy-obo README"
 
 # errors.md must reference current release
 check_file_contains "docs/errors.md" "v${TAGGED_VERSION}" "errors reference version"
@@ -1091,8 +1091,8 @@ check_file_contains "docs/SHIPPED.md" "What ships today \\(v${TAGGED_VERSION}" "
 check_file_contains "docs/SHIPPED.md" "Latest tagged: v${TAGGED_VERSION}" "SHIPPED latest tagged line"
 
 # LSP API title matches tagged minor; banner may mention workspace when ahead of tag
-check_file_contains "docs/lsp-api.md" "^# OntoCore LSP API \\(v${TAGGED_MINOR}\\)" "lsp-api title minor"
-check_file_contains "docs/ontocode/feature-tour.md" "^# OntoCode feature tour \\(current: v${TAGGED_MINOR}\\)" "feature-tour tagged minor"
+check_file_contains "docs/lsp-api.md" "^# Strixonomy LSP API \\(v${TAGGED_MINOR}\\)" "lsp-api title minor"
+check_file_contains "docs/ide/feature-tour.md" "^# Strixonomy feature tour \\(current: v${TAGGED_MINOR}\\)" "feature-tour tagged minor"
 
 # rust-library crates claim must match tagged minor
 if ! grep -qE "Crates are at \\*\\*${TAGGED_MINOR}\\.x\\*\\*" docs/guides/rust-library.md; then
@@ -1119,11 +1119,11 @@ if [[ "$VERSION" != "$TAGGED_VERSION" ]]; then
   else
     echo "ok: no public VERSION=${VERSION} install pins"
   fi
-  if rg -q "ontocore = \"${MINOR_VERSION}\"" README.md docs extension crates CONTRIBUTING.md "${INSTALL_PIN_EXCLUDE_GLOBS[@]}" 2>/dev/null; then
-    echo "FAIL: public ontocore = \"${MINOR_VERSION}\" pin (use \"${TAGGED_MINOR}\" for tagged release)" >&2
+  if rg -q "strixonomy = \"${MINOR_VERSION}\"" README.md docs extension crates CONTRIBUTING.md "${INSTALL_PIN_EXCLUDE_GLOBS[@]}" 2>/dev/null; then
+    echo "FAIL: public strixonomy = \"${MINOR_VERSION}\" pin (use \"${TAGGED_MINOR}\" for tagged release)" >&2
     fail=1
   else
-    echo "ok: no unreleased ontocore crate pins in user docs"
+    echo "ok: no unreleased strixonomy crate pins in user docs"
   fi
 fi
 
@@ -1132,11 +1132,11 @@ if [[ "$VERSION" == "$TAGGED_VERSION" ]]; then
   PREV_MINOR_MINOR="${TAGGED_MINOR##*.}"
   if [[ "$PREV_MINOR_MINOR" =~ ^[0-9]+$ ]] && [[ "$PREV_MINOR_MINOR" -gt 0 ]]; then
     STALE_MINOR="${TAGGED_MINOR%%.*}.$((PREV_MINOR_MINOR - 1))"
-    if grep -qE "feature tour \\(current: v${STALE_MINOR}\\)" docs/ontocode/feature-tour.md 2>/dev/null; then
+    if grep -qE "feature tour \\(current: v${STALE_MINOR}\\)" docs/ide/feature-tour.md 2>/dev/null; then
       echo "FAIL: feature-tour still says current: v${STALE_MINOR}" >&2
       fail=1
     fi
-    if grep -qE "^# OntoCore LSP API \\(v${STALE_MINOR}\\)" docs/lsp-api.md 2>/dev/null; then
+    if grep -qE "^# Strixonomy LSP API \\(v${STALE_MINOR}\\)" docs/lsp-api.md 2>/dev/null; then
       echo "FAIL: lsp-api title still says v${STALE_MINOR}" >&2
       fail=1
     fi
@@ -1207,8 +1207,8 @@ fi
 # Crate README Cargo.toml pins must match tagged minor (not a stale older minor)
 STALE_CRATE_PIN_FAIL=0
 while IFS= read -r readme; do
-  if grep -qE '^\s*ontocore[a-z0-9-]*\s*=\s*"0\.[0-9]+"' "$readme" 2>/dev/null; then
-    if ! grep -qE "ontocore[a-z0-9-]* = \"${TAGGED_MINOR}\"" "$readme" 2>/dev/null; then
+  if grep -qE '^\s*strixonomy[a-z0-9-]*\s*=\s*"0\.[0-9]+"' "$readme" 2>/dev/null; then
+    if ! grep -qE "strixonomy[a-z0-9-]* = \"${TAGGED_MINOR}\"" "$readme" 2>/dev/null; then
       echo "FAIL: $readme crate version pin must use \"${TAGGED_MINOR}\" (from docs/TAGGED_RELEASE)" >&2
       STALE_CRATE_PIN_FAIL=1
       fail=1
@@ -1252,12 +1252,12 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
     else
       echo "ok: no stale --version ${STALE_PREV_FULL} pins"
     fi
-    if rg -q "ontocore = \"${STALE_PREV_MINOR}\"" "${PREV_PIN_PATHS[@]}" "${PREV_PIN_EXCLUDES[@]}" 2>/dev/null; then
-      echo "FAIL: stale ontocore = \"${STALE_PREV_MINOR}\" pin found (expected \"${TAGGED_MINOR}\")" >&2
-      rg -n "ontocore = \"${STALE_PREV_MINOR}\"" "${PREV_PIN_PATHS[@]}" "${PREV_PIN_EXCLUDES[@]}" 2>/dev/null || true
+    if rg -q "strixonomy = \"${STALE_PREV_MINOR}\"" "${PREV_PIN_PATHS[@]}" "${PREV_PIN_EXCLUDES[@]}" 2>/dev/null; then
+      echo "FAIL: stale strixonomy = \"${STALE_PREV_MINOR}\" pin found (expected \"${TAGGED_MINOR}\")" >&2
+      rg -n "strixonomy = \"${STALE_PREV_MINOR}\"" "${PREV_PIN_PATHS[@]}" "${PREV_PIN_EXCLUDES[@]}" 2>/dev/null || true
       fail=1
     else
-      echo "ok: no stale ontocore = \"${STALE_PREV_MINOR}\" pins"
+      echo "ok: no stale strixonomy = \"${STALE_PREV_MINOR}\" pins"
     fi
     if rg -q "Canonical pin: \*\*\`${STALE_PREV_FULL}\`\*\*" docs/install.md 2>/dev/null; then
       echo "FAIL: docs/install.md Canonical pin still ${STALE_PREV_FULL}" >&2
@@ -1280,11 +1280,11 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
       docs/lsp-api.md \
       docs/faq.md \
       docs/known-limitations.md \
-      docs/ontocore/index.md; do
+      docs/strixonomy/index.md; do
       if [[ ! -f "$stale_claim_file" ]]; then
         continue
       fi
-      if grep -qE "latest tagged.*v?${STALE_PREV_FULL}|v${STALE_PREV_FULL} \(latest tagged\)|Latest tagged( release)?: v${STALE_PREV_FULL}|Published crates are( at)? \*\*${STALE_PREV_MINOR}\.x\*\*|Recommended installs \(v${STALE_PREV_FULL}\)|Documents behavior in \*\*OntoCore v${STALE_PREV_FULL}\*\*|Canonical pin: \*\*\`${STALE_PREV_FULL}\`\*\*|badge/[a-z0-9-]+-${STALE_PREV_FULL}-" "$stale_claim_file" 2>/dev/null; then
+      if grep -qE "latest tagged.*v?${STALE_PREV_FULL}|v${STALE_PREV_FULL} \(latest tagged\)|Latest tagged( release)?: v${STALE_PREV_FULL}|Published crates are( at)? \*\*${STALE_PREV_MINOR}\.x\*\*|Recommended installs \(v${STALE_PREV_FULL}\)|Documents behavior in \*\*Strixonomy v${STALE_PREV_FULL}\*\*|Canonical pin: \*\*\`${STALE_PREV_FULL}\`\*\*|badge/[a-z0-9-]+-${STALE_PREV_FULL}-" "$stale_claim_file" 2>/dev/null; then
         echo "FAIL: $stale_claim_file still treats ${STALE_PREV_FULL} / ${STALE_PREV_MINOR}.x as current/latest" >&2
         fail=1
       fi
@@ -1327,12 +1327,12 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
       echo "ok: production-readiness not using ${STALE_PREV_MINOR} column labels"
     fi
     check_file_contains "docs/guides/production-readiness.md" "v${TAGGED_MINOR} readiness" "production-readiness current readiness column"
-    if grep -qE "ontocore-core = \"0\.[0-9]+\"" docs/guides/api-stability.md 2>/dev/null; then
-      if ! grep -qE "ontocore-core = \"${TAGGED_MINOR}\"" docs/guides/api-stability.md 2>/dev/null; then
-        echo "FAIL: docs/guides/api-stability.md ontocore-core pin must be \"${TAGGED_MINOR}\"" >&2
+    if grep -qE "strixonomy-core = \"0\.[0-9]+\"" docs/guides/api-stability.md 2>/dev/null; then
+      if ! grep -qE "strixonomy-core = \"${TAGGED_MINOR}\"" docs/guides/api-stability.md 2>/dev/null; then
+        echo "FAIL: docs/guides/api-stability.md strixonomy-core pin must be \"${TAGGED_MINOR}\"" >&2
         fail=1
       else
-        echo "ok: api-stability ontocore-core pin is ${TAGGED_MINOR}"
+        echo "ok: api-stability strixonomy-core pin is ${TAGGED_MINOR}"
       fi
     fi
     if grep -qE '\*\*v0\.(1[0-9]|2[0-2])\*\* supports pilot' docs/roadmap.md 2>/dev/null; then
@@ -1342,7 +1342,7 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
       echo "ok: docs/roadmap.md pilot warning not stuck on older minor"
     fi
     check_file_contains "docs/roadmap.md" "\*\*v${TAGGED_MINOR}\*\* supports pilot" "roadmap pilot warning uses tagged minor"
-    check_file_contains "docs/cli-reference.md" "No \`ontocore swrl\` command" "cli-reference SWRL absence note"
+    check_file_contains "docs/cli-reference.md" "No \`strixonomy swrl\` command" "cli-reference SWRL absence note"
     check_file_contains "docs/guides/dl-query.md" "Not Protégé DL Query" "dl-query honesty page"
     check_file_contains "docs/guides/enterprise-week-2.md" "Enterprise week-2" "enterprise week-2 playbook"
     check_file_contains "docs/guides/plugin-policy.md" "Plugin SDK 1.0 compatibility policy" "plugin policy page"
@@ -1355,13 +1355,13 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
     else
       echo "ok: SHIPPED has no 'tag pending'"
     fi
-    if grep -qE 'ontocore-owl = "0\.(1[0-9]|2[0-4])"' docs/guides/rust-library.md 2>/dev/null; then
-      echo "FAIL: docs/guides/rust-library.md has stale ontocore-owl pin (expected ${TAGGED_MINOR})" >&2
+    if grep -qE 'strixonomy-owl = "0\.(1[0-9]|2[0-4])"' docs/guides/rust-library.md 2>/dev/null; then
+      echo "FAIL: docs/guides/rust-library.md has stale strixonomy-owl pin (expected ${TAGGED_MINOR})" >&2
       fail=1
     else
-      echo "ok: rust-library ontocore-owl pin not stale"
+      echo "ok: rust-library strixonomy-owl pin not stale"
     fi
-    check_file_contains "docs/guides/rust-library.md" "ontocore-owl = \"${TAGGED_MINOR}\"" "rust-library ontocore-owl pin"
+    check_file_contains "docs/guides/rust-library.md" "strixonomy-owl = \"${TAGGED_MINOR}\"" "rust-library strixonomy-owl pin"
     check_file_contains "docs/cli-reference.md" "plugins info" "cli-reference plugins info"
     check_file_contains "docs/cli-reference.md" "plugins enable" "cli-reference plugins enable"
     if grep -qE 'DL Query UI → \*\*v0\.2[0-9]\*\*|DL Query UI → \*\*v0\.25\*\*' docs/guides/protege-coexistence.md docs/guides/protege-migration.md 2>/dev/null; then
@@ -1404,8 +1404,8 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
     else
       echo "ok: faq/architecture plugin stability wording"
     fi
-    if ! grep -qiE 'ontocode-tutorial\.zip' docs/vscode-install.md 2>/dev/null; then
-      echo "FAIL: docs/vscode-install.md must mention ontocode-tutorial.zip" >&2
+    if ! grep -qiE 'strixonomy-tutorial\.zip' docs/vscode-install.md 2>/dev/null; then
+      echo "FAIL: docs/vscode-install.md must mention strixonomy-tutorial.zip" >&2
       fail=1
     else
       echo "ok: vscode-install tutorial zip"

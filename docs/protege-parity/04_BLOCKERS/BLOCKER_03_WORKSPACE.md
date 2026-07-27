@@ -4,14 +4,14 @@
 
 **Status:** P0 Release Blocker\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the engineering work required to achieve
-Protégé-class workspace behavior for OntoCode 1.0.
+Protégé-class workspace behavior for Strixonomy 1.0.
 
 The workspace is responsible for coordinating multiple ontologies,
 editor state, reasoning state, UI synchronization, persistence, and

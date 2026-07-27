@@ -10,7 +10,7 @@ export class RuleBrowserPanel {
 
   private constructor(private readonly host: PanelHost) {
     this.host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeRuleBrowser");
+      void forgetPanelRestoreState("strixonomyRuleBrowser");
       RuleBrowserPanel.current = undefined;
     });
   }
@@ -20,8 +20,8 @@ export class RuleBrowserPanel {
   }
 
   public static show(extensionUri: vscode.Uri): RuleBrowserPanel {
-    void rememberPanelRestoreState("ontocodeRuleBrowser", {
-      command: "ontocode.openRuleBrowser",
+    void rememberPanelRestoreState("strixonomyRuleBrowser", {
+      command: "strixonomy.openRuleBrowser",
       title: "SWRL Rule Browser",
     });
     if (RuleBrowserPanel.current) {
@@ -30,7 +30,7 @@ export class RuleBrowserPanel {
       return RuleBrowserPanel.current;
     }
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeRuleBrowser",
+      viewType: "strixonomyRuleBrowser",
       title: "SWRL Rule Browser",
       panel: "ruleBrowser",
       onMessage: async (message: WebviewMessage) => {
@@ -53,7 +53,7 @@ export class RuleBrowserPanel {
       return;
     }
     if (message.type === "openSwrlRuleEditor") {
-      await vscode.commands.executeCommand("ontocode.openRuleEditor", {
+      await vscode.commands.executeCommand("strixonomy.openRuleEditor", {
         ruleJson: message.ruleJson,
         originalRuleJson: message.ruleJson,
         documentUri: message.documentUri,

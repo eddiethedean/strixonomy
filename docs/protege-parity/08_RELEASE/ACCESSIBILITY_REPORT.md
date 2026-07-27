@@ -1,16 +1,16 @@
 # ACCESSIBILITY_REPORT
 
-# OntoCode Accessibility Report (v0.25 / EPIC-010)
+# Strixonomy Accessibility Report (v0.25 / EPIC-010)
 
 **Directory:** 08_RELEASE  
 **Status:** Internal verification for v0.25 exit bar  
-**Target Release:** OntoCode 1.0.0 (functional baseline delivered in **v0.25**)
+**Target Release:** Strixonomy 1.0.0 (functional baseline delivered in **v0.25**)
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This report documents accessibility validation for OntoCode-owned webviews
+This report documents accessibility validation for Strixonomy-owned webviews
 and dialogs against WCAG 2.2 AA (where applicable). External third-party
 certification remains deferred (BLOCKER_10 Phase 4).
 
@@ -147,7 +147,7 @@ Checklist for PR reviewers:
 
 | Role | Name | Date | Approval |
 |------|------|------|----------|
-| Accessibility Reviewer | OntoCode maintainers (internal) | 2026-07-15 | PASS |
+| Accessibility Reviewer | Strixonomy maintainers (internal) | 2026-07-15 | PASS |
 | QA Lead | CI webview + axe harness | 2026-07-15 | PASS |
 | Technical Lead | EPIC-010 | 2026-07-15 | PASS |
 | Release Manager | v0.25 train | TBD at tag | |

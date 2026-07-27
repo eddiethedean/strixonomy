@@ -1,19 +1,19 @@
 # ECOSYSTEM.md
 
-# OntoCode Plugin Ecosystem
-## Reverse Engineering Specification for the Protégé Ecosystem and Design Blueprint for OntoCode
+# Strixonomy Plugin Ecosystem
+## Reverse Engineering Specification for the Protégé Ecosystem and Design Blueprint for Strixonomy
 
 ## Purpose
 
 Protégé's longevity is largely due to its plugin ecosystem. Plugins provide reasoners, visualizations, import/export tools, ontology validators, user interface extensions, and domain-specific capabilities without requiring changes to the core application.
 
-OntoCode should preserve this extensibility while evolving it into a modern, language-agnostic ecosystem that supports Rust, TypeScript, Python, and WebAssembly plugins.
+Strixonomy should preserve this extensibility while evolving it into a modern, language-agnostic ecosystem that supports Rust, TypeScript, Python, and WebAssembly plugins.
 
 ---
 
 # Vision
 
-The OntoCode ecosystem should be:
+The Strixonomy ecosystem should be:
 
 - Stable
 - Discoverable
@@ -32,7 +32,7 @@ The OntoCode ecosystem should be:
                       │
                       ▼
 +------------------------------------------------+
-|                OntoCode Core                   |
+|                Strixonomy Core                   |
 +------------------------------------------------+
 | Plugin Host | API | Event Bus | Command System |
 +------------------------------------------------+
@@ -255,7 +255,7 @@ Plugins should be required to:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -316,10 +316,10 @@ Enterprise
 
 # Beyond Protégé
 
-Protégé demonstrated the value of an extensible ecosystem, but OntoCode should treat plugins as a platform rather than an afterthought. Every major subsystem—from reasoning and visualization to AI, automation, and collaboration—should be designed to be extended through stable APIs and a curated marketplace.
+Protégé demonstrated the value of an extensible ecosystem, but Strixonomy should treat plugins as a platform rather than an afterthought. Every major subsystem—from reasoning and visualization to AI, automation, and collaboration—should be designed to be extended through stable APIs and a curated marketplace.
 
 ---
 
 # Summary
 
-The plugin ecosystem is one of Protégé's greatest strengths. OntoCode should build upon that foundation with a secure, modern, language-agnostic ecosystem featuring versioned APIs, an integrated marketplace, enterprise governance, AI extensions, and a first-class developer experience that encourages long-term community growth.
+The plugin ecosystem is one of Protégé's greatest strengths. Strixonomy should build upon that foundation with a secure, modern, language-agnostic ecosystem featuring versioned APIs, an integrated marketplace, enterprise governance, AI extensions, and a first-class developer experience that encourages long-term community growth.

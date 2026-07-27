@@ -7,7 +7,7 @@
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ OntoCode  Search anything…                            AI  Git  Account      │
+│ Strixonomy  Search anything…                            AI  Git  Account      │
 ├───────────────┬──────────────────────────────────────────────┬───────────────┤
 │ Explorer      │ Workspace Tabs                               │ Inspector     │
 │               ├──────────────────────────────────────────────┤               │

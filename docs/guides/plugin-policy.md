@@ -1,6 +1,6 @@
 # Plugin SDK 1.0 compatibility policy
 
-OntoCore ships **Plugin SDK 1.0** as a frozen TOML + subprocess JSON host (`api_version = "1"`) — safe to author against today. A curated marketplace, commercial support, and production owlmake integration remain **product 1.0** goals. This page states the **product policy** — not how to author a plugin. For authoring, see [Plugin authoring](plugins.md).
+Strixonomy ships **Plugin SDK 1.0** as a frozen TOML + subprocess JSON host (`api_version = "1"`) — safe to author against today. A curated marketplace, commercial support, and production owlmake integration remain **product 1.0** goals. This page states the **product policy** — not how to author a plugin. For authoring, see [Plugin authoring](plugins.md).
 
 ## Support stance
 
@@ -33,7 +33,7 @@ Fields or actions marked deprecated remain for at least one minor release before
 
 ## Migration from v0.14–v0.24 authoring
 
-Manifests written for OntoCore **v0.16+** remain valid. New provider kinds (`reasoner`, `query`, `refactor`, `graph`) and `depends_on` / `activation` are **opt-in**.
+Manifests written for Strixonomy **v0.16+** remain valid. New provider kinds (`reasoner`, `query`, `refactor`, `graph`) and `depends_on` / `activation` are **opt-in**.
 
 ## What is not promised
 
@@ -44,7 +44,7 @@ Manifests written for OntoCore **v0.16+** remain valid. New provider kinds (`rea
 
 ## Enterprise guidance
 
-Treat plugins as **internal tooling**: pin versions, review manifests, and keep a rollback path (`ontocore plugins disable <id>` writes `.ontocore/plugin-disabled.json`). See [Production readiness](production-readiness.md) and [Security](../security.md).
+Treat plugins as **internal tooling**: pin versions, review manifests, and keep a rollback path (`strixonomy plugins disable <id>` writes `.strixonomy/plugin-disabled.json`). See [Production readiness](production-readiness.md) and [Security](../security.md).
 
 ## Related
 

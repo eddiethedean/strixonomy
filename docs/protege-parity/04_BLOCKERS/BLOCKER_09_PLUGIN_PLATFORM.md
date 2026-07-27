@@ -4,13 +4,13 @@
 
 **Status:** Resolved for v0.25 (EPIC-009) — SDK 1.0 freeze on TOML + subprocess host\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0 / delivered functional baseline in **v0.25**
+**Target Release:** Strixonomy 1.0.0 / delivered functional baseline in **v0.25**
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the engineering work required for OntoCode to
+This document defines the engineering work required for Strixonomy to
 deliver a stable, production-ready plugin platform comparable to the
 extensibility expected by Protégé Desktop while embracing a modern
 Rust-native architecture.
@@ -27,7 +27,7 @@ discovery, and example plugins. However, the SDK, extension points,
 lifecycle guarantees, compatibility policy, and verification
 infrastructure must mature before 1.0.
 
-Without a stable plugin platform, OntoCode cannot provide a reliable
+Without a stable plugin platform, Strixonomy cannot provide a reliable
 ecosystem for third-party extensions.
 
 ------------------------------------------------------------------------

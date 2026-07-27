@@ -1,10 +1,10 @@
 # Migrating from Protégé — first week
 
-This guide helps ontology teams adopt OntoCode **v0.26** alongside or instead of [Protégé](https://protege.stanford.edu/). For a capability comparison, see [Protégé vs OntoCode](protege-decision.md) and [What ships today](../SHIPPED.md).
+This guide helps ontology teams adopt Strixonomy **v0.26** alongside or instead of [Protégé](https://protege.stanford.edu/). For a capability comparison, see [Protégé vs Strixonomy](protege-decision.md) and [What ships today](../SHIPPED.md).
 
 ## Before you start
 
-**OntoCode fits well when you:**
+**Strixonomy fits well when you:**
 
 - Version-control ontology files (Turtle, OWL, OBO) in shared repositories
 - Want VS Code editing, CI validation, and semantic diff
@@ -15,11 +15,11 @@ This guide helps ontology teams adopt OntoCode **v0.26** alongside or instead of
 
 - **Byte-identical OWL/XML or RDF/XML layout** after save
 - A **full DL axiom catalog UI** for every axiom kind and format
-- Protégé-specific plugins or a **curated plugin marketplace** (OntoCode Plugin SDK 1.0 freezes the subprocess wire today; marketplace remains product **1.0** — [Plugin policy](plugin-policy.md))
+- Protégé-specific plugins or a **curated plugin marketplace** (Strixonomy Plugin SDK 1.0 freezes the subprocess wire today; marketplace remains product **1.0** — [Plugin policy](plugin-policy.md))
 - WebProtégé-style live collaboration
 - **HermiT-identical** DL explanations (OntoLogos is not certified HermiT-identical)
 
-Many teams use **both**: Protégé for heavy axiom authoring or Protégé-only plugins, OntoCode for browse, light edit, lint, diff, reasoning, DL Query, and CI. See [Protégé coexistence](protege-coexistence.md).
+Many teams use **both**: Protégé for heavy axiom authoring or Protégé-only plugins, Strixonomy for browse, light edit, lint, diff, reasoning, DL Query, and CI. See [Protégé coexistence](protege-coexistence.md).
 
 ## Honest desktop known gaps (v0.26 tagged)
 
@@ -38,45 +38,45 @@ Full matrix: [known-limitations](../known-limitations.md) · [SHIPPED](../SHIPPE
 
 ## Day 1 — Install and open your project
 
-1. Install [OntoCode from the Marketplace](../vscode-install.md) or [Open VSX](https://open-vsx.org/extension/ontocode/ontocode).
+1. Install [Strixonomy from the Marketplace](../vscode-install.md) or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy).
 2. **File → Open Folder…** and select your ontology repository (not a single file).
-3. OntoCode’s **bundled** language server works in Restricted Mode — **Trust** only if you set custom `ontocode.lspPath` or `ontocode.robotPath`.
-4. Open the **OntoCode** activity bar and confirm **Ontologies** lists your `.ttl` / `.owl` files.
+3. Strixonomy’s **bundled** language server works in Restricted Mode — **Trust** only if you set custom `strixonomy.lspPath` or `strixonomy.robotPath`.
+4. Open the **Strixonomy** activity bar and confirm **Ontologies** lists your `.ttl` / `.owl` files.
 5. Expand **Classes** and click an entity to open the **Entity Inspector**.
 
 Follow the [first success core path](../guides/first-success.md) if anything is empty after trust + index.
 
-## Day 2 — Map Protégé habits to OntoCode
+## Day 2 — Map Protégé habits to Strixonomy
 
-| In Protégé | In OntoCode v0.26 |
+| In Protégé | In Strixonomy v0.26 |
 |------------|-------------------|
 | Class hierarchy tab | **Classes** explorer; toggle **asserted / inferred / combined** after reasoner |
 | Entity editor (labels, parents) | **Entity Inspector** (`.ttl`, `.obo`, `.owl`/`.rdf`, `.owx`) |
 | Manchester syntax | **Manchester editor** panel |
-| DL query tab | **Query Workbench → DL mode** (or CLI `ontocore dl-query`) — [honesty notes](dl-query.md); not full Protégé tab / HermiT identity |
+| DL query tab | **Query Workbench → DL mode** (or CLI `strixonomy dl-query`) — [honesty notes](dl-query.md); not full Protégé tab / HermiT identity |
 | Reasoner (HermiT, etc.) | **Start / Synchronize / Classify / Consistency / Realize** — EL/RL/RDFS/DL/auto via OntoLogos (not certified HermiT-identical); **Stop** requests engine cancel |
 | Explanations | **Explanation** panel (unsat; DL-native steps where available; stale banner after reindex) |
 | SWRLTab | **Rule Browser** / **Rule Editor** (author + validate; DLSafe materialize on classify) |
 | OWLViz / OntoGraf | **Class / property / import / neighborhood** graphs (asserted/inferred/combined; v0.26 kinds expanded) |
 | Imports | **Manage Imports** panel |
-| Preferences | OntoCode settings + plugin preference pages |
+| Preferences | Strixonomy settings + plugin preference pages |
 | Active ontology | **Active Ontology** selector (multi-root supported) |
 | Refactor / move axioms | **Rename**, **Migrate Namespace**, **Move**, **Extract Module** (CLI); **Merge**, **Replace** (IDE only) |
-| Diff between versions | **Semantic Diff** panel or `ontocore diff` in CI |
+| Diff between versions | **Semantic Diff** panel or `strixonomy diff` in CI |
 | Layout / perspectives | Named **Modeling / Reasoning / Review** perspectives; restored tabs offer **Reopen panel** |
 
 ## Day 3 — Validate in CI
 
 ```yaml
-- run: cargo install ontocore-cli --locked --version 0.26.2
-- run: ontocore validate ./src/ontologies
+- run: cargo install strixonomy-cli --locked --version 0.26.2
+- run: strixonomy validate ./src/ontologies
 ```
 
 Optional: fail on unsatisfiable classes, or assert an instance:
 
 ```yaml
-- run: ontocore classify . --profile el --format json
-- run: ontocore realize . --profile rl --format json
+- run: strixonomy classify . --profile el --format json
+- run: strixonomy realize . --profile rl --format json
 ```
 
 Full examples: [CI integration](../ci-integration.md) · [Realize cookbook](../examples/realize.md).
@@ -105,16 +105,16 @@ Guide: [Reasoner](reasoner.md) · [SWRL cookbook](../examples/swrl.md).
 - [ ] Browse and edit Turtle/OBO/XML entities in VS Code
 - [ ] Run reasoner lifecycle (classify / consistency / realize / stop) and open an explanation
 - [ ] Optionally open Rule Browser for SWRL (if your ontology uses rules)
-- [ ] Run `ontocore validate` (or classify / realize) in CI
-- [ ] Compare a branch with **Semantic Diff** or `ontocore diff`
-- [ ] Document which tasks stay in Protégé vs OntoCode for your team
+- [ ] Run `strixonomy validate` (or classify / realize) in CI
+- [ ] Compare a branch with **Semantic Diff** or `strixonomy diff`
+- [ ] Document which tasks stay in Protégé vs Strixonomy for your team
 
 ## Common friction points
 
 | Issue | Resolution |
 |-------|------------|
 | Cannot edit OWL/XML / RDF/XML in inspector | Ensure file is `.owl`/`.rdf`/`.owx` with OK parse status (v0.21+); check [Supported formats](../supported-formats.md) and [OWL/XML write-back](owl-xml-workflow.md). Prefer Turtle for full Manchester / refactor |
-| SQL query fails | OntoCore SQL is single-table subset — use SPARQL for graph patterns |
+| SQL query fails | Strixonomy SQL is single-table subset — use SPARQL for graph patterns |
 | Reasoner slow or fails on DL | Check [workspace limits](../workspace-limits.md); try `el` profile first |
 | Restored panel looks empty | Click **Reopen panel** on the recovery tab (context is reloaded from the last command) |
 | Team expects stable plugin ecosystem API | Plugin host MVP shipped; stable semver API is **v1.0** — see [Plugin authoring](plugins.md) |
@@ -126,5 +126,5 @@ Guide: [Reasoner](reasoner.md) · [SWRL cookbook](../examples/swrl.md).
 | What changed in v0.18 | [migration/v0.18.md](../migration/v0.18.md) |
 | Enterprise evaluation pack | [Enterprise evaluation](enterprise-eval.md) |
 | Split workflow with Protégé | [Protégé coexistence](protege-coexistence.md) |
-| Semantic diff for releases | [Semantic diff](../ontocode/semantic-diff.md) |
+| Semantic diff for releases | [Semantic diff](../ide/semantic-diff.md) |
 | OBO / ROBOT pipelines | [OBO workflow](obo-workflow.md) · [ROBOT interop](robot-interop.md) |

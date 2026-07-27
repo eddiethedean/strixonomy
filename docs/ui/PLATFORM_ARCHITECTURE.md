@@ -7,11 +7,11 @@
 
 ## 1. Overview
 
-The Ontologos platform is a layered architecture centered on OntoCore. See [platform/OVERVIEW.md](../platform/OVERVIEW.md) for the canonical implementation diagram.
+The Ontologos platform is a layered architecture centered on Strixonomy. See [platform/OVERVIEW.md](../platform/OVERVIEW.md) for the canonical implementation diagram.
 
 ```text
 Applications
-├── OntoCode (VS Code)
+├── Strixonomy (VS Code)
 ├── OntoStudio (planned)
 └── Future Web Client
 
@@ -20,13 +20,13 @@ OntoUI (shared React platform — v0.13 foundation shipped)
 ├── Workspace runtime (WorkspaceStore, focus relay, event bus)
 └── WorkspaceHost adapter
 
-OntoCore (implemented v0.13)
+Strixonomy (implemented v0.13)
 └── … see platform/OVERVIEW.md
 ```
 
-## 2. OntoCore Responsibilities
+## 2. Strixonomy Responsibilities
 
-OntoCore owns semantic truth.
+Strixonomy owns semantic truth.
 
 - Parse ontology formats.
 - Build workspace indexes.
@@ -39,9 +39,9 @@ OntoCore owns semantic truth.
 - Generate documentation metadata.
 - Expose stable APIs to applications and plugins.
 
-## 3. OntoCode Responsibilities
+## 3. Strixonomy Responsibilities
 
-OntoCode is the VS Code product surface.
+Strixonomy is the VS Code product surface.
 
 - Extension activation.
 - VS Code commands.
@@ -68,7 +68,7 @@ OntoStudio is the dedicated desktop product.
 
 ## 5. OntoUI (shared React platform)
 
-**OntoUI** is host-agnostic React UI shared by OntoCode and future OntoStudio. **WorkspaceHost** adapters provide shell integration.
+**OntoUI** is host-agnostic React UI shared by Strixonomy and future OntoStudio. **WorkspaceHost** adapters provide shell integration.
 
 > **Architecture:** [platform/ONTOUI.md](../platform/ONTOUI.md) · [adr/0001](../adr/0001-ontoui-shared-react-platform.md)
 
@@ -93,7 +93,7 @@ interface VisualizationProvider {}
 interface ImportExportProvider {}
 ```
 
-Capability Providers register with the platform; OntoCore hosts runtime (planned v0.14).
+Capability Providers register with the platform; Strixonomy hosts runtime (planned v0.14).
 
 ## 7. API Boundaries
 
@@ -142,7 +142,7 @@ No component directly calls raw transport APIs.
 
 ## 10. Success Criteria
 
-The platform succeeds when OntoCode, OntoStudio, Capability Providers, AI tools, and automation systems share the same semantic foundation without duplicating domain logic.
+The platform succeeds when Strixonomy, OntoStudio, Capability Providers, AI tools, and automation systems share the same semantic foundation without duplicating domain logic.
 
 ## Evolution
 

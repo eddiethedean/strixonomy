@@ -1,13 +1,13 @@
 # OWLVIZ.md
 
 # OWLViz Reverse Engineering Specification
-## Plugin Analysis and Design Blueprint for OntoCode
+## Plugin Analysis and Design Blueprint for Strixonomy
 
 ## Purpose
 
 OWLViz is one of the classic visualization plugins for Protégé. It provides a graph-based visualization of OWL class hierarchies, allowing ontology engineers to inspect asserted and inferred subclass relationships that are difficult to understand from tree views alone.
 
-OntoCode should preserve the useful concepts introduced by OWLViz while dramatically expanding visualization capabilities into a first-class graph editing experience.
+Strixonomy should preserve the useful concepts introduced by OWLViz while dramatically expanding visualization capabilities into a first-class graph editing experience.
 
 ---
 
@@ -198,7 +198,7 @@ Allow plugins to contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -243,10 +243,10 @@ Platform
 
 # Beyond OWLViz
 
-Rather than treating visualization as a standalone plugin, OntoCode should make graph visualization a core workspace surface shared by modeling, reasoning, debugging, refactoring, collaboration, and AI assistance.
+Rather than treating visualization as a standalone plugin, Strixonomy should make graph visualization a core workspace surface shared by modeling, reasoning, debugging, refactoring, collaboration, and AI assistance.
 
 ---
 
 # Summary
 
-OWLViz pioneered graphical ontology visualization inside Protégé by exposing asserted and inferred class hierarchies through an interactive graph. OntoCode should preserve these capabilities while evolving them into a scalable, graph-native ontology engineering experience tightly integrated with the rest of the platform.
+OWLViz pioneered graphical ontology visualization inside Protégé by exposing asserted and inferred class hierarchies through an interactive graph. Strixonomy should preserve these capabilities while evolving them into a scalable, graph-native ontology engineering experience tightly integrated with the rest of the platform.

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Capture real VS Code screenshots of OntoCode into docs/ + extension media.
+# Capture real VS Code screenshots of Strixonomy into docs/ + extension media.
 #
 # Requires macOS Screen Recording permission for Terminal/Cursor
 # (System Settings → Privacy & Security → Screen Recording).
@@ -39,8 +39,8 @@ cp fixtures/reasoner-el.ttl "$WORK/reasoner-el.ttl"
 (
   cd "$WORK"
   git init -q
-  git config user.email "screenshots@ontocode.local"
-  git config user.name "OntoCode Screenshots"
+  git config user.email "screenshots@strixonomy.local"
+  git config user.name "Strixonomy Screenshots"
   git add example.ttl reasoner-el.ttl
   git commit -q -m "initial ontology"
   # Working-tree change for semantic diff (label edit)
@@ -48,7 +48,7 @@ cp fixtures/reasoner-el.ttl "$WORK/reasoner-el.ttl"
 )
 
 echo "==> compile extension + LSP"
-cargo build -p ontocore-lsp --bins
+cargo build -p strixonomy-lsp --bins
 # Fresh bundle avoids macOS SIGKILL on quarantined LSP binaries
 ./scripts/prepare-extension-server.sh darwin-arm64
 (
@@ -57,10 +57,10 @@ cargo build -p ontocore-lsp --bins
   npm run compile:vscode-test
 )
 
-export ONTOCODE_CAPTURE_SCREENSHOTS=1
-export ONTOCODE_TEST_FIXTURES="$WORK"
-export ONTOCODE_SCREENSHOT_DIR="$OUT_DOCS"
-export ONTOCODE_CAPTURE_SCRIPT="$ROOT/scripts/macos-capture-window.sh"
+export STRIXONOMY_CAPTURE_SCREENSHOTS=1
+export STRIXONOMY_TEST_FIXTURES="$WORK"
+export STRIXONOMY_SCREENSHOT_DIR="$OUT_DOCS"
+export STRIXONOMY_CAPTURE_SCRIPT="$ROOT/scripts/macos-capture-window.sh"
 
 BEFORE=$(stat -f '%m' "$OUT_DOCS/explorer-inspector.png" 2>/dev/null || echo 0)
 

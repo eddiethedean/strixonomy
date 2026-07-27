@@ -20,6 +20,11 @@ extension/node_modules/
 extension/out/
 extension/server/
 
-# Workspace session / plugin output written by ontocore or the extension
+# Workspace session / cache / plugin output (plugins manifests may be committed)
 **/.ontocode/
+**/.strixonomy/session.json
+**/.strixonomy/cache/
+**/.ontocore/cache/
+**/.strixonomy/plugin-out/
+**/.ontocore/plugin-out/
 /target-msrv/

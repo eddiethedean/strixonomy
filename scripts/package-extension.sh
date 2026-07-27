@@ -10,14 +10,14 @@ case "$(uname -m)" in
 esac
 SERVER_DIR="$ROOT/extension/server/${PLATFORM}-${ARCH}"
 
-cargo build --release -p ontocore-lsp
+cargo build --release -p strixonomy-lsp
 
 mkdir -p "$SERVER_DIR"
-cp "$ROOT/target/release/ontocore-lsp" "$SERVER_DIR/ontocore-lsp"
-chmod +x "$SERVER_DIR/ontocore-lsp"
+cp "$ROOT/target/release/strixonomy-lsp" "$SERVER_DIR/strixonomy-lsp"
+chmod +x "$SERVER_DIR/strixonomy-lsp"
 
 cd "$ROOT/extension"
 npm ci
 npm run compile
 
-echo "Extension built. Server binary at $SERVER_DIR/ontocore-lsp"
+echo "Extension built. Server binary at $SERVER_DIR/strixonomy-lsp"

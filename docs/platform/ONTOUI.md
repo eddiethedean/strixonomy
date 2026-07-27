@@ -4,7 +4,7 @@
 
 ## Scope
 
-**OntoUI** is the shared React UI platform for OntoCode and future OntoStudio. Host-agnostic components and state; hosts provide file I/O, notifications, and shell integration via **WorkspaceHost**.
+**OntoUI** is the shared React UI platform for Strixonomy and future OntoStudio. Host-agnostic components and state; hosts provide file I/O, notifications, and shell integration via **WorkspaceHost**.
 
 ## Implementation (v0.13)
 

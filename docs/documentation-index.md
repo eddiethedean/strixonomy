@@ -1,10 +1,10 @@
 # Documentation index
 
-Master index for OntoCode / OntoCore planning, architecture, and user documentation.
+Master index for Strixonomy / Strixonomy planning, architecture, and user documentation.
 
 **Latest tagged release:** v0.26.2 · **Canonical capabilities:** [What ships today](SHIPPED.md) · **Limits:** [Known limitations](known-limitations.md) · **Terms:** [Glossary](glossary.md)
 
-The public site navigation is defined in [`mkdocs.yml`](https://github.com/eddiethedean/ontocode/blob/main/mkdocs.yml). This page is a reading-order map — not a second nav.
+The public site navigation is defined in [`mkdocs.yml`](https://github.com/eddiethedean/strixonomy/blob/main/mkdocs.yml). This page is a reading-order map — not a second nav.
 
 ## Recommended reading order
 
@@ -12,7 +12,7 @@ The public site navigation is defined in [`mkdocs.yml`](https://github.com/eddie
 
 1. [First success](guides/first-success.md)
 2. [Your next steps (day 2)](guides/day-2.md)
-3. [Feature tour](ontocode/feature-tour.md)
+3. [Feature tour](ide/feature-tour.md)
 4. [Supported formats](supported-formats.md)
 5. [Ontology concepts](concepts.md) (if new to OWL)
 
@@ -52,9 +52,9 @@ Deep planning docs (`docs/ui/`, `docs/platform/`, `docs/cursor-prompts/`, `docs/
 | Section | Start here |
 |---------|------------|
 | **Get started** | [First success](guides/first-success.md) → [Your next steps](guides/day-2.md) → [Install](install.md) → [Documentation index](documentation-index.md) |
-| **Use OntoCode** | [Overview](ontocode/index.md) → [Feature tour](ontocode/feature-tour.md) |
-| **Use OntoCore** | [OntoCore overview](ontocore/index.md) · [Examples](examples/index.md) |
-| **Reference** | [CLI](cli-reference.md) · [Rust API](ontocore/rust-api.md) · [LSP API](lsp-api.md) · [Patch](patch-reference.md) · [SQL](sql-reference.md) · [SPARQL](sparql-reference.md) · [Errors](errors.md) · [docs.rs ontocore](https://docs.rs/ontocore) |
+| **Use Strixonomy** | [Overview](ide/index.md) → [Feature tour](ide/feature-tour.md) |
+| **Use Strixonomy** | [Strixonomy overview](strixonomy/index.md) · [Examples](examples/index.md) |
+| **Reference** | [CLI](cli-reference.md) · [Rust API](strixonomy/rust-api.md) · [LSP API](lsp-api.md) · [Patch](patch-reference.md) · [SQL](sql-reference.md) · [SPARQL](sparql-reference.md) · [Errors](errors.md) · [docs.rs strixonomy](https://docs.rs/strixonomy) |
 | **Evaluate** | [What ships today](SHIPPED.md) · [Enterprise eval](guides/enterprise-eval.md) · [Week-2 playbook](guides/enterprise-week-2.md) |
 | **Help** | [FAQ](faq.md) · [Troubleshooting](troubleshooting.md) · [Support](support.md) |
 | **Contribute** | [Contributing](contributing.md) · [Plugin policy](guides/plugin-policy.md) · [CLI](cli-reference.md) · [LSP](lsp-api.md) · [Engineering](engineering.md) |
@@ -74,10 +74,10 @@ Deep planning docs (`docs/ui/`, `docs/platform/`, `docs/cursor-prompts/`, `docs/
 | [architecture.md](architecture.md) | User-facing ecosystem overview | Evaluator | Shipped v0.26 |
 | [vision.md](vision.md) | Mission and direction | Evaluator | Active |
 | [engineering.md](engineering.md) | Pointer to GitHub engineering corpus | Implementer | Active |
-| [platform/OVERVIEW.md](https://github.com/eddiethedean/ontocode/blob/main/docs/platform/OVERVIEW.md) | OntoUI / platform (GitHub) | Implementer | Shipped v0.26 |
+| [platform/OVERVIEW.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI / platform (GitHub) | Implementer | Shipped v0.26 |
 
 ---
 
 ## User documentation
 
-Published site: [Read the Docs](https://ontocode-vs.readthedocs.io/en/latest/) · Start at [index.md](index.md).
+Published site: [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/) · Start at [index.md](index.md).

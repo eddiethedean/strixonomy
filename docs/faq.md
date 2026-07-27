@@ -1,21 +1,21 @@
 # FAQ
 
-Common questions about OntoCode and OntoCore. For step-by-step fixes, see [Troubleshooting](troubleshooting.md).
+Common questions about Strixonomy and Strixonomy. For step-by-step fixes, see [Troubleshooting](troubleshooting.md).
 
 If you’re stuck or want to report a bug, see [Support and contact](support.md).
 
 ## Naming and products
 
-**What is the difference between OntoCode and OntoCore?**
+**What is the difference between Strixonomy and Strixonomy?**
 
-- **OntoCode** — VS Code IDE (explorer, inspector, Query Workbench, Manchester editor, diagnostics).
-- **OntoCore** — Rust semantic workspace engine (`ontocore` crate, `ontocore-*` implementation, `ontocore` CLI, `ontocore-lsp`).
+- **Strixonomy** — VS Code IDE (explorer, inspector, Query Workbench, Manchester editor, diagnostics).
+- **Strixonomy** — Rust semantic workspace engine (`strixonomy` crate, `strixonomy-*` implementation, `strixonomy` CLI, `strixonomy-lsp`).
 
-OntoCore was previously branded **OntoIndex** (`ontoindex` CLI, `ontoindex-*` crates). As of v0.9 there is no compatibility alias — see [v0.9 migration](migration/v0.9.md). This repository contains both OntoCode and OntoCore.
+Strixonomy was previously branded **OntoIndex** (`ontoindex` CLI, `ontoindex-*` crates). As of v0.9 there is no compatibility alias — see [v0.9 migration](migration/v0.9.md). This repository contains both Strixonomy and Strixonomy.
 
 **Is the API stable?**
 
-Pre-1.0. Published crates are at **0.26.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin versions in CI with `cargo install ontocore-cli --locked --version 0.26.2`. See [API stability](guides/api-stability.md). Upgrading from **0.17.x**? See [v0.18 migration](migration/v0.18.md). Upgrading from **0.16.x**? See [v0.17 migration](migration/v0.17.md). Upgrading from **0.15.x**? See [v0.16 migration](migration/v0.16.md). Upgrading from **0.14.x** (or earlier)? Start at the [migration index](migration/README.md). The `validate` and `classify` exit codes are documented in [workspace-limits.md](workspace-limits.md).
+Pre-1.0. Published crates are at **0.26.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin versions in CI with `cargo install strixonomy-cli --locked --version 0.26.2`. See [API stability](guides/api-stability.md). Upgrading from **0.17.x**? See [v0.18 migration](migration/v0.18.md). Upgrading from **0.16.x**? See [v0.17 migration](migration/v0.17.md). Upgrading from **0.15.x**? See [v0.16 migration](migration/v0.16.md). Upgrading from **0.14.x** (or earlier)? Start at the [migration index](migration/README.md). The `validate` and `classify` exit codes are documented in [workspace-limits.md](workspace-limits.md).
 
 **What ships in the current release?**
 
@@ -23,7 +23,7 @@ See [What ships today](SHIPPED.md) for the canonical capability matrix.
 
 ## Production readiness
 
-**Is OntoCode production-ready?**
+**Is Strixonomy production-ready?**
 
 **Pilot-ready for many OWL/OBO workflows in VS Code and CI** — not a full Protégé replacement for every profile. Use [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md) for the capability matrix, [Production readiness](guides/production-readiness.md) for pilot vs production tiers, and [Protégé decision guide](guides/protege-decision.md) for gap analysis. Pin releases in CI (`--version 0.26.2`) and review [API stability](guides/api-stability.md) before embedding Rust libraries.
 
@@ -31,7 +31,7 @@ See [What ships today](SHIPPED.md) for the canonical capability matrix.
 
 **Which version should I install?**
 
-Pin to the tagged release in [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/ontocode/blob/main/docs/TAGGED_RELEASE) (currently **0.26.2**). See [Versions and channels](guides/versions-and-channels.md) for Marketplace vs GitHub Releases vs crates.io vs Read the Docs `latest`.
+Pin to the tagged release in [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.26.2**). See [Versions and channels](guides/versions-and-channels.md) for Marketplace vs GitHub Releases vs crates.io vs Read the Docs `latest`.
 
 **Why might Marketplace lag GitHub Releases?**
 
@@ -39,7 +39,7 @@ Marketplace publish is always **manual** after the release workflow. **Open VSX*
 
 **Can I edit Protégé `.owl` / RDF/XML in place?**
 
-**Yes (v0.21+), with caveats.** RDF/XML (`.owl`/`.rdf`) and OWL/XML (`.owx`) support Entity Inspector and `ontocore patch` write-back via full-document re-serialize (semantic fidelity, not Protégé byte-identical). Prefer Turtle when you need byte-stable diffs, full Manchester, or Turtle-first refactor ops; rename / merge / replace also apply to XML and OBO. Details: [Supported formats](supported-formats.md) and [OWL/XML and RDF/XML write-back](guides/owl-xml-workflow.md).
+**Yes (v0.21+), with caveats.** RDF/XML (`.owl`/`.rdf`) and OWL/XML (`.owx`) support Entity Inspector and `strixonomy patch` write-back via full-document re-serialize (semantic fidelity, not Protégé byte-identical). Prefer Turtle when you need byte-stable diffs, full Manchester, or Turtle-first refactor ops; rename / merge / replace also apply to XML and OBO. Details: [Supported formats](supported-formats.md) and [OWL/XML and RDF/XML write-back](guides/owl-xml-workflow.md).
 
 **SQL or SPARQL — which should I use?**
 
@@ -47,62 +47,62 @@ Use **catalog SQL** for simple tabular listing (classes, properties). Prefer **S
 
 **What is the workspace runtime (v0.20)?**
 
-Host-owned registry for open ontologies (active target, dirty/save, semantic undo, session restore under `.ontocode/session.json`). See [migration v0.20](migration/v0.20.md).
+Host-owned registry for open ontologies (active target, dirty/save, semantic undo, session restore under `.ide/session.json`). See [migration v0.20](migration/v0.20.md).
 
-**I ran `cargo install ontocore-cli` and `ontocore query ./fixtures` failed.**
+**I ran `cargo install strixonomy-cli` and `strixonomy query ./fixtures` failed.**
 
 The `fixtures/` directory exists only in a git clone. Use your own ontology path:
 
 ```bash
-ontocore query /path/to/your/ontologies "SELECT * FROM classes"
+strixonomy query /path/to/your/ontologies "SELECT * FROM classes"
 ```
 
 See [Install CLI & CI (detail)](install-cli-ci.md). Always pin with `--version 0.26.2` in CI so you do not surprise-upgrade.
 
 **Do I need Rust to use VS Code?**
 
-No. Install the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or a release VSIX. The language server is bundled.
+No. Install the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or a release VSIX. The language server is bundled.
 
 **Can I install without cargo?**
 
-Yes. Download release binaries and VSIX from [GitHub Releases](https://github.com/eddiethedean/ontocode/releases). Linux x64 CLI tarballs are published; macOS/Windows CLI uses `cargo install`. See [release-integrity.md](release-integrity.md).
+Yes. Download release binaries and VSIX from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases). Linux x64 CLI tarballs are published; macOS/Windows CLI uses `cargo install`. See [release-integrity.md](release-integrity.md).
 
 ## VS Code
 
 **The explorer is empty.**
 
-1. Run **OntoCode: Index Workspace** from the Command Palette.
-2. Check **View → Output → OntoCore Language Server** for errors.
+1. Run **Strixonomy: Index Workspace** from the Command Palette.
+2. Check **View → Output → Strixonomy Language Server** for errors.
 3. Confirm the folder contains supported files (`.ttl`, `.owl`, etc.).
 
 **How do I run SQL or SPARQL in VS Code?**
 
-Command Palette → **OntoCode: Open Query Workbench**. See [Query Workbench](ontocode/query-workbench.md).
+Command Palette → **Strixonomy: Open Query Workbench**. See [Query Workbench](ide/query-workbench.md).
 
-**Does OntoCode support Protégé-style DL Query?**
+**Does Strixonomy support Protégé-style DL Query?**
 
-**Partially (v0.24+).** Query Workbench **DL** mode runs Manchester class expressions with Instances / Subclasses / Superclasses / Equivalents tabs (also CLI `ontocore dl-query` and LSP `ontocore/dlQuery`). It is Protégé-*inspired*, **not** HermiT-identical — see [DL Query honesty](guides/dl-query.md). SQL and SPARQL modes remain separate.
+**Partially (v0.24+).** Query Workbench **DL** mode runs Manchester class expressions with Instances / Subclasses / Superclasses / Equivalents tabs (also CLI `strixonomy dl-query` and LSP `strixonomy/dlQuery`). It is Protégé-*inspired*, **not** HermiT-identical — see [DL Query honesty](guides/dl-query.md). SQL and SPARQL modes remain separate.
 
 **How do I edit complex axioms?**
 
-Select a class in a `.ttl` file → Entity Inspector → **Edit in Manchester** or **Add Manchester axiom**. See [Manchester editor](ontocode/manchester-editor.md).
+Select a class in a `.ttl` file → Entity Inspector → **Edit in Manchester** or **Add Manchester axiom**. See [Manchester editor](ide/manchester-editor.md).
 
 **I cannot edit in the Entity Inspector.**
 
-Write-back applies to **Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`)**. For the full matrix (index/query vs write-back), see [Supported formats](supported-formats.md). JSON-LD and line-oriented RDF are read-only in the inspector. See [OBO authoring](ontocode/obo-authoring.md) and [OWL/XML write-back](guides/owl-xml-workflow.md).
+Write-back applies to **Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`)**. For the full matrix (index/query vs write-back), see [Supported formats](supported-formats.md). JSON-LD and line-oriented RDF are read-only in the inspector. See [OBO authoring](ide/obo-authoring.md) and [OWL/XML write-back](guides/owl-xml-workflow.md).
 
 **How do multi-root VS Code workspaces work?**
 
-Since **v0.10**, the language server indexes **all workspace folders** on open. If you run **OntoCode: Index Workspace** with multiple roots, VS Code may prompt you to pick a folder — automatic indexing still uses every registered root.
+Since **v0.10**, the language server indexes **all workspace folders** on open. If you run **Strixonomy: Index Workspace** with multiple roots, VS Code may prompt you to pick a folder — automatic indexing still uses every registered root.
 
 **`failed to start language server`**
 
-- Check **Output → OntoCore Language Server** and uninstall duplicate OntoCode versions.
-- OntoCode’s **bundled** language server works in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `ontocode.lspPath` or `ontocode.robotPath`.
-- Set `ontocode.lspPath` to a local `ontocore-lsp` binary (`cargo install ontocore-lsp --locked --version 0.26.2`) when debugging a custom build — trusted workspaces only.
+- Check **Output → Strixonomy Language Server** and uninstall duplicate Strixonomy versions.
+- Strixonomy’s **bundled** language server works in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
+- Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install strixonomy-lsp --locked --version 0.26.2`) when debugging a custom build — trusted workspaces only.
 - See [vscode-install.md](vscode-install.md) and [Troubleshooting](troubleshooting.md) (symptom table).
 
-**Does `ontocode.autoIndexOnOpen` do anything?**
+**Does `strixonomy.autoIndexOnOpen` do anything?**
 
 It is a legacy setting. Indexing is driven by the language server on workspace open.
 
@@ -115,7 +115,7 @@ A **catalog SQL (subset)**: single-table `SELECT`, `FROM`, `WHERE` with `=`, `!=
 **How do I run SPARQL?**
 
 ```bash
-ontocore sparql /path/to/ontologies "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
+strixonomy sparql /path/to/ontologies "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
 ```
 
 See [sparql-reference.md](sparql-reference.md).
@@ -124,7 +124,7 @@ See [sparql-reference.md](sparql-reference.md).
 
 Both SQL and SPARQL **truncate** at 100,000 rows (no error). LSP responses include `truncated: true` when the cap is hit. See [workspace-limits.md](workspace-limits.md).
 
-**What does `ontocore validate` check?**
+**What does `strixonomy validate` check?**
 
 Parse errors plus catalog lint rules: broken imports, undefined prefixes, duplicate/missing labels, orphan classes. See [sql-reference.md](sql-reference.md) (`diagnostics` table).
 
@@ -142,13 +142,13 @@ Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`) for
 
 **Is ontology content uploaded anywhere?**
 
-No. OntoCore and OntoCode are local-first by default. See [security.md](security.md).
+No. Strixonomy and Strixonomy are local-first by default. See [security.md](security.md).
 
 **What about LGPL (horned-owl)?**
 
-`ontocore-owl` links horned-owl (LGPL-3.0) for Turtle axiom modeling and write-back. See [design/LICENSES.md](design/LICENSES.md).
+`strixonomy-owl` links horned-owl (LGPL-3.0) for Turtle axiom modeling and write-back. See [design/LICENSES.md](design/LICENSES.md).
 
-**Can I expose ontocore-lsp on the network?**
+**Can I expose strixonomy-lsp on the network?**
 
 No. The LSP has no authentication. Use stdio with a trusted editor only. See [security.md](security.md).
 
@@ -156,12 +156,12 @@ No. The LSP has no authentication. Use stdio with a trusted editor only. See [se
 
 **How do I run the reasoner in VS Code?**
 
-Run **OntoCode: Run Reasoner** from the Command Palette, then use **OntoCode: Set Hierarchy Mode** for asserted / inferred / combined. See [Reasoner guide](guides/reasoner.md).
+Run **Strixonomy: Run Reasoner** from the Command Palette, then use **Strixonomy: Set Hierarchy Mode** for asserted / inferred / combined. See [Reasoner guide](guides/reasoner.md).
 
 **How do I classify in CI?**
 
 ```bash
-ontocore classify /path/to/ontologies --profile el --format json
+strixonomy classify /path/to/ontologies --profile el --format json
 ```
 
 Exits non-zero when unsatisfiable classes are found. See [CI integration](ci-integration.md) and [workspace-limits.md](workspace-limits.md).
@@ -182,21 +182,21 @@ EL/RL/RDFS shipped in **v0.6.0** (Ontologos 0.9.0). Full OWL 2 DL classification
 
 **How does this compare to Protégé?**
 
-OntoCode targets OWL/OBO workflows in VS Code: browse and edit Turtle, OBO, RDF/XML, and OWL/XML; SQL/SPARQL and DL Query; EL–DL reasoning; refactoring; graph views; Turtle completion; diagnostic quick fixes; Manage Imports; property chain editing; **semantic diff** (CLI, LSP, and VS Code panel); and **Plugin SDK 1.0** (frozen TOML + subprocess wire — [Plugin policy](guides/plugin-policy.md)). Gaps vs Protégé today include **byte-identical XML layout**, **full DL axiom catalog for all formats**, and a **curated plugin marketplace / production owlmake** (product **1.0**). For a decision framework see [Protégé vs OntoCode](guides/protege-decision.md); for the live capability matrix see [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md). The historical v0.18 checklist under [design/PROTEGE_PARITY.md](design/PROTEGE_PARITY.md) is **not current**. For a first-week adoption path, see [Migrating from Protégé](guides/protege-migration.md).
+Strixonomy targets OWL/OBO workflows in VS Code: browse and edit Turtle, OBO, RDF/XML, and OWL/XML; SQL/SPARQL and DL Query; EL–DL reasoning; refactoring; graph views; Turtle completion; diagnostic quick fixes; Manage Imports; property chain editing; **semantic diff** (CLI, LSP, and VS Code panel); and **Plugin SDK 1.0** (frozen TOML + subprocess wire — [Plugin policy](guides/plugin-policy.md)). Gaps vs Protégé today include **byte-identical XML layout**, **full DL axiom catalog for all formats**, and a **curated plugin marketplace / production owlmake** (product **1.0**). For a decision framework see [Protégé vs Strixonomy](guides/protege-decision.md); for the live capability matrix see [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md). The historical v0.18 checklist under [design/PROTEGE_PARITY.md](design/PROTEGE_PARITY.md) is **not current**. For a first-week adoption path, see [Migrating from Protégé](guides/protege-migration.md).
 
 ## OBO and graphs
 
 **Can I edit `.obo` files in the inspector?**
 
-**Yes (v0.13+).** OBO terms can be edited in the Entity Inspector and via `ontocore patch` on `.obo` files. RDF/XML and OWL/XML are also writable (v0.21+). JSON-LD and line-oriented RDF remain read-only. See [OBO workflow guide](guides/obo-workflow.md) and [Supported formats](supported-formats.md).
+**Yes (v0.13+).** OBO terms can be edited in the Entity Inspector and via `strixonomy patch` on `.obo` files. RDF/XML and OWL/XML are also writable (v0.21+). JSON-LD and line-oriented RDF remain read-only. See [OBO workflow guide](guides/obo-workflow.md) and [Supported formats](supported-formats.md).
 
 **How do I open ontology graphs?**
 
-Use **OntoCode: Open Class Graph** (and related commands). See [Graph view](ontocode/graph-view.md).
+Use **Strixonomy: Open Class Graph** (and related commands). See [Graph view](ide/graph-view.md).
 
 **Does ROBOT require Java?**
 
-Yes. `ontocore robot` and LSP `runRobot` spawn the external `robot` CLI. See [ROBOT interop guide](guides/robot-interop.md).
+Yes. `strixonomy robot` and LSP `runRobot` spawn the external `robot` CLI. See [ROBOT interop guide](guides/robot-interop.md).
 
 **Which panels use React vs legacy HTML?**
 
@@ -206,7 +206,7 @@ As of **v0.10**, production webview panels are React: **Entity Inspector**, **gr
 
 **Do I need `cargo test --workspace` for a docs-only PR?**
 
-No. Use the [testing matrix](guides/testing-matrix.md) and scoped PR template checkboxes. Docs-only changes need MkDocs preview (`./scripts/serve-docs.sh` or `./scripts/build-docs.sh`) — not a full Rust build. See [scripts/README.md](https://github.com/eddiethedean/ontocode/blob/main/scripts/README.md).
+No. Use the [testing matrix](guides/testing-matrix.md) and scoped PR template checkboxes. Docs-only changes need MkDocs preview (`./scripts/serve-docs.sh` or `./scripts/build-docs.sh`) — not a full Rust build. See [scripts/README.md](https://github.com/eddiethedean/strixonomy/blob/main/scripts/README.md).
 
 **When should I run `./scripts/run-ci-local.sh`?**
 

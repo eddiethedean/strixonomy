@@ -1,11 +1,11 @@
 //! v0.22 OWL 2 authoring patch + round-trip coverage.
 
-use ontocore::Workspace;
-use ontocore_catalog::IndexBuilder;
-use ontocore_core::OntologyFormat;
-use ontocore_owl::{apply_patches, apply_patches_to_text, apply_xml_patches_to_text, PatchOp};
 use std::collections::BTreeMap;
 use std::path::PathBuf;
+use strixonomy::Workspace;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_core::OntologyFormat;
+use strixonomy_owl::{apply_patches, apply_patches_to_text, apply_xml_patches_to_text, PatchOp};
 
 fn roundtrip_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("examples/protege-roundtrip")

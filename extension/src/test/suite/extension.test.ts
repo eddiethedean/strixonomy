@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
 import { FIXTURE_IRIS, fixturesWorkspaceUri } from "./helpers";
 
-interface OntoCodeApi {
+interface StrixonomyApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<{
     stats: { error_count: number; class_count: number };
@@ -31,18 +31,18 @@ interface OntoCodeApi {
   }>;
 }
 
-suite("OntoCode in VS Code", () => {
-  let api: OntoCodeApi;
+suite("Strixonomy in VS Code", () => {
+  let api: StrixonomyApi;
 
   suiteSetup(async function () {
     this.timeout(120_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     api = await ext.activate();
     assert.ok(ext.isActive, "extension should be active after activate()");
   });
 
-  test("language client starts (bundled ontocore-lsp)", () => {
+  test("language client starts (bundled strixonomy-lsp)", () => {
     assert.ok(api.getClient(), "LSP client should be running");
     assert.ok(api.getClient()!.isRunning?.() ?? true, "client should report running");
   });

@@ -1,7 +1,7 @@
-use ontocore_catalog::IndexBuilder;
-use ontocore_query::query_catalog;
 use std::fs;
 use std::path::Path;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_query::query_catalog;
 
 pub fn assert_golden_snapshot(workspace: &str, query: &str, golden_path: &Path) {
     let catalog = IndexBuilder::new().workspace(workspace).build().expect("index workspace");

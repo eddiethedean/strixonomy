@@ -2,10 +2,10 @@
 //! Upstream: DOI/PubMed/ORCID/OMIM/OMIMPS/Orphanet/ISBN/Wikipedia*LinkExtractor,
 //! RegExBasedLinkExtractor.
 
-use ontocore_owl::{
+use regex::Regex;
+use strixonomy_owl::{
     extract_first_link_url, extract_links, extract_with_pattern, linkify_markdown_text,
 };
-use regex::Regex;
 
 #[test]
 fn links_doi() {

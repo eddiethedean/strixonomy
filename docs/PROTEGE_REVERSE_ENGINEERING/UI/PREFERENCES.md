@@ -6,7 +6,7 @@
 
 The Preferences system centralizes user-configurable settings that affect the behavior, appearance, rendering, reasoning, plugins, and persistence of the Protégé application. Preferences are user-specific rather than ontology-specific and are intended to persist across sessions.
 
-This document serves as a functional specification for reproducing—and improving—the Protégé preferences system in OntoCode.
+This document serves as a functional specification for reproducing—and improving—the Protégé preferences system in Strixonomy.
 
 ---
 
@@ -39,7 +39,7 @@ Typical settings:
 - Language / locale
 - Update checks
 
-### OntoCode Improvements
+### Strixonomy Improvements
 
 - Cloud workspace defaults
 - Telemetry controls
@@ -61,7 +61,7 @@ Typical settings:
 - High contrast mode
 - Docking behavior
 
-### OntoCode Improvements
+### Strixonomy Improvements
 
 - Design token support
 - Theme marketplace
@@ -105,7 +105,7 @@ Typical settings:
 - Inline validation
 - Automatic formatting
 
-### OntoCode Improvements
+### Strixonomy Improvements
 
 - AI-assisted entity naming
 - Live ontology linting
@@ -141,7 +141,7 @@ Typical settings:
 - Reload strategy
 - Import cache behavior
 
-### OntoCode Improvements
+### Strixonomy Improvements
 
 - Package-manager style dependency resolution
 - Version pinning
@@ -201,7 +201,7 @@ Recommended options:
 - Reasoning shortcuts
 - Custom command bindings
 
-### OntoCode Improvements
+### Strixonomy Improvements
 
 - VS Code style keybinding editor
 - Conflict detection
@@ -298,7 +298,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -312,7 +312,7 @@ Recommended enhancements:
 
 ---
 
-# Recommended OntoCode Preference Categories
+# Recommended Strixonomy Preference Categories
 
 - General
 - Appearance
@@ -355,7 +355,7 @@ Editing
 
 Reasoning
 
-- [x] Default reasoner (`ontocode.reasoner.default` + Preferences hub)
+- [x] Default reasoner (`strixonomy.reasoner.default` + Preferences hub)
 - [ ] Incremental reasoning
 - [ ] Timeouts
 
@@ -384,4 +384,4 @@ Platform
 
 # Summary
 
-Protégé's preferences system provides centralized configuration for the ontology engineering environment while remaining largely independent of ontology content. OntoCode should preserve this separation but evolve it into a modern, searchable, extensible settings platform with plugin-defined pages, synchronized profiles, workspace-aware configuration, and AI-assisted guidance.
+Protégé's preferences system provides centralized configuration for the ontology engineering environment while remaining largely independent of ontology content. Strixonomy should preserve this separation but evolve it into a modern, searchable, extensible settings platform with plugin-defined pages, synchronized profiles, workspace-aware configuration, and AI-assisted guidance.

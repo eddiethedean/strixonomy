@@ -19,8 +19,8 @@ export function resolveLspBinaryForTests(): string {
   }
 
   const candidates = [
-    path.join(REPO_ROOT, "target", "debug", "ontocore-lsp"),
-    path.join(REPO_ROOT, "target", "release", "ontocore-lsp"),
+    path.join(REPO_ROOT, "target", "debug", "strixonomy-lsp"),
+    path.join(REPO_ROOT, "target", "release", "strixonomy-lsp"),
   ];
   for (const candidate of candidates) {
     if (fs.existsSync(candidate)) {
@@ -29,7 +29,7 @@ export function resolveLspBinaryForTests(): string {
   }
 
   throw new Error(
-    "ontocore-lsp binary not found; run `cargo build -p ontocore-lsp --bins` or set ONTOCORE_LSP_BIN"
+    "strixonomy-lsp binary not found; run `cargo build -p strixonomy-lsp --bins` or set ONTOCORE_LSP_BIN"
   );
 }
 
@@ -120,7 +120,7 @@ export async function smokeInitializeLsp(binaryPath: string): Promise<void> {
   });
 
   if (!response) {
-    throw new Error("no initialize response from ontocore-lsp");
+    throw new Error("no initialize response from strixonomy-lsp");
   }
   const parsed = JSON.parse(response) as { result?: unknown; error?: unknown };
   if (parsed.error) {

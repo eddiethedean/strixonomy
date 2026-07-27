@@ -276,9 +276,9 @@ Dialogs should provide:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
-OntoCode should modernize dialogs by introducing:
+Strixonomy should modernize dialogs by introducing:
 
 - Non-blocking sheets where appropriate
 - Multi-step wizards
@@ -351,4 +351,4 @@ Platform
 
 # Summary
 
-Protégé relies on dialogs to perform focused configuration and editing tasks while keeping the primary workspace uncluttered. OntoCode should retain this task-oriented approach but modernize it with live validation, structured dialog APIs, AI-assisted workflows, responsive layouts, and reusable React components backed by a centralized command architecture.
+Protégé relies on dialogs to perform focused configuration and editing tasks while keeping the primary workspace uncluttered. Strixonomy should retain this task-oriented approach but modernize it with live validation, structured dialog APIs, AI-assisted workflows, responsive layouts, and reusable React components backed by a centralized command architecture.

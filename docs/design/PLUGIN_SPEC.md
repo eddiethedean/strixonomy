@@ -1,26 +1,26 @@
 # PLUGIN_SPEC.md
 
 > **Historical design spec — not the shipping contract.**  
-> **Authoring plugins today:** [Plugin authoring](https://ontocode-vs.readthedocs.io/en/latest/guides/plugins/) (TOML manifest + subprocess host).  
-> This file is **excluded from the public Read the Docs site** so adopters do not discover the wrong API via search. Trait-based sketches below are background only; the shipped host uses `.ontocore/plugins/*.toml`.
+> **Authoring plugins today:** [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/) (TOML manifest + subprocess host).  
+> This file is **excluded from the public Read the Docs site** so adopters do not discover the wrong API via search. Trait-based sketches below are background only; the shipped host uses `.strixonomy/plugins/*.toml`.
 
 ## 1. Purpose
 
-The plugin system allows users and organizations to extend OntoCore and OntoCode **without modifying the core project**. Plugins expose **Capability Providers** — see [platform/CAPABILITY_PROVIDERS.md](https://github.com/eddiethedean/ontocode/blob/main/docs/platform/CAPABILITY_PROVIDERS.md) and [adr/0005](../adr/0005-capability-provider-plugin-model.md).
+The plugin system allows users and organizations to extend Strixonomy and Strixonomy **without modifying the core project**. Plugins expose **Capability Providers** — see [platform/CAPABILITY_PROVIDERS.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/CAPABILITY_PROVIDERS.md) and [adr/0005](../adr/0005-capability-provider-plugin-model.md).
 
-**OntoCore hosts plugins; plugins are not part of OntoCore.** Build, release, workflow orchestration, and toolchain-specific validation live in external plugins that integrate through stable OntoCore APIs. OntoCore provides the semantic workspace (index, query, diagnostics, refactoring, LSP); plugins add domain-specific automation on top.
+**Strixonomy hosts plugins; plugins are not part of Strixonomy.** Build, release, workflow orchestration, and toolchain-specific validation live in external plugins that integrate through stable Strixonomy APIs. Strixonomy provides the semantic workspace (index, query, diagnostics, refactoring, LSP); plugins add domain-specific automation on top.
 
-[owlmake](https://github.com/INCATools/owlmake) is the **reference external workflow plugin** — it demonstrates how ROBOT/ODK-style build, QC, and release pipelines integrate with OntoCore without becoming a core dependency.
+[owlmake](https://github.com/INCATools/owlmake) is the **reference external workflow plugin** — it demonstrates how ROBOT/ODK-style build, QC, and release pipelines integrate with Strixonomy without becoming a core dependency.
 
 ## 2. Architecture
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│  OntoCode (VS Code) — surfaces core + plugin workflows      │
+│  Strixonomy (VS Code) — surfaces core + plugin workflows      │
 └────────────────────────────┬────────────────────────────────┘
-                             │ ontocore-lsp
+                             │ strixonomy-lsp
 ┌────────────────────────────▼────────────────────────────────┐
-│  OntoCore — workspace engine + plugin host                  │
+│  Strixonomy — workspace engine + plugin host                  │
 │  index · query · diagnostics · refactor · LSP               │
 └──────────────┬──────────────────────────────┬───────────────┘
                │                              │
@@ -70,7 +70,7 @@ Orchestrate multi-step pipelines (ROBOT/ODK-style). **owlmake** is the reference
 
 ### 3.4 Validation / QC plugins
 
-Add quality checks beyond built-in OntoCore diagnostics.
+Add quality checks beyond built-in Strixonomy diagnostics.
 
 **Example capabilities:**
 
@@ -95,13 +95,13 @@ Expose semantic workspace context to AI agents and MCP clients.
 
 **Example capabilities:**
 
-- MCP server over OntoCore catalog
+- MCP server over Strixonomy catalog
 - ontology review and modeling suggestions
 - documentation generation with LLM assistance
 
 ### 3.7 Validator plugins (built-in category)
 
-Add custom diagnostics surfaced in the Problems panel and `ontocore validate`.
+Add custom diagnostics surfaced in the Problems panel and `strixonomy validate`.
 
 Examples:
 
@@ -122,7 +122,7 @@ Examples:
 
 Integrate **native** reasoners (Rust binary or WASM). JVM subprocess reasoners are **not supported** ([ADR-0014](adr/0014-rust-native-reasoners-only.md)).
 
-Built-in adapters (`el`, `dl`, `rl`, `rdfs`, `auto`) ship in `ontocore-reasoner` as thin wrappers over [OntoLogos](https://github.com/eddiethedean/ontologos) — see [REASONER_SPEC.md](REASONER_SPEC.md), [ADR-0015](adr/0015-adopt-ontologos-reasoner.md).
+Built-in adapters (`el`, `dl`, `rl`, `rdfs`, `auto`) ship in `strixonomy-reasoner` as thin wrappers over [OntoLogos](https://github.com/eddiethedean/ontologos) — see [REASONER_SPEC.md](REASONER_SPEC.md), [ADR-0015](adr/0015-adopt-ontologos-reasoner.md).
 
 ### 3.10 Query function plugins
 
@@ -140,16 +140,16 @@ Future extension point for VS Code views or custom inspectors.
 
 ## 4. Reference external workflow plugin: owlmake
 
-[owlmake](https://github.com/INCATools/owlmake) is **not** a core OntoCore dependency. It is the first reference plugin showing how external workflow tools integrate:
+[owlmake](https://github.com/INCATools/owlmake) is **not** a core Strixonomy dependency. It is the first reference plugin showing how external workflow tools integrate:
 
-| Integration point | How owlmake uses OntoCore |
+| Integration point | How owlmake uses Strixonomy |
 |-------------------|---------------------------|
 | Workspace index | Read catalog, imports, and entity metadata |
-| Diagnostics | Surface workflow errors as OntoCore diagnostics |
-| LSP / IDE | OntoCode runs workflow actions and shows build output |
-| CLI | Optional `ontocore` subcommand or sidecar binary |
+| Diagnostics | Surface workflow errors as Strixonomy diagnostics |
+| LSP / IDE | Strixonomy runs workflow actions and shows build output |
+| CLI | Optional `strixonomy` subcommand or sidecar binary |
 
-OntoCore does **not** reimplement owlmake, ROBOT, or ODK internally. Plugins call out to those tools (or Rust-native equivalents) and report results back through the plugin API.
+Strixonomy does **not** reimplement owlmake, ROBOT, or ODK internally. Plugins call out to those tools (or Rust-native equivalents) and report results back through the plugin API.
 
 ## 5. Plugin manifest
 
@@ -216,7 +216,7 @@ pub trait WorkflowPlugin {
 
 v1.0 plugin APIs should be semver-stable.
 
-Before v1.0, plugin APIs may change. See [ontocore/plugin-model.md](../ontocore/plugin-model.md).
+Before v1.0, plugin APIs may change. See [strixonomy/plugin-model.md](../strixonomy/plugin-model.md).
 
 ## 8. v1.0 reference plugins (P1)
 
@@ -227,6 +227,6 @@ Ship with v1.0 as examples and optional builtins:
 | `naming-convention-validator` | Validator | Enforce IRI/label naming rules |
 | `markdown-docs-exporter` | Exporter | Markdown ontology docs |
 | `shacl-validator` | Validator | SHACL via adapter ([SHACL_SPEC.md](SHACL_SPEC.md)) |
-| **owlmake** (external) | Workflow | Reference ROBOT/ODK-style build, QC, release — not bundled in OntoCore |
+| **owlmake** (external) | Workflow | Reference ROBOT/ODK-style build, QC, release — not bundled in Strixonomy |
 
 These demonstrate the plugin API; they do not replace Protégé's plugin catalog (P2 in [PROTEGE_PARITY.md](PROTEGE_PARITY.md)).

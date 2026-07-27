@@ -1,15 +1,15 @@
 # Ecosystem Architecture
 
-> **Canonical copy:** [docs/architecture.md](docs/architecture.md) (also on [Read the Docs](https://ontocode-vs.readthedocs.io/en/latest/architecture/)).
+> **Canonical copy:** [docs/architecture.md](docs/architecture.md) (also on [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/architecture/)).
 >
 > Edit **`docs/architecture.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 
-**Latest tagged: v0.26.2** — v0.26 ships today. OntoCode (VS Code) + OntoCore (CLI/LSP/library).
+**Latest tagged: v0.26.2** — v0.26 ships today. Strixonomy (VS Code) + Strixonomy (CLI/LSP/library).
 
 ## Quick map
 
 ```text
-OntoCode (VS Code) ──ontocore-lsp──► OntoCore (Rust engine)
+Strixonomy (VS Code) ──strixonomy-lsp──► Strixonomy (Rust engine)
                                       ├── Ontologos (reasoning)
                                       └── Oxigraph / Horned-OWL
 ```
@@ -20,5 +20,5 @@ OntoCode (VS Code) ──ontocore-lsp──► OntoCore (Rust engine)
 |----------|------|
 | [docs/architecture.md](docs/architecture.md) | Full ecosystem overview |
 | [docs/design/ARCHITECTURE.md](docs/design/ARCHITECTURE.md) | Contributor crate layout |
-| [docs/ontocore/architecture.md](docs/ontocore/architecture.md) | Short OntoCore stack |
+| [docs/strixonomy/architecture.md](docs/strixonomy/architecture.md) | Short Strixonomy stack |
 | [Platform overview (GitHub)](docs/platform/OVERVIEW.md) | OntoUI / WorkspaceStore implementers |

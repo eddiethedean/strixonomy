@@ -22,7 +22,7 @@ afterEach(() => {
 });
 
 function makeTempExtensionLayout(): string {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), "ontocode-ext-"));
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "strixonomy-ext-"));
   tempDirs.push(root);
   const bundled = bundledServerPath(root);
   fs.mkdirSync(path.dirname(bundled), { recursive: true });
@@ -33,7 +33,7 @@ function makeTempExtensionLayout(): string {
 describe("bundledServer", () => {
   it("bundledServerPath follows extension/server/<platform>-<arch>/ layout", () => {
     const p = bundledServerPath("/ext", "linux", "x64");
-    assert.match(p, /\/ext\/server\/linux-x64\/ontocore-lsp$/);
+    assert.match(p, /\/ext\/server\/linux-x64\/strixonomy-lsp$/);
   });
 
   it("ensureBundledServerExecutable restores execute bit after chmod 644", () => {

@@ -1,12 +1,12 @@
 //! Protégé-style round-trip tests (OWL_AUTHORING_SPEC §5) + v0.18 workflow fixtures.
 
-use ontocore::Workspace;
-use ontocore_catalog::IndexBuilder;
-use ontocore_core::DiagnosticCode;
-use ontocore_owl::{apply_patches, apply_patches_to_text, PatchOp};
-use ontocore_reasoner::{classify, ReasonerId, WorkspaceInputLoader};
 use std::collections::BTreeMap;
 use std::path::PathBuf;
+use strixonomy::Workspace;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_core::DiagnosticCode;
+use strixonomy_owl::{apply_patches, apply_patches_to_text, PatchOp};
+use strixonomy_reasoner::{classify, ReasonerId, WorkspaceInputLoader};
 
 fn roundtrip_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("examples/protege-roundtrip")
@@ -165,9 +165,9 @@ fn protege_roundtrip_owl_rdfxml_edit_label_reload() {
     .expect("apply SetLabel to RDF/XML");
 
     let text = std::fs::read_to_string(&path).expect("read");
-    let (ont, incomplete) = ontocore_owl::load_rdf_xml_ontology(&text).expect("reload");
+    let (ont, incomplete) = strixonomy_owl::load_rdf_xml_ontology(&text).expect("reload");
     assert!(!incomplete);
-    let bridge = ontocore_owl::bridge_ontology(ont, "doc", &text, &ns);
+    let bridge = strixonomy_owl::bridge_ontology(ont, "doc", &text, &ns);
     let entity = bridge.entities.iter().find(|e| e.iri == dept).expect("Department");
     assert!(
         entity.labels.iter().any(|l| l == "Dept Renamed"),
@@ -210,12 +210,12 @@ fn protege_roundtrip_owx_edit_parent_reload() {
     .expect("apply parent change to OWL/XML");
 
     let text = std::fs::read_to_string(&path).expect("read");
-    let (ont, _, _) = ontocore_owl::load_owl_xml_ontology(&text).expect("reload");
-    let bridge = ontocore_owl::bridge_ontology(ont, "doc", &text, &ns);
+    let (ont, _, _) = strixonomy_owl::load_owl_xml_ontology(&text).expect("reload");
+    let bridge = strixonomy_owl::bridge_ontology(ont, "doc", &text, &ns);
     assert!(bridge.entities.iter().any(|e| e.iri == dept));
     assert!(
         bridge.axioms.iter().any(|a| {
-            a.axiom_kind == ontocore_core::AXIOM_KIND_SUB_CLASS_OF
+            a.axiom_kind == strixonomy_core::AXIOM_KIND_SUB_CLASS_OF
                 && a.subject == dept
                 && a.object == new_parent
         }),
@@ -263,10 +263,10 @@ fn protege_xml_unsupported_op_leaves_file_unchanged() {
 #[test]
 fn protege_semantic_compare_rdfxml_roundtrip_equal() {
     let src = std::fs::read_to_string(roundtrip_dir().join("organization.owl")).expect("read");
-    let (left, _) = ontocore_owl::load_rdf_xml_ontology(&src).expect("load");
-    let out = ontocore_owl::serialize_rdf_xml(&left).expect("serialize");
-    let (right, _) = ontocore_owl::load_rdf_xml_ontology(&out).expect("reload");
-    let diff = ontocore_owl::compare_ontologies(left, right);
+    let (left, _) = strixonomy_owl::load_rdf_xml_ontology(&src).expect("load");
+    let out = strixonomy_owl::serialize_rdf_xml(&left).expect("serialize");
+    let (right, _) = strixonomy_owl::load_rdf_xml_ontology(&out).expect("reload");
+    let diff = strixonomy_owl::compare_ontologies(left, right);
     assert!(diff.is_empty(), "semantic round-trip diff: {diff:?}");
 }
 

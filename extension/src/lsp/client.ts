@@ -122,12 +122,12 @@ export async function startLanguageClient(
           "**/*.{ttl,owl,rdf,owx,jsonld,json-ld,nt,nq,trig,obo}"
         ),
       },
-      outputChannelName: "OntoCore Language Server",
+      outputChannelName: "Strixonomy Language Server",
     };
 
     const created = new LanguageClient(
-      "ontocore-lsp",
-      "OntoCore Language Server",
+      "strixonomy-lsp",
+      "Strixonomy Language Server",
       serverOptions,
       clientOptions
     );
@@ -147,7 +147,7 @@ export async function startLanguageClient(
         } catch {
           // Best-effort cleanup of a superseded startup.
         }
-        throw new Error("OntoCore language server startup was cancelled");
+        throw new Error("Strixonomy language server startup was cancelled");
       }
       client = created;
       return created;
@@ -157,7 +157,7 @@ export async function startLanguageClient(
       }
       const detail = err instanceof Error ? err.message : String(err);
       throw new Error(
-        `${detail} (server: ${serverPath}). See Output → OntoCore Language Server.`
+        `${detail} (server: ${serverPath}). See Output → Strixonomy Language Server.`
       );
     }
   })();
@@ -190,7 +190,7 @@ export async function stopLanguageClient(): Promise<void> {
 
 function resolveServerPath(context: vscode.ExtensionContext): string {
   const configured = vscode.workspace
-    .getConfiguration("ontocode")
+    .getConfiguration("strixonomy")
     .get<string>("lspPath");
   if (
     configured &&
@@ -207,7 +207,7 @@ function resolveServerPath(context: vscode.ExtensionContext): string {
     !vscode.workspace.isTrusted
   ) {
     void vscode.window.showWarningMessage(
-      "OntoCode: ontocode.lspPath is ignored in Restricted Mode; using the bundled language server."
+      "Strixonomy: strixonomy.lspPath is ignored in Restricted Mode; using the bundled language server."
     );
   }
 
@@ -218,7 +218,7 @@ function resolveServerPath(context: vscode.ExtensionContext): string {
   }
 
   throw new Error(
-    "Bundled ontocore-lsp binary not found. Rebuild the extension (npm run compile) or set ontocode.lspPath to a local ontocore-lsp binary."
+    "Bundled strixonomy-lsp binary not found. Rebuild the extension (npm run compile) or set strixonomy.lspPath to a local strixonomy-lsp binary."
   );
 }
 
@@ -232,9 +232,9 @@ export async function indexWorkspace(
     );
   }
   const diskCache = vscode.workspace
-    .getConfiguration("ontocode")
+    .getConfiguration("strixonomy")
     .get<boolean>("indexCache", false);
-  const result = await ontcoreRequest<unknown>("ontocore/indexWorkspace", {
+  const result = await ontcoreRequest<unknown>("strixonomy/indexWorkspace", {
     workspace_uri: uri,
     disk_cache: diskCache,
   });
@@ -262,26 +262,26 @@ async function pickWorkspaceFolderUri(): Promise<string | undefined> {
 
 export async function getCatalogSnapshot(): Promise<CatalogSnapshot> {
   const result = await ontcoreRequest<unknown>(
-    "ontocore/getCatalogSnapshot",
+    "strixonomy/getCatalogSnapshot",
     null
   );
   return assertCatalogSnapshot(result);
 }
 
 export async function listCommands(): Promise<ListCommandsResult> {
-  return ontcoreRequest<ListCommandsResult>("ontocore/listCommands", null);
+  return ontcoreRequest<ListCommandsResult>("strixonomy/listCommands", null);
 }
 
 export async function getWorkspaceUiState(
   params: WorkspaceUiStateParams = {}
 ): Promise<WorkspaceUiState> {
-  return ontcoreRequest<WorkspaceUiState>("ontocore/getWorkspaceUiState", params);
+  return ontcoreRequest<WorkspaceUiState>("strixonomy/getWorkspaceUiState", params);
 }
 
 export async function getDialogSchema(
   dialogId: string
 ): Promise<GetDialogSchemaResult> {
-  return ontcoreRequest<GetDialogSchemaResult>("ontocore/getDialogSchema", {
+  return ontcoreRequest<GetDialogSchemaResult>("strixonomy/getDialogSchema", {
     dialog_id: dialogId,
   });
 }
@@ -289,20 +289,20 @@ export async function getDialogSchema(
 export async function createOntology(
   params: CreateOntologyParams
 ): Promise<CreateOntologyResult> {
-  return ontcoreRequest<CreateOntologyResult>("ontocore/createOntology", params);
+  return ontcoreRequest<CreateOntologyResult>("strixonomy/createOntology", params);
 }
 
 export async function exportOntology(
   params: ExportOntologyParams
 ): Promise<ExportOntologyResult> {
-  return ontcoreRequest<ExportOntologyResult>("ontocore/exportOntology", params);
+  return ontcoreRequest<ExportOntologyResult>("strixonomy/exportOntology", params);
 }
 
 export async function setActiveOntology(
   params: SetActiveOntologyParams
 ): Promise<SetActiveOntologyResult> {
   return ontcoreRequest<SetActiveOntologyResult>(
-    "ontocore/setActiveOntology",
+    "strixonomy/setActiveOntology",
     params
   );
 }
@@ -310,16 +310,16 @@ export async function setActiveOntology(
 export async function deleteImpact(
   params: DeleteImpactParams
 ): Promise<DeleteImpactResult> {
-  return ontcoreRequest<DeleteImpactResult>("ontocore/deleteImpact", params);
+  return ontcoreRequest<DeleteImpactResult>("strixonomy/deleteImpact", params);
 }
 
 export async function listPlugins(): Promise<ListPluginsResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/listPlugins", null);
+  const result = await ontcoreRequest<unknown>("strixonomy/listPlugins", null);
   return assertListPluginsResult(result);
 }
 
 export async function runPlugin(params: RunPluginParams): Promise<RunPluginResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/runPlugin", {
+  const result = await ontcoreRequest<unknown>("strixonomy/runPlugin", {
     plugin_id: params.plugin_id,
     action: params.action ?? "validate",
     step: params.step,
@@ -329,7 +329,7 @@ export async function runPlugin(params: RunPluginParams): Promise<RunPluginResul
 }
 
 export async function getEntity(iri: string): Promise<GetEntityResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/getEntity", { iri });
+  const result = await ontcoreRequest<unknown>("strixonomy/getEntity", { iri });
   return assertGetEntityResult(result);
 }
 
@@ -337,7 +337,7 @@ export async function getEntity(iri: string): Promise<GetEntityResult> {
 export async function applyAxiomPatch(
   params: ApplyAxiomPatchParams
 ): Promise<ApplyAxiomPatchClientResult> {
-  // Suppress external-change recovery for OntoCode's own disk write (#293).
+  // Suppress external-change recovery for Strixonomy's own disk write (#293).
   if (!params.preview_only && params.document_uri) {
     try {
       noteSelfWrite(vscode.Uri.parse(params.document_uri).fsPath);
@@ -346,7 +346,7 @@ export async function applyAxiomPatch(
     }
   }
   const result = await ontcoreRequest<unknown>(
-    "ontocore/applyAxiomPatch",
+    "strixonomy/applyAxiomPatch",
     params
   );
   const patch = assertApplyPatchResult(result);
@@ -392,33 +392,33 @@ function parseListSqlSchemaResult(result: unknown): SqlTableSchema[] {
 }
 
 export async function listSqlSchema(): Promise<SqlTableSchema[]> {
-  const result = await ontcoreRequest<unknown>("ontocore/listSqlSchema", {});
+  const result = await ontcoreRequest<unknown>("strixonomy/listSqlSchema", {});
   return parseListSqlSchemaResult(result);
 }
 
 export async function runSqlQuery(sql: string): Promise<TabularQueryResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/query", { sql });
+  const result = await ontcoreRequest<unknown>("strixonomy/query", { sql });
   return assertTabularQueryResult(result);
 }
 
 export async function runSparqlQuery(
   query: string
 ): Promise<TabularQueryResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/sparql", { query });
+  const result = await ontcoreRequest<unknown>("strixonomy/sparql", { query });
   return assertTabularQueryResult(result);
 }
 
 export async function runDlQuery(
   params: DlQueryParams
 ): Promise<DlQueryResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/dlQuery", params);
+  const result = await ontcoreRequest<unknown>("strixonomy/dlQuery", params);
   return assertDlQueryResult(result);
 }
 
 export async function searchEntities(
   params: SearchParams
 ): Promise<SearchResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/search", params);
+  const result = await ontcoreRequest<unknown>("strixonomy/search", params);
   return assertSearchResult(result);
 }
 
@@ -426,14 +426,14 @@ export async function parseManchester(
   params: ParseManchesterParams
 ): Promise<ParseManchesterResult> {
   const result = await ontcoreRequest<unknown>(
-    "ontocore/parseManchester",
+    "strixonomy/parseManchester",
     params
   );
   return assertParseManchesterResult(result);
 }
 
 export async function listSwrlRules(): Promise<ListSwrlRulesResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/listSwrlRules", {});
+  const result = await ontcoreRequest<unknown>("strixonomy/listSwrlRules", {});
   if (
     !result ||
     typeof result !== "object" ||
@@ -447,7 +447,7 @@ export async function listSwrlRules(): Promise<ListSwrlRulesResult> {
 export async function validateSwrlRule(
   params: ValidateSwrlRuleParams
 ): Promise<ValidateSwrlRuleResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/validateSwrlRule", params);
+  const result = await ontcoreRequest<unknown>("strixonomy/validateSwrlRule", params);
   if (
     !result ||
     typeof result !== "object" ||
@@ -461,7 +461,7 @@ export async function validateSwrlRule(
 export async function parseSwrlRule(
   params: ParseSwrlRuleParams
 ): Promise<ParseSwrlRuleResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/parseSwrlRule", params);
+  const result = await ontcoreRequest<unknown>("strixonomy/parseSwrlRule", params);
   if (
     !result ||
     typeof result !== "object" ||
@@ -502,7 +502,7 @@ export async function runReasoner(
   }
   try {
     const result = await ontcoreRequest<unknown>(
-      "ontocore/runReasoner",
+      "strixonomy/runReasoner",
       params,
       source.token
     );
@@ -519,7 +519,7 @@ export async function getExplanation(
   params: GetExplanationParams
 ): Promise<GetExplanationResult> {
   const result = await ontcoreRequest<unknown>(
-    "ontocore/getExplanation",
+    "strixonomy/getExplanation",
     params
   );
   const explained = assertGetExplanationResult(result);
@@ -527,21 +527,21 @@ export async function getExplanation(
 }
 
 export async function getGraph(params: GetGraphParams): Promise<GetGraphResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/getGraph", params);
+  const result = await ontcoreRequest<unknown>("strixonomy/getGraph", params);
   return assertGetGraphResult(result);
 }
 
 export async function runRobot(params: RunRobotParams): Promise<RunRobotResult> {
   let robotPath =
     params.robot_path ??
-    vscode.workspace.getConfiguration("ontocode").get<string>("robotPath");
+    vscode.workspace.getConfiguration("strixonomy").get<string>("robotPath");
   if (robotPath && robotPath.trim().length > 0 && !vscode.workspace.isTrusted) {
     void vscode.window.showWarningMessage(
-      "OntoCode: ontocode.robotPath is ignored in Restricted Mode; using robot on PATH."
+      "Strixonomy: strixonomy.robotPath is ignored in Restricted Mode; using robot on PATH."
     );
     robotPath = undefined;
   }
-  const result = await ontcoreRequest<unknown>("ontocore/runRobot", {
+  const result = await ontcoreRequest<unknown>("strixonomy/runRobot", {
     ...params,
     robot_path: robotPath || undefined,
   });
@@ -549,7 +549,7 @@ export async function runRobot(params: RunRobotParams): Promise<RunRobotResult> 
 }
 
 export async function findUsages(iri: string): Promise<FindUsagesResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/findUsages", { iri });
+  const result = await ontcoreRequest<unknown>("strixonomy/findUsages", { iri });
   return assertFindUsagesResult(result);
 }
 
@@ -557,7 +557,7 @@ export async function previewRefactor(
   request: RefactorRequest
 ): Promise<PreviewRefactorResult> {
   const result = await ontcoreRequest<unknown>(
-    "ontocore/previewRefactor",
+    "strixonomy/previewRefactor",
     request
   );
   return assertPreviewRefactorResult(result);
@@ -568,7 +568,7 @@ export async function applyRefactor(
   request: RefactorRequest,
   previewOnly = false
 ): Promise<ApplyRefactorResult> {
-  // Suppress external-change recovery for OntoCode's own refactor writes (#396).
+  // Suppress external-change recovery for Strixonomy's own refactor writes (#396).
   const notePlanWrites = (): void => {
     if (previewOnly) {
       return;
@@ -576,7 +576,7 @@ export async function applyRefactor(
     noteSelfWrites(plan.changes.map((change) => change.path));
   };
   notePlanWrites();
-  const result = await ontcoreRequest<unknown>("ontocore/applyRefactor", {
+  const result = await ontcoreRequest<unknown>("strixonomy/applyRefactor", {
     plan,
     request,
     preview_only: previewOnly,
@@ -592,7 +592,7 @@ export async function applyRefactor(
 export async function semanticDiff(
   params: SemanticDiffParams
 ): Promise<SemanticDiffResult> {
-  const result = await ontcoreRequest<unknown>("ontocore/semanticDiff", params);
+  const result = await ontcoreRequest<unknown>("strixonomy/semanticDiff", params);
   return assertSemanticDiffResult(result);
 }
 
@@ -642,7 +642,7 @@ async function ontcoreRequest<T>(
 
 function requireClient(): LanguageClient {
   if (!client) {
-    throw new Error("OntoCore language server is not running");
+    throw new Error("Strixonomy language server is not running");
   }
   return client;
 }

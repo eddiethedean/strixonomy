@@ -3,7 +3,7 @@
 # EPIC-003 --- Workspace Runtime
 
 **Epic ID:** EPIC-003\
-**GitHub:** https://github.com/eddiethedean/ontocode/issues/249\
+**GitHub:** https://github.com/eddiethedean/strixonomy/issues/249\
 **Status:** Planned\
 **Priority:** P0 (Release Blocking)\
 **Target Release:** v0.20

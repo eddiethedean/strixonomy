@@ -52,7 +52,7 @@ Cross-panel synchronization via `FocusRelayService` in the extension host. All w
 | `hierarchyMode` | string? | `asserted` \| `inferred` \| `combined` when applicable |
 | `lastRunAt` | number | Unix epoch ms |
 
-Query Workbench `queryInit` may also include `sqlSchema` — array of `{ name, columns: [{ name, type }] }` from LSP `ontocore/listSqlSchema`.
+Query Workbench `queryInit` may also include `sqlSchema` — array of `{ name, columns: [{ name, type }] }` from LSP `strixonomy/listSqlSchema`.
 
 ## Host → React (shared)
 
@@ -96,7 +96,7 @@ Query Workbench `queryInit` may also include `sqlSchema` — array of `{ name, c
 | `loading` | — |
 | `semanticDiffData` | `{ diff }` — axiom/entity changes, breaking-change flags |
 
-Host loads diff via LSP `ontocore/semanticDiff` on panel open. See [Semantic diff guide](ontocode/semantic-diff.md).
+Host loads diff via LSP `strixonomy/semanticDiff` on panel open. See [Semantic diff guide](ide/semantic-diff.md).
 
 ### Manage Imports (v0.11+)
 
@@ -141,7 +141,7 @@ Example host message:
 }
 ```
 
-See [Manage Imports guide](ontocode/manage-imports.md).
+See [Manage Imports guide](ide/manage-imports.md).
 
 ### Reasoner / explanation
 

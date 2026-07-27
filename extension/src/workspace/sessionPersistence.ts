@@ -17,8 +17,8 @@ import { navigationManager } from "./navigationManager";
 import { selectionManager } from "./selectionManager";
 import type { WorkspaceSessionSnapshot } from "./types";
 
-export const SESSION_KEY = "ontocode.workspaceSession";
-const SESSION_FILE = ".ontocode/session.json";
+export const SESSION_KEY = "strixonomy.workspaceSession";
+const SESSION_FILE = ".strixonomy/session.json";
 const MAX_PANEL_RESTORE = 12;
 const NOT_INDEXED_RETRIES = 8;
 const NOT_INDEXED_DELAY_MS = 250;
@@ -38,16 +38,16 @@ export class WorkspaceSessionPersistence {
     const panelRestore: WorkspaceSessionSnapshot["panelRestore"] = {};
     if (this.context) {
       const viewTypes = [
-        "ontocodeInspector",
-        "ontocodeGraph",
-        "ontocodeQueryWorkbench",
-        "ontocodeImports",
-        "ontocodeReasoner",
-        "ontocodeExplanation",
-        "ontocodeSemanticDiff",
-        "ontocodeManchesterEditor",
-        "ontocodeRuleBrowser",
-        "ontocodeRuleEditor",
+        "strixonomyInspector",
+        "strixonomyGraph",
+        "strixonomyQueryWorkbench",
+        "strixonomyImports",
+        "strixonomyReasoner",
+        "strixonomyExplanation",
+        "strixonomySemanticDiff",
+        "strixonomyManchesterEditor",
+        "strixonomyRuleBrowser",
+        "strixonomyRuleEditor",
       ];
       for (const viewType of viewTypes) {
         // Only panels that were explicitly opened (remembered). Never inject
@@ -274,7 +274,7 @@ export class WorkspaceSessionPersistence {
     if (!folder) {
       return;
     }
-    const dir = path.join(folder.uri.fsPath, ".ontocode");
+    const dir = path.join(folder.uri.fsPath, ".strixonomy");
     const file = path.join(dir, "session.json");
     try {
       await fs.promises.mkdir(dir, { recursive: true });
@@ -289,13 +289,19 @@ export class WorkspaceSessionPersistence {
     if (!folder) {
       return undefined;
     }
-    const file = path.join(folder.uri.fsPath, SESSION_FILE);
-    try {
-      const raw = await fs.promises.readFile(file, "utf8");
-      return JSON.parse(raw) as WorkspaceSessionSnapshot;
-    } catch {
-      return undefined;
+    const candidates = [
+      path.join(folder.uri.fsPath, SESSION_FILE),
+      path.join(folder.uri.fsPath, ".ontocode", "session.json"),
+    ];
+    for (const file of candidates) {
+      try {
+        const raw = await fs.promises.readFile(file, "utf8");
+        return JSON.parse(raw) as WorkspaceSessionSnapshot;
+      } catch {
+        // try next
+      }
     }
+    return undefined;
   }
 
   resetForTests(): void {

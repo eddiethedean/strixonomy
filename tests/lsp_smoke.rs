@@ -15,7 +15,7 @@ fn lsp_indexes_fixture_workspace() {
         .stdout(Stdio::piped())
         .stderr(Stdio::null())
         .spawn()
-        .expect("spawn ontocore-lsp");
+        .expect("spawn strixonomy-lsp");
 
     let stdout = child.stdout.take().expect("stdout");
     let mut stdin = child.stdin.take().expect("stdin");
@@ -57,7 +57,7 @@ fn lsp_indexes_fixture_workspace() {
     send_request(
         &mut stdin,
         2,
-        "ontocore/indexWorkspace",
+        "strixonomy/indexWorkspace",
         serde_json::json!({ "workspaceUri": workspace_uri }),
     );
 
@@ -72,7 +72,7 @@ fn lsp_indexes_fixture_workspace() {
     assert_eq!(stats.get("individual_count").and_then(|v| v.as_u64()), Some(2));
     assert_eq!(stats.get("error_count").and_then(|v| v.as_u64()), Some(0));
 
-    send_request(&mut stdin, 3, "ontocore/getCatalogSnapshot", serde_json::json!(null));
+    send_request(&mut stdin, 3, "strixonomy/getCatalogSnapshot", serde_json::json!(null));
 
     let snapshot = wait_for_id(&rx, 3, Duration::from_secs(10)).expect("snapshot response");
     let entities = snapshot
@@ -112,7 +112,7 @@ fn lsp_indexes_fixture_workspace() {
     send_request(
         &mut stdin,
         4,
-        "ontocore/getEntity",
+        "strixonomy/getEntity",
         serde_json::json!({ "iri": "http://example.org/people#Person" }),
     );
 
@@ -131,7 +131,7 @@ fn lsp_indexes_fixture_workspace() {
     send_request(
         &mut stdin,
         5,
-        "ontocore/query",
+        "strixonomy/query",
         serde_json::json!({ "sql": "SELECT short_name FROM classes" }),
     );
     let query_resp = wait_for_id(&rx, 5, Duration::from_secs(10)).expect("query response");
@@ -231,7 +231,7 @@ fn write_lsp_message(stdin: &mut impl Write, body: &str) {
 }
 
 fn lsp_binary() -> PathBuf {
-    if let Ok(path) = std::env::var("CARGO_BIN_EXE_ontocore-lsp") {
+    if let Ok(path) = std::env::var("CARGO_BIN_EXE_strixonomy-lsp") {
         let candidate = PathBuf::from(path);
         if candidate.exists() {
             return candidate;
@@ -243,16 +243,16 @@ fn lsp_binary() -> PathBuf {
     }
 
     let status = Command::new("cargo")
-        .args(["build", "-q", "-p", "ontocore-lsp", "--bin", "ontocore-lsp"])
+        .args(["build", "-q", "-p", "strixonomy-lsp", "--bin", "strixonomy-lsp"])
         .status()
-        .expect("cargo build ontocore-lsp");
-    assert!(status.success(), "failed to build ontocore-lsp");
+        .expect("cargo build strixonomy-lsp");
+    assert!(status.success(), "failed to build strixonomy-lsp");
 
     find_lsp_binary_in_target().unwrap_or_else(|| {
         let target_dir = std::env::var("CARGO_TARGET_DIR")
             .map(PathBuf::from)
             .unwrap_or_else(|_| Path::new(env!("CARGO_MANIFEST_DIR")).join("target"));
-        panic!("ontocore-lsp binary not found under {} after build", target_dir.display());
+        panic!("strixonomy-lsp binary not found under {} after build", target_dir.display());
     })
 }
 
@@ -262,7 +262,7 @@ fn find_lsp_binary_in_target() -> Option<PathBuf> {
         .unwrap_or_else(|_| Path::new(env!("CARGO_MANIFEST_DIR")).join("target"));
 
     for subdir in ["debug", "release"] {
-        let candidate = target_dir.join(subdir).join("ontocore-lsp");
+        let candidate = target_dir.join(subdir).join("strixonomy-lsp");
         if candidate.exists() {
             return Some(candidate);
         }

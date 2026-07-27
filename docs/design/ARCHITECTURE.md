@@ -8,13 +8,13 @@
 > |-----------|------|
 > | [Platform architecture](../architecture.md) | Evaluators and adopters — ecosystem responsibilities |
 > | **This page** (`design/ARCHITECTURE.md`) | Crate layout, internal modules, dependency rules |
-> | [OntoCore architecture](../ontocore/architecture.md) | Short stack summary (links here for crate detail) |
+> | [Strixonomy architecture](../strixonomy/architecture.md) | Short stack summary (links here for crate detail) |
 >
 > **Do not use this page to evaluate shipped product features.** See [What ships today](../SHIPPED.md) and [Platform architecture](../architecture.md).
 >
 > **Ecosystem architecture (canonical for users):** [Platform architecture](../architecture.md).
 >
-> **Shipped through v0.26:** workspace scanner, incremental indexing, multi-root workspaces, SQL/SPARQL queries (including Horned-OWL axiom virtual tables), diagnostics (`.ontocore/diagnostics.toml`), CLI, LSP (semantic tokens, `listSqlSchema`), Turtle, OBO, RDF/XML, and OWL/XML write-back, Query Workbench + schema browser, Manchester editor (`not`/`value`/`Self`/OneOf/data restrictions), React webviews with WorkspaceStore + focus relay (inspector, graphs, workbench, refactor preview, semantic diff, imports, reasoner, explanation), EL–DL reasoning (OntoLogos 1.0), OBO index + OBO write-back, Horned XML re-serialize write-back (ADR-0021), ROBOT CLI wrappers, semantic diff (`--pr-summary`), `ontocore docs` export, Turtle completion, diagnostic quick fixes, property chain editing, HasKey / DisjointUnion / inverse / negatives / SameIndividual / datatype defs / axiom annotations, DL unsatisfiability explanations (alternatives + stale detection), plugin host (permissions, UI views/commands/preferences/context actions), Protégé-shell menus/perspectives, reasoner cancel + distinct lifecycle, layout reopen-with-context, workspace runtime, Turtle patch matching hardening (lang-tagged/typed literals, IRI forms, comment-safe types). Plugin SDK 1.0, graph visualization parity, accessibility for owned webviews, parity CI release gates, and Protégé Desktop behavioral test port (Waves 1–4). See [What ships today](../SHIPPED.md).
+> **Shipped through v0.26:** workspace scanner, incremental indexing, multi-root workspaces, SQL/SPARQL queries (including Horned-OWL axiom virtual tables), diagnostics (`.strixonomy/diagnostics.toml`), CLI, LSP (semantic tokens, `listSqlSchema`), Turtle, OBO, RDF/XML, and OWL/XML write-back, Query Workbench + schema browser, Manchester editor (`not`/`value`/`Self`/OneOf/data restrictions), React webviews with WorkspaceStore + focus relay (inspector, graphs, workbench, refactor preview, semantic diff, imports, reasoner, explanation), EL–DL reasoning (OntoLogos 1.0), OBO index + OBO write-back, Horned XML re-serialize write-back (ADR-0021), ROBOT CLI wrappers, semantic diff (`--pr-summary`), `strixonomy docs` export, Turtle completion, diagnostic quick fixes, property chain editing, HasKey / DisjointUnion / inverse / negatives / SameIndividual / datatype defs / axiom annotations, DL unsatisfiability explanations (alternatives + stale detection), plugin host (permissions, UI views/commands/preferences/context actions), Protégé-shell menus/perspectives, reasoner cancel + distinct lifecycle, layout reopen-with-context, workspace runtime, Turtle patch matching hardening (lang-tagged/typed literals, IRI forms, comment-safe types). Plugin SDK 1.0, graph visualization parity, accessibility for owned webviews, parity CI release gates, and Protégé Desktop behavioral test port (Waves 1–4). See [What ships today](../SHIPPED.md).
 >
 > **Shipped v0.14–v0.17:** plugin host MVP → permissions/views → preferences/context actions → Protégé-shell. **Shipped v0.21:** RDF/XML and OWL/XML write-back. **Shipped v0.22:** complete OWL 2 authoring (`PAR-OWL-001`). **Planned v1.0:** full workflow plugin integration. See [Platform roadmap](../roadmap.md).
 >
@@ -41,20 +41,20 @@ External Workflow Plugins (not core)     owlmake · ROBOT/ODK adapters
           │
           ▼
 +---------------------------+
-|        OntoCode UI        |
+|        Strixonomy UI        |
 | VS Code trees + commands  |
 | React webviews (v0.7a+)   |
 +-------------+-------------+
-              | ontocore-lsp
+              | strixonomy-lsp
               v
 +---------------------------+
-|   OntoCore Language       |
+|   Strixonomy Language       |
 |        Server             |
 +-------------+-------------+
               |
               v
 +---------------------------+
-|       OntoCore Core       |
+|       Strixonomy Core       |
 | catalog/query/diagnostics |
 | diff/docs/reasoner/robot  |
 | plugin platform (SDK 1.0; marketplace/workflows v1.0) |
@@ -74,40 +74,40 @@ External Workflow Plugins (not core)     owlmake · ROBOT/ODK adapters
 +---------------------------+
 ```
 
-**Reasoning ([ADR-0015](adr/0015-adopt-ontologos-reasoner.md)):** `ontocore-reasoner` delegates to [OntoLogos](https://github.com/eddiethedean/ontologos) crates (`ontologos-el`, `ontologos-rl`, `ontologos-dl`, etc.). OntoLogos **1.0.0** ships in OntoCore v0.9 for DL/auto profiles.
+**Reasoning ([ADR-0015](adr/0015-adopt-ontologos-reasoner.md)):** `strixonomy-reasoner` delegates to [OntoLogos](https://github.com/eddiethedean/ontologos) crates (`ontologos-el`, `ontologos-rl`, `ontologos-dl`, etc.). OntoLogos **1.0.0** ships in Strixonomy v0.9 for DL/auto profiles.
 
-**Workflow plugins:** [owlmake](https://github.com/INCATools/owlmake) is the reference external workflow plugin — see [PLUGIN_SPEC.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md), [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md). OntoCore does not embed workflow engines.
+**Workflow plugins:** [owlmake](https://github.com/INCATools/owlmake) is the reference external workflow plugin — see [PLUGIN_SPEC.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md), [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md). Strixonomy does not embed workflow engines.
 
 **Sync rule ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md)):** Catalog entities/axioms for edit and diff come from Horned-OWL; triple counts and SPARQL from Oxigraph; CI consistency tests detect drift.
 
 **Dependency policy:** [ADR-0016](adr/0016-dependency-first-implementation.md), [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md).
 
-## 3. OntoCore Crate Layout
+## 3. Strixonomy Crate Layout
 
-Full crate map with dependency edges: [crate-map.md](../ontocore/crate-map.md).
+Full crate map with dependency edges: [crate-map.md](../strixonomy/crate-map.md).
 
 | Crate | Role | External dependency |
 |-------|------|---------------------|
-| `ontocore` | Public façade API (`Workspace`, module re-exports) | composes below |
-| `ontocore-core` | Types, scanner, limits, path jail | `ignore` |
-| `ontocore-parser` | RDF parse, entity extraction | `oxigraph` |
-| `ontocore-owl` | OWL axiom facade, patch write-back | `horned-owl` |
-| `ontocore-obo` | OBO patch write-back | `fastobo` |
-| `ontocore-edit` | Semantic transactions (`compose`, `validate`, `invert`) | — |
-| `ontocore-catalog` | Index builder, entity API | — |
-| `ontocore-query` | SQL virtual tables, SPARQL | `sqlparser`, `oxigraph` |
-| `ontocore-diagnostics` | Lint rules, LSP diagnostics | `regex`, `fastobo-validator` |
-| `ontocore-diff` | Semantic diff, Git compare | `horned-owl`, `git2` |
-| `ontocore-docs` | Markdown/HTML export | `pulldown-cmark`, `minijinja` |
-| `ontocore-reasoner` | Reasoner facade | OntoLogos 1.0.0 |
-| `ontocore-refactor` | Workspace refactoring | — |
-| `ontocore-robot` | ROBOT CLI wrappers | ROBOT CLI (external) |
-| `ontocore-lsp` | Language server + diagnostics + patch apply | `lsp-server`, `lsp-types` |
-| `ontocore-plugin` | Plugin manifest discovery and host runtime | — |
-| `ontocore-plugin-*` | Reference plugins (naming, markdown-export, shacl, builtins) | — |
-| `ontocore-cli` | `ontocore` binary | composes above |
+| `strixonomy` | Public façade API (`Workspace`, module re-exports) | composes below |
+| `strixonomy-core` | Types, scanner, limits, path jail | `ignore` |
+| `strixonomy-parser` | RDF parse, entity extraction | `oxigraph` |
+| `strixonomy-owl` | OWL axiom facade, patch write-back | `horned-owl` |
+| `strixonomy-obo` | OBO patch write-back | `fastobo` |
+| `strixonomy-edit` | Semantic transactions (`compose`, `validate`, `invert`) | — |
+| `strixonomy-catalog` | Index builder, entity API | — |
+| `strixonomy-query` | SQL virtual tables, SPARQL | `sqlparser`, `oxigraph` |
+| `strixonomy-diagnostics` | Lint rules, LSP diagnostics | `regex`, `fastobo-validator` |
+| `strixonomy-diff` | Semantic diff, Git compare | `horned-owl`, `git2` |
+| `strixonomy-docs` | Markdown/HTML export | `pulldown-cmark`, `minijinja` |
+| `strixonomy-reasoner` | Reasoner facade | OntoLogos 1.0.0 |
+| `strixonomy-refactor` | Workspace refactoring | — |
+| `strixonomy-robot` | ROBOT CLI wrappers | ROBOT CLI (external) |
+| `strixonomy-lsp` | Language server + diagnostics + patch apply | `lsp-server`, `lsp-types` |
+| `strixonomy-plugin` | Plugin manifest discovery and host runtime | — |
+| `strixonomy-plugin-*` | Reference plugins (naming, markdown-export, shacl, builtins) | — |
+| `strixonomy-cli` | `strixonomy` binary | composes above |
 
-## 4. OntoCore Internal Modules
+## 4. Strixonomy Internal Modules
 
 ### 4.1 Workspace Scanner
 - Recursive discovery, ignore rules, format detection, content hashing, dependency tracking, change detection
@@ -121,7 +121,7 @@ Full crate map with dependency edges: [crate-map.md](../ontocore/crate-map.md).
 - Ontologies, entities, axioms (from Horned-OWL), annotations, imports, diagnostics
 
 ### 4.4 Query Layer
-- **v0.2:** `ontocore-query` — `sqlparser` virtual tables + Oxigraph SPARQL
+- **v0.2:** `strixonomy-query` — `sqlparser` virtual tables + Oxigraph SPARQL
 - **v1.0:** joins/aggregations via extended virtual tables first; DataFusion if triggered ([ADR-0011](adr/0011-use-sqlparser-for-sql.md) amendment)
 
 ### 4.5 Diagnostics Layer (v0.3+)
@@ -134,12 +134,12 @@ Full crate map with dependency edges: [crate-map.md](../ontocore/crate-map.md).
 - `pulldown-cmark` + `minijinja` templates; entity pages
 
 ### 4.8 Reasoner Layer (v0.6+)
-- `ontocore-reasoner` thin facade over OntoLogos — see [REASONER_SPEC.md](REASONER_SPEC.md), [ADR-0014](adr/0014-rust-native-reasoners-only.md), [ADR-0015](adr/0015-adopt-ontologos-reasoner.md)
+- `strixonomy-reasoner` thin facade over OntoLogos — see [REASONER_SPEC.md](REASONER_SPEC.md), [ADR-0014](adr/0014-rust-native-reasoners-only.md), [ADR-0015](adr/0015-adopt-ontologos-reasoner.md)
 - v0.6: `ontologos-*` 0.9.0 (`el`, `rl`, `rdfs`, `explain`)
 - v1.0: `ontologos-*` 1.0.0 (`dl`, `facade`, full DL explanations)
 - v0.9: optional `ontologos-watch` for incremental reclassify
 
-## 5. OntoCode Internal Modules
+## 5. Strixonomy Internal Modules
 
 ### 5.1 Extension Host
 
@@ -216,5 +216,5 @@ Per [ADR-0006](adr/0006-patch-based-write-back.md) and [OWL_AUTHORING_SPEC.md](O
 
 - Local-first by default ([ADR-0005](adr/0005-local-first-by-default.md))
 - No telemetry by default
-- Workspace trust for `lspPath`, `ontocode.reasoner.default`, `robotPath`
+- Workspace trust for `lspPath`, `strixonomy.reasoner.default`, `robotPath`
 - See [security.md](../security.md)

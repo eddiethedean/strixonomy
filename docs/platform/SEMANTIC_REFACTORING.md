@@ -4,7 +4,7 @@
 
 ## Scope
 
-Transaction model for semantic refactoring: preview → validate → apply → reindex → undo. Maps to existing `ontocore/previewRefactor` and `ontocore/applyRefactor` LSP methods.
+Transaction model for semantic refactoring: preview → validate → apply → reindex → undo. Maps to existing `strixonomy/previewRefactor` and `strixonomy/applyRefactor` LSP methods.
 
 ## Transaction pipeline
 
@@ -26,7 +26,7 @@ Transaction model for semantic refactoring: preview → validate → apply → r
 | Extract module | same | RefactorPreview panel |
 | Namespace migration | same | RefactorPreview panel |
 
-Rust: `ontocore-refactor` crate. See [guides/refactoring.md](../guides/refactoring.md).
+Rust: `strixonomy-refactor` crate. See [guides/refactoring.md](../guides/refactoring.md).
 
 ## Planned enhancements
 

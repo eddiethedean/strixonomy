@@ -1,6 +1,6 @@
 # ROADMAP
 
-# OntoCode 1.x Engineering Roadmap
+# Strixonomy 1.x Engineering Roadmap
 
 **Directory:** 07_BACKLOG\
 **Status:** Living Backlog Roadmap

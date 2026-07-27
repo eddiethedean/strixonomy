@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a problem with OntoCode or OntoCore
+about: Report a problem with Strixonomy
 title: ''
 labels: bug
 assignees: ''
@@ -8,16 +8,16 @@ assignees: ''
 
 ## Component
 
-- [ ] OntoCore CLI (`ontocore`)
-- [ ] OntoCore library (`ontocore` / `ontocore-*` crates)
-- [ ] OntoCore LSP (`ontocore-lsp`)
-- [ ] OntoCode VS Code extension
+- [ ] Strixonomy CLI (`strixonomy`)
+- [ ] Strixonomy library (`strixonomy` / `strixonomy-*` crates)
+- [ ] Strixonomy LSP (`strixonomy-lsp`)
+- [ ] Strixonomy VS Code extension
 - [ ] Documentation
 - [ ] Other
 
 ## Version
 
-- OntoCore / OntoCode version (e.g. 0.12.0, git commit, or crates.io):
+- Strixonomy / Strixonomy version (e.g. 0.12.0, git commit, or crates.io):
 - OS and architecture:
 - Rust version (if building from source):
 - VS Code version (if extension):

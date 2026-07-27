@@ -1,17 +1,17 @@
 # RELEASE_CHECKLIST
 
-# OntoCode 1.0 Release Checklist
+# Strixonomy 1.0 Release Checklist
 
 **Directory:** 08_RELEASE\
 **Status:** Release Readiness Checklist\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the final release checklist required before
-publishing OntoCode 1.0.
+publishing Strixonomy 1.0.
 
 Every item in this checklist must be completed before the project may
 claim verified Protégé Desktop parity.

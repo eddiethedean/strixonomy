@@ -6,7 +6,7 @@
 
 The Imports editor manages ontology dependencies through OWL import declarations. It allows ontology engineers to add, remove, inspect, resolve, and synchronize imported ontologies while maintaining logical consistency across an ontology project.
 
-For OntoCode, the Imports editor should provide full feature parity with Protégé while modernizing dependency management with package-style workflows, visualization, and validation.
+For Strixonomy, the Imports editor should provide full feature parity with Protégé while modernizing dependency management with package-style workflows, visualization, and validation.
 
 ---
 
@@ -167,7 +167,7 @@ Supported search modes:
 - Label
 - Full-text
 
-Recommended OntoCode improvements:
+Recommended Strixonomy improvements:
 
 - Fuzzy search
 - Dependency search
@@ -241,7 +241,7 @@ Plugins should contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -312,10 +312,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should evolve imports into a first-class dependency system similar to modern package managers. Ontologies should be installable, versioned, cached, validated, and visualized through a unified dependency manager with Git integration, reproducible lockfiles, workspace-aware resolution, and extensible repository providers.
+Strixonomy should evolve imports into a first-class dependency system similar to modern package managers. Ontologies should be installable, versioned, cached, validated, and visualized through a unified dependency manager with Git integration, reproducible lockfiles, workspace-aware resolution, and extensible repository providers.
 
 ---
 
 # Summary
 
-The Imports editor is responsible for managing ontology dependencies and ensuring imported knowledge is available, consistent, and correctly resolved. Protégé provides robust import management centered on OWL import declarations. OntoCode should preserve that compatibility while introducing modern dependency management, visualization, validation, and collaboration capabilities.
+The Imports editor is responsible for managing ontology dependencies and ensuring imported knowledge is available, consistent, and correctly resolved. Protégé provides robust import management centered on OWL import declarations. Strixonomy should preserve that compatibility while introducing modern dependency management, visualization, validation, and collaboration capabilities.

@@ -1,6 +1,6 @@
 # Third-Party Licenses
 
-OntoCode / OntoCore is licensed under **MIT OR Apache-2.0** at your option (see repository root `LICENSE-MIT` and `LICENSE-APACHE-2.0`).
+Strixonomy / Strixonomy is licensed under **MIT OR Apache-2.0** at your option (see repository root `LICENSE-MIT` and `LICENSE-APACHE-2.0`).
 
 This document summarizes **third-party licenses** for dependencies named in [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md). It is not legal advice. Regenerate NOTICES before releases when dependency sets change.
 
@@ -11,11 +11,11 @@ This document summarizes **third-party licenses** for dependencies named in [DEP
 | `oxigraph` | MIT OR Apache-2.0 | Compatible |
 | `sqlparser` | Apache-2.0 | Compatible |
 | `ignore` | Unlicense OR MIT | Compatible |
-| `regex` | MIT OR Apache-2.0 | Compatible (`ontocore-diagnostics`) |
+| `regex` | MIT OR Apache-2.0 | Compatible (`strixonomy-diagnostics`) |
 | `lsp-server` | MIT OR Apache-2.0 | Compatible |
 | `lsp-types` | MIT | Compatible |
-| `horned-owl` | **LGPL-3.0** | Rust crate link via `ontocore-owl`. See [LGPL compliance guide](../guides/lgpl-compliance.md). Document LGPL in release artifacts; provide source offer per LGPL-3.0 if distributing binaries. |
-| `ontologos-*` | MIT OR Apache-2.0 | Compatible (`ontocore-reasoner`) |
+| `horned-owl` | **LGPL-3.0** | Rust crate link via `strixonomy-owl`. See [LGPL compliance guide](../guides/lgpl-compliance.md). Document LGPL in release artifacts; provide source offer per LGPL-3.0 if distributing binaries. |
+| `ontologos-*` | MIT OR Apache-2.0 | Compatible (`strixonomy-reasoner`) |
 | `reasonable` (transitive via OntoLogos) | **BSD-3-Clause** | Include BSD notice in NOTICES |
 | `fastobo`, `fastobo-owl`, `fastobo-validator` | MIT | Compatible |
 | `petgraph` | MIT OR Apache-2.0 | Compatible |

@@ -3,8 +3,8 @@
 Runnable examples against an ontology workspace. Replace `/path/to/ontologies` with your project folder.
 
 ```bash
-ontocore query /path/to/ontologies "SELECT * FROM classes"
-ontocore query /path/to/ontologies "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
+strixonomy query /path/to/ontologies "SELECT * FROM classes"
+strixonomy query /path/to/ontologies "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
 ```
 
 From a git clone, use `fixtures` instead of `/path/to/ontologies`, or `cargo run --` from the repo root.
@@ -12,10 +12,10 @@ From a git clone, use `fixtures` instead of `/path/to/ontologies`, or `cargo run
 ## Classes and entities
 
 ```bash
-ontocore query /path/to/ontologies "SELECT * FROM classes"
-ontocore query /path/to/ontologies "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
-ontocore query /path/to/ontologies "SELECT * FROM individuals"
-ontocore query /path/to/ontologies "SELECT * FROM entities"
+strixonomy query /path/to/ontologies "SELECT * FROM classes"
+strixonomy query /path/to/ontologies "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
+strixonomy query /path/to/ontologies "SELECT * FROM individuals"
+strixonomy query /path/to/ontologies "SELECT * FROM entities"
 ```
 
 **Expected (`fixtures/`, filtered query):** 1 row with `short_name` = `Person`.
@@ -23,38 +23,38 @@ ontocore query /path/to/ontologies "SELECT * FROM entities"
 ## Properties
 
 ```bash
-ontocore query /path/to/ontologies "SELECT * FROM object_properties"
-ontocore query /path/to/ontologies "SELECT * FROM data_properties"
-ontocore query /path/to/ontologies "SELECT * FROM properties"
+strixonomy query /path/to/ontologies "SELECT * FROM object_properties"
+strixonomy query /path/to/ontologies "SELECT * FROM data_properties"
+strixonomy query /path/to/ontologies "SELECT * FROM properties"
 ```
 
 ## Annotations and axioms
 
 ```bash
-ontocore query /path/to/ontologies "SELECT * FROM annotations"
-ontocore query /path/to/ontologies "SELECT * FROM axioms"
+strixonomy query /path/to/ontologies "SELECT * FROM annotations"
+strixonomy query /path/to/ontologies "SELECT * FROM axioms"
 ```
 
 ## Ontology metadata
 
 ```bash
-ontocore query /path/to/ontologies "SELECT * FROM ontologies"
-ontocore query /path/to/ontologies "SELECT * FROM namespaces"
-ontocore query /path/to/ontologies "SELECT * FROM imports"
+strixonomy query /path/to/ontologies "SELECT * FROM ontologies"
+strixonomy query /path/to/ontologies "SELECT * FROM namespaces"
+strixonomy query /path/to/ontologies "SELECT * FROM imports"
 ```
 
 ## Diagnostics and validation
 
 ```bash
-ontocore query /path/to/ontologies "SELECT code, severity, message, file FROM diagnostics"
-ontocore validate /path/to/ontologies
+strixonomy query /path/to/ontologies "SELECT code, severity, message, file FROM diagnostics"
+strixonomy validate /path/to/ontologies
 ```
 
 ## SPARQL
 
 ```bash
-ontocore sparql /path/to/ontologies "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 5"
-ontocore sparql fixtures "PREFIX ex: <http://example.org/people#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?label WHERE { ex:Person rdfs:label ?label }"
+strixonomy sparql /path/to/ontologies "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 5"
+strixonomy sparql fixtures "PREFIX ex: <http://example.org/people#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?label WHERE { ex:Person rdfs:label ?label }"
 ```
 
 **Expected (fixtures):** the second query returns **1 row** with a label for `Person` (e.g. `"Person"`).
@@ -62,14 +62,14 @@ ontocore sparql fixtures "PREFIX ex: <http://example.org/people#> PREFIX rdfs: <
 ## Export formats
 
 ```bash
-ontocore query /path/to/ontologies "SELECT * FROM classes" --format json
-ontocore query /path/to/ontologies "SELECT * FROM classes" --format csv
+strixonomy query /path/to/ontologies "SELECT * FROM classes" --format json
+strixonomy query /path/to/ontologies "SELECT * FROM classes" --format csv
 ```
 
 ## CI validation
 
 ```bash
-ontocore validate /path/to/ontologies   # exit 0 when no diagnostic errors
+strixonomy validate /path/to/ontologies   # exit 0 when no diagnostic errors
 ```
 
 **Expected (`fixtures/`):** exit code **0** (warnings may be present; errors fail validation).

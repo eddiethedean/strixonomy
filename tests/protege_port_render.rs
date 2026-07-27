@@ -1,11 +1,11 @@
 //! Protégé Wave 2 port: entity render, Manchester escape, prefix expand, IRI split.
 //! Upstream: OWLEntityRendererImpl, RenderingEscapeUtils, Prefix*, IRIExpander, IriSplitter.
 
-use ontocore_owl::{
+use std::collections::BTreeMap;
+use strixonomy_owl::{
     escape_manchester_rendering, expand_prefixed_iri, match_prefix, render_as_curie,
     render_entity_iri, split_iri, unescape_manchester_rendering,
 };
-use std::collections::BTreeMap;
 
 fn ns() -> BTreeMap<String, String> {
     BTreeMap::from([

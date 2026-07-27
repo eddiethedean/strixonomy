@@ -3,8 +3,8 @@
 
 mod support;
 
-use ontocore_edit::{invert_patch_op, Transaction};
-use ontocore_owl::PatchOp;
+use strixonomy_edit::{invert_patch_op, Transaction};
+use strixonomy_owl::PatchOp;
 use support::protege_port::{assert_not_parent_of, assert_parent_of, standard_ns};
 
 #[test]

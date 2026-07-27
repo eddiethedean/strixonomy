@@ -2,7 +2,7 @@
 
 > **Latest tagged: v0.26.2** — matrix truth: [Supported formats](../supported-formats.md) · [What ships today](../SHIPPED.md).
 
-One-page view of what each format can do in OntoCode / OntoCore. Prefer this when deciding whether to keep Turtle, OBO, or Protégé-style XML.
+One-page view of what each format can do in Strixonomy / Strixonomy. Prefer this when deciding whether to keep Turtle, OBO, or Protégé-style XML.
 
 ## Matrix
 
@@ -10,7 +10,7 @@ One-page view of what each format can do in OntoCode / OntoCore. Prefer this whe
 |------------|-----------------|--------------|-------------------------|------------------|---------------------|
 | Index / browse / SQL / SPARQL | Yes | Yes | Yes | Yes | Yes (browse/query) |
 | Entity Inspector edit | Yes | Yes | Yes (v0.21+) | Yes (v0.21+) | No |
-| `ontocore patch` | Yes | Yes | Yes (v0.21+) | Yes (v0.21+) | No |
+| `strixonomy patch` | Yes | Yes | Yes (v0.21+) | Yes (v0.21+) | No |
 | Create / delete entities | Yes | Limited OBO term ops | Yes (core ops) | Yes (core ops) | No |
 | Manchester apply (rich class expressions) | Yes (richest) | No | Limited (named ops via patches) | Limited | No |
 | HasKey / DisjointUnion / RBox / ABox (v0.22) | Yes | No | Yes (mutate / re-serialize) | Yes | No |

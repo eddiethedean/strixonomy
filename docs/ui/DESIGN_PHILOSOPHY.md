@@ -1,11 +1,11 @@
-# OntoCode Design Philosophy
+# Strixonomy Design Philosophy
 
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
 ## Purpose
 
-OntoCode exists to redefine ontology engineering for the modern software
+Strixonomy exists to redefine ontology engineering for the modern software
 era. Rather than emulating legacy ontology editors, it treats ontologies
 as living software systems and provides an integrated engineering
 environment built around semantic understanding, developer workflows,
@@ -133,7 +133,7 @@ within seconds.
 
 ## Long-Term Ambition
 
-OntoCode should establish a new standard for ontology engineering
+Strixonomy should establish a new standard for ontology engineering
 comparable to what JetBrains accomplished for software development: a
 cohesive, extensible, AI-native engineering environment centered on
 semantic knowledge rather than source files.

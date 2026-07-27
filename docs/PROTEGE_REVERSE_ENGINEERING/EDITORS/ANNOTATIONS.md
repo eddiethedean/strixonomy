@@ -6,7 +6,7 @@
 
 The Annotation Properties editor manages OWL annotation properties and the metadata they attach to ontologies, classes, properties, individuals, and axioms. Unlike logical object and data properties, annotation properties do not affect logical reasoning; they provide documentation, provenance, versioning, labels, and other descriptive metadata.
 
-For OntoCode, this editor should provide feature parity with Protégé while offering richer editing, validation, and collaboration capabilities.
+For Strixonomy, this editor should provide feature parity with Protégé while offering richer editing, validation, and collaboration capabilities.
 
 ---
 
@@ -133,7 +133,7 @@ Supported search modes:
 - Prefix
 - Full-text
 
-Recommended OntoCode improvements:
+Recommended Strixonomy improvements:
 
 - Fuzzy search
 - Symbol search
@@ -210,7 +210,7 @@ Plugins should contribute:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -266,4 +266,4 @@ Platform
 
 # Summary
 
-The Annotation Properties editor provides the metadata foundation for ontology engineering. While annotation properties are not part of logical reasoning, they are essential for documentation, provenance, interoperability, and ontology maintenance. OntoCode should preserve Protégé's capabilities while extending them with rich editing, metadata quality tooling, AI-assisted documentation, collaborative workflows, and a modern React/Rust architecture.
+The Annotation Properties editor provides the metadata foundation for ontology engineering. While annotation properties are not part of logical reasoning, they are essential for documentation, provenance, interoperability, and ontology maintenance. Strixonomy should preserve Protégé's capabilities while extending them with rich editing, metadata quality tooling, AI-assisted documentation, collaborative workflows, and a modern React/Rust architecture.

@@ -16,8 +16,8 @@ describe("workspace session snapshot shape", () => {
       ],
       navigationIndex: 1,
       panelRestore: {
-        ontocodeInspector: {
-          command: "ontocode.showEntityInspector",
+        strixonomyInspector: {
+          command: "strixonomy.showEntityInspector",
           args: ["http://example.org/a#Person"],
         },
       },
@@ -26,14 +26,14 @@ describe("workspace session snapshot shape", () => {
     assert.equal(roundTrip.openOntologyUris.length, 1);
     assert.equal(roundTrip.navigationIndex, 1);
     assert.equal(
-      roundTrip.panelRestore.ontocodeInspector.command,
-      "ontocode.showEntityInspector"
+      roundTrip.panelRestore.strixonomyInspector.command,
+      "strixonomy.showEntityInspector"
     );
   });
 
-  it("treats non-ontocode panel restore commands as disallowed (#309)", () => {
+  it("treats non-strixonomy panel restore commands as disallowed (#309)", () => {
     assert.equal(isAllowedPanelRestoreCommand("workbench.action.terminal.new"), false);
-    assert.equal(isAllowedPanelRestoreCommand("ontocode.showEntityInspector"), true);
+    assert.equal(isAllowedPanelRestoreCommand("strixonomy.showEntityInspector"), true);
   });
 
   it("detects NOT_INDEXED catalog errors (#294)", () => {

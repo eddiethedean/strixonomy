@@ -3,7 +3,7 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Semantic Refactoring Specification
+# Strixonomy Semantic Refactoring Specification
 
 ## Purpose
 
@@ -19,7 +19,7 @@ dangerous manual process.
 
 # Vision
 
-OntoCode should provide the world's most comprehensive semantic
+Strixonomy should provide the world's most comprehensive semantic
 refactoring engine.
 
 Every refactoring should be:
@@ -279,4 +279,4 @@ Semantic refactoring succeeds when ontology engineers trust it as much
 as software developers trust refactoring tools in modern IDEs. Users
 should confidently improve ontology quality through automated,
 reasoning-aware transformations that are previewable, reversible, and
-deeply integrated with the OntoCode workspace.
+deeply integrated with the Strixonomy workspace.

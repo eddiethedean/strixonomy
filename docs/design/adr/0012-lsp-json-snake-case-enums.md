@@ -10,7 +10,7 @@ Accepted (v0.2.0)
 
 ## Decision
 
-- Add `#[serde(rename_all = "snake_case")]` on wire enums in `ontocore-core`.
+- Add `#[serde(rename_all = "snake_case")]` on wire enums in `strixonomy-core`.
 - Treat snake_case as the normative LSP JSON contract; validate in Rust wire-format tests and TypeScript `protocolGuards`.
 - Keep `EntityKind::as_str()` aligned with serde output for SQL and LSP.
 

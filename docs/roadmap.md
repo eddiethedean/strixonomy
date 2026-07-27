@@ -1,6 +1,6 @@
-# OntoCore & OntoCode Roadmap
+# Strixonomy & Strixonomy Roadmap
 
-> **Canonical full roadmap:** [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md) (includes Era I webapp / WASM / React app no-backend detail).  
+> **Canonical full roadmap:** [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) (includes Era I webapp / WASM / React app no-backend detail).  
 > **This RTD page** is a condensed summary for ships + near-term phases.  
 > **Which roadmap?** [Roadmap hub](roadmap-hub.md). **What ships today?** [SHIPPED.md](SHIPPED.md).
 
@@ -8,19 +8,19 @@
 
 Build the modern open-source platform for ontology engineering.
 
-**OntoCore** is the semantic workspace engine.
+**Strixonomy** is the semantic workspace engine.
 
-**OntoCode** is the flagship IDE powered by OntoCore.
+**Strixonomy** is the flagship IDE powered by Strixonomy.
 
 Full mission and principles: [Vision](vision.md). Ecosystem layers: [Architecture](architecture.md).
 
 ## Guiding principle
 
-**OntoCode 1.0 has one primary objective: become a production-ready replacement for Protégé.**
+**Strixonomy 1.0 has one primary objective: become a production-ready replacement for Protégé.**
 
 Every feature before 1.0 should answer one question:
 
-> Does this make it easier for ontology engineers to adopt OntoCode instead of Protégé?
+> Does this make it easier for ontology engineers to adopt Strixonomy instead of Protégé?
 
 After 1.0, the roadmap shifts from parity to modernization.
 
@@ -34,15 +34,15 @@ After 1.0, the roadmap shifts from parity to modernization.
 | Document | Role |
 |----------|------|
 | [What ships today](SHIPPED.md) | **Canonical capability matrix** — what is available in the current release |
-| [Protégé parity program](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/README.md) | **1.0 engineering program** — scope, blockers, release gates |
-| [Pre-1.0 release phases](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) | **v0.19–v0.26 → 1.0.0** versioned parity plan |
-| [UI roadmap mapping](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md) | **UI specs ↔ releases** — master checklist for all Product Roadmap 2.0 items |
+| [Protégé parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) | **1.0 engineering program** — scope, blockers, release gates |
+| [Pre-1.0 release phases](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) | **v0.19–v0.27 → 1.0.0** versioned parity plan |
+| [UI roadmap mapping](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md) | **UI specs ↔ releases** — master checklist for all Product Roadmap 2.0 items |
 | [Milestones (shipped)](design/ROADMAP.md) | Per-crate engineering detail for **shipped** v0.1–v0.11 milestones |
 | [Protégé parity matrix](design/PROTEGE_PARITY.md) | Historical v0.18 P0/P1/P2 checklist (superseded for planning) |
 | [v1.0 backlog](design/v1.0_BACKLOG.md) | Implementation checklist toward v1.0 |
-| [Platform overview](https://github.com/eddiethedean/ontocode/blob/main/docs/platform/OVERVIEW.md) | OntoUI / WorkspaceStore architecture (foundation shipped v0.13) |
-| [Product Roadmap 2.0](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md) | UI phases with milestone acceptance criteria |
-| [Product design (UI)](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/README.md) | Product design specification pack (UX, design system, OntoStudio target) |
+| [Platform overview](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI / WorkspaceStore architecture (foundation shipped v0.13) |
+| [Product Roadmap 2.0](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md) | UI phases with milestone acceptance criteria |
+| [Product design (UI)](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) | Product design specification pack (UX, design system, OntoStudio target) |
 
 **Current release:** v0.26.2
 
@@ -61,12 +61,12 @@ Engine foundation    IDE depth                Platform & authoring   OntoUI → 
                                                                        + viz/SDK/a11y/CI (v0.25)
                                                                        + Protégé test port (v0.26)
 
-PLANNED (1.0.0-rc → 1.0) ─────────────────────────────────────────────►
-1.0.0-rc → 1.0.0
-Stabilize            Protégé replacement
+PLANNED (v0.27 → 1.0) ────────────────────────────────────────────────►
+v0.27                  1.0.0-rc            1.0.0
+Strixonomy rename      Stabilize            Protégé replacement
 ```
 
-Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md). Pre-1.0 phases: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md).
+Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md). Pre-1.0 phases: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md).
 
 ### Phase index
 
@@ -74,16 +74,16 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/b
 |-----|----------|--------|------------|
 | **A — Engine foundation** | v0.1–v0.4 | Shipped | Index, browse, diagnose, edit Turtle |
 | **B — IDE depth** | v0.5–v0.8 | Shipped | Query, reason, visualize, refactor |
-| **C — Platform & authoring** | v0.9–v0.12 | Shipped | OntoCore identity, semantic workspace, authoring parity |
+| **C — Platform & authoring** | v0.9–v0.12 | Shipped | Strixonomy identity, semantic workspace, authoring parity |
 | **D — OntoUI platform** | v0.13–v0.14 | Shipped | v0.13: WorkspaceStore, focus relay; v0.14: plugin host MVP |
 | **E — Desktop UX shell gate** | v0.15–v0.18 | Shipped | Menus, layouts, workflows, migration readiness (not full parity) |
-| **F — Full Protégé parity path** | v0.19–v0.26 | Shipped through v0.26 (1.0.0-rc next) | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port |
+| **F — Full Protégé parity path** | v0.19–v0.27 | Shipped through v0.26 (v0.27 next) | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename |
 | **G — Protégé replacement** | 1.0.0 | Planned | Daily OWL/OBO engineering without Protégé |
 | **H — Ecosystem** | v1.1–v1.2+ | Planned | SDKs, AI, toolchain & collaboration |
 
 | Phase | Version | Era | Status | UI phases | Theme |
 |-------|---------|-----|--------|-----------|-------|
-| 1–18 | v0.1–v0.18 | A–E | Shipped | — | See [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md) |
+| 1–18 | v0.1–v0.18 | A–E | Shipped | — | See [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) |
 | 19 | v0.19 | F | Shipped | — | Semantic foundation + program baseline |
 | 20 | v0.20 | F | Shipped | 1† | Workspace runtime |
 | 21 | v0.21 | F | Shipped | — | RDF/XML + OWL/XML write-back |
@@ -92,16 +92,17 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/b
 | 24 | v0.24 | F | Shipped | 3†, 6† | Refactoring + DL Query parity |
 | 25 | v0.25 | F | Shipped | 4†, 8† | Viz + plugin SDK 1.0 + a11y + parity CI |
 | 26 | v0.26 | F | Shipped | — | Protégé Desktop JUnit behavioral test port (Waves 1–4) |
-| 27 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
-| 28 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
-| 29 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
-| 30 | v1.2+ | H | Planned | 9, 10, 11 | Ontology toolchain platform |
+| 27 | v0.27 | F | Planned | — | Rename Strixonomy and Strixonomy to Strixonomy |
+| 28 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
+| 29 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
+| 30 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
+| 31 | v1.2+ | H | Planned | 9, 10, 11 | Ontology toolchain platform |
 
-†Partial scope in this release (remainder in later releases). Full mapping: [ROADMAP_MAPPING.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md).
+†Partial scope in this release (remainder in later releases). Full mapping: [ROADMAP_MAPPING.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md).
 
 ### UI phase reference (Product Roadmap 2.0)
 
-OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md). They are integrated into release phases above — not a separate track.
+OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md). They are integrated into release phases above — not a separate track.
 
 | UI phase | Name | Primary releases |
 |----------|------|------------------|
@@ -127,22 +128,22 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 
 ### Era A — Engine foundation (v0.1–v0.4)
 
-### v0.1 — OntoCore foundation (shipped)
+### v0.1 — Strixonomy foundation (shipped)
 
 **Theme:** Prove the semantic workspace engine — index, catalog, and query ontology files from the CLI.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Rust workspace; CLI skeleton; recursive scanner; file hashing; parser adapters; basic catalog (`ontologies`, `classes`, `properties` tables); SQL and SPARQL query |
-| **OntoCode** | — |
+| **Strixonomy** | Rust workspace; CLI skeleton; recursive scanner; file hashing; parser adapters; basic catalog (`ontologies`, `classes`, `properties` tables); SQL and SPARQL query |
+| **Strixonomy** | — |
 
-**Exit criteria:** `ontocore query ./repo "SELECT * FROM classes"` returns indexed classes.
+**Exit criteria:** `strixonomy query ./repo "SELECT * FROM classes"` returns indexed classes.
 
 **Dependencies:** `oxigraph`, `sqlparser`, `ignore`, `clap`
 
 ---
 
-### v0.2 — OntoCode explorer (shipped)
+### v0.2 — Strixonomy explorer (shipped)
 
 **Theme:** Browse ontologies in VS Code via a language server.
 
@@ -150,12 +151,12 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | LSP process; workspace indexing command |
-| **OntoCode / OntoUI** | VS Code extension skeleton; ontology explorer; class/property/individual trees; entity inspector; jump to source; hover, go-to-definition, document/workspace symbols |
+| **Strixonomy** | LSP process; workspace indexing command |
+| **Strixonomy / OntoUI** | VS Code extension skeleton; ontology explorer; class/property/individual trees; entity inspector; jump to source; hover, go-to-definition, document/workspace symbols |
 
 **Exit criteria:** User can browse an ontology repo in VS Code.
 
-**Dependencies:** `lsp-server`, `lsp-types`, OntoCore crates
+**Dependencies:** `lsp-server`, `lsp-types`, Strixonomy crates
 
 ---
 
@@ -165,12 +166,12 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Parse errors; broken imports; undefined prefixes; duplicate labels; missing labels; orphan classes; `diagnostics` SQL virtual table |
-| **OntoCode** | Problems panel integration |
+| **Strixonomy** | Parse errors; broken imports; undefined prefixes; duplicate labels; missing labels; orphan classes; `diagnostics` SQL virtual table |
+| **Strixonomy** | Problems panel integration |
 
 **Exit criteria:** User gets useful ontology diagnostics inline.
 
-**Dependencies:** `oxigraph` (parse errors); in-house lint rules in `ontocore-diagnostics`
+**Dependencies:** `oxigraph` (parse errors); in-house lint rules in `strixonomy-diagnostics`
 
 ---
 
@@ -182,12 +183,12 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | `ontocore-owl` crate (Horned-OWL catalog bridge); patch-based write-back; create/edit/delete classes, properties, individuals; edit labels, comments, simple `SubClassOf`, deprecated flag; Oxigraph ↔ Horned-OWL consistency tests; CLI `ontocore patch`; LSP `ontocore/applyAxiomPatch` |
-| **OntoCode / OntoUI** | Editable entity inspector |
+| **Strixonomy** | `strixonomy-owl` crate (Horned-OWL catalog bridge); patch-based write-back; create/edit/delete classes, properties, individuals; edit labels, comments, simple `SubClassOf`, deprecated flag; Oxigraph ↔ Horned-OWL consistency tests; CLI `strixonomy patch`; LSP `strixonomy/applyAxiomPatch` |
+| **Strixonomy / OntoUI** | Editable entity inspector |
 
 **Exit criteria:** User can edit labels and simple subclass axioms in Turtle; catalog axioms for editing come from Horned-OWL.
 
-**Dependencies:** `horned-owl`, `horned-functional` via `ontocore-owl` ([ADR-0013](design/adr/0013-dual-stack-oxigraph-horned-owl.md), [ADR-0006](design/adr/0006-patch-based-write-back.md))
+**Dependencies:** `horned-owl`, `horned-functional` via `strixonomy-owl` ([ADR-0013](design/adr/0013-dual-stack-oxigraph-horned-owl.md), [ADR-0006](design/adr/0006-patch-based-write-back.md))
 
 ---
 
@@ -201,12 +202,12 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Manchester parse/serialize for `SubClassOf` and `EquivalentClasses`; LSP `ontocore/parseManchester`, `ontocore/query`, `ontocore/sparql` |
-| **OntoCode / OntoUI** | SQL and SPARQL query webviews; saved queries, result export, query history; Manchester editor MVP |
+| **Strixonomy** | Manchester parse/serialize for `SubClassOf` and `EquivalentClasses`; LSP `strixonomy/parseManchester`, `strixonomy/query`, `strixonomy/sparql` |
+| **Strixonomy / OntoUI** | SQL and SPARQL query webviews; saved queries, result export, query history; Manchester editor MVP |
 
 **Exit criteria:** User can query ontologies in VS Code and edit complex subclass/equivalent axioms via Manchester.
 
-**Dependencies:** `sqlparser`, `oxigraph`; Manchester in `ontocore-owl`
+**Dependencies:** `sqlparser`, `oxigraph`; Manchester in `strixonomy-owl`
 
 ---
 
@@ -216,8 +217,8 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | `ontocore-reasoner` crate (Ontologos facade); `el`, `rl`, `rdfs` adapters; profile detection; unsatisfiable classes; classification result cache |
-| **OntoCode** | Reasoner panel; asserted/inferred/combined hierarchy toggle; explanation panel (DL-first on DL) |
+| **Strixonomy** | `strixonomy-reasoner` crate (Ontologos facade); `el`, `rl`, `rdfs` adapters; profile detection; unsatisfiable classes; classification result cache |
+| **Strixonomy** | Reasoner panel; asserted/inferred/combined hierarchy toggle; explanation panel (DL-first on DL) |
 
 **Exit criteria:** User can classify EL ontologies, see inferred hierarchy, and get EL explanations where available.
 
@@ -235,8 +236,8 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | `ontocore-robot` wrappers (`validate`, `merge`, `report`); OBO format index; graph structure export via `petgraph` |
-| **OntoCode / OntoUI** | `extension/webview-ui/` — Vite + React + TypeScript; typed `postMessage` protocol; CSP-compliant panel host; class/property/import/neighborhood graphs; entity inspector on React; OBO syntax highlighting and id rendering in explorer |
+| **Strixonomy** | `strixonomy-robot` wrappers (`validate`, `merge`, `report`); OBO format index; graph structure export via `petgraph` |
+| **Strixonomy / OntoUI** | `extension/webview-ui/` — Vite + React + TypeScript; typed `postMessage` protocol; CSP-compliant panel host; class/property/import/neighborhood graphs; entity inspector on React; OBO syntax highlighting and id rendering in explorer |
 
 **Exit criteria:** User can navigate ontologies visually; biomedical maintainer can index OBO and run ROBOT in CI.
 
@@ -252,8 +253,8 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Safe IRI rename, namespace migration, find usages, move entity, extract module; preview/apply refactor plan; full Manchester axiom catalog (restrictions, disjoint, property chains view) |
-| **OntoCode / OntoUI** | Refactor preview panel; Query Workbench and Manchester editor migrated to React; LSP rename and find references |
+| **Strixonomy** | Safe IRI rename, namespace migration, find usages, move entity, extract module; preview/apply refactor plan; full Manchester axiom catalog (restrictions, disjoint, property chains view) |
+| **Strixonomy / OntoUI** | Refactor preview panel; Query Workbench and Manchester editor migrated to React; LSP rename and find references |
 
 **Exit criteria:** User can safely refactor ontology repositories and author full OWL 2 DL expression sets via hybrid UI.
 
@@ -263,7 +264,7 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 ### Era C — Platform & authoring (v0.9–v0.13)
 
-### v0.9 — OntoCore platform identity (shipped)
+### v0.9 — Strixonomy platform identity (shipped)
 
 **Theme:** Unified naming, public API, and DL reasoning.
 
@@ -271,10 +272,10 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Rename `ontoindex-*` → `ontocore-*`; CLI `ontocore`; LSP `ontocore-lsp` with `ontocore/*` methods; `ontocore` façade crate with `Workspace` API; Ontologos 1.0.0 integration (`dl` and `auto` adapters); plugin platform design ([PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md)) |
-| **OntoCode / OntoUI** | Reasoner + explanation panels on React; legacy HTML webviews removed; OntoCore branding |
+| **Strixonomy** | Rename `ontoindex-*` → `strixonomy-*`; CLI `strixonomy`; LSP `strixonomy-lsp` with `strixonomy/*` methods; `strixonomy` façade crate with `Workspace` API; Ontologos 1.0.0 integration (`dl` and `auto` adapters); plugin platform design ([PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md)) |
+| **Strixonomy / OntoUI** | Reasoner + explanation panels on React; legacy HTML webviews removed; Strixonomy branding |
 
-**Exit criteria:** Contributors and users distinguish OntoCore (engine) from OntoCode (IDE); DL/auto classification enabled.
+**Exit criteria:** Contributors and users distinguish Strixonomy (engine) from Strixonomy (IDE); DL/auto classification enabled.
 
 **Dependencies:** Ontologos 1.0.0; breaking release for v0.8 integrators ([ADR-0018](design/adr/0018-ontocore-platform-identity.md))
 
@@ -288,8 +289,8 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Incremental indexing (content-hash reuse); multi-root workspaces; stable `ontocore::Workspace` API; `ontocore-diff` crate; `ontocore diff` CLI; git ref compare; breaking-change detection; optional disk cache (`.ontocore/cache/`) |
-| **OntoCode / OntoUI** | Semantic diff React panel; LSP `ontocore/semanticDiff`; multi-root folder support |
+| **Strixonomy** | Incremental indexing (content-hash reuse); multi-root workspaces; stable `strixonomy::Workspace` API; `strixonomy-diff` crate; `strixonomy diff` CLI; git ref compare; breaking-change detection; optional disk cache (`.strixonomy/cache/`) |
+| **Strixonomy / OntoUI** | Semantic diff React panel; LSP `strixonomy/semanticDiff`; multi-root folder support |
 
 **Exit criteria:** User can diff ontology versions, work in multi-root workspaces, and reindex incrementally at scale.
 
@@ -301,12 +302,12 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 **Theme:** Close editor gaps and expand distribution.
 
-**UI phases delivered:** **5** (quick fixes), **7** (partial — `ontocore docs` export), **11** (partial — enterprise adoption guides).
+**UI phases delivered:** **5** (quick fixes), **7** (partial — `strixonomy docs` export), **11** (partial — enterprise adoption guides).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | LSP `textDocument/completion` (Turtle prefix, QName, IRI); diagnostic quick fixes (`undefined_prefix`, `missing_label`, `broken_import`); `ontocore-docs` crate; `ontocore docs` CLI (Markdown/HTML); `add_import` / `remove_import` patch ops; OBO read path via `fastobo` (synonyms, defs, xrefs); ADR for v1.0 OBO write-back ([ADR-0019](design/adr/0019-obo-write-back.md)) |
-| **OntoCode / OntoUI** | Manage Imports panel; Open VSX publishing (Cursor); diagnostic code actions; entity inspector panel reuse on navigation; VS Code e2e tests |
+| **Strixonomy** | LSP `textDocument/completion` (Turtle prefix, QName, IRI); diagnostic quick fixes (`undefined_prefix`, `missing_label`, `broken_import`); `strixonomy-docs` crate; `strixonomy docs` CLI (Markdown/HTML); `add_import` / `remove_import` patch ops; OBO read path via `fastobo` (synonyms, defs, xrefs); ADR for v1.0 OBO write-back ([ADR-0019](design/adr/0019-obo-write-back.md)) |
+| **Strixonomy / OntoUI** | Manage Imports panel; Open VSX publishing (Cursor); diagnostic code actions; entity inspector panel reuse on navigation; VS Code e2e tests |
 
 **Exit criteria:** Daily Turtle editing, import management, and docs export work without leaving VS Code; extension available on VS Code Marketplace and Open VSX.
 
@@ -324,8 +325,8 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Property domain, range, and characteristics authoring (patch ops); individual class/property assertions; expanded annotation assertion editing; property chain editing; full OBO write-back ([OBO_ROBOT_SPEC.md](design/OBO_ROBOT_SPEC.md), [ADR-0019](design/adr/0019-obo-write-back.md)); OWL/XML read support; Horned-OWL → Ontologos bridge improvements; axiom round-trip golden tests (Protégé fixtures) |
-| **OntoCode / OntoUI** | Inspector forms for domain/range/characteristics; property chain editor; OBO write-back in inspector; DL clash-trace explanations via `ontologos-explain` + `ontologos-dl`; Turtle preview before apply for all axiom types |
+| **Strixonomy** | Property domain, range, and characteristics authoring (patch ops); individual class/property assertions; expanded annotation assertion editing; property chain editing; full OBO write-back ([OBO_ROBOT_SPEC.md](design/OBO_ROBOT_SPEC.md), [ADR-0019](design/adr/0019-obo-write-back.md)); OWL/XML read support; Horned-OWL → Ontologos bridge improvements; axiom round-trip golden tests (Protégé fixtures) |
+| **Strixonomy / OntoUI** | Inspector forms for domain/range/characteristics; property chain editor; OBO write-back in inspector; DL clash-trace explanations via `ontologos-explain` + `ontologos-dl`; Turtle preview before apply for all axiom types |
 
 **Exit criteria:** All **P0 — OWL 2 DL authoring** and **OBO & biomedical** rows in [PROTEGE_PARITY.md](design/PROTEGE_PARITY.md) are green.
 
@@ -339,15 +340,15 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 **Released:** v0.13.0 (2026-07-08)
 
-**Theme:** OntoUI platform foundation + OntoCore hardening for plugins (v0.14) and Protégé polish (v1.0).
+**Theme:** OntoUI platform foundation + Strixonomy hardening for plugins (v0.14) and Protégé polish (v1.0).
 
-**UI phases delivered:** **0**, **1**, partial **3** (schema browser), partial **5** (reasoning store integration), partial **9** (PR summary CLI). Checklist: [ROADMAP_MAPPING.md § v0.13](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md)
+**UI phases delivered:** **0**, **1**, partial **3** (schema browser), partial **5** (reasoning store integration), partial **9** (PR summary CLI). Checklist: [ROADMAP_MAPPING.md § v0.13](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md)
 
 | Area | Deliverables |
 |------|--------------|
 | **OntoUI** | `WorkspaceHost` adapter; Zustand `WorkspaceStore` + event bus; Current Focus + `FocusChanged`; `WorkspaceRegistry`; design tokens + shared primitives; extension-host `FocusRelayService`; Entity Inspector, Graph, Query Workbench, and Refactor Preview on store; schema browser in Query Workbench; refactor + reasoning store slices |
-| **OntoCore** | Horned-OWL SQL virtual tables (`restrictions`, `equivalent_class_axioms`, `disjoint_class_axioms`, `domain_axioms`, `range_axioms`); LSP `ontocore/listSqlSchema`; `ontocore diff --pr-summary`; `.ontocore/diagnostics.toml`; LSP semantic tokens (Turtle/OBO); `ontocore docs` class hierarchy + property index; API stability policy; benchmark smoke tests (`tests/bench_index.rs`) |
-| **OntoCode** | Cross-panel focus sync (explorer → inspector + graph); Vitest + extension integration tests for focus relay, schema browser, and store slices; UX audit ([UX_AUDIT_v0.13.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/UX_AUDIT_v0.13.md)) |
+| **Strixonomy** | Horned-OWL SQL virtual tables (`restrictions`, `equivalent_class_axioms`, `disjoint_class_axioms`, `domain_axioms`, `range_axioms`); LSP `strixonomy/listSqlSchema`; `strixonomy diff --pr-summary`; `.strixonomy/diagnostics.toml`; LSP semantic tokens (Turtle/OBO); `strixonomy docs` class hierarchy + property index; API stability policy; benchmark smoke tests (`tests/bench_index.rs`) |
+| **Strixonomy** | Cross-panel focus sync (explorer → inspector + graph); Vitest + extension integration tests for focus relay, schema browser, and store slices; UX audit ([UX_AUDIT_v0.13.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/UX_AUDIT_v0.13.md)) |
 
 **Exit criteria (met):**
 
@@ -355,10 +356,10 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 - [x] **Store ownership** — Entity, Graph, Query, and Refactor Preview workspaces consume WorkspaceStore
 - [x] **Design system** — design tokens + shared primitives on Entity Inspector and Query Workbench
 - [x] **Schema browser** — browse virtual tables/columns; insert snippets into Query Workbench editor
-- [x] **Team workflow** — `ontocore diff A..B --pr-summary` emits PR-ready Markdown; documented and tested
+- [x] **Team workflow** — `strixonomy diff A..B --pr-summary` emits PR-ready Markdown; documented and tested
 - [x] **Performance** — benchmark fixtures + sizing guide update
 - [x] **Quality** — 161 webview-ui Vitest tests + extension integration tests; accessibility pass on migrated panels
-- [x] **API policy** — public `ontocore` API stability documented on path to 1.0
+- [x] **API policy** — public `strixonomy` API stability documented on path to 1.0
 
 **Deferred to later releases:** persistent tabs + bottom dock, full panel component migration, SQL `JOIN`/`GROUP BY`, PR summary UI panel, validation report panel, Reasoner/Semantic Diff full store migration → **v1.0** / **v1.2** per original scope boundaries.
 
@@ -372,21 +373,21 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 **Theme:** External extensibility without embedding workflow engines in core.
 
-**UI phases delivered:** **8** (plugin platform MVP). Milestone: [Product Roadmap 2.0 phase 8](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md).
+**UI phases delivered:** **8** (plugin platform MVP). Milestone: [Product Roadmap 2.0 phase 8](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | `PluginHost` runtime; manifest discovery from `.ontocore/plugins/`; reference plugins (naming validator, Markdown exporter, SHACL scaffold); CLI `plugins list/run`, `validate`/`docs` hooks; LSP `listPlugins`/`runPlugin`; subprocess workflow runner |
+| **Strixonomy** | `PluginHost` runtime; manifest discovery from `.strixonomy/plugins/`; reference plugins (naming validator, Markdown exporter, SHACL scaffold); CLI `plugins list/run`, `validate`/`docs` hooks; LSP `listPlugins`/`runPlugin`; subprocess workflow runner |
 | **OntoUI** | Capability provider registry; inspector plugin cards; `WorkspaceStore` plugins slice |
-| **OntoCode** | Plugin commands; owlmake workflow scaffold (`workflow run --plugin owlmake`); workflow output panel |
+| **Strixonomy** | Plugin commands; owlmake workflow scaffold (`workflow run --plugin owlmake`); workflow output panel |
 | **Ecosystem** | `examples/plugin-workspace/` fixture; [Plugin authoring guide](guides/plugins.md) |
 
 **Exit criteria (met):**
 
-- [x] Third party can ship a validation or export plugin without forking OntoCore (reference plugins + manifest schema)
-- [x] owlmake can be invoked from OntoCode as an external workflow (subprocess scaffold)
+- [x] Third party can ship a validation or export plugin without forking Strixonomy (reference plugins + manifest schema)
+- [x] owlmake can be invoked from Strixonomy as an external workflow (subprocess scaffold)
 
-**Dependencies:** `ontocore-plugin` crate; reference plugin binaries; [PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md)
+**Dependencies:** `strixonomy-plugin` crate; reference plugin binaries; [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md)
 
 ---
 
@@ -398,9 +399,9 @@ Sub-phases: **v0.7a** (React foundation) → **v0.7** (graphs + inspector) → *
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Plugin permissions + `api_version = "1"`; subprocess path-jail hardening; explanation alternatives + staleness metadata in LSP/CLI |
+| **Strixonomy** | Plugin permissions + `api_version = "1"`; subprocess path-jail hardening; explanation alternatives + staleness metadata in LSP/CLI |
 | **OntoUI** | Graph asserted/inferred/combined modes, layouts, search; explanation panel with multiple justifications |
-| **OntoCode** | Plugin UI views (dockable panels); plugin commands; explanation staleness warnings |
+| **Strixonomy** | Plugin UI views (dockable panels); plugin commands; explanation staleness warnings |
 | **Ecosystem** | `demo-ui-view.toml` fixture; updated [Plugin authoring guide](guides/plugins.md) |
 
 **Exit criteria (partial):** dockable plugin views + commands shipped; graph modes + explanation alternatives shipped; preferences/context actions **shipped in v0.16**.
@@ -417,9 +418,9 @@ See [migration/v0.15.md](migration/v0.15.md) and [SHIPPED.md](SHIPPED.md).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Plugin command dispatch via LSP `ontocore/runPlugin` (validator/export/workflow) |
+| **Strixonomy** | Plugin command dispatch via LSP `strixonomy/runPlugin` (validator/export/workflow) |
 | **OntoUI** | Plugin preferences pages and context actions surfaced from manifest contributions |
-| **OntoCode** | **Plugins: Open Preferences…**, **Plugins: Run Context Action…**, **Reload Imports**, **Reset Layout** commands |
+| **Strixonomy** | **Plugins: Open Preferences…**, **Plugins: Run Context Action…**, **Reload Imports**, **Reset Layout** commands |
 | **Ecosystem** | [v0.16 scope](design/v0.16_SCOPE.md); [migration/v0.16.md](migration/v0.16.md) |
 
 **Exit criteria (partial):** P0 preferences/context actions/imports reload shipped; full layout persistence and workspace perspectives deferred to v0.17+.
@@ -432,7 +433,7 @@ See [migration/v0.16.md](migration/v0.16.md) and [SHIPPED.md](SHIPPED.md).
 
 **Released:** v0.17.0 (2026-07-10)
 
-See [v0.17 scope](design/v0.17_SCOPE.md), [migration/v0.17.md](migration/v0.17.md), and root [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md).
+See [v0.17 scope](design/v0.17_SCOPE.md), [migration/v0.17.md](migration/v0.17.md), and root [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md).
 
 ---
 
@@ -440,30 +441,30 @@ See [v0.17 scope](design/v0.17_SCOPE.md), [migration/v0.17.md](migration/v0.17.m
 
 **Released:** v0.18.0 (2026-07-11); patches **v0.18.1** (2026-07-12), **v0.18.2** (2026-07-13)
 
-**Theme:** Close the desktop UX shell gate (menus, layouts, workflows, migration docs). **Not** full functional Protégé parity — see [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) for v0.19–v0.26.
+**Theme:** Close the desktop UX shell gate (menus, layouts, workflows, migration docs). **Not** full functional Protégé parity — see [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) for v0.19–v0.27.
 
-**Scope (docs/audit-first):** [v0.18_SCOPE.md](design/v0.18_SCOPE.md) · [0.18 parity assessment](https://github.com/eddiethedean/ontocode/blob/main/docs/PROTEGE_REVERSE_ENGINEERING/ONTOCODE_PARITY/ONTOCODE_0.18_PROTEGE_PARITY_ASSESSMENT.md)
+**Scope (docs/audit-first):** [v0.18_SCOPE.md](design/v0.18_SCOPE.md) · [0.18 parity assessment](https://github.com/eddiethedean/strixonomy/blob/main/docs/PROTEGE_REVERSE_ENGINEERING/ONTOCODE_PARITY/ONTOCODE_0.18_PROTEGE_PARITY_ASSESSMENT.md)
 
-Canonical detail: root [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md) § v0.18. See [migration/v0.18.md](migration/v0.18.md).
+Canonical detail: root [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) § v0.18. See [migration/v0.18.md](migration/v0.18.md).
 
 ---
 
-### Era F — Full Protégé parity path (v0.19–v0.26) — shipped through v0.26
+### Era F — Full Protégé parity path (v0.19–v0.27) — shipped through v0.26
 
-**Canonical plan:** [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)
+**Canonical plan:** [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)
 
 ### v0.19 — Semantic foundation + program baseline (shipped)
 
 **Released:** v0.19.0 (2026-07-13)
 
-**Theme:** Freeze parity scope; route Turtle/OBO edits through semantic transactions (`ontocore-edit`).
+**Theme:** Freeze parity scope; route Turtle/OBO edits through semantic transactions (`strixonomy-edit`).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | `Transaction` / `SemanticChange`; LSP + CLI apply via adapters; invert/compose/validate |
+| **Strixonomy** | `Transaction` / `SemanticChange`; LSP + CLI apply via adapters; invert/compose/validate |
 | **Parity program** | Frozen scope; `parity/protege-desktop-parity.yaml` + CI validator; epics EPIC-001…011 |
 
-See [migration/v0.19.md](migration/v0.19.md) · [SHIPPED.md](SHIPPED.md) · full detail in [ROADMAP.md § v0.19](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md).
+See [migration/v0.19.md](migration/v0.19.md) · [SHIPPED.md](SHIPPED.md) · full detail in [ROADMAP.md § v0.19](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md).
 
 ---
 
@@ -473,7 +474,7 @@ See [migration/v0.19.md](migration/v0.19.md) · [SHIPPED.md](SHIPPED.md) · full
 
 **Theme:** Workspace as central runtime for ontology state and transactions.
 
-See [SHIPPED.md](SHIPPED.md) · [migration/v0.20.md](migration/v0.20.md) · full detail in [ROADMAP.md § v0.20](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md).
+See [SHIPPED.md](SHIPPED.md) · [migration/v0.20.md](migration/v0.20.md) · full detail in [ROADMAP.md § v0.20](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md).
 
 ---
 
@@ -491,7 +492,7 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.21.md](migration/v0.21.md).
 
 **Theme:** Every P0 OWL 2 construct authorable across required formats.
 
-See [SHIPPED.md](SHIPPED.md) · [migration/v0.22.md](migration/v0.22.md) · [OWL2_AUTHORING_GAPS.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/06_SUBSYSTEMS/OWL2_AUTHORING_GAPS.md).
+See [SHIPPED.md](SHIPPED.md) · [migration/v0.22.md](migration/v0.22.md) · [OWL2_AUTHORING_GAPS.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/06_SUBSYSTEMS/OWL2_AUTHORING_GAPS.md).
 
 ---
 
@@ -501,7 +502,7 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.22.md](migration/v0.22.md) · [OWL
 
 **Theme:** Visualization, plugin SDK 1.0, accessibility, parity manifest CI.
 
-See [SHIPPED.md](SHIPPED.md) · [migration/v0.25.md](migration/v0.25.md) · full detail in [ROADMAP.md § v0.25](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md).
+See [SHIPPED.md](SHIPPED.md) · [migration/v0.25.md](migration/v0.25.md) · full detail in [ROADMAP.md § v0.25](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md).
 
 ---
 
@@ -509,15 +510,30 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.25.md](migration/v0.25.md) · full
 
 **Released:** v0.26.2 (2026-07-17)
 
-**Theme:** Port portable Protégé Desktop JUnit behaviors into OntoCode Rust semantic oracles (not a JVM suite runner).
+**Theme:** Port portable Protégé Desktop JUnit behaviors into Strixonomy Rust semantic oracles (not a JVM suite runner).
 
-See [SHIPPED.md](SHIPPED.md) · [migration/v0.26.md](migration/v0.26.md) · full detail in [ROADMAP.md § v0.26](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md).
+See [SHIPPED.md](SHIPPED.md) · [migration/v0.26.md](migration/v0.26.md) · full detail in [ROADMAP.md § v0.26](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md).
 
 ---
 
-## Planned releases (1.0.0-rc → v1.2+)
+## Planned releases (v0.27 → v1.2+)
 
-**Pre-1.0 parity phases remaining:** [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) (1.0.0-rc → 1.0.0). **v0.26 shipped.** Per-release detail: [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md) § Era F / Era G.
+**Pre-1.0 phases remaining:** [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) (v0.27 → 1.0.0). **v0.26 shipped.** Per-release detail: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) § Era F / Era G.
+
+---
+
+### v0.27 — Strixonomy rename (planned)
+
+**Theme:** Rename the Strixonomy Rust engine and Strixonomy VS Code extension to **Strixonomy** before the 1.0 identity and APIs are frozen.
+
+| Area | Deliverables |
+|------|--------------|
+| **Rust** | Publish `strixonomy` and `strixonomy-*` crates; rename the CLI and language-server binaries to `strixonomy` and `strixonomy-lsp`; provide a documented compatibility window for existing `strixonomy` package and command users |
+| **VS Code** | Publish **Strixonomy for VS Code** under the Strixonomy extension identity; rename user-visible commands, settings, views, bundled server assets, Marketplace/Open VSX metadata, and deep links; provide an explicit migration path from the Strixonomy listing |
+| **Compatibility** | Preserve or migrate existing workspace configuration, plugin manifests, saved UI state, command invocations, and CI scripts; emit actionable deprecation messages for legacy Strixonomy/Strixonomy identifiers |
+| **Distribution and docs** | Reserve and verify package, publisher, repository, documentation, and release-artifact namespaces; update install paths and examples without changing `docs/TAGGED_RELEASE` before the matching release is published |
+
+**Exit criteria:** A new user installs and runs Strixonomy without encountering Strixonomy/Strixonomy as the primary identity; an existing v0.26 user has a tested, documented upgrade path with no silent loss of configuration, plugins, or workspace state.
 
 ---
 
@@ -527,30 +543,30 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.26.md](migration/v0.26.md) · full
 
 **Theme:** Production-ready Protégé replacement in VS Code.
 
-**UI phases:** **1–6** exit polish, partial **9** (review workspace). Milestones: [Product Roadmap 2.0 phases 2–6](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md). Wireframes: [WORKSPACE_WIREFRAMES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md).
+**UI phases:** **1–6** exit polish, partial **9** (review workspace). Milestones: [Product Roadmap 2.0 phases 2–6](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md). Wireframes: [WORKSPACE_WIREFRAMES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | All [protege-parity P0 requirements](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/03_PARITY/PARITY_RELEASE_GATE.md) green; all **P1** items green or documented known gaps; stable CLI/API/LSP semver 1.0; `examples/protege-roundtrip/` ontology set with workflow doc; performance benchmarks published |
-| **OntoUI** | **[1]** Persistent tabs + bottom dock ([WORKSPACE_WIREFRAMES](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md)). **[2]** Relationship cards, references view, metadata view; entity workspace diagnostics integration ([ENTITY_EDITOR_SPEC](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ENTITY_EDITOR_SPEC.md)). **[4]** Graph saved layouts, filters, reasoning overlays ([GRAPH_WORKSPACE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/GRAPH_WORKSPACE.md)). **[5]** Semantic build pipeline UI; entity-level reasoning cards; reasoning history; Problems ↔ reasoning integration ([REASONING_EXPERIENCE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/REASONING_EXPERIENCE.md)). **[6]** Merge classes; batch label normalization; undo/redo on refactor and patch writes ([SEMANTIC_REFACTORING](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/SEMANTIC_REFACTORING.md)). **[9]** Review workspace MVP ([COLLABORATION](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/COLLABORATION.md)). Supporting: HIG + keyboard shortcuts ([HUMAN_INTERFACE_GUIDELINES](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/HUMAN_INTERFACE_GUIDELINES.md), [KEYBOARD_SHORTCUTS](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/KEYBOARD_SHORTCUTS.md)) |
-| **OntoCode** | Complete hybrid authoring loop (forms + Manchester + Turtle/OBO); full IDE surface (explorer, search, diagnostics, refactoring, query workbench, visualization, reasoning); React webview hardening; VS Code Marketplace + Open VSX publish as 1.0 |
+| **Strixonomy** | All [protege-parity P0 requirements](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/03_PARITY/PARITY_RELEASE_GATE.md) green; all **P1** items green or documented known gaps; stable CLI/API/LSP semver 1.0; `examples/protege-roundtrip/` ontology set with workflow doc; performance benchmarks published |
+| **OntoUI** | **[1]** Persistent tabs + bottom dock ([WORKSPACE_WIREFRAMES](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md)). **[2]** Relationship cards, references view, metadata view; entity workspace diagnostics integration ([ENTITY_EDITOR_SPEC](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ENTITY_EDITOR_SPEC.md)). **[4]** Graph saved layouts, filters, reasoning overlays ([GRAPH_WORKSPACE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/GRAPH_WORKSPACE.md)). **[5]** Semantic build pipeline UI; entity-level reasoning cards; reasoning history; Problems ↔ reasoning integration ([REASONING_EXPERIENCE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/REASONING_EXPERIENCE.md)). **[6]** Merge classes; batch label normalization; undo/redo on refactor and patch writes ([SEMANTIC_REFACTORING](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/SEMANTIC_REFACTORING.md)). **[9]** Review workspace MVP ([COLLABORATION](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/COLLABORATION.md)). Supporting: HIG + keyboard shortcuts ([HUMAN_INTERFACE_GUIDELINES](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/HUMAN_INTERFACE_GUIDELINES.md), [KEYBOARD_SHORTCUTS](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/KEYBOARD_SHORTCUTS.md)) |
+| **Strixonomy** | Complete hybrid authoring loop (forms + Manchester + Turtle/OBO); full IDE surface (explorer, search, diagnostics, refactoring, query workbench, visualization, reasoning); React webview hardening; VS Code Marketplace + Open VSX publish as 1.0 |
 | **Toolchain** | ODK project layout recognition (`src/ontology/`, catalog files, import structure); ODK QC and release workflow surfacing; ROBOT-compatible operations where practical; import existing ODK/ROBOT/owlmake workflows (Makefile, GitHub Actions); Protégé migration guide with honest parity table |
-| **Ecosystem** | Ontologos 1.0.0 reasoner gate satisfied; published `ontocore` + `ontocore-*` 1.0.0 on crates.io |
+| **Ecosystem** | Ontologos 1.0.0 reasoner gate satisfied; published `strixonomy` + `strixonomy-*` 1.0.0 on crates.io |
 
-**Already shipped (v0.5–v0.15):** entity editor MVP, query workbench, graph canvas (with asserted/inferred modes in v0.15), reasoner panel, refactoring preview, semantic diff, WorkspaceStore + focus relay, schema browser, plugin host MVP + plugin permissions/views — see [ROADMAP_MAPPING.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ROADMAP_MAPPING.md).
+**Already shipped (v0.5–v0.15):** entity editor MVP, query workbench, graph canvas (with asserted/inferred modes in v0.15), reasoner panel, refactoring preview, semantic diff, WorkspaceStore + focus relay, schema browser, plugin host MVP + plugin permissions/views — see [ROADMAP_MAPPING.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md).
 
 **Exit criteria:**
 
 > Daily ontology engineering (OWL 2 DL + OBO maintenance) is completable in VS Code.
-> Protégé is required only for **P2** features in [PARITY_SCOPE.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/PARITY_SCOPE.md).
+> Protégé is required only for **P2** features in [PARITY_SCOPE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/PARITY_SCOPE.md).
 
-Track implementation: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) · [v1.0_BACKLOG.md](design/v1.0_BACKLOG.md)
+Track implementation: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) · [v1.0_BACKLOG.md](design/v1.0_BACKLOG.md)
 
-**Dependencies:** Ontologos 1.0.0; `react` / `vite` (extension `webview-ui`); [cursor-prompts/](https://github.com/eddiethedean/ontocode/blob/main/docs/cursor-prompts/README.md) 06–07, 11–12
+**Dependencies:** Ontologos 1.0.0; `react` / `vite` (extension `webview-ui`); [cursor-prompts/](https://github.com/eddiethedean/strixonomy/blob/main/docs/cursor-prompts/README.md) 06–07, 11–12
 
-#### OntoCode 1.0 — Modern Protégé replacement
+#### Strixonomy 1.0 — Modern Protégé replacement
 
-<a id="ontocode-10-modern-protege-replacement"></a>
+<a id="strixonomy-10-modern-protege-replacement"></a>
 
 ##### Editing scope
 
@@ -569,14 +585,14 @@ Track implementation: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontoco
 
 ##### Toolchain integration scope
 
-OntoCode integrates with the existing ontology toolchain through OntoCore — **not** by reimplementing ROBOT, ODK, or owlmake inside the engine.
+Strixonomy integrates with the existing ontology toolchain through Strixonomy — **not** by reimplementing ROBOT, ODK, or owlmake inside the engine.
 
 - **owlmake** — first-class workflow plugin; build/release actions in IDE
 - **ROBOT** — merge, reason, convert, validate via existing ROBOT semantics
 - **ODK** — project layout, QC workflows, release workflows, zero-config repo open
 - **Protégé migration** — import projects, preserve IRIs, guide users off desktop-only workflows
 
-Ontologos provides **reasoning**. OntoCore provides the **workspace platform** and **plugin hosting**. owlmake and peers provide **workflow automation**. OntoCode presents all three in one IDE.
+Ontologos provides **reasoning**. Strixonomy provides the **workspace platform** and **plugin hosting**. owlmake and peers provide **workflow automation**. Strixonomy presents all three in one IDE.
 
 ---
 
@@ -586,20 +602,20 @@ Ontologos provides **reasoning**. OntoCore provides the **workspace platform** a
 
 **Theme:** Cross-language integration and AI-native tooling foundations.
 
-**UI phases:** **7** (primary), deferred AI from **2**, **3**, **4**, **8**, **9**. Milestone: [Product Roadmap 2.0 phase 7](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md). [ADR-0010](design/adr/0010-ai-features-opt-in.md).
+**UI phases:** **7** (primary), deferred AI from **2**, **3**, **4**, **8**, **9**. Milestone: [Product Roadmap 2.0 phase 7](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md). [ADR-0010](design/adr/0010-ai-features-opt-in.md).
 
 Former roadmap labels **v0.17 (Language Bindings)** and **v0.18 (AI Platform)** are consolidated here.
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Python SDK (workspace index, query, validate, diff); TypeScript SDK (LSP client helpers, webview protocol types); MCP server exposing workspace context (entities, axioms, diagnostics, query results) |
-| **OntoUI** | **[7]** AI sidebar; inline suggestions; review ontology; repair diagnostics; project-wide AI tasks; MCP context bridge ([AI_EXPERIENCE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/AI_EXPERIENCE.md), [AI_ORCHESTRATION_ARCHITECTURE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/AI_ORCHESTRATION_ARCHITECTURE.md)). **[2†]** AI explain entity. **[3†]** AI query generation. **[4†]** AI graph explanations. **[8†]** AI provider API ([PLUGIN_API_SPEC](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLUGIN_API_SPEC.md)). **[9†]** AI review ([COLLABORATION](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/COLLABORATION.md)). All AI: read-only suggestions with preview/approval |
-| **OntoCode** | MCP-driven semantic context for external AI tools; documentation generation hooks (extends v0.11 `ontocore docs`) |
+| **Strixonomy** | Python SDK (workspace index, query, validate, diff); TypeScript SDK (LSP client helpers, webview protocol types); MCP server exposing workspace context (entities, axioms, diagnostics, query results) |
+| **OntoUI** | **[7]** AI sidebar; inline suggestions; review ontology; repair diagnostics; project-wide AI tasks; MCP context bridge ([AI_EXPERIENCE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/AI_EXPERIENCE.md), [AI_ORCHESTRATION_ARCHITECTURE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/AI_ORCHESTRATION_ARCHITECTURE.md)). **[2†]** AI explain entity. **[3†]** AI query generation. **[4†]** AI graph explanations. **[8†]** AI provider API ([PLUGIN_API_SPEC](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_API_SPEC.md)). **[9†]** AI review ([COLLABORATION](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/COLLABORATION.md)). All AI: read-only suggestions with preview/approval |
+| **Strixonomy** | MCP-driven semantic context for external AI tools; documentation generation hooks (extends v0.11 `strixonomy docs`) |
 | **Ecosystem** | Published SDK packages; MCP server installable via `cargo install` or pip |
 
 **Exit criteria:** Python and TypeScript consumers can index and query ontologies without shelling to CLI; MCP clients can retrieve structured ontology context from an open workspace.
 
-**Dependencies:** MCP protocol; PyO3 or subprocess bridge TBD in ADR; [cursor-prompts/09-add-ai-action-lifecycle.md](https://github.com/eddiethedean/ontocode/blob/main/docs/cursor-prompts/09-add-ai-action-lifecycle.md)
+**Dependencies:** MCP protocol; PyO3 or subprocess bridge TBD in ADR; [cursor-prompts/09-add-ai-action-lifecycle.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/cursor-prompts/09-add-ai-action-lifecycle.md)
 
 ---
 
@@ -607,16 +623,16 @@ Former roadmap labels **v0.17 (Language Bindings)** and **v0.18 (AI Platform)** 
 
 **Theme:** Mature external workflow integration beyond the reference owlmake plugin.
 
-**UI phases:** **9**, **10**, **11**. Milestones: [Product Roadmap 2.0 phases 9 + 11](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md).
+**UI phases:** **9**, **10**, **11**. Milestones: [Product Roadmap 2.0 phases 9 + 11](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Build API (compile/merge/materialize); Release API (version, tag, publish artifacts); Validation API (plug-in QC pipelines); plugin discovery and install from registry; semver-compatible plugin contracts |
-| **OntoUI** | **[9]** GitHub integration; semantic PR summaries (UI panel); merge checks ([COLLABORATION](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/COLLABORATION.md)). **[10, 11]** Public plugin registry + marketplace UI; sample domain plugins ([PLUGIN_PLATFORM](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLUGIN_PLATFORM.md), [PLUGIN_SPEC](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md)). **[11]** Community templates. Workflow / QC status dashboard |
-| **OntoCode** | Production-ready owlmake plugin integration; QC reports (HTML/Markdown/JSON) in IDE |
+| **Strixonomy** | Build API (compile/merge/materialize); Release API (version, tag, publish artifacts); Validation API (plug-in QC pipelines); plugin discovery and install from registry; semver-compatible plugin contracts |
+| **OntoUI** | **[9]** GitHub integration; semantic PR summaries (UI panel); merge checks ([COLLABORATION](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/COLLABORATION.md)). **[10, 11]** Public plugin registry + marketplace UI; sample domain plugins ([PLUGIN_PLATFORM](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_PLATFORM.md), [PLUGIN_SPEC](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md)). **[11]** Community templates. Workflow / QC status dashboard |
+| **Strixonomy** | Production-ready owlmake plugin integration; QC reports (HTML/Markdown/JSON) in IDE |
 | **Ecosystem** | Official GitHub Actions for ontology CI/CD; plugin marketplace; third-party workflow plugins |
 
-**Exit criteria:** ODK-style release pipeline runnable end-to-end from OntoCode with discoverable, versioned plugins.
+**Exit criteria:** ODK-style release pipeline runnable end-to-end from Strixonomy with discoverable, versioned plugins.
 
 ---
 
@@ -624,25 +640,25 @@ Former roadmap labels **v0.17 (Language Bindings)** and **v0.18 (AI Platform)** 
 
 **Theme:** Shift from Protégé parity to ecosystem leadership.
 
-**UI phases:** **10**, **12**, plus collaboration items from **9**. Milestones: [Product Roadmap 2.0 phases 10–12](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md).
+**UI phases:** **10**, **12**, plus collaboration items from **9**. Milestones: [Product Roadmap 2.0 phases 10–12](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md).
 
-> **Full Era I detail (v1.3–v1.5+ webapp, hosted service + React app no-backend / WASM):** [ROADMAP.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/ROADMAP.md#era-i--webapp-platform-v13).
+> **Full Era I detail (v1.3–v1.5+ webapp, hosted service + React app no-backend / WASM):** [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md#era-i--webapp-platform-v13).
 
 | Area | Deliverables |
 |------|--------------|
-| **OntoCore** | Semantic workspace APIs (persistent semantic databases); plugin marketplace maturity; advanced graph analytics; **OntoCore WASM** powering a **React app (no backend)** for static/offline embeddings (catalog browse, validate, constrained query) alongside service-mode hosting |
-| **OntoUI** | **[10]** OntoStudio Tauri app shell; shared React UI (OntoCode + OntoStudio + React app no-backend); native graph performance; local AI support; enterprise packaging ([ONTOSTUDIO_DESKTOP](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/ONTOSTUDIO_DESKTOP.md), [GRAPH_RENDERING_ARCHITECTURE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/GRAPH_RENDERING_ARCHITECTURE.md), [COMPONENT_LIBRARY](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/COMPONENT_LIBRARY.md)). **[12]** Browser client (hosted + React app no-backend); cloud sync; team workspaces; distributed reasoning; shared semantic canvases; governance workflows ([PLATFORM_ARCHITECTURE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLATFORM_ARCHITECTURE.md), [COLLABORATION](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/COLLABORATION.md), [GRAPH_WORKSPACE](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/GRAPH_WORKSPACE.md), [governance](guides/governance.md)). **[9, 12]** Live collaboration; ontology PR review; advanced visualization (large-graph layout, temporal diff) |
-| **OntoCode** | AI-assisted ontology engineering (modeling suggestions, axiom completion); live collaboration; ontology review in pull requests |
+| **Strixonomy** | Semantic workspace APIs (persistent semantic databases); plugin marketplace maturity; advanced graph analytics; **Strixonomy WASM** powering a **React app (no backend)** for static/offline embeddings (catalog browse, validate, constrained query) alongside service-mode hosting |
+| **OntoUI** | **[10]** OntoStudio Tauri app shell; shared React UI (Strixonomy + OntoStudio + React app no-backend); native graph performance; local AI support; enterprise packaging ([ONTOSTUDIO_DESKTOP](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ONTOSTUDIO_DESKTOP.md), [GRAPH_RENDERING_ARCHITECTURE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/GRAPH_RENDERING_ARCHITECTURE.md), [COMPONENT_LIBRARY](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/COMPONENT_LIBRARY.md)). **[12]** Browser client (hosted + React app no-backend); cloud sync; team workspaces; distributed reasoning; shared semantic canvases; governance workflows ([PLATFORM_ARCHITECTURE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLATFORM_ARCHITECTURE.md), [COLLABORATION](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/COLLABORATION.md), [GRAPH_WORKSPACE](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/GRAPH_WORKSPACE.md), [governance](guides/governance.md)). **[9, 12]** Live collaboration; ontology PR review; advanced visualization (large-graph layout, temporal diff) |
+| **Strixonomy** | AI-assisted ontology engineering (modeling suggestions, axiom completion); live collaboration; ontology review in pull requests |
 | **Ecosystem** | Enterprise governance tooling; knowledge graph tooling integrations; documentation generators via plugin APIs |
 
-**Strategic framing:** OntoCore provides the platform. owlmake (and peers) provide workflow, build, and release automation. OntoCode surfaces both through the UI. The goal is ecosystem collaboration — not absorbing or replacing every tool in the stack.
+**Strategic framing:** Strixonomy provides the platform. owlmake (and peers) provide workflow, build, and release automation. Strixonomy surfaces both through the UI. The goal is ecosystem collaboration — not absorbing or replacing every tool in the stack.
 
 ---
 
 ## Long-term goal
 
-OntoCore becomes the foundation for modern ontology tooling.
+Strixonomy becomes the foundation for modern ontology tooling.
 
-OntoCode becomes the flagship IDE.
+Strixonomy becomes the flagship IDE.
 
 Ontologos becomes the flagship Rust reasoning engine.

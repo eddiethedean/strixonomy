@@ -1,9 +1,9 @@
 # RISK_REGISTER
 
-# OntoCode 1.0 Protégé Parity Risk Register
+# Strixonomy 1.0 Protégé Parity Risk Register
 
 **Status:** Living Risk Register\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@
 
 This document identifies, assesses, and tracks the technical,
 architectural, operational, and project risks associated with achieving
-Protégé Desktop parity for OntoCode 1.0.
+Protégé Desktop parity for Strixonomy 1.0.
 
 The register should be reviewed regularly throughout implementation and
 before every release milestone.
@@ -140,7 +140,7 @@ Immediate escalation is required when:
 
 # Exit Criteria
 
-Before OntoCode 1.0:
+Before Strixonomy 1.0:
 
 -   No unresolved Critical risks
 -   Mitigation plans exist for all High risks

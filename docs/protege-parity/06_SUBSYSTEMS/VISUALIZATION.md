@@ -1,10 +1,10 @@
 # VISUALIZATION
 
-# OntoCode Visualization Subsystem Specification
+# Strixonomy Visualization Subsystem Specification
 
 **Subsystem:** Visualization Engine\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 

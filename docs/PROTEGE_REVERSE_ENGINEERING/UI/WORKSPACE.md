@@ -226,7 +226,7 @@ The workspace stores user preferences such as:
 
 ------------------------------------------------------------------------
 
-# Modernization Opportunities for OntoCode
+# Modernization Opportunities for Strixonomy
 
 A modern successor could improve the workspace by introducing:
 

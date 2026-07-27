@@ -1,6 +1,6 @@
 # Release timeline (non-commitment)
 
-Planning ranges for OntoCode / OntoCore. **These are product goals, not contractual delivery dates.** Shipped behavior is always defined by [What ships today](../SHIPPED.md) for the version you deploy.
+Planning ranges for Strixonomy / Strixonomy. **These are product goals, not contractual delivery dates.** Shipped behavior is always defined by [What ships today](../SHIPPED.md) for the version you deploy.
 
 ## Current release
 
@@ -26,19 +26,19 @@ Planning ranges for OntoCode / OntoCore. **These are product goals, not contract
 | **0.11.1** | Previous | 2026-07-06 |
 | **0.11.0** | Previous | 2026-07-05 |
 
-Pre-1.0: minor releases may change library APIs, LSP JSON, and SQL virtual table columns — [README](https://github.com/eddiethedean/ontocode/blob/main/README.md).
+Pre-1.0: minor releases may change library APIs, LSP JSON, and SQL virtual table columns — [README](https://github.com/eddiethedean/strixonomy/blob/main/README.md).
 
 ## Documented milestone goals (not dates)
 
 | Target | Goal | Shipped in |
 |--------|------|------------|
-| **v0.9** | OntoCore identity — `ontocore` façade, branding, documentation; OntoLogos 1.0 DL/auto classification | **Shipped** (2026-07-03) |
+| **v0.9** | Strixonomy identity — `strixonomy` façade, branding, documentation; OntoLogos 1.0 DL/auto classification | **Shipped** (2026-07-03) |
 | **v0.10** | Semantic workspace — incremental index, multi-root, stable `Workspace` API, semantic diff, optional disk cache | **Shipped** (2026-07-04) |
 | **v0.11** | Editor depth & distribution — LSP completion, code actions, docs export, imports UI, Open VSX, OBO fastobo read | **Shipped** (2026-07-05) |
 | **v0.12** | Authoring parity — OBO write-back, property chains, OWL/XML read, DL explanations | **Shipped** (2026-07-06) |
 | **v0.13** | OntoUI platform — WorkspaceStore, focus relay, schema browser, PR summary, semantic tokens | **Shipped** (2026-07-08) |
 | **v0.14** | Plugin host MVP — manifests, reference plugins, CLI/LSP hooks, owlmake scaffold | **Shipped** (2026-07-09) |
-| **v0.19** | Semantic foundation — `ontocore-edit` transactions; parity manifest + CI; epics EPIC-001…011 | **Shipped** (2026-07-13) |
+| **v0.19** | Semantic foundation — `strixonomy-edit` transactions; parity manifest + CI; epics EPIC-001…011 | **Shipped** (2026-07-13) |
 | **v0.20** | Workspace runtime — multi-ontology registry, dirty/save, session persistence | **Shipped** (2026-07-13) |
 | **v0.21** | RDF/XML + OWL/XML write-back (semantic re-serialize) | **Shipped** (2026-07-13) |
 | **v0.22** | Complete OWL 2 authoring (HasKey, DisjointUnion, RBox/ABox, Manchester depth) | **Shipped** (2026-07-14) |
@@ -57,8 +57,8 @@ Canonical forward plan: [Platform roadmap](../roadmap.md). Engineering milestone
 ### v0.10 (shipped)
 
 - Semantic diff for PR review workflows (CLI, LSP, VS Code panel)
-- Incremental indexing, multi-root workspaces, optional `.ontocore/cache`
-- Stable `ontocore::Workspace` API
+- Incremental indexing, multi-root workspaces, optional `.strixonomy/cache`
+- Stable `strixonomy::Workspace` API
 - Does **not** by itself complete Protégé parity or full OBO write-back
 
 ### v1.0 (planned)

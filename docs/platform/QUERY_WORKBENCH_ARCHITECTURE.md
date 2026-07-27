@@ -11,7 +11,7 @@ Query Workspace: editor → LSP execution → results table → history/saved qu
 ```text
 User edits SQL or SPARQL
     ↓
-ontocore/query or ontocore/sparql (LSP)
+strixonomy/query or strixonomy/sparql (LSP)
     ↓
 Result rows + truncated flag
     ↓
@@ -24,7 +24,7 @@ QueryExecuted event → WorkspaceStore
 
 - `extension/webview-ui/src/panels/QueryWorkbench.tsx`
 - `extension/webview-ui/src/components/SchemaBrowser.tsx`
-- LSP `ontocore/listSqlSchema` — table/column metadata
+- LSP `strixonomy/listSqlSchema` — table/column metadata
 - LSP methods in [lsp-api.md](../lsp-api.md)
 - SQL subset: [sql-reference.md](../sql-reference.md)
 
@@ -43,7 +43,7 @@ interface QueryState {
 
 ## Schema browser (v0.13)
 
-- Virtual table list from `ontocore/listSqlSchema` (includes Horned-OWL axiom tables)
+- Virtual table list from `strixonomy/listSqlSchema` (includes Horned-OWL axiom tables)
 - Column names and types per table
 - **Insert column** — appends column name to editor
 - **Insert table query** — `SELECT * FROM <table>`
@@ -54,8 +54,8 @@ Example axiom tables: `domain_axioms`, `range_axioms`, `restrictions`, `equivale
 ## Links
 
 - [ui/QUERY_WORKBENCH.md](../ui/QUERY_WORKBENCH.md)
-- [ontocode/query-workbench.md](../ontocode/query-workbench.md)
-- [ontocore/sql-views.md](../ontocore/sql-views.md)
+- [ide/query-workbench.md](../ide/query-workbench.md)
+- [strixonomy/sql-views.md](../strixonomy/sql-views.md)
 
 ## Evolution
 

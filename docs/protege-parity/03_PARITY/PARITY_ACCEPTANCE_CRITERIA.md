@@ -3,7 +3,7 @@
 # Protégé Desktop Parity Acceptance Criteria
 
 **Status:** Normative Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ A requirement is VERIFIED only after:
 
 # Release Rule
 
-OntoCode 1.0 may claim Protégé Desktop parity only when:
+Strixonomy 1.0 may claim Protégé Desktop parity only when:
 
 -   Every P0 requirement is VERIFIED.
 -   All release gates are satisfied.

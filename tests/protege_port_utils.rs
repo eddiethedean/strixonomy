@@ -2,12 +2,12 @@
 //! Upstream: StringAbbreviator, ISO8601Formatter, LiteralLexicalValueReplacer,
 //! MarkdownRenderer, AnnotationPropertyComparator.
 
-use ontocore_owl::{
+use regex::Regex;
+use std::cmp::Ordering;
+use strixonomy_owl::{
     abbreviate_string, cmp_annotation_property_iri, format_iso8601_utc, render_entity_markdown,
     replace_lexical_value, replace_lexical_value_whole, ELLIPSIS,
 };
-use regex::Regex;
-use std::cmp::Ordering;
 
 #[test]
 fn utils_abbreviate_string() {

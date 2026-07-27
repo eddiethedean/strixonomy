@@ -1,9 +1,9 @@
-# Contributing to OntoCode / OntoCore
+# Contributing to Strixonomy / Strixonomy
 
 Thank you for contributing. This repository contains:
 
-- **OntoCore** — Rust semantic workspace engine under `crates/` (`ontocore` façade, `ontocore-*` implementation, `ontocore` CLI, `ontocore-lsp`)
-- **OntoCode** — VS Code extension under `extension/`
+- **Strixonomy** — Rust semantic workspace engine under `crates/` (`strixonomy` façade, `strixonomy-*` implementation, `strixonomy` CLI, `strixonomy-lsp`)
+- **Strixonomy** — VS Code extension under `extension/`
 - **User guides** — install, SQL, and LSP API under `docs/`
 
 **AI / agent contributors:** start with [AGENTS.md](AGENTS.md) (SHIPPED-first; do not implement from `docs/design/` targets).
@@ -40,7 +40,7 @@ Root `VISION.md`, `ARCHITECTURE.md`, and `ROADMAP.md` are mirrored under `docs/`
 
 - **Specs** — product and architecture docs under `docs/design/` ([DEPENDENCY_MATRIX.md](docs/design/DEPENDENCY_MATRIX.md) for external crates)
 
-The root Cargo package `ontocode` is unpublished and hosts workspace integration tests (`tests/`).
+The root Cargo package `strixonomy` is unpublished and hosts workspace integration tests (`tests/`).
 
 **New contributors:** start with [Architecture tour](docs/guides/architecture-tour.md) (~15 min) and [internals.md](docs/internals.md) for role-based paths (Rust, extension, docs, LSP).
 
@@ -49,17 +49,17 @@ The root Cargo package `ontocode` is unpublished and hosts workspace integration
 **Smoke PR (~15 minutes docs-only; Rust smoke is longer on a cold machine)** — docs-only or small Rust fix:
 
 1. Install **Rust 1.88+** (Node 20 only if you touch `extension/`).
-2. `git clone https://github.com/eddiethedean/ontocode.git && cd ontocode`
+2. `git clone https://github.com/eddiethedean/strixonomy.git && cd strixonomy`
 3. Docs-only: edit docs and run `./scripts/check-doc-versions.sh`.
-4. Small Rust fix: `cargo test -p ontocore-core --lib` (or your touched crate). **Cold first compile of OntoCore dependencies is often 15–30+ minutes** — not part of the “docs ~15 min” path. Warm cache is much faster; see [testing matrix](docs/guides/testing-matrix.md).
+4. Small Rust fix: `cargo test -p strixonomy-core --lib` (or your touched crate). **Cold first compile of Strixonomy dependencies is often 15–30+ minutes** — not part of the “docs ~15 min” path. Warm cache is much faster; see [testing matrix](docs/guides/testing-matrix.md).
 5. `cargo fmt --all --check` when you touch Rust; always run `./scripts/check-doc-versions.sh` for docs changes.
 6. Open a focused PR with a short description.
 
 **Full contributor setup (~60+ minutes warm cache; 2–4+ hours cold)** — extension, LSP, or release-impacting changes:
 
 1. Complete smoke steps above.
-2. `cargo test --workspace` and `cargo build -p ontocore-lsp --bins`.
-3. Extension: `cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/ontocore-lsp npm test`.
+2. `cargo test --workspace` and `cargo build -p strixonomy-lsp --bins`.
+3. Extension: `cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm test`.
 4. Webview: `cd extension/webview-ui && npm ci && npm test`.
 5. Before opening a PR: `./scripts/run-ci-local.sh` (30–60+ minutes; matches GitHub Actions).
 
@@ -70,9 +70,9 @@ See [Testing matrix](docs/guides/testing-matrix.md) for which commands to run by
 | Task | Start here |
 |------|------------|
 | Author a workspace plugin (manifest, validator, exporter) | **[docs/guides/plugins.md](docs/guides/plugins.md)** — canonical author guide |
-| Reference implementation | `crates/ontocore-plugin-naming/`, `examples/plugin-workspace/` |
+| Reference implementation | `crates/strixonomy-plugin-naming/`, `examples/plugin-workspace/` |
 | Historical trait-based design (do not implement from) | [docs/design/PLUGIN_SPEC.md](docs/design/PLUGIN_SPEC.md) |
-| Wire LSP / CLI integration | [docs/lsp-api.md](docs/lsp-api.md), `crates/ontocore-lsp/` |
+| Wire LSP / CLI integration | [docs/lsp-api.md](docs/lsp-api.md), `crates/strixonomy-lsp/` |
 
 Run `./scripts/run-ci-local.sh` before PRs that touch plugin host, reference plugins, or extension capability registry.
 
@@ -93,9 +93,9 @@ Use the **[testing matrix](docs/guides/testing-matrix.md)** for the minimum comm
 cargo fmt --all --check
 cargo clippy --workspace --all-targets --all-features -- -D warnings
 cargo test --workspace
-cargo build -p ontocore-lsp --bins
+cargo build -p strixonomy-lsp --bins
 cd extension/webview-ui && npm ci && npm test
-cd extension && ONTOCORE_LSP_BIN=../target/debug/ontocore-lsp npm ci && npm run compile && npm test
+cd extension && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm ci && npm run compile && npm test
 ./scripts/check-doc-versions.sh
 ```
 
@@ -120,7 +120,7 @@ Look for GitHub labels `good first issue` and `docs`. Useful first PRs:
 
 ## Optional dependencies
 
-- **Java 11+** and **[ROBOT](http://robot.obolibrary.org/)** on `PATH` — optional; needed only for manual `ontocore robot` / ROBOT interop development (not required for `cargo test --workspace`)
+- **Java 11+** and **[ROBOT](http://robot.obolibrary.org/)** on `PATH` — optional; needed only for manual `strixonomy robot` / ROBOT interop development (not required for `cargo test --workspace`)
 - **Python 3.12** — for MkDocs doc site (`pip install -r docs/requirements.txt`)
 
 > **Canonical contributor guide:** Edit [`docs/contributing.md`](docs/contributing.md) first (Read the Docs). Keep this root file in sync as the **GitHub mirror**.
@@ -139,7 +139,7 @@ cargo clippy --workspace --all-targets --all-features -- -D warnings
 Build the language server binary:
 
 ```bash
-cargo build -p ontocore-lsp --bins
+cargo build -p strixonomy-lsp --bins
 ```
 
 Run CLI smoke commands against fixtures:
@@ -149,7 +149,7 @@ cargo run -- query fixtures "SELECT * FROM classes"
 cargo run -- validate fixtures
 ```
 
-`cargo run --` uses the workspace default member `ontocore-cli` (binary name: `ontocore`).
+`cargo run --` uses the workspace default member `strixonomy-cli` (binary name: `strixonomy`).
 
 ### Extension
 
@@ -168,28 +168,28 @@ npm ci
 npm test
 ```
 
-Extension tests expect a built `ontocore-lsp` binary. From the repo root:
+Extension tests expect a built `strixonomy-lsp` binary. From the repo root:
 
 ```bash
-cargo build -p ontocore-lsp --bins
+cargo build -p strixonomy-lsp --bins
 cd extension
-export ONTOCORE_LSP_BIN="$(pwd)/../target/debug/ontocore-lsp"
+export ONTOCORE_LSP_BIN="$(pwd)/../target/debug/strixonomy-lsp"
 npm test
 ```
 
-**F5 / Run Extension:** Open the `extension/` folder in VS Code, build LSP (`cargo build -p ontocore-lsp --bins`), optionally set `ontocode.lspPath` to your debug binary, then launch **Run Extension**.
+**F5 / Run Extension:** Open the `extension/` folder in VS Code, build LSP (`cargo build -p strixonomy-lsp --bins`), optionally set `strixonomy.lspPath` to your debug binary, then launch **Run Extension**.
 
 **LSP integration smoke test** (workspace crate):
 
 ```bash
-cargo test -p ontocode --test lsp_smoke
-cargo test -p ontocode --test lsp_reasoner
+cargo test -p strixonomy --test lsp_smoke
+cargo test -p strixonomy --test lsp_reasoner
 ```
 
 **VS Code E2E matrix** (separate workflow): see `.github/workflows/extension-vscode-e2e.yml`. Run locally:
 
 ```bash
-cargo build -p ontocore-lsp --bins
+cargo build -p strixonomy-lsp --bins
 cd extension && npm ci && npm run compile && npm run test:vscode
 ```
 
@@ -210,7 +210,7 @@ Some tests compare output to committed snapshots. To update (env var names retai
 ONTOINDEX_UPDATE_GOLDEN=1 cargo test golden_classes
 
 # Extension catalog fixture snapshot
-ONTOINDEX_UPDATE_FIXTURE_SNAPSHOT=1 cargo test -p ontocode --test fixture_snapshot
+ONTOINDEX_UPDATE_FIXTURE_SNAPSHOT=1 cargo test -p strixonomy --test fixture_snapshot
 ```
 
 Review the diffs before committing.
@@ -218,10 +218,10 @@ Review the diffs before committing.
 ### Examples
 
 ```bash
-cargo run -p ontocode --example index_and_query
-cargo run -p ontocode --example ontocore_workspace
-cargo run -p ontocode --example workspace_operations
-cargo run -p ontocode --example semantic_diff
+cargo run -p strixonomy --example index_and_query
+cargo run -p strixonomy --example strixonomy_workspace
+cargo run -p strixonomy --example workspace_operations
+cargo run -p strixonomy --example semantic_diff
 ```
 
 See [Examples index](docs/examples/index.md) for all runnable assets.
@@ -276,7 +276,7 @@ This runs rustfmt, `./scripts/check-doc-versions.sh`, clippy, workspace tests, M
 Before adding a Rust crate dependency:
 
 1. Check [DEPENDENCY_MATRIX.md](docs/design/DEPENDENCY_MATRIX.md) — prefer listed crates over new alternatives.
-2. Follow [ADR-0016](docs/design/adr/0016-dependency-first-implementation.md) — `ontocore-*` crates are facades, not reimplementations.
+2. Follow [ADR-0016](docs/design/adr/0016-dependency-first-implementation.md) — `strixonomy-*` crates are facades, not reimplementations.
 3. Update DEPENDENCY_MATRIX and [LICENSES.md](docs/design/LICENSES.md) if the crate is new or uses a non-MIT/Apache license.
 4. Pin in workspace `[workspace.dependencies]` in root `Cargo.toml`.
 

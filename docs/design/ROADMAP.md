@@ -4,11 +4,11 @@
 
 > **Per-crate engineering detail for shipped milestones.** Canonical full release phase plan (v0.1–post-1.2): [Platform roadmap](../roadmap.md). Ecosystem overview: [Architecture](../architecture.md) · [Vision](../vision.md).
 
-> v1.0 exit bar: [protege-parity program](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/README.md) (GitHub). [PROTEGE_PARITY.md](PROTEGE_PARITY.md) is **historical** — do not use it as the live exit checklist.
+> v1.0 exit bar: [protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) (GitHub). [PROTEGE_PARITY.md](PROTEGE_PARITY.md) is **historical** — do not use it as the live exit checklist.
 >
 > **Dependencies:** [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md) · [ADR-0016](adr/0016-dependency-first-implementation.md)
 
-## v0.1 — OntoCore Foundation
+## v0.1 — Strixonomy Foundation
 
 Deliverables:
 
@@ -24,11 +24,11 @@ Deliverables:
 
 Exit criteria:
 
-- User can run `ontocore query ./repo "SELECT * FROM classes"`.
+- User can run `strixonomy query ./repo "SELECT * FROM classes"`.
 
 **Dependencies:** `oxigraph`, `sqlparser`, `ignore`, `clap`.
 
-## v0.2 — OntoCode Explorer (shipped)
+## v0.2 — Strixonomy Explorer (shipped)
 
 Deliverables:
 
@@ -44,7 +44,7 @@ Exit criteria:
 
 - User can browse an ontology repo in VS Code.
 
-**Dependencies:** `lsp-server`, `lsp-types`, OntoCore crates above.
+**Dependencies:** `lsp-server`, `lsp-types`, Strixonomy crates above.
 
 ## v0.3 — Diagnostics (shipped)
 
@@ -63,7 +63,7 @@ Exit criteria:
 
 - User gets useful ontology diagnostics inline.
 
-**Dependencies:** `oxigraph` (parse errors); in-house catalog lint rules in `ontocore-diagnostics`. See [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md).
+**Dependencies:** `oxigraph` (parse errors); in-house catalog lint rules in `strixonomy-diagnostics`. See [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md).
 
 ## v0.4 — Write-back + Horned-OWL (shipped as v0.4.0)
 
@@ -73,9 +73,9 @@ Deliverables:
 - edit labels/comments, simple `SubClassOf`, deprecated flag
 - delete entity
 - patch-based write-back for Turtle ([ADR-0006](adr/0006-patch-based-write-back.md))
-- `ontocore-owl` crate — Horned-OWL catalog bridge ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md))
+- `strixonomy-owl` crate — Horned-OWL catalog bridge ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md))
 - Oxigraph ↔ Horned-OWL consistency tests
-- LSP `ontocore/applyAxiomPatch`, CLI `ontocore patch`
+- LSP `strixonomy/applyAxiomPatch`, CLI `strixonomy patch`
 - Editable Entity Inspector in VS Code
 
 Exit criteria:
@@ -83,7 +83,7 @@ Exit criteria:
 - User can edit labels and simple subclass axioms in Turtle without Protégé.
 - Catalog axioms for Turtle editing come from Horned-OWL.
 
-**Dependencies:** `horned-owl`, `horned-functional` via `ontocore-owl` ([ADR-0016](adr/0016-dependency-first-implementation.md)).
+**Dependencies:** `horned-owl`, `horned-functional` via `strixonomy-owl` ([ADR-0016](adr/0016-dependency-first-implementation.md)).
 
 User docs: [docs/authoring.md](../authoring.md), [docs/patch-reference.md](../patch-reference.md).
 
@@ -100,13 +100,13 @@ Exit criteria:
 
 - User can query ontologies in VS Code and edit complex subclass/equivalent axioms via Manchester.
 
-**Dependencies:** `sqlparser`, `oxigraph`; Manchester parse/serialize in `ontocore-owl` (catalog pickers for assist; `owl-ms-language-server` deferred).
+**Dependencies:** `sqlparser`, `oxigraph`; Manchester parse/serialize in `strixonomy-owl` (catalog pickers for assist; `owl-ms-language-server` deferred).
 
 ## v0.6 — Reasoning
 
 Deliverables:
 
-- `ontocore-reasoner` crate — thin facade over [OntoLogos](https://github.com/eddiethedean/ontologos) **0.9.0** ([REASONER_SPEC.md](REASONER_SPEC.md), [ADR-0014](adr/0014-rust-native-reasoners-only.md), [ADR-0015](adr/0015-adopt-ontologos-reasoner.md))
+- `strixonomy-reasoner` crate — thin facade over [OntoLogos](https://github.com/eddiethedean/ontologos) **0.9.0** ([REASONER_SPEC.md](REASONER_SPEC.md), [ADR-0014](adr/0014-rust-native-reasoners-only.md), [ADR-0015](adr/0015-adopt-ontologos-reasoner.md))
 - `el` adapter → `ontologos-el` (OWL EL classification)
 - `rl` / `rdfs` adapters → `ontologos-rl` / `ontologos-rdfs` (P1)
 - profile detection via `ontologos-profile`
@@ -162,15 +162,15 @@ Exit criteria:
 Deliverables:
 
 - OBO format read/write ([OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md))
-- `ontocore robot validate|merge|report` wrappers
+- `strixonomy robot validate|merge|report` wrappers
 - OBO id rendering in explorer and Manchester autocomplete
 - `examples/obo-workflow/` fixture repo
 
 Exit criteria:
 
-- Biomedical maintainer can edit OBO in VS Code and run ROBOT in CI alongside OntoCode.
+- Biomedical maintainer can edit OBO in VS Code and run ROBOT in CI alongside Strixonomy.
 
-**Dependencies:** `fastobo`, `fastobo-owl`, `fastobo-validator`; [ROBOT](https://github.com/ontodev/robot) CLI via `ontocore-robot`.
+**Dependencies:** `fastobo`, `fastobo-owl`, `fastobo-validator`; [ROBOT](https://github.com/ontodev/robot) CLI via `strixonomy-robot`.
 
 ## v0.8 — Refactoring + full Manchester
 
@@ -188,28 +188,28 @@ Exit criteria:
 
 **Dependencies:** `horned-owl`, `horned-functional`; in-house refactor orchestration; React webview UI ([ADR-0017](adr/0017-react-webview-ui.md)).
 
-## v0.9 — OntoCore identity
+## v0.9 — Strixonomy identity
 
 Deliverables:
 
-- **OntoCore** platform branding and documentation (`docs/ontocore/`, `docs/ontocode/`)
-- Rename **`ontoindex-*` → `ontocore-*`**; CLI **`ontocore`**; LSP **`ontocore-lsp`**; methods **`ontocore/*`**
-- `ontocore` façade crate with experimental `Workspace` API ([ADR-0018](adr/0018-ontocore-platform-identity.md))
+- **Strixonomy** platform branding and documentation (`docs/strixonomy/`, `docs/ide/`)
+- Rename **`ontoindex-*` → `strixonomy-*`**; CLI **`strixonomy`**; LSP **`strixonomy-lsp`**; methods **`strixonomy/*`**
+- `strixonomy` façade crate with experimental `Workspace` API ([ADR-0018](adr/0018-ontocore-platform-identity.md))
 
 Exit criteria:
 
-- Contributors and users can distinguish OntoCore (engine) from OntoCode (IDE).
-- Rust embedders depend on `ontocore` / `ontocore-*` with a single naming scheme.
+- Contributors and users can distinguish Strixonomy (engine) from Strixonomy (IDE).
+- Rust embedders depend on `strixonomy` / `strixonomy-*` with a single naming scheme.
 
 **Dependencies:** existing engine crates (renamed); breaking release for v0.8 integrators.
 
-## v0.10 — OntoCore public API + workflow
+## v0.10 — Strixonomy public API + workflow
 
 > **Superseded for forward planning** by [Platform roadmap](../roadmap.md) (v0.10+ renumbered). Retained here for PROTEGE_PARITY traceability and contributor history.
 
 Deliverables:
 
-- Stabilize `ontocore::Workspace` and ergonomic APIs; docs.rs for `ontocore`
+- Stabilize `strixonomy::Workspace` and ergonomic APIs; docs.rs for `strixonomy`
 - Semantic diff ([SEMANTIC_DIFF_SPEC.md](SEMANTIC_DIFF_SPEC.md))
 - Git branch comparison and breaking change report
 - **incremental workspace index** (required — [ARCHITECTURE.md](ARCHITECTURE.md))
@@ -219,7 +219,7 @@ Deliverables:
 
 Exit criteria:
 
-- User can use OntoCode in team development workflows at scale.
+- User can use Strixonomy in team development workflows at scale.
 - Reasoner, explanation, and semantic diff panels use the React webview stack.
 
 **Dependencies:** `git2`, `horned-owl`, `notify` or `ontologos-watch`, `pulldown-cmark`, `minijinja`; React webview UI ([ADR-0017](adr/0017-react-webview-ui.md)).
@@ -230,7 +230,7 @@ Deliverables:
 
 - LSP `textDocument/completion` for Turtle (prefix, QName, IRI)
 - Diagnostic quick fixes — `undefined_prefix`, `missing_label`, `broken_import` via `textDocument/codeAction`
-- `ontocore-docs` crate — Markdown and HTML export; CLI `ontocore docs`
+- `strixonomy-docs` crate — Markdown and HTML export; CLI `strixonomy docs`
 - Import patch ops — `add_import`, `remove_import`; Manage Imports React panel
 - OBO read path via `fastobo` (synonyms, definitions, xrefs); ADR-0019 for v1.0 OBO write-back
 - Open VSX publishing (Cursor marketplace)

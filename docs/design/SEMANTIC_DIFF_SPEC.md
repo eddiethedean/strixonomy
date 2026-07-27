@@ -17,7 +17,7 @@ Supported inputs:
 - working tree vs HEAD
 - cached catalog snapshots
 
-**OntoCore owns:** axiom-level diff logic on Horned-OWL models, breaking-change heuristics, PR markdown, VS Code panel. No ontology semantic-diff crate exists — intentionally in-house per [ADR-0016](adr/0016-dependency-first-implementation.md).
+**Strixonomy owns:** axiom-level diff logic on Horned-OWL models, breaking-change heuristics, PR markdown, VS Code panel. No ontology semantic-diff crate exists — intentionally in-house per [ADR-0016](adr/0016-dependency-first-implementation.md).
 
 ## 3. Diff Categories
 
@@ -78,9 +78,9 @@ Potential breaking changes:
 ## 5. CLI
 
 ```bash
-ontocore diff main..feature
-ontocore diff --format markdown main..feature
-ontocore diff --breaking-only main..feature
+strixonomy diff main..feature
+strixonomy diff --format markdown main..feature
+strixonomy diff --breaking-only main..feature
 ```
 
 ## 6. VS Code UI

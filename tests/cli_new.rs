@@ -5,10 +5,10 @@ fn new_rejects_adversarial_ontology_iri() {
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("evil.ttl");
     let evil = "http://ex.org/x> a owl:Class . <http://ex.org/y";
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["new", path.to_str().expect("path"), "--ontology-iri", evil])
         .output()
-        .expect("spawn ontocore new");
+        .expect("spawn strixonomy new");
 
     assert!(
         !output.status.success(),
@@ -29,10 +29,10 @@ fn new_refuses_overwrite_without_force() {
     let path = dir.path().join("existing.ttl");
     std::fs::write(&path, "KEEP\n").unwrap();
 
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["new", path.to_str().expect("path"), "--ontology-iri", "http://example.org/ont"])
         .output()
-        .expect("spawn ontocore new");
+        .expect("spawn strixonomy new");
 
     assert!(
         !output.status.success(),
@@ -53,7 +53,7 @@ fn new_force_overwrites_existing() {
     let path = dir.path().join("existing.ttl");
     std::fs::write(&path, "KEEP\n").unwrap();
 
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args([
             "new",
             path.to_str().expect("path"),
@@ -62,7 +62,7 @@ fn new_force_overwrites_existing() {
             "--force",
         ])
         .output()
-        .expect("spawn ontocore new");
+        .expect("spawn strixonomy new");
 
     assert!(
         output.status.success(),
@@ -78,7 +78,7 @@ fn new_force_overwrites_existing() {
 fn new_writes_safe_turtle() {
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("fresh.ttl");
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args([
             "new",
             path.to_str().expect("path"),
@@ -88,7 +88,7 @@ fn new_writes_safe_turtle() {
             "http://example.org/ont/1",
         ])
         .output()
-        .expect("spawn ontocore new");
+        .expect("spawn strixonomy new");
 
     assert!(
         output.status.success(),

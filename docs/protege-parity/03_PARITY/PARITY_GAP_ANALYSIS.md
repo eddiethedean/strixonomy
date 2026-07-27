@@ -3,14 +3,14 @@
 # Protégé Desktop Parity Gap Analysis
 
 **Status:** Living Engineering Document\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline)\
-**Target Release:** OntoCode 1.0.0
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document analyzes the remaining gaps between the current OntoCode
+This document analyzes the remaining gaps between the current Strixonomy
 repository and the defined Protégé Desktop parity scope.
 
 Unlike the feature matrix, which records implementation status, this
@@ -23,7 +23,7 @@ It is the primary engineering planning document for closing parity.
 
 # Executive Summary
 
-The repository audit found that OntoCode is already a mature ontology
+The repository audit found that Strixonomy is already a mature ontology
 engineering platform with strong support for:
 
 -   Native Rust architecture

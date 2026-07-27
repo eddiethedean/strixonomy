@@ -4,13 +4,13 @@
 
 **Status:** Resolved for v0.25 (EPIC-008)\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0 / delivered functional baseline in **v0.25**
+**Target Release:** Strixonomy 1.0.0 / delivered functional baseline in **v0.25**
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the engineering work required for OntoCode to
+This document defines the engineering work required for Strixonomy to
 provide ontology visualization capabilities comparable to a standard
 Protégé Desktop installation while taking advantage of a modern Rust +
 React architecture.

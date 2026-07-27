@@ -44,7 +44,7 @@ export class ManchesterEditorPanel {
     this.host = host;
     this.options = options;
     host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeManchesterEditor");
+      void forgetPanelRestoreState("strixonomyManchesterEditor");
       ManchesterEditorPanel.current = undefined;
     });
   }
@@ -75,7 +75,7 @@ export class ManchesterEditorPanel {
       return ManchesterEditorPanel.current;
     }
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeManchesterEditor",
+      viewType: "strixonomyManchesterEditor",
       title: `Manchester: ${safeOptions.iri.split(/[#/]/).pop() ?? "entity"}`,
       panel: "manchesterEditor",
       onMessage: async (message: WebviewMessage) => {
@@ -94,8 +94,8 @@ export class ManchesterEditorPanel {
   }
 
   private persistRestoreState(): void {
-    void rememberPanelRestoreState("ontocodeManchesterEditor", {
-      command: "ontocode.openManchesterEditor",
+    void rememberPanelRestoreState("strixonomyManchesterEditor", {
+      command: "strixonomy.openManchesterEditor",
       args: [
         {
           iri: this.options.iri,
@@ -155,7 +155,7 @@ export class ManchesterEditorPanel {
       const parsed = (await import("./messages")).parseApplyManchesterMessage(message);
       if (!parsed) {
         void vscode.window.showErrorMessage(
-          "OntoCode: ignored invalid applyManchester message from webview"
+          "Strixonomy: ignored invalid applyManchester message from webview"
         );
         return;
       }
@@ -285,14 +285,14 @@ export class ManchesterEditorPanel {
       this.options.initialExpression = expression;
       if (isPatchFullySynced(result)) {
         void vscode.window.showInformationMessage(
-          "OntoCode: Manchester axiom applied"
+          "Strixonomy: Manchester axiom applied"
         );
       } else {
         void vscode.window.showWarningMessage(patchSyncCancelledMessage());
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      void vscode.window.showErrorMessage(`OntoCode: ${message}`);
+      void vscode.window.showErrorMessage(`Strixonomy: ${message}`);
     }
   }
 }

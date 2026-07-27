@@ -6,7 +6,7 @@ Accepted — **implemented v0.13**
 
 ## Context
 
-Today OntoCode webviews are **panels** (inspector, graph, query workbench) with separate state and LSP call patterns. Users experience disconnected tools rather than one semantic workspace ([ui/WORKSPACE_MODEL.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/WORKSPACE_MODEL.md)).
+Today Strixonomy webviews are **panels** (inspector, graph, query workbench) with separate state and LSP call patterns. Users experience disconnected tools rather than one semantic workspace ([ui/WORKSPACE_MODEL.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/WORKSPACE_MODEL.md)).
 
 ## Decision
 
@@ -22,5 +22,5 @@ Panels remain as deployment mechanism (VS Code webviews) until host supports emb
 
 ## References
 
-- [platform/WORKSPACE_RUNTIME.md](https://github.com/eddiethedean/ontocode/blob/main/docs/platform/WORKSPACE_RUNTIME.md)
+- [platform/WORKSPACE_RUNTIME.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/WORKSPACE_RUNTIME.md)
 - [adr/0004-workspacestore-ui-source-of-truth.md](0004-workspacestore-ui-source-of-truth.md)

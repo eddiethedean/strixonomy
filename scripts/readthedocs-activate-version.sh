@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-RTD_PROJECT="${RTD_PROJECT:-ontocode-vs}"
+RTD_PROJECT="${RTD_PROJECT:-strixonomy-vs}"
 RTD_API="${RTD_API:-https://app.readthedocs.org/api/v3}"
 TOKEN="${READTHEDOCS_API_TOKEN:-${RTD_TOKEN:-}}"
 
@@ -70,7 +70,7 @@ activate_version() {
     return 1
   fi
 
-  echo "Activated https://ontocode-vs.readthedocs.io/en/${VERSION_SLUG}/"
+  echo "Activated https://strixonomy-vs.readthedocs.io/en/${VERSION_SLUG}/"
 }
 
 sync_versions

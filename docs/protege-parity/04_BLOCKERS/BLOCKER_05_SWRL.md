@@ -4,18 +4,18 @@
 
 **Status:** P0 Release Blocker\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the engineering work required for OntoCode to
+This document defines the engineering work required for Strixonomy to
 provide functional SWRL (Semantic Web Rule Language) support comparable
 to a standard Protégé Desktop installation.
 
 The objective is to provide complete rule authoring workflows using a
-modern, Rust-native architecture that integrates with OntoCode's
+modern, Rust-native architecture that integrates with Strixonomy's
 ontology model, workspace, and reasoning infrastructure.
 
 ------------------------------------------------------------------------
@@ -24,7 +24,7 @@ ontology model, workspace, and reasoning infrastructure.
 
 The repository audit found no production-ready SWRL subsystem.
 
-Without SWRL support, OntoCode cannot fully replace Protégé for users
+Without SWRL support, Strixonomy cannot fully replace Protégé for users
 who depend on rule-based ontology engineering.
 
 ------------------------------------------------------------------------

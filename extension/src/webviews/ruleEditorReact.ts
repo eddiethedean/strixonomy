@@ -45,7 +45,7 @@ export class RuleEditorPanel {
   ) {
     this.options = options;
     this.host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeRuleEditor");
+      void forgetPanelRestoreState("strixonomyRuleEditor");
       RuleEditorPanel.current = undefined;
     });
   }
@@ -67,7 +67,7 @@ export class RuleEditorPanel {
       return RuleEditorPanel.current;
     }
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeRuleEditor",
+      viewType: "strixonomyRuleEditor",
       title: "SWRL Rule Editor",
       panel: "ruleEditor",
       onMessage: async (message: WebviewMessage) => {
@@ -86,8 +86,8 @@ export class RuleEditorPanel {
   }
 
   private persistRestoreState(): void {
-    void rememberPanelRestoreState("ontocodeRuleEditor", {
-      command: "ontocode.openRuleEditor",
+    void rememberPanelRestoreState("strixonomyRuleEditor", {
+      command: "strixonomy.openRuleEditor",
       args: [this.options],
       title: "SWRL Rule Editor",
     });
@@ -142,7 +142,7 @@ export class RuleEditorPanel {
     const ontologyIri = this.options.ontologyIri;
     if (!ontologyIri) {
       void vscode.window.showErrorMessage(
-        "OntoCode: SWRL apply requires an ontology IRI"
+        "Strixonomy: SWRL apply requires an ontology IRI"
       );
       return;
     }
@@ -153,13 +153,13 @@ export class RuleEditorPanel {
       const hard = (check.diagnostics ?? []).filter((d) => d.severity === "error");
       if (hard.length > 0) {
         void vscode.window.showErrorMessage(
-          `OntoCode: SWRL rule has ${hard.length} validation error(s)`
+          `Strixonomy: SWRL rule has ${hard.length} validation error(s)`
         );
         return;
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      void vscode.window.showErrorMessage(`OntoCode: ${message}`);
+      void vscode.window.showErrorMessage(`Strixonomy: ${message}`);
       return;
     }
 
@@ -186,7 +186,7 @@ export class RuleEditorPanel {
 
     if (patches.length === 0) {
       if (!previewOnly) {
-        void vscode.window.showInformationMessage("OntoCode: SWRL rule unchanged");
+        void vscode.window.showInformationMessage("Strixonomy: SWRL rule unchanged");
       }
       return;
     }
@@ -223,14 +223,14 @@ export class RuleEditorPanel {
       this.persistRestoreState();
       if (isPatchFullySynced(result)) {
         void vscode.window.showInformationMessage(
-          isEdit ? "OntoCode: SWRL rule updated" : "OntoCode: SWRL rule applied"
+          isEdit ? "Strixonomy: SWRL rule updated" : "Strixonomy: SWRL rule applied"
         );
       } else {
         void vscode.window.showWarningMessage(patchSyncCancelledMessage());
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      void vscode.window.showErrorMessage(`OntoCode: ${message}`);
+      void vscode.window.showErrorMessage(`Strixonomy: ${message}`);
     }
   }
 }

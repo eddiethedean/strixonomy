@@ -3,7 +3,7 @@
 # Current Repository Feature Matrix
 
 **Status:** Living Document\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline)\
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
 **Purpose:** Summarize the current implementation status of major
 features before additional parity work begins.
 

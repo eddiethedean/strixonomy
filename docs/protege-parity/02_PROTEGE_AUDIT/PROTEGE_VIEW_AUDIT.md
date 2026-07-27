@@ -4,10 +4,10 @@
 
 **Status:** Living Reference Document\
 **Purpose:** Audit the primary views available in a standard Protégé
-Desktop installation and map them to equivalent OntoCode workflows.
+Desktop installation and map them to equivalent Strixonomy workflows.
 
 > This audit evaluates functional workflows rather than visual
-> similarity. OntoCode is expected to provide equivalent capabilities
+> similarity. Strixonomy is expected to provide equivalent capabilities
 > through modern IDE-native interfaces.
 
 ------------------------------------------------------------------------
@@ -15,7 +15,7 @@ Desktop installation and map them to equivalent OntoCode workflows.
 # Goals
 
 -   Inventory every major Protégé view.
--   Identify the equivalent OntoCode panel or workflow.
+-   Identify the equivalent Strixonomy panel or workflow.
 -   Record current parity status.
 -   Drive UI implementation and end-to-end testing.
 
@@ -35,7 +35,7 @@ Desktop installation and map them to equivalent OntoCode workflows.
 # View Inventory
 
   --------------------------------------------------------------------------------
-  Protégé View   Purpose          Expected OntoCode  Audit Status   Notes
+  Protégé View   Purpose          Expected Strixonomy  Audit Status   Notes
                                   Equivalent                        
   -------------- ---------------- ------------------ -------------- --------------
   Active         Ontology         Ontology           REVIEW         

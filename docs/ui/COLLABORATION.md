@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Collaboration Specification
+# Strixonomy Collaboration Specification
 
 ## Purpose
 
-Collaboration is a first-class capability of OntoCode. Teams should
+Collaboration is a first-class capability of Strixonomy. Teams should
 collaborate around **semantic intent**, not line-based text differences.
 Reviews, discussions, approvals, and change history should revolve
 around ontology concepts and their meaning.
@@ -18,7 +18,7 @@ around ontology concepts and their meaning.
 
 Ontology engineering should feel like modern software engineering.
 
-OntoCode should provide semantic equivalents of:
+Strixonomy should provide semantic equivalents of:
 
 -   Pull Requests
 -   Code Reviews
@@ -286,6 +286,6 @@ Support:
 
 Collaboration succeeds when teams discuss ontology meaning instead of
 serialization details. Reviews become faster, higher quality, and easier
-to understand because OntoCode presents semantic intent, reasoning
+to understand because Strixonomy presents semantic intent, reasoning
 impact, and contextual discussions as first-class concepts rather than
 forcing reviewers to interpret raw RDF diffs.

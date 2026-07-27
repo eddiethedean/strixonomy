@@ -3,13 +3,13 @@
 # Current Repository Architecture
 
 **Status:** Living Architecture Document\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline)
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline)
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document describes the current high-level architecture of OntoCode
+This document describes the current high-level architecture of Strixonomy
 as observed during the repository audit. It records the architecture
 that exists today rather than a future-state design.
 
@@ -45,7 +45,7 @@ concentrated.
           │             │             │
           └─────────────┴─────────────┘
                         │
-                  OntoCore Crates
+                  Strixonomy Crates
                         │
       ┌─────────────────┼─────────────────┐
       │                 │                 │
@@ -101,7 +101,7 @@ Provides:
 
 ------------------------------------------------------------------------
 
-## OntoCore
+## Strixonomy
 
 Core Rust implementation containing:
 

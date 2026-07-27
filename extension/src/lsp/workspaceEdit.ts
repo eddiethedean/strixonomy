@@ -74,7 +74,7 @@ export async function applyLspWorkspaceEdit(
     const uri = vscode.Uri.parse(uriString);
     if (!isUriInWorkspace(uri)) {
       void vscode.window.showErrorMessage(
-        `OntoCode: refusing to apply edit outside the workspace (${uriString})`
+        `Strixonomy: refusing to apply edit outside the workspace (${uriString})`
       );
       return false;
     }

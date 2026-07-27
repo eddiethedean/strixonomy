@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
 import { FIXTURE_IRIS, fixturesWorkspaceUri } from "./helpers";
 
-interface OntoCodeApi {
+interface StrixonomyApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<unknown>;
   getCatalogSnapshot(): Promise<{ documents: Array<{ id: string; path: string }> }>;
@@ -21,13 +21,13 @@ interface OntoCodeApi {
   };
 }
 
-suite("OntoCode workspace runtime (VS Code e2e)", () => {
-  let api: OntoCodeApi;
+suite("Strixonomy workspace runtime (VS Code e2e)", () => {
+  let api: StrixonomyApi;
 
   suiteSetup(async function () {
     this.timeout(120_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     api = await ext.activate();
     assert.ok(ext.isActive);
     assert.ok(api.__test, "test hooks require ONTOCODE_TEST_FIXTURES");
@@ -36,7 +36,7 @@ suite("OntoCode workspace runtime (VS Code e2e)", () => {
   test("registry tracks indexed ontologies after indexWorkspace", async function () {
     this.timeout(60_000);
     await api.indexWorkspace(fixturesWorkspaceUri());
-    await vscode.commands.executeCommand("ontocode.refreshExplorer");
+    await vscode.commands.executeCommand("strixonomy.refreshExplorer");
     const registry = api.__test!.getOntologyRegistrySnapshot();
     assert.ok(registry.length > 0, "registry should list open ontologies");
     assert.ok(
@@ -48,7 +48,7 @@ suite("OntoCode workspace runtime (VS Code e2e)", () => {
   test("entity focus updates navigation stack", async function () {
     this.timeout(60_000);
     await api.indexWorkspace(fixturesWorkspaceUri());
-    await vscode.commands.executeCommand("ontocode.openEntity", FIXTURE_IRIS.person);
+    await vscode.commands.executeCommand("strixonomy.openEntity", FIXTURE_IRIS.person);
     await api.__test!.settle(500);
     const stack = api.__test!.getNavigationStack();
     assert.ok(

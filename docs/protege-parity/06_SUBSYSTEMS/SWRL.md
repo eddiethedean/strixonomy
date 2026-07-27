@@ -1,10 +1,10 @@
 # SWRL
 
-# OntoCode SWRL Subsystem Specification
+# Strixonomy SWRL Subsystem Specification
 
 **Subsystem:** SWRL Engine\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ execution integration, navigation, and refactoring.
 
 It enables ontology engineers to create and maintain standards-compliant
 SWRL rules through the same semantic transaction pipeline used
-throughout OntoCode.
+throughout Strixonomy.
 
 ------------------------------------------------------------------------
 

@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Component Library
+# Strixonomy Component Library
 
 ## Purpose
 
-This document defines the canonical UI component library for OntoCode.
+This document defines the canonical UI component library for Strixonomy.
 Every screen should be composed from these reusable components to ensure
 a consistent, accessible, and maintainable experience.
 
@@ -474,7 +474,7 @@ Each component should define:
 
 # Success Criteria
 
-The component library should allow developers to construct any OntoCode
+The component library should allow developers to construct any Strixonomy
 screen by composing standardized, reusable components while ensuring
 visual consistency, accessibility, and predictable interactions across
 the entire application.

@@ -1,0 +1,21 @@
+[package]
+name = "strixonomy-obo"
+description = "OBO Format 1.4 patch write-back for Strixonomy"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+include = ["src/**/*", "Cargo.toml", "LICENSE-MIT", "LICENSE-APACHE-2.0"]
+
+[dependencies]
+strixonomy-core = { workspace = true }
+fastobo.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile = "3"

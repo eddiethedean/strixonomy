@@ -18,7 +18,7 @@ export type InjectablePanelKind =
   | "semanticDiff";
 
 /** VS Code integration test hooks (only when ONTOCODE_TEST_FIXTURES is set). */
-export interface OntoCodeTestHooks {
+export interface StrixonomyTestHooks {
   openEntityInspector(iri: string): Promise<void>;
   getInspectorWebviewHtml(): string | undefined;
   assertInspectorHtmlRoutesPanel(): void;
@@ -72,7 +72,7 @@ export interface OntoCodeTestHooks {
 }
 
 /** Extension activation API (used by VS Code integration tests). */
-export interface OntoCodeApi {
+export interface StrixonomyApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<IndexWorkspaceResult>;
   getCatalogSnapshot(): Promise<CatalogSnapshot>;
@@ -86,5 +86,5 @@ export interface OntoCodeApi {
     documentUri?: string
   ): Promise<ParseManchesterResult>;
   /** Present when ONTOCODE_TEST_FIXTURES is set. */
-  __test?: OntoCodeTestHooks;
+  __test?: StrixonomyTestHooks;
 }

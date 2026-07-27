@@ -30,7 +30,7 @@ After 1.0, the roadmap shifts from parity to modernization.
 |----------|------|
 | [SHIPPED.md](docs/SHIPPED.md) | **Canonical capability matrix** — what is available in the current release |
 | [protege-parity/](docs/protege-parity/README.md) | **1.0 engineering program** — scope, blockers, release gates |
-| [PRE_1_0_PHASES.md](docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) | **Pre-1.0 release phases** — v0.19–v0.26 → 1.0.0 |
+| [PRE_1_0_PHASES.md](docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) | **Pre-1.0 release phases** — v0.19–v0.27 → 1.0.0 |
 | [ROADMAP_MAPPING.md](docs/ui/ROADMAP_MAPPING.md) | **UI specs ↔ releases** — master checklist for all Product Roadmap 2.0 items |
 | [design/ROADMAP.md](docs/design/ROADMAP.md) | Per-crate engineering detail for **shipped** v0.1–v0.11 milestones |
 | [PROTEGE_PARITY.md](docs/design/PROTEGE_PARITY.md) | Historical v0.18 P0/P1/P2 checklist (superseded for planning) |
@@ -60,11 +60,10 @@ Engine foundation    IDE depth                Platform & authoring   OntoUI → 
                                                                        + viz/SDK/a11y/CI (v0.25)
                                                                        + Protégé test port (v0.26)
 
-PLANNED (1.0.0-rc → 1.0) ─────────────────────────────────────────────►
-1.0.0-rc → 1.0.0
-Stabilize            Protégé replacement
-  │                      │
-  All P0 VERIFIED      Full parity ship
+PLANNED (v0.27 → 1.0) ────────────────────────────────────────────────►
+v0.27                  1.0.0-rc            1.0.0
+Strixonomy rename      Stabilize            Protégé replacement
+Package migration      All P0 VERIFIED      Full parity ship
 
 WEBAPP PATH (post-1.2) ───────────────────────────────────────────────►
 v1.3                 v1.4                    v1.5+
@@ -85,7 +84,7 @@ Web foundation       Team workspaces          Cloud collaboration
 | **C — Platform & authoring** | v0.9–v0.12 | Shipped | OntoCore identity, semantic workspace, authoring parity |
 | **D — OntoUI platform** | v0.13–v0.14 | Shipped | v0.13: WorkspaceStore, focus relay; v0.14: plugin host MVP |
 | **E — Desktop UX shell gate** | v0.15–v0.18 | Shipped | Menus, layouts, workflows, migration readiness (not full parity) |
-| **F — Full Protégé parity path** | v0.19–v0.26 | Shipped through v0.26 (1.0.0-rc next) | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port |
+| **F — Full Protégé parity path** | v0.19–v0.27 | Shipped through v0.26 (v0.27 next) | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename |
 | **G — Protégé replacement** | 1.0.0 | Planned | Daily OWL/OBO engineering without Protégé |
 | **H — Ecosystem** | v1.1–v1.2 | Planned | SDKs, AI, toolchain & collaboration |
 | **I — Webapp platform** | v1.3–v1.5+ | Planned | Browser-first ontology engineering: hosted webapp, React app (no backend) via WASM, team workspaces, cloud collaboration |
@@ -118,13 +117,14 @@ Web foundation       Team workspaces          Cloud collaboration
 | 24 | v0.24 | F | Shipped | 3†, 6† | Refactoring + DL Query parity |
 | 25 | v0.25 | F | Shipped | 4†, 8† | Viz + plugin SDK 1.0 + a11y + parity CI |
 | 26 | v0.26 | F | Shipped | — | Protégé Desktop JUnit behavioral test port (Waves 1–4) |
-| 27 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
-| 28 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
-| 29 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
-| 30 | v1.2 | H | Planned | 9, 10, 11 | Ontology toolchain platform |
-| 31 | v1.3 | I | Planned | 10, 12† | Webapp foundation + React app (no backend) |
-| 32 | v1.4 | I | Planned | 9, 12 | Team workspaces |
-| 33 | v1.5+ | I | Planned | 9, 12 | Cloud collaboration + governance |
+| 27 | v0.27 | F | Planned | — | Rename OntoCore and OntoCode to Strixonomy |
+| 28 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
+| 29 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
+| 30 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
+| 31 | v1.2 | H | Planned | 9, 10, 11 | Ontology toolchain platform |
+| 32 | v1.3 | I | Planned | 10, 12† | Webapp foundation + React app (no backend) |
+| 33 | v1.4 | I | Planned | 9, 12 | Team workspaces |
+| 34 | v1.5+ | I | Planned | 9, 12 | Cloud collaboration + governance |
 
 †Partial scope in this release (remainder in later releases). Full mapping: [ROADMAP_MAPPING.md](docs/ui/ROADMAP_MAPPING.md).
 
@@ -677,6 +677,29 @@ See [migration/v0.25.md](docs/migration/v0.25.md) and [SHIPPED.md](docs/SHIPPED.
 **Still not useful from Desktop:** OSGi bundle tests, Mac AWT, PreferencesManager, SelectionPlane/PopupMenuId, JVM suite runner, byte-identical XML.
 
 See [migration/v0.26.md](docs/migration/v0.26.md) and [SHIPPED.md](docs/SHIPPED.md).
+
+---
+
+### v0.27 — Strixonomy rename (planned)
+
+**Theme:** Rename the OntoCore Rust engine and OntoCode VS Code extension to **Strixonomy** before the 1.0 identity and APIs are frozen.
+
+| Area | Deliverables |
+|------|--------------|
+| **Rust packages** | Publish the `strixonomy` façade and corresponding `strixonomy-*` crates; rename package metadata, Rust import paths, feature references, examples, and generated documentation |
+| **Binaries and protocol** | Rename the CLI to `strixonomy` and language server to `strixonomy-lsp`; update release archives, environment variables, logs, User-Agent strings, protocol branding, and bundled-binary discovery |
+| **VS Code extension** | Publish **Strixonomy for VS Code** under the Strixonomy publisher and extension identity; rename the activity-bar surface, commands, settings, view IDs, context keys, walkthroughs, icons, Marketplace/Open VSX metadata, telemetry-free diagnostics, and bundled server assets |
+| **Compatibility** | Keep time-bounded `ontocore` crate/binary shims or migration packages where registries permit; accept legacy settings and workspace locations with deprecation messages; migrate saved webview state, plugin manifests, command invocations, and CI examples |
+| **Distribution** | Reserve and verify GitHub, crates.io, npm, Marketplace, Open VSX, documentation, domain, and release-artifact namespaces before public cutover; document extension-listing migration and supply-chain ownership |
+| **Documentation** | Add a v0.27 migration guide and mechanical rename table; update current product/install documentation while retaining historical release notes; do not bump `docs/TAGGED_RELEASE` or version-pinned download URLs until the matching tag and artifacts are ready |
+| **Verification** | Add clean-install, v0.26-upgrade, CLI compatibility, LSP launch, extension-state migration, plugin compatibility, package publication dry-run, and stale-identifier audits to CI |
+
+**Exit criteria:**
+
+- A new user can install the extension, CLI, and Rust façade entirely through Strixonomy names.
+- An existing v0.26 installation upgrades without silent loss of settings, workspace state, plugins, or automation.
+- Legacy OntoCore/OntoCode identifiers either continue through documented compatibility shims or fail with an actionable migration message.
+- Release artifacts and public documentation use Strixonomy as the primary identity; old names remain only in migration and historical contexts.
 
 ---
 

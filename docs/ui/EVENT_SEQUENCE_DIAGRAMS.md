@@ -34,7 +34,7 @@ InlineEditor validates locally
 ↓
 RenameCommand preview requested
 ↓
-OntoCore computes impacted references
+Strixonomy computes impacted references
 ↓
 Preview shown
 ↓
@@ -56,7 +56,7 @@ User presses Run
 ↓
 QueryWorkbench emits QueryRequested
 ↓
-OntoCore validates query
+Strixonomy validates query
 ↓
 Query engine executes
 ↓

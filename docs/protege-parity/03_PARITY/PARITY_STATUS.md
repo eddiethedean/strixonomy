@@ -3,15 +3,15 @@
 # Protégé Desktop Parity Status Dashboard
 
 **Status:** Living Status Report\
-**Repository Baseline:** OntoCode v0.21.0\
-**Target Release:** OntoCode 1.0.0\
+**Repository Baseline:** Strixonomy v0.21.0\
+**Target Release:** Strixonomy 1.0.0\
 **Current phase:** v0.19 complete — see [PRE_1_0_PHASES.md](../07_BACKLOG/PRE_1_0_PHASES.md)
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document provides a concise, high-level view of OntoCode's current
+This document provides a concise, high-level view of Strixonomy's current
 progress toward full Protégé Desktop parity.
 
 Unlike the detailed parity matrix, this report is intended for
@@ -106,7 +106,7 @@ from the parity manifest.
 
 # Release Readiness
 
-OntoCode 1.0 is **not** ready to claim Protégé Desktop parity until:
+Strixonomy 1.0 is **not** ready to claim Protégé Desktop parity until:
 
 -   All P0 parity requirements are VERIFIED.
 -   All release-blocking gaps are resolved.

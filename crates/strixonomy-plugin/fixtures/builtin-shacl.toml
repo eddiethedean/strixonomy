@@ -1,0 +1,14 @@
+[plugin]
+name = "shacl-validator"
+version = "0.1.0"
+kind = "validator"
+id = "strixonomy.shacl-validator"
+api_version = "1"
+permissions = ["workspace.read"]
+
+[capabilities]
+validate = true
+diagnostics = true
+
+[config]
+shapes_dir = "shapes"

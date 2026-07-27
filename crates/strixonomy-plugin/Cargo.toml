@@ -1,0 +1,40 @@
+[package]
+name = "strixonomy-plugin"
+description = "Plugin manifest discovery for Strixonomy (v0.14 host foundation)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords.workspace = true
+categories.workspace = true
+#
+# Note: this crate embeds builtin fixture manifests via `include_str!`, so the
+# fixture files must be shipped in the published crate tarball.
+include = [
+  "src/**/*",
+  "fixtures/*.toml",
+  "Cargo.toml",
+  "README.md",
+  "LICENSE-MIT",
+  "LICENSE-APACHE-2.0",
+]
+
+[dependencies]
+strixonomy-catalog = { workspace = true }
+strixonomy-core = { workspace = true }
+strixonomy-docs = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror.workspace = true
+toml = "0.8"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+strixonomy-catalog = { workspace = true }
+tempfile = "3"

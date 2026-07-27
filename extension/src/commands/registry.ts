@@ -12,7 +12,7 @@ import { ontologyRegistry } from "../workspace";
 
 export type CommandHandler = (...args: unknown[]) => unknown;
 
-export interface OntoCodeKeybinding {
+export interface StrixonomyKeybinding {
   command: string;
   key: string;
   mac?: string;
@@ -25,7 +25,7 @@ export interface KeybindingConflict {
 }
 
 export function detectKeybindingConflicts(
-  bindings: readonly OntoCodeKeybinding[]
+  bindings: readonly StrixonomyKeybinding[]
 ): KeybindingConflict[] {
   const commandsByKey = new Map<string, Set<string>>();
   for (const binding of bindings) {
@@ -55,18 +55,18 @@ export class CommandRegistry {
   async syncContext(state: Partial<WorkspaceUiState>): Promise<void> {
     const reasoning = focusRelay.getReasoning();
     await Promise.all([
-      this.setContext("ontocode:hasOntology", state.has_ontology ?? false),
+      this.setContext("strixonomy:hasOntology", state.has_ontology ?? false),
       this.setContext(
-        "ontocode:isDirty",
+        "strixonomy:isDirty",
         state.is_dirty ?? getDirtyOntologyDocumentCount() > 0
       ),
-      this.setContext("ontocode:hasSelection", state.has_selection ?? false),
+      this.setContext("strixonomy:hasSelection", state.has_selection ?? false),
       this.setContext(
-        "ontocode:reasonerRunning",
+        "strixonomy:reasonerRunning",
         reasoning?.running ?? state.reasoner_running ?? false
       ),
       this.setContext(
-        "ontocode:canEditSelection",
+        "strixonomy:canEditSelection",
         state.selection_editable ?? false
       ),
     ]);
@@ -89,7 +89,7 @@ export class CommandRegistry {
           dirty_document_count: dirtyCount,
           active_ontology_id:
             ontologyRegistry.getActiveId() ??
-            context.workspaceState.get<string>("ontocode.activeOntology"),
+            context.workspaceState.get<string>("strixonomy.activeOntology"),
           ontology_registry: registrySnapshot,
         });
         if (!disposed && currentGeneration === generation) {

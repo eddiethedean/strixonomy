@@ -22,7 +22,7 @@ export async function openWorkspaceTextDocument(
   const uri = vscode.Uri.file(normalizeFsPath(filePath));
   if (!isUriInWorkspace(uri)) {
     void vscode.window.showErrorMessage(
-      "OntoCode: path is outside the workspace"
+      "Strixonomy: path is outside the workspace"
     );
     return undefined;
   }
@@ -40,7 +40,7 @@ export function documentUriInWorkspace(documentPath: string): string | undefined
 
 /** User-facing message when an LSP document path is outside workspace folders. */
 export const WORKSPACE_DOCUMENT_OUTSIDE_MESSAGE =
-  "OntoCode: entity document path is outside the workspace";
+  "Strixonomy: entity document path is outside the workspace";
 
 /** Resolve a file path or `file://` URI to a workspace document URI string. */
 export function resolveWorkspaceDocumentUri(

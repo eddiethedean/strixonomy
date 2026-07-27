@@ -4,27 +4,27 @@ Both commands index the workspace and print catalog statistics. Choose based on 
 
 | Command | Output | Use when |
 |---------|--------|----------|
-| `ontocore index` | Stats only | CI scripts, machine-readable JSON |
-| `ontocore inspect` | Stats + diagnostic summary (counts + up to 10 samples) | Quick human health check |
+| `strixonomy index` | Stats only | CI scripts, machine-readable JSON |
+| `strixonomy inspect` | Stats + diagnostic summary (counts + up to 10 samples) | Quick human health check |
 
 ## Index (stats only)
 
 ```bash
-ontocore index /path/to/ontologies
-ontocore index /path/to/ontologies --format json
+strixonomy index /path/to/ontologies
+strixonomy index /path/to/ontologies --format json
 ```
 
 ## Inspect (stats + diagnostics)
 
 ```bash
-ontocore inspect /path/to/ontologies
-ontocore inspect /path/to/ontologies --format json
+strixonomy inspect /path/to/ontologies
+strixonomy inspect /path/to/ontologies --format json
 ```
 
-For full diagnostic listing and CI gating, use `ontocore validate`:
+For full diagnostic listing and CI gating, use `strixonomy validate`:
 
 ```bash
-ontocore validate /path/to/ontologies
+strixonomy validate /path/to/ontologies
 ```
 
 ## From a git clone

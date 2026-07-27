@@ -23,8 +23,8 @@ import {
   upsertSavedQuery,
 } from "./queryWorkbenchLogic";
 
-const SAVED_KEY = "ontocode.savedQueries";
-const HISTORY_KEY = "ontocode.queryHistory";
+const SAVED_KEY = "strixonomy.savedQueries";
+const HISTORY_KEY = "strixonomy.queryHistory";
 const DEFAULT_HISTORY_LIMIT = 20;
 
 export class QueryWorkbenchPanel {
@@ -41,7 +41,7 @@ export class QueryWorkbenchPanel {
   ) {
     this.host = host;
     host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeQueryWorkbench");
+      void forgetPanelRestoreState("strixonomyQueryWorkbench");
       QueryWorkbenchPanel.current = undefined;
     });
   }
@@ -51,9 +51,9 @@ export class QueryWorkbenchPanel {
   }
 
   public static async show(context: vscode.ExtensionContext): Promise<QueryWorkbenchPanel> {
-    void rememberPanelRestoreState("ontocodeQueryWorkbench", {
-      command: "ontocode.openQueryWorkbench",
-      title: "OntoCode Query Workbench",
+    void rememberPanelRestoreState("strixonomyQueryWorkbench", {
+      command: "strixonomy.openQueryWorkbench",
+      title: "Strixonomy Query Workbench",
     });
     if (QueryWorkbenchPanel.current) {
       QueryWorkbenchPanel.current.host.panel.reveal(vscode.ViewColumn.Beside);
@@ -61,8 +61,8 @@ export class QueryWorkbenchPanel {
       return QueryWorkbenchPanel.current;
     }
     const host = PanelHost.create(context.extensionUri, {
-      viewType: "ontocodeQueryWorkbench",
-      title: "OntoCode Query Workbench",
+      viewType: "strixonomyQueryWorkbench",
+      title: "Strixonomy Query Workbench",
       panel: "queryWorkbench",
       onMessage: async (message: WebviewMessage) => {
         const panel = QueryWorkbenchPanel.current;
@@ -117,14 +117,14 @@ export class QueryWorkbenchPanel {
       await this.exportResult(message.format, message.runId);
     }
     if (message.type === "openGraphFromResults") {
-      await vscode.commands.executeCommand("ontocode.openGraphFromResults", {
+      await vscode.commands.executeCommand("strixonomy.openGraphFromResults", {
         graphKind: message.graphKind,
         rootIris: message.rootIris,
         title: message.title,
       });
     }
     if (message.type === "openEntity") {
-      await vscode.commands.executeCommand("ontocode.openEntity", message.iri);
+      await vscode.commands.executeCommand("strixonomy.openEntity", message.iri);
     }
   }
 
@@ -177,7 +177,7 @@ export class QueryWorkbenchPanel {
           ...(mode === "dl" ? { dlMode: dlMode ?? "inferred" } : {}),
         },
         vscode.workspace
-          .getConfiguration("ontocode")
+          .getConfiguration("strixonomy")
           .get<number>("queryHistoryLimit", DEFAULT_HISTORY_LIMIT)
       );
       await this.context.workspaceState.update(HISTORY_KEY, history);
@@ -210,7 +210,7 @@ export class QueryWorkbenchPanel {
     );
     await this.context.workspaceState.update(SAVED_KEY, saved);
     await this.bootstrap();
-    void vscode.window.showInformationMessage(`OntoCode: saved query "${name}"`);
+    void vscode.window.showInformationMessage(`Strixonomy: saved query "${name}"`);
   }
 
   private async exportResult(format: "csv" | "json", runId?: number): Promise<void> {
@@ -226,7 +226,7 @@ export class QueryWorkbenchPanel {
         : exportResultJson(this.lastDlResult ?? this.lastResult!);
     await vscode.env.clipboard.writeText(body);
     void vscode.window.showInformationMessage(
-      `OntoCode: ${format.toUpperCase()} copied to clipboard`
+      `Strixonomy: ${format.toUpperCase()} copied to clipboard`
     );
   }
 

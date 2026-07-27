@@ -1,17 +1,17 @@
 # Protégé Parity Matrix (v1.0.0)
 
 > **Superseded for planning.** The authoritative 1.0 engineering program is
-> [docs/protege-parity/](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/README.md) — especially
-> [PRE_1_0_PHASES.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md),
-> [PARITY_SCOPE.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/PARITY_SCOPE.md), and
-> [PARITY_RELEASE_GATE.md](https://github.com/eddiethedean/ontocode/blob/main/docs/protege-parity/03_PARITY/PARITY_RELEASE_GATE.md).
+> [docs/protege-parity/](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) — especially
+> [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md),
+> [PARITY_SCOPE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/PARITY_SCOPE.md), and
+> [PARITY_RELEASE_GATE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/03_PARITY/PARITY_RELEASE_GATE.md).
 >
 > **This page** remains a historical v0.18-era P0/P1/P2 checklist and migration
 > reference. Do not use it as the live 1.0 implementation plan.
 >
-> See [Platform roadmap § OntoCode 1.0](../roadmap.md#ontocode-10-modern-protege-replacement) and [PLAN.md](PLAN.md) §4.
+> See [Platform roadmap § Strixonomy 1.0](../roadmap.md#strixonomy-10-modern-protege-replacement) and [PLAN.md](PLAN.md) §4.
 >
-> **Status column:** frozen at **v0.18.0** — **not current** for v0.19+ adoption decisions. Use [What ships today](../SHIPPED.md), [Known limitations](../known-limitations.md), and [Protégé vs OntoCode](../guides/protege-decision.md) instead.
+> **Status column:** frozen at **v0.18.0** — **not current** for v0.19+ adoption decisions. Use [What ships today](../SHIPPED.md), [Known limitations](../known-limitations.md), and [Protégé vs Strixonomy](../guides/protege-decision.md) instead.
 >
 > **v0.21 update:** RDF/XML and OWL/XML write-back **shipped** (semantic re-serialize). Rows below that still say “OWL/XML write-back is v1.0” are historical — ignore them for adoption.
 > **Dependencies:** [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md)
@@ -74,7 +74,7 @@
 | Semantic diff + branch/version compare | [SEMANTIC_DIFF_SPEC.md](SEMANTIC_DIFF_SPEC.md) | **Yes** |
 | Safe IRI rename across workspace | [ROADMAP.md](ROADMAP.md) v0.8 | **Yes** |
 | Graph visualization (class, property, import, neighborhood) | [ROADMAP.md](ROADMAP.md) v0.7 | **Yes** (asserted/inferred/combined, export JSON/CSV, expand depth) |
-| Documentation export (Markdown + HTML) | [ROADMAP.md](ROADMAP.md) v0.9 | **Yes** (`ontocore docs`) |
+| Documentation export (Markdown + HTML) | [ROADMAP.md](ROADMAP.md) v0.9 | **Yes** (`strixonomy docs`) |
 | CI validation command | CLI `validate` | **Yes** |
 | VS Code Marketplace publish | [v1.0_BACKLOG.md](v1.0_BACKLOG.md) | **Yes** |
 | Migration guide from Protégé | [v1.0_BACKLOG.md](v1.0_BACKLOG.md) | **Yes** ([protege-migration.md](../guides/protege-migration.md) + honest gaps) |
@@ -94,7 +94,7 @@
 | SHACL validation via adapter | [SHACL_SPEC.md](SHACL_SPEC.md) | `rudof` | Scaffold plugin exists; full rudof adapter open |
 | SWRL rule **viewing** (authoring is P2) | [PROTEGE_PARITY.md](PROTEGE_PARITY.md) | in-house | Open |
 | Instance checking | [REASONER_SPEC.md](REASONER_SPEC.md) | OntoLogos `ontologos-abox` (1.0+) | Open |
-| Plugin API stable + 3 reference plugins | [PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md) | — | Host MVP + 3 refs shipped; **semver-stable** API is v1.0 |
+| Plugin API stable + 3 reference plugins | [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) | — | Host MVP + 3 refs shipped; **semver-stable** API is v1.0 |
 | SQL joins and aggregations | [SPEC.md](SPEC.md) | `sqlparser` extend | Open (subset SQL today) |
 | Incremental workspace index | [ARCHITECTURE.md](ARCHITECTURE.md) | — | **Shipped** (v0.9+) |
 | Performance benchmarks (large ontology targets) | [v1.0_BACKLOG.md](v1.0_BACKLOG.md) | — | Open (truncation messaging shipped) |

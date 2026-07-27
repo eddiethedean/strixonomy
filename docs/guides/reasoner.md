@@ -1,15 +1,15 @@
 # Reasoner guide
 
-OntoCode ships OWL reasoning via [OntoLogos](https://github.com/eddiethedean/ontologos) **1.x** — **EL**, **RL**, **RDFS**, **DL**, and **auto** profile routing.
+Strixonomy ships OWL reasoning via [OntoLogos](https://github.com/eddiethedean/ontologos) **1.x** — **EL**, **RL**, **RDFS**, **DL**, and **auto** profile routing.
 
 Results are **not** certified identical to Protégé + HermiT; use dual-tool checks for critical audits.
 
 ## Run in VS Code
 
-1. Index the workspace (**OntoCode: Index Workspace**).
-2. Run **`OntoCode: Run Reasoner`** — opens the Reasoner Results panel.
-3. Use **`OntoCode: Set Hierarchy Mode`** to switch the Classes tree between **asserted**, **inferred**, and **combined** hierarchies.
-4. Click an unsatisfiable class in the panel to open **`OntoCode: Show Explanation`** (DL-first on the DL profile; EL/RL/RDFS alternatives where OntoLogos supports).
+1. Index the workspace (**Strixonomy: Index Workspace**).
+2. Run **`Strixonomy: Run Reasoner`** — opens the Reasoner Results panel.
+3. Use **`Strixonomy: Set Hierarchy Mode`** to switch the Classes tree between **asserted**, **inferred**, and **combined** hierarchies.
+4. Click an unsatisfiable class in the panel to open **`Strixonomy: Show Explanation`** (DL-first on the DL profile; EL/RL/RDFS alternatives where OntoLogos supports).
 
 ### Explanation panel (v0.15)
 
@@ -21,21 +21,21 @@ Settings:
 
 | Setting | Default | Purpose |
 |---------|---------|---------|
-| `ontocode.reasoner.default` | `el` | Profile for Run Reasoner |
-| `ontocode.reasoner.autoProfile` | `true` | Profile-detection warnings |
-| `ontocode.hierarchy.mode` | `asserted` | Explorer hierarchy display |
+| `strixonomy.reasoner.default` | `el` | Profile for Run Reasoner |
+| `strixonomy.reasoner.autoProfile` | `true` | Profile-detection warnings |
+| `strixonomy.hierarchy.mode` | `asserted` | Explorer hierarchy display |
 
 Use **`dl`** for full OWL 2 DL classification or **`auto`** to let OntoLogos route by detected profile.
 
 ## CLI / CI
 
 ```bash
-ontocore classify ./my-ontologies --profile el --format json
-ontocore classify ./my-ontologies --profile dl --format json
-ontocore classify ./my-ontologies --profile auto --format json
-ontocore explain ./my-ontologies --class 'http://example.org/onto#Invalid' --profile el
-ontocore realize ./my-ontologies --profile rl
-ontocore check-instance ./my-ontologies \
+strixonomy classify ./my-ontologies --profile el --format json
+strixonomy classify ./my-ontologies --profile dl --format json
+strixonomy classify ./my-ontologies --profile auto --format json
+strixonomy explain ./my-ontologies --class 'http://example.org/onto#Invalid' --profile el
+strixonomy realize ./my-ontologies --profile rl
+strixonomy check-instance ./my-ontologies \
   --individual 'http://example.org/people#alice' \
   --class 'http://example.org/people#Person' \
   --profile rl
@@ -48,7 +48,7 @@ CI example: [ci-integration.md](../ci-integration.md).
 
 ## LSP
 
-Custom methods: `ontocore/runReasoner`, `ontocore/getExplanation`, `ontocore/checkInstance`, `ontocore/listSwrlRules`. See [LSP API](../lsp-api.md).
+Custom methods: `strixonomy/runReasoner`, `strixonomy/getExplanation`, `strixonomy/checkInstance`, `strixonomy/listSwrlRules`. See [LSP API](../lsp-api.md).
 
 ## Profiles
 
@@ -62,7 +62,7 @@ Custom methods: `ontocore/runReasoner`, `ontocore/getExplanation`, `ontocore/che
 
 ## Dual-stack note
 
-OntoCore keeps **two in-memory models** (dual-stack since early releases; still true in v0.23):
+Strixonomy keeps **two in-memory models** (dual-stack since early releases; still true in v0.23):
 
 - **Oxigraph + Horned-OWL** — authoritative for indexing, SPARQL/SQL, Turtle write-back, asserted hierarchy.
 - **OntoLogos** — loads workspace Turtle/RDF files separately for classification.

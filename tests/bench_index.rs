@@ -3,8 +3,8 @@
 use std::path::PathBuf;
 use std::time::Instant;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_query::query_catalog;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_query::query_catalog;
 
 fn fixtures_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("fixtures")

@@ -3,7 +3,7 @@
 # EPIC-008 --- Visualization
 
 **Epic ID:** EPIC-008\
-**GitHub:** https://github.com/eddiethedean/ontocode/issues/254\
+**GitHub:** https://github.com/eddiethedean/strixonomy/issues/254\
 **Status:** Shipped (v0.25)\
 **Priority:** P0 (Release Blocking)\
 **Target Release:** v0.25

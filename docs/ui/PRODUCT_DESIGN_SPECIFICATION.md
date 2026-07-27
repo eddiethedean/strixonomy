@@ -5,7 +5,7 @@
 
 ## 1. Product Vision
 
-OntoCode is a semantic engineering environment for ontology and knowledge graph development. It should feel like a modern IDE, not a legacy ontology editor.
+Strixonomy is a semantic engineering environment for ontology and knowledge graph development. It should feel like a modern IDE, not a legacy ontology editor.
 
 The long-term vision is to create the JetBrains/Figma/Cursor equivalent for semantic engineering:
 
@@ -35,7 +35,7 @@ Users do not think in "class tree", "graph", or "reasoner" panels. They think in
 
 ### 2.3 Workspace Over Files
 
-OntoCode treats an ontology repository as a semantic workspace. Files are implementation details. Users navigate entities, relationships, queries, diagnostics, modules, and documentation.
+Strixonomy treats an ontology repository as a semantic workspace. Files are implementation details. Users navigate entities, relationships, queries, diagnostics, modules, and documentation.
 
 ### 2.4 AI as Collaborator
 

@@ -4,7 +4,7 @@ Single entry point for security, platform, and legal questionnaires. Start with 
 
 1. [What ships today](../SHIPPED.md) — capability matrix (latest tagged release)
 2. [Known limitations](../known-limitations.md) — honest gaps
-3. [Protégé vs OntoCode](protege-decision.md) — fit decision
+3. [Protégé vs Strixonomy](protege-decision.md) — fit decision
 
 ## Summary for evaluators
 
@@ -31,7 +31,7 @@ Details: [Production readiness](production-readiness.md) § Support and complian
 
 | Topic | Document |
 |-------|----------|
-| Security policy & threat model | [Security](../security.md) · [SECURITY.md on GitHub](https://github.com/eddiethedean/ontocode/blob/main/SECURITY.md) |
+| Security policy & threat model | [Security](../security.md) · [SECURITY.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/SECURITY.md) |
 | Release integrity (SHA256) | [Release integrity](../release-integrity.md) |
 | CI / automation stability | [CI integration](../ci-integration.md) · [Automation and stability](../automation-stability.md) |
 | Platform compatibility | [Platform compatibility](platform-compatibility.md) |
@@ -47,7 +47,7 @@ Details: [Production readiness](production-readiness.md) § Support and complian
 
 1. Confirm required capabilities in [SHIPPED](../SHIPPED.md) (VS Code **and** CLI columns).
 2. Read [Known limitations](../known-limitations.md) — especially format write-back and SQL subset.
-3. Pin `cargo install ontocore-cli --locked --version 0.26.2` (or current [TAGGED_RELEASE](https://github.com/eddiethedean/ontocode/blob/main/docs/TAGGED_RELEASE)) in CI.
+3. Pin `cargo install strixonomy-cli --locked --version 0.26.2` (or current [TAGGED_RELEASE](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE)) in CI.
 4. Verify release artifacts with [SHA256SUMS](../release-integrity.md).
 5. Run a pilot using [First success](../guides/first-success.md) + your corpus.
 

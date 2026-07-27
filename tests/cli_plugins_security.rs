@@ -4,15 +4,15 @@
 
 mod support;
 
-use ontocore_catalog::IndexBuilder;
-use ontocore_core::is_path_within;
-use ontocore_plugin_builtins::load_plugin_host;
+use strixonomy_catalog::IndexBuilder;
+use strixonomy_core::is_path_within;
+use strixonomy_plugin_builtins::load_plugin_host;
 
 #[test]
 fn plugin_diagnostic_file_allows_workspace_escape_via_dotdot() {
     let dir = tempfile::tempdir().expect("tempdir");
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).expect("plugins dir");
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).expect("plugins dir");
 
     // Minimal ontology so `build_catalog()` succeeds.
     std::fs::write(workspace.join("demo.ttl"), "@prefix ex: <http://ex/> .\nex:Ok a owl:Class .\n")
@@ -51,7 +51,7 @@ diagnostics = true
 "#,
         plugin_bin.display()
     );
-    std::fs::write(workspace.join(".ontocore/plugins/evil.toml"), manifest.as_bytes())
+    std::fs::write(workspace.join(".strixonomy/plugins/evil.toml"), manifest.as_bytes())
         .expect("write manifest");
 
     // Run via the Rust API (avoids coupling to the CLI argument contract).
@@ -70,7 +70,7 @@ diagnostics = true
 fn subprocess_validate_requires_workspace_write() {
     let dir = tempfile::tempdir().expect("tempdir");
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).expect("plugins dir");
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).expect("plugins dir");
     std::fs::write(workspace.join("demo.ttl"), "@prefix ex: <http://ex/> .\nex:Ok a owl:Class .\n")
         .expect("write demo.ttl");
 
@@ -105,7 +105,7 @@ diagnostics = true
 "#,
         plugin_bin.display()
     );
-    std::fs::write(workspace.join(".ontocore/plugins/readonly.toml"), manifest.as_bytes())
+    std::fs::write(workspace.join(".strixonomy/plugins/readonly.toml"), manifest.as_bytes())
         .expect("write manifest");
 
     let catalog =
@@ -127,7 +127,7 @@ diagnostics = true
 fn plugin_diagnostic_file_rejects_absolute_outside_workspace() {
     let dir = tempfile::tempdir().expect("tempdir");
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).expect("plugins dir");
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).expect("plugins dir");
 
     // Minimal ontology so `build_catalog()` succeeds.
     std::fs::write(workspace.join("demo.ttl"), "@prefix ex: <http://ex/> .\nex:Ok a owl:Class .\n")
@@ -174,7 +174,7 @@ diagnostics = true
 "#,
         plugin_bin.display()
     );
-    std::fs::write(workspace.join(".ontocore/plugins/evil_abs.toml"), manifest.as_bytes())
+    std::fs::write(workspace.join(".strixonomy/plugins/evil_abs.toml"), manifest.as_bytes())
         .expect("write manifest");
 
     let catalog =
@@ -192,7 +192,7 @@ diagnostics = true
 fn plugin_output_paths_are_jailed() {
     let dir = tempfile::tempdir().expect("tempdir");
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).expect("plugins dir");
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).expect("plugins dir");
 
     // Minimal ontology so `build_catalog()` succeeds.
     std::fs::write(workspace.join("demo.ttl"), "@prefix ex: <http://ex/> .\nex:Ok a owl:Class .\n")
@@ -236,7 +236,7 @@ export = true
 "#,
         plugin_bin.display()
     );
-    std::fs::write(workspace.join(".ontocore/plugins/evil_out_paths.toml"), manifest.as_bytes())
+    std::fs::write(workspace.join(".strixonomy/plugins/evil_out_paths.toml"), manifest.as_bytes())
         .expect("write manifest");
 
     let catalog =
@@ -273,15 +273,15 @@ export = true
 fn in_process_export_default_writes_under_workspace_not_cwd() {
     let dir = tempfile::tempdir().expect("tempdir");
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).expect("plugins dir");
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).expect("plugins dir");
     std::fs::write(
         workspace.join("demo.ttl"),
         "@prefix ex: <http://ex/> .\nex:Ok a <http://www.w3.org/2002/07/owl#Class> .\n",
     )
     .expect("write demo.ttl");
     std::fs::write(
-        workspace.join(".ontocore/plugins/markdown-export.toml"),
-        include_str!("../crates/ontocore-plugin/fixtures/builtin-markdown.toml"),
+        workspace.join(".strixonomy/plugins/markdown-export.toml"),
+        include_str!("../crates/strixonomy-plugin/fixtures/builtin-markdown.toml"),
     )
     .expect("write markdown export manifest");
 
@@ -301,7 +301,7 @@ fn in_process_export_default_writes_under_workspace_not_cwd() {
     let mut host = load_plugin_host(&workspace).expect("load plugin host");
     let result = host
         .run_plugin_action(
-            "ontocode.markdown-export",
+            "strixonomy.markdown-export",
             "export",
             Some(&catalog),
             None,
@@ -313,18 +313,18 @@ fn in_process_export_default_writes_under_workspace_not_cwd() {
         .expect("run markdown export");
     assert!(result.success);
 
-    let expected = workspace.join(".ontocore/plugin-out");
+    let expected = workspace.join(".strixonomy/plugin-out");
     assert!(
         expected.join("index.md").is_file(),
-        "export should land under workspace/.ontocore/plugin-out"
+        "export should land under workspace/.strixonomy/plugin-out"
     );
     assert!(
         !cwd.path().join("plugin-out").exists(),
         "must not write relative plugin-out under process CWD"
     );
     assert!(
-        !cwd.path().join(".ontocore/plugin-out").exists(),
-        "must not write .ontocore/plugin-out under process CWD"
+        !cwd.path().join(".strixonomy/plugin-out").exists(),
+        "must not write .strixonomy/plugin-out under process CWD"
     );
 }
 
@@ -333,7 +333,7 @@ fn subprocess_ui_view_requires_workspace_write() {
     // #347
     let dir = tempfile::tempdir().expect("tempdir");
     let workspace = dir.path().join("ws");
-    std::fs::create_dir_all(workspace.join(".ontocore/plugins")).expect("plugins dir");
+    std::fs::create_dir_all(workspace.join(".strixonomy/plugins")).expect("plugins dir");
     std::fs::write(workspace.join("demo.ttl"), "@prefix ex: <http://ex/> .\nex:Ok a owl:Class .\n")
         .expect("write demo.ttl");
 
@@ -369,7 +369,7 @@ kind = "dock"
 "#,
         plugin_bin.display()
     );
-    std::fs::write(workspace.join(".ontocore/plugins/ui_ro.toml"), manifest.as_bytes())
+    std::fs::write(workspace.join(".strixonomy/plugins/ui_ro.toml"), manifest.as_bytes())
         .expect("write manifest");
 
     let catalog =

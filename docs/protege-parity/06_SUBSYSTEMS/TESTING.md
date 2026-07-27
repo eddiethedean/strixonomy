@@ -1,16 +1,16 @@
 # TESTING
 
-# OntoCode Testing Strategy
+# Strixonomy Testing Strategy
 
 **Status:** Normative Engineering Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the testing strategy required to achieve and
-maintain Protégé Desktop parity for OntoCode.
+maintain Protégé Desktop parity for Strixonomy.
 
 Testing is organized around objective verification of semantic
 correctness, user workflows, performance, and platform stability.

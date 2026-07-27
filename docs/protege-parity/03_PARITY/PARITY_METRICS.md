@@ -3,15 +3,15 @@
 # Protégé Desktop Parity Metrics
 
 **Status:** Living Metrics Specification\
-**Repository Baseline:** OntoCode v0.18.2 (audit baseline)\
-**Target Release:** OntoCode 1.0.0
+**Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the measurable indicators used to evaluate
-OntoCode's progress toward full Protégé Desktop parity.
+Strixonomy's progress toward full Protégé Desktop parity.
 
 Unlike the parity matrix, which tracks individual requirements, this
 document tracks overall engineering health and release readiness through

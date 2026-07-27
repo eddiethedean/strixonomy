@@ -4,15 +4,15 @@
 
 **Directory:** 07_BACKLOG\
 **Status:** Canonical pre-1.0 release plan\
-**Baseline:** OntoCode v0.18.2\
-**Target:** OntoCode 1.0.0
+**Baseline:** Strixonomy v0.18.2\
+**Target:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document maps the Protégé parity program onto **versioned pre-1.0
-releases** (v0.19–v0.26, then 1.0.0-rc, then 1.0.0).
+releases** (v0.19–v0.27, then 1.0.0-rc, then 1.0.0).
 
 It is the single entry point for contributors implementing parity work
 before 1.0.0. Engineering sequencing detail lives in
@@ -37,6 +37,7 @@ objective of the phases below.
 | **v0.24** | D (services) | 7 | EPIC-006, EPIC-007 | BLOCKER_06, BLOCKER_07 | Shipped |
 | **v0.25** | E + F | 8–9 | EPIC-008–011 | BLOCKER_08–011 | Shipped |
 | **v0.26** | F (test port) | — | Protégé JUnit behavioral port | BLOCKER_11 (corpus) | Shipped |
+| **v0.27** | Product identity | — | Strixonomy Rust + VS Code rename | Package and extension migration | Planned |
 | **1.0.0-rc** | Stabilize | 10 | — | — | Planned |
 | **1.0.0** | Ship | — | — | [PARITY_RELEASE_GATE.md](../03_PARITY/PARITY_RELEASE_GATE.md) | Planned |
 
@@ -307,7 +308,7 @@ status automatically verifiable in CI.
 # v0.26 — Protégé Desktop test port
 
 **Status:** Shipped\
-**Theme:** Port portable Protégé Desktop JUnit behaviors into OntoCode
+**Theme:** Port portable Protégé Desktop JUnit behaviors into Strixonomy
 Rust semantic oracles (rewrite specs — do not run the JVM suite).
 
 ## Primary documents
@@ -335,9 +336,41 @@ Rust semantic oracles (rewrite specs — do not run the JVM suite).
 ## Exit criteria
 
 -   Every `PORT_W1` / `PORT_W2` / `PORT_W3` / `PORT_W4` row has
-    `ontocode_tests` paths that exist (or an explicit `gap`)
--   `cargo test -p ontocode --test protege_port_*` green
+    `strixonomy_tests` paths that exist (or an explicit `gap`)
+-   `cargo test -p strixonomy --test protege_port_*` green
 -   Webview annotation link + annotation-order Vitest green
+
+------------------------------------------------------------------------
+
+# v0.27 — Strixonomy rename
+
+**Status:** Planned\
+**Theme:** Rename Strixonomy and Strixonomy to Strixonomy before the 1.0 release freeze.
+
+## Objective
+
+Publish the Rust engine, CLI, language server, and VS Code extension under
+the Strixonomy identity while giving v0.26 users an explicit, tested
+migration path.
+
+## Deliverables
+
+-   `strixonomy` and `strixonomy-*` Rust packages
+-   `strixonomy` CLI and `strixonomy-lsp` language-server binaries
+-   Strixonomy for VS Code publisher, listing, commands, settings, views,
+    bundled assets, Marketplace metadata, and Open VSX metadata
+-   Compatibility and deprecation policy for Strixonomy/Strixonomy package,
+    binary, configuration, extension-state, plugin, and automation names
+-   v0.27 migration guide and CI coverage for clean installs and v0.26
+    upgrades
+
+## Exit criteria
+
+-   New installs use Strixonomy names end to end
+-   Existing users do not silently lose configuration, workspace state,
+    plugins, or CI compatibility
+-   Old names remain only in time-bounded compatibility paths, migration
+    documentation, and historical release material
 
 ------------------------------------------------------------------------
 
@@ -379,7 +412,7 @@ Rust semantic oracles (rewrite specs — do not run the JVM suite).
 ## Deliverables
 
 -   Cross-platform VS Code extension and CLI release
--   Published `ontocore` + `ontocore-*` 1.0.0 on crates.io
+-   Published `strixonomy` + `strixonomy-*` 1.0.0 on crates.io
 -   Migration guides with honest parity table
 -   Stable CLI/API/LSP semver 1.0
 

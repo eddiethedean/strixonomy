@@ -1,4 +1,4 @@
-# OntoCode 0.18 Protégé Desktop Parity Assessment
+# Strixonomy 0.18 Protégé Desktop Parity Assessment
 
 ## Executive summary
 
@@ -106,6 +106,6 @@ Semantic diff, Git/CI workflows, SQL catalog queries, LSP, incremental indexing,
 | ROADMAP exit | How this assessment satisfies it |
 |--------------|----------------------------------|
 | Desktop parity = 100% for agreed pre-1.0 scope | Agreed scope = **gate blockers above**; 100% means those are green; remaining items live in known-gap list |
-| Protégé → OntoCode migration path | Refresh `docs/guides/protege-migration.md` + `docs/migration/v0.18.md` + known-limitations |
+| Protégé → Strixonomy migration path | Refresh `docs/guides/protege-migration.md` + `docs/migration/v0.18.md` + known-limitations |
 
 See [v0.18_SCOPE.md](../../design/v0.18_SCOPE.md) for the locked Must-ship list derived from this assessment.

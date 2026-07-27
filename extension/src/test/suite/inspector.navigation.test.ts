@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import { LanguageClient } from "vscode-languageclient/node";
 import { FIXTURE_IRIS, fixturesWorkspaceUri } from "./helpers";
 
-interface OntoCodeTestHooks {
+interface StrixonomyTestHooks {
   openEntityInspector(iri: string): Promise<void>;
   openEntity(iri: string): Promise<void>;
   waitForInspectorReady(timeoutMs?: number): Promise<void>;
@@ -14,7 +14,7 @@ interface OntoCodeTestHooks {
   disposeAllPanels(): Promise<void>;
 }
 
-interface OntoCodeTestApi {
+interface StrixonomyTestApi {
   getClient(): LanguageClient | undefined;
   indexWorkspace(workspaceUri?: string): Promise<{
     stats: { error_count: number; class_count: number };
@@ -22,19 +22,19 @@ interface OntoCodeTestApi {
   getCatalogSnapshot(): Promise<{
     entities: Array<{ iri: string; kind: string }>;
   }>;
-  __test: OntoCodeTestHooks;
+  __test: StrixonomyTestHooks;
 }
 
 suite("Entity Inspector navigation (VS Code e2e)", () => {
-  let api: OntoCodeTestApi;
+  let api: StrixonomyTestApi;
 
   suiteSetup(async function () {
     this.timeout(120_000);
-    const ext = vscode.extensions.getExtension("ontocode.ontocode");
-    assert.ok(ext, "OntoCode extension must be loaded");
+    const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
+    assert.ok(ext, "Strixonomy extension must be loaded");
     const activated = await ext.activate();
     assert.ok(activated.__test, "ONTOCODE_TEST_FIXTURES must enable __test hooks");
-    api = activated as OntoCodeTestApi;
+    api = activated as StrixonomyTestApi;
   });
 
   setup(async () => {
@@ -107,7 +107,7 @@ suite("Entity Inspector navigation (VS Code e2e)", () => {
     this.timeout(60_000);
     const { organization } = FIXTURE_IRIS;
 
-    await vscode.commands.executeCommand("ontocode.openEntity", organization);
+    await vscode.commands.executeCommand("strixonomy.openEntity", organization);
 
     await api.__test.waitForInspectorIri(organization);
     assert.equal(api.__test.getInspectorLoadedIri(), organization);
@@ -117,7 +117,7 @@ suite("Entity Inspector navigation (VS Code e2e)", () => {
     this.timeout(60_000);
     const { organization } = FIXTURE_IRIS;
 
-    await vscode.commands.executeCommand("ontocode.openEntity", {
+    await vscode.commands.executeCommand("strixonomy.openEntity", {
       iri: organization,
       label: "Organization",
     });

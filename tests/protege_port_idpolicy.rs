@@ -3,7 +3,7 @@
 
 mod support;
 
-use ontocore_obo::{parse_id_policy_file, parse_id_policy_from_catalog};
+use strixonomy_obo::{parse_id_policy_file, parse_id_policy_from_catalog};
 use support::protege_port::{copy_ported_tree, index_workspace, ported_dir};
 
 #[test]
@@ -64,15 +64,15 @@ fn idpolicy_from_catalog_documents() {
     let _catalog = index_workspace(dir.path());
     // Prefer direct file — catalog format may skip .owl Manchester; invent a synthetic OntologyDocument list.
     let path = dir.path().join("empty-idranges.owl");
-    let docs = vec![ontocore_core::OntologyDocument {
+    let docs = vec![strixonomy_core::OntologyDocument {
         id: "empty".into(),
         path: path.clone(),
-        format: ontocore_core::OntologyFormat::OwlXml, // placeholder; parse reads text
+        format: strixonomy_core::OntologyFormat::OwlXml, // placeholder; parse reads text
         base_iri: Some("http://purl.obolibrary.org/obo/go/go-idranges.owl".into()),
         version_iri: None,
         imports: vec![],
         namespaces: Default::default(),
-        parse_status: ontocore_core::ParseStatus::Ok,
+        parse_status: strixonomy_core::ParseStatus::Ok,
         content_hash: String::new(),
         modified_time: 0,
         parse_message: None,

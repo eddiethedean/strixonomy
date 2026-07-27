@@ -1,9 +1,9 @@
 # EXECUTION_ORDER
 
-# OntoCode 1.0 Protégé Parity Execution Order
+# Strixonomy 1.0 Protégé Parity Execution Order
 
 **Status:** Master Sequencing Document\
-**Target Release:** OntoCode 1.0.0\
+**Target Release:** Strixonomy 1.0.0\
 **Versioned releases:** [PRE_1_0_PHASES.md](../07_BACKLOG/PRE_1_0_PHASES.md) (v0.19–v0.25 → 1.0.0-rc → 1.0.0)
 
 ------------------------------------------------------------------------

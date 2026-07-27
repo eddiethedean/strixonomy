@@ -1,0 +1,22 @@
+[plugin]
+name = "naming-convention-validator"
+version = "0.1.0"
+kind = "validator"
+id = "strixonomy.naming-validator"
+api_version = "1"
+
+[capabilities]
+validate = true
+diagnostics = true
+
+[config]
+require_label = true
+
+[[ui.commands]]
+id = "strixonomy.naming.check"
+title = "Check naming conventions"
+
+[[ui.inspector_cards]]
+id = "naming-summary"
+title = "Naming conventions"
+applies_to = ["class", "object_property", "data_property", "individual"]

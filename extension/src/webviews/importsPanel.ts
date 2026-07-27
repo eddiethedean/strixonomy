@@ -101,7 +101,7 @@ export class ImportsPanel {
     private readonly onRefresh?: RefreshFn
   ) {
     host.panel.onDidDispose(() => {
-      void forgetPanelRestoreState("ontocodeImports");
+      void forgetPanelRestoreState("strixonomyImports");
       ImportsPanel.current = undefined;
     });
   }
@@ -115,8 +115,8 @@ export class ImportsPanel {
     filePath: string,
     onRefresh?: RefreshFn
   ): Promise<ImportsPanel> {
-    void rememberPanelRestoreState("ontocodeImports", {
-      command: "ontocode.manageImports",
+    void rememberPanelRestoreState("strixonomyImports", {
+      command: "strixonomy.manageImports",
       args: [filePath],
       title: `Imports: ${path.basename(filePath)}`,
     });
@@ -127,7 +127,7 @@ export class ImportsPanel {
     }
 
     const host = PanelHost.create(extensionUri, {
-      viewType: "ontocodeImports",
+      viewType: "strixonomyImports",
       title: "Manage Imports",
       panel: "imports",
       onMessage: async (message: WebviewMessage) => {
@@ -165,7 +165,7 @@ export class ImportsPanel {
     if (!doc) {
       this.clearEditableState();
       void vscode.window.showErrorMessage(
-        `OntoCode: no indexed Turtle document at ${filePath}`
+        `Strixonomy: no indexed Turtle document at ${filePath}`
       );
       this.host.postMessage({
         type: "loadImports",
@@ -179,7 +179,7 @@ export class ImportsPanel {
     if (doc.format !== "turtle") {
       this.clearEditableState();
       void vscode.window.showErrorMessage(
-        "OntoCode: imports management is only available for Turtle (.ttl) files"
+        "Strixonomy: imports management is only available for Turtle (.ttl) files"
       );
       this.host.postMessage({
         type: "loadImports",
@@ -228,7 +228,7 @@ export class ImportsPanel {
       return;
     }
     if (!this.ontologyIri || !this.importsEditable) {
-      const msg = "OntoCode: imports are not editable for this document";
+      const msg = "Strixonomy: imports are not editable for this document";
       this.host.postMessage({ type: "error", message: msg });
       void vscode.window.showErrorMessage(msg);
       return;
@@ -237,7 +237,7 @@ export class ImportsPanel {
     const parsed = parseApplyPatchMessage(message, undefined);
     if (!parsed) {
       void vscode.window.showErrorMessage(
-        "OntoCode: ignored invalid applyPatch message from imports panel"
+        "Strixonomy: ignored invalid applyPatch message from imports panel"
       );
       return;
     }
@@ -250,7 +250,7 @@ export class ImportsPanel {
       )
     ) {
       void vscode.window.showErrorMessage(
-        "OntoCode: ignored non-import patch from imports panel"
+        "Strixonomy: ignored non-import patch from imports panel"
       );
       return;
     }
@@ -293,7 +293,7 @@ export class ImportsPanel {
       }
       if (result.reindex_warning) {
         void vscode.window.showWarningMessage(
-          `OntoCode: changes saved but reindex failed — ${result.reindex_warning}`
+          `Strixonomy: changes saved but reindex failed — ${result.reindex_warning}`
         );
       }
       if (this.onRefresh) {
@@ -314,13 +314,13 @@ export class ImportsPanel {
         });
       }
       if (isPatchFullySynced(result)) {
-        void vscode.window.showInformationMessage("OntoCode: imports updated");
+        void vscode.window.showInformationMessage("Strixonomy: imports updated");
       } else {
         void vscode.window.showWarningMessage(patchSyncCancelledMessage());
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      void vscode.window.showErrorMessage(`OntoCode: import patch failed — ${msg}`);
+      void vscode.window.showErrorMessage(`Strixonomy: import patch failed — ${msg}`);
     }
   }
 }

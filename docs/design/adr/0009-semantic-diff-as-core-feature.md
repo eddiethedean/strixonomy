@@ -7,7 +7,7 @@ Accepted
 Git text diffs are not enough for ontology review.
 
 ## Decision
-Implement semantic diff in OntoCore as a core feature, not only a VS Code UI feature.
+Implement semantic diff in Strixonomy as a core feature, not only a VS Code UI feature.
 
 ## Consequences
 Positive:

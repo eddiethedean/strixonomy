@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-OntoCore needs robust RDF parsing/storage/query capabilities.
+Strixonomy needs robust RDF parsing/storage/query capabilities.
 
 ## Decision
 Use Oxigraph for RDF/SPARQL infrastructure where appropriate.
@@ -16,4 +16,4 @@ Positive:
 - enables SPARQL support
 
 Negative:
-- OntoCore must differentiate above the triplestore layer
+- Strixonomy must differentiate above the triplestore layer

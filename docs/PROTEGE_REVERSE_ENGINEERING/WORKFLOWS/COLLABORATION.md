@@ -1,11 +1,11 @@
 # COLLABORATION.md
 
 # Ontology Collaboration Workflow
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
-Protégé Desktop is primarily a single-user application, while WebProtégé introduces collaborative ontology editing through shared projects, comments, change history, and permissions. OntoCode should combine the strengths of both while adopting modern collaborative development practices inspired by Git, IDEs, and cloud-native tools.
+Protégé Desktop is primarily a single-user application, while WebProtégé introduces collaborative ontology editing through shared projects, comments, change history, and permissions. Strixonomy should combine the strengths of both while adopting modern collaborative development practices inspired by Git, IDEs, and cloud-native tools.
 
 ---
 
@@ -248,7 +248,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended enhancements:
 
@@ -298,10 +298,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should move beyond document collaboration toward collaborative ontology engineering. Every change should be modeled as a semantic operation that integrates with reasoning, validation, visualization, automation, AI, and version control while remaining understandable to both ontology experts and software engineers.
+Strixonomy should move beyond document collaboration toward collaborative ontology engineering. Every change should be modeled as a semantic operation that integrates with reasoning, validation, visualization, automation, AI, and version control while remaining understandable to both ontology experts and software engineers.
 
 ---
 
 # Summary
 
-WebProtégé demonstrated the value of collaborative ontology editing, but modern ontology engineering demands deeper integration with Git, real-time synchronization, structured reviews, semantic change tracking, AI-assisted workflows, and enterprise governance. OntoCode should provide a unified collaboration platform that feels as natural for ontology engineers as modern collaborative IDEs do for software developers.
+WebProtégé demonstrated the value of collaborative ontology editing, but modern ontology engineering demands deeper integration with Git, real-time synchronization, structured reviews, semantic change tracking, AI-assisted workflows, and enterprise governance. Strixonomy should provide a unified collaboration platform that feels as natural for ontology engineers as modern collaborative IDEs do for software developers.

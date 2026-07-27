@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **Strixonomy rename (v0.27):** OntoCore / OntoCode product identity → **Strixonomy** across Rust crates (`strixonomy` / `strixonomy-*`), CLI (`strixonomy`, deprecated `ontocore` alias), LSP (`strixonomy-lsp`, deprecated `ontocore-lsp` alias; methods `strixonomy/*` with legacy `ontocore/*`), VS Code extension (`strixonomy.strixonomy`), workspace config (`.strixonomy/` with dual-read of `.ontocore/` / `.ontocode/`), docs, and CI. See [migration/v0.27.md](docs/migration/v0.27.md) and [ADR-0022](docs/design/adr/0022-strixonomy-identity.md).
+
 ## [0.26.2] - 2026-07-17
 
 **For pilots / adopters:** host focus/transaction integrity, semantic-diff/edit/query correctness, exhaustive XML/OWL IRI remap, aligned merge semantics across formats, and residual invert / SPARQL / orphan-diagnostic fixes. No format write-back regression vs v0.26.1 — [migration/v0.26.2.md](docs/migration/v0.26.2.md).

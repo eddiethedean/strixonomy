@@ -4,7 +4,7 @@
 
 **Status:** Living Reference Document\
 **Purpose:** Canonical inventory of the capabilities provided by a
-standard Protégé Desktop installation that are relevant to OntoCode's
+standard Protégé Desktop installation that are relevant to Strixonomy's
 1.0 parity goal.
 
 ------------------------------------------------------------------------
@@ -15,7 +15,7 @@ This inventory defines **what must be evaluated** during the parity
 effort. It is intentionally feature-oriented rather than
 implementation-oriented.
 
-A feature appearing in this inventory **does not imply** OntoCode is
+A feature appearing in this inventory **does not imply** Strixonomy is
 missing it. Current implementation status is tracked separately in:
 
 -   `CURRENT_FEATURE_MATRIX.md`

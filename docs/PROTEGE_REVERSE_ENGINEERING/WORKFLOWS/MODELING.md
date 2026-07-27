@@ -1,13 +1,13 @@
 # MODELING.md
 
 # Ontology Modeling Workflow
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
 Ontology modeling is the primary workflow in Protégé. It consists of iteratively creating concepts, defining relationships, annotating entities, validating semantics, and using automated reasoning to refine the ontology.
 
-This document captures the end-to-end modeling workflow and proposes a modernized implementation for OntoCode.
+This document captures the end-to-end modeling workflow and proposes a modernized implementation for Strixonomy.
 
 ---
 
@@ -141,7 +141,7 @@ Common metadata:
 - License
 - Provenance
 
-OntoCode should support templates and bulk editing.
+Strixonomy should support templates and bulk editing.
 
 ---
 
@@ -257,7 +257,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -318,4 +318,4 @@ Platform
 
 # Summary
 
-Protégé's modeling workflow is centered on iterative semantic refinement: define entities, add logical meaning, validate through reasoning, and repeat. OntoCode should preserve this proven process while transforming it into a modern, collaborative, AI-assisted modeling environment with responsive tooling, rich visualization, and an extensible platform architecture.
+Protégé's modeling workflow is centered on iterative semantic refinement: define entities, add logical meaning, validate through reasoning, and repeat. Strixonomy should preserve this proven process while transforming it into a modern, collaborative, AI-assisted modeling environment with responsive tooling, rich visualization, and an extensible platform architecture.

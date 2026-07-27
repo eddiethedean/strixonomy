@@ -6,7 +6,7 @@ Accepted — **implemented in v0.12.0** (read path v0.11, write-back v0.12)
 
 ## Context
 
-OntoCore indexes OBO Format 1.4 (`.obo`) for biomedical workflows. v0.7 shipped read-only OBO support with a minimal line parser. v1.0 Protégé parity requires reliable read/write, rich metadata (synonyms, definitions, xrefs), and patch-based editing consistent with Turtle write-back ([ADR-0006](0006-patch-based-write-back.md)).
+Strixonomy indexes OBO Format 1.4 (`.obo`) for biomedical workflows. v0.7 shipped read-only OBO support with a minimal line parser. v1.0 Protégé parity requires reliable read/write, rich metadata (synonyms, definitions, xrefs), and patch-based editing consistent with Turtle write-back ([ADR-0006](0006-patch-based-write-back.md)).
 
 The canonical Rust stack for OBO is [`fastobo`](https://crates.io/crates/fastobo) + [`fastobo-owl`](https://crates.io/crates/fastobo-owl) per [OBO_ROBOT_SPEC.md](../OBO_ROBOT_SPEC.md).
 
@@ -16,19 +16,19 @@ The canonical Rust stack for OBO is [`fastobo`](https://crates.io/crates/fastobo
 
 1. **Read path:** Replace the minimal OBO line parser with `fastobo::from_str` → existing `ParsedOntology` / catalog model. Surface synonyms, definitions, and property values in catalog annotations and entity detail.
 2. **Write-back:** Document patch schema; defer OBO inspector editing and disk serialize to v0.12.
-3. **Boundaries:** Turtle patches (`ontocore-owl::patch`) own Turtle write-back. OBO patches use a separate op namespace in `ontocore-obo`.
+3. **Boundaries:** Turtle patches (`strixonomy-owl::patch`) own Turtle write-back. OBO patches use a separate op namespace in `strixonomy-obo`.
 
 ### v1.0 (remaining)
 
-- Optional `fastobo-validator` in CI / `ontocore validate`
+- Optional `fastobo-validator` in CI / `strixonomy validate`
 - Richer OBO metadata round-trip parity with Protégé / ROBOT
 
 ## Current implementation (v0.12)
 
-- **`ontocore-obo`** crate applies OBO patch ops to `.obo` files on disk
-- **Entity Inspector** and **`ontocore/applyAxiomPatch`** dispatch by file extension (`.ttl` vs `.obo`)
-- **CLI:** `ontocore patch path/to/terms.obo patches.json`
-- **Documented ops:** [patch-reference.md](../../patch-reference.md) · [OBO authoring](../../ontocode/obo-authoring.md)
+- **`strixonomy-obo`** crate applies OBO patch ops to `.obo` files on disk
+- **Entity Inspector** and **`strixonomy/applyAxiomPatch`** dispatch by file extension (`.ttl` vs `.obo`)
+- **CLI:** `strixonomy patch path/to/terms.obo patches.json`
+- **Documented ops:** [patch-reference.md](../../patch-reference.md) · [OBO authoring](../../ide/obo-authoring.md)
 
 ## OBO patch op schema
 
@@ -70,8 +70,8 @@ Example:
 
 | Concern | Turtle | OBO |
 |---------|--------|-----|
-| Patch crate | `ontocore-owl` | `ontocore-obo` |
-| LSP apply | `ontocore/applyAxiomPatch` on `.ttl` | Same method, `.obo` dispatch |
+| Patch crate | `strixonomy-owl` | `strixonomy-obo` |
+| LSP apply | `strixonomy/applyAxiomPatch` on `.ttl` | Same method, `.obo` dispatch |
 | Subject key | `entity_iri` | `term_id` |
 | Manchester | Yes | No (structural OBO clauses) |
 | Imports | `owl:imports` patch ops | N/A (separate ontology files) |
@@ -94,4 +94,4 @@ Example:
 - [OBO_ROBOT_SPEC.md](../OBO_ROBOT_SPEC.md)
 - [PROTEGE_PARITY.md](../PROTEGE_PARITY.md)
 - [patch-reference.md](../../patch-reference.md)
-- [OBO authoring guide](../../ontocode/obo-authoring.md)
+- [OBO authoring guide](../../ide/obo-authoring.md)

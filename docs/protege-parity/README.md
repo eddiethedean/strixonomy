@@ -3,7 +3,7 @@
 > **Engineering program (GitHub only).** This tree is **excluded from the public Read the Docs site**. Evaluators should use [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md) — not parity drafts — for adoption decisions.
 
 This directory contains the engineering specifications, audits, and
-implementation plans that drive **OntoCode 1.0.0** toward **full
+implementation plans that drive **Strixonomy 1.0.0** toward **full
 functional parity with Protégé Desktop**.
 
 Unlike earlier planning documents, this documentation set is grounded in
@@ -18,9 +18,9 @@ required to replace Protégé for everyday ontology engineering.
 The parity program has four primary goals:
 
 1.  Define the exact scope of Protégé parity.
-2.  Measure OntoCode's current capabilities against that scope.
+2.  Measure Strixonomy's current capabilities against that scope.
 3.  Plan and prioritize the remaining implementation work.
-4.  Provide objective evidence that OntoCode 1.0 satisfies its parity
+4.  Provide objective evidence that Strixonomy 1.0 satisfies its parity
     claims.
 
 ------------------------------------------------------------------------
@@ -63,7 +63,7 @@ Paths below are relative to this directory (`docs/protege-parity/`).
 -   `03_PARITY/PARITY_STATUS.md`
 -   `03_PARITY/PARITY_ACCEPTANCE_CRITERIA.md`
 -   `03_PARITY/PARITY_TEST_PLAN.md`
--   `03_PARITY/PROTEGE_TEST_PORT.md` — Protégé Desktop JUnit → OntoCode oracle port (v0.26)
+-   `03_PARITY/PROTEGE_TEST_PORT.md` — Protégé Desktop JUnit → Strixonomy oracle port (v0.26)
 -   `03_PARITY/PARITY_RELEASE_GATE.md`
 
 ## Engineering Blockers (`04_BLOCKERS/`)
@@ -122,7 +122,7 @@ plugins, UI workflows, and testing.
 
 # Definition of Success
 
-OntoCode 1.0.0 may be described as a Protégé Desktop replacement only
+Strixonomy 1.0.0 may be described as a Protégé Desktop replacement only
 when:
 
 -   Every P0 parity requirement is complete.

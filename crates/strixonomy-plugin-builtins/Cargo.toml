@@ -1,0 +1,16 @@
+[package]
+name = "strixonomy-plugin-builtins"
+description = "Built-in reference plugin registration for Strixonomy"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+
+[dependencies]
+strixonomy-plugin = { workspace = true }
+strixonomy-plugin-naming = { workspace = true }
+strixonomy-plugin-markdown-export = { workspace = true }
+strixonomy-plugin-shacl = { workspace = true }

@@ -4,13 +4,13 @@
 
 **Status:** P0 Release Blocker\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the engineering work required for OntoCode to
+This document defines the engineering work required for Strixonomy to
 provide complete OWL 2 authoring capabilities comparable to a standard
 Protégé Desktop installation.
 
@@ -21,7 +21,7 @@ Structural Specification through modern, IDE-native workflows.
 
 # Problem Statement
 
-The repository audit found that OntoCode already supports a substantial
+The repository audit found that Strixonomy already supports a substantial
 portion of OWL authoring, but coverage is not yet complete across all
 OWL 2 constructs and editing workflows.
 

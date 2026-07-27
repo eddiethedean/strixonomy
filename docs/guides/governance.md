@@ -6,10 +6,10 @@ What enterprise evaluators can determine from **published documentation and repo
 
 | Aspect | Status |
 |--------|--------|
-| **Product** | Open-source OntoCode (VS Code IDE) + OntoCore (Rust engine) |
+| **Product** | Open-source Strixonomy (VS Code IDE) + Strixonomy (Rust engine) |
 | **License** | MIT OR Apache-2.0 (application crates); third-party licenses in [LICENSES.md](../design/LICENSES.md) |
-| **Distribution** | GitHub Releases (VSIX, CLI, LSP), [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode), [crates.io](https://crates.io/search?q=ontocore) |
-| **Commercial support** | **Not offered** — community via [GitHub issues](https://github.com/eddiethedean/ontocode/issues) |
+| **Distribution** | GitHub Releases (VSIX, CLI, LSP), [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy), [crates.io](https://crates.io/search?q=strixonomy) |
+| **Commercial support** | **Not offered** — community via [GitHub issues](https://github.com/eddiethedean/strixonomy/issues) |
 | **Vendor / company** | Not documented as a separate legal entity |
 
 Fortune 500 teams should plan **internal OSS adoption** with their own escalation path and pinned versions.
@@ -62,8 +62,8 @@ Pin versions in CI and desktop rollouts; do not assume automatic long-term backp
 
 ## Security response
 
-- Report via [GitHub Security Advisories](https://github.com/eddiethedean/ontocode/security/advisories/new) — not public issues
-- Acknowledgment target: within a few business days ([SECURITY.md](https://github.com/eddiethedean/ontocode/blob/main/SECURITY.md))
+- Report via [GitHub Security Advisories](https://github.com/eddiethedean/strixonomy/security/advisories/new) — not public issues
+- Acknowledgment target: within a few business days ([SECURITY.md](https://github.com/eddiethedean/strixonomy/blob/main/SECURITY.md))
 - **No published SLA** for patch delivery
 - Historical advisories: check the repository **Security** tab (not summarized in docs)
 

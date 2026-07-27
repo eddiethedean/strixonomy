@@ -9,7 +9,7 @@ fn cli_classify_el_json() {
         workspace.join("reasoner-el.ttl"),
     )
     .expect("copy fixture");
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["classify", workspace.to_str().unwrap(), "--profile", "el", "--format", "json"])
         .output()
         .expect("run classify");
@@ -42,7 +42,7 @@ fn cli_dl_profile_classifies_json() {
         workspace.join("reasoner-el.ttl"),
     )
     .expect("copy fixture");
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["classify", workspace.to_str().unwrap(), "--profile", "dl", "--format", "json"])
         .output()
         .expect("run classify");
@@ -63,7 +63,7 @@ fn cli_auto_profile_classifies_json() {
         workspace.join("reasoner-el.ttl"),
     )
     .expect("copy fixture");
-    let output = support::ontocore_cmd()
+    let output = support::strixonomy_cmd()
         .args(["classify", workspace.to_str().unwrap(), "--profile", "auto", "--format", "json"])
         .output()
         .expect("run classify");

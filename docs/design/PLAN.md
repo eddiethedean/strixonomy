@@ -1,14 +1,14 @@
-# PLAN.md — OntoCore and OntoCode
+# PLAN.md — Strixonomy and Strixonomy
 
 > **Executive summary superseded by** [Platform Vision](../vision.md) and [Platform Roadmap](../roadmap.md). This document retains tactical product planning detail for contributors.
 
 ## 1. Executive Summary
 
-OntoCore and OntoCode form a two-layer product strategy for modern ontology engineering.
+Strixonomy and Strixonomy form a two-layer product strategy for modern ontology engineering.
 
-**OntoCore** is the Rust backend: a local-first embedded ontology engine that scans a directory of OWL/RDF/Turtle/JSON-LD/OBO files, builds a semantic index, exposes ontology concepts as queryable tables, validates ontology repositories, performs semantic diffs, and powers editor integrations.
+**Strixonomy** is the Rust backend: a local-first embedded ontology engine that scans a directory of OWL/RDF/Turtle/JSON-LD/OBO files, builds a semantic index, exposes ontology concepts as queryable tables, validates ontology repositories, performs semantic diffs, and powers editor integrations.
 
-**OntoCode** is the VS Code extension: a full ontology engineering workbench built on top of OntoCore. Its long-term goal is to replace Protégé for developers, data engineers, knowledge graph engineers, semantic modelers, and organizations that prefer ontology-as-code workflows in the IDE and CI.
+**Strixonomy** is the VS Code extension: a full ontology engineering workbench built on top of Strixonomy. Its long-term goal is to replace Protégé for developers, data engineers, knowledge graph engineers, semantic modelers, and organizations that prefer ontology-as-code workflows in the IDE and CI.
 
 ## 2. Product Thesis
 
@@ -25,13 +25,13 @@ Protégé is excellent for traditional ontology editing, but it is not designed 
 - documentation pipelines
 - automated quality checks
 
-OntoCode should eventually provide the authoring depth of Protégé while adding the workflow strengths of VS Code.
+Strixonomy should eventually provide the authoring depth of Protégé while adding the workflow strengths of VS Code.
 
 ## 3. Products
 
-### 3.1 OntoCore
+### 3.1 Strixonomy
 
-OntoCore is a Rust library and CLI.
+Strixonomy is a Rust library and CLI.
 
 Primary capabilities:
 
@@ -46,9 +46,9 @@ Primary capabilities:
 - Generate documentation
 - Provide services for a language server
 
-### 3.2 OntoCode
+### 3.2 Strixonomy
 
-OntoCode is a VS Code extension.
+Strixonomy is a VS Code extension.
 
 Primary capabilities:
 
@@ -111,7 +111,7 @@ P0 highlights (see parity matrix for full list):
 
 ## 6. Core Differentiators
 
-OntoCode should not merely copy Protégé. It should beat Protégé in developer workflows.
+Strixonomy should not merely copy Protégé. It should beat Protégé in developer workflows.
 
 Key differentiators:
 
@@ -137,14 +137,14 @@ Possible tagline:
 
 Short positioning:
 
-> OntoCode is a VS Code-native ontology workbench powered by OntoCore, a Rust ontology index and query engine.
+> Strixonomy is a VS Code-native ontology workbench powered by Strixonomy, a Rust ontology index and query engine.
 
 ## 8. Roadmap Summary
 
-- v0.1: OntoCore scanner, parser, catalog, CLI
-- v0.2: OntoCode explorer and entity inspector
+- v0.1: Strixonomy scanner, parser, catalog, CLI
+- v0.2: Strixonomy explorer and entity inspector
 - v0.3: diagnostics and validation
-- v0.4a–b: simple write-back + Horned-OWL (`ontocore-owl`)
+- v0.4a–b: simple write-back + Horned-OWL (`strixonomy-owl`)
 - v0.5: query workbench + Manchester MVP
 - v0.6: reasoners + real explanations
 - **v0.7a: React webview foundation** ([ADR-0017](adr/0017-react-webview-ui.md), [OntoCode_React_UI_Integration_Plan.md](OntoCode_React_UI_Integration_Plan.md))
@@ -168,24 +168,24 @@ Short positioning:
 
 ## 10. Strategic Implementation Guidance
 
-**Policy:** [ADR-0016](adr/0016-dependency-first-implementation.md) — delegate to mature crates; `ontocore-*` crates are thin facades. Full inventory: [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md).
+**Policy:** [ADR-0016](adr/0016-dependency-first-implementation.md) — delegate to mature crates; `strixonomy-*` crates are thin facades. Full inventory: [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md).
 
-| Layer | Dependency | OntoCore facade | Phase |
+| Layer | Dependency | Strixonomy facade | Phase |
 |-------|------------|------------------|-------|
-| RDF / SPARQL | `oxigraph` | `ontocore-parser`, `ontocore-query` | v0.2 |
-| SQL parse | `sqlparser` | `ontocore-query` | v0.2 |
-| Workspace scan | `ignore` | `ontocore-core` | v0.2 |
-| LSP wire | `lsp-server`, `lsp-types` | `ontocore-lsp` | v0.2 |
-| Diagnostics | `oxigraph` + catalog rules | `ontocore-diagnostics` | v0.3 |
-| OWL axioms / Manchester | `horned-owl`, `horned-functional` | `ontocore-owl` | v0.4b+ |
-| Reasoning | OntoLogos `0.9`→`1.0` | `ontocore-reasoner` | v0.6 / v1.0 |
+| RDF / SPARQL | `oxigraph` | `strixonomy-parser`, `strixonomy-query` | v0.2 |
+| SQL parse | `sqlparser` | `strixonomy-query` | v0.2 |
+| Workspace scan | `ignore` | `strixonomy-core` | v0.2 |
+| LSP wire | `lsp-server`, `lsp-types` | `strixonomy-lsp` | v0.2 |
+| Diagnostics | `oxigraph` + catalog rules | `strixonomy-diagnostics` | v0.3 |
+| OWL axioms / Manchester | `horned-owl`, `horned-functional` | `strixonomy-owl` | v0.4b+ |
+| Reasoning | OntoLogos `0.9`→`1.0` | `strixonomy-reasoner` | v0.6 / v1.0 |
 | Graph structure | `petgraph` | LSP graph export | v0.7 |
 | Webview UI | `react`, `vite` | `extension/webview-ui` | v0.7a+ ([ADR-0017](adr/0017-react-webview-ui.md)) |
-| OBO | `fastobo`, `fastobo-owl` | `ontocore-parser` / `ontocore-owl` | v0.7b |
-| ROBOT CI | ROBOT CLI | `ontocore-robot` | v0.7b |
-| File watch | `notify` / `ontologos-watch` | `ontocore-lsp` | v0.9 |
-| Git diff inputs | `git2` | `ontocore-diff` | v0.9 |
-| Docs export | `pulldown-cmark`, `minijinja` | `ontocore-docs` | v0.9 |
+| OBO | `fastobo`, `fastobo-owl` | `strixonomy-parser` / `strixonomy-owl` | v0.7b |
+| ROBOT CI | ROBOT CLI | `strixonomy-robot` | v0.7b |
+| File watch | `notify` / `ontologos-watch` | `strixonomy-lsp` | v0.9 |
+| Git diff inputs | `git2` | `strixonomy-diff` | v0.9 |
+| Docs export | `pulldown-cmark`, `minijinja` | `strixonomy-docs` | v0.9 |
 | SHACL (P1) | `rudof` | plugin / diagnostics | v1.0 P1 |
 
 Build on existing mature components — do not reimplement parsers, reasoners, triple stores, OBO parsers, or SHACL engines when a maintained Rust crate covers the profile.
@@ -195,4 +195,4 @@ Build on existing mature components — do not reimplement parsers, reasoners, t
 - Use **sqlparser** virtual tables for SQL; extend for v1.0 joins before considering DataFusion ([ADR-0011](adr/0011-use-sqlparser-for-sql.md)).
 - Use **OntoLogos** for all reasoning ([ADR-0015](adr/0015-adopt-ontologos-reasoner.md)).
 - Use **React + Vite** for VS Code webview panels ([ADR-0017](adr/0017-react-webview-ui.md)); TypeScript extension host for orchestration only.
-- Keep OntoCore useful as a standalone CLI even without OntoCode.
+- Keep Strixonomy useful as a standalone CLI even without Strixonomy.

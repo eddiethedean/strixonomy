@@ -14,7 +14,7 @@ export class SelectionManager {
     };
   }): void {
     this.context = context;
-    const saved = context.workspaceState.get<{ iri?: string }>("ontocode.selection");
+    const saved = context.workspaceState.get<{ iri?: string }>("strixonomy.selection");
     this.selectionIri = saved?.iri;
   }
 
@@ -63,7 +63,7 @@ export class SelectionManager {
     if (!this.context) {
       return;
     }
-    await this.context.workspaceState.update("ontocode.selection", {
+    await this.context.workspaceState.update("strixonomy.selection", {
       iri: this.selectionIri,
     });
   }

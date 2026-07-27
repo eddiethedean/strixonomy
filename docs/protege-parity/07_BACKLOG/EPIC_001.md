@@ -3,10 +3,10 @@
 # EPIC-001 --- Format Independence
 
 **Epic ID:** EPIC-001\
-**GitHub:** https://github.com/eddiethedean/ontocode/issues/247\
+**GitHub:** https://github.com/eddiethedean/strixonomy/issues/247\
 **Status:** In progress (v0.20)\
 **Priority:** P0 (Release Blocking)\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 

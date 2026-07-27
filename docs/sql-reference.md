@@ -1,14 +1,14 @@
-# Catalog SQL query reference (OntoCore v0.26)
+# Catalog SQL query reference (Strixonomy v0.26)
 
-> **Status:** Documents behavior in **OntoCore v0.26.2**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.26.2**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md) · [Known limitations](known-limitations.md).
 
 !!! warning "Not full SQL"
-    OntoCore exposes indexed ontology data as **virtual tables** queried with a **catalog SQL (subset)**. There is **no** `JOIN`, `GROUP BY`, `ORDER BY`, `LIMIT`, or subqueries. Prefer [SPARQL](sparql-reference.md) for graph patterns.
+    Strixonomy exposes indexed ontology data as **virtual tables** queried with a **catalog SQL (subset)**. There is **no** `JOIN`, `GROUP BY`, `ORDER BY`, `LIMIT`, or subqueries. Prefer [SPARQL](sparql-reference.md) for graph patterns.
 
-OntoCore exposes indexed ontology data as **virtual tables** queried with a SQL-like `SELECT` syntax. The CLI (`ontocore query`) and Rust API (`query_catalog`) use the same engine.
+Strixonomy exposes indexed ontology data as **virtual tables** queried with a SQL-like `SELECT` syntax. The CLI (`strixonomy query`) and Rust API (`query_catalog`) use the same engine.
 
-**Source of truth:** [`sql.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-query/src/sql.rs)
+**Source of truth:** [`sql.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-query/src/sql.rs)
 
 ## Supported SQL subset
 
@@ -24,11 +24,11 @@ OntoCore exposes indexed ontology data as **virtual tables** queried with a SQL-
 Not supported: `JOIN`, subqueries, `GROUP BY`, `ORDER BY`, SQL functions, `NOT`, parentheses, `LIKE`, `IN`, or multiple tables.
 
 ```bash
-ontocore query fixtures "SELECT short_name FROM classes WHERE short_name = 'Person'"
-ontocore query fixtures "SELECT short_name FROM classes WHERE deprecated = 'false' AND short_name = 'Person'"
+strixonomy query fixtures "SELECT short_name FROM classes WHERE short_name = 'Person'"
+strixonomy query fixtures "SELECT short_name FROM classes WHERE deprecated = 'false' AND short_name = 'Person'"
 
 # Fails at parse/eval time
-ontocore query fixtures "SELECT short_name FROM classes WHERE NOT deprecated"
+strixonomy query fixtures "SELECT short_name FROM classes WHERE NOT deprecated"
 ```
 
 **Expected output (text):** tab-separated header plus one row for `Person` when run on `fixtures/`.
@@ -49,7 +49,7 @@ SPARQL over indexed triples: [sparql-reference.md](sparql-reference.md).
 | Unknown table or column | Parse/eval error (non-zero / `QUERY_FAILED`) |
 | `OR` without parentheses | Left-to-right boolean combination only — write simpler `WHERE` or use SPARQL |
 | `SELECT *` with **zero rows** | Still returns column headers (schema) — empty body |
-| Empty workspace / not indexed | Index first (`ontocore index` / Index Workspace) |
+| Empty workspace / not indexed | Index first (`strixonomy index` / Index Workspace) |
 
 See [Errors reference](errors.md) (`query` exit row) and [Query cookbook](examples/queries.md).
 
@@ -114,7 +114,7 @@ These tables project structured axioms from the Horned-OWL catalog (Turtle, OWL/
 | `domain_axioms` | `property_iri`, `domain` |
 | `range_axioms` | `property_iri`, `range` |
 
-Browse live schema in the Query Workbench **Schema** sidebar (`ontocore/listSqlSchema`).
+Browse live schema in the Query Workbench **Schema** sidebar (`strixonomy/listSqlSchema`).
 
 ### `namespaces`
 
@@ -148,8 +148,8 @@ Browse live schema in the Query Workbench **Schema** sidebar (`ontocore/listSqlS
 See [query cookbook](examples/queries.md) for a copy-paste cookbook.
 
 ```bash
-ontocore query ./fixtures "SELECT * FROM classes"
-ontocore query ./fixtures "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
-ontocore query ./fixtures "SELECT * FROM annotations" --format json
-ontocore query ./fixtures "SELECT code, message FROM diagnostics WHERE severity = 'warning'"
+strixonomy query ./fixtures "SELECT * FROM classes"
+strixonomy query ./fixtures "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
+strixonomy query ./fixtures "SELECT * FROM annotations" --format json
+strixonomy query ./fixtures "SELECT code, message FROM diagnostics WHERE severity = 'warning'"
 ```

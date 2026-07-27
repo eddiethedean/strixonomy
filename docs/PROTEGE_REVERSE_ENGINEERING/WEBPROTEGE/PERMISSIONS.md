@@ -14,7 +14,7 @@
 - Release management
 - User management
 
-## OntoCode Recommendations
+## Strixonomy Recommendations
 - Fine-grained permissions
 - Team-based roles
 - SSO/OIDC

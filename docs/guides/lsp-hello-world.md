@@ -1,16 +1,16 @@
 # LSP hello world (minimal client)
 
-Build a custom editor or smoke-test **OntoCore LSP** (`ontocore-lsp`) over stdio. For the full method list and JSON payloads, see [LSP API reference](../lsp-api.md).
+Build a custom editor or smoke-test **Strixonomy LSP** (`strixonomy-lsp`) over stdio. For the full method list and JSON payloads, see [LSP API reference](../lsp-api.md).
 
 ## Prerequisites
 
-- Built or installed `ontocore-lsp` (`cargo install ontocore-lsp --locked` or `cargo build -p ontocore-lsp --bins`)
+- Built or installed `strixonomy-lsp` (`cargo install strixonomy-lsp --locked` or `cargo build -p strixonomy-lsp --bins`)
 - A directory of ontology files (use your path, or clone this repo and point at `fixtures/`)
 
 ## Spawn the server
 
 ```bash
-ontocore-lsp
+strixonomy-lsp
 # reads JSON-RPC from stdin, writes responses to stdout
 ```
 
@@ -20,14 +20,14 @@ The server expects LSP `initialize` with a `rootUri` or `workspaceFolders` entry
 
 ```python
 #!/usr/bin/env python3
-"""Smoke-test ontocore-lsp: initialize + indexWorkspace."""
+"""Smoke-test strixonomy-lsp: initialize + indexWorkspace."""
 import json
 import subprocess
 import sys
 
 WORKSPACE = sys.argv[1] if len(sys.argv) > 1 else "."
 LSP = subprocess.Popen(
-    ["ontocore-lsp"],
+    ["strixonomy-lsp"],
     stdin=subprocess.PIPE,
     stdout=subprocess.PIPE,
     text=True,
@@ -65,7 +65,7 @@ send({"jsonrpc": "2.0", "method": "initialized", "params": {}})
 send({
     "jsonrpc": "2.0",
     "id": 2,
-    "method": "ontocore/indexWorkspace",
+    "method": "strixonomy/indexWorkspace",
     "params": {"workspace_uri": f"file://{WORKSPACE}"},
 })
 print("indexWorkspace →", read_message().get("result", {}))
@@ -81,9 +81,9 @@ python3 lsp_smoke.py /path/to/ontologies
 
 ## Reference implementation
 
-The OntoCode VS Code extension client is the production reference:
+The Strixonomy VS Code extension client is the production reference:
 
-- [`extension/src/lsp/client.ts`](https://github.com/eddiethedean/ontocode/blob/main/extension/src/lsp/client.ts) — method routing and custom `ontocore/*` requests
+- [`extension/src/lsp/client.ts`](https://github.com/eddiethedean/strixonomy/blob/main/extension/src/lsp/client.ts) — method routing and custom `strixonomy/*` requests
 - [`docs/lsp-protocol.schema.json`](../lsp-protocol.schema.json) — JSON Schema for custom payloads (v0.13)
 
 ## Next steps
@@ -91,5 +91,5 @@ The OntoCode VS Code extension client is the production reference:
 | Goal | Doc |
 |------|-----|
 | Full method catalog | [LSP API](../lsp-api.md) |
-| Webview hosting (OntoCode only) | [Webview protocol](../webview-protocol.md) |
+| Webview hosting (Strixonomy only) | [Webview protocol](../webview-protocol.md) |
 | Build the VS Code extension | [Extension development](extension-development.md) |

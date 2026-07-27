@@ -6,12 +6,12 @@
 > |-----|------|
 > | **This guide** | Canonical — ship plugins from here |
 > | [Plugin policy](plugin-policy.md) | SDK 1.0 compatibility / support stance |
-> | [plugin-model.md](../ontocore/plugin-model.md) | Overview only — do not implement sketches |
-> | [ui/PLUGIN_API_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLUGIN_API_SPEC.md) | Future OntoUI host — **not** the shipped VS Code contract |
-> | [ui/PLUGIN_PLATFORM.md](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLUGIN_PLATFORM.md) | Future Capability Providers — **not** the shipped host |
-> | [design/PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md) | Historical — do not implement |
+> | [plugin-model.md](../strixonomy/plugin-model.md) | Overview only — do not implement sketches |
+> | [ui/PLUGIN_API_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_API_SPEC.md) | Future OntoUI host — **not** the shipped VS Code contract |
+> | [ui/PLUGIN_PLATFORM.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_PLATFORM.md) | Future Capability Providers — **not** the shipped host |
+> | [design/PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) | Historical — do not implement |
 
-OntoCore’s **Plugin SDK 1.0** supports permissions, versioned API (`api_version = "1"`), UI contributions, lifecycle (`depends_on`, `activation`), and provider kinds (reasoner / query / refactor / graph).
+Strixonomy’s **Plugin SDK 1.0** supports permissions, versioned API (`api_version = "1"`), UI contributions, lifecycle (`depends_on`, `activation`), and provider kinds (reasoner / query / refactor / graph).
 
 ## Contribution matrix (SDK 1.0)
 
@@ -19,7 +19,7 @@ OntoCore’s **Plugin SDK 1.0** supports permissions, versioned API (`api_versio
 
 | Manifest field | VS Code | CLI / LSP | Status |
 |----------------|---------|-----------|--------|
-| `[[ui.commands]]` | Command palette (**Plugins: Run Command…**) | `ontocore/runPlugin` | **Frozen** |
+| `[[ui.commands]]` | Command palette (**Plugins: Run Command…**) | `strixonomy/runPlugin` | **Frozen** |
 | `[[ui.views]]` | Dockable panel (**Plugins: Open View…**) | `action: "ui_view"` | **Frozen** |
 | `[[ui.inspector_cards]]` | Entity Inspector cards | Via validate/index | **Frozen** |
 | `[[ui.preferences_pages]]` | **Plugins: Open Preferences…** | Via `listPlugins` | **Frozen** |
@@ -44,7 +44,7 @@ OntoCore’s **Plugin SDK 1.0** supports permissions, versioned API (`api_versio
 
 ```toml
 [plugin]
-depends_on = ["ontocode.naming-validator"]
+depends_on = ["strixonomy.naming-validator"]
 activation = "on_startup"   # on_startup | on_command | on_workspace_open
 ```
 
@@ -52,14 +52,14 @@ activation = "on_startup"   # on_startup | on_command | on_workspace_open
 |-------|---------|
 | discovered → validated → registered | Parsed and dependency-checked |
 | active | Eligible to run (startup / workspace_open, or after command run) |
-| disabled | User-disabled (persisted in `.ontocore/plugin-disabled.json`); dependents cascade-disable |
+| disabled | User-disabled (persisted in `.strixonomy/plugin-disabled.json`); dependents cascade-disable |
 
 Activation order is a topological sort of `depends_on` (cycles and missing deps fail discovery).
 
 ```bash
-ontocore plugins info <id> /path/to/workspace
-ontocore plugins enable <id> /path/to/workspace
-ontocore plugins disable <id> /path/to/workspace
+strixonomy plugins info <id> /path/to/workspace
+strixonomy plugins enable <id> /path/to/workspace
+strixonomy plugins disable <id> /path/to/workspace
 ```
 
 LSP `listPlugins` exposes `state`, `enabled`, `depends_on`, and `activation`.
@@ -83,11 +83,11 @@ Manifests that omit `permissions` receive backward-compatible defaults (`workspa
 
 ## Quick start
 
-1. Create `.ontocore/plugins/*.toml` in your ontology workspace.
-2. Run `ontocore plugins list` or `ontocore validate` to execute validator plugins.
-3. Install the OntoCode extension and index the workspace — plugin diagnostics appear in the Problems panel.
+1. Create `.strixonomy/plugins/*.toml` in your ontology workspace.
+2. Run `strixonomy plugins list` or `strixonomy validate` to execute validator plugins.
+3. Install the Strixonomy extension and index the workspace — plugin diagnostics appear in the Problems panel.
 
-See [examples/plugin-workspace](https://github.com/eddiethedean/ontocode/tree/main/examples/plugin-workspace) for reference providers.
+See [examples/plugin-workspace](https://github.com/eddiethedean/strixonomy/tree/main/examples/plugin-workspace) for reference providers.
 
 ## Manifest schema
 
@@ -183,28 +183,28 @@ There is no separate JSON Schema file yet — treat this table as the wire contr
 
 ## Adding an in-process (host-builtin) Rust plugin
 
-Subprocess plugins are the **supported third-party path**. In-process plugins ship inside the OntoCore workspace (e.g. naming / markdown-export / SHACL):
+Subprocess plugins are the **supported third-party path**. In-process plugins ship inside the Strixonomy workspace (e.g. naming / markdown-export / SHACL):
 
-1. Add a crate under `crates/ontocore-plugin-*` implementing the host plugin traits used by `ontocore-plugin` / `ontocore-plugin-builtins`.
-2. Register it in the builtins aggregator (`ontocore-plugin-builtins`) so CLI/LSP discovery lists it.
+1. Add a crate under `crates/strixonomy-plugin-*` implementing the host plugin traits used by `strixonomy-plugin` / `strixonomy-plugin-builtins`.
+2. Register it in the builtins aggregator (`strixonomy-plugin-builtins`) so CLI/LSP discovery lists it.
 3. Add a workspace fixture under `examples/plugin-workspace/` and a row in [testing matrix](testing-matrix.md) / `cargo test -p <crate>`.
 4. Document the plugin id in the reference table below.
 
-Do **not** copy sketches from [design/PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md) — that file is historical.
+Do **not** copy sketches from [design/PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) — that file is historical.
 
 Reference in-process plugins:
 
-- `ontocore-plugin-naming`
-- `ontocore-plugin-markdown-export`
-- `ontocore-plugin-shacl`
+- `strixonomy-plugin-naming`
+- `strixonomy-plugin-markdown-export`
+- `strixonomy-plugin-shacl`
 
 ## Reference plugins
 
 | Id | Kind | Purpose |
 |----|------|---------|
-| `ontocode.naming-validator` | validator | Require `rdfs:label` on entities |
-| `ontocode.markdown-export` | exporter | Markdown docs via `ontocore-docs` |
-| `ontocode.shacl-validator` | validator | SHACL shapes directory check (rudof adapter planned) |
+| `strixonomy.naming-validator` | validator | Require `rdfs:label` on entities |
+| `strixonomy.markdown-export` | exporter | Markdown docs via `strixonomy-docs` |
+| `strixonomy.shacl-validator` | validator | SHACL shapes directory check (rudof adapter planned) |
 | `org.example.demo-reasoner` | reasoner | Stub classify overlay (fixture workspace) |
 | `org.example.demo-query` | query | Fixed tabular rows |
 | `org.example.demo-refactor` | refactor | Preview-only rename tip |
@@ -214,38 +214,38 @@ Reference in-process plugins:
 ## CLI
 
 ```bash
-ontocore plugins list /path/to/workspace
-ontocore plugins info ontocode.naming-validator /path/to/workspace
-ontocore plugins enable org.example.demo-graph /path/to/workspace
-ontocore plugins disable org.example.demo-graph /path/to/workspace
-ontocore plugins run ontocode.naming-validator --action validate /path/to/workspace
-ontocore plugins run org.example.demo-query --action query.run --query "SELECT *" /path/to/workspace
-ontocore plugins run org.example.demo-graph --action graph.build --iri http://example.org/Person /path/to/workspace
-ontocore validate /path/to/workspace
-ontocore docs /path/to/workspace -o out --plugin ontocode.markdown-export
-ontocore workflow --plugin owlmake --step qc /path/to/workspace
+strixonomy plugins list /path/to/workspace
+strixonomy plugins info strixonomy.naming-validator /path/to/workspace
+strixonomy plugins enable org.example.demo-graph /path/to/workspace
+strixonomy plugins disable org.example.demo-graph /path/to/workspace
+strixonomy plugins run strixonomy.naming-validator --action validate /path/to/workspace
+strixonomy plugins run org.example.demo-query --action query.run --query "SELECT *" /path/to/workspace
+strixonomy plugins run org.example.demo-graph --action graph.build --iri http://example.org/Person /path/to/workspace
+strixonomy validate /path/to/workspace
+strixonomy docs /path/to/workspace -o out --plugin strixonomy.markdown-export
+strixonomy workflow --plugin owlmake --step qc /path/to/workspace
 ```
 
-## LSP / OntoCode
+## LSP / Strixonomy
 
-- `ontocore/listPlugins` — plugins + UI metadata + lifecycle fields
-- `ontocore/runPlugin` — validate/export/workflow/ui_view/provider actions
-- OntoCode command **Plugins: Run Command…**
-- OntoCode command **Plugins: Open View…**
-- OntoCode command **Plugins: Open Preferences…**
-- OntoCode command **Run Workflow (owlmake)**
+- `strixonomy/listPlugins` — plugins + UI metadata + lifecycle fields
+- `strixonomy/runPlugin` — validate/export/workflow/ui_view/provider actions
+- Strixonomy command **Plugins: Run Command…**
+- Strixonomy command **Plugins: Open View…**
+- Strixonomy command **Plugins: Open Preferences…**
+- Strixonomy command **Run Workflow (owlmake)**
 - Context menus — plugin `context_actions` on entities/ontologies
 
 ## Debugging failures
 
 | Symptom | Check |
 |---------|-------|
-| Plugin not listed | Manifest path `.ontocore/plugins/*.toml`; `api_version = "1"`; `ontocore plugins list` |
+| Plugin not listed | Manifest path `.strixonomy/plugins/*.toml`; `api_version = "1"`; `strixonomy plugins list` |
 | Discovery fails | Cycle or missing `depends_on` target |
 | `INDEX_FAILED` on `runPlugin` | Subprocess `entry` on path; permissions; valid JSON stdout |
 | No diagnostics in Problems | Empty `diagnostics` or validate not triggered |
 | Permission denied | Declared `permissions` too narrow |
-| Plugin disabled | `ontocore plugins info <id>` / `.ontocore/plugin-disabled.json` |
+| Plugin disabled | `strixonomy plugins info <id>` / `.strixonomy/plugin-disabled.json` |
 
 ## Security: `external_process`
 
@@ -261,4 +261,4 @@ Threat-model overview: [Security](../security.md).
 
 **SDK 1.0 is frozen.** Additive changes only within `api_version = "1"`; see [Plugin policy](plugin-policy.md).
 
-**Canonical author guide: this page only.** Historical trait sketches live on GitHub as non-product background ([PLUGIN_SPEC.md](https://github.com/eddiethedean/ontocode/blob/main/docs/design/PLUGIN_SPEC.md)) and are **excluded from public docs search**. The React/TypeScript [Plugin API spec](https://github.com/eddiethedean/ontocode/blob/main/docs/ui/PLUGIN_API_SPEC.md) is a **future** OntoUI target — not the shipped VS Code/CLI contract.
+**Canonical author guide: this page only.** Historical trait sketches live on GitHub as non-product background ([PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md)) and are **excluded from public docs search**. The React/TypeScript [Plugin API spec](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_API_SPEC.md) is a **future** OntoUI target — not the shipped VS Code/CLI contract.

@@ -12,21 +12,21 @@ export function AboutPanel(): JSX.Element {
 
   return (
     <DialogShell
-      title="About OntoCode"
+      title="About Strixonomy"
       primaryLabel="Close"
       cancelLabel="Close"
       onPrimary={close}
       onCancel={close}
     >
       <Section>
-        <p><strong>OntoCode 0.17.0</strong></p>
-        <p>Ontology engineering for VS Code, powered by OntoCore.</p>
+        <p><strong>Strixonomy 0.17.0</strong></p>
+        <p>Ontology engineering for VS Code, powered by Strixonomy.</p>
         <p>
-          <a href="https://ontocode-vs.readthedocs.io/en/latest/">Documentation</a>
+          <a href="https://strixonomy-vs.readthedocs.io/en/latest/">Documentation</a>
           {" · "}
-          <a href="https://github.com/eddiethedean/ontocode">Source code</a>
+          <a href="https://github.com/eddiethedean/strixonomy">Source code</a>
           {" · "}
-          <a href="https://github.com/eddiethedean/ontocode/issues">Support</a>
+          <a href="https://github.com/eddiethedean/strixonomy/issues">Support</a>
         </p>
       </Section>
     </DialogShell>

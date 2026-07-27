@@ -6,7 +6,7 @@
 
 Pellet is an OWL 2 reasoner that integrates with Protégé to perform logical inference, ontology validation, consistency checking, realization, and query answering. Historically, Pellet has also been known for support of SWRL rules and explanation facilities, making it a valuable complementary reasoner alongside HermiT.
 
-This document describes Pellet's role within Protégé and outlines how OntoCode should support Pellet through a modern, pluggable reasoner architecture.
+This document describes Pellet's role within Protégé and outlines how Strixonomy should support Pellet through a modern, pluggable reasoner architecture.
 
 ---
 
@@ -99,7 +99,7 @@ Highlights classes that cannot have instances.
 
 Where enabled, evaluates SWRL rules together with ontology axioms.
 
-OntoCode should detect and clearly indicate when rule reasoning is available.
+Strixonomy should detect and clearly indicate when rule reasoning is available.
 
 ---
 
@@ -186,7 +186,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -256,10 +256,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should expose Pellet through a provider model rather than coupling UI logic to a specific implementation. This allows users to switch between Pellet, HermiT, ELK, future Rust-native engines, or remote reasoning services without changing workflows.
+Strixonomy should expose Pellet through a provider model rather than coupling UI logic to a specific implementation. This allows users to switch between Pellet, HermiT, ELK, future Rust-native engines, or remote reasoning services without changing workflows.
 
 ---
 
 # Summary
 
-Pellet complements Protégé with mature OWL reasoning, explanation capabilities, and support for rule-enhanced workflows. OntoCode should preserve compatibility while modernizing execution, diagnostics, extensibility, and user experience through a unified reasoner abstraction and responsive interface.
+Pellet complements Protégé with mature OWL reasoning, explanation capabilities, and support for rule-enhanced workflows. Strixonomy should preserve compatibility while modernizing execution, diagnostics, extensibility, and user experience through a unified reasoner abstraction and responsive interface.

@@ -3,11 +3,11 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Reasoning Experience Specification
+# Strixonomy Reasoning Experience Specification
 
 ## Purpose
 
-Reasoning is one of the defining capabilities of ontology engineering. In OntoCode, reasoning should feel like compiling software in a modern IDE.
+Reasoning is one of the defining capabilities of ontology engineering. In Strixonomy, reasoning should feel like compiling software in a modern IDE.
 
 > **Implementation architecture:** [platform/REASONING_COMPILER.md](../platform/REASONING_COMPILER.md) · **Partial:** reasoner panels v0.9–v0.12; reasoning store slice v0.13
 

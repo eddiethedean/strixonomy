@@ -3,7 +3,7 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Workspace Model
+# Strixonomy Workspace Model
 
 ## Purpose
 
@@ -11,7 +11,7 @@ The **Workspace** (product surface) defines the runtime UX architecture — not 
 
 > **Implementation architecture:** [platform/WORKSPACE_RUNTIME.md](../platform/WORKSPACE_RUNTIME.md) · **Current Focus** and **WorkspaceStore** **shipped v0.13**
 
-OntoCode operates as a single synchronized semantic workspace centered on shared application state (target). Today: isolated webview panels ([platform/ONTOUI.md](../platform/ONTOUI.md)).
+Strixonomy operates as a single synchronized semantic workspace centered on shared application state (target). Today: isolated webview panels ([platform/ONTOUI.md](../platform/ONTOUI.md)).
 
 ## Current Focus
 
@@ -401,5 +401,5 @@ The Workspace Model is successful when users stop thinking about
 windows, panels, and files, and instead feel they are directly
 interacting with a coherent semantic environment. Every part of the
 interface should appear synchronized, responsive, and aware of the
-user's current context, making OntoCode feel like a true modern IDE
+user's current context, making Strixonomy feel like a true modern IDE
 rather than a collection of tools.

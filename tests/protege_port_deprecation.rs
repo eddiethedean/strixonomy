@@ -3,8 +3,8 @@
 
 mod support;
 
-use ontocore_owl::PatchOp;
 use std::collections::BTreeMap;
+use strixonomy_owl::PatchOp;
 use support::protege_port::standard_ns;
 
 fn ns_dep() -> BTreeMap<String, String> {

@@ -1,11 +1,11 @@
 # CREATE_ONTOLOGY.md
 
 # Create Ontology Workflow
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
-Creating a new ontology is the foundational workflow in an ontology engineering environment. This document reverse-engineers the workflow used in Protégé and defines an improved workflow for OntoCode.
+Creating a new ontology is the foundational workflow in an ontology engineering environment. This document reverse-engineers the workflow used in Protégé and defines an improved workflow for Strixonomy.
 
 The workflow covers everything from project creation through the first successful reasoning cycle.
 
@@ -94,7 +94,7 @@ Users should be able to create the ontology in:
 - Git repository
 - Shared collaborative workspace
 
-OntoCode should remember recent destinations.
+Strixonomy should remember recent destinations.
 
 ---
 
@@ -199,7 +199,7 @@ Requirements:
 
 ---
 
-# OntoCode Modernization
+# Strixonomy Modernization
 
 Recommended improvements:
 
@@ -245,4 +245,4 @@ Modern Features
 
 # Summary
 
-Protégé provides a straightforward ontology creation workflow centered on creating an OWL document and beginning manual modeling. OntoCode should extend this into a modern project creation experience with templates, Git integration, AI-assisted setup, collaborative workspaces, reproducible project configuration, and immediate readiness for ontology engineering.
+Protégé provides a straightforward ontology creation workflow centered on creating an OWL document and beginning manual modeling. Strixonomy should extend this into a modern project creation experience with templates, Git integration, AI-assisted setup, collaborative workspaces, reproducible project configuration, and immediate readiness for ontology engineering.

@@ -741,7 +741,7 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
                   type: "exportGraph",
                   format: "json",
                   payload: JSON.stringify(graph, null, 2),
-                  suggestedName: `ontocode-${graphKind}-graph.json`,
+                  suggestedName: `strixonomy-${graphKind}-graph.json`,
                 });
               }}
             >
@@ -771,7 +771,7 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
                   type: "exportGraph",
                   format: "csv",
                   payload: `${header}${nodeRows}\n${edgeRows}\n`,
-                  suggestedName: `ontocode-${graphKind}-graph.csv`,
+                  suggestedName: `strixonomy-${graphKind}-graph.csv`,
                 });
               }}
             >

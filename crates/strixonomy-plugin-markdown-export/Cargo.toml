@@ -1,0 +1,25 @@
+[package]
+name = "strixonomy-plugin-markdown-export"
+description = "Markdown documentation exporter plugin for Strixonomy"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+
+[lib]
+name = "strixonomy_plugin_markdown_export"
+path = "src/lib.rs"
+
+[[bin]]
+name = "strixonomy-plugin-markdown-export"
+path = "src/main.rs"
+
+[dependencies]
+strixonomy-catalog = { workspace = true }
+strixonomy-docs = { workspace = true }
+strixonomy-plugin = { workspace = true }
+serde_json.workspace = true
+clap = { workspace = true }

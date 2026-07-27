@@ -4,7 +4,7 @@
 
 **Status:** Living Reference Document\
 **Purpose:** Audit the major menus and commands available in a standard
-Protégé Desktop installation and map them to OntoCode parity
+Protégé Desktop installation and map them to Strixonomy parity
 requirements.
 
 > This document inventories user-facing functionality, not Swing
@@ -18,7 +18,7 @@ requirements.
 -   Enumerate major menu-driven workflows.
 -   Ensure every meaningful workflow is represented in
     `PARITY_MATRIX.md`.
--   Identify gaps between Protégé and OntoCode.
+-   Identify gaps between Protégé and Strixonomy.
 -   Provide a checklist for UI parity verification.
 
 ------------------------------------------------------------------------
@@ -29,7 +29,7 @@ requirements.
   --------- -----------------------------------------------------
   AUDITED   Workflow reviewed and mapped.
   PENDING   Requires verification against the baseline release.
-  N/A       Not part of the OntoCode parity scope.
+  N/A       Not part of the Strixonomy parity scope.
 
 ------------------------------------------------------------------------
 
@@ -163,7 +163,7 @@ Confirm availability of:
 Each audited menu item should ultimately map to:
 
 -   A parity requirement ID
--   An OntoCode implementation
+-   An Strixonomy implementation
 -   Automated UI tests
 -   Acceptance criteria
 

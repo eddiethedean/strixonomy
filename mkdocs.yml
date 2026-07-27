@@ -9,13 +9,13 @@
 #   ENABLE_MKDOCS_MINIFY=true ./scripts/build-docs.sh       # HTML minify
 # `--strict` itself is cheap; cost is page render + optional plugins.
 
-site_name: OntoCode
-site_description: Ontology-as-code for Git and VS Code — OntoCore engine and OntoCode extension docs
-site_url: https://ontocode-vs.readthedocs.io/
-repo_url: https://github.com/eddiethedean/ontocode
-repo_name: eddiethedean/ontocode
+site_name: Strixonomy
+site_description: Ontology-as-code for Git and VS Code — Strixonomy engine and Strixonomy extension docs
+site_url: https://strixonomy-vs.readthedocs.io/
+repo_url: https://github.com/eddiethedean/strixonomy
+repo_name: eddiethedean/strixonomy
 edit_uri: edit/main/docs/  # default branch (main); RTD "Edit this page" opens main
-copyright: OntoCode documentation · <a href="SHIPPED/">What ships today</a> (canonical capability matrix)
+copyright: Strixonomy documentation · <a href="SHIPPED/">What ships today</a> (canonical capability matrix)
 
 docs_dir: docs
 strict: true
@@ -30,7 +30,7 @@ exclude_docs: |
   /protege-parity/
   /design/PLUGIN_SPEC.md
   /hooks/
-  /OntoCode_UI_Vision_and_Roadmap.zip
+  /Strixonomy_UI_Vision_and_Roadmap.zip
 
 validation:
   nav:
@@ -91,10 +91,10 @@ plugins:
   - redirects:
       redirect_maps:
         guides/start-here.md: guides/first-success.md
-        guides/query-workbench.md: ontocode/query-workbench.md
-        guides/manchester-editor.md: ontocode/manchester-editor.md
-        guides/graph-visualization.md: ontocode/graph-view.md
-        guides/vscode-extension.md: ontocode/vscode-extension.md
+        guides/query-workbench.md: ide/query-workbench.md
+        guides/manchester-editor.md: ide/manchester-editor.md
+        guides/graph-visualization.md: ide/graph-view.md
+        guides/vscode-extension.md: ide/vscode-extension.md
         # Legacy “getting started” bookmarks → IDE tutorial (not cargo CLI)
         getting-started.md: guides/first-success.md
 
@@ -137,21 +137,21 @@ nav:
           - Install CLI & CI (not the IDE tutorial): install-cli-ci.md
           - VS Code install (detail): vscode-install.md
           - Install CLI (macOS/Windows): guides/install-cli.md
-  - Use OntoCode:
-      - Overview: ontocode/index.md
-      - Feature tour: ontocode/feature-tour.md
-      - Extension detail: ontocode/vscode-extension.md
+  - Use Strixonomy:
+      - Overview: ide/index.md
+      - Feature tour: ide/feature-tour.md
+      - Extension detail: ide/vscode-extension.md
       - Author:
           - Authoring (Turtle): authoring.md
-          - OBO authoring: ontocode/obo-authoring.md
-          - Manage Imports: ontocode/manage-imports.md
-          - Inspector: ontocode/inspector.md
-          - Manchester editor: ontocode/manchester-editor.md
+          - OBO authoring: ide/obo-authoring.md
+          - Manage Imports: ide/manage-imports.md
+          - Inspector: ide/inspector.md
+          - Manchester editor: ide/manchester-editor.md
       - Query and visualize:
-          - Query Workbench: ontocode/query-workbench.md
+          - Query Workbench: ide/query-workbench.md
           - DL Query vs Query Workbench: guides/dl-query.md
-          - Graph visualization: ontocode/graph-view.md
-          - Semantic diff: ontocode/semantic-diff.md
+          - Graph visualization: ide/graph-view.md
+          - Semantic diff: ide/semantic-diff.md
       - Reason and refactor:
           - Reasoner: guides/reasoner.md
           - Refactoring: guides/refactoring.md
@@ -161,17 +161,17 @@ nav:
           - Capabilities by format: guides/capabilities-by-format.md
           - Protégé coexistence: guides/protege-coexistence.md
           - Best practices: guides/best-practices.md
-  - Use OntoCore:
-      - Overview: ontocore/index.md
+  - Use Strixonomy:
+      - Overview: strixonomy/index.md
       - Rust library: guides/rust-library.md
       - Rust & CLI guide: guides/rust-crates.md
       - CI integration: ci-integration.md
       - ROBOT interop: guides/robot-interop.md
       - Documentation export: guides/docs-export.md
       - Plugin authoring: guides/plugins.md
-      - Crate map: ontocore/crate-map.md
-      - Workspace engine: ontocore/workspace-engine.md
-      - OntoCore architecture: ontocore/architecture.md
+      - Crate map: strixonomy/crate-map.md
+      - Workspace engine: strixonomy/workspace-engine.md
+      - Strixonomy architecture: strixonomy/architecture.md
       - Examples:
           - Overview: examples/index.md
           - Query cookbook: examples/queries.md
@@ -187,26 +187,26 @@ nav:
           - Index vs inspect: examples/inspect.md
   - Reference:
       - CLI reference: cli-reference.md
-      - Rust API: ontocore/rust-api.md
+      - Rust API: strixonomy/rust-api.md
       - "Catalog SQL (subset)": sql-reference.md
       - SPARQL: sparql-reference.md
       - Patch JSON: patch-reference.md
       - LSP hello world: guides/lsp-hello-world.md
-      - OntoCore LSP overview: ontocore/lsp.md
+      - Strixonomy LSP overview: strixonomy/lsp.md
       - LSP API: lsp-api.md
       - LSP JSON Schema: lsp-protocol.schema.json
       - Webview protocol: webview-protocol.md
       - Errors: errors.md
       - Workspace limits: workspace-limits.md
       - Supported formats: supported-formats.md
-      - OntoCore SQL views: ontocore/sql-views.md
+      - Strixonomy SQL views: strixonomy/sql-views.md
       - Architecture decisions:
           - Engineering ADRs: design/adr/README.md
           - Product ADRs: adr/README.md
   - Evaluate:
       - What ships today: SHIPPED.md
       - Known limitations: known-limitations.md
-      - Protégé vs OntoCode: guides/protege-decision.md
+      - Protégé vs Strixonomy: guides/protege-decision.md
       - Enterprise evaluation: guides/enterprise-eval.md
       - Enterprise week-2: guides/enterprise-week-2.md
       - Production readiness: guides/production-readiness.md
@@ -266,6 +266,6 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/eddiethedean/ontocode
+      link: https://github.com/eddiethedean/strixonomy
     - icon: fontawesome/brands/rust
-      link: https://crates.io/search?q=ontocore
+      link: https://crates.io/search?q=strixonomy

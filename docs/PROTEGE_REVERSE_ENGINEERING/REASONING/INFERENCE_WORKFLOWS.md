@@ -1,13 +1,13 @@
 # INFERENCE_WORKFLOWS.md
 
 # Ontology Inference Workflows
-## Reverse Engineering Specification for Protégé and Design Blueprint for OntoCode
+## Reverse Engineering Specification for Protégé and Design Blueprint for Strixonomy
 
 ## Purpose
 
 Inference workflows describe the end-to-end lifecycle of logical reasoning within an ontology engineering environment. Rather than documenting a specific reasoner, this specification focuses on how users, the workspace, and one or more reasoners cooperate to transform asserted axioms into inferred knowledge.
 
-OntoCode should preserve Protégé's mature reasoning workflows while modernizing execution, visualization, diagnostics, and collaboration.
+Strixonomy should preserve Protégé's mature reasoning workflows while modernizing execution, visualization, diagnostics, and collaboration.
 
 ---
 
@@ -166,7 +166,7 @@ Workflow:
 6. Modify ontology.
 7. Reclassify.
 
-OntoCode should provide both textual and graphical explanations.
+Strixonomy should provide both textual and graphical explanations.
 
 ---
 
@@ -279,7 +279,7 @@ Future collaborative reasoning:
 
 # AI-Assisted Workflow
 
-OntoCode should support:
+Strixonomy should support:
 
 - Explain this inference
 - Suggest ontology fixes
@@ -292,7 +292,7 @@ AI suggestions should never silently modify ontology content.
 
 ---
 
-# Recommended OntoCode Architecture
+# Recommended Strixonomy Architecture
 
 ```text
 Workspace
@@ -356,10 +356,10 @@ Platform
 
 # Beyond Protégé
 
-OntoCode should treat inference as a platform capability rather than a menu command. Reasoning should be continuously available through a shared reasoning service that powers editors, queries, graphs, validation, AI assistants, automation, and collaboration.
+Strixonomy should treat inference as a platform capability rather than a menu command. Reasoning should be continuously available through a shared reasoning service that powers editors, queries, graphs, validation, AI assistants, automation, and collaboration.
 
 ---
 
 # Summary
 
-Protégé's reasoning workflows revolve around explicit synchronization, classification, explanation, and inspection of inferred knowledge. OntoCode should retain these proven workflows while evolving them into a responsive, service-oriented architecture with incremental reasoning, shared diagnostics, AI-assisted explanations, collaborative updates, and a unified event-driven reasoning pipeline.
+Protégé's reasoning workflows revolve around explicit synchronization, classification, explanation, and inspection of inferred knowledge. Strixonomy should retain these proven workflows while evolving them into a responsive, service-oriented architecture with incremental reasoning, shared diagnostics, AI-assisted explanations, collaborative updates, and a unified event-driven reasoning pipeline.

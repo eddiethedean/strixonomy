@@ -4,13 +4,13 @@
 
 **Status:** P0 Release Blocker\
 **Priority:** Critical\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document defines the engineering work required for OntoCode to
+This document defines the engineering work required for Strixonomy to
 achieve functional query parity with a standard Protégé Desktop
 installation.
 
@@ -163,7 +163,7 @@ Query Manager
 ```
 
 All query engines should operate on the canonical ontology model and
-consume the same semantic indexes used throughout OntoCode.
+consume the same semantic indexes used throughout Strixonomy.
 
 ------------------------------------------------------------------------
 

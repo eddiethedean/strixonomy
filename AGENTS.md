@@ -47,4 +47,4 @@ Do **not** treat `docs/design/*` target specs, `docs/protege-parity/`, or `docs/
 | SPARQL | [docs/sparql-reference.md](docs/sparql-reference.md) |
 | Errors / exits | [docs/errors.md](docs/errors.md) |
 | Plugins | [docs/guides/plugins.md](docs/guides/plugins.md) |
-| Rust API | [docs/ontocore/rust-api.md](docs/ontocore/rust-api.md) |
+| Rust API | [docs/strixonomy/rust-api.md](docs/strixonomy/rust-api.md) |

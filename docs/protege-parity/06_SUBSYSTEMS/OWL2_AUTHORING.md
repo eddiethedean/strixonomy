@@ -4,7 +4,7 @@
 
 **Subsystem:** 06_SUBSYSTEMS\
 **Status:** Normative Architecture Specification\
-**Target Release:** OntoCode 1.0.0
+**Target Release:** Strixonomy 1.0.0
 
 ------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ The OWL 2 Authoring subsystem is responsible for creating, editing,
 validating, refactoring, and serializing OWL 2 ontologies through a
 serializer-independent semantic model.
 
-This subsystem is the primary authoring engine of OntoCode and is the
+This subsystem is the primary authoring engine of Strixonomy and is the
 foundation for achieving Protégé Desktop parity.
 
 ------------------------------------------------------------------------

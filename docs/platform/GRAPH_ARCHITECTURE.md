@@ -9,7 +9,7 @@ Graph Workspace data flow: LSP graph payload → layout → render → Current F
 ## Layers
 
 ```text
-GraphData (LSP ontocore/getGraph)
+GraphData (LSP strixonomy/getGraph)
     ↓
 GraphModel (nodes, edges, inferred flags)
     ↓
@@ -23,7 +23,7 @@ Interaction (pan, zoom, select → FocusChanged)
 ## Current implementation
 
 - `extension/webview-ui/src/panels/GraphPanel.tsx`
-- LSP `ontocore/getGraph` with graph kind (class, property, import, neighborhood)
+- LSP `strixonomy/getGraph` with graph kind (class, property, import, neighborhood)
 - Inferred edge toggle via hierarchy mode (host command)
 
 ## Data model

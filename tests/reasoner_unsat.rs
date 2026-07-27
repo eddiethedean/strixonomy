@@ -1,9 +1,9 @@
 //! EL classification must detect unsatisfiable named classes in the reasoner-unsat fixture.
 
-use ontocore_reasoner::{
+use std::path::PathBuf;
+use strixonomy_reasoner::{
     classify, explain, explain_alternatives, ExplanationRequest, ReasonerId, WorkspaceInputLoader,
 };
-use std::path::PathBuf;
 
 fn unsat_workspace() -> (tempfile::TempDir, PathBuf) {
     let dir = tempfile::tempdir().expect("tempdir");

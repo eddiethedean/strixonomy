@@ -38,6 +38,8 @@ jobs:
 
       - run: chmod +x scripts/check-doc-versions.sh
       - run: ./scripts/check-doc-versions.sh
+      - run: chmod +x scripts/check-strixonomy-rename.sh
+      - run: ./scripts/check-strixonomy-rename.sh
 
       - name: Install PyYAML
         run: pip install --user pyyaml
@@ -87,7 +89,7 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
 
-      - run: cargo build -p ontocore-lsp -p ontocore-cli --bins
+      - run: cargo build -p strixonomy-lsp -p strixonomy-cli --bins
 
       - run: cargo test --workspace
 
@@ -112,7 +114,7 @@ jobs:
         with:
           shared-key: msrv
 
-      - run: cargo build -p ontocore-lsp -p ontocore-cli --bins
+      - run: cargo build -p strixonomy-lsp -p strixonomy-cli --bins
 
       - run: cargo test --workspace
 
@@ -145,9 +147,9 @@ jobs:
         with:
           shared-key: release
 
-      - run: cargo build --release --locked -p ontocore-cli -p ontocore-lsp --bins
+      - run: cargo build --release --locked -p strixonomy-cli -p strixonomy-lsp --bins
 
-      - run: ./target/release/ontocore inspect fixtures
+      - run: ./target/release/strixonomy inspect fixtures
 
   lsp-build:
     name: LSP build
@@ -159,11 +161,11 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
 
-      - run: cargo build --locked -p ontocore-lsp --bins
+      - run: cargo build --locked -p strixonomy-lsp --bins
 
-      - run: cargo test -p ontocode --test lsp_smoke
+      - run: cargo test -p strixonomy-workspace --test lsp_smoke
 
-      - run: cargo test -p ontocode --test lsp_reasoner
+      - run: cargo test -p strixonomy-workspace --test lsp_reasoner
 
   webview-ui:
     name: webview ui tests
@@ -193,8 +195,8 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
 
-      - name: Build ontocore-lsp for extension e2e tests
-        run: cargo build -p ontocore-lsp --bins
+      - name: Build strixonomy-lsp for extension e2e tests
+        run: cargo build -p strixonomy-lsp --bins
 
       - uses: actions/setup-node@v4
         with:
@@ -212,23 +214,23 @@ jobs:
         run: npm test
         working-directory: extension
         env:
-          ONTOCORE_LSP_BIN: ${{ github.workspace }}/target/debug/ontocore-lsp
+          STRIXONOMY_LSP_BIN: ${{ github.workspace }}/target/debug/strixonomy-lsp
 
       - name: VSIX unpack spawn e2e (Marketplace chmod regression)
         run: |
           set -euo pipefail
           PLATFORM=linux-x64
           mkdir -p "extension/server/${PLATFORM}"
-          cp target/debug/ontocore-lsp "extension/server/${PLATFORM}/ontocore-lsp"
-          chmod +x "extension/server/${PLATFORM}/ontocore-lsp"
+          cp target/debug/strixonomy-lsp "extension/server/${PLATFORM}/strixonomy-lsp"
+          chmod +x "extension/server/${PLATFORM}/strixonomy-lsp"
           cd extension
-          npx vsce package --no-dependencies -o /tmp/ontocode-ci.vsix
-          rm -rf /tmp/ontocode-vsix-unpack
-          unzip -q /tmp/ontocode-ci.vsix -d /tmp/ontocode-vsix-unpack
-          export ONTOCODE_E2E_EXTENSION_ROOT=/tmp/ontocode-vsix-unpack/extension
+          npx vsce package --no-dependencies -o /tmp/strixonomy-ci.vsix
+          rm -rf /tmp/strixonomy-vsix-unpack
+          unzip -q /tmp/strixonomy-ci.vsix -d /tmp/strixonomy-vsix-unpack
+          export STRIXONOMY_E2E_EXTENSION_ROOT=/tmp/strixonomy-vsix-unpack/extension
           npm test
         env:
-          ONTOCORE_LSP_BIN: ${{ github.workspace }}/target/debug/ontocore-lsp
+          STRIXONOMY_LSP_BIN: ${{ github.workspace }}/target/debug/strixonomy-lsp
 
   audit:
     name: cargo audit
@@ -257,9 +259,9 @@ jobs:
           set -euo pipefail
           # Only leaf crates (no unpublished path deps) can dry-run here.
           # Full graph is published in dependency order on release tags.
-          cargo publish -p ontocore-core --dry-run
-          cargo publish -p ontocore-robot --dry-run
-          cargo build -p ontocore-diagnostics -p ontocore-owl -p ontocore-cli -p ontocore
+          cargo publish -p strixonomy-core --dry-run
+          cargo publish -p strixonomy-robot --dry-run
+          cargo build -p strixonomy-diagnostics -p strixonomy-owl -p strixonomy-cli -p strixonomy
 
   docs:
     name: mkdocs

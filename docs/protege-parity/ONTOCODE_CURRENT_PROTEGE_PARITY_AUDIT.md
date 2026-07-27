@@ -1,15 +1,15 @@
-# OntoCode Protégé Parity Audit
+# Strixonomy Protégé Parity Audit
 
-**Repository audited:** `ontocode-main (2)(1).zip`  
+**Repository audited:** `strixonomy-main (2)(1).zip`  
 **Repository version:** Extension `0.18.2`  
 **Audit type:** Static source, documentation, fixture, and test inventory audit  
-**Target:** Full Protégé Desktop parity before OntoCode `1.0.0`
+**Target:** Full Protégé Desktop parity before Strixonomy `1.0.0`
 
 ---
 
 ## 1. Executive Summary
 
-OntoCode is a substantial ontology engineering platform rather than an early editor prototype. The audited repository contains:
+Strixonomy is a substantial ontology engineering platform rather than an early editor prototype. The audited repository contains:
 
 - 20 Rust workspace crates
 - A VS Code/Cursor extension with 79 contributed commands
@@ -93,22 +93,22 @@ Node dependency installation and extension tests were not run because the reposi
 
 The workspace contains the following major subsystems:
 
-- `ontocore`
-- `ontocore-core`
-- `ontocore-parser`
-- `ontocore-owl`
-- `ontocore-obo`
-- `ontocore-catalog`
-- `ontocore-diagnostics`
-- `ontocore-query`
-- `ontocore-reasoner`
-- `ontocore-robot`
-- `ontocore-refactor`
-- `ontocore-diff`
-- `ontocore-docs`
-- `ontocore-cli`
-- `ontocore-lsp`
-- `ontocore-plugin`
+- `strixonomy`
+- `strixonomy-core`
+- `strixonomy-parser`
+- `strixonomy-owl`
+- `strixonomy-obo`
+- `strixonomy-catalog`
+- `strixonomy-diagnostics`
+- `strixonomy-query`
+- `strixonomy-reasoner`
+- `strixonomy-robot`
+- `strixonomy-refactor`
+- `strixonomy-diff`
+- `strixonomy-docs`
+- `strixonomy-cli`
+- `strixonomy-lsp`
+- `strixonomy-plugin`
 - Reference plugin crates
 
 ### Extension
@@ -198,7 +198,7 @@ Protégé-equivalent lifecycle is available for the primary Turtle/OBO workflow,
 
 ### Code evidence
 
-`crates/ontocore-owl/src/patch.rs` explicitly limits OWL patch write-back to Turtle:
+`crates/strixonomy-owl/src/patch.rs` explicitly limits OWL patch write-back to Turtle:
 
 ```rust
 if format != OntologyFormat::Turtle {
@@ -210,7 +210,7 @@ OBO has a separate patch/write-back crate.
 
 ### Gap
 
-A normal Protégé `.owl` file may be OWL/XML or RDF/XML. OntoCode can index and inspect these files, but users cannot perform normal in-place authoring and save workflows.
+A normal Protégé `.owl` file may be OWL/XML or RDF/XML. Strixonomy can index and inspect these files, but users cannot perform normal in-place authoring and save workflows.
 
 ### Required work
 
@@ -285,7 +285,7 @@ The entity inspector and Manchester editor provide meaningful authoring, but the
 
 ### Parity judgment
 
-OntoCode has broad practical OWL authoring, but not complete OWL 2 authoring parity.
+Strixonomy has broad practical OWL authoring, but not complete OWL 2 authoring parity.
 
 ---
 
@@ -389,7 +389,7 @@ DL unsatisfiability explanations use EL/RL/RDFS traces as fallbacks. Native DL c
 
 ### Parity judgment
 
-Reasoning is one of OntoCode’s strongest subsystems, but complete Protégé reasoning parity has not been reached.
+Reasoning is one of Strixonomy’s strongest subsystems, but complete Protégé reasoning parity has not been reached.
 
 ---
 
@@ -463,7 +463,7 @@ SPARQL is strong. Dedicated DL Query parity remains unclear or missing.
 
 ### Implemented semantic request types
 
-`ontocore-refactor` includes:
+`strixonomy-refactor` includes:
 
 - Rename IRI
 - Merge entities
@@ -488,7 +488,7 @@ SPARQL is strong. Dedicated DL Query parity remains unclear or missing.
 
 ### Parity judgment
 
-OntoCode is already competitive in several refactoring workflows, but full Protégé parity is not complete.
+Strixonomy is already competitive in several refactoring workflows, but full Protégé parity is not complete.
 
 ---
 
@@ -840,7 +840,7 @@ This sequence creates the foundation required for the largest parity gaps.
 
 ## 10. Final Assessment
 
-OntoCode is much closer to Protégé replacement status than most new ontology tools. It already has a credible native engine, modern IDE shell, reasoning adapters, semantic refactoring, plugins, graphs, queries, and a large documentation surface.
+Strixonomy is much closer to Protégé replacement status than most new ontology tools. It already has a credible native engine, modern IDE shell, reasoning adapters, semantic refactoring, plugins, graphs, queries, and a large documentation surface.
 
 The project should not restart or perform a broad rewrite.
 
@@ -854,4 +854,4 @@ The correct strategy is to preserve the existing architecture and close a finite
 6. Advanced ontology operations
 7. Executable parity verification
 
-Once these are complete and demonstrated through a real Protégé-generated conformance corpus, OntoCode can credibly ship 1.0 as a full Protégé Desktop replacement.
+Once these are complete and demonstrated through a real Protégé-generated conformance corpus, Strixonomy can credibly ship 1.0 as a full Protégé Desktop replacement.

@@ -3,12 +3,12 @@
 > **Document type:** Product design specification (target state). **Not a shipped feature list.** See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
-# OntoCode Information Architecture
+# Strixonomy Information Architecture
 
 ## Purpose
 
 This document defines how information is organized, discovered,
-navigated, and presented throughout OntoCode. The architecture is
+navigated, and presented throughout Strixonomy. The architecture is
 designed around **semantic workflows**, not traditional ontology editor
 panels.
 
@@ -33,7 +33,7 @@ next
 
 # Mental Model
 
-OntoCode is **not** a file explorer.
+Strixonomy is **not** a file explorer.
 
 It is a **Semantic Workspace**.
 

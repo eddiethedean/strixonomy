@@ -8,11 +8,11 @@
 ## Purpose
 
 OntoStudio is the long-term desktop flagship of the Ontologos ecosystem.
-While OntoCode provides a world-class VS Code experience, OntoStudio
+While Strixonomy provides a world-class VS Code experience, OntoStudio
 removes the constraints of an editor extension and delivers a dedicated
-semantic engineering environment built around OntoCore.
+semantic engineering environment built around Strixonomy.
 
-OntoStudio is not intended to replace OntoCode---it shares the same
+OntoStudio is not intended to replace Strixonomy---it shares the same
 backend, design system, and plugin ecosystem while providing an
 optimized desktop experience.
 
@@ -37,16 +37,16 @@ Comparable ambitions:
 
 ## One Platform
 
-OntoCode and OntoStudio share:
+Strixonomy and OntoStudio share:
 
--   OntoCore
+-   Strixonomy
 -   Design System
 -   Workspace Model
 -   Plugin Platform
 -   AI Experience
 -   Component Library
 
-The desktop application should feel familiar to OntoCode users.
+The desktop application should feel familiar to Strixonomy users.
 
 ------------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ Desktop Shell
 
 Backend
 
--   OntoCore (Rust)
+-   Strixonomy (Rust)
 
 Rendering
 
@@ -289,9 +289,9 @@ Provide:
 
 ------------------------------------------------------------------------
 
-# Relationship to OntoCode
+# Relationship to Strixonomy
 
-OntoCode:
+Strixonomy:
 
 -   VS Code extension
 -   Lightweight
@@ -326,5 +326,5 @@ engineering environment because it combines the power of a modern IDE,
 the flexibility of an infinite semantic workspace, the intelligence of
 integrated AI, and the performance of a native Rust application. It
 should stand on its own as the flagship desktop experience of the
-Ontologos ecosystem while remaining fully compatible with OntoCode and
+Ontologos ecosystem while remaining fully compatible with Strixonomy and
 every shared platform capability.

@@ -4,14 +4,14 @@
 >
 > **Do not use this page for integration.** For what ships today, read **[lsp-api.md](../lsp-api.md)** (authoritative for **v0.13**).
 > Implemented: hover, document/workspace symbols, go-to-definition, diagnostics publishing,
-> `ontocore/indexWorkspace`, `ontocore/getCatalogSnapshot`, `ontocore/getEntity`, `ontocore/applyAxiomPatch`,
-> `ontocore/query`, `ontocore/sparql`, `ontocore/parseManchester`, `ontocore/runReasoner`, `ontocore/getExplanation`.
-> See [`handlers.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-lsp/src/handlers.rs) and
-> [`protocol.rs` on GitHub](https://github.com/eddiethedean/ontocode/blob/main/crates/ontocore-lsp/src/protocol.rs).
+> `strixonomy/indexWorkspace`, `strixonomy/getCatalogSnapshot`, `strixonomy/getEntity`, `strixonomy/applyAxiomPatch`,
+> `strixonomy/query`, `strixonomy/sparql`, `strixonomy/parseManchester`, `strixonomy/runReasoner`, `strixonomy/getExplanation`.
+> See [`handlers.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-lsp/src/handlers.rs) and
+> [`protocol.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-lsp/src/protocol.rs).
 
 ## 1. Purpose
 
-The OntoCore language server provides ontology-aware editor features to OntoCode and potentially other editors.
+The Strixonomy language server provides ontology-aware editor features to Strixonomy and potentially other editors.
 
 ## 2. Transport
 
@@ -38,8 +38,8 @@ Sections below describe the **target** capability set. Implementation status is 
 
 **Sources ([DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md)):**
 
-- **Parse errors** — [`oxigraph`](https://crates.io/crates/oxigraph) via `ontocore-parser`
-- **Import / prefix / quality rules** — in-house `ontocore-diagnostics` on catalog (duplicate labels, orphans, broken imports, undefined prefixes)
+- **Parse errors** — [`oxigraph`](https://crates.io/crates/oxigraph) via `strixonomy-parser`
+- **Import / prefix / quality rules** — in-house `strixonomy-diagnostics` on catalog (duplicate labels, orphans, broken imports, undefined prefixes)
 - **OBO (v0.7b)** — [`fastobo-validator`](https://crates.io/crates/fastobo-validator) violations mapped to LSP
 - **SHACL (v1.0 P1)** — [`rudof`](https://crates.io/crates/rudof) via plugin adapter
 
@@ -126,67 +126,67 @@ Global entity search.
 
 | Method | v0.3 status |
 |--------|-------------|
-| `ontocore/indexWorkspace` | **Implemented** |
-| `ontocore/getCatalogSnapshot` | **Implemented** (not listed in early drafts; used by explorer) |
-| `ontocore/getEntity` | **Implemented** |
-| `ontocore/query` | **Implemented** (v0.5) |
-| `ontocore/sparql` | **Implemented** (v0.5) |
-| `ontocore/getGraph` | **Implemented** (v0.7) — see [lsp-api.md](../lsp-api.md) |
-| `ontocore/getSemanticDiff` | Planned |
-| `ontocore/runReasoner` | **Implemented** (v0.6) — see [lsp-api.md](../lsp-api.md) |
-| `ontocore/applyAxiomPatch` | **Implemented** (v0.4) |
-| `ontocore/parseManchester` | **Implemented** (v0.5) |
-| `ontocore/getExplanation` | **Implemented** (v0.6) — see [lsp-api.md](../lsp-api.md) |
-| `ontocore/runRobot` | **Implemented** (v0.7) — see [lsp-api.md](../lsp-api.md) |
+| `strixonomy/indexWorkspace` | **Implemented** |
+| `strixonomy/getCatalogSnapshot` | **Implemented** (not listed in early drafts; used by explorer) |
+| `strixonomy/getEntity` | **Implemented** |
+| `strixonomy/query` | **Implemented** (v0.5) |
+| `strixonomy/sparql` | **Implemented** (v0.5) |
+| `strixonomy/getGraph` | **Implemented** (v0.7) — see [lsp-api.md](../lsp-api.md) |
+| `strixonomy/getSemanticDiff` | Planned |
+| `strixonomy/runReasoner` | **Implemented** (v0.6) — see [lsp-api.md](../lsp-api.md) |
+| `strixonomy/applyAxiomPatch` | **Implemented** (v0.4) |
+| `strixonomy/parseManchester` | **Implemented** (v0.5) |
+| `strixonomy/getExplanation` | **Implemented** (v0.6) — see [lsp-api.md](../lsp-api.md) |
+| `strixonomy/runRobot` | **Implemented** (v0.7) — see [lsp-api.md](../lsp-api.md) |
 
-### `ontocore/indexWorkspace`
+### `strixonomy/indexWorkspace`
 
 Indexes the workspace.
 
-### `ontocore/getCatalogSnapshot`
+### `strixonomy/getCatalogSnapshot`
 
 Returns documents, entities, class hierarchy, and diagnostics for UI clients.
 
-### `ontocore/query`
+### `strixonomy/query`
 
 Runs SQL-style query against the indexed workspace catalog (implemented v0.5).
 
-### `ontocore/sparql`
+### `strixonomy/sparql`
 
 Runs SPARQL query against the indexed catalog (implemented v0.5).
 
-### `ontocore/getEntity`
+### `strixonomy/getEntity`
 
 Returns entity details.
 
-### `ontocore/getGraph`
+### `strixonomy/getGraph`
 
 Returns graph data for visualization.
 
-### `ontocore/getSemanticDiff`
+### `strixonomy/getSemanticDiff`
 
 Returns semantic diff between two refs or catalogs.
 
-### `ontocore/runReasoner`
+### `strixonomy/runReasoner`
 
 Runs configured reasoner.
 
-### `ontocore/applyAxiomPatch`
+### `strixonomy/applyAxiomPatch`
 
 Apply a Horned-OWL axiom patch to a document. Used by quick forms and Manchester editor.
 See [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md).
 
 **Params:** document URI, axiom patch (JSON), preview-only flag.
 
-### `ontocore/parseManchester`
+### `strixonomy/parseManchester`
 
 Parse Manchester OWL Syntax expression; return diagnostics and normalized form.
 
-### `ontocore/getExplanation`
+### `strixonomy/getExplanation`
 
 Return justification chain for unsatisfiable class. See [REASONER_SPEC.md](REASONER_SPEC.md).
 
-### `ontocore/runRobot`
+### `strixonomy/runRobot`
 
 Run ROBOT subcommand (`validate`, `merge`, `report`). See [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md).
 

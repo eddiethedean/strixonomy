@@ -8,13 +8,13 @@
 
 ## Scope
 
-This document is the **implementation architecture hub** for the Ontologos platform: OntoCore, OntoUI, OntoCode, and future OntoStudio. User-facing ecosystem summary: [architecture.md](../architecture.md).
+This document is the **implementation architecture hub** for the Ontologos platform: Strixonomy, OntoUI, Strixonomy, and future OntoStudio. User-facing ecosystem summary: [architecture.md](../architecture.md).
 
 ## Layer model
 
 ```text
 Applications (hosts)
-├── OntoCode (VS Code)          — Implemented (WorkspaceStore + focus relay v0.13)
+├── Strixonomy (VS Code)          — Implemented (WorkspaceStore + focus relay v0.13)
 ├── OntoStudio (desktop)        — Planned
 └── Future web client           — Proposed
 
@@ -24,7 +24,7 @@ OntoUI (shared React platform)  — v0.13 foundation shipped
 ├── Workspace surfaces (Entity, Graph, Query, …)
 └── Host adapter (WorkspaceHost) + extension-host focus relay
 
-OntoCore (semantic engine)      — Implemented
+Strixonomy (semantic engine)      — Implemented
 ├── Index, query, diagnostics (configurable rules)
 ├── Reasoning (Ontologos)
 ├── Refactoring, diff (--pr-summary), docs export
@@ -40,9 +40,9 @@ Storage / integration
 
 | Layer | Owns | Does not own |
 |-------|------|--------------|
-| **OntoCore** | Semantic truth, indexes, LSP methods, patch apply | VS Code APIs, React components |
+| **Strixonomy** | Semantic truth, indexes, LSP methods, patch apply | VS Code APIs, React components |
 | **OntoUI** | Global UI state, workspaces, components, host abstraction | Ontology parsing, reasoning algorithms |
-| **OntoCode** | Extension activation, commands, tree views, webview lifecycle, focus relay | Duplicate ontology logic in TypeScript |
+| **Strixonomy** | Extension activation, commands, tree views, webview lifecycle, focus relay | Duplicate ontology logic in TypeScript |
 | **OntoStudio** | Native shell, windows, marketplace (planned) | Separate React component tree |
 
 ## v0.13 shipped (OntoUI foundation)
@@ -55,7 +55,7 @@ Storage / integration
 | `WorkspaceRegistry` | `extension/webview-ui/src/workspaces/` | Panel → workspace routing |
 | Focus relay | `extension/src/focus/focusRelay.ts` | Cross-webview `focusState` / `reasoningState` |
 | Design tokens | `extension/webview-ui/src/tokens/` | `--oc-*` CSS variables |
-| Schema browser | `extension/webview-ui/src/components/SchemaBrowser.tsx` | LSP `ontocore/listSqlSchema` |
+| Schema browser | `extension/webview-ui/src/components/SchemaBrowser.tsx` | LSP `strixonomy/listSqlSchema` |
 
 **Deferred to v1.0:** persistent tabs, bottom dock, full component migration for every panel.
 
