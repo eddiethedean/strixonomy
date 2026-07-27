@@ -10,7 +10,7 @@ Strixonomy is currently implemented by the `strixonomy-*` crates. The [`strixono
 
 ```toml
 [dependencies]
-strixonomy = "0.26"
+strixonomy = "0.27"
 # Optional: strixonomy = { version = "0.19", features = ["lsp", "plugins"] }
 ```
 

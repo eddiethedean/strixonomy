@@ -1,4 +1,4 @@
-# Strixonomy feature tour (current: v0.26)
+# Strixonomy feature tour (current: v0.27)
 
 A visual and structural overview of the Strixonomy VS Code IDE. For hands-on setup, start with [First success (~10 min)](../guides/first-success.md).
 

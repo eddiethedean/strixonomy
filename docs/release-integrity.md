@@ -8,7 +8,7 @@ Each release includes `SHA256SUMS` with SHA-256 hashes of:
 
 - `strixonomy-v<version>-x86_64-unknown-linux-gnu.tar.gz` (CLI binary, Linux x64)
 - `strixonomy-lsp-v<version>-<platform>.tar.gz` / `.zip` (per-platform LSP)
-- `strixonomy-v<version>.vsix` (VS Code extension; example: `strixonomy-v0.26.2.vsix`)
+- `strixonomy-v<version>.vsix` (VS Code extension; example: `strixonomy-v0.27.0.vsix`)
 - `NOTICES` (third-party license summary)
 
 Verify after download:
@@ -22,7 +22,7 @@ On Linux you may use `sha256sum -c SHA256SUMS` instead.
 ## Worked example (Linux x64 CLI)
 
 ```bash
-VERSION=0.26.2   # replace with the release tag you are verifying
+VERSION=0.27.0   # replace with the release tag you are verifying
 curl -fsSLO "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/SHA256SUMS"
 curl -fsSLO "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
 sha256sum -c SHA256SUMS

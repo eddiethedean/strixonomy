@@ -1,12 +1,12 @@
-# What ships today (v0.26.2 — latest tagged)
+# What ships today (v0.27.0 — latest tagged)
 
 > **Canonical capability matrix.** Update this page on every release. Design specs under [Project](design/README.md) may describe future targets — check here for what is actually available.
 >
 > **Format write-back truth:** this page and [Supported formats](supported-formats.md) are the source of truth. Tier-1 user docs (README, Home, First success, FAQ, Evaluate pack, LSP/patch/CLI refs) must match them — see [Releasing — Tier-1 capability truth](releasing.md#documentation-sync-checklist-every-release).
 >
-> **Latest tagged release: v0.26.2** (crates.io, GitHub Releases; Marketplace/Open VSX may lag — see [Versions & channels](guides/versions-and-channels.md)). Pin installs: `cargo install strixonomy-cli --locked --version 0.26.2`.
+> **Latest tagged release: v0.27.0** (crates.io, GitHub Releases; Marketplace/Open VSX may lag — see [Versions & channels](guides/versions-and-channels.md)). Pin installs: `cargo install strixonomy-cli --locked --version 0.27.0`.
 
-**Latest tagged: v0.26.2** · [v0.26 migration](migration/v0.26.md) · [v0.26.2 patch](migration/v0.26.2.md) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
+**Latest tagged: v0.27.0** · [v0.27 migration](migration/v0.27.md) · [v0.26.2 patch](migration/v0.26.2.md) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
 
 ## Products
 
@@ -15,7 +15,7 @@
 | **Strixonomy (IDE)** | VS Code IDE — explorer, React inspector, graphs (asserted/inferred modes), Query Workbench (SQL/SPARQL/DL), Manchester editor, refactor preview, reasoner, explanation panel, plugin commands/views/preferences/context actions |
 | **Strixonomy (engine)** | Rust semantic workspace engine — `strixonomy` façade, `strixonomy-*` crates, `strixonomy` CLI, `strixonomy-lsp`, plugin host |
 
-## Capability matrix (v0.26.2 tagged)
+## Capability matrix (v0.27.0 tagged)
 
 | Capability | VS Code | CLI |
 |------------|---------|-----|
@@ -85,22 +85,20 @@
 > **¹ Rename / merge / replace:** format-specific IRI remaps (XML re-serialize; OBO id/reference rewrite). Other refactor ops stay Turtle-first.  
 > Deeper capability grid (Manchester, refactor, XML re-serialize): [Capabilities by format](guides/capabilities-by-format.md).
 
-## New in v0.26.2 (latest tagged)
+## New in v0.27.0 (latest tagged)
 
 | Capability | Status |
 |------------|--------|
-| Protégé Desktop behavioral test port (Waves 1–4 oracles + inventory CI) | Shipped |
-| Annotation linkification (LSP hover + Entity Inspector) | Shipped |
-| Protégé-default annotation-property order (Entity Inspector) | Shipped |
-| `catalog-v001.xml` import redirects | Shipped |
-| IdPolicy parse + OBO Foundry registry JSON (vendored; no live HTTP) | Shipped |
-| Ontology `version_iri` on documents | Shipped |
+| Strixonomy product identity (`strixonomy` / `strixonomy-*`, CLI, LSP, extension) | Shipped |
+| Legacy OntoCore/OntoCode compatibility (bins, LSP methods, paths, thin `ontocore` façade) | Shipped |
+| Extension settings/state migration from `ontocode.*` | Shipped |
+| Dual-read `.strixonomy/` vs `.ontocore/` / `.ontocode/` | Shipped |
 
 ## Earlier releases (still shipped)
 
-Capability history for **v0.25 … v0.12** (graphs, Plugin SDK 1.0, a11y, DL Query, multi-format rename/merge/replace, realization, SWRL, complete OWL 2 / Manchester authoring, XML write-back, workspace runtime, …) lives in the [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration index](migration/README.md). The matrix at the top of this page is the source of truth for **what works today**.
+Capability history for **v0.26 … v0.12** (Protégé Desktop test port, graphs, Plugin SDK 1.0, a11y, DL Query, multi-format rename/merge/replace, realization, SWRL, complete OWL 2 / Manchester authoring, XML write-back, workspace runtime, …) lives in the [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration index](migration/README.md). The matrix at the top of this page is the source of truth for **what works today**.
 
-Full user-facing delta for the latest tagged release: [CHANGELOG 0.26.2](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0262---2026-07-17).
+Full user-facing delta for the latest tagged release: [CHANGELOG 0.27.0](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0270---2026-07-27).
 
 ## Release history
 
@@ -127,7 +125,7 @@ Remaining 1.0 targets: [known limitations](known-limitations.md) · [Protégé v
 
 ## What's next
 
-Forward: Protégé-competitive release (**1.0**). **v0.26.2** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
+Forward: Protégé-competitive release (**1.0**). **v0.27.0** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
 
 ## Where to learn more
 

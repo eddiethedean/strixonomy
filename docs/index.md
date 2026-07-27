@@ -7,7 +7,7 @@ hide:
 <div class="oc-hero">
 
 <div class="oc-hero-badges">
-  <span class="oc-badge oc-badge--accent">Latest tagged v0.26.2</span>
+  <span class="oc-badge oc-badge--accent">Latest tagged v0.27.0</span>
   <span class="oc-badge">VS Code</span>
   <span class="oc-badge">CLI · LSP</span>
 </div>
@@ -24,7 +24,7 @@ Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS C
   <a class="oc-hero-cta" href="guides/first-success/">First success (~10 min) →</a>
 </p>
 
-<p class="oc-hero-subcta"><a href="SHIPPED/">Evaluate · What ships today</a> · <a href="install/">Install</a> · <a href="guides/day-2/">Your next steps</a> · <a href="guides/versions-and-channels/">Versions &amp; channels</a> · <a href="known-limitations/">Known limitations</a> · Latest tagged: <strong>v0.26.2</strong></p>
+<p class="oc-hero-subcta"><a href="SHIPPED/">Evaluate · What ships today</a> · <a href="install/">Install</a> · <a href="guides/day-2/">Your next steps</a> · <a href="guides/versions-and-channels/">Versions &amp; channels</a> · <a href="known-limitations/">Known limitations</a> · Latest tagged: <strong>v0.27.0</strong></p>
 
 <div class="oc-hero-links">
   <a href="ide/">Strixonomy overview</a>
@@ -39,7 +39,7 @@ Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS C
 **Primary path:** **[First success (~10 min)](guides/first-success.md)** — install the extension, open sample ontologies, browse and edit. No clone required. Then **[Your next steps](guides/day-2.md)**.
 
 !!! tip "Docs vs Marketplace"
-    Read the Docs `latest` may describe work **after** the last tag. Pins and Marketplace follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.26.2**). See [Versions & channels](guides/versions-and-channels.md).
+    Read the Docs `latest` may describe work **after** the last tag. Pins and Marketplace follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0**). See [Versions & channels](guides/versions-and-channels.md).
 
 **Also:** [Install](install.md) · [Examples](examples/index.md) · [Feature tour](ide/feature-tour.md) · [What ships today](SHIPPED.md) · [Documentation index](documentation-index.md)
 
@@ -95,7 +95,7 @@ Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS C
 
 ## What ships today
 
-**Latest tagged: v0.26.2.** Full capability matrix: **[What ships today](SHIPPED.md)**. For channel lag (Marketplace vs crates.io vs docs), see [Versions & channels](guides/versions-and-channels.md).
+**Latest tagged: v0.27.0.** Full capability matrix: **[What ships today](SHIPPED.md)**. For channel lag (Marketplace vs crates.io vs docs), see [Versions & channels](guides/versions-and-channels.md).
 
 ## Quick start
 
@@ -108,12 +108,12 @@ Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS C
 
 === "CI / CLI (optional)"
 
-    Most IDE users skip this. Prefer the [Linux x64 release tarball](https://github.com/eddiethedean/strixonomy/releases/tag/v0.26.2) for CI — [CI integration](ci-integration.md).
+    Most IDE users skip this. Prefer the [Linux x64 release tarball](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) for CI — [CI integration](ci-integration.md).
 
     macOS/Windows `cargo install` needs Rust **1.88+** and often takes **15–30+ minutes** — [Install CLI](guides/install-cli.md):
 
     ```bash
-    cargo install strixonomy-cli --locked --version 0.26.2
+    cargo install strixonomy-cli --locked --version 0.27.0
     strixonomy validate /path/to/ontologies
     ```
 

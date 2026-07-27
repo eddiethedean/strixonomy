@@ -1,6 +1,6 @@
 # Evaluating Strixonomy for your organization
 
-This page helps security, platform, and ontology teams decide whether Strixonomy **v0.26.2** (latest tagged) fits your workflow. It is honest about **what ships today** vs the v1.0 Protégé-competitive target.
+This page helps security, platform, and ontology teams decide whether Strixonomy **v0.27.0** (latest tagged) fits your workflow. It is honest about **what ships today** vs the v1.0 Protégé-competitive target.
 
 Canonical capability matrix: [What ships today](../SHIPPED.md).
 
@@ -34,7 +34,7 @@ Prefer Protégé or other tools (or wait for product **1.0**) if you need any of
 | [Protégé coexistence](protege-coexistence.md) | Ontology teams — split workflow with Protégé |
 | [Plugin authoring](plugins.md) | Platform — Plugin SDK 1.0 (frozen wire, lifecycle, providers); see [Plugin policy](plugin-policy.md) |
 
-## What ships today (v0.26.2)
+## What ships today (v0.27.0)
 
 Use the canonical matrix: **[What ships today](../SHIPPED.md)**. Do not maintain a second capability table here — it drifts.
 

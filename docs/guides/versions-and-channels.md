@@ -6,7 +6,7 @@
 
 | Source | What it means |
 |--------|----------------|
-| [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) | Canonical public install version (today: **0.26.2**) |
+| [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) | Canonical public install version (today: **0.27.0**) |
 | [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) | VSIX, Linux CLI tarball, multi-platform LSP, tutorial zip, checksums |
 | [crates.io](https://crates.io/crates/strixonomy-cli) | Published Rust crates and `cargo install strixonomy-cli` |
 | [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) | Extension for VS Code (manual publish; usually matches the tag within hours) |
@@ -23,15 +23,15 @@
 
 If Marketplace / Open VSX is behind GitHub, install the release VSIX for the tag you need — see below.
 
-## Recommended installs (v0.26.2)
+## Recommended installs (v0.27.0)
 
 | Goal | Command / link |
 |------|----------------|
-| VS Code | Marketplace **or** download `strixonomy-v0.26.2.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases/tag/v0.26.2) |
+| VS Code | Marketplace **or** download `strixonomy-v0.27.0.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) |
 | Cursor | [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) or the same VSIX |
-| CLI (pinned) | `cargo install strixonomy-cli --locked --version 0.26.2` |
-| CLI (Linux, no compile) | `strixonomy-v0.26.2-x86_64-unknown-linux-gnu.tar.gz` from GitHub Releases |
-| Tutorial files (offline) | [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.26.2/strixonomy-tutorial.zip) on the same GitHub Release (or curl samples in [First success](first-success.md)) |
+| CLI (pinned) | `cargo install strixonomy-cli --locked --version 0.27.0` |
+| CLI (Linux, no compile) | `strixonomy-v0.27.0-x86_64-unknown-linux-gnu.tar.gz` from GitHub Releases |
+| Tutorial files (offline) | [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) on the same GitHub Release (or curl samples in [First success](first-success.md)) |
 
 Always pin: bare `cargo install strixonomy-cli` resolves to the **latest** crates.io version and can jump without your review.
 
@@ -41,7 +41,7 @@ Marketplace publish is always **manual** after the release workflow finishes. **
 
 ### Playbook: store version ≠ latest tag
 
-1. Check the [latest GitHub Release](https://github.com/eddiethedean/strixonomy/releases/latest) tag (example: `v0.26.2`).
+1. Check the [latest GitHub Release](https://github.com/eddiethedean/strixonomy/releases/latest) tag (example: `v0.27.0`).
 2. In VS Code / Cursor: **Extensions → Strixonomy** — note the installed version.
 3. If the store is older than the tag you need:
    - Download `strixonomy-v<version>.vsix` from that Release.

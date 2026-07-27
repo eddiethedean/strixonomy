@@ -5,7 +5,7 @@
 
 **Ontology IDE for VS Code** — browse and edit Turtle/OBO/RDF/XML/OWL/XML, query, reason, validate, and diff. **Not a full Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) and [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/).
 
-**Current release: v0.26.2**
+**Current release: v0.27.0**
 
 ## Start here
 

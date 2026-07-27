@@ -37,7 +37,7 @@ jobs:
 
       - name: Download strixonomy CLI, verify checksum, validate
         run: |
-          VERSION=0.26.2
+          VERSION=0.27.0
           ASSET="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
           BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
           curl -fsSL -o "${ASSET}" \
@@ -53,7 +53,7 @@ jobs:
 Adjust the validate path (`.` or `ontologies/`) to the directory containing your `.ttl`, `.owl`, etc. Verify checksums per [release-integrity.md](release-integrity.md) in production pipelines.
 
 !!! tip "Pin the CLI version pre-1.0"
-    Set `VERSION=0.26.2` explicitly so CI does not pick up breaking minor releases unexpectedly. See [FAQ](faq.md).
+    Set `VERSION=0.27.0` explicitly so CI does not pick up breaking minor releases unexpectedly. See [FAQ](faq.md).
 
 ## GitHub Actions (cargo install — macOS/Windows or when building from source)
 
@@ -71,7 +71,7 @@ Use when you need a platform without a release tarball, or when developing again
           workspaces: ""
 
       - name: Install strixonomy CLI
-        run: cargo install strixonomy-cli --locked --version 0.26.2
+        run: cargo install strixonomy-cli --locked --version 0.27.0
 
       - name: Validate ontology files
         run: strixonomy validate .
@@ -88,7 +88,7 @@ Fail the job when EL classification finds unsatisfiable classes:
     ```yaml
           - name: Classify ontologies (EL)
             run: |
-              VERSION=0.26.2
+              VERSION=0.27.0
               BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
               curl -fsSL -o "${BIN}.tar.gz" \
                 "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
@@ -101,7 +101,7 @@ Fail the job when EL classification finds unsatisfiable classes:
 
     ```yaml
           - name: Install strixonomy CLI
-            run: cargo install strixonomy-cli --locked --version 0.26.2
+            run: cargo install strixonomy-cli --locked --version 0.27.0
 
           - name: Classify ontologies (EL)
             run: strixonomy classify . --profile el --format json
@@ -136,7 +136,7 @@ Compare git refs in pull requests (requires a git checkout with history):
 ```yaml
       - name: Semantic diff (breaking changes only)
         run: |
-          VERSION=0.26.2
+          VERSION=0.27.0
           BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
           curl -fsSL -o "${BIN}.tar.gz" \
             "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"

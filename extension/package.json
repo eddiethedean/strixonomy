@@ -2,7 +2,7 @@
   "name": "strixonomy",
   "displayName": "Strixonomy",
   "description": "Ontology IDE for VS Code powered by Strixonomy. Browse, edit Turtle, query, reason (EL\u2013DL), validate, and diff OWL/RDF/OBO ontologies from the IDE or CI.",
-  "version": "0.26.2",
+  "version": "0.27.0",
   "publisher": "strixonomy",
   "license": "MIT",
   "repository": {

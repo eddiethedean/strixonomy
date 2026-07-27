@@ -12,7 +12,7 @@ Continue after the [first-week Protégé migration](protege-migration.md) and [p
 
 | Day | Focus | Exit when |
 |-----|--------|-----------|
-| 1 | Pin CLI/VSIX to **0.26.2**; confirm [Versions & channels](versions-and-channels.md) | Same version in IDE + CI |
+| 1 | Pin CLI/VSIX to **0.27.0**; confirm [Versions & channels](versions-and-channels.md) | Same version in IDE + CI |
 | 2 | `strixonomy classify --profile dl` (or `auto`) on your corpus | Exit codes understood; profile warnings reviewed |
 | 3 | `strixonomy realize` + sample `check-instance` in CI | [realize cookbook](../examples/realize.md) |
 | 4 | SWRL: load a known rule set; classify with materialize; dual-check in Protégé if critical | [SWRL examples](../examples/swrl.md); no surprise consequents |

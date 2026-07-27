@@ -9,7 +9,7 @@
 ## Quick start
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.26.2
+cargo install strixonomy-cli --locked --version 0.27.0
 strixonomy query /path/to/ontologies "SELECT * FROM classes"
 strixonomy validate /path/to/ontologies
 ```
@@ -39,7 +39,7 @@ strixonomy validate /path/to/ontologies
 | Crate map | [strixonomy/crate-map.md](../strixonomy/crate-map.md) |
 | `Workspace` example | [`examples/strixonomy_workspace.rs`](https://github.com/eddiethedean/strixonomy/blob/main/examples/strixonomy_workspace.rs) |
 
-Primary dependency: `strixonomy = "0.26"`.
+Primary dependency: `strixonomy = "0.27"`.
 
 ## Related
 

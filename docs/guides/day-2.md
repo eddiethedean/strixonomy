@@ -3,7 +3,7 @@
 You finished [First success](first-success.md). This page is the **day-2 IDE path** — edit → query → reason → save/CI — without diving into the full capability matrix yet.
 
 !!! tip "Docs vs Marketplace"
-    Read the Docs `latest` may describe work **after** the last tag. Install pins and Marketplace builds follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.26.2**). See [Versions & channels](versions-and-channels.md).
+    Read the Docs `latest` may describe work **after** the last tag. Install pins and Marketplace builds follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.27.0**). See [Versions & channels](versions-and-channels.md).
 
 ## 1. Edit more
 
@@ -33,7 +33,7 @@ You finished [First success](first-success.md). This page is the **day-2 IDE pat
 Most IDE users never install the CLI. For automation:
 
 - Linux x64: [CI integration](../ci-integration.md) (release tarball)
-- Pin: `cargo install strixonomy-cli --locked --version 0.26.2` — [Install](../install.md)
+- Pin: `cargo install strixonomy-cli --locked --version 0.27.0` — [Install](../install.md)
 
 ## Fit check before a larger pilot
 

@@ -4,7 +4,7 @@
 
 Release CLI tarballs are **Linux x64 only** (`x86_64-unknown-linux-gnu`). On **macOS** and **Windows**, install from crates.io with Rust. On **Linux arm64** (and other non-x64 targets), there is no tarball — use `cargo install` below or the LSP bundled in the VSIX ([platform compatibility](platform-compatibility.md)).
 
-Canonical pin: **`0.26.2`** ([TAGGED_RELEASE](../TAGGED_RELEASE)). See also [Install CLI & CI (detail)](../install-cli-ci.md) and [CI integration](../ci-integration.md) (Linux CI prefers the release tarball).
+Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](../TAGGED_RELEASE)). See also [Install CLI & CI (detail)](../install-cli-ci.md) and [CI integration](../ci-integration.md) (Linux CI prefers the release tarball).
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ xcode-select -p   # should print a Developer path
 ## Install
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.26.2
+cargo install strixonomy-cli --locked --version 0.27.0
 ```
 
 Confirm:
@@ -64,7 +64,7 @@ strixonomy query /path/to/your/ontologies "SELECT * FROM classes"
 | Browse / edit in the IDE | [VS Code extension](../vscode-install.md) |
 | Local CI-like validate/query without VS Code | This CLI install |
 | Linux CI in GitHub Actions | [Release tarball](../ci-integration.md) (faster than compile) |
-| Custom `strixonomy.lspPath` without compiling | Prebuilt **`strixonomy-lsp-*`** archives on [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases/tag/v0.26.2) (macOS, Windows, Linux x64/arm64) — set `strixonomy.lspPath` to the extracted binary (trusted workspace) |
+| Custom `strixonomy.lspPath` without compiling | Prebuilt **`strixonomy-lsp-*`** archives on [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) (macOS, Windows, Linux x64/arm64) — set `strixonomy.lspPath` to the extracted binary (trusted workspace) |
 
 ## Optional: prebuilt language server (skip `cargo install` for LSP)
 
@@ -77,7 +77,7 @@ Release assets include platform-specific `strixonomy-lsp` binaries (for example 
 | `strixonomy: command not found` | Add `~/.cargo/bin` to `PATH`; open a new terminal |
 | Compile errors on Windows | Install MSVC Build Tools with the C++ desktop workload |
 | Compile errors on macOS | Re-run `xcode-select --install`; update Xcode CLT |
-| Wrong version after install | Re-run with `--version 0.26.2 --locked`; check `strixonomy --version` |
+| Wrong version after install | Re-run with `--version 0.27.0 --locked`; check `strixonomy --version` |
 | Slow installs | Expected on first cold build; subsequent upgrades are faster |
 
 ## Related

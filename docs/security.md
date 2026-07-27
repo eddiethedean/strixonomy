@@ -6,9 +6,9 @@ Strixonomy and Strixonomy are **local-first** tools: they index and parse files 
 
 | Version | Supported |
 |---------|-----------|
-| 0.26.x   | Yes — latest tagged release |
-| 0.25.x   | Yes (N−1) |
-| ≤ 0.24.x | No — upgrade to a tagged 0.25.x or 0.26.x release |
+| 0.27.x   | Yes — latest tagged release |
+| 0.26.x   | Yes (N−1) |
+| ≤ 0.25.x | No — upgrade to a tagged 0.26.x or 0.27.x release |
 
 Pin production and CI to the latest **tagged** release ([TAGGED_RELEASE](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE)). Unreleased minors on `main` are not supported until tagged. There is **no committed security patch SLA**.
 

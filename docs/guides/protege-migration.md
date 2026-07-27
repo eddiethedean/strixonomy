@@ -68,7 +68,7 @@ Follow the [first success core path](../guides/first-success.md) if anything is 
 ## Day 3 — Validate in CI
 
 ```yaml
-- run: cargo install strixonomy-cli --locked --version 0.26.2
+- run: cargo install strixonomy-cli --locked --version 0.27.0
 - run: strixonomy validate ./src/ontologies
 ```
 
