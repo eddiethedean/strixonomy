@@ -55,7 +55,7 @@ Deep planning docs (`docs/ui/`, `docs/platform/`, `docs/cursor-prompts/`, `docs/
 | **Use the IDE** | [Overview](ide/index.md) → [Feature tour](ide/feature-tour.md) |
 | **Use the engine & CLI** | [Engine overview](strixonomy/index.md) · [Examples](examples/index.md) |
 | **Reference** | [CLI](cli-reference.md) · [Rust API](strixonomy/rust-api.md) · [LSP API](lsp-api.md) · [Patch](patch-reference.md) · [SQL](sql-reference.md) · [SPARQL](sparql-reference.md) · [Errors](errors.md) · [docs.rs strixonomy](https://docs.rs/strixonomy) |
-| **Evaluate** | [What ships today](SHIPPED.md) · [Enterprise eval](guides/enterprise-eval.md) · [Week-2 playbook](guides/enterprise-week-2.md) |
+| **Evaluate** | [What ships today](SHIPPED.md) · [Roadmap summary](roadmap-summary.md) · [Enterprise eval](guides/enterprise-eval.md) · [Week-2 playbook](guides/enterprise-week-2.md) |
 | **Help** | [FAQ](faq.md) · [Troubleshooting](troubleshooting.md) · [Support](support.md) |
 | **Contribute** | [Contributing](contributing.md) · [Plugin policy](guides/plugin-policy.md) · [CLI](cli-reference.md) · [LSP](lsp-api.md) · [Engineering](engineering.md) |
 

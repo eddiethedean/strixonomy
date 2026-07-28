@@ -2,7 +2,7 @@
 
 Strixonomy IDE and Strixonomy engine publish several roadmap documents. **Use this page to pick the right one** — they serve different audiences and must not be read as a single capability list.
 
-**Current tagged release:** v0.27.0 · [What ships today](SHIPPED.md)
+**Current tagged release:** v0.27.0 · **In development on `main`:** v0.28.0 · [What ships today](SHIPPED.md)
 
 Development on `main` may be ahead of the tagged pin — follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) for install versions.
 
@@ -14,7 +14,8 @@ Development on `main` may be ahead of the tagged pin — follow [`docs/TAGGED_RE
 | Learn **canonical terminology** | [Glossary](glossary.md) |
 | **Implement** OntoUI / workspaces (v0.13–v0.14) | [Platform overview](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) · [Plugin authoring](guides/plugins.md) · [Cursor prompts](https://github.com/eddiethedean/strixonomy/blob/main/docs/cursor-prompts/README.md) |
 | **Implement Protégé parity** (v0.20–1.0 next) | [Protégé parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) · [Pre-1.0 phases](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) · [Execution order](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/05_IMPLEMENTATION/EXECUTION_ORDER.md) |
-| Understand **platform direction** (releases through post-1.0) | **[ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)** (canonical) · RTD summary [Platform roadmap](roadmap.md) |
+| See **what ships today** (one screen) | [Roadmap summary](roadmap-summary.md) — evaluator-friendly |
+| Understand **platform direction** (full detail) | [Platform roadmap (full)](roadmap.md) in Contribute · [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) |
 | Map **UI design specs** to release phases | [UI roadmap mapping](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md) — master checklist |
 | See **UI phases with milestones** | [Product Roadmap 2.0](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md) |
 | Read **product/platform ADRs** | [adr/README.md](adr/README.md) |

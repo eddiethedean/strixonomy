@@ -4,7 +4,7 @@
 >
 > Edit **`docs/architecture.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 
-**Latest tagged: v0.27.0** — v0.27 ships today. Strixonomy (VS Code) + Strixonomy (CLI/LSP/library).
+**Latest tagged: v0.27.0** — v0.27 ships today. **v0.28 in progress** on `main`. Strixonomy (VS Code) + Strixonomy (CLI/LSP/library).
 
 ## Quick map
 

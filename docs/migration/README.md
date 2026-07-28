@@ -2,6 +2,9 @@
 
 Upgrade notes between Strixonomy releases (historically OntoCore / OntoCode).
 
+!!! warning "Upgrading to v0.28?"
+    v0.28 **removes** OntoCore/OntoCode compat shims. Read [Migration v0.27 → v0.28](v0.28.md) before upgrading from v0.27 if you still use legacy names, paths, or LSP methods.
+
 | From → To | Guide |
 |-----------|-------|
 | v0.5 → v0.6 | [Migration v0.5 → v0.6](v0.6.md) — reasoner, LSP methods, VS Code panels |

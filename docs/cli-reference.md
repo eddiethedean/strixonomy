@@ -2,6 +2,12 @@
 
 The `strixonomy` binary indexes ontology workspaces and exposes query, validation, patch, and reasoning commands.
 
+!!! danger "CLI package name"
+    Install with **`cargo install strixonomy-cli`** — not `strixonomy`. The `strixonomy` crate on crates.io is the **Rust library** only.
+
+!!! tip "Example workspace path"
+    Examples below use **`~/strixonomy-tutorial`** from [First success](guides/first-success.md) (offline zip or curl). The `fixtures/` directory exists **only in a git clone** — see [From a git clone](#from-a-git-clone) at the end.
+
 Install (pin latest tagged release):
 
 ```bash
@@ -75,22 +81,22 @@ Default workspace: `.` (current directory).
 Index the workspace and print catalog statistics **plus a diagnostic summary** (counts and up to 10 sample messages). Use for a quick human health check; run `validate` for full diagnostic listing and CI gating.
 
 ```bash
-strixonomy inspect fixtures
+strixonomy inspect ~/strixonomy-tutorial
 strixonomy inspect /path/to/ontologies --format json
 ```
 
-**Expected output (text, `fixtures/`):** ontology/class/property counts (e.g. multiple classes including `Person`).
+**Expected output (text, tutorial folder):** ontology/class/property counts (e.g. multiple classes including `Person`).
 
 ### `query`
 
 Run a SQL-like query against virtual tables. See [SQL reference](sql-reference.md).
 
 ```bash
-strixonomy query fixtures "SELECT short_name, labels FROM classes"
+strixonomy query ~/strixonomy-tutorial "SELECT short_name, labels FROM classes"
 strixonomy query . "SELECT code, message FROM diagnostics WHERE severity = 'error'" --format json
 ```
 
-**Expected output (text, `fixtures/`):** tab-separated columns plus rows (e.g. `Person` in `short_name`).
+**Expected output (text, tutorial folder):** tab-separated columns plus rows (e.g. `Person` in `short_name`).
 
 **Exit:** 0 on success; non-zero on parse/unsupported SQL/I/O errors.
 
@@ -99,7 +105,7 @@ strixonomy query . "SELECT code, message FROM diagnostics WHERE severity = 'erro
 Run SPARQL against indexed triples. See [SPARQL reference](sparql-reference.md).
 
 ```bash
-strixonomy sparql fixtures "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
+strixonomy sparql ~/strixonomy-tutorial "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
 ```
 
 **Exit:** 0 on success; non-zero on failure. Results truncate at 100,000 rows.
@@ -109,7 +115,7 @@ strixonomy sparql fixtures "SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 10"
 Run a Protégé-style DL Query (Manchester class expression). See [DL Query](guides/dl-query.md).
 
 ```bash
-strixonomy dl-query "Person and hasPet some Dog" --workspace fixtures --profile dl
+strixonomy dl-query "Person and hasPet some Dog" --workspace ~/strixonomy-tutorial --profile dl
 strixonomy dl-query "Person" --mode asserted --format json
 ```
 
@@ -171,7 +177,7 @@ Optional `--robot-path` overrides the `robot` executable (same as VS Code `strix
 
 ### `classify`
 
-Run OWL classification via OntoLogos 1.0.0.
+Run OWL classification via Ontologos 1.x.
 
 ```bash
 strixonomy classify ./ontologies --profile el
@@ -182,7 +188,7 @@ strixonomy classify . --profile rl --format json
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--profile` | `el` | `el`, `rl`, `rdfs`, `dl`, `auto` (OntoLogos 1.0) |
+| `--profile` | `el` | `el`, `rl`, `rdfs`, `dl`, `auto` (Ontologos 1.x) |
 | `--auto-profile` | enabled | Emit profile-detection warnings (default on; the current clap flag does not expose a separate disable switch) |
 | `--format` | `text` | `text` or `json` |
 
@@ -194,7 +200,7 @@ See [Reasoner guide](guides/reasoner.md) and [workspace-limits.md](workspace-lim
 
 ### `explain`
 
-Explain unsatisfiability for a class IRI (requires OntoLogos explain support).
+Explain unsatisfiability for a class IRI (requires Ontologos explain support).
 
 ```bash
 strixonomy explain ./ontologies --class 'http://example.org#Invalid' --profile el
@@ -215,7 +221,7 @@ Realize individuals (inferred types) for a workspace (ABox). Default profile is 
 
 ```bash
 strixonomy realize ./ontologies --profile rl
-strixonomy realize fixtures --profile dl --format json
+strixonomy realize ~/strixonomy-tutorial --profile dl --format json
 ```
 
 | Flag | Default | Description |
@@ -234,7 +240,7 @@ See [Reasoner guide](guides/reasoner.md) and [realize cookbook](examples/realize
 Check whether an individual is an instance of a class.
 
 ```bash
-strixonomy check-instance fixtures \
+strixonomy check-instance ~/strixonomy-tutorial \
   --individual 'http://example.org/people#alice' \
   --class 'http://example.org/people#Person' \
   --profile rl
@@ -270,7 +276,7 @@ Workspace refactoring (rename / merge / replace across formats where remaps appl
 List usages of an entity IRI across the workspace.
 
 ```bash
-strixonomy refactor usages fixtures 'http://example.org/people#Person'
+strixonomy refactor usages ~/strixonomy-tutorial 'http://example.org/people#Person'
 strixonomy refactor usages . 'http://example.org/people#Person' --format json
 ```
 
@@ -281,12 +287,12 @@ strixonomy refactor usages . 'http://example.org/people#Person' --format json
 Rename an entity IRI across indexed ontology files (Turtle + format remaps for RDF/XML, OWL/XML, OBO).
 
 ```bash
-strixonomy refactor rename fixtures \
+strixonomy refactor rename ~/strixonomy-tutorial \
   --from 'http://example.org/people#Person' \
   --to 'http://example.org/people#Human' \
   --preview
 
-strixonomy refactor rename fixtures \
+strixonomy refactor rename ~/strixonomy-tutorial \
   --from 'http://example.org/people#Person' \
   --to 'http://example.org/people#Human'
 ```
@@ -303,7 +309,7 @@ strixonomy refactor rename fixtures \
 Merge one entity into another (rewrite references to the keep IRI; drop the merge declaration).
 
 ```bash
-strixonomy refactor merge fixtures \
+strixonomy refactor merge ~/strixonomy-tutorial \
   --keep 'http://example.org/people#Person' \
   --merge 'http://example.org/people#Human' \
   --preview
@@ -321,7 +327,7 @@ strixonomy refactor merge fixtures \
 Replace references to one entity with another (keeps source declaration when the target already exists).
 
 ```bash
-strixonomy refactor replace fixtures \
+strixonomy refactor replace ~/strixonomy-tutorial \
   --from 'http://example.org/people#OldName' \
   --to 'http://example.org/people#NewName' \
   --preview
@@ -339,7 +345,7 @@ strixonomy refactor replace fixtures \
 Replace a namespace base IRI across Turtle files (`@prefix` and term IRIs).
 
 ```bash
-strixonomy refactor migrate-namespace fixtures \
+strixonomy refactor migrate-namespace ~/strixonomy-tutorial \
   --from 'http://example.org/people#' \
   --to 'http://example.org/v2/people#' \
   --preview
@@ -357,7 +363,7 @@ strixonomy refactor migrate-namespace fixtures \
 Move an entity block to another Turtle file.
 
 ```bash
-strixonomy refactor move fixtures 'http://example.org/people#Student' \
+strixonomy refactor move ~/strixonomy-tutorial 'http://example.org/people#Student' \
   --to ./students.ttl \
   --preview
 ```
@@ -373,7 +379,7 @@ strixonomy refactor move fixtures 'http://example.org/people#Student' \
 Extract selected entities into a new module file.
 
 ```bash
-strixonomy refactor extract fixtures \
+strixonomy refactor extract ~/strixonomy-tutorial \
   --entities 'http://example.org/people#Person,http://example.org/people#Student' \
   --out ./core.ttl \
   --leave-stub \
@@ -395,7 +401,7 @@ strixonomy refactor extract fixtures \
 Merge one or more Turtle ontology files into a target Turtle file.
 
 ```bash
-strixonomy refactor merge-ontologies fixtures \
+strixonomy refactor merge-ontologies ~/strixonomy-tutorial \
   --sources ./a.ttl --sources ./b.ttl \
   --target ./combined.ttl \
   --preview
@@ -406,8 +412,8 @@ strixonomy refactor merge-ontologies fixtures \
 Inline imported Turtle axioms (flatten) or remove unused `owl:imports` (cleanup heuristic).
 
 ```bash
-strixonomy refactor flatten-imports fixtures --file ./root.ttl --preview
-strixonomy refactor cleanup-imports fixtures --file ./root.ttl --preview
+strixonomy refactor flatten-imports ~/strixonomy-tutorial --file ./root.ttl --preview
+strixonomy refactor cleanup-imports ~/strixonomy-tutorial --file ./root.ttl --preview
 ```
 
 **Exit (rename / merge / replace / migrate / move / extract / ontology ops):** 0 on success; non-zero on invalid request, path jail violation, or I/O failure. With `--preview`, files are not written.
@@ -446,7 +452,7 @@ strixonomy diff main..feature --pr-summary
 Export Markdown or HTML documentation from an indexed workspace. See [Documentation export guide](guides/docs-export.md).
 
 ```bash
-strixonomy docs ./fixtures --format markdown --output /tmp/onto-docs
+strixonomy docs ~/strixonomy-tutorial --format markdown --output /tmp/onto-docs
 strixonomy docs . --format html --output ./docs-out \
   --ontology-id http://example.org/people
 ```
@@ -535,8 +541,34 @@ strixonomy workflow --plugin owlmake --step qc [workspace]
 
 **Exit:** 0 when the workflow reports success; non-zero when the plugin fails or subprocess exits unsuccessfully.
 
+## Integrator capability gaps
+
+Some commands are **CLI-only** today (no LSP JSON method). Use the CLI in CI or spawn `strixonomy` from your tool.
+
+| Capability | CLI | LSP | Notes |
+|------------|-----|-----|-------|
+| Realize individuals | `realize` | — | Use CLI in automation |
+| Docs export | `docs` | — | Markdown/HTML export |
+| ROBOT wrappers | `robot …` | `runRobot` | Both surfaces |
+| Plugin enable/disable | `plugins enable\|disable` | partial | CLI is authoritative for policy |
+
+Full matrix: [API parity (CLI · LSP · Rust · IDE)](reference/api-parity-matrix.md).
+
+## From a git clone
+
+If you cloned the repository, substitute `fixtures` for the tutorial path:
+
+```bash
+cargo run -- inspect fixtures
+cargo run -- query fixtures "SELECT short_name FROM classes"
+cargo run -- validate fixtures
+```
+
+See [`fixtures/` on GitHub](https://github.com/eddiethedean/strixonomy/tree/main/fixtures).
+
 ## Related
 
+- [API parity matrix](reference/api-parity-matrix.md)
 - [Plugin authoring guide](guides/plugins.md)
 - [Refactoring guide](guides/refactoring.md)
 - [Examples: refactoring](examples/refactoring.md)

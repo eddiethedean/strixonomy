@@ -48,6 +48,9 @@ Minimal custom-client flow after `initialize`:
 | `strixonomy/listSwrlRules` / `validateSwrlRule` / `parseSwrlRule` | Shipped | v0.23 |
 | `strixonomy/realize` | **Not an LSP method** — use CLI | — |
 
+!!! note "Integrator capability gaps"
+    **`realize`**, **`docs` export**, and some plugin policy commands are **CLI-only** today. Full surface comparison: [API parity matrix](reference/api-parity-matrix.md).
+
 ## Start with the schema (recommended)
 
 If you are integrating Strixonomy outside VS Code (custom editor, scripts, automation), treat the JSON schema as the **canonical, machine-readable contract** for this release:

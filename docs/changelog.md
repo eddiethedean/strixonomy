@@ -6,6 +6,8 @@ Migration guides: [Migration index](migration/README.md)
 
 ## [Unreleased]
 
+Documentation and tooling improvements (adoption audit). **v0.28.0** on `main` removes OntoCore/OntoCode compat — see [migration/v0.28.md](migration/v0.28.md). Public install pin remains **v0.27.0** until the v0.28 tag ships.
+
 ## [0.27.0] - 2026-07-27
 
 **v0.27.0** — **Strixonomy rename:** OntoCore / OntoCode → Strixonomy (crates, CLI, LSP, extension, docs) with compatibility shims through ≥1.0; `atomic_write` permission preserve; ROBOT stdio cap. See [CHANGELOG.md](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration/v0.27.md](migration/v0.27.md).

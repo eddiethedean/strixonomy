@@ -31,6 +31,7 @@ Canonical terminology for Strixonomy IDE, Strixonomy engine, OntoUI, and the Ont
 | OntoIndex / `ontoindex` | **Strixonomy engine** / `strixonomy` (renamed in v0.9) |
 | OntoCore / OntoCode | **Strixonomy engine** / **Strixonomy IDE** (renamed in v0.27) |
 | OntoLogos (alternate casing) | **Ontologos** |
+| "Byte-identical XML" | **Semantic re-serialize** — meaning preserved, Protégé layout not — [OWL/XML workflow](guides/owl-xml-workflow.md) |
 
 ## See also
 

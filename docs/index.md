@@ -16,7 +16,7 @@ hide:
       <a class="md-button" href="ide/feature-tour/">Explore the feature tour</a>
     </div>
     <p class="oc-hero-meta">
-      <a href="SHIPPED/">v0.27.0</a><span>·</span>
+      <a href="SHIPPED/">Latest tagged v0.27.0</a><span>·</span>
       <a href="known-limitations/">Known limitations</a><span>·</span>
       <a href="https://github.com/eddiethedean/strixonomy">GitHub</a>
     </p>
@@ -38,16 +38,17 @@ hide:
 
 <div class="oc-proof-strip">
   <div><strong>4</strong><span>editable ontology formats</span></div>
-  <div><strong>3</strong><span>query modes</span></div>
+  <div><strong>3</strong><span>query modes (Catalog SQL subset · SPARQL · DL)</span></div>
   <div><strong>EL–DL</strong><span>reasoning profiles</span></div>
   <div><strong>1.0</strong><span>plugin wire contract</span></div>
 </div>
 
 <div class="oc-start-card" markdown>
 
-**New to Strixonomy?** Start with **[First success (~10 min)](guides/first-success.md)**—install the extension, open sample ontologies, browse, and edit. No clone or separate CLI required.
+!!! info "Documentation version"
+    **Public install pin:** [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0** — latest tagged release). GitHub `main` may be **0.28.0** in development — pin tagged artifacts unless you build from source. [Versions & channels](guides/versions-and-channels.md) · [v0.28 migration](migration/v0.28.md).
 
-Pins follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0**). Channel lag: [Versions & channels](guides/versions-and-channels.md).
+**New to Strixonomy?** Start with **[First success (~10 min)](guides/first-success.md)**—install the extension, open sample ontologies, browse, and edit. No clone or separate CLI required.
 
 </div>
 
@@ -96,7 +97,7 @@ Pins follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/b
 
     1. Install the **Strixonomy extension** from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (for Cursor)
     2. **File → Open Folder…** with **`.ttl` / `.obo` / `.owl` / `.rdf` / `.owx`** (editable) — JSON-LD / TriG / N-Triples are browse/query only ([Supported formats](supported-formats.md))
-    3. The **bundled** language server indexes in Restricted Mode — **do not Trust the workspace** unless you set custom `strixonomy.lspPath` or `strixonomy.robotPath`
+    3. The **bundled** language server works in **Restricted Mode** — no Trust required. **Trust the workspace** only if you set custom `strixonomy.lspPath` or `strixonomy.robotPath` ([VS Code install](vscode-install.md))
     4. Open the **Strixonomy** activity bar → browse **Classes** → click an entity
 
 === "CI / CLI (optional)"
@@ -122,13 +123,14 @@ Pins follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/b
 
 | I need… | Read |
 |---------|------|
+| Which artifact? | [Which artifact?](guides/which-artifact.md) |
 | 10-minute tutorial | [First success](guides/first-success.md) |
 | Honest limits | [Known limitations](known-limitations.md) |
 | Capability matrix | [SHIPPED.md](SHIPPED.md) |
 | Protégé comparison | [Protégé vs Strixonomy](guides/protege-decision.md) |
 | CLI / CI | [Install](install.md) · [CI integration](ci-integration.md) |
 | Embed in Rust | [Rust library guide](guides/rust-library.md) |
-| Roadmap (pick the right doc) | [Roadmap hub](roadmap-hub.md) |
+| Roadmap (summary) | [Roadmap summary](roadmap-summary.md) · [Roadmap hub](roadmap-hub.md) |
 | Feature tour | [ide/feature-tour.md](ide/feature-tour.md) |
 | Troubleshooting | [troubleshooting.md](troubleshooting.md) |
 | Contributing | [contributing.md](contributing.md) |

@@ -1,13 +1,18 @@
 # Query Workbench
 
-The **Query Workbench** is an Strixonomy React panel for running **SQL-like** catalog queries, **SPARQL**, and **DL Query** (Manchester class expressions) against your indexed workspace. Queries execute in **Strixonomy** via LSP (`strixonomy/query`, `strixonomy/sparql`, `strixonomy/dlQuery`).
+The **Query Workbench** is an Strixonomy React panel for **Catalog SQL (subset)**, **SPARQL**, and **DL Query** (Manchester class expressions) against your indexed workspace. Queries execute in **Strixonomy** via LSP (`strixonomy/query`, `strixonomy/sparql`, `strixonomy/dlQuery`).
+
+| Mode | Engine | Best for |
+|------|--------|----------|
+| **Catalog SQL (subset)** | Virtual tables | Tabular listing (`classes`, `properties`, …) — **not full SQL** |
+| **SPARQL** | Oxigraph | Graph patterns, filters, `LIMIT` |
+| **DL Query** | Reasoner + Manchester | Class expression queries (Instances / Subclasses / …) |
+
+!!! note "Catalog SQL is not full SQL"
+    Supported: single-table `SELECT`, simple `WHERE` (`=`, `!=`, `AND`/`OR`). No `JOIN`, `ORDER BY`, `GROUP BY`, or `LIMIT`. Use **SPARQL** for graph patterns or **DL** for Manchester expressions.
 
 !!! tip "DL Query (v0.24+)"
     **DL** mode provides Protégé-style Manchester class expressions with Instances / Subclasses / Superclasses / Equivalents tabs (asserted or inferred). Details: [DL Query](../guides/dl-query.md).
-
-!!! warning "SQL-like, not full SQL"
-    The SQL mode uses **virtual tables** with a small subset of SQL: single-table `SELECT`, limited `WHERE` (`=`, `!=`, `AND`/`OR`), no `JOIN`, `ORDER BY`, `GROUP BY`, `LIKE`, or functions.
-    Full details: [SQL reference](../sql-reference.md).
 
 ## Open the workbench
 

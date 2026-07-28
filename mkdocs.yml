@@ -128,8 +128,10 @@ nav:
   - Home: index.md
   - Start:
       - "First success (~10 min)": guides/first-success.md
+      - Which artifact?: guides/which-artifact.md
       - "Your next steps (day 2)": guides/day-2.md
       - Install: install.md
+      - Documentation index: documentation-index.md
       - Supported formats: supported-formats.md
       - Versions and channels: guides/versions-and-channels.md
       - More install detail:
@@ -186,6 +188,8 @@ nav:
           - Docs export: examples/docs-export.md
           - Index vs inspect: examples/inspect.md
   - Reference:
+      - API parity (CLI · LSP · Rust · IDE): reference/api-parity-matrix.md
+      - VS Code settings: ide/vscode-settings.md
       - CLI reference: cli-reference.md
       - Rust API: strixonomy/rust-api.md
       - "Catalog SQL (subset)": sql-reference.md
@@ -214,8 +218,8 @@ nav:
       - Direction:
           - Vision: vision.md
           - Architecture: architecture.md
+          - Roadmap summary: roadmap-summary.md
           - Roadmap hub: roadmap-hub.md
-          - Platform roadmap: roadmap.md
   - Help:
       - FAQ: faq.md
       - Troubleshooting: troubleshooting.md
@@ -232,8 +236,8 @@ nav:
       - Release integrity: release-integrity.md
   - Contribute:
       - Guide: contributing.md
-      - Documentation index: documentation-index.md
       - Architecture tour: guides/architecture-tour.md
+      - Platform roadmap (full): roadmap.md
       - Testing matrix: guides/testing-matrix.md
       - Extension development: guides/extension-development.md
       - Debugging: debugging.md
@@ -247,6 +251,9 @@ nav:
       - Licenses: design/LICENSES.md
       - Engineering docs (GitHub): engineering.md
 extra:
+  announcement:
+    text: "Docs track tagged release v0.27.0 — GitHub main may be v0.28.0 in development. Pin installs from TAGGED_RELEASE."
+    link: guides/versions-and-channels/
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/eddiethedean/strixonomy

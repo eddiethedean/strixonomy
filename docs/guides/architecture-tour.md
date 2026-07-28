@@ -1,6 +1,6 @@
 # Architecture tour (~15 minutes)
 
-One-page map for new contributors: how Strixonomy, Strixonomy, and the webviews connect.
+One-page map for new contributors: how the **Strixonomy IDE**, **Rust engine**, and **React webviews** connect.
 
 > **Audience:** Contributors and integrators. Evaluators should start with [Architecture](../architecture.md) and [What ships today](../SHIPPED.md).
 
@@ -26,7 +26,7 @@ React webviews (extension/webview-ui/) ◄── postMessage ── extension ho
 | [`crates/strixonomy-lsp/`](https://github.com/eddiethedean/strixonomy/tree/main/crates/strixonomy-lsp) | Language server — LSP + custom `strixonomy/*` JSON-RPC |
 | [`crates/strixonomy-cli/`](https://github.com/eddiethedean/strixonomy/tree/main/crates/strixonomy-cli) | `strixonomy` CLI binary |
 | [`extension/`](https://github.com/eddiethedean/strixonomy/tree/main/extension) | VS Code extension — trees, commands, LSP client, webview host |
-| [`extension/webview-ui/`](https://github.com/eddiethedean/strixonomy/tree/main/extension/webview-ui) | React panels (Inspector, graphs, Query Workbench, …) |
+| [`extension/webview-ui/`](https://github.com/eddiethedean/strixonomy/tree/main/extension/webview-ui) | React panels (Inspector, graphs, Query Workbench, …) — internal codename *OntoUI* |
 | [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/main/fixtures) | Sample ontologies for tests and tutorials |
 | [`docs/`](../index.md) | Read the Docs source (this site) |
 

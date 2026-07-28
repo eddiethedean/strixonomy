@@ -1,10 +1,12 @@
 # Strixonomy
 
-**Strixonomy** edits OWL, RDF, and OBO ontologies in VS Code—browse entities, change labels and axioms, query, reason, and validate—without leaving Git.
+**Strixonomy** lets ontology engineers browse, edit, query, reason on, and validate OWL/RDF/OBO files inside VS Code—with Git-friendly workflows and optional CI automation. It is a **Protégé companion** for teams that want editing in the editor, not a byte-identical Protégé replacement today.
 
 **Install the extension → [First success (~10 min)](https://strixonomy.readthedocs.io/en/latest/guides/first-success/)** (no Rust, no clone).
 
-**Current release: v0.27.0** · [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/) · [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy.readthedocs.io/en/latest/)
+**Current release: v0.27.0** · **Development on `main`: v0.28.0** · [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/) · [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy.readthedocs.io/en/latest/)
+
+> **CLI install:** use `cargo install strixonomy-cli` — **not** `strixonomy` (library crate only).
 
 [![CI](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml/badge.svg)](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](https://github.com/eddiethedean/strixonomy/blob/main/LICENSE-MIT)
@@ -67,7 +69,7 @@ Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI �
 
 **VS Code:** Install [Strixonomy](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → open a folder of **`.ttl` / `.obo` / `.owl` / `.rdf` / `.owx`** (editable) or JSON-LD / TriG / N-Triples (browse/query only) → click the **Strixonomy** activity bar. Edit in the Entity Inspector. XML write-back is semantic re-serialize — see [OWL/XML and RDF/XML write-back](https://strixonomy.readthedocs.io/en/latest/guides/owl-xml-workflow/) and [Supported formats](https://strixonomy.readthedocs.io/en/latest/supported-formats/).
 
-> **Workspace Trust:** The **bundled** language server works in Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
+> **Workspace Trust:** The **bundled** language server works in **Restricted Mode** without trusting the folder. **Trust the workspace** only if you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
 
 **CI / automation only (not required for the IDE):**
 

@@ -12,7 +12,7 @@
 ## Prerequisites
 
 - **VS Code 1.85+** (see [platform compatibility](guides/platform-compatibility.md))
-- Strixonomy’s **bundled** language server runs in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath` — those settings are ignored when the folder is untrusted.
+- Strixonomy’s **bundled** language server runs in trusted and **Restricted Mode** without extra setup. **Trust the workspace** only when you configured `strixonomy.lspPath` or `strixonomy.robotPath` — those settings are ignored when the folder is untrusted.
 
 ## Install matrix
 
@@ -30,7 +30,7 @@ CLI install options (separate from the extension): [Install](install.md) · [Ins
 
 1. Install [Strixonomy from the Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) for Cursor). If the store lags the latest GitHub tag, use the VSIX under Option B — see [Versions and channels](guides/versions-and-channels.md).
 2. **File → Open Folder…** and choose a directory with ontology files.
-3. Strixonomy’s **bundled** language server runs without Trust; **do not Trust** unless you need custom `strixonomy.lspPath` / `strixonomy.robotPath`.
+3. The bundled language server works in **Restricted Mode** — Trust is optional. **Trust the folder** only if you need custom `strixonomy.lspPath` / `strixonomy.robotPath`.
 4. Open the **Strixonomy** activity bar and browse ontologies, classes, properties, individuals, and **Diagnostics**.
 
 For a full walkthrough, see [First success in 10 minutes](guides/first-success.md).
@@ -77,7 +77,7 @@ Set **Strixonomy: Lsp Path** (`strixonomy.lspPath`) to the absolute path of your
 
 1. Open **Extensions** in Cursor and search for **Strixonomy** (publisher `strixonomy`).
 2. Install **Strixonomy** (`strixonomy.strixonomy`).
-3. Open a folder with ontology files. Strixonomy’s **bundled** language server works in trusted and Restricted Mode — **do not Trust** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
+3. Open a folder with ontology files. The bundled language server works in **Restricted Mode** — **Trust** only for custom `strixonomy.lspPath` or `strixonomy.robotPath`.
 
 If Strixonomy does not appear in search (before v0.11 or if Open VSX sync is delayed):
 

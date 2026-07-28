@@ -51,7 +51,7 @@ flowchart TD
 
 1. Check **Output → Strixonomy Language Server** for the exact error.
 2. Uninstall duplicate Strixonomy extension versions.
-3. Strixonomy’s **bundled** language server works in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath` (Restricted Mode ignores those settings).
+3. The **bundled** language server works in Restricted Mode without Trust. **Trust the workspace** only if you configured `strixonomy.lspPath` or `strixonomy.robotPath` (Restricted Mode ignores those settings).
 4. Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install strixonomy-lsp --locked --version 0.27.0`) — trusted workspaces only.
 5. See [Install VS Code](vscode-install.md#troubleshooting).
 
@@ -107,7 +107,7 @@ strixonomy query /path/to/your/ontologies "SELECT * FROM classes"
 | `cargo install` network / crates.io errors | Retry with `--locked`; pin `--version 0.27.0` in CI |
 | Release tarball on macOS/Windows | CLI pre-builds are **Linux x64 only** — use `cargo install` or the VSIX extension |
 | macOS Gatekeeper blocks bundled `strixonomy-lsp` | Prefer Marketplace install; for sideloaded VSIX see [VS Code install](vscode-install.md) (`xattr -d com.apple.quarantine` when needed) |
-| Corporate Marketplace blocked / lag | Install `strixonomy-v0.27.0.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) — [VS Code install](vscode-install.md) |
+| Corporate Marketplace blocked / proxy | Install VSIX from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) — [Enterprise deployment](guides/enterprise-deployment.md) · [VS Code install](vscode-install.md) |
 | `strixonomy diff HEAD..WORKTREE` fails | Run from a **git repository** root containing ontology files |
 
 ## CLI: `validate` exits non-zero
@@ -159,7 +159,7 @@ Indexing may fail above [workspace limits](workspace-limits.md) (file count, siz
 | Problem | What to try |
 |---------|-------------|
 | Reasoner command missing or greyed out | Run **Index Workspace** first; Trust only if using custom `lspPath` |
-| `OntoLogos` / classify errors | Confirm ontology fits [workspace limits](workspace-limits.md); try lighter profile (`el`, `rl`, `rdfs`) |
+| `Ontologos` / classify errors | Confirm ontology fits [workspace limits](workspace-limits.md); try lighter profile (`el`, `rl`, `rdfs`) |
 | `dl` or `auto` profile fails | DL requires supported constructs; check Output panel; try `el` for EL-only ontologies; see [Reasoner guide](guides/reasoner.md) |
 | Reasoner runs but no inferred edges | Run **Strixonomy: Run Reasoner**, then **Set Hierarchy Mode** → inferred or combined |
 | Explanation panel empty | Explanations need an unsatisfiable class; run reasoner first; DL explanations require v0.12+ |

@@ -980,6 +980,60 @@ graph = true
     }
 
     #[test]
+    fn enable_after_disable_reregisters_in_process_validator() {
+        struct StubValidator;
+        impl crate::traits::ValidatorPlugin for StubValidator {
+            fn id(&self) -> &str {
+                "stub.validator"
+            }
+            fn validate(
+                &self,
+                _catalog: &strixonomy_catalog::OntologyCatalog,
+                _workspace: &std::path::Path,
+            ) -> Vec<strixonomy_core::Diagnostic> {
+                Vec::new()
+            }
+        }
+
+        let dir = tempfile::tempdir().unwrap();
+        let plugins = dir.path().join(".strixonomy/plugins");
+        std::fs::create_dir_all(&plugins).unwrap();
+        std::fs::write(
+            plugins.join("stub.toml"),
+            r#"
+[plugin]
+name = "stub"
+version = "0.1.0"
+kind = "validator"
+id = "stub.validator"
+api_version = "1"
+permissions = ["workspace.read"]
+
+[capabilities]
+validate = true
+"#,
+        )
+        .unwrap();
+        let mut host = PluginHost::new(dir.path());
+        host.discover().unwrap();
+        host.register_validator(Box::new(StubValidator));
+        host.activate_all().unwrap();
+        host.disable_plugin("stub.validator").unwrap();
+        host.enable_plugin("stub.validator").unwrap();
+        let catalog = strixonomy_catalog::IndexBuilder::new()
+            .workspace(dir.path())
+            .build()
+            .expect("catalog");
+        let err = host
+            .run_validate_plugin("stub.validator", &catalog)
+            .expect_err("validator must be re-registered after enable");
+        assert!(
+            err.to_string().contains("no runtime"),
+            "unexpected error: {err}"
+        );
+    }
+
+    #[test]
     fn disable_cascades_dependents() {
         let dir = tempfile::tempdir().unwrap();
         let plugins = dir.path().join(".strixonomy/plugins");

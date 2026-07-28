@@ -104,7 +104,7 @@ Since **v0.10**, the language server indexes **all workspace folders** on open. 
 **`failed to start language server`**
 
 - Check **Output → Strixonomy Language Server** and uninstall duplicate Strixonomy versions.
-- Strixonomy’s **bundled** language server works in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
+- The **bundled** language server works in Restricted Mode without Trust. **Trust the workspace** only if you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
 - Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install strixonomy-lsp --locked --version 0.27.0`) when debugging a custom build — trusted workspaces only.
 - See [vscode-install.md](vscode-install.md) and [Troubleshooting](troubleshooting.md) (symptom table).
 

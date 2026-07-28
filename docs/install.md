@@ -1,24 +1,45 @@
 # Install Strixonomy
 
-**Canonical install page.** Most users only need the **Strixonomy IDE** (VS Code/Cursor extension).
-The **Strixonomy engine** CLI is optional (CI / scripting).
+**Canonical install page and hub.** Most users only need the **Strixonomy IDE** (VS Code/Cursor extension). The **Strixonomy engine** CLI is optional (CI / scripting).
 
-| Goal | Go here |
-|------|---------|
-| Edit ontologies in VS Code / Cursor | [Install the extension](#1-vs-code-cursor-extension-recommended) → [First success (~10 min)](guides/first-success.md) |
-| Optional CLI on macOS / Windows | [Install CLI (cargo)](#2-optional-cli) · detail: [macOS/Windows walkthrough](guides/install-cli.md) |
-| CI validate on Linux x64 | [CI with release tarball](ci-integration.md) |
-| Which binary / crate do I need? | [Which artifact?](guides/which-artifact.md) |
+!!! danger "CLI package name"
+    Install the CLI with **`cargo install strixonomy-cli`** (binary name: `strixonomy`).
+    **`cargo install strixonomy`** installs the **library** crate, not the CLI.
+
+!!! info "Public install pin"
+    Pin to **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)). GitHub `main` may be **0.28.0** in development — see [Versions & channels](guides/versions-and-channels.md).
+
+## Which path do I need?
+
+```mermaid
+flowchart TD
+  start[What do you want to do?]
+  start --> edit{Edit ontologies in VS Code?}
+  edit -->|Yes| ext[Install Strixonomy extension]
+  ext --> fs[First success tutorial]
+  edit -->|No| ci{Validate or classify in CI?}
+  ci -->|Linux x64| tarball[Download release tarball]
+  ci -->|macOS / Windows / other| cargo["cargo install strixonomy-cli --version 0.27.0"]
+  ci -->|No| rust{Embed in Rust app?}
+  rust -->|Yes| lib["strixonomy = \"0.27\" in Cargo.toml"]
+  rust -->|No| lsp[Custom editor on strixonomy-lsp]
+  tarball --> ciDoc[CI integration guide]
+  cargo --> cliDoc[Install CLI detail]
+  lib --> rustDoc[Rust library guide]
+  lsp --> lspDoc[LSP API]
+```
+
+| Goal | Start here |
+|------|------------|
+| **Not sure which artifact** | [Which artifact?](guides/which-artifact.md) |
+| Edit in VS Code / Cursor | [Extension install](#1-vs-code-cursor-extension-recommended) → [First success](guides/first-success.md) |
+| CI / automation (Linux x64) | [Release tarball](#linux-x64-release-tarball-ci-preferred) → [CI integration](ci-integration.md) |
+| CLI on macOS / Windows | [cargo install](#cargo-install-macos--windows--any-platform) → [Install CLI walkthrough](guides/install-cli.md) |
+| Rust library | [Rust library guide](guides/rust-library.md) |
 | Product names (IDE vs engine) | [Product identity](guides/product-identity.md) |
 
 !!! tip "Most IDE users never need Rust"
     The Strixonomy IDE bundles `strixonomy-lsp`. Install the extension and skip the CLI unless you need `strixonomy` for CI, scripting, or validation outside the editor.
-
-!!! danger "Wrong cargo package"
-    Install the CLI with `cargo install strixonomy-cli` (binary name: `strixonomy`).
-    `cargo install strixonomy` installs the library crate, not the CLI.
-
-Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)). Channel lag (Marketplace vs crates.io vs docs): [Versions & channels](guides/versions-and-channels.md).
 
 ## 1. VS Code / Cursor extension (recommended)
 
@@ -32,7 +53,8 @@ Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)). Channel lag (Mar
 3. Open a folder of `.ttl` / `.obo` / `.owl` / `.rdf` / `.owx` files.
 4. Open the **Strixonomy** activity bar.
 
-Full steps (Trust, offline, custom `lspPath`): [VS Code install details](vscode-install.md).
+!!! tip "Restricted Mode works out of the box"
+    The **bundled** language server indexes ontologies without trusting the workspace. **Trust the folder** only if you set custom `strixonomy.lspPath` or `strixonomy.robotPath` — see [VS Code install details](vscode-install.md).
 
 **Next:** [First success (~10 min)](guides/first-success.md).
 
@@ -63,7 +85,7 @@ Longer macOS/Windows walkthrough: [Install CLI](guides/install-cli.md).
 
 See [CI integration](ci-integration.md) — download `strixonomy-v0.27.0-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
 
-### From a clone
+### From a git clone
 
 ```bash
 git clone https://github.com/eddiethedean/strixonomy.git
@@ -71,16 +93,19 @@ cd strixonomy
 cargo run -- validate fixtures
 ```
 
+The `fixtures/` directory exists **only in a clone**. After [First success](guides/first-success.md), prefer a tutorial folder — [Examples index](examples/index.md).
+
 ## 3. What you can edit
 
 Write-back: **`.ttl`**, **`.obo`**, **`.owl`/`.rdf`**, **`.owx`**. XML is semantic re-serialize (not Protégé byte-identical). JSON-LD / N-Triples / TriG stay read-only — [Supported formats](supported-formats.md) · [Capabilities by format](guides/capabilities-by-format.md).
 
-## Related
+## Detail pages (appendices)
 
 | Topic | Doc |
 |-------|-----|
-| Full CLI / CI install matrix (all paths) | [Install CLI & CI (detail)](install-cli-ci.md) |
-| VS Code options (offline, Restricted Mode) | [vscode-install.md](vscode-install.md) |
+| Full CLI / CI install matrix | [Install CLI & CI (detail)](install-cli-ci.md) |
+| VS Code options (offline, Restricted Mode, VSIX) | [vscode-install.md](vscode-install.md) |
+| Extension settings reference | [VS Code settings](ide/vscode-settings.md) |
 | Release integrity | [release-integrity.md](release-integrity.md) |
 | Platform support | [platform-compatibility.md](guides/platform-compatibility.md) |
 | Air-gap artifact filenames | [Versions & channels](guides/versions-and-channels.md#air-gap-artifact-manifest) |

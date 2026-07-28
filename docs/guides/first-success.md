@@ -43,9 +43,8 @@ Download samples, then **File → Open Folder…** (open the **folder**, not a s
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/examples/obo-workflow/demo.obo -OutFile demo.obo
     ```
 
-!!! tip "Workspace Trust"
-    Leave the folder **Restricted** unless you set a custom language-server path.
-    The **bundled** server already works; Trust is only required for `strixonomy.lspPath` / `strixonomy.robotPath`.
+!!! tip "Restricted Mode works out of the box"
+    The **bundled** language server indexes ontologies without trusting the workspace. **Trust the folder** only if you configured `strixonomy.lspPath` or `strixonomy.robotPath` — those settings are ignored in Restricted Mode.
 
 ### 3. Browse the explorer
 
@@ -88,6 +87,6 @@ If trees stay empty: run **Strixonomy: Index Workspace**, then check **View → 
 |---------|-----|
 | Empty explorer | Index Workspace; Output → Strixonomy Language Server |
 | Cannot edit | Confirm writable format (`.ttl`/`.obo`/`.owl`/`.rdf`/`.owx`); see [Supported formats](../supported-formats.md) |
-| Custom LSP path ignored | Trust the workspace |
+| Custom LSP path ignored | **Trust the workspace** (Restricted Mode ignores `strixonomy.lspPath`) |
 
 Full help: [Troubleshooting](../troubleshooting.md) · [FAQ](../faq.md).

@@ -1,5 +1,7 @@
 # Strixonomy Roadmap
 
+> **Evaluators:** start with **[Roadmap summary](roadmap-summary.md)** and **[What ships today](SHIPPED.md)** — this page is the full engineering timeline (661 lines), not a capability matrix.
+
 > **Canonical full roadmap:** [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) (includes Era I webapp / WASM / React app no-backend detail).  
 > **This RTD page** is a condensed summary for ships + near-term phases.  
 > **Which roadmap?** [Roadmap hub](roadmap-hub.md). **What ships today?** [SHIPPED.md](SHIPPED.md).
@@ -62,9 +64,9 @@ Engine foundation    IDE depth                Platform & authoring   OntoUI → 
                                                                        + Protégé test port (v0.26)
                                                                        + Strixonomy rename (v0.27)
 
-PLANNED (1.0.0-rc → 1.0) ─────────────────────────────────────────────►
-1.0.0-rc               1.0.0
-Stabilize              Protégé replacement
+PLANNED (v0.28 → 1.0) ────────────────────────────────────────────────►
+v0.28                  1.0.0-rc               1.0.0
+Reserve Python identity Stabilize              Protégé replacement
 ```
 
 Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md). Pre-1.0 phases: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md).
@@ -78,7 +80,7 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy
 | **C — Platform & authoring** | v0.9–v0.12 | Shipped | Strixonomy identity, semantic workspace, authoring parity |
 | **D — OntoUI platform** | v0.13–v0.14 | Shipped | v0.13: WorkspaceStore, focus relay; v0.14: plugin host MVP |
 | **E — Desktop UX shell gate** | v0.15–v0.18 | Shipped | Menus, layouts, workflows, migration readiness (not full parity) |
-| **F — Full Protégé parity path** | v0.19–v0.27 | Shipped through v0.27 | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename |
+| **F — Full Protégé parity path** | v0.19–v0.28 | Shipped through v0.27; v0.28 planned | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename → Python package reservation |
 | **G — Protégé replacement** | 1.0.0 | Planned | Daily OWL/OBO engineering without Protégé |
 | **H — Ecosystem** | v1.1–v1.2+ | Planned | SDKs, AI, toolchain & collaboration |
 
@@ -94,10 +96,11 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy
 | 25 | v0.25 | F | Shipped | 4†, 8† | Viz + plugin SDK 1.0 + a11y + parity CI |
 | 26 | v0.26 | F | Shipped | — | Protégé Desktop JUnit behavioral test port (Waves 1–4) |
 | 27 | v0.27 | F | Shipped | — | Rename OntoCore and OntoCode to Strixonomy |
-| 28 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
-| 29 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
-| 30 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
-| 31 | v1.2+ | H | Planned | 9, 10, 11 | Ontology toolchain platform |
+| 28 | v0.28 | F | Planned | — | Reserve the `strixonomy` Python package identity and establish packaging/release ownership |
+| 29 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
+| 30 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
+| 31 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
+| 32 | v1.2+ | H | Planned | 9, 10, 11 | Ontology toolchain platform |
 
 †Partial scope in this release (remainder in later releases). Full mapping: [ROADMAP_MAPPING.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md).
 
@@ -527,9 +530,27 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.27.md](migration/v0.27.md) · full
 
 ---
 
-## Planned releases (1.0.0-rc → v1.2+)
+### v0.28 — Python package reservation (planned)
 
-**Pre-1.0 phases remaining:** [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) (1.0.0-rc → 1.0.0). **v0.27 shipped.** Per-release detail: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) § Era F / Era G.
+**Theme:** Secure the official `strixonomy` identity on PyPI and establish a trustworthy release path before the Python SDK ships in v1.1.
+
+| Area | Deliverables |
+|------|--------------|
+| **Package identity** | Confirm the `strixonomy` PyPI project name; establish maintainers, recovery ownership, and project metadata linking only to the official repository and documentation |
+| **Packaging skeleton** | Add the future SDK package layout and Maturin/PyO3 packaging metadata without exposing unstable Rust internals |
+| **Release security** | Configure PyPI Trusted Publishing from the official GitHub repository, require 2FA for maintainers, and document the package release procedure |
+| **Preview publication** | Publish only a clearly labeled pre-release reservation artifact; its README and import surface must state that the Python SDK is planned for v1.1 and must not claim workspace, query, validation, diff, or reasoning capabilities |
+| **Documentation** | Add a package-status page that distinguishes the reserved Python distribution from the shipped CLI, LSP, Rust crates, and the planned v1.1 SDK |
+
+**Non-goals:** Python bindings, CLI subprocess wrappers presented as an SDK, stable Python APIs, or production support. Those remain **v1.1** deliverables.
+
+**Exit criteria:** The official project controls the `strixonomy` PyPI identity through a reproducible trusted-publishing workflow; ownership and recovery are documented; the published artifact makes no capability claims beyond package reservation.
+
+---
+
+## Planned releases (v0.28 → v1.2+)
+
+**Pre-1.0 phases remaining:** Python package reservation in **v0.28**, then [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) (1.0.0-rc → 1.0.0). **v0.27 shipped.** Per-release detail: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) § Era F / Era G.
 
 ---
 
