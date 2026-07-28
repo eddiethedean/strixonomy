@@ -14,4 +14,10 @@ describe("design tokens", () => {
     expect(block).toContain(":root");
     expect(block).toContain("--oc-space-1: 4px");
   });
+
+  it("defines the owl brand palette", () => {
+    expect(designTokenCssVars["--oc-brand-night"]).toBe("#0f172a");
+    expect(designTokenCssVars["--oc-brand-eye"]).toBe("#f59e0b");
+    expect(designTokenCssVars["--oc-brand-feather"]).toBe("#e2e8f0");
+  });
 });

@@ -1,13 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Strixonomy">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Strixonomy owl">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2563eb"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+    <linearGradient id="night" x1="18" y1="8" x2="102" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312e81"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="38" y1="40" x2="82" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
     </linearGradient>
   </defs>
-  <rect width="120" height="120" rx="28" fill="url(#g)"/>
-  <circle cx="38" cy="42" r="10" fill="#fff" opacity="0.95"/>
-  <circle cx="78" cy="42" r="10" fill="#fff" opacity="0.95"/>
-  <circle cx="58" cy="78" r="10" fill="#fff" opacity="0.95"/>
-  <path d="M38 42 L58 78 L78 42" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <rect width="120" height="120" rx="28" fill="url(#night)"/>
+  <path d="M27 33 35 17 49 28a48 48 0 0 1 22 0l14-11 8 16c8 9 12 20 12 33 0 25-20 39-45 39S15 91 15 66c0-13 4-24 12-33Z" fill="#e2e8f0"/>
+  <path d="M24 45c10-13 24-17 36-8 12-9 26-5 36 8-4 25-19 42-36 51-17-9-32-26-36-51Z" fill="#cbd5e1"/>
+  <path d="M29 46c10-12 23-13 31-2 8-11 21-10 31 2-5 17-17 26-31 27-14-1-26-10-31-27Z" fill="#312e81"/>
+  <circle cx="43" cy="51" r="13" fill="url(#gold)"/>
+  <circle cx="77" cy="51" r="13" fill="url(#gold)"/>
+  <circle cx="43" cy="51" r="5" fill="#0f172a"/>
+  <circle cx="77" cy="51" r="5" fill="#0f172a"/>
+  <circle cx="40" cy="47" r="2" fill="#fff" opacity=".9"/>
+  <circle cx="74" cy="47" r="2" fill="#fff" opacity=".9"/>
+  <path d="m60 57 8 10-8 6-8-6 8-10Z" fill="#f59e0b"/>
+  <path d="M38 82h44M38 82l22 14 22-14" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="38" cy="82" r="4" fill="#312e81"/>
+  <circle cx="60" cy="96" r="4" fill="#312e81"/>
+  <circle cx="82" cy="82" r="4" fill="#312e81"/>
 </svg>

@@ -32,6 +32,10 @@ export const designTokenCssVars: Record<string, string> = {
   "--oc-font-caption-weight": "400",
   "--oc-font-code-size": "13px",
   "--oc-font-code-weight": "400",
+  "--oc-brand-night": "#0f172a",
+  "--oc-brand-indigo": "#4338ca",
+  "--oc-brand-eye": "#f59e0b",
+  "--oc-brand-feather": "#e2e8f0",
 };
 
 /** Inject token CSS variables onto :root (optional runtime bootstrap). */

@@ -1,4 +1,4 @@
-/* Strixonomy webview — premium design system, VS Code theme native */
+/* Strixonomy webview — owl-inspired, VS Code theme-native design system */
 /* Token map: extension/webview-ui/src/tokens/cssVars.ts (docs/ui/DESIGN_TOKENS.json) */
 
 :root {
@@ -32,6 +32,10 @@
   --oc-font-caption-weight: 400;
   --oc-font-code-size: 13px;
   --oc-font-code-weight: 400;
+  --oc-brand-night: #0f172a;
+  --oc-brand-indigo: #4338ca;
+  --oc-brand-eye: #f59e0b;
+  --oc-brand-feather: #e2e8f0;
   --oc-border: var(
     --vscode-widget-border,
     var(--vscode-panel-border, var(--vscode-input-border))
@@ -49,7 +53,10 @@
     --vscode-list-hoverBackground,
     color-mix(in srgb, var(--vscode-foreground) 6%, var(--vscode-editor-background))
   );
-  --oc-accent: var(--vscode-focusBorder, var(--vscode-button-background));
+  --oc-owl-eye: var(--vscode-charts-yellow, #f59e0b);
+  --oc-owl-night: var(--vscode-editor-background, #0f172a);
+  --oc-owl-feather: var(--vscode-descriptionForeground, #cbd5e1);
+  --oc-accent: var(--vscode-focusBorder, var(--oc-owl-eye));
   --oc-accent-soft: color-mix(in srgb, var(--oc-accent) 14%, transparent);
   --oc-accent-glow: color-mix(in srgb, var(--oc-accent) 28%, transparent);
   --oc-font-mono: var(--vscode-editor-font-family, ui-monospace, monospace);
@@ -121,7 +128,7 @@ input[type="range"] {
   height: 0.85em;
   margin-right: var(--oc-space-2);
   border-radius: 2px;
-  background: var(--oc-accent);
+  background: linear-gradient(180deg, var(--oc-owl-eye), var(--oc-accent));
   vertical-align: -0.1em;
 }
 
@@ -1416,16 +1423,42 @@ ul {
 }
 
 .oc-brand-mark {
+  position: relative;
   width: 64px;
   height: 64px;
-  border-radius: var(--oc-radius-xl);
+  border-radius: 20px 20px var(--oc-radius-xl) var(--oc-radius-xl);
   background: linear-gradient(
     145deg,
-    color-mix(in srgb, var(--vscode-charts-blue) 55%, transparent),
-    color-mix(in srgb, var(--vscode-charts-purple) 45%, transparent)
+    color-mix(in srgb, var(--oc-brand-indigo) 88%, var(--vscode-editor-background)),
+    color-mix(in srgb, var(--oc-brand-night) 92%, var(--vscode-editor-background))
   );
-  border: 1px solid color-mix(in srgb, var(--oc-accent) 30%, var(--oc-border-subtle));
-  box-shadow: var(--oc-shadow-md), 0 0 40px var(--oc-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--oc-owl-eye) 38%, var(--oc-border-subtle));
+  box-shadow: var(--oc-shadow-md), 0 0 40px color-mix(in srgb, var(--oc-owl-eye) 14%, transparent);
+  clip-path: polygon(0 12%, 22% 0, 38% 15%, 50% 11%, 62% 15%, 78% 0, 100% 12%, 100% 100%, 0 100%);
+}
+
+.oc-brand-mark::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 12px;
+  top: 22px;
+  border: 6px solid var(--oc-owl-eye);
+  border-radius: 50%;
+  box-shadow: 25px 0 0 -6px var(--oc-brand-night), 25px 0 0 0 var(--oc-owl-eye);
+  background: var(--oc-brand-night);
+}
+
+.oc-brand-mark::after {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 42px;
+  width: 10px;
+  height: 10px;
+  background: var(--oc-owl-eye);
+  transform: rotate(45deg);
 }
 
 /* ── Schema browser (Query Workbench) ─────────────────── */
