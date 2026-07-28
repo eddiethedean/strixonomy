@@ -71,7 +71,7 @@ Use when you need a platform without a release tarball, or when developing again
           workspaces: ""
 
       - name: Install strixonomy CLI
-        run: cargo install ontocore-cli --locked --version 0.27.0
+        run: cargo install strixonomy-cli --locked --version 0.27.0
 
       - name: Validate ontology files
         run: strixonomy validate .
@@ -101,7 +101,7 @@ Fail the job when EL classification finds unsatisfiable classes:
 
     ```yaml
           - name: Install strixonomy CLI
-            run: cargo install ontocore-cli --locked --version 0.27.0
+            run: cargo install strixonomy-cli --locked --version 0.27.0
 
           - name: Classify ontologies (EL)
             run: strixonomy classify . --profile el --format json

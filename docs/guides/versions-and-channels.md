@@ -1,6 +1,6 @@
 # Versions and channels
 
-**How to pick the right Strixonomy / Strixonomy build.** Pin production and CI to a **tagged** release; do not follow `main` docs alone.
+**How to pick the right Strixonomy IDE / Strixonomy engine build.** Pin production and CI to a **tagged** release; do not follow `main` docs alone.
 
 ## Source of truth
 
@@ -27,13 +27,27 @@ If Marketplace / Open VSX is behind GitHub, install the release VSIX for the tag
 
 | Goal | Command / link |
 |------|----------------|
-| VS Code | Marketplace **or** download `ontocode-v0.27.0.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) |
+| VS Code | Marketplace **or** download `strixonomy-v0.27.0.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) |
 | Cursor | [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) or the same VSIX |
-| CLI (pinned) | `cargo install ontocore-cli --locked --version 0.27.0` |
-| CLI (Linux, no compile) | `ontocore-v0.27.0-x86_64-unknown-linux-gnu.tar.gz` from GitHub Releases |
+| CLI (pinned) | `cargo install strixonomy-cli --locked --version 0.27.0` |
+| CLI (Linux, no compile) | `strixonomy-v0.27.0-x86_64-unknown-linux-gnu.tar.gz` from GitHub Releases |
 | Tutorial files (offline) | [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) on the same GitHub Release (or curl samples in [First success](first-success.md)) |
 
 Always pin: bare `cargo install strixonomy-cli` resolves to the **latest** crates.io version and can jump without your review.
+
+## Air-gap artifact manifest
+
+Exact filenames on [GitHub Release v0.27.0](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) (verify with `SHA256SUMS` on the same release):
+
+| Artifact | Filename |
+|----------|----------|
+| VS Code / Cursor extension | `strixonomy-v0.27.0.vsix` |
+| CLI (Linux x64 only) | `strixonomy-v0.27.0-x86_64-unknown-linux-gnu.tar.gz` |
+| Checksums | `SHA256SUMS` |
+| Offline tutorial samples | `strixonomy-tutorial.zip` |
+| Prebuilt LSP (platform-specific) | `strixonomy-lsp-*` archives on the same release |
+
+There is **no** Homebrew / winget / Scoop / Docker image for the CLI today — macOS/Windows CI agents use `cargo install strixonomy-cli` or the IDE-bundled LSP. See [Product identity](product-identity.md) and [Install](../install.md).
 
 ## When Marketplace lags GitHub
 

@@ -34,20 +34,28 @@ xcode-select -p   # should print a Developer path
 
 ## Install
 
-```bash
-cargo install ontocore-cli --locked --version 0.27.0
-```
+=== "macOS / Linux"
 
-Confirm:
+    ```bash
+    cargo install strixonomy-cli --locked --version 0.27.0
+    export PATH="$HOME/.cargo/bin:$PATH"
+    strixonomy --help
+    which strixonomy   # typically ~/.cargo/bin/strixonomy
+    ```
 
-```bash
-strixonomy --help
-which strixonomy   # typically ~/.cargo/bin/strixonomy
-```
+=== "Windows (PowerShell)"
+
+    ```powershell
+    cargo install strixonomy-cli --locked --version 0.27.0
+    $env:Path += ";$env:USERPROFILE\.cargo\bin"
+    strixonomy --help
+    Get-Command strixonomy
+    ```
+
+    Persist PATH via **Settings → System → Environment Variables** (User `Path` → add `%USERPROFILE%\.cargo\bin`) if the shell cannot find `strixonomy` after restart.
 
 !!! warning "Wrong crate name"
     The GitHub repo is `strixonomy`. The crate and CLI are **`strixonomy-cli`** / **`strixonomy`**. Do not run `cargo install strixonomy`.
-
 ## First commands
 
 Use **your** ontology directory (there is no `fixtures/` outside a git clone):

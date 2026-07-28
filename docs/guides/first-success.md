@@ -39,7 +39,7 @@ For offline VSIX installs, see [Install VS Code](../vscode-install.md).
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/examples/obo-workflow/demo.obo -OutFile demo.obo
     ```
 
-**Offline pack:** Prefer the curl/PowerShell commands above when you have network access. For offline sample files, download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) from the [v0.27.0 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0), unzip, and **File → Open Folder…**. For offline extension install, download `ontocode-v0.27.0.vsix` from that Release. Alternatively open `fixtures/` from a clone.
+**Offline pack:** Prefer the curl/PowerShell commands above when you have network access. For offline sample files, download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) from the [v0.27.0 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0), unzip, and **File → Open Folder…**. For offline extension install, download `strixonomy-v0.27.0.vsix` from that Release. Alternatively open `fixtures/` from a clone.
 
 Or browse [v0.27.0 fixtures](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures).
 

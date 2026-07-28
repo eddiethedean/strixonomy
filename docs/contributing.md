@@ -1,12 +1,16 @@
-# Contributing to Strixonomy / Strixonomy
+# Contributing to Strixonomy
 
 Thank you for contributing. This repository contains:
 
-- **Strixonomy** — Rust semantic workspace engine under `crates/` (`strixonomy` façade, `strixonomy-*` implementation, `strixonomy` CLI, `strixonomy-lsp`)
-- **Strixonomy** — VS Code extension under `extension/`
+- **Strixonomy engine** — Rust semantic workspace under `crates/` (`strixonomy` façade, `strixonomy-*` implementation, `strixonomy` CLI, `strixonomy-lsp`)
+- **Strixonomy IDE** — VS Code extension under `extension/`
 - **User guides** — install, SQL, and LSP API under `docs/`
 
 **AI / agent contributors:** start with [AGENTS.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/AGENTS.md) (SHIPPED-first; do not implement from `docs/design/` targets).
+
+Naming: [Product identity](guides/product-identity.md).
+
+**Env vars:** prefer `STRIXONOMY_LSP_BIN` (legacy `ONTOCORE_LSP_BIN` may still be dual-read — [v0.27 migration](migration/v0.27.md)).
 
 ### Docs-only contributors (~15 minutes)
 
@@ -59,7 +63,7 @@ The root Cargo package `strixonomy` is unpublished and hosts workspace integrati
 
 1. Complete smoke steps above.
 2. `cargo test --workspace` and `cargo build -p strixonomy-lsp --bins`.
-3. Extension: `cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm test`.
+3. Extension: `cd extension && npm ci && STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp npm test`.
 4. Webview: `cd extension/webview-ui && npm ci && npm test`.
 5. Before opening a PR: `./scripts/run-ci-local.sh` (30–60+ minutes; matches GitHub Actions).
 
@@ -95,7 +99,7 @@ cargo clippy --workspace --all-targets --all-features -- -D warnings
 cargo test --workspace
 cargo build -p strixonomy-lsp --bins
 cd extension/webview-ui && npm ci && npm test
-cd extension && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm ci && npm run compile && npm test
+cd extension && STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp npm ci && npm run compile && npm test
 ./scripts/check-doc-versions.sh
 ```
 
@@ -173,7 +177,7 @@ Extension tests expect a built `strixonomy-lsp` binary. From the repo root:
 ```bash
 cargo build -p strixonomy-lsp --bins
 cd extension
-export ONTOCORE_LSP_BIN="$(pwd)/../target/debug/strixonomy-lsp"
+export STRIXONOMY_LSP_BIN="$(pwd)/../target/debug/strixonomy-lsp"
 npm test
 ```
 

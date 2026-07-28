@@ -1,6 +1,9 @@
 # Examples index
 
-Runnable examples for Strixonomy CLI, Rust embedding, and Strixonomy workflows.
+Runnable examples for the Strixonomy engine CLI, Rust embedding, and IDE workflows.
+
+!!! note "Clone vs tutorial pack"
+    Paths like `fixtures/` and `examples/plugin-workspace/` exist **only in a git clone**. After `cargo install strixonomy-cli`, point commands at **your** ontology directory (or the [First success](../guides/first-success.md) tutorial folder / [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip)). IDE-only users can skip CLI cookbooks.
 
 ## CLI cookbooks (copy-paste)
 

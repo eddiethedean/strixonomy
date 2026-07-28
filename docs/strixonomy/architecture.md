@@ -8,27 +8,27 @@
 > | [Implementation architecture](../design/ARCHITECTURE.md) | Crate layout and internal modules for contributors |
 > | **This page** | Short Strixonomy stack summary only |
 >
-> **Status:** Strixonomy is the platform identity for the Rust engine shipped since v0.2. See [ADR-0018](../design/adr/0018-ontocore-platform-identity.md).
+> **Status:** Strixonomy engine is the platform identity for the Rust workspace shipped since v0.2 (historically OntoCore). See [ADR-0022](../design/adr/0022-strixonomy-identity.md) (current) and [ADR-0018](../design/adr/0018-ontocore-platform-identity.md) (historical).
 
 ## High-level diagram
 
 ```text
 +---------------------------+
-|        Strixonomy UI        |
+|      Strixonomy IDE       |
 | VS Code trees + commands  |
 | React webviews            |
 +-------------+-------------+
               |
               v
 +---------------------------+
-|   Strixonomy LSP            |
-|   (strixonomy-lsp)         |
+|   Strixonomy LSP          |
+|   (strixonomy-lsp)        |
 +-------------+-------------+
               |
               v
 +---------------------------+
-|       Strixonomy            |
-| strixonomy façade + crates  |
+|    Strixonomy engine      |
+| strixonomy façade + crates|
 | catalog/query/diagnostics |
 | refactor/reasoner/robot   |
 +-------------+-------------+
@@ -36,7 +36,7 @@
       +-------+-------+-------+
       v       v               v
 +-----------+ +-----------+ +------------------+
-| Oxigraph  | | HornedOWL | | OntoLogos        |
+| Oxigraph  | | HornedOWL | | Ontologos        |
 | RDF/SPARQL| | OWL axioms| | reasoners        |
 +-----+-----+ +-----+-----+ +--------+---------+
       |               |              |
@@ -52,9 +52,9 @@
 
 | Owner | Responsibilities |
 |-------|------------------|
-| **Strixonomy** | Workspace discovery, indexing, RDF/OWL/OBO parsing, entity catalog, symbol graph, import graph, SQL/SPARQL, diagnostics, refactoring, reasoning integration, patch write-back, CLI, LSP, **plugin hosting** (build/validation/doc/workflow plugins), future Python/TypeScript bindings, future MCP server |
-| **Strixonomy** | VS Code activity bar, explorer UI, React webviews, inspector, Query Workbench UI, Manchester editor UI, graph panels, extension commands, marketplace packaging, user onboarding, **toolchain workflow UI** (owlmake and plugin actions) |
-| **OntoLogos** | OWL reasoning, classification, consistency, explanations, inference profiles |
+| **Strixonomy engine** | Workspace discovery, indexing, RDF/OWL/OBO parsing, entity catalog, symbol graph, import graph, SQL/SPARQL, diagnostics, refactoring, reasoning integration, patch write-back, CLI, LSP, **plugin hosting** (build/validation/doc/workflow plugins), future Python/TypeScript bindings, future MCP server |
+| **Strixonomy IDE** | VS Code activity bar, explorer UI, React webviews, inspector, Query Workbench UI, Manchester editor UI, graph panels, extension commands, marketplace packaging, user onboarding, **toolchain workflow UI** (owlmake and plugin actions) |
+| **Ontologos** | OWL reasoning, classification, consistency, explanations, inference profiles |
 | **External plugins (e.g. owlmake)** | ROBOT/ODK-style build, validation, release, and documentation workflows — integrate via Strixonomy plugin APIs; not core dependencies |
 
 ## Façade and implementation

@@ -1,20 +1,20 @@
 # Install CLI & CI (detail)
 
-> **Prefer the canonical [Install](install.md) page** (extension first, optional CLI). This page is **CLI/CI only**.
+> **Prefer the canonical [Install](install.md) page** (extension first, optional CLI). This page is the **CLI/CI detail matrix** only — do not treat it as a second install SSOT. Artifact names and pins must match [Install](install.md) and [Versions & channels](guides/versions-and-channels.md#air-gap-artifact-manifest).
 
-IDE tutorial: [First success (~10 min)](guides/first-success.md). Canonical product install: [Install](install.md).
+IDE tutorial: [First success (~10 min)](guides/first-success.md). Canonical product install: [Install](install.md). Names: [Product identity](guides/product-identity.md).
 
 !!! note "First `cargo install` or clone build"
     A cold Rust toolchain may take **15–30+ minutes** to compile Strixonomy on first run. The VS Code extension bundles `strixonomy-lsp` and does not require Rust. **Linux x64 CI should prefer the release tarball** ([CI integration](ci-integration.md)) over `cargo install`.
 
 !!! note "Linux arm64 and non-x64"
-    Prebuilt CLI tarballs are **`x86_64-unknown-linux-gnu` only**. On Linux arm64 (and other unsupported targets), use `cargo install ontocore-cli --locked --version 0.27.0` or the language server bundled in the VSIX — see [platform compatibility](guides/platform-compatibility.md).
+    Prebuilt CLI tarballs are **`x86_64-unknown-linux-gnu` only**. On Linux arm64 (and other unsupported targets), use `cargo install strixonomy-cli --locked --version 0.27.0` or the language server bundled in the VSIX — see [platform compatibility](guides/platform-compatibility.md).
 
 ## Install matrix (CLI)
 
 | Method | Linux x64 | macOS | Windows | Needs Rust? |
 |--------|-----------|-------|---------|-------------|
-| `cargo install ontocore-cli --locked --version 0.27.0` | Yes | Yes | Yes | Yes (1.88+) |
+| `cargo install strixonomy-cli --locked --version 0.27.0` | Yes | Yes | Yes | Yes (1.88+) |
 | Release CLI tarball (`strixonomy-v*-x86_64-unknown-linux-gnu`) | Yes | No | No | No |
 | Git clone + `cargo run --` | Yes | Yes | Yes | Yes (1.88+) |
 
@@ -62,7 +62,7 @@ The `fixtures/` directory is included in the repository for examples and tests.
 ## `cargo install` (no clone)
 
 ```bash
-cargo install ontocore-cli --locked --version 0.27.0
+cargo install strixonomy-cli --locked --version 0.27.0
 ```
 
 **Version pinning:** Always pin an exact release in CI with `--version 0.27.0` (see [TAGGED_RELEASE](TAGGED_RELEASE)). Prefer `--locked` for reproducible crates.io installs — see [API stability](guides/api-stability.md) and [release integrity](release-integrity.md). For a longer macOS/Windows walkthrough, see [Install CLI](guides/install-cli.md).

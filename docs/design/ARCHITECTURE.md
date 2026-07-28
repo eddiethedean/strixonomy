@@ -14,9 +14,7 @@
 >
 > **Ecosystem architecture (canonical for users):** [Platform architecture](../architecture.md).
 >
-> **Shipped through v0.26:** workspace scanner, incremental indexing, multi-root workspaces, SQL/SPARQL, diagnostics, CLI/LSP, required-format write-back, React workspaces, reasoning, plugins, accessibility, parity CI, and the Protégé Desktop behavioral test port.
->
-> **Unreleased on v0.27:** Strixonomy crate, command, and path names on this contributor page describe the development identity. See [What ships today](../SHIPPED.md) for the tagged v0.27.0 product.
+> **Shipped through v0.27:** workspace scanner, incremental indexing, multi-root workspaces, SQL/SPARQL, diagnostics, CLI/LSP, required-format write-back, React workspaces, reasoning, plugins, accessibility, parity CI, Protégé Desktop behavioral test port, and the Strixonomy product identity (formerly OntoCore/OntoCode). See [What ships today](../SHIPPED.md) for the tagged v0.27.0 matrix.
 >
 > **Shipped v0.14–v0.17:** plugin host MVP → permissions/views → preferences/context actions → Protégé-shell. **Shipped v0.21:** RDF/XML and OWL/XML write-back. **Shipped v0.22:** complete OWL 2 authoring (`PAR-OWL-001`). **Planned v1.0:** full workflow plugin integration. See [Platform roadmap](../roadmap.md).
 >

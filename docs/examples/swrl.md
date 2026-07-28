@@ -1,6 +1,6 @@
 # SWRL cookbook
 
-Author and validate SWRL rules in Strixonomy / Strixonomy (v0.23+). Interactive path: **Rule Browser** / **Rule Editor** in VS Code. Script path: patch ops + LSP validate/parse.
+Author and validate SWRL rules in Strixonomy IDE / Strixonomy engine (v0.23+). Interactive path: **Rule Browser** / **Rule Editor** in VS Code. Script path: patch ops + LSP validate/parse.
 
 Rules are stored as ontology annotations (`strixonomy:swrlRule` JSON). DL/Auto classify may materialize DLSafe rules via Ontologos when present. See [What ships today](../SHIPPED.md) and [patch reference](../patch-reference.md).
 

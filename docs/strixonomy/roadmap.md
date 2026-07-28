@@ -17,5 +17,5 @@ Capability matrix for the current release: **[What ships today](../SHIPPED.md)**
 ## Related
 
 - [Vision](../vision.md) — mission and guiding principles
-- [Architecture](../architecture.md) — Ontologos / Strixonomy / Strixonomy layers
+- [Architecture](../architecture.md) — Ontologos / Strixonomy IDE / Strixonomy engine layers
 - [ADR-0018](../design/adr/0018-ontocore-platform-identity.md) — Strixonomy platform identity

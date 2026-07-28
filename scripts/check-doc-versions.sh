@@ -20,19 +20,12 @@ fi
 TAGGED_MINOR="${TAGGED_VERSION%.*}"
 MINOR_VERSION="${VERSION%.*}"
 
-# During the v0.27 identity cut, the latest tagged v0.26 artifacts still use
-# OntoCore/OntoCode names. Public pins must follow the tagged artifact identity,
-# while workspace/package checks continue to use Strixonomy.
+# During the v0.27 identity cut, tagged and workspace share Strixonomy names.
+# Keep TAGGED_* variables aligned with published GitHub Release / crates.io identity.
 TAGGED_FACADE="strixonomy"
 TAGGED_OWL="strixonomy-owl"
 TAGGED_TUTORIAL="strixonomy-tutorial.zip"
 TAGGED_RTD_PROJECT="strixonomy-vs"
-if [[ "$VERSION" != "$TAGGED_VERSION" ]] && [[ -f docs/migration/v0.27.md ]]; then
-  TAGGED_FACADE="ontocore"
-  TAGGED_OWL="ontocore-owl"
-  TAGGED_TUTORIAL="strixonomy-tutorial.zip"
-  TAGGED_RTD_PROJECT="ontocode-vs"
-fi
 
 echo "Checking documentation for workspace ${VERSION} (latest tagged: ${TAGGED_VERSION})..."
 
@@ -592,6 +585,7 @@ check_file_contains "mkdocs.yml" "ide/feature-tour.md" "mkdocs feature tour"
 check_file_contains "mkdocs.yml" "guides/plugins.md" "mkdocs plugins guide"
 check_file_contains "mkdocs.yml" "guides/docs-export.md" "mkdocs docs export guide"
 check_file_contains "mkdocs.yml" "guides/which-artifact.md" "mkdocs which-artifact guide"
+check_file_contains "mkdocs.yml" "guides/product-identity.md" "mkdocs product identity guide"
 check_file_contains "mkdocs.yml" "install.md" "mkdocs canonical Install page"
 check_file_contains "mkdocs.yml" "guides/capabilities-by-format.md" "mkdocs capabilities-by-format"
 check_file_contains "mkdocs.yml" "documentation-index.md" "mkdocs documentation index in Get started"
@@ -1431,6 +1425,40 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
       echo "ok: install-cli-ci is CLI/CI-only"
     fi
   fi
+fi
+
+# Reject legacy OntoCore/OntoCode install pins outside migration/design/changelog
+LEGACY_PIN_PATHS=(README.md docs extension crates CONTRIBUTING.md SUPPORT.md SECURITY.md .github)
+LEGACY_PIN_EXCLUDES=(
+  --glob '!**/changelog.md'
+  --glob '!**/CHANGELOG.md'
+  --glob '!**/migration/**'
+  --glob '!**/design/**'
+  --glob '!**/protege-parity/**'
+  --glob '!**/PROTEGE_REVERSE_ENGINEERING/**'
+  --glob '!**/adr/**'
+  --glob '!**/compat/**'
+)
+for legacy_pat in 'cargo install ontocore-cli' 'cargo install ontocore-lsp' 'ontocode-v[0-9]' 'ontocore-v[0-9].*tar\.gz' 'ontocore-v[0-9].*\.vsix'; do
+  if rg -q "$legacy_pat" "${LEGACY_PIN_PATHS[@]}" "${LEGACY_PIN_EXCLUDES[@]}" 2>/dev/null; then
+    echo "FAIL: legacy install/asset name '$legacy_pat' found outside migration/design/changelog/compat" >&2
+    rg -n "$legacy_pat" "${LEGACY_PIN_PATHS[@]}" "${LEGACY_PIN_EXCLUDES[@]}" 2>/dev/null || true
+    fail=1
+  fi
+done
+if [[ "$fail" -eq 0 ]]; then
+  echo "ok: no legacy ontocore-cli / ontocode-v / ontocore-v install pins"
+fi
+
+# Reject "Strixonomy and Strixonomy" / "Strixonomy / Strixonomy" tautology on Tier-1 surfaces
+for taut_file in README.md docs/index.md docs/faq.md docs/install.md docs/glossary.md docs/guides/which-artifact.md docs/guides/product-identity.md; do
+  if grep -qE 'Strixonomy and Strixonomy|Strixonomy / Strixonomy|Strixonomy & Strixonomy' "$taut_file" 2>/dev/null; then
+    echo "FAIL: $taut_file still has Strixonomy/Strixonomy tautology (use IDE vs engine)" >&2
+    fail=1
+  fi
+done
+if [[ "$fail" -eq 0 ]]; then
+  echo "ok: no Strixonomy tautology on Tier-1 naming surfaces"
 fi
 
 if [[ "$fail" -ne 0 ]]; then

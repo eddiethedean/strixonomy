@@ -17,7 +17,7 @@ assignees: ''
 
 ## Version
 
-- Strixonomy / Strixonomy version (e.g. 0.12.0, git commit, or crates.io):
+- Strixonomy IDE / Strixonomy engine version (e.g. 0.12.0, git commit, or crates.io):
 - OS and architecture:
 - Rust version (if building from source):
 - VS Code version (if extension):

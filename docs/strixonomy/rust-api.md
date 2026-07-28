@@ -94,6 +94,17 @@ let hits = ws.search("Person");
 
 `Workspace::open` returns `Result<Workspace, strixonomy::Error>`. Map failure modes with [Errors reference](../errors.md) and [Known limitations](../known-limitations.md).
 
+### Error taxonomy (façade vs core)
+
+| Type | Use when |
+|------|----------|
+| [`strixonomy::Error`](https://docs.rs/strixonomy/latest/strixonomy/enum.Error.html) | Preferred in application code against the façade crate — `?` from `Workspace` methods |
+| `StrixonomyError` / crate-local errors (`CatalogError`, `QueryError`, …) | Lower-level `strixonomy-*` crates or migration notes that still name core errors |
+| CLI exit codes | Automation — [Errors](../errors.md) / [workspace limits](../workspace-limits.md). Note: `classify` with unsatisfiable classes does **not** fail the Rust API by itself; the CLI may exit non-zero when unsat is treated as failure |
+| LSP error codes | Editor clients — [LSP API](../lsp-api.md) |
+
+Prefer `strixonomy::Error` for new embedders. Compat / rename details: [v0.27 migration](../migration/v0.27.md).
+
 ### `WorkspaceOptions`
 
 ```rust

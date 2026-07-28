@@ -1,6 +1,6 @@
 # LGPL compliance guide (horned-owl)
 
-This page helps **legal, security, and platform teams** evaluate copyleft obligations when adopting Strixonomy / Strixonomy **v0.27.0** (latest tagged). It summarizes documentation and dependency licenses — **it is not legal advice**. Engage your counsel for binding decisions.
+This page helps **legal, security, and platform teams** evaluate copyleft obligations when adopting Strixonomy IDE / Strixonomy engine **v0.27.0** (latest tagged). It summarizes documentation and dependency licenses — **it is not legal advice**. Engage your counsel for binding decisions.
 
 Dependency inventory: [LICENSES.md](../design/LICENSES.md) · [DEPENDENCY_MATRIX.md](../design/DEPENDENCY_MATRIX.md).
 
@@ -18,7 +18,7 @@ Other notable licenses in v0.8:
 
 | Component | License | Trigger |
 |-----------|---------|---------|
-| Strixonomy / Strixonomy crates | MIT OR Apache-2.0 | Always |
+| Strixonomy IDE / Strixonomy engine crates | MIT OR Apache-2.0 | Always |
 | `horned-owl` | **LGPL-3.0** | Linked in `strixonomy-owl` |
 | `reasonable` (via OntoLogos) | BSD-3-Clause | Reasoner (`classify`) |
 | Oxigraph, sqlparser, etc. | MIT / Apache-2.0 | Parser, query |
@@ -79,7 +79,7 @@ Maintainers regenerate `NOTICES` before releases per [releasing.md](../releasing
 | Mitigation | When |
 |------------|------|
 | **CI-only adoption** | Minimize desktop extension rollout until legal sign-off |
-| **Pin versions** | `cargo install ontocore-cli --locked --version 0.27.0` or release tarball |
+| **Pin versions** | `cargo install strixonomy-cli --locked --version 0.27.0` or release tarball |
 | **Archive NOTICES** | Store with internal artifact registry |
 | **Protégé coexistence** | Teams that cannot accept LGPL on desktops use Protégé for authoring; Strixonomy in Linux CI only |
 | **Air-gapped mirror** | Host VSIX + CLI + `NOTICES` + source snapshot internally — [enterprise deployment](enterprise-deployment.md) |

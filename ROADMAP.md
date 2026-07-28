@@ -1,26 +1,26 @@
-# OntoCore & OntoCode Roadmap
+# Strixonomy Roadmap
 
 ## Vision
 
 Build the modern open-source platform for ontology engineering.
 
-**OntoCore** is the semantic workspace engine.
+**Strixonomy engine** is the semantic workspace (CLI, LSP, crates).
 
-**OntoCode** is the flagship IDE powered by OntoCore.
+**Strixonomy IDE** is the flagship VS Code extension powered by the engine.
 
-Full mission and principles: [VISION.md](VISION.md). Ecosystem layers: [ARCHITECTURE.md](ARCHITECTURE.md).
+Full mission and principles: [VISION.md](VISION.md). Ecosystem layers: [ARCHITECTURE.md](ARCHITECTURE.md). Product names: [docs/guides/product-identity.md](docs/guides/product-identity.md).
 
 ## Guiding principle
 
-**OntoCode 1.0 has one primary objective: become a production-ready replacement for Protégé.**
+**Strixonomy IDE 1.0 has one primary objective: become a production-ready replacement for Protégé.**
 
 Every feature before 1.0 should answer one question:
 
-> Does this make it easier for ontology engineers to adopt OntoCode instead of Protégé?
+> Does this make it easier for ontology engineers to adopt Strixonomy instead of Protégé?
 
 After 1.0, the roadmap shifts from parity to modernization.
 
->  **Not a Protégé replacement today.** v0.26 supports pilot and coexistence workflows — not org-wide Protégé retirement. See [What ships today](docs/SHIPPED.md) and [Known limitations](docs/known-limitations.md).
+> **Not a Protégé replacement today.** v0.27 supports pilot and coexistence workflows — not org-wide Protégé retirement. See [What ships today](docs/SHIPPED.md) and [Known limitations](docs/known-limitations.md).
 
 ---
 

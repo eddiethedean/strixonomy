@@ -12,9 +12,10 @@ strixonomy query ./ontology "SELECT short_name, labels FROM classes"
 use strixonomy::workspace::Workspace;
 
 let ws = Workspace::open("./ontology")?;
-let result = ws.query("SELECT short_name FROM classes WHERE deprecated = false")?;
+let result = ws.query("SELECT short_name FROM classes WHERE deprecated = 'false'")?;
 ```
 
+Boolean columns use string literals (`'true'` / `'false'`). Full subset rules: [SQL reference](../sql-reference.md).
 ## Virtual tables
 
 | Table | Description |

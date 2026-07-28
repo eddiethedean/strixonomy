@@ -50,7 +50,7 @@ Full documentation: **[Read the Docs](https://strixonomy-vs.readthedocs.io/en/la
 
 Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`.
 
-> **Names:** **Strixonomy** = VS Code extension. **Strixonomy** = Rust engine (`strixonomy` CLI + `strixonomy-lsp`). **Ontologos** = external reasoner. This GitHub repo is `strixonomy` — install the CLI with **`cargo install strixonomy-cli`**, not `strixonomy`.
+> **Names:** **Strixonomy IDE** = VS Code extension. **Strixonomy engine** = Rust CLI + LSP. **Ontologos** = external reasoner. Install CLI: **`cargo install strixonomy-cli`** (not `strixonomy`). Details: [Product identity](https://strixonomy-vs.readthedocs.io/en/latest/guides/product-identity/).
 
 **Editable today:** Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`). XML saves are **semantic re-serialize** (not byte-identical to Protégé). JSON-LD / N-Triples / TriG remain read-only — [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/) · [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/).
 

@@ -1,6 +1,6 @@
 # Support and contact (community project)
 
-Strixonomy / Strixonomy is an open-source project. Support is provided on a best-effort basis.
+Strixonomy IDE / Strixonomy engine is an open-source project. Support is provided on a best-effort basis.
 
 ## Where to ask questions
 

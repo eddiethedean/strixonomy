@@ -26,7 +26,7 @@ Ontology content stays **on disk** — no cloud upload by default ([security pol
 ### Option B — Offline / air-gapped (recommended for regulated envs)
 
 1. On a connected staging machine, download from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) for version **v0.27.0** (or your pinned version):
-   - `ontocode-v0.27.0.vsix` (pattern: `strixonomy-v<version>.vsix`)
+   - `strixonomy-v0.27.0.vsix` (pattern: `strixonomy-v<version>.vsix`)
    - `SHA256SUMS`
    - `NOTICES`
    - Optional: `strixonomy-lsp-v<version>-<platform>.tar.gz` per platform if not using bundled VSIX LSP
@@ -91,7 +91,7 @@ Verify against `SHA256SUMS` in production pipelines ([ci-integration](../ci-inte
 | Platform | Release CLI binary | Alternatives |
 |----------|-------------------|--------------|
 | Linux x64 | **Yes** | — |
-| macOS | **No** | `cargo install ontocore-cli --locked --version 0.27.0` (requires Rust on agent) |
+| macOS | **No** | `cargo install strixonomy-cli --locked --version 0.27.0` (requires Rust on agent) |
 | Windows | **No** | Same, or WSL/Linux job for validate |
 
 Cache `~/.cargo` or an internal cargo registry mirror to reduce `cargo install` time.

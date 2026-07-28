@@ -7,7 +7,7 @@ Embed **Strixonomy** in tools, pipelines, or custom CLIs via the [`strixonomy`](
 Pre-1.0: public APIs may change between minor releases until v1.0. Pin minors in production. Crates are at **0.27.x**.
 
 !!! tip "Prefer `Workspace`"
-    For new code, use the **`Workspace` API** (`ontocore = "0.27"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../strixonomy/rust-api.md).
+    For new code, use the **`Workspace` API** (`strixonomy = "0.27"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../strixonomy/rust-api.md).
 
 ## crates.io first (5 minutes)
 

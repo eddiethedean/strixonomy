@@ -1,6 +1,6 @@
 # Patch reference (Strixonomy v0.27)
 
-> **Status:** Documents behavior in **Strixonomy v0.26**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.27.0**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
 Patch write-back uses a JSON array of patch operations. The CLI (`strixonomy patch`) and LSP (`strixonomy/applyAxiomPatch`) accept the same envelope; operation sets differ by file extension.

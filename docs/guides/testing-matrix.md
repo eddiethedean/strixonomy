@@ -12,7 +12,7 @@ Which tests to run — and how long they usually take — by change type.
 | Single Rust crate | `cargo test -p <crate>` + `cargo fmt --all --check` | 1–5 min | 10–30 min |
 | LSP / handlers | `cargo test -p strixonomy-lsp` + `cargo build -p strixonomy-lsp --bins` | 2–8 min | 15–40 min |
 | CLI | `cargo test -p strixonomy-cli` + integration tests touching CLI | 3–10 min | 20–45 min |
-| Extension host | `cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm test` | 2–5 min | 5–15 min |
+| Extension host | `cd extension && npm ci && STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp npm test` | 2–5 min | 5–15 min |
 | Webview UI | `cd extension/webview-ui && npm ci && npm test` | 1–3 min | 3–8 min |
 | Release / wide refactor | `./scripts/run-ci-local.sh` | 15–30 min | 30–60+ min |
 
@@ -43,14 +43,14 @@ cargo test -p strixonomy-lsp
 # Optional smoke: tests/lsp_smoke.rs via full workspace tests
 ```
 
-Build the LSP binary before extension tests: `ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp`.
+Build the LSP binary before extension tests: `STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp`.
 
 ### VS Code extension
 
 ```bash
 cargo build -p strixonomy-lsp --bins
 cd extension && npm ci
-ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm run compile && npm test
+STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp npm run compile && npm test
 ```
 
 F5 debugging: [Extension development](extension-development.md) · [Debugging](../debugging.md).

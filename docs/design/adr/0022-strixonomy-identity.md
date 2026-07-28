@@ -37,4 +37,4 @@ v0.9 renamed OntoIndex → OntoCore with **no** compatibility aliases. v0.27 mus
 - [ADR-0018](0018-ontocore-platform-identity.md) (superseded for brand; historical for v0.9)
 - [Migration v0.27](../../migration/v0.27.md)
 - [ROADMAP.md](../../roadmap.md) § v0.27
-- [PRE_1_0_PHASES.md](../../protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)
+- [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)

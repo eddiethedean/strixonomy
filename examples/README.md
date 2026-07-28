@@ -1,6 +1,6 @@
 # Examples
 
-Runnable assets for Strixonomy and Strixonomy. **Canonical documentation:** [docs/examples/index.md](../docs/examples/index.md) on Read the Docs.
+Runnable assets for Strixonomy IDE and Strixonomy engine. **Canonical documentation:** [docs/examples/index.md](../docs/examples/index.md) on Read the Docs.
 
 ## Quick start (git clone)
 

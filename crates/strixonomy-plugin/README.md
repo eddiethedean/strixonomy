@@ -1,6 +1,6 @@
 # strixonomy-plugin
 
-> **Plugin SDK 1.0** — stable TOML manifest + subprocess JSON host for Strixonomy / Strixonomy.
+> **Plugin SDK 1.0** — stable TOML manifest + subprocess JSON host for Strixonomy IDE / Strixonomy engine.
 > Author against **[Plugin authoring](../../docs/guides/plugins.md)** and the **[SDK 1.0 compatibility policy](../../docs/guides/plugin-policy.md)**.
 
 Plugin host for Strixonomy:

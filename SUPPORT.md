@@ -1,6 +1,6 @@
 # Support
 
-Community support for Strixonomy / Strixonomy lives in the documentation and GitHub Discussions.
+Community support for Strixonomy IDE / Strixonomy engine lives in the documentation and GitHub Discussions.
 
 **Canonical page:** [docs/support.md](docs/support.md) · [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/support/)
 

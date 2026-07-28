@@ -1,4 +1,4 @@
-# Releasing Strixonomy / Strixonomy
+# Releasing Strixonomy
 
 Maintainer checklist for publishing crates, binaries, and the VS Code extension.
 

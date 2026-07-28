@@ -16,9 +16,11 @@ Strixonomy is a product family. You usually need **one** primary artifact — no
 
 | Name | What it is |
 |------|------------|
-| **Strixonomy** | VS Code / Cursor extension (IDE) |
-| **Strixonomy** | Rust engine — `strixonomy` CLI, `strixonomy-lsp`, and `strixonomy-*` crates |
-| **Ontologos** | External reasoner library used by Strixonomy (not installed separately for normal use) |
+| **Strixonomy IDE** | VS Code / Cursor extension |
+| **Strixonomy engine** | Rust engine — `strixonomy` CLI, `strixonomy-lsp`, and `strixonomy-*` crates |
+| **Ontologos** | External reasoner library used by the engine (not installed separately for normal use) |
+
+Full naming and legacy OntoCore/OntoCode map: [Product identity](product-identity.md).
 
 The extension bundles `strixonomy-lsp`. You do **not** need Rust to use the IDE.
 

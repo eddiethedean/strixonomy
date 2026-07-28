@@ -1,6 +1,6 @@
 # Best practices
 
-Patterns for using Strixonomy and Strixonomy in daily ontology engineering.
+Patterns for using Strixonomy IDE and Strixonomy engine in daily ontology engineering.
 
 ## Repository layout
 

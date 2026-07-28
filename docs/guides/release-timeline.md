@@ -1,6 +1,6 @@
 # Release timeline (non-commitment)
 
-Planning ranges for Strixonomy / Strixonomy. **These are product goals, not contractual delivery dates.** Shipped behavior is always defined by [What ships today](../SHIPPED.md) for the version you deploy.
+Planning ranges for Strixonomy IDE / Strixonomy engine. **These are product goals, not contractual delivery dates.** Shipped behavior is always defined by [What ships today](../SHIPPED.md) for the version you deploy.
 
 ## Current release
 

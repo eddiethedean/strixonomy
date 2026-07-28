@@ -45,7 +45,7 @@ LSP clients can call `strixonomy/runRobot` — see [LSP API](../lsp-api.md).
 
 ```yaml
 - name: Install Strixonomy
-  run: cargo install ontocore-cli --locked --version 0.27.0
+  run: cargo install strixonomy-cli --locked --version 0.27.0
 
 - name: Strixonomy validate
   run: strixonomy validate ./ontologies

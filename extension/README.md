@@ -27,7 +27,7 @@ You do **not** need to Trust the workspace for the default bundled language serv
 
 > **Editable today:** Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`). XML is semantic re-serialize (not Protégé byte-identical). JSON-LD / TriG / N-Triples remain read-only.
 
-> **Names:** **Strixonomy** = this extension. **Strixonomy** = Rust engine (`ontocore-cli`, `strixonomy-lsp`). Install the CLI with `cargo install ontocore-cli`, not `strixonomy`. Most IDE users never need the CLI.
+> **Names:** **Strixonomy IDE** = this extension. **Strixonomy engine** = Rust CLI + `strixonomy-lsp`. Install the CLI with `cargo install strixonomy-cli`, not `strixonomy`. Most IDE users never need the CLI.
 
 ## Features (summary)
 

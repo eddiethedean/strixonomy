@@ -1,6 +1,6 @@
 # Release integrity
 
-How to verify Strixonomy / Strixonomy release artifacts from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
+How to verify Strixonomy IDE / Strixonomy engine release artifacts from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
 
 ## Checksums
 
@@ -8,7 +8,7 @@ Each release includes `SHA256SUMS` with SHA-256 hashes of:
 
 - `strixonomy-v<version>-x86_64-unknown-linux-gnu.tar.gz` (CLI binary, Linux x64)
 - `strixonomy-lsp-v<version>-<platform>.tar.gz` / `.zip` (per-platform LSP)
-- `strixonomy-v<version>.vsix` (VS Code extension; example: `ontocode-v0.27.0.vsix`)
+- `strixonomy-v<version>.vsix` (VS Code extension; example: `strixonomy-v0.27.0.vsix`)
 - `NOTICES` (third-party license summary)
 
 Verify after download:

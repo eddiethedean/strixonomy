@@ -1,4 +1,4 @@
-# Strixonomy & Strixonomy Roadmap
+# Strixonomy Roadmap
 
 > **Canonical full roadmap:** [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) (includes Era I webapp / WASM / React app no-backend detail).  
 > **This RTD page** is a condensed summary for ships + near-term phases.  
@@ -8,15 +8,15 @@
 
 Build the modern open-source platform for ontology engineering.
 
-**Strixonomy** is the semantic workspace engine.
+**Strixonomy engine** is the semantic workspace (CLI, LSP, crates).
 
-**Strixonomy** is the flagship IDE powered by Strixonomy.
+**Strixonomy IDE** is the flagship VS Code extension powered by the engine.
 
-Full mission and principles: [Vision](vision.md). Ecosystem layers: [Architecture](architecture.md).
+Full mission and principles: [Vision](vision.md). Ecosystem layers: [Architecture](architecture.md). Names: [Product identity](guides/product-identity.md).
 
 ## Guiding principle
 
-**Strixonomy 1.0 has one primary objective: become a production-ready replacement for Protégé.**
+**Strixonomy IDE 1.0 has one primary objective: become a production-ready replacement for Protégé.**
 
 Every feature before 1.0 should answer one question:
 

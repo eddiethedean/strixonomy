@@ -4,11 +4,12 @@ Manchester class-expression queries via CLI (Query Workbench **DL** mode and LSP
 
 Honesty and limits: [DL Query guide](../guides/dl-query.md).
 
+!!! note "Requires a clone (or your own files)"
+    Samples below use repo [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures). After `cargo install`, replace `fixtures` with your ontology directory or the [First success](../guides/first-success.md) tutorial folder.
+
 **Usage:** `strixonomy dl-query <expression> [--workspace PATH]` — expression is the only positional; workspace defaults to `.` via `--workspace`.
 
-Expressions accept **prefix:local** QNames (resolved from indexed ontology prefixes) or angle-bracket IRIs `<http://…>`. There is **no** `--prefix` CLI flag. Prefer `<…>` when several files bind the same short prefix (for example both tutorial fixtures use `ex:`).
-
-Samples use the repo [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures) corpus. Flags: `--workspace`, `--profile`, `--mode`, `--format` only — [CLI reference](../cli-reference.md).
+Expressions accept **prefix:local** QNames (resolved from indexed ontology prefixes) or angle-bracket IRIs `<http://…>`. There is **no** `--prefix` CLI flag. Prefer `<…>` when several files bind the same short prefix (for example both tutorial fixtures use `ex:`). Flags: `--workspace`, `--profile`, `--mode`, `--format` only — [CLI reference](../cli-reference.md).
 
 ## Named class (inferred)
 

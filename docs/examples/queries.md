@@ -1,6 +1,9 @@
 # Query cookbook
 
-Runnable examples against an ontology workspace. Replace `/path/to/ontologies` with your project folder.
+Runnable examples against an ontology workspace. Replace `/path/to/ontologies` with your project folder (or the [First success](../guides/first-success.md) tutorial directory).
+
+!!! note "Clone vs install"
+    `fixtures/` exists only in a git clone. After `cargo install strixonomy-cli`, do not run `strixonomy query ./fixtures` unless you cloned the repo.
 
 ```bash
 strixonomy query /path/to/ontologies "SELECT * FROM classes"

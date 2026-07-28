@@ -1,6 +1,6 @@
 # Security policy
 
-Strixonomy and Strixonomy are **local-first** tools: they index and parse files on disk and do not upload ontology content by default. There is **no telemetry**.
+Strixonomy IDE and Strixonomy engine are **local-first** tools: they index and parse files on disk and do not upload ontology content by default. There is **no telemetry**.
 
 ## Supported versions
 

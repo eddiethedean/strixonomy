@@ -1,6 +1,6 @@
 # Security Policy
 
-Strixonomy is a **local-first** tool: they index and parse ontology files on disk and do **not** upload workspace content by default. There is **no telemetry**.
+Strixonomy IDE and Strixonomy engine are **local-first** tools: they index and parse ontology files on disk and do **not** upload workspace content by default. There is **no telemetry**.
 
 ## Supported versions
 

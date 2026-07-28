@@ -45,8 +45,8 @@ Built-in reasoner adapters (`el`, `rl`, `rdfs`, `dl`, `auto`) ship in `strixonom
 
 | Layer | Plugin scope |
 |-------|--------------|
-| **Strixonomy** | Build, release, workflow, validators, exporters, reasoners, query functions — run in CLI/LSP/Rust library |
-| **Strixonomy** | UI plugins — VS Code views, webview panels, workflow action surfaces |
+| **Strixonomy engine** | Build, release, workflow, validators, exporters, reasoners, query functions — run in CLI/LSP/Rust library |
+| **Strixonomy IDE** | UI plugins — VS Code views, webview panels, workflow action surfaces |
 
 ## Reference interfaces (sketch)
 

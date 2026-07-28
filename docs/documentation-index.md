@@ -1,6 +1,6 @@
 # Documentation index
 
-Master index for Strixonomy / Strixonomy planning, architecture, and user documentation.
+Master index for Strixonomy IDE / Strixonomy engine planning, architecture, and user documentation.
 
 **Latest tagged release:** v0.27.0 · **Canonical capabilities:** [What ships today](SHIPPED.md) · **Limits:** [Known limitations](known-limitations.md) · **Terms:** [Glossary](glossary.md)
 
@@ -51,9 +51,9 @@ Deep planning docs (`docs/ui/`, `docs/platform/`, `docs/cursor-prompts/`, `docs/
 
 | Section | Start here |
 |---------|------------|
-| **Get started** | [First success](guides/first-success.md) → [Your next steps](guides/day-2.md) → [Install](install.md) → [Documentation index](documentation-index.md) |
-| **Use Strixonomy** | [Overview](ide/index.md) → [Feature tour](ide/feature-tour.md) |
-| **Use Strixonomy** | [Strixonomy overview](strixonomy/index.md) · [Examples](examples/index.md) |
+| **Get started** | [First success](guides/first-success.md) → [Your next steps](guides/day-2.md) → [Install](install.md) → [Product identity](guides/product-identity.md) → [Documentation index](documentation-index.md) |
+| **Use the IDE** | [Overview](ide/index.md) → [Feature tour](ide/feature-tour.md) |
+| **Use the engine & CLI** | [Engine overview](strixonomy/index.md) · [Examples](examples/index.md) |
 | **Reference** | [CLI](cli-reference.md) · [Rust API](strixonomy/rust-api.md) · [LSP API](lsp-api.md) · [Patch](patch-reference.md) · [SQL](sql-reference.md) · [SPARQL](sparql-reference.md) · [Errors](errors.md) · [docs.rs strixonomy](https://docs.rs/strixonomy) |
 | **Evaluate** | [What ships today](SHIPPED.md) · [Enterprise eval](guides/enterprise-eval.md) · [Week-2 playbook](guides/enterprise-week-2.md) |
 | **Help** | [FAQ](faq.md) · [Troubleshooting](troubleshooting.md) · [Support](support.md) |

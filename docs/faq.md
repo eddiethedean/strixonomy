@@ -1,17 +1,19 @@
 # FAQ
 
-Common questions about Strixonomy and Strixonomy. For step-by-step fixes, see [Troubleshooting](troubleshooting.md).
+Common questions about Strixonomy IDE and Strixonomy engine. For step-by-step fixes, see [Troubleshooting](troubleshooting.md).
 
 If you’re stuck or want to report a bug, see [Support and contact](support.md).
 
 ## Naming and products
 
-**What is the difference between Strixonomy and Strixonomy?**
+**What is the difference between the Strixonomy IDE and the Strixonomy engine?**
 
-- **Strixonomy** — VS Code IDE (explorer, inspector, Query Workbench, Manchester editor, diagnostics).
-- **Strixonomy** — Rust semantic workspace engine (`strixonomy` crate, `strixonomy-*` implementation, `strixonomy` CLI, `strixonomy-lsp`).
+- **Strixonomy IDE** — VS Code/Cursor extension (explorer, inspector, Query Workbench, Manchester editor, diagnostics).
+- **Strixonomy engine** — Rust semantic workspace (`strixonomy` crate, `strixonomy-*` crates, `strixonomy` CLI, `strixonomy-lsp`).
 
-Strixonomy was previously branded **OntoIndex** (`ontoindex` CLI, `ontoindex-*` crates). As of v0.9 there is no compatibility alias — see [v0.9 migration](migration/v0.9.md). This repository contains both Strixonomy and Strixonomy.
+Full table and legacy names: [Product identity](guides/product-identity.md).
+
+**History:** OntoIndex → OntoCore (engine) + OntoCode (IDE) → **Strixonomy** (v0.27). See [v0.9 migration](migration/v0.9.md) and [v0.27 migration](migration/v0.27.md). This repository contains both the IDE and the engine.
 
 **Is the API stable?**
 
@@ -142,7 +144,7 @@ Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`) for
 
 **Is ontology content uploaded anywhere?**
 
-No. Strixonomy and Strixonomy are local-first by default. See [security.md](security.md).
+No. Strixonomy IDE and Strixonomy engine are local-first by default. See [security.md](security.md).
 
 **What about LGPL (horned-owl)?**
 

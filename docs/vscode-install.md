@@ -1,4 +1,4 @@
-> **Canonical install:** [Install Strixonomy and Strixonomy](install.md). This page covers VS Code–specific options (Marketplace, VSIX, Restricted Mode, custom `lspPath`).
+> **Canonical install:** [Install](install.md) (SSOT). This page covers VS Code–specific options (Marketplace, VSIX, Restricted Mode, custom `lspPath`). Artifact filenames: [Versions & channels — air-gap manifest](guides/versions-and-channels.md#air-gap-artifact-manifest).
 
 # Installing Strixonomy in VS Code
 
@@ -39,7 +39,7 @@ For a full walkthrough, see [First success in 10 minutes](guides/first-success.m
 
 ## Option B — GitHub Release VSIX (offline / air-gapped)
 
-1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) and download the latest `strixonomy-v*.vsix` (example: `ontocode-v0.27.0.vsix`).
+1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) and download the latest `strixonomy-v*.vsix` (example: `strixonomy-v0.27.0.vsix`).
 2. In VS Code: **Extensions** → **…** menu → **Install from VSIX…**
 3. Verify against `SHA256SUMS` — see [release-integrity.md](release-integrity.md).
 4. Open a folder containing ontology files (`.ttl`, `.obo`, `.owl`, `.rdf`, `.owx` editable; `.jsonld`, `.nt`, `.nq`, `.trig` browse/query only).
@@ -64,7 +64,7 @@ Install the generated `.vsix` via **Install from VSIX…**, or press **F5** in V
 Use this only when the bundled server is missing or you are developing the LSP:
 
 ```bash
-cargo install ontocore-lsp --locked --version 0.27.0
+cargo install strixonomy-lsp --locked --version 0.27.0
 ```
 
 Set **Strixonomy: Lsp Path** (`strixonomy.lspPath`) to the absolute path of your `strixonomy-lsp` binary. **Trusted workspaces only** — ignored in Restricted Mode.
@@ -81,7 +81,7 @@ Set **Strixonomy: Lsp Path** (`strixonomy.lspPath`) to the absolute path of your
 
 If Strixonomy does not appear in search (before v0.11 or if Open VSX sync is delayed):
 
-1. Download `strixonomy-v*.vsix` (example: `ontocode-v0.27.0.vsix`) from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
+1. Download `strixonomy-v*.vsix` (example: `strixonomy-v0.27.0.vsix`) from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
 2. **Cmd+Shift+P** / **Ctrl+Shift+P** → **Extensions: Install from VSIX…**
 
 Release tags from v0.11.3 onward publish automatically to Open VSX.

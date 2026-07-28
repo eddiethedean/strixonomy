@@ -47,7 +47,7 @@ Details: [Production readiness](production-readiness.md) § Support and complian
 
 1. Confirm required capabilities in [SHIPPED](../SHIPPED.md) (VS Code **and** CLI columns).
 2. Read [Known limitations](../known-limitations.md) — especially format write-back and SQL subset.
-3. Pin `cargo install ontocore-cli --locked --version 0.27.0` (or current [TAGGED_RELEASE](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE)) in CI.
+3. Pin `cargo install strixonomy-cli --locked --version 0.27.0` (or current [TAGGED_RELEASE](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE)) in CI.
 4. Verify release artifacts with [SHA256SUMS](../release-integrity.md).
 5. Run a pilot using [First success](../guides/first-success.md) + your corpus.
 

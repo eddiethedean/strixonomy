@@ -153,7 +153,7 @@
 | Token-aware type / characteristic detection (ignores comment substrings) | Yes |
 | `SetOntologyIri` rewrites `rdf:type owl:Ontology` in place | Yes |
 
-Full user-facing delta for the latest tagged release: [CHANGELOG 0.27.0](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0262---2026-07-17).
+Full user-facing delta for the latest tagged release: [CHANGELOG 0.27.0](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0270---2026-07-27).
 
 ## Release history
 

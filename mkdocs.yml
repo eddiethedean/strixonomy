@@ -132,12 +132,13 @@ nav:
       - Supported formats: supported-formats.md
       - Versions and channels: guides/versions-and-channels.md
       - Which artifact?: guides/which-artifact.md
+      - Product identity: guides/product-identity.md
       - Documentation index: documentation-index.md
       - More install detail:
           - Install CLI & CI (not the IDE tutorial): install-cli-ci.md
           - VS Code install (detail): vscode-install.md
           - Install CLI (macOS/Windows): guides/install-cli.md
-  - Use Strixonomy:
+  - Use the IDE:
       - Overview: ide/index.md
       - Feature tour: ide/feature-tour.md
       - Extension detail: ide/vscode-extension.md
@@ -161,7 +162,7 @@ nav:
           - Capabilities by format: guides/capabilities-by-format.md
           - Protégé coexistence: guides/protege-coexistence.md
           - Best practices: guides/best-practices.md
-  - Use Strixonomy:
+  - Use the engine & CLI:
       - Overview: strixonomy/index.md
       - Rust library: guides/rust-library.md
       - Rust & CLI guide: guides/rust-crates.md

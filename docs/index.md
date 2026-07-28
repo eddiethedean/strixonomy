@@ -57,7 +57,7 @@ Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS C
 !!! tip "CLI on macOS/Windows?"
     Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`. If you need `strixonomy` for CI or scripting, see [Install](install.md).
 
-> **Names:** **Strixonomy** = VS Code extension. **Strixonomy** = Rust engine (CLI + language server). **Ontologos** = external reasoner.
+> **Names:** **Strixonomy IDE** = VS Code extension. **Strixonomy engine** = Rust CLI + language server. **Ontologos** = external reasoner. See [Product identity](guides/product-identity.md).
 
 </details>
 

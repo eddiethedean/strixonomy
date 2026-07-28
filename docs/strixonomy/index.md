@@ -1,6 +1,6 @@
-# Strixonomy
+# Strixonomy engine
 
-**Strixonomy** is the semantic workspace engine for ontology development. It lives in the [Strixonomy repository](https://github.com/eddiethedean/strixonomy) and powers the Strixonomy VS Code IDE.
+The **Strixonomy engine** is the semantic workspace for ontology development. It lives in the [Strixonomy repository](https://github.com/eddiethedean/strixonomy) and powers the **Strixonomy IDE** (VS Code).
 
 **Latest tagged: v0.27.0** · [crates.io search](https://crates.io/search?q=strixonomy)
 
@@ -32,15 +32,15 @@ Strixonomy indexes ontology workspaces on disk and provides:
 - Documentation export (`strixonomy docs`)
 - CLI (`strixonomy`) and LSP (`strixonomy-lsp`)
 
-## Relationship to Strixonomy and OntoLogos
+## Relationship to the IDE and Ontologos
 
 | Product | Role |
 |---------|------|
-| **Strixonomy** | Rust platform — indexing, queries, diagnostics, CLI, LSP |
-| **Strixonomy** | VS Code extension — explorer, inspector, webviews, marketplace |
-| **OntoLogos** | OWL reasoning — classification, consistency, explanations |
+| **Strixonomy engine** | Rust platform — indexing, queries, diagnostics, CLI, LSP |
+| **Strixonomy IDE** | VS Code extension — explorer, inspector, webviews, marketplace |
+| **Ontologos** | OWL reasoning — classification, consistency, explanations |
 
-Strixonomy is the flagship IDE built on Strixonomy. OntoLogos is a separate reasoning stack that Strixonomy integrates through `strixonomy-reasoner`.
+The Strixonomy IDE is built on the Strixonomy engine. Ontologos is a separate reasoning stack integrated through `strixonomy-reasoner`. See [Product identity](../guides/product-identity.md).
 
 ## Public API
 
@@ -52,11 +52,12 @@ use strixonomy::Workspace;
 let ws = Workspace::open("./ontology")?;
 let diagnostics = ws.diagnostics();
 let results = ws.query("SELECT short_name FROM classes")?;
-let hits = ws.search("Person")?;
+let hits = ws.search("Person");
 let graph = ws.import_graph()?;
 let diff = ws.diff_against_path("./other")?;
 ```
 
+`search` returns hits directly (not a `Result`). Other methods that can fail use `?`.
 **Stable since v0.10:** `Workspace`, `WorkspaceOptions`, and `strixonomy::diff`. Other `strixonomy-*` internals remain pre-1.0 until v1.0.
 
 ```rust

@@ -1,4 +1,4 @@
-# Debugging Strixonomy / Strixonomy
+# Debugging Strixonomy
 
 Contributor guide for debugging the VS Code extension, language server, React webviews, and Rust engine.
 

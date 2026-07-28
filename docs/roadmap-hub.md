@@ -1,8 +1,10 @@
 # Roadmap hub
 
-Strixonomy and Strixonomy publish several roadmap documents. **Use this page to pick the right one** — they serve different audiences and must not be read as a single capability list.
+Strixonomy IDE and Strixonomy engine publish several roadmap documents. **Use this page to pick the right one** — they serve different audiences and must not be read as a single capability list.
 
-**Current tagged release:** v0.27.0 · **Development:** v0.27.0 (unreleased) · [What ships today](SHIPPED.md)
+**Current tagged release:** v0.27.0 · [What ships today](SHIPPED.md)
+
+Development on `main` may be ahead of the tagged pin — follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) for install versions.
 
 ## Which document should I read?
 

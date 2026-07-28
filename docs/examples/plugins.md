@@ -2,7 +2,10 @@
 
 CLI recipes for discovering and running workspace plugins. Authoring: [Plugin authoring](../guides/plugins.md) · Policy: [Plugin policy](../guides/plugin-policy.md).
 
-From a git clone, use `cargo run --` or an installed `strixonomy`. Samples below use [`examples/plugin-workspace/`](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/examples/plugin-workspace).
+!!! note "Requires a clone"
+    Samples below use [`examples/plugin-workspace/`](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/examples/plugin-workspace). That tree is not installed by `cargo install strixonomy-cli`.
+
+From a git clone, use `cargo run --` or an installed `strixonomy`.
 
 ## List and inspect
 

@@ -1,6 +1,7 @@
-# Install Strixonomy and Strixonomy
+# Install Strixonomy
 
-**Canonical install page.** Extension first (most users). CLI and CI are optional.
+**Canonical install page.** Most users only need the **Strixonomy IDE** (VS Code/Cursor extension).
+The **Strixonomy engine** CLI is optional (CI / scripting).
 
 | Goal | Go here |
 |------|---------|
@@ -8,15 +9,16 @@
 | Optional CLI on macOS / Windows | [Install CLI (cargo)](#2-optional-cli) · detail: [macOS/Windows walkthrough](guides/install-cli.md) |
 | CI validate on Linux x64 | [CI with release tarball](ci-integration.md) |
 | Which binary / crate do I need? | [Which artifact?](guides/which-artifact.md) |
+| Product names (IDE vs engine) | [Product identity](guides/product-identity.md) |
 
 !!! tip "Most IDE users never need Rust"
-    The Strixonomy extension bundles `strixonomy-lsp`. Install the extension and skip the CLI unless you need `strixonomy` for CI, scripting, or validation outside the editor.
+    The Strixonomy IDE bundles `strixonomy-lsp`. Install the extension and skip the CLI unless you need `strixonomy` for CI, scripting, or validation outside the editor.
 
 !!! tip "Docs vs Marketplace"
     Read the Docs `latest` may describe work **after** the last tag. Pins follow [`docs/TAGGED_RELEASE`](TAGGED_RELEASE) (**0.27.0**). See [Versions & channels](guides/versions-and-channels.md).
 
-!!! warning "Wrong crate name"
-    The GitHub repo is `strixonomy`. The CLI crate is **`strixonomy-cli`** (`strixonomy` binary). Do **not** run `cargo install strixonomy`.
+!!! warning "CLI crate name"
+    The binary is `strixonomy`. Install with `cargo install strixonomy-cli`, never `cargo install strixonomy`.
 
 Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)).
 
@@ -25,7 +27,7 @@ Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)).
 | Method | Platforms | Needs Rust? |
 |--------|-----------|-------------|
 | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) / [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) | Linux, macOS, Windows | No |
-| Release VSIX (`ontocode-v0.27.0.vsix`) | Same | No |
+| Release VSIX (`strixonomy-v0.27.0.vsix`) | Same | No |
 
 1. Install **Strixonomy** (`strixonomy.strixonomy`).
 2. If the store lags the latest GitHub tag, install the VSIX — [Marketplace lag playbook](guides/versions-and-channels.md#when-marketplace-lags-github).
@@ -40,7 +42,7 @@ Full steps (Trust, offline, custom `lspPath`): [VS Code install details](vscode-
 
 | Method | Linux x64 | macOS | Windows | Needs Rust? |
 |--------|-----------|-------|---------|-------------|
-| `cargo install ontocore-cli --locked --version 0.27.0` | Yes | Yes | Yes | Yes (1.88+) |
+| `cargo install strixonomy-cli --locked --version 0.27.0` | Yes | Yes | Yes | Yes (1.88+) |
 | Release CLI tarball | Yes | No | No | No |
 | Git clone + `cargo run --` | Yes | Yes | Yes | Yes (1.88+) |
 
@@ -52,7 +54,7 @@ Full steps (Trust, offline, custom `lspPath`): [VS Code install details](vscode-
 Prerequisites: Rust **1.88+**; Windows needs [MSVC Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/); macOS needs Xcode CLT (`xcode-select --install`).
 
 ```bash
-cargo install ontocore-cli --locked --version 0.27.0
+cargo install strixonomy-cli --locked --version 0.27.0
 export PATH="$HOME/.cargo/bin:$PATH"
 strixonomy validate /path/to/your/ontologies
 ```
@@ -61,7 +63,7 @@ Longer macOS/Windows walkthrough: [Install CLI](guides/install-cli.md).
 
 ### Linux x64 release tarball (CI preferred)
 
-See [CI integration](ci-integration.md) — download `ontocore-v0.27.0-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
+See [CI integration](ci-integration.md) — download `strixonomy-v0.27.0-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
 
 ### From a clone
 
@@ -83,3 +85,4 @@ Write-back: **`.ttl`**, **`.obo`**, **`.owl`/`.rdf`**, **`.owx`**. XML is semant
 | VS Code options (offline, Restricted Mode) | [vscode-install.md](vscode-install.md) |
 | Release integrity | [release-integrity.md](release-integrity.md) |
 | Platform support | [platform-compatibility.md](guides/platform-compatibility.md) |
+| Air-gap artifact filenames | [Versions & channels](guides/versions-and-channels.md#air-gap-artifact-manifest) |
