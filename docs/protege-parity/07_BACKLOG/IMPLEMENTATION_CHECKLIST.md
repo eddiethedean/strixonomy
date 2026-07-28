@@ -1,16 +1,16 @@
 # IMPLEMENTATION_CHECKLIST
 
-# Strixonomy 1.0 Implementation Checklist
+# Strixonomy v0.30 Implementation Checklist
 
 **Status:** Master Engineering Checklist\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This checklist provides a single, actionable view of all implementation
-work required to achieve Strixonomy 1.0 with verified Protégé Desktop
+work required to achieve Strixonomy v0.30 with verified Protégé Desktop
 parity. It complements the roadmap and blocker documents by tracking
 completion at a practical level.
 

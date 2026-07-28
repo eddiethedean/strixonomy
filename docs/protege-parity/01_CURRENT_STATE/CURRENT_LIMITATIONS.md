@@ -16,7 +16,7 @@ planned functionality.
 
 The purpose is to provide a realistic assessment of where Strixonomy still
 differs from Protégé Desktop and to guide engineering priorities for the
-1.0 release.
+v0.30 release.
 
 ------------------------------------------------------------------------
 
@@ -25,9 +25,9 @@ differs from Protégé Desktop and to guide engineering priorities for the
 Limitations are grouped into three categories:
 
 -   **P0** -- Blocks a credible claim of Protégé Desktop parity.
--   **P1** -- Important but does not independently block the 1.0
+-   **P1** -- Important but does not independently block the v0.30
     release.
--   **P2** -- Quality improvements or post-1.0 enhancements.
+-   **P2** -- Quality improvements or v0.31+ enhancements.
 
 ------------------------------------------------------------------------
 
@@ -140,7 +140,7 @@ Required additions include:
 
 # P2 Limitations
 
-Potential post-1.0 improvements include:
+Potential v0.31+ improvements include:
 
 -   Cloud collaboration
 -   AI-assisted ontology authoring
@@ -171,7 +171,7 @@ Priority should be given to:
 -   `PARITY_GAP_ANALYSIS.md` explains why these gaps matter.
 -   `IMPLEMENTATION_EVIDENCE.md` records implementation progress.
 -   `PARITY_RELEASE_GATE.md` determines when these limitations no longer
-    block the 1.0 release.
+    block the v0.30 release.
 
 ------------------------------------------------------------------------
 

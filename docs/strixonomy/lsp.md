@@ -9,7 +9,7 @@
 | Language server | `strixonomy-lsp` |
 | Bundled path (extension) | `extension/server/<platform>-<arch>/strixonomy-lsp` |
 
-The binary has been named **`strixonomy-lsp`** since the v0.9 Strixonomy identity rename. Wire format may change until v1.0 — see [LSP API reference](../lsp-api.md).
+The binary has been named **`strixonomy-lsp`** since the v0.9 Strixonomy identity rename. Wire format may change until v0.30 — see [LSP API reference](../lsp-api.md).
 
 ## Custom methods
 

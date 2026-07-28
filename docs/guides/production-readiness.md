@@ -8,10 +8,10 @@ Canonical capability matrix: [What ships today](../SHIPPED.md). Follow-on pilot 
 
 | Level | Version | Meaning |
 |-------|---------|---------|
-| **Pre-1.0** | **0.28.x (latest tagged)** | Pin `cargo install strixonomy-cli --locked --version 0.28.0` in CI. Library APIs may change until [v1.0](../design/v1.0_BACKLOG.md). |
+| **v0.29–v0.30** | **0.28.x (latest tagged)** | Pin `cargo install strixonomy-cli --locked --version 0.28.0` in CI. Library APIs may change until [v0.30](../design/v0.30_BACKLOG.md). |
 | **Stable CI gates** | 0.28.x | `strixonomy validate`, `strixonomy classify`, `strixonomy realize`, `strixonomy check-instance`, and `strixonomy diff` are documented for CI — see [workspace limits](../workspace-limits.md). |
 | **In development** | Next unreleased minor on `main` | May preview upcoming work — pin installs to [TAGGED_RELEASE](../TAGGED_RELEASE), not workspace `Cargo.toml`. |
-| **v1.0 target** | Planned | Protégé-competitive OWL 2 DL + OBO in VS Code — [Protégé vs Strixonomy](protege-decision.md); capability truth: [SHIPPED](../SHIPPED.md) + [known limitations](../known-limitations.md). |
+| **v0.30 target** | Planned | Protégé-competitive OWL 2 DL + OBO in VS Code — [Protégé vs Strixonomy](protege-decision.md); capability truth: [SHIPPED](../SHIPPED.md) + [known limitations](../known-limitations.md). |
 
 Strixonomy **v0.28** is suitable for pilot IDE editing, Linux CI validate/classify/realize/dl-query, and coexistence with Protégé — **not** an org-wide Protégé retirement. RDF/XML and OWL/XML write-back are semantic re-serialize (ships since v0.21). Realization, instance checking, and SWRL (DLSafe + classify materialize) ship since v0.23. Query Workbench **DL** mode / `strixonomy dl-query` ships in v0.24 — see honesty notes in [DL Query vs Query Workbench](dl-query.md) (not full Protégé DL Query tab parity).
 
@@ -24,14 +24,14 @@ Strixonomy **v0.28** is suitable for pilot IDE editing, Linux CI validate/classi
 | CI consistency gate (DL profile) | **Pilot** | `strixonomy classify --profile dl` or `auto` — OntoLogos 1.x; verify on your corpus |
 | CI realization / instance checks | **Pilot** | `strixonomy realize` / `strixonomy check-instance` — [realize cookbook](../examples/realize.md) |
 | SWRL materialize on classify | **Pilot** | Rules via IDE / LSP / patches; no `strixonomy swrl` CLI — [SWRL examples](../examples/swrl.md) |
-| Developer IDE for Turtle/OBO authoring | **Pilot** | Turtle + OBO write-back; pre-1.0 extension APIs |
+| Developer IDE for Turtle/OBO authoring | **Pilot** | Turtle + OBO write-back; v0.29–v0.30 extension APIs |
 | Developer IDE for RDF/XML / OWL/XML light edits | **Pilot** | Semantic re-serialize; core ops — [OWL/XML write-back](owl-xml-workflow.md) |
 | Workspace refactoring (rename, migrate, move, extract, merge, replace) | **Pilot** | Rename/merge/replace multi-format; move/extract Turtle-first; preview before apply — [Refactoring guide](refactoring.md) |
 | Semantic diff in PR review | **Pilot** | `strixonomy diff` + VS Code panel — [Semantic diff](../ide/semantic-diff.md) |
 | Ontology browse/query in VS Code | **Pilot** | SQL / SPARQL + Workbench **DL** mode — [DL Query honesty](dl-query.md) |
 | Air-gapped VS Code install | **Pilot** | VSIX + SHA256 — [enterprise deployment](enterprise-deployment.md) |
 | OBO index + write-back + ROBOT CLI in CI | **Pilot** | Index and edit `.obo`; `strixonomy robot validate` — requires Java + `robot` on PATH — [ROBOT interop](robot-interop.md) |
-| Replace Protégé for full OWL 2 DL engineering | **Not supported** | Classification, realize, SWRL, and DL Query Workbench ship; full axiom catalog + Protégé tab parity remain pre-1.0; XML not byte-identical — [Protégé coexistence](protege-coexistence.md) |
+| Replace Protégé for full OWL 2 DL engineering | **Not supported** | Classification, realize, SWRL, and DL Query Workbench ship; full axiom catalog + Protégé tab parity remain v0.29–v0.30; XML not byte-identical — [Protégé coexistence](protege-coexistence.md) |
 | Org-wide mandatory IDE standard | **Defer** | Complete pilot + legal review first |
 
 ## Pilot criteria (recommended before wider rollout)
@@ -55,11 +55,11 @@ Suggested pilot duration: **4–8 weeks** with 3–10 engineers on one ontology 
 | `strixonomy validate` exit codes | Documented for CI |
 | `strixonomy classify` exit codes | Documented for CI |
 | `strixonomy realize` / `check-instance` exit codes | Documented for CI (pilot corpora) |
-| `strixonomy diff` output | Documented for CI; pre-1.0 field names may evolve |
-| `strixonomy::Workspace` API | Stable since v0.10; other crates pre-1.0 |
-| SQL virtual table column names | May change pre-1.0 |
-| LSP `strixonomy/*` JSON | May change pre-1.0 |
-| Rust `strixonomy-*` crate APIs | May change pre-1.0 |
+| `strixonomy diff` output | Documented for CI; v0.29–v0.30 field names may evolve |
+| `strixonomy::Workspace` API | Stable since v0.10; other crates v0.29–v0.30 |
+| SQL virtual table column names | May change v0.29–v0.30 |
+| LSP `strixonomy/*` JSON | May change v0.29–v0.30 |
+| Rust `strixonomy-*` crate APIs | May change v0.29–v0.30 |
 
 Pin CLI version in CI: release binary with `VERSION=0.28.0` or `cargo install strixonomy-cli --locked --version 0.28.0`.
 
@@ -89,11 +89,11 @@ Enterprises requiring contractual SLAs should treat Strixonomy as **internal OSS
 
 | Claim | Status |
 |-------|--------|
-| Commercial SLA / paid support | **Not offered** — no planned window until after 1.0 productization |
+| Commercial SLA / paid support | **Not offered** — no planned window until after v0.30 productization |
 | SOC 2 / ISO 27001 | **Not claimed** — no certification program in flight |
 | HIPAA BAA | **Not offered** |
 | Vendor-hosted SaaS telemetry | **None shipped**; local-first by default |
-| Code-signed VSIX / CLI | **Not yet** — releases publish `SHA256SUMS` only. Signing is a **post-1.0** hardening candidate, not a near-term commitment |
+| Code-signed VSIX / CLI | **Not yet** — releases publish `SHA256SUMS` only. Signing is a **v0.31+** hardening candidate, not a near-term commitment |
 
 Use [Procurement appendix](procurement-appendix.md) for questionnaires.
 

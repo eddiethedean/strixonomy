@@ -4,7 +4,7 @@
 
 **Status:** Living Metrics Specification\
 **Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ Machine-readable snapshot: [`parity/metrics.json`](../../../parity/metrics.json)
 
 # Primary Release Metrics
 
-  Metric                                     Target for 1.0 Source
+  Metric                                     Target for v0.30 Source
   ---------------------------------------- ---------------- ------------------------
   P0 requirements VERIFIED                             100% PARITY_MATRIX.md
   P1 requirements COMPLETE or documented               100% PARITY_MATRIX.md

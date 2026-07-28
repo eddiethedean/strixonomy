@@ -1,6 +1,6 @@
 # OntoStudio reuse strategy
 
-> **Status:** Planned (post v1.0) · **ADR:** [0007-ontostudio-shares-platform.md](../adr/0007-ontostudio-shares-platform.md)
+> **Status:** Planned (post v0.30) · **ADR:** [0007-ontostudio-shares-platform.md](../adr/0007-ontostudio-shares-platform.md)
 
 ## Scope
 
@@ -33,9 +33,9 @@ OntoStudio is a **future standalone desktop app**. It reuses OntoUI and Strixono
 ## Implementation order
 
 1. OntoUI host-agnostic ([ONTOUI.md](ONTOUI.md)) — **prerequisite**
-2. WorkspaceStore + workspaces in Strixonomy — **v0.13–v1.0**
+2. WorkspaceStore + workspaces in Strixonomy — **v0.13–v0.30**
 3. Extract OntoUI package if needed for desktop bundling
-4. OntoStudio shell prototype — **post v1.0**
+4. OntoStudio shell prototype — **post v0.30**
 
 ## Links
 

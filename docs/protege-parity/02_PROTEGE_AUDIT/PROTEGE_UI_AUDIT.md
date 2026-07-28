@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Audit the user interface concepts, interaction patterns,
 and usability expectations of a standard Protégé Desktop installation
-and define the equivalent experience required for Strixonomy 1.0.
+and define the equivalent experience required for Strixonomy v0.30.
 
 > This audit focuses on **user outcomes and interaction quality**, not
 > reproducing Protégé's Swing interface.

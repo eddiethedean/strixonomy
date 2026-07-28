@@ -220,7 +220,7 @@ Most WebProtégé collaboration capabilities remain to be implemented.
 
 ---
 
-# Recommended Features Before 1.0
+# Recommended Features Before v0.30
 
 These should be considered core product features rather than optional enhancements:
 

@@ -1,4 +1,4 @@
-# SHACL Validation Specification (v1.0 P1)
+# SHACL Validation Specification (v0.30 P1)
 
 > **Status: Target design — not shipped.** Do **not** implement from this page as if SHACL were available in Strixonomy today. Capability truth: [What ships today](../SHIPPED.md) · [Known limitations](../known-limitations.md). Historical P1 framing: [PROTEGE_PARITY.md](PROTEGE_PARITY.md).
 >
@@ -36,7 +36,7 @@ Reference **SHACL validator plugin** per [PLUGIN_SPEC.md](https://github.com/edd
 
 ## 5. Milestone
 
-Ship as **P1** reference plugin at v1.0; not a release blocker.
+Ship as **P1** reference plugin at v0.30; not a release blocker.
 
 ## Related
 

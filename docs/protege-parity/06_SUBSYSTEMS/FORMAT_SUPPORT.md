@@ -3,7 +3,7 @@
 # Strixonomy Format Support Specification
 
 **Status:** Normative Specification\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ and the acceptance criteria used to verify compatibility.
 
 ------------------------------------------------------------------------
 
-# Required 1.0 Formats
+# Required v0.30 Formats
 
   Format                  Parse   Edit   Save   Round-trip  Priority
   ---------------------- ------- ------ ------ ------------ ----------
@@ -36,7 +36,7 @@ and the acceptance criteria used to verify compatibility.
 
 ------------------------------------------------------------------------
 
-# Planned Post-1.0 Formats
+# Planned v0.31+ Formats
 
 -   Functional Syntax
 -   Manchester Syntax export

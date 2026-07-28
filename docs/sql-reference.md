@@ -1,6 +1,6 @@
 # Catalog SQL query reference (Strixonomy v0.28)
 
-> **Status:** Documents behavior in **Strixonomy v0.28.0**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.28.0**. v0.29–v0.30 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md) · [Known limitations](known-limitations.md).
 
 !!! warning "Not full SQL"
@@ -35,7 +35,7 @@ strixonomy query fixtures "SELECT short_name FROM classes WHERE NOT deprecated"
 
 SPARQL over indexed triples: [sparql-reference.md](sparql-reference.md).
 
-**v1.0 plan:** extend [`sqlparser`](https://crates.io/crates/sqlparser) virtual-table joins/aggregations first ([ADR-0011](design/adr/0011-use-sqlparser-for-sql.md) amendment). Revisit [DataFusion](https://crates.io/crates/datafusion) only if scope exceeds hand-rolled implementation — see [DEPENDENCY_MATRIX.md](design/DEPENDENCY_MATRIX.md).
+**v0.30 plan:** extend [`sqlparser`](https://crates.io/crates/sqlparser) virtual-table joins/aggregations first ([ADR-0011](design/adr/0011-use-sqlparser-for-sql.md) amendment). Revisit [DataFusion](https://crates.io/crates/datafusion) only if scope exceeds hand-rolled implementation — see [DEPENDENCY_MATRIX.md](design/DEPENDENCY_MATRIX.md).
 
 **Limits:** query strings up to 1 MiB; result sets capped at 100,000 rows (see [workspace-limits.md](workspace-limits.md)).
 

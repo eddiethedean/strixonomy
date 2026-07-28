@@ -9,7 +9,7 @@ Read:
 
 ## Non-goals
 
-- Full relationship cards v1.0
+- Full relationship cards v0.30
 - OBO forms rewrite
 
 ## Current state

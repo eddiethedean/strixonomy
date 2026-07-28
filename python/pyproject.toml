@@ -1,7 +1,7 @@
 [project]
 name = "strixonomy"
 version = "0.28.0"
-description = "Reserved PyPI package for the official Strixonomy Python SDK (planned v1.1)"
+description = "Reserved PyPI package for the official Strixonomy Python SDK (planned v0.34)"
 readme = "README.md"
 license = { text = "MIT OR Apache-2.0" }
 requires-python = ">=3.9"
@@ -40,7 +40,7 @@ packages = ["src/strixonomy"]
 [tool.hatch.build.targets.sdist]
 include = ["src/strixonomy", "README.md", "pyproject.toml"]
 
-# v1.1 SDK: switch build backend to maturin and add PyO3 bindings.
+# v0.34 SDK: switch build backend to maturin and add PyO3 bindings.
 # [tool.maturin]
 # features = ["pyo3/extension-module"]
 # module-name = "strixonomy._native"

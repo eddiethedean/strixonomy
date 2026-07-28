@@ -11,11 +11,11 @@ The official **`strixonomy`** project on [PyPI](https://pypi.org/project/strixon
 | **LSP `strixonomy-lsp`** | Shipped | Editor integration, custom `strixonomy/*` methods |
 | **Rust `strixonomy` / `strixonomy-*`** | Shipped | Library and plugin SDK |
 | **VS Code extension** | Shipped | Full IDE surface |
-| **Python SDK (PyO3/Maturin)** | Planned **v1.1** | Stable Python APIs over the Rust engine |
+| **Python SDK (PyO3/Maturin)** | Planned **v0.34** | Stable Python APIs over the Rust engine |
 
 ## Why reserve the name?
 
-Before v1.1, the project publishes an honest reservation wheel so:
+Before v0.31, the project publishes an honest reservation wheel so:
 
 - The official maintainers control the `strixonomy` PyPI identity
 - The official maintainers control the `strixonomy` PyPI identity via the release workflow
@@ -60,7 +60,7 @@ python/
   src/strixonomy/     # pure-Python reservation module
 ```
 
-v1.1 will add Maturin/PyO3 metadata and native bindings without changing the PyPI project name.
+v0.31 will add Maturin/PyO3 metadata and native bindings without changing the PyPI project name.
 
 ## Release and security
 
@@ -75,7 +75,7 @@ v1.1 will add Maturin/PyO3 metadata and native bindings without changing the PyP
 - Stable Python public API
 - Production support for `pip install strixonomy` beyond name reservation
 
-Those are **v1.1** deliverables on the [roadmap](../roadmap.md).
+Those are **v0.31** deliverables on the [roadmap](../roadmap.md).
 
 ## Related
 

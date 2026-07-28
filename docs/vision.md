@@ -1,6 +1,6 @@
 # Modernizing the Ontology Ecosystem
 
-> **Long-term vision.** For what ships in **v0.28**, see [What ships today](SHIPPED.md). **Protégé replacement is the 1.0 goal — not supported for org-wide retirement today.** Use [Protégé decision guide](guides/protege-decision.md) and [Known limitations](known-limitations.md) for current gaps. Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) today; a curated marketplace and production owlmake integration remain **product 1.0** goals — [Plugin policy](guides/plugin-policy.md).
+> **Long-term vision.** For what ships in **v0.28**, see [What ships today](SHIPPED.md). **Protégé replacement is the v0.30 goal — not supported for org-wide retirement today.** Use [Protégé decision guide](guides/protege-decision.md) and [Known limitations](known-limitations.md) for current gaps. Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) today; a curated marketplace and production owlmake integration are planned for **v0.33** goals — [Plugin policy](guides/plugin-policy.md).
 
 ## Mission
 
@@ -15,9 +15,9 @@ Four projects work together:
 - **Ontologos** — Rust-native reasoning engine.
 - **Strixonomy engine** — Semantic workspace and reusable platform.
 - **Strixonomy IDE** — Flagship VS Code IDE powered by the engine.
-- **OntoUI** — Shared React UI platform ([platform/ONTOUI.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/ONTOUI.md)) — **v0.13 foundation shipped** (WorkspaceStore, focus relay, design tokens); **OntoStudio** reuses it (planned post-1.0).
+- **OntoUI** — Shared React UI platform ([platform/ONTOUI.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/ONTOUI.md)) — **v0.13 foundation shipped** (WorkspaceStore, focus relay, design tokens); **OntoStudio** reuses it (planned v0.35).
 
-Together they enable modern workflows including CI/CD, team collaboration on version-controlled ontology files, and high-performance local tooling. **Post-1.0 / planned (not shipped today):** AI-assisted development surfaces, Python and TypeScript SDKs, and OntoStudio desktop — see [What ships today](SHIPPED.md) and [Protégé decision](guides/protege-decision.md) for current non-goals.
+Together they enable modern workflows including CI/CD, team collaboration on version-controlled ontology files, and high-performance local tooling. **v0.35 / planned (not shipped today):** AI-assisted development surfaces, Python and TypeScript SDKs, and OntoStudio desktop — see [What ships today](SHIPPED.md) and [Protégé decision](guides/protege-decision.md) for current non-goals.
 
 ## Ecosystem Collaboration
 

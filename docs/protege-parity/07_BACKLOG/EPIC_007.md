@@ -20,4 +20,4 @@ Track query engine work required for Protégé Desktop parity.
 
 -   ../04_BLOCKERS/BLOCKER_07_QUERY.md
 -   EPIC_INDEX.md
--   PRE_1_0_PHASES.md
+-   V0_30_PHASES.md

@@ -1,9 +1,9 @@
 # IMPLEMENTATION_PLAN
 
-# Strixonomy 1.0 Protégé Parity Implementation Plan
+# Strixonomy v0.30 Protégé Parity Implementation Plan
 
 **Status:** Master Engineering Plan\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -228,7 +228,7 @@ A feature is complete only when:
 
 # Final Release Checklist
 
-Before Strixonomy 1.0:
+Before Strixonomy v0.30:
 
 -   All P0 blockers closed
 -   All release gates passed

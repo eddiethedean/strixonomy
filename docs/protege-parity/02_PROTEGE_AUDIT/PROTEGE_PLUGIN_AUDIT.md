@@ -138,7 +138,7 @@ Based on the repository audit:
 -   Manifest discovery is implemented.
 -   Example plugins are present.
 -   The SDK is functional but not yet considered stable.
--   Marketplace infrastructure is intentionally out of scope for 1.0.
+-   Marketplace infrastructure is intentionally out of scope for v0.30.
 -   Java Protégé plugin compatibility is not a project goal.
 
 ------------------------------------------------------------------------

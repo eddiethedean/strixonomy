@@ -13,8 +13,8 @@ Architecture decisions for **OntoUI**, workspace model, plugins, AI, and OntoStu
 | [0003](0003-current-focus-central-ux.md) | Current Focus as central UX concept | Accepted (implemented v0.13) |
 | [0004](0004-workspacestore-ui-source-of-truth.md) | WorkspaceStore as UI source of truth | Accepted (implemented v0.13) |
 | [0005](0005-capability-provider-plugin-model.md) | Capability Provider plugin model | Accepted (shipped v0.14+) |
-| [0006](0006-ai-preview-before-apply.md) | AI changes require preview before apply | Accepted (proposed v1.1+) |
-| [0007](0007-ontostudio-shares-platform.md) | OntoStudio shares UI/platform with Strixonomy | Accepted (planned post v1.0) |
+| [0006](0006-ai-preview-before-apply.md) | AI changes require preview before apply | Accepted (proposed v0.35) |
+| [0007](0007-ontostudio-shares-platform.md) | OntoStudio shares UI/platform with Strixonomy | Accepted (planned post v0.30) |
 
 ## When to write a product ADR
 

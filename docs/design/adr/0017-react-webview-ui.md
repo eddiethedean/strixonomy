@@ -38,5 +38,5 @@ Negative:
 ## References
 
 - [OntoCode_React_UI_Integration_Plan.md](../OntoCode_React_UI_Integration_Plan.md)
-- [ROADMAP.md](../ROADMAP.md) — v0.7a through v1.0 React milestones
+- [ROADMAP.md](../ROADMAP.md) — v0.7a through v0.30 React milestones
 - [ARCHITECTURE.md](../ARCHITECTURE.md) §5 Strixonomy internal modules

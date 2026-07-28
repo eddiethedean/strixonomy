@@ -18,7 +18,7 @@ Fortune 500 teams should plan **internal OSS adoption** with their own escalatio
 
 Recent documented releases (see [changelog](../changelog.md)):
 
-- **0.28.x** — Current tagged release (compat shim removal; PyPI `strixonomy` reservation; Python SDK planned v1.1).
+- **0.28.x** — Current tagged release (compat shim removal; PyPI `strixonomy` reservation; Python SDK planned v0.34).
 
 | Version | Date (changelog) |
 |---------|------------------|
@@ -46,7 +46,7 @@ Recent documented releases (see [changelog](../changelog.md)):
 | 0.7.0 | 2026-06-25 |
 | 0.6.0 | 2026-06-24 |
 
-Pre-1.0 releases may ship frequently. **No committed future cadence** is documented.
+v0.29–v0.30 releases may ship frequently. **No committed future cadence** is documented.
 
 Maintainers follow [releasing.md](../releasing.md): version bump, CHANGELOG, SHIPPED matrix, `./scripts/build-docs.sh`, `./scripts/check-doc-versions.sh`, GitHub Release artifacts with `SHA256SUMS` and `NOTICES`.
 
@@ -86,7 +86,7 @@ Supply chain: `cargo audit` in CI; release integrity via SHA256 — [release int
 
 - **Target specs** live under Contributing → Design (may describe future behavior)
 - **Shipped behavior** is canonical in [SHIPPED.md](../SHIPPED.md)
-- **v1.0** is a product goal, not a committed date — [Release timeline (non-commitment)](release-timeline.md)
+- **v0.30** is a product goal, not a committed date — [Release timeline (non-commitment)](release-timeline.md)
 
 ## Contributing
 

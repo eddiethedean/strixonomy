@@ -38,7 +38,7 @@ Strixonomy’s **Plugin SDK 1.0** supports permissions, versioned API (`api_vers
 | `graph` | `graph.build` | **Frozen** |
 | `ui` | `ui-view` | **Frozen** |
 | `editor` / `language_service` / `tool_window` | — | **Reserved** (manifest rejected until hosted) |
-| `ai` | — | **Reserved** (v1.1+; not hosted) |
+| `ai` | — | **Reserved** (v0.31+; not hosted) |
 
 ## Lifecycle
 

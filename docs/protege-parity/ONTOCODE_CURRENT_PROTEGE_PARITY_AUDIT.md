@@ -3,7 +3,7 @@
 **Repository audited:** `strixonomy-main (2)(1).zip`  
 **Repository version:** Extension `0.18.2`  
 **Audit type:** Static source, documentation, fixture, and test inventory audit  
-**Target:** Full Protégé Desktop parity before Strixonomy `1.0.0`
+**Target:** Full Protégé Desktop parity before Strixonomy `v0.30.0`
 
 ---
 
@@ -36,7 +36,7 @@ However, the current code does **not** support a defensible claim of complete Pr
 | Turtle/OBO daily ontology workflow | 88–92% |
 | Agreed historical v0.18 reduced parity scope | Approximately 90% |
 | Full clean-install Protégé Desktop capability parity | Approximately 65–72% |
-| Full parity under the new pre-1.0 requirement | Not yet achieved |
+| Full parity under the new v0.29–v0.30 requirement | Not yet achieved |
 
 The estimate is intentionally conservative. It distinguishes between:
 
@@ -406,9 +406,9 @@ The primary SWRL references are roadmap statements and an Ontologos engine enum 
 The existing parity document explicitly places:
 
 - SWRL rule viewing as open
-- Full SWRL authoring as post-1.0/P2
+- Full SWRL authoring as v0.31+/P2
 
-That conflicts with the newly stated requirement of full Protégé parity before 1.0.
+That conflicts with the newly stated requirement of full Protégé parity before v0.30.
 
 ### Required work
 
@@ -603,7 +603,7 @@ The following documentation is appropriately candid:
 - `docs/supported-formats.md`
 - The current v0.18 assessment
 - Reasoner documentation describing class-level consistency
-- Plugin documentation identifying pre-1.0 API stability
+- Plugin documentation identifying v0.29–v0.30 API stability
 
 ## Claims that require correction under the new scope
 
@@ -613,7 +613,7 @@ The roadmap describes v0.18 as a shipped Protégé parity gate. This is defensib
 
 Recommended correction:
 
-> v0.18 completed the first Protégé-parity assessment and the core Turtle/OBO desktop workflow gate; full parity remains the 1.0 target.
+> v0.18 completed the first Protégé-parity assessment and the core Turtle/OBO desktop workflow gate; full parity remains the v0.30 target.
 
 ### “Authoring parity”
 
@@ -633,7 +633,7 @@ Recommended correction:
 
 ### SWRL status conflict
 
-Current project plans place SWRL authoring after 1.0, while the new full-parity requirement makes it a pre-1.0 blocker.
+Current project plans place SWRL authoring after v0.30, while the new full-parity requirement makes it a v0.29–v0.30 blocker.
 
 This must be resolved in all roadmaps and parity matrices.
 
@@ -670,7 +670,7 @@ Scores are engineering estimates, not automatically computed metrics. The planne
 
 ---
 
-## 7. Critical Path to 1.0
+## 7. Critical Path to v0.30
 
 ## Phase A — Make parity executable
 
@@ -854,4 +854,4 @@ The correct strategy is to preserve the existing architecture and close a finite
 6. Advanced ontology operations
 7. Executable parity verification
 
-Once these are complete and demonstrated through a real Protégé-generated conformance corpus, Strixonomy can credibly ship 1.0 as a full Protégé Desktop replacement.
+Once these are complete and demonstrated through a real Protégé-generated conformance corpus, Strixonomy can credibly ship v0.30 as a full Protégé Desktop replacement.

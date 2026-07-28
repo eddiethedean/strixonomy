@@ -140,7 +140,7 @@ Consider splitting when:
 
 ## Future work
 
-- v1.0: formal performance benchmarks document ([Protégé parity P1](../design/PROTEGE_PARITY.md))
+- v0.30: formal performance benchmarks document ([Protégé parity P1](../design/PROTEGE_PARITY.md))
 
 ## Related
 

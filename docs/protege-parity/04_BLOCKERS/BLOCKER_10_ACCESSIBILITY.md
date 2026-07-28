@@ -4,7 +4,7 @@
 
 **Status:** Resolved for v0.25 (EPIC-010) — owned webviews keyboard/SR + automated axe harness\
 **Priority:** Critical\
-**Target Release:** Strixonomy 1.0.0 / delivered functional baseline in **v0.25**
+**Target Release:** Strixonomy v0.30.0 / delivered functional baseline in **v0.25**
 
 ------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ achieve accessibility parity with modern desktop development tools while
 providing an ontology engineering experience that is usable by everyone.
 
 Accessibility is a first-class quality attribute and a release
-requirement for Strixonomy 1.0.
+requirement for Strixonomy v0.30.
 
 ------------------------------------------------------------------------
 

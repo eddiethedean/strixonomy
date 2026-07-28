@@ -10,7 +10,7 @@ Single entry point for security, platform, and legal questionnaires. Start with 
 
 | Question | Answer |
 |----------|--------|
-| **Production-ready Protégé replacement?** | **No** until 1.0 — pilot/coexistence workflows today |
+| **Production-ready Protégé replacement?** | **No** until v0.30 — pilot/coexistence workflows today |
 | **Latest tagged release** | **v0.28.0** — pin installs; see [Versions & channels](versions-and-channels.md) for Marketplace lag |
 | **Commercial support** | **Not offered** — community via GitHub issues |
 | **Editable formats** | Turtle, OBO, RDF/XML, OWL/XML write-back; XML is semantic re-serialize (not Protégé byte-identical); JSON-LD / TriG / N-Triples read-only |
@@ -22,7 +22,7 @@ Single entry point for security, platform, and legal questionnaires. Start with 
 |-------|--------|
 | Commercial support / SLA | **Not offered** |
 | SOC 2 / ISO 27001 | **No** |
-| Code-signed binaries | **Not yet** (SHA256 only) — signing is post-1.0 candidate, not committed |
+| Code-signed binaries | **Not yet** (SHA256 only) — signing is v0.31+ candidate, not committed |
 | HIPAA BAA | **No** |
 
 Details: [Production readiness](production-readiness.md) § Support and compliance.
@@ -41,7 +41,7 @@ Details: [Production readiness](production-readiness.md) § Support and complian
 | Evidence protocol (pilots) | [Production evidence](production-evidence.md) |
 | Governance & release cadence | [Governance](governance.md) · [Release timeline](release-timeline.md) |
 | Air-gapped / offline | [Enterprise deployment](enterprise-deployment.md) |
-| API stability (pre-1.0) | [API stability](api-stability.md) |
+| API stability (v0.29–v0.30) | [API stability](api-stability.md) |
 
 ## Enterprise evaluation checklist
 

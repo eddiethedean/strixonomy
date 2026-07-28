@@ -11,7 +11,7 @@ Contributors and plugin authors who want working reference implementations next 
 
 ## Status
 
-Plugin host and reference plugins are **MVP / experimental** relative to a v1.0 stable ecosystem API. Permissions (`api_version = "1"`) are enforced; do not assume marketplace stability yet.
+Plugin host and reference plugins are **MVP / experimental** relative to a v0.30 stable ecosystem API. Permissions (`api_version = "1"`) are enforced; do not assume marketplace stability yet.
 
 ## License
 

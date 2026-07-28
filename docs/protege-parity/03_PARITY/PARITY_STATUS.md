@@ -4,8 +4,8 @@
 
 **Status:** Living Status Report\
 **Repository Baseline:** Strixonomy v0.21.0\
-**Target Release:** Strixonomy 1.0.0\
-**Current phase:** v0.19 complete — see [PRE_1_0_PHASES.md](../07_BACKLOG/PRE_1_0_PHASES.md)
+**Target Release:** Strixonomy v0.30.0\
+**Current phase:** v0.19 complete — see [V0_30_PHASES.md](../07_BACKLOG/V0_30_PHASES.md)
 
 ------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ from the parity manifest.
 
 # Release Readiness
 
-Strixonomy 1.0 is **not** ready to claim Protégé Desktop parity until:
+Strixonomy v0.30 is **not** ready to claim Protégé Desktop parity until:
 
 -   All P0 parity requirements are VERIFIED.
 -   All release-blocking gaps are resolved.
@@ -129,7 +129,7 @@ Update this report whenever:
 
 # Related Documents
 
--   PRE_1_0_PHASES.md — versioned release phases
+-   V0_30_PHASES.md — versioned release phases
 -   README.md
 -   ONTOCODE_CURRENT_PROTEGE_PARITY_AUDIT.md
 -   CURRENT_FEATURE_MATRIX.md

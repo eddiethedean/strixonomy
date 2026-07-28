@@ -4,7 +4,7 @@
 //!
 //! # API stability
 //!
-//! **Pre-1.0:** catalog shapes and method signatures may change until v1.0.
+//! **During v0.x:** catalog shapes and method signatures may change between minor releases.
 //! Use [`strixonomy_query::sparql_catalog`] for SPARQL; do not depend on Oxigraph types.
 
 mod builder;

@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Canonical inventory of the capabilities provided by a
 standard Protégé Desktop installation that are relevant to Strixonomy's
-1.0 parity goal.
+v0.30 parity goal.
 
 ------------------------------------------------------------------------
 

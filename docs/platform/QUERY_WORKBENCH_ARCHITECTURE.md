@@ -59,4 +59,4 @@ Example axiom tables: `domain_axioms`, `range_axioms`, `restrictions`, `equivale
 
 ## Evolution
 
-UX spec: [ui/QUERY_WORKBENCH.md](../ui/QUERY_WORKBENCH.md). SQL `JOIN` / `GROUP BY` deferred to v1.0.
+UX spec: [ui/QUERY_WORKBENCH.md](../ui/QUERY_WORKBENCH.md). SQL `JOIN` / `GROUP BY` deferred to v0.30.

@@ -58,7 +58,7 @@ let diff = ws.diff_against_path("./other")?;
 ```
 
 `search` returns hits directly (not a `Result`). Other methods that can fail use `?`.
-**Stable since v0.10:** `Workspace`, `WorkspaceOptions`, and `strixonomy::diff`. Other `strixonomy-*` internals remain pre-1.0 until v1.0.
+**Stable since v0.10:** `Workspace`, `WorkspaceOptions`, and `strixonomy::diff`. Other `strixonomy-*` internals remain v0.29–v0.30 until v0.30.
 
 ```rust
 use strixonomy::{Workspace, WorkspaceOptions};

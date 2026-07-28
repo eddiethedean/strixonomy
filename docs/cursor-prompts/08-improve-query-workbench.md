@@ -9,7 +9,7 @@ Read:
 
 ## Non-goals
 
-- Full schema browser v1.0
+- Full schema browser v0.30
 - AI query generation
 
 ## Current state

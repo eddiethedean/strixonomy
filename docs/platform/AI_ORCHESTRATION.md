@@ -1,6 +1,6 @@
 # AI orchestration
 
-> **Status:** Proposed (v1.1+ AI workflows) · **ADR:** [0006-ai-preview-before-apply.md](../adr/0006-ai-preview-before-apply.md), [design/adr/0010-ai-features-opt-in.md](../design/adr/0010-ai-features-opt-in.md)
+> **Status:** Proposed (v0.35 AI workflows) · **ADR:** [0006-ai-preview-before-apply.md](../adr/0006-ai-preview-before-apply.md), [design/adr/0010-ai-features-opt-in.md](../design/adr/0010-ai-features-opt-in.md)
 
 ## Scope
 

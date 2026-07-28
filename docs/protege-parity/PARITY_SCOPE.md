@@ -4,14 +4,14 @@
 
 **Status:** Normative Specification (frozen)\
 **Frozen:** 2026-07-13 | Audit baseline: v0.18.2\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines exactly what **"Protégé Desktop parity"** means
-for Strixonomy 1.0. It establishes the official scope of the parity
+for Strixonomy v0.30. It establishes the official scope of the parity
 program so implementation, testing, documentation, and release decisions
 are measured against a single, stable definition.
 
@@ -39,7 +39,7 @@ The parity effort prioritizes:
 
 # In Scope
 
-Strixonomy 1.0 should provide equivalent workflows for:
+Strixonomy v0.30 should provide equivalent workflows for:
 
 ## Ontology Lifecycle
 
@@ -141,7 +141,7 @@ The following are not required for parity:
 -   Marketplace infrastructure
 -   Experimental research features
 
-These may be implemented after 1.0.
+These may be implemented after v0.30.
 
 ------------------------------------------------------------------------
 

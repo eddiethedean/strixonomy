@@ -67,7 +67,7 @@ Protégé parity:
   ------------------- --------------------------------------
   Functional Syntax   Parse / export where supported
   Manchester Syntax   Editing expressions and queries
-  JSON-LD             Parse / serialize (optional for 1.0)
+  JSON-LD             Parse / serialize (optional for v0.30)
   N-Triples           Parse / serialize
   N-Quads             Parse / serialize
   TriG                Parse / serialize

@@ -1,21 +1,21 @@
-# PRE_1_0_PHASES
+# V0_30_PHASES
 
-# Pre-1.0 Protégé Parity Release Phases
+# v0.30 Protégé Parity Release Phases
 
 **Directory:** 07_BACKLOG\
-**Status:** Canonical pre-1.0 release plan\
+**Status:** Canonical v0.29–v0.30 release plan\
 **Baseline:** Strixonomy v0.18.2\
-**Target:** Strixonomy 1.0.0
+**Target:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
-This document maps the Protégé parity program onto **versioned pre-1.0
-releases** (v0.19–v0.27, then 1.0.0-rc, then 1.0.0).
+This document maps the Protégé parity program onto **versioned v0.29–v0.30
+releases** (v0.19–v0.27, then v0.29, then v0.30).
 
 It is the single entry point for contributors implementing parity work
-before 1.0.0. Engineering sequencing detail lives in
+before v0.30. Engineering sequencing detail lives in
 [EXECUTION_ORDER.md](../05_IMPLEMENTATION/EXECUTION_ORDER.md); P0 scope
 lives in [P0_IMPLEMENTATION_PLAN.md](../05_IMPLEMENTATION/P0_IMPLEMENTATION_PLAN.md).
 
@@ -38,8 +38,8 @@ objective of the phases below.
 | **v0.25** | E + F | 8–9 | EPIC-008–011 | BLOCKER_08–011 | Shipped |
 | **v0.26** | F (test port) | — | Protégé JUnit behavioral port | BLOCKER_11 (corpus) | Shipped |
 | **v0.28** | Product identity | — | Strixonomy Rust + VS Code rename | Package and extension migration | Shipped |
-| **1.0.0-rc** | Stabilize | 10 | — | — | Planned |
-| **1.0.0** | Ship | — | — | [PARITY_RELEASE_GATE.md](../03_PARITY/PARITY_RELEASE_GATE.md) | Planned |
+| **v0.29** | Trustworthy projects | 10 | — | — | Planned |
+| **v0.30** | Fast daily authoring | — | — | [PARITY_RELEASE_GATE.md](../03_PARITY/PARITY_RELEASE_GATE.md) | Planned |
 
 Stages are defined in [EXECUTION_ORDER.md](../05_IMPLEMENTATION/EXECUTION_ORDER.md).
 Epics are indexed in [EPIC_INDEX.md](EPIC_INDEX.md).
@@ -345,7 +345,7 @@ Rust semantic oracles (rewrite specs — do not run the JVM suite).
 # v0.27 — Strixonomy rename
 
 **Status:** Shipped (v0.28.0)\
-**Theme:** Rename OntoCore and OntoCode to Strixonomy before the 1.0 release freeze.
+**Theme:** Rename OntoCore and OntoCode to Strixonomy before the v0.30 release freeze.
 
 ## Objective
 
@@ -374,52 +374,58 @@ migration path.
 
 ------------------------------------------------------------------------
 
-# 1.0.0-rc — Release candidate
+# v0.29 — Trustworthy projects
 
 **Stage:** 10\
-**Theme:** Stabilize without expanding scope.
+**Theme:** Prove that real projects can be edited, recovered, validated, and shipped without silent semantic damage.
 
-## Allowed work
+## Required outcomes
 
--   Bug fixes, performance improvements, documentation corrections
--   Test stabilization, packaging fixes, accessibility fixes
--   Migration guidance
-
-## Prohibited work
-
--   New major features or architectural subsystems
--   Unapproved parity scope changes or breaking SDK changes
+-   Executable P0 evidence and semantic round-trip corpus for Turtle, OBO,
+    RDF/XML, and OWL/XML
+-   Crash-safe writes, transaction recovery, external-change conflict
+    handling, and verified undo
+-   Cross-platform extension and CLI distribution smoke coverage
+-   Published performance budgets for representative ontology sizes
+-   Actionable diagnostics for unsupported, truncated, stale, or
+    profile-incompatible operations
 
 ## Required validation
 
 -   Full conformance and regression suites
 -   Cross-platform tests and large-ontology benchmarks
--   Accessibility audit and Protégé migration trials
+-   Recovery drills, accessibility audit, and Protégé migration trials
 -   Final documentation review
 
 ## Exit criteria
 
 -   All P0 requirements VERIFIED
 -   All release gates pass; zero open P0 defects
--   Public APIs frozen; release sign-off complete
+-   No open data-loss or silent-semantic-change defect
+-   Production evidence protocol passes on the maintained corpus
 
 ------------------------------------------------------------------------
 
-# 1.0.0 — Protégé replacement release
+# v0.30 — Fast daily authoring
 
-**Theme:** Production-ready Protégé Desktop replacement in VS Code.
+**Theme:** Complete the normal edit → understand → validate → reason → save loop in one cohesive VS Code workspace.
 
 ## Deliverables
 
--   Cross-platform VS Code extension and CLI release
--   Published `strixonomy` + `strixonomy-*` 1.0.0 on crates.io
--   Migration guides with honest parity table
--   Stable CLI/API/LSP semver 1.0
+-   Relationship, reference, metadata, diagnostic, and reasoning cards in
+    the entity workspace
+-   Complete forms + Manchester + source authoring loop
+-   Multi-step undo/redo, batch normalization, and guided merge with
+    semantic impact preview
+-   Validate/classify pipeline, entity explanations, run history, stale
+    result handling, and Problems integration
+-   Persistent working set, semantic navigation history, saved graph
+    layouts, and migration playbooks
 
 ## Exit criteria
 
-> Daily ontology engineering (OWL 2 DL + OBO maintenance) is completable
-> in VS Code. Protégé is required only for **P2** features defined in
+> Maintained OWL 2 DL and OBO scenario tests complete end to end in VS
+> Code. Protégé is required only for documented **P2** cases defined in
 > [PARITY_SCOPE.md](../PARITY_SCOPE.md).
 
 See [PARITY_RELEASE_GATE.md](../03_PARITY/PARITY_RELEASE_GATE.md) and
@@ -443,7 +449,7 @@ The next five implementation sessions (from
 # Related documents
 
 -   [README.md](../README.md) — parity program overview
--   [ROADMAP.md](ROADMAP.md) — post-1.0 backlog (1.1+)
+-   [ROADMAP.md](ROADMAP.md) — v0.31+ backlog (1.1+)
 -   [EXECUTION_ORDER.md](../05_IMPLEMENTATION/EXECUTION_ORDER.md) — stage sequencing
 -   [P0_IMPLEMENTATION_PLAN.md](../05_IMPLEMENTATION/P0_IMPLEMENTATION_PLAN.md) — P0 scope
 -   [EPIC_INDEX.md](EPIC_INDEX.md) — epic registry

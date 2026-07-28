@@ -1,17 +1,17 @@
 # RELEASE_CHECKLIST
 
-# Strixonomy 1.0 Release Checklist
+# Strixonomy v0.30 Release Checklist
 
 **Directory:** 08_RELEASE\
 **Status:** Release Readiness Checklist\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the final release checklist required before
-publishing Strixonomy 1.0.
+publishing Strixonomy v0.30.
 
 Every item in this checklist must be completed before the project may
 claim verified Protégé Desktop parity.

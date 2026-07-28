@@ -71,7 +71,7 @@ pub enum PluginKind {
     Refactor,
     Graph,
     Ui,
-    /// Reserved — not hosted in SDK 1.0 (AI Phase → v1.1).
+    /// Reserved — not hosted in SDK 1.0 (AI phase → v0.35).
     Ai,
 }
 

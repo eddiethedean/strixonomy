@@ -2,9 +2,9 @@
 
 > **v0.12 shipped summary:** See [What ships today](../SHIPPED.md) and [Platform roadmap](../roadmap.md). This file is **per-crate engineering detail through v0.11**; forward phases (v0.12+) are in the platform roadmap.
 
-> **Per-crate engineering detail for shipped milestones.** Canonical full release phase plan (v0.1–post-1.2): [Platform roadmap](../roadmap.md). Ecosystem overview: [Architecture](../architecture.md) · [Vision](../vision.md).
+> **Per-crate engineering detail for shipped milestones.** Canonical full release phase plan (v0.1–v0.38+): [Platform roadmap](../roadmap.md). Ecosystem overview: [Architecture](../architecture.md) · [Vision](../vision.md).
 
-> v1.0 exit bar: [protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) (GitHub). [PROTEGE_PARITY.md](PROTEGE_PARITY.md) is **historical** — do not use it as the live exit checklist.
+> v0.30 exit bar: [protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) (GitHub). [PROTEGE_PARITY.md](PROTEGE_PARITY.md) is **historical** — do not use it as the live exit checklist.
 >
 > **Dependencies:** [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md) · [ADR-0016](adr/0016-dependency-first-implementation.md)
 
@@ -112,7 +112,7 @@ Deliverables:
 - profile detection via `ontologos-profile`
 - unsatisfiable classes (EL scope in 0.9.0)
 - inferred hierarchy view (asserted / inferred / combined toggle)
-- **explanation panel** — EL-first via `ontologos-explain` (DL clash traces deferred to v1.0 / OntoLogos 1.0.0)
+- **explanation panel** — EL-first via `ontologos-explain` (DL clash traces deferred to v0.30 / OntoLogos 1.0.0)
 
 Exit criteria:
 
@@ -232,7 +232,7 @@ Deliverables:
 - Diagnostic quick fixes — `undefined_prefix`, `missing_label`, `broken_import` via `textDocument/codeAction`
 - `strixonomy-docs` crate — Markdown and HTML export; CLI `strixonomy docs`
 - Import patch ops — `add_import`, `remove_import`; Manage Imports React panel
-- OBO read path via `fastobo` (synonyms, definitions, xrefs); ADR-0019 for v1.0 OBO write-back
+- OBO read path via `fastobo` (synonyms, definitions, xrefs); ADR-0019 for v0.30 OBO write-back
 - Open VSX publishing (Cursor marketplace)
 
 Exit criteria:
@@ -242,7 +242,7 @@ Exit criteria:
 
 **Dependencies:** `fastobo`, `minijinja`, `pulldown-cmark`.
 
-## v1.0.0 — Protégé-competitive release
+## v0.30.0 — Protégé-competitive release
 
 Deliverables:
 
@@ -269,7 +269,7 @@ Exit criteria:
 ## Implementation sequencing
 
 ```text
-v0.4a → v0.4b → v0.5 → v0.6 → v0.7a → v0.7 → v0.7b → v0.8 → v0.9 → v0.10 → v0.11 → v0.12 → v0.13 → v0.14 → v1.0
+v0.4a → v0.4b → v0.5 → v0.6 → v0.7a → v0.7 → v0.7b → v0.8 → v0.9 → v0.10 → v0.11 → v0.12 → v0.13 → v0.14 → v0.30
 ```
 
-Forward phases (v0.12–v1.2+): [Platform roadmap](../roadmap.md).
+Forward phases (v0.12–v0.32+): [Platform roadmap](../roadmap.md).

@@ -69,9 +69,9 @@ Negative:
 
 Rationale: authoring needs fine-grained Horned-OWL axiom objects; reasoning already standardizes on OntoLogos. Splitting parse paths matches the dual-stack rule (Oxigraph for triples, Horned-OWL for edit/diff, OntoLogos for classify).
 
-## Appendix B — v1.0 SQL joins: sqlparser vs DataFusion
+## Appendix B — v0.30 SQL joins: sqlparser vs DataFusion
 
-**Question:** How to deliver joins and aggregations at v1.0 ([v1.0_BACKLOG.md](../v1.0_BACKLOG.md))?
+**Question:** How to deliver joins and aggregations at v0.30 ([v0.30_BACKLOG.md](../v0.30_BACKLOG.md))?
 
 | Approach | Pros | Cons |
 |----------|------|------|
@@ -80,7 +80,7 @@ Rationale: authoring needs fine-grained Horned-OWL axiom objects; reasoning alre
 
 **Decision:**
 
-1. **v1.0 default:** extend hand-rolled virtual-table joins/aggregations in `strixonomy-query` using existing `sqlparser` AST.
+1. **v0.30 default:** extend hand-rolled virtual-table joins/aggregations in `strixonomy-query` using existing `sqlparser` AST.
 2. **Trigger DataFusion revisit** if any of: (a) join queries exceed maintainability, (b) Parquet/Arrow export becomes P0, (c) aggregations need optimizer behavior beyond hand-rolled plans.
 3. Document evaluation outcome in [DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md) when decided.
 

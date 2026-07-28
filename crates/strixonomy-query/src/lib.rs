@@ -5,7 +5,7 @@
 //! # API stability
 //!
 //! **Pre-1.0:** virtual table names and column sets are documented but may gain columns
-//! without a major version until v1.0.
+//! between minor versions during the v0.x release line.
 
 pub mod schema;
 pub mod sparql;

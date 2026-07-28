@@ -75,7 +75,7 @@ export interface GraphState {
 }
 
 export interface ExplorerState {
-  /** Explorer highlight IRI (planned v1.0 tree sync). */
+  /** Explorer highlight IRI (planned v0.30 tree sync). */
   highlightedIri: string | null;
 }
 

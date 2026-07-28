@@ -216,7 +216,7 @@ Phases map to product milestones in [ROADMAP.md](ROADMAP.md). Ontology features 
 | 3 + graphs | **v0.7** — Visualization | React entity inspector; class/property/import/neighborhood graph panels |
 | 4–5 | **v0.8** — Refactoring + full Manchester | React query workbench; React Manchester editor with validation UI |
 | 6 + diff | **v0.9** — Workflow | React reasoner + explanation panels; semantic diff panel |
-| 7 | **v1.0** — Release hardening | Accessibility review; webview integration tests; all production panels on React; legacy HTML panels removed |
+| 7 | **v0.30** — Release hardening | Accessibility review; webview integration tests; all production panels on React; legacy HTML panels removed |
 
 ### Phase 1 — React foundation (v0.7a)
 
@@ -259,7 +259,7 @@ Deliverables:
 
 - Modern reasoning experience (classification status, inferred edges, justification traces)
 
-### Phase 7 — Hardening (v1.0)
+### Phase 7 — Hardening (v0.30)
 
 Deliverables:
 

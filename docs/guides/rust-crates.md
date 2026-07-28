@@ -45,4 +45,4 @@ Primary dependency: `strixonomy = "0.28"`.
 
 - [Strixonomy overview](../strixonomy/index.md)
 - [Which artifact?](which-artifact.md)
-- [API stability (pre-1.0)](api-stability.md)
+- [API stability (v0.29–v0.30)](api-stability.md)

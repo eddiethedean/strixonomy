@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — **shipped**; Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`). Curated marketplace / production owlmake remain **product 1.0** — [Plugin policy](../guides/plugin-policy.md).
+Accepted — **shipped**; Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`). Curated discovery and production workflows are planned for **v0.33** — [Plugin policy](../guides/plugin-policy.md).
 
 ## Context
 

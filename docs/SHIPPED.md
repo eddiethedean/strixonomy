@@ -20,7 +20,7 @@
 |---------|------------|
 | **Strixonomy (IDE)** | VS Code IDE — explorer, React inspector, graphs (asserted/inferred modes), Query Workbench (SQL/SPARQL/DL), Manchester editor, refactor preview, reasoner, explanation panel, plugin commands/views/preferences/context actions |
 | **Strixonomy (engine)** | Rust semantic workspace engine — `strixonomy` façade, `strixonomy-*` crates, `strixonomy` CLI, `strixonomy-lsp`, plugin host |
-| **PyPI `strixonomy`** | Reserved Python distribution (name reservation + release workflow; SDK planned v1.1) — [Python package status](guides/python-package.md) |
+| **PyPI `strixonomy`** | Reserved Python distribution (name reservation + release workflow; SDK planned v0.34) — [Python package status](guides/python-package.md) |
 
 ## Capability matrix (v0.28.0 tagged)
 
@@ -171,7 +171,7 @@ Detailed notes for v0.9–v0.21 are in the [CHANGELOG](https://github.com/eddiet
 **Shipped:** named classes; `and` / `or` / `not`; `some` / `only` / `value` / `Self`; OneOf `{…}`; `min` / `max` / `exact` cardinality; nested restrictions; data restrictions on xsd types; `SubClassOf`, `EquivalentClasses`, and `DisjointClasses` via Manchester editor or patch JSON; domain/range; property chains; HasKey and remaining RBox/ABox ops via patch JSON / inspector.
 
 **Not shipped:** inline Manchester autocomplete in the text buffer.
-Remaining 1.0 targets: [known limitations](known-limitations.md) · [Protégé vs Strixonomy](guides/protege-decision.md).
+Remaining v0.30 targets: [known limitations](known-limitations.md) · [Protégé vs Strixonomy](guides/protege-decision.md).
 
 ## Known limitations
 
@@ -187,7 +187,7 @@ Remaining 1.0 targets: [known limitations](known-limitations.md) · [Protégé v
 
 ## What's next
 
-Forward: Protégé-competitive release (**1.0**). **v0.28.0** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
+Forward: Protégé-competitive release (**v0.30**). **v0.28.0** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
 
 ## Where to learn more
 

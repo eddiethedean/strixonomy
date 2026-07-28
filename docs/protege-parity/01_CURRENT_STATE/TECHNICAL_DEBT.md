@@ -4,7 +4,7 @@
 
 **Status:** Living Engineering Document\
 **Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 

@@ -21,5 +21,5 @@ Positive:
 - shared HermiT conformance suite with OntoLogos
 
 Negative:
-- v1.0 DL quality depends on OntoLogos 1.0.0 publish ([REASONER_SPEC.md](../REASONER_SPEC.md))
+- v0.30 DL quality depends on OntoLogos 1.0.0 publish ([REASONER_SPEC.md](../REASONER_SPEC.md))
 - must validate against fixtures rather than delegating to HermiT JVM

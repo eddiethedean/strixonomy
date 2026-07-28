@@ -4,7 +4,7 @@
 
 **Status:** Resolved for v0.25 (EPIC-008)\
 **Priority:** Critical\
-**Target Release:** Strixonomy 1.0.0 / delivered functional baseline in **v0.25**
+**Target Release:** Strixonomy v0.30.0 / delivered functional baseline in **v0.25**
 
 ------------------------------------------------------------------------
 

@@ -13,7 +13,7 @@ Product and contributor **user guides** live on this Read the Docs site. Deeper 
 | UI product specs | [`docs/ui/README.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) |
 | Cursor prompts | [`docs/cursor-prompts/README.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/cursor-prompts/README.md) |
 | Protégé reverse engineering | [`docs/PROTEGE_REVERSE_ENGINEERING/README.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/PROTEGE_REVERSE_ENGINEERING/README.md) |
-| Protégé parity program (1.0 engineering) | [`docs/protege-parity/README.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) |
+| Protégé parity program (v0.30 engineering) | [`docs/protege-parity/README.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) |
 | Historical v0.18 parity checklist (not current) | [`docs/design/PROTEGE_PARITY.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PROTEGE_PARITY.md) |
 | Full documentation map | [`docs/documentation-index.md`](https://github.com/eddiethedean/strixonomy/blob/main/docs/documentation-index.md) |
 

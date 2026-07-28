@@ -13,7 +13,7 @@ Run Strixonomy validation in continuous integration to catch ontology lint and p
 
 Warnings and info are printed to stderr but do not fail the job.
 
-## What is safe to automate (pre-1.0)
+## What is safe to automate (v0.29–v0.30)
 
 See [Automation and stability](automation-stability.md) for what is stable enough for CI gating and how to pin versions.
 
@@ -52,7 +52,7 @@ jobs:
 
 Adjust the validate path (`.` or `ontologies/`) to the directory containing your `.ttl`, `.owl`, etc. Verify checksums per [release-integrity.md](release-integrity.md) in production pipelines.
 
-!!! tip "Pin the CLI version pre-1.0"
+!!! tip "Pin the CLI version v0.29–v0.30"
     Set `VERSION=0.28.0` explicitly so CI does not pick up breaking minor releases unexpectedly. See [FAQ](faq.md).
 
 ## GitHub Actions (cargo install — macOS/Windows or when building from source)

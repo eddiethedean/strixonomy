@@ -1,10 +1,10 @@
 # P0_IMPLEMENTATION_PLAN
 
-# Strixonomy 1.0 P0 Implementation Plan
+# Strixonomy v0.30 P0 Implementation Plan
 
 **Status:** Master P0 Engineering Plan\
 **Scope:** Release-blocking work only\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -187,7 +187,7 @@ A P0 item is complete only when:
 
 # Success Criteria
 
-Strixonomy 1.0 may claim Protégé Desktop parity only when:
+Strixonomy v0.30 may claim Protégé Desktop parity only when:
 
 -   100% of P0 requirements are VERIFIED.
 -   Zero unresolved P0 blockers remain.

@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — **proposed v1.1+** (AI workflows)
+Accepted — **proposed v0.35** (AI workflows)
 
 ## Context
 

@@ -5,7 +5,7 @@
 > **For adoption decisions use only:** [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md).
 
 This directory contains the engineering specifications, audits, and
-implementation plans that drive **Strixonomy 1.0.0** toward **full
+implementation plans that drive **Strixonomy v0.30.0** toward **full
 functional parity with Protégé Desktop**.
 
 Unlike earlier planning documents, this documentation set is grounded in
@@ -22,7 +22,7 @@ The parity program has four primary goals:
 1.  Define the exact scope of Protégé parity.
 2.  Measure Strixonomy's current capabilities against that scope.
 3.  Plan and prioritize the remaining implementation work.
-4.  Provide objective evidence that Strixonomy 1.0 satisfies its parity
+4.  Provide objective evidence that Strixonomy v0.30 satisfies its parity
     claims.
 
 ------------------------------------------------------------------------
@@ -100,7 +100,7 @@ plugins, UI workflows, and testing.
 
 # Recommended Reading Order
 
-1.  Read [PRE_1_0_PHASES.md](07_BACKLOG/PRE_1_0_PHASES.md) for the versioned release plan (v0.19–1.0).
+1.  Read [V0_30_PHASES.md](07_BACKLOG/V0_30_PHASES.md) for the versioned release plan (v0.19–v0.30).
 2.  Read `ONTOCODE_CURRENT_PROTEGE_PARITY_AUDIT.md` or `01_CURRENT_STATE/` audit docs.
 3.  Read `PARITY_SCOPE.md`.
 4.  Review `03_PARITY/PARITY_MATRIX.md` and `03_PARITY/PARITY_GAP_ANALYSIS.md`.
@@ -124,7 +124,7 @@ plugins, UI workflows, and testing.
 
 # Definition of Success
 
-Strixonomy 1.0.0 may be described as a Protégé Desktop replacement only
+Strixonomy v0.30.0 may be described as a Protégé Desktop replacement only
 when:
 
 -   Every P0 parity requirement is complete.

@@ -94,7 +94,7 @@ Store internally:
 - Long-term maintainer SLA (see [Governance](governance.md))
 - Security pen-test results (not published)
 - Remote SSH / Codespaces certification (see [Platform compatibility](platform-compatibility.md))
-- Formal benchmark suite (v1.0 backlog)
+- Formal benchmark suite (v0.30 backlog)
 
 ## Related
 

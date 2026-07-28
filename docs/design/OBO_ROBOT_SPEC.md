@@ -1,4 +1,4 @@
-# OBO & ROBOT Interop Specification (v1.0)
+# OBO & ROBOT Interop Specification (v0.30)
 
 > **Status: Target design for remaining interop.** Do **not** implement from this page as product truth.
 >
@@ -16,7 +16,7 @@ Enable biomedical ontology maintainers to use Strixonomy as a **primary IDE** al
 |-------|----------------|--------|
 | **`strixonomy-robot`** | Thin wrapper around the official ROBOT Java CLI | **Shipped** (v0.7) |
 | **Strixonomy diagnostics** | Built-in lint and parse checks | **Shipped** |
-| **owlmake** (external) | Rust-native portable ROBOT/ODK-style workflows | **Reference plugin** (v1.0 integration target) |
+| **owlmake** (external) | Rust-native portable ROBOT/ODK-style workflows | **Reference plugin** (v0.33 integration target) |
 | **Strixonomy core** | Does **not** reimplement ROBOT merge/template/report or ODK Makefile logic | By design |
 
 Strixonomy should integrate with the ontology toolchain, not absorb it. See [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md).
@@ -38,7 +38,7 @@ Strixonomy should integrate with the ontology toolchain, not absorb it. See [PLU
 
 ### Milestone
 
-**v0.7b** — OBO format support before v1.0.
+**v0.7b** — OBO format support before v0.30.
 
 ## 4. ROBOT interop (P0) — current path
 
@@ -73,10 +73,10 @@ Strixonomy (index, diagnostics, LSP)
      │
      ├── strixonomy-robot ──► ROBOT CLI (Java)     ← shipped today
      │
-     └── owlmake plugin ──► Rust-native workflows ← v1.0 integration target
+     └── owlmake plugin ──► Rust-native workflows ← v0.33 integration target
 ```
 
-### Integration goals (v1.0)
+### Integration goals (v0.30)
 
 | Goal | Description |
 |------|-------------|
@@ -95,7 +95,7 @@ Strixonomy (index, diagnostics, LSP)
 
 See [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) for `WorkflowPlugin` / `BuildPlugin` interfaces.
 
-## 6. OBO/ODK project workflow goals (v1.0)
+## 6. OBO/ODK project workflow goals (v0.30)
 
 | Workflow | Strixonomy / Strixonomy role |
 |----------|--------------------------|

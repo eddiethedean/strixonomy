@@ -112,7 +112,7 @@ Introduce WorkspaceStore, Current Focus, event bus, and WorkspaceRegistry.
 
 ## Phase 2 — Entity workspace
 
-**Phase ID:** 2 · **Target release:** v0.13–v1.0 · **Status:** partial (inspector shipped v0.12)
+**Phase ID:** 2 · **Target release:** v0.13–v0.30 · **Status:** partial (inspector shipped v0.12)
 
 ### Goal
 
@@ -121,13 +121,13 @@ Entity Workspace MVP: editor driven by Current Focus with relationship and metad
 ### User-visible outcome
 
 - Edit labels, axioms, OBO fields in inspector with focus-aware navigation.
-- Relationship cards and references view (v1.0 subset).
+- Relationship cards and references view (v0.30 subset).
 
 ### Technical scope
 
 - EntityInspector → Entity Workspace integration with store
 - Inline labels/comments (shipped)
-- Hierarchy, references, metadata views (v1.0)
+- Hierarchy, references, metadata views (v0.30)
 - Diagnostics integration in inspector
 
 ### Files / modules
@@ -199,7 +199,7 @@ Query Workspace with schema browser and store-backed history.
 
 ## Phase 4 — Graph workspace
 
-**Phase ID:** 4 · **Target release:** v0.13–v1.0 · **Status:** partial (GraphPanel shipped)
+**Phase ID:** 4 · **Target release:** v0.13–v0.30 · **Status:** partial (GraphPanel shipped)
 
 ### Goal
 
@@ -213,8 +213,8 @@ Graph Workspace with focus neighborhood sync and progressive loading.
 ### Technical scope
 
 - Focus sync (Phase 1)
-- Saved layouts, filters (v1.0)
-- Reasoning overlays (v1.0)
+- Saved layouts, filters (v0.30)
+- Reasoning overlays (v0.30)
 
 ### Files / modules
 
@@ -236,7 +236,7 @@ Graph Workspace with focus neighborhood sync and progressive loading.
 
 ## Phase 5 — Reasoning experience
 
-**Phase ID:** 5 · **Target release:** v1.0 · **Status:** partial (reasoner panels shipped)
+**Phase ID:** 5 · **Target release:** v0.30 · **Status:** partial (reasoner panels shipped)
 
 ### Goal
 
@@ -250,7 +250,7 @@ Reasoning-as-compiler UX: problems panel, reasoning history, entity cards.
 ### Technical scope
 
 - Reasoning slice in store
-- Problems panel (v1.0)
+- Problems panel (v0.30)
 - Quick fixes linkage (partial via LSP codeAction)
 
 ### Files / modules
@@ -274,7 +274,7 @@ Reasoning-as-compiler UX: problems panel, reasoning history, entity cards.
 
 ## Phase 6 — Semantic refactoring
 
-**Phase ID:** 6 · **Target release:** v0.13–v1.0 · **Status:** partial (preview/apply shipped)
+**Phase ID:** 6 · **Target release:** v0.13–v0.30 · **Status:** partial (preview/apply shipped)
 
 ### Goal
 
@@ -283,13 +283,13 @@ Unified refactoring transaction model with store-backed preview.
 ### User-visible outcome
 
 - All refactor ops require preview before apply.
-- Merge classes and batch label ops (v1.0).
+- Merge classes and batch label ops (v0.30).
 
 ### Technical scope
 
 - Refactoring store slice
 - RefactorPreview integration
-- Undo/redo (v1.0)
+- Undo/redo (v0.30)
 
 ### Acceptance criteria
 
@@ -304,7 +304,7 @@ Unified refactoring transaction model with store-backed preview.
 
 ## Phase 7 — AI-native workflows
 
-**Phase ID:** 7 · **Target release:** v1.1+ · **Status:** proposed
+**Phase ID:** 7 · **Target release:** v0.31+ · **Status:** proposed
 
 ### Goal
 
@@ -366,7 +366,7 @@ Capability Provider plugin host MVP with manifest and inspector cards.
 
 ## Phase 9 — Collaboration
 
-**Phase ID:** 9 · **Target release:** v1.0–v1.1 · **Status:** partial (semantic diff shipped v0.10)
+**Phase ID:** 9 · **Target release:** v0.30–v0.31 · **Status:** partial (semantic diff shipped v0.10)
 
 ### Goal
 
@@ -376,7 +376,7 @@ Review workspace, semantic PR summaries, validation reports.
 
 - Semantic diff panel (shipped)
 - PR summary from CLI/LSP (v0.13 Strixonomy)
-- Review workspace MVP (v1.0)
+- Review workspace MVP (v0.30)
 
 ### Acceptance criteria
 
@@ -394,9 +394,9 @@ Review workspace, semantic PR summaries, validation reports.
 
 | Phase | Title | Target | Status | Spec |
 |-------|-------|--------|--------|------|
-| 10 | OntoStudio desktop | Post v1.0 | planned | [ONTOSTUDIO_DESKTOP.md](ONTOSTUDIO_DESKTOP.md), [platform/ONTOSTUDIO_REUSE.md](../platform/ONTOSTUDIO_REUSE.md) |
-| 11 | Ecosystem | Post v1.0 | proposed | Plugin registry, tutorials |
-| 12 | Semantic engineering platform | Post v1.2 | proposed | Browser client, team workspaces |
+| 10 | OntoStudio desktop | Post v0.30 | planned | [ONTOSTUDIO_DESKTOP.md](ONTOSTUDIO_DESKTOP.md), [platform/ONTOSTUDIO_REUSE.md](../platform/ONTOSTUDIO_REUSE.md) |
+| 11 | Ecosystem | Post v0.30 | proposed | Plugin registry, tutorials |
+| 12 | Semantic engineering platform | Post v0.32 | proposed | Browser client, team workspaces |
 
 Full milestones for Phases 10–12 will be added when OntoUI platform (Phases 0–1) ships.
 

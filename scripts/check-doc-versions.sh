@@ -806,7 +806,7 @@ check_file_contains "docs/vision.md" "Build the modern open-source platform" "do
 check_file_contains "docs/roadmap.md" "v0.11 — Editor depth & distribution" "docs roadmap v0.11 section"
 check_file_contains "docs/roadmap.md" "Shipped releases \(v0.1–v0.19\)" "docs roadmap shipped section"
 check_file_contains "docs/roadmap.md" "v0.14 — Plugin host MVP \(shipped\)" "docs roadmap v0.14 shipped section"
-check_file_contains "docs/roadmap.md" "v1.2 — Ontology Toolchain Platform" "docs roadmap v1.2 milestone"
+check_file_contains "docs/roadmap.md" "v0.33 — Automated ontology delivery" "docs roadmap v0.33 milestone"
 check_file_contains "docs/roadmap.md" "owlmake" "docs roadmap owlmake integration"
 check_file_contains "mkdocs.yml" "vision.md" "mkdocs Platform nav"
 
@@ -1431,7 +1431,7 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
       echo "ok: no stale 'plugin host MVP' on Tier-1 surfaces"
     fi
     if grep -qiE 'semver-stable ecosystem plugin API remains a \*\*v1\.0 target\*\*|stable third-party plugin ecosystem API' docs/faq.md docs/architecture.md 2>/dev/null; then
-      echo "FAIL: faq/architecture still claim stable plugin API is only a v1.0 target (SDK 1.0 wire is frozen)" >&2
+      echo "FAIL: faq/architecture still claim stable plugin API is only a future target (SDK 1.0 wire is frozen)" >&2
       fail=1
     else
       echo "ok: faq/architecture plugin stability wording"

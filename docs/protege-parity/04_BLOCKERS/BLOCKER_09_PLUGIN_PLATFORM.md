@@ -4,7 +4,7 @@
 
 **Status:** Resolved for v0.25 (EPIC-009) — SDK 1.0 freeze on TOML + subprocess host\
 **Priority:** Critical\
-**Target Release:** Strixonomy 1.0.0 / delivered functional baseline in **v0.25**
+**Target Release:** Strixonomy v0.30.0 / delivered functional baseline in **v0.25**
 
 ------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ compatibility.
 The repository audit identified an existing plugin runtime, manifest
 discovery, and example plugins. However, the SDK, extension points,
 lifecycle guarantees, compatibility policy, and verification
-infrastructure must mature before 1.0.
+infrastructure must mature before v0.30.
 
 Without a stable plugin platform, Strixonomy cannot provide a reliable
 ecosystem for third-party extensions.
@@ -199,7 +199,7 @@ Enables:
 -   Performance tuning
 -   Regression suite
 -   SDK stabilization
--   1.0 API freeze
+-   v0.30 API freeze
 
 ------------------------------------------------------------------------
 

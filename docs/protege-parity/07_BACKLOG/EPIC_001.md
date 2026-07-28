@@ -6,7 +6,7 @@
 **GitHub:** https://github.com/eddiethedean/strixonomy/issues/247\
 **Status:** In progress (v0.20)\
 **Priority:** P0 (Release Blocking)\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 

@@ -4,7 +4,7 @@ Strixonomy discovers ontology files under a workspace root, parses them, and bui
 
 ## `Workspace` API
 
-**Stable since v0.10** as the recommended high-level API (pre-1.0 semver still applies until v1.0 — [API stability](../guides/api-stability.md)). Lower-level `IndexBuilder` remains available for custom pipelines.
+**Stable since v0.10** as the recommended high-level API (v0.29–v0.30 semver still applies until v0.30 — [API stability](../guides/api-stability.md)). Lower-level `IndexBuilder` remains available for custom pipelines.
 
 ```rust
 use strixonomy::Workspace;

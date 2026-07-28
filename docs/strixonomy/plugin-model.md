@@ -4,7 +4,7 @@
 >
 > **Do not implement from this page.** Categories and manifest sketches below are overview/background. The shipped host uses `.strixonomy/plugins/*.toml` + subprocess entries (not native `.so` libraries).
 
-> **Status:** Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace and production owlmake integration remain **product 1.0** goals. See [Plugin policy](../guides/plugin-policy.md).
+> **Status:** Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace and production owlmake integration are planned for **v0.33** goals. See [Plugin policy](../guides/plugin-policy.md).
 
 The plugin system allows users and organizations to extend **Strixonomy** and **Strixonomy** without modifying the core project. **Plugins integrate with Strixonomy; they are not part of Strixonomy.**
 
@@ -70,6 +70,6 @@ entry = "./bin/my-validator"
 ## Timeline
 
 - **v0.14:** Plugin host MVP — manifest discovery, reference validator/exporter plugins, OntoUI inspector cards
-- **v1.0:** Stable plugin API + reference plugins; Strixonomy surfaces workflow actions in IDE
+- **v0.30:** Stable plugin API + reference plugins; Strixonomy surfaces workflow actions in IDE
 
 See [Platform roadmap](../roadmap.md) and [OBO & ROBOT interop](../design/OBO_ROBOT_SPEC.md).

@@ -65,9 +65,9 @@ Primary capabilities:
 - Documentation generator
 - AI-assisted ontology review
 
-## 4. v1.0.0 Bar
+## 4. v0.30.0 Bar
 
-v1.0.0 should be positioned as:
+v0.30.0 should be positioned as:
 
 > A Protégé-competitive ontology workbench for OWL 2 DL and OBO maintenance inside VS Code.
 
@@ -152,7 +152,7 @@ Short positioning:
 - v0.7b: OBO + ROBOT interop
 - v0.8: refactoring + full Manchester (React query/Manchester panels)
 - v0.9: semantic diff, incremental index, docs (React reasoner/diff panels)
-- v1.0: [PROTEGE_PARITY.md](PROTEGE_PARITY.md) P0 green + Marketplace + React UI hardening
+- v0.30: [PROTEGE_PARITY.md](PROTEGE_PARITY.md) P0 green + Marketplace + React UI hardening
 
 ## 9. Non-Goals for Early Releases
 
@@ -178,7 +178,7 @@ Short positioning:
 | LSP wire | `lsp-server`, `lsp-types` | `strixonomy-lsp` | v0.2 |
 | Diagnostics | `oxigraph` + catalog rules | `strixonomy-diagnostics` | v0.3 |
 | OWL axioms / Manchester | `horned-owl`, `horned-functional` | `strixonomy-owl` | v0.4b+ |
-| Reasoning | OntoLogos `0.9`→`1.0` | `strixonomy-reasoner` | v0.6 / v1.0 |
+| Reasoning | OntoLogos `0.9`→`1.0` | `strixonomy-reasoner` | v0.6 / v0.30 |
 | Graph structure | `petgraph` | LSP graph export | v0.7 |
 | Webview UI | `react`, `vite` | `extension/webview-ui` | v0.7a+ ([ADR-0017](adr/0017-react-webview-ui.md)) |
 | OBO | `fastobo`, `fastobo-owl` | `strixonomy-parser` / `strixonomy-owl` | v0.7b |
@@ -186,13 +186,13 @@ Short positioning:
 | File watch | `notify` / `ontologos-watch` | `strixonomy-lsp` | v0.9 |
 | Git diff inputs | `git2` | `strixonomy-diff` | v0.9 |
 | Docs export | `pulldown-cmark`, `minijinja` | `strixonomy-docs` | v0.9 |
-| SHACL (P1) | `rudof` | plugin / diagnostics | v1.0 P1 |
+| SHACL (P1) | `rudof` | plugin / diagnostics | v0.30 P1 |
 
 Build on existing mature components — do not reimplement parsers, reasoners, triple stores, OBO parsers, or SHACL engines when a maintained Rust crate covers the profile.
 
 - Use **Horned-OWL** (+ `horned-functional`) for OWL 2 axiom modeling and write-back ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md)).
 - Use **Oxigraph** for RDF/SPARQL ([ADR-0003](adr/0003-use-oxigraph.md)).
-- Use **sqlparser** virtual tables for SQL; extend for v1.0 joins before considering DataFusion ([ADR-0011](adr/0011-use-sqlparser-for-sql.md)).
+- Use **sqlparser** virtual tables for SQL; extend for v0.30 joins before considering DataFusion ([ADR-0011](adr/0011-use-sqlparser-for-sql.md)).
 - Use **OntoLogos** for all reasoning ([ADR-0015](adr/0015-adopt-ontologos-reasoner.md)).
 - Use **React + Vite** for VS Code webview panels ([ADR-0017](adr/0017-react-webview-ui.md)); TypeScript extension host for orchestration only.
 - Keep Strixonomy useful as a standalone CLI even without Strixonomy.

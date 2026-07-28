@@ -1,17 +1,17 @@
 # RELEASE_SIGNOFF
 
-# Strixonomy 1.0 Release Sign-off
+# Strixonomy v0.30 Release Sign-off
 
 **Directory:** 08_RELEASE\
 **Status:** Final Release Approval Record\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document is the formal approval record authorizing the public
-release of Strixonomy 1.0.
+release of Strixonomy v0.30.
 
 Completion of this document indicates that all release-blocking
 requirements have been verified, all required reviews have been

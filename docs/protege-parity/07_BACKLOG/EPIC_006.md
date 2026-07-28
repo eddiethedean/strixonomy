@@ -20,4 +20,4 @@ Track semantic refactoring work required for Protégé Desktop parity.
 
 -   ../04_BLOCKERS/BLOCKER_06_REFACTORING.md
 -   EPIC_INDEX.md
--   PRE_1_0_PHASES.md
+-   V0_30_PHASES.md

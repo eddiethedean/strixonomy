@@ -4,7 +4,7 @@
 //!
 //! # API stability
 //!
-//! The LSP wire format and custom `strixonomy/*` methods are **pre-1.0** and may change
+//! The LSP wire format and custom `strixonomy/*` methods are on the **v0.x** line and may change
 //! between minor releases. See the repository README for semver policy.
 
 pub(crate) mod code_actions;

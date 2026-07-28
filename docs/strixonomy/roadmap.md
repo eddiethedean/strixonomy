@@ -2,9 +2,9 @@
 
 Short pointer to platform planning docs.
 
-## Forward plan (v0.12 → v1.2+)
+## Forward plan (v0.12 → v0.32+)
 
-The canonical roadmap — all release phases from v0.1 through post-1.2, including v0.12 authoring parity, v0.13 platform hardening, v0.14 plugin host, the Protégé 1.0 objective, ontology toolchain integration (owlmake, ROBOT/ODK), language bindings, the v1.2 toolchain platform, and the **v1.3+ webapp path (hosted Strixonomy Web + React app no-backend via WASM)** — lives in **[Platform roadmap](../roadmap.md)** ([full GitHub ROADMAP.md](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)).
+The canonical roadmap covers shipped releases and the outcome-led v0.29–v0.38+ sequence: trust, authoring, scale, review, delivery automation, integrations, assisted modeling, browser access, collaboration, and enterprise operations. See the **[Platform roadmap](../roadmap.md)** ([GitHub pointer](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)).
 
 ## Shipped milestones (v0.1–v0.9)
 

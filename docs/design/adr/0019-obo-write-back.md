@@ -6,7 +6,7 @@ Accepted — **implemented in v0.12.0** (read path v0.11, write-back v0.12)
 
 ## Context
 
-Strixonomy indexes OBO Format 1.4 (`.obo`) for biomedical workflows. v0.7 shipped read-only OBO support with a minimal line parser. v1.0 Protégé parity requires reliable read/write, rich metadata (synonyms, definitions, xrefs), and patch-based editing consistent with Turtle write-back ([ADR-0006](0006-patch-based-write-back.md)).
+Strixonomy indexes OBO Format 1.4 (`.obo`) for biomedical workflows. v0.7 shipped read-only OBO support with a minimal line parser. v0.30 Protégé parity requires reliable read/write, rich metadata (synonyms, definitions, xrefs), and patch-based editing consistent with Turtle write-back ([ADR-0006](0006-patch-based-write-back.md)).
 
 The canonical Rust stack for OBO is [`fastobo`](https://crates.io/crates/fastobo) + [`fastobo-owl`](https://crates.io/crates/fastobo-owl) per [OBO_ROBOT_SPEC.md](../OBO_ROBOT_SPEC.md).
 
@@ -18,7 +18,7 @@ The canonical Rust stack for OBO is [`fastobo`](https://crates.io/crates/fastobo
 2. **Write-back:** Document patch schema; defer OBO inspector editing and disk serialize to v0.12.
 3. **Boundaries:** Turtle patches (`strixonomy-owl::patch`) own Turtle write-back. OBO patches use a separate op namespace in `strixonomy-obo`.
 
-### v1.0 (remaining)
+### v0.30 (remaining)
 
 - Optional `fastobo-validator` in CI / `strixonomy validate`
 - Richer OBO metadata round-trip parity with Protégé / ROBOT
@@ -87,7 +87,7 @@ Example:
 **Negative:**
 
 - Two patch vocabularies (Turtle vs OBO ops) — unified LSP envelope only
-- Full Protégé OBO feature parity (all xref types, logical definitions) remains v1.0 work
+- Full Protégé OBO feature parity (all xref types, logical definitions) remains v0.30 work
 
 ## References
 

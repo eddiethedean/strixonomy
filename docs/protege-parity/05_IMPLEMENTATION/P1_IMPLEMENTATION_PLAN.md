@@ -3,8 +3,8 @@
 # Strixonomy 1.x P1 Implementation Plan
 
 **Status:** Master P1 Engineering Plan\
-**Scope:** Post-1.0 feature expansion and platform modernization\
-**Prerequisite:** Successful Strixonomy 1.0 release with Protégé parity
+**Scope:** v0.31+ feature expansion and platform modernization\
+**Prerequisite:** Successful Strixonomy v0.30 release with Protégé parity
 
 ------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@
 
 This document defines the implementation strategy for all **P1
 (high-priority, non-release-blocking)** work that follows the successful
-completion of Strixonomy 1.0.
+completion of Strixonomy v0.30.
 
 P1 work focuses on making Strixonomy not merely a Protégé replacement, but
 a significantly more capable, modern ontology engineering platform.
@@ -21,7 +21,7 @@ a significantly more capable, modern ontology engineering platform.
 
 # Guiding Principles
 
--   Preserve 1.0 stability
+-   Preserve v0.30 stability
 -   Expand capabilities without breaking public APIs
 -   Prefer extensibility over one-off features
 -   Automate wherever possible

@@ -1088,7 +1088,7 @@ Back every item with a command registry.
 
 ## Version 1.0 Menu System
 
-For Strixonomy 1.0, add:
+For Strixonomy v0.30, add:
 
 - plugin-contributed commands
 - command palette

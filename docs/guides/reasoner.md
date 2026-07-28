@@ -67,7 +67,7 @@ Strixonomy keeps **two in-memory models** (dual-stack since early releases; stil
 - **Oxigraph + Horned-OWL** — authoritative for indexing, SPARQL/SQL, Turtle write-back, asserted hierarchy.
 - **OntoLogos** — loads workspace Turtle/RDF files separately for classification.
 
-Axiom counts and some constructs may differ from Protégé until the Horned-OWL → OntoLogos bridge ships (v1.0 backlog). Profile warnings in the Reasoner Results panel flag constructs outside the selected profile.
+Axiom counts and some constructs may differ from Protégé until the Horned-OWL → OntoLogos bridge ships (v0.30 backlog). Profile warnings in the Reasoner Results panel flag constructs outside the selected profile.
 
 ## Known limitations
 

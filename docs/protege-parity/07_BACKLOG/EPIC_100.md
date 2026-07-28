@@ -3,7 +3,7 @@
 # EPIC-100 --- AI-Assisted Ontology Engineering
 
 **Epic ID:** EPIC-100\
-**Status:** Planned (Post-1.0)\
+**Status:** Planned (v0.31+)\
 **Priority:** P1\
 **Target Release:** Strixonomy 1.x
 

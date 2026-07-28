@@ -6,7 +6,7 @@ Audit date: 2026-07-10 · Baseline: **v0.17.0** · Method: docs/audit-first agai
 
 **Overall Protégé Desktop parity (corrected for false greens): ~88–92%** for the daily Turtle/OBO modeling loop. Remaining debt is concentrated in last-mile fidelity (layout restore, reasoner cancel/lifecycle, explanation staleness UX, workflow fixtures, a11y), not greenfield features.
 
-WebProtégé / collaboration remain **out of scope** for this gate (post-1.0).
+WebProtégé / collaboration remain **out of scope** for this gate (v0.31+).
 
 | Area | Corrected estimate | Notes |
 |------|-------------------:|-------|
@@ -21,7 +21,7 @@ WebProtégé / collaboration remain **out of scope** for this gate (post-1.0).
 | Visualization | 75% | Asserted/inferred graphs shipped; OWLViz/OntoGraf layout/filter polish open |
 | Workspace shell | 70% | Menus/dialogs shipped; layout restore Partial |
 | Preferences | 40% | VS Code settings hub; not Protégé prefs dialog |
-| Plugins | 55% | Host MVP; marketplace API → v1.0 |
+| Plugins | 55% | Host MVP; marketplace API → v0.33 |
 | CLI / LSP / semantic diff | Beyond Protégé | Differentiators |
 | Collaboration / WebProtégé | 10–15% | Explicit non-goal |
 
@@ -58,7 +58,7 @@ These block an honest “Protégé not required for agreed Desktop scope” clai
 
 ---
 
-## Documented known gaps (not gate blockers — v1.0+)
+## Documented known gaps (not gate blockers — v0.30+)
 
 - OWL/XML and RDF/XML write-back
 - Full multi-step semantic undo
@@ -105,7 +105,7 @@ Semantic diff, Git/CI workflows, SQL catalog queries, LSP, incremental indexing,
 
 | ROADMAP exit | How this assessment satisfies it |
 |--------------|----------------------------------|
-| Desktop parity = 100% for agreed pre-1.0 scope | Agreed scope = **gate blockers above**; 100% means those are green; remaining items live in known-gap list |
+| Desktop parity = 100% for agreed v0.29–v0.30 scope | Agreed scope = **gate blockers above**; 100% means those are green; remaining items live in known-gap list |
 | Protégé → Strixonomy migration path | Refresh `docs/guides/protege-migration.md` + `docs/migration/v0.18.md` + known-limitations |
 
 See [v0.18_SCOPE.md](../../design/v0.18_SCOPE.md) for the locked Must-ship list derived from this assessment.

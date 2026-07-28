@@ -10,7 +10,7 @@ Read:
 
 ## Non-goals
 
-- Full visual design system v1.0
+- Full visual design system v0.30
 - Figma tokens import
 
 ## Current state

@@ -41,7 +41,7 @@ Sections below describe the **target** capability set. Implementation status is 
 - **Parse errors** — [`oxigraph`](https://crates.io/crates/oxigraph) via `strixonomy-parser`
 - **Import / prefix / quality rules** — in-house `strixonomy-diagnostics` on catalog (duplicate labels, orphans, broken imports, undefined prefixes)
 - **OBO (v0.7b)** — [`fastobo-validator`](https://crates.io/crates/fastobo-validator) violations mapped to LSP
-- **SHACL (v1.0 P1)** — [`rudof`](https://crates.io/crates/rudof) via plugin adapter
+- **SHACL (v0.30 P1)** — [`rudof`](https://crates.io/crates/rudof) via plugin adapter
 
 Diagnostics include:
 

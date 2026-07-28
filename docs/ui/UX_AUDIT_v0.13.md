@@ -27,7 +27,7 @@ Audit date: 2026-07-07. Scope: core flows after OntoUI platform migration (Works
 | Query Workbench | Schema browser tab order | Schema toggle/columns labeled | Yes |
 | Graph Panel | Node selection via click | Toolbar buttons need follow-up | Partial |
 
-## Deferred (v1.0)
+## Deferred (v0.30)
 
 - Full keyboard graph navigation
 - Persistent tab/layout store slices

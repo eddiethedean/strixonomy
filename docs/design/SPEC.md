@@ -1,6 +1,6 @@
 # SPEC.md — Strixonomy and Strixonomy Technical Specification
 
-> **Related specs:** [PROTEGE_PARITY.md](PROTEGE_PARITY.md) (v1.0 exit bar),
+> **Related specs:** [PROTEGE_PARITY.md](PROTEGE_PARITY.md) (v0.30 exit bar),
 > [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md) (external crates),
 > [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md), [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md),
 > [REASONER_SPEC.md](REASONER_SPEC.md), [SHACL_SPEC.md](SHACL_SPEC.md)
@@ -32,7 +32,7 @@ strixonomy/
 │   ├── strixonomy-lsp           # v0.3 — lsp-server, lsp-types, diagnostics
 │   └── strixonomy-cli           # v0.3
 ├── examples/
-│   ├── protege-roundtrip/      # v1.0 — OWL round-trip fixtures
+│   ├── protege-roundtrip/      # v0.30 — OWL round-trip fixtures
 │   └── obo-workflow/           # v0.7b — OBO + ROBOT demo
 ├── benches/
 ├── tests/
@@ -139,7 +139,7 @@ Required virtual tables:
 - `orphan_classes`
 - `deprecated_usages`
 
-**v1.0:** Tables `restrictions`, `equivalent_class_axioms`, `disjoint_class_axioms`, `domain_axioms`, `range_axioms` are populated from **Horned-OWL** ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md)), not triple pattern matching.
+**v0.30:** Tables `restrictions`, `equivalent_class_axioms`, `disjoint_class_axioms`, `domain_axioms`, `range_axioms` are populated from **Horned-OWL** ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md)), not triple pattern matching.
 
 ## 6. Query Interfaces
 

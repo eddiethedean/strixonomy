@@ -4,7 +4,7 @@
 
 **Directory:** 08_RELEASE  
 **Status:** Internal verification for v0.25 exit bar  
-**Target Release:** Strixonomy 1.0.0 (functional baseline delivered in **v0.25**)
+**Target Release:** Strixonomy v0.30.0 (functional baseline delivered in **v0.25**)
 
 ------------------------------------------------------------------------
 
@@ -127,7 +127,7 @@ Checklist for PR reviewers:
 |----|-------------|--------|------------|----------|
 | ACC-EX-01 | VS Code host chrome out of scope | Low | Document N/A | Yes |
 | ACC-EX-02 | React Flow canvas not fully SR-transparent | Medium | List/table alternate + keyboard application role | Yes |
-| ACC-EX-03 | External accessibility firm certification | Low | Deferred to 1.0.0-rc Phase 4 | Yes |
+| ACC-EX-03 | External accessibility firm certification | Low | Deferred to v0.29 Phase 4 | Yes |
 | ACC-EX-04 | jsdom color-contrast not evaluated | Low | Rely on VS Code theme AA | Yes |
 
 ------------------------------------------------------------------------

@@ -4,7 +4,7 @@
 
 **Status:** Living Engineering Document\
 **Repository Baseline:** Strixonomy v0.18.2 (audit baseline)\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ repository and the defined Protégé Desktop parity scope.
 
 Unlike the feature matrix, which records implementation status, this
 document explains **why** each gap exists, **what blocks completion**,
-**how it should be resolved**, and **its impact on the 1.0 release**.
+**how it should be resolved**, and **its impact on the v0.30 release**.
 
 It is the primary engineering planning document for closing parity.
 

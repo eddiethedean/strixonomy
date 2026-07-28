@@ -1,6 +1,6 @@
 # Semantic refactoring architecture
 
-> **Status:** Partial (v0.13) — LSP preview/apply + `pendingRefactor` store slice shipped; unified transaction model planned v1.0
+> **Status:** Partial (v0.13) — LSP preview/apply + `pendingRefactor` store slice shipped; unified transaction model planned v0.30
 
 ## Scope
 
@@ -30,7 +30,7 @@ Rust: `strixonomy-refactor` crate. See [guides/refactoring.md](../guides/refacto
 
 ## Planned enhancements
 
-- Merge classes, batch label normalization (v1.0 UI track)
+- Merge classes, batch label normalization (v0.30 UI track)
 - WorkspaceStore holds `pendingRefactor` state shared across workspaces
 - AI-assisted refactor proposals use same preview envelope ([AI_ORCHESTRATION.md](AI_ORCHESTRATION.md))
 - Reasoning-aware validation before apply (unsatisfiability check)

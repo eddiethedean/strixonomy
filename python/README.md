@@ -27,7 +27,7 @@ For shipped capabilities today, use:
 
 ## Python SDK timeline
 
-A real Python SDK with PyO3/Maturin bindings is planned for **Strixonomy v1.1**. See [Python package status](https://strixonomy.readthedocs.io/en/latest/guides/python-package/) and the [roadmap](https://strixonomy.readthedocs.io/en/latest/roadmap/).
+A real Python SDK with PyO3/Maturin bindings is planned for **Strixonomy v0.34**. See [Python package status](https://strixonomy.readthedocs.io/en/latest/guides/python-package/) and the [roadmap](https://strixonomy.readthedocs.io/en/latest/roadmap/).
 
 ## Install (optional)
 

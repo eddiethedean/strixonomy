@@ -1,6 +1,6 @@
 # Known limitations
 
-> **Latest tagged release: v0.28.0.** Pin CI to a tagged version from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) or crates.io — see [What ships today](SHIPPED.md) and [Versions & channels](guides/versions-and-channels.md). **Not a full Protégé replacement today** — coexistence and pilot workflows are the supported path until **1.0**.
+> **Latest tagged release: v0.28.0.** Pin CI to a tagged version from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) or crates.io — see [What ships today](SHIPPED.md) and [Versions & channels](guides/versions-and-channels.md). **Not a full Protégé replacement today** — coexistence and pilot workflows are the supported path until **v0.30**.
 
 Honest limits for evaluators and new users.
 
@@ -33,11 +33,11 @@ Interactive editing does **not** need the CLI — use the [VS Code / Cursor exte
 
 ## Plugins and owlmake
 
-Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace, commercial support, and production [owlmake](https://github.com/INCATools/owlmake) workflow integration remain **product 1.0** goals. See [Plugin authoring](guides/plugins.md) and [Plugin policy](guides/plugin-policy.md).
+Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Production workflow integration and curated discovery are planned for **v0.33**. See [Plugin authoring](guides/plugins.md) and [Plugin policy](guides/plugin-policy.md).
 
-## API stability (pre-1.0)
+## API stability (v0.x)
 
-Published crates are **0.28.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin in CI: `cargo install strixonomy-cli --locked --version 0.28.0`.
+Published crates are **0.28.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases on the v0.x line; compatibility guarantees are stated per surface. Pin in CI: `cargo install strixonomy-cli --locked --version 0.28.0`.
 
 ## Reasoning
 
@@ -49,7 +49,7 @@ EL / RL / RDFS / DL classification ships via **Ontologos 1.x** (crates pinned in
 
 ## Layout persistence
 
-Webview **tabs** survive VS Code reload. Restored tabs offer **Reopen panel** using the last saved command + context. Full Protégé-style dock/layout serialization remains a **v1.0** IDE-shell item. Named perspectives open a fixed panel set.
+Webview **tabs** survive VS Code reload. Restored tabs offer **Reopen panel** using the last saved command + context. Full Protégé-style dock/layout serialization remains a **v0.30** IDE-shell item. Named perspectives open a fixed panel set.
 
 ## Large ontologies
 
@@ -61,8 +61,8 @@ Graphs may be **truncated** (badge in the Graph panel). Prefer narrower search, 
 - You need **JSON-LD / TriG / N-Triples write-back** — still read-only; use Turtle or convert.
 - You need **move / extract / ontology-merge refactor on non-Turtle files** — those operations stay Turtle-first (rename/merge/replace already multi-format). See [v0.24 migration](migration/v0.24.md).
 - You need **full SQL analytics** — use SPARQL or an external store.
-- You need a **curated plugin marketplace** or **production owlmake** without accepting the subprocess SDK — wait for product **1.0** or keep Protégé plugins — [Plugin policy](guides/plugin-policy.md) (wire contract is already frozen as SDK 1.0).
-- You need **WebProtégé collaboration** — out of scope until post-1.0.
+- You need a **curated plugin marketplace** or **production owlmake** without accepting the subprocess SDK — these are planned for **v0.33** — [Plugin policy](guides/plugin-policy.md) (wire contract is already frozen as SDK 1.0).
+- You need **WebProtégé-style collaboration** — governed collaboration is planned for **v0.37**.
 - You need **HermiT-identical** DL explanations or certified Protégé+HermiT equivalence — dual-tool checks remain recommended for critical audits.
 
 More: [First success (~10 min)](guides/first-success.md) · [Protégé migration](guides/protege-migration.md) · [Protégé decision](guides/protege-decision.md) · [FAQ](faq.md)

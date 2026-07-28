@@ -1,4 +1,4 @@
-"""Reserved PyPI package for the future Strixonomy Python SDK (v1.1).
+"""Reserved PyPI package for the future Strixonomy Python SDK (v0.31).
 
 This distribution does not expose ontology editing, querying, validation, diff,
 or reasoning APIs. Use the Strixonomy CLI, LSP, or Rust crates for shipped

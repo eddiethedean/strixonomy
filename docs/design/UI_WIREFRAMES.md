@@ -162,7 +162,7 @@ Inferred Changes:
 
 [Show Inferred Hierarchy] [Explain Selected]
 
---- Explanation panel (P0 v1.0) ---
+--- Explanation panel (P0 v0.30) ---
 
 EXPLANATION: InvalidEncounter
 

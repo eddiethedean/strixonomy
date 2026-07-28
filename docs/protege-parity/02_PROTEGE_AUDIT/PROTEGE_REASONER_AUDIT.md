@@ -5,7 +5,7 @@
 **Status:** Living Reference Document\
 **Purpose:** Audit the reasoning capabilities exposed by a standard
 Protégé Desktop installation and define the equivalent functionality
-required for Strixonomy 1.0.
+required for Strixonomy v0.30.
 
 > This audit evaluates reasoning workflows and observable behavior
 > rather than matching any specific Java reasoner implementation.
@@ -117,7 +117,7 @@ Every reasoner should support:
 -   Predictable memory usage.
 -   Graceful handling of large ontologies.
 
-Performance benchmarks should become part of CI before 1.0.
+Performance benchmarks should become part of CI before v0.30.
 
 ------------------------------------------------------------------------
 

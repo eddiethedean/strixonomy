@@ -1,17 +1,17 @@
 # PERFORMANCE_REPORT
 
-# Strixonomy 1.0 Performance Report
+# Strixonomy v0.30 Performance Report
 
 **Directory:** 08_RELEASE\
 **Status:** Release Performance Certification Template\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This report documents the measured performance characteristics of
-Strixonomy for the 1.0 release. It provides objective evidence that the
+Strixonomy for the v0.30 release. It provides objective evidence that the
 application meets its performance goals across supported platforms and
 representative ontology workloads.
 

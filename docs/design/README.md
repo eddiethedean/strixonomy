@@ -33,9 +33,9 @@ Two related products:
 
 **Dependency policy:** [ADR-0016](adr/0016-dependency-first-implementation.md) — thin `strixonomy-*` facades over mature crates. Inventory: [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md). Licenses: [LICENSES.md](LICENSES.md).
 
-## v1.0 exit bar
+## v0.30 exit bar
 
-**[protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md)** — authoritative 1.0 engineering plan ([PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md)). **[PROTEGE_PARITY.md](PROTEGE_PARITY.md)** — historical v0.18 P0/P1/P2 checklist. Forward plan: [Roadmap § Strixonomy 1.0](../roadmap.md#strixonomy-10-modern-protege-replacement).
+**[protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md)** — authoritative v0.30 engineering plan ([V0_30_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/V0_30_PHASES.md)). **[PROTEGE_PARITY.md](PROTEGE_PARITY.md)** — historical v0.18 P0/P1/P2 checklist. Forward plan: [Roadmap § Strixonomy v0.30](../roadmap.md#strixonomy-10-modern-protege-replacement).
 
 ## Document status
 
@@ -55,9 +55,9 @@ Many specs describe **target** behavior. Check the banner at the top of each doc
 - [ROADMAP.md](ROADMAP.md) — **engineering milestones v0.1–v0.11 (shipped detail)**
 - [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md) — **external crate inventory**
 - [LICENSES.md](LICENSES.md) — third-party license summary
-- [protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) — **1.0 engineering program**
+- [protege-parity program](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) — **v0.30 engineering program**
 - [PROTEGE_PARITY.md](PROTEGE_PARITY.md) — historical v0.18 compete checklist
-- [v1.0_BACKLOG.md](v1.0_BACKLOG.md) — implementation backlog
+- [v0.30_BACKLOG.md](v0.30_BACKLOG.md) — implementation backlog
 
 ### Technical specs
 
@@ -68,14 +68,14 @@ Many specs describe **target** behavior. Check the banner at the top of each doc
 - [REASONER_SPEC.md](REASONER_SPEC.md) — OntoLogos-backed reasoners (0.9.0 → 1.0.0)
 - [SHACL_SPEC.md](SHACL_SPEC.md) — SHACL validation (P1)
 - [SEMANTIC_DIFF_SPEC.md](SEMANTIC_DIFF_SPEC.md) — semantic ontology diff
-- [LSP_SPEC.md](LSP_SPEC.md) — target language server (v1.0 methods)
+- [LSP_SPEC.md](LSP_SPEC.md) — target language server (v0.30 methods)
 - [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) — plugin system
 
 ### UX
 
 - [UI specification pack](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) — product design, design system, workspace model, AI/plugin UX (**target**; see [ROADMAP_MAPPING.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md) for shipped vs planned)
 - [UI_WIREFRAMES.md](UI_WIREFRAMES.md) — text-based VS Code wireframes (legacy; see [WORKSPACE_WIREFRAMES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/WORKSPACE_WIREFRAMES.md))
-- [OntoCode_React_UI_Integration_Plan.md](OntoCode_React_UI_Integration_Plan.md) — **React webview migration** (v0.7a → v1.0, [ADR-0017](adr/0017-react-webview-ui.md); panels shipped v0.7–v0.11)
+- [OntoCode_React_UI_Integration_Plan.md](OntoCode_React_UI_Integration_Plan.md) — **React webview migration** (v0.7a → v0.30, [ADR-0017](adr/0017-react-webview-ui.md); panels shipped v0.7–v0.11)
 
 ### Historical / backlog
 

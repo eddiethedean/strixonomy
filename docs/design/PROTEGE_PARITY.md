@@ -1,30 +1,30 @@
-# Protégé Parity Matrix (v1.0.0)
+# Protégé Parity Matrix (v0.30.0)
 
-> **Superseded for planning.** The authoritative 1.0 engineering program is
+> **Superseded for planning.** The authoritative v0.30 engineering program is
 > [docs/protege-parity/](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) — especially
-> [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md),
+> [V0_30_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/V0_30_PHASES.md),
 > [PARITY_SCOPE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/PARITY_SCOPE.md), and
 > [PARITY_RELEASE_GATE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/03_PARITY/PARITY_RELEASE_GATE.md).
 >
 > **This page** remains a historical v0.18-era P0/P1/P2 checklist and migration
-> reference. Do not use it as the live 1.0 implementation plan.
+> reference. Do not use it as the live v0.30 implementation plan.
 >
-> See [Platform roadmap § Strixonomy 1.0](../roadmap.md#strixonomy-10-modern-protege-replacement) and [PLAN.md](PLAN.md) §4.
+> See [Platform roadmap § Strixonomy v0.30](../roadmap.md#strixonomy-10-modern-protege-replacement) and [PLAN.md](PLAN.md) §4.
 >
 > **Status column:** frozen at **v0.18.0** — **not current** for v0.19+ adoption decisions. Use [What ships today](../SHIPPED.md), [Known limitations](../known-limitations.md), and [Protégé vs Strixonomy](../guides/protege-decision.md) instead.
 >
-> **v0.21 update:** RDF/XML and OWL/XML write-back **shipped** (semantic re-serialize). Rows below that still say “OWL/XML write-back is v1.0” are historical — ignore them for adoption.
+> **v0.21 update:** RDF/XML and OWL/XML write-back **shipped** (semantic re-serialize). Rows below that still say “OWL/XML write-back is v0.30” are historical — ignore them for adoption.
 > **Dependencies:** [DEPENDENCY_MATRIX.md](DEPENDENCY_MATRIX.md)
 
 ## Tier definitions
 
 | Tier | Meaning |
 |------|---------|
-| **P0 — v1.0 blocker** | Must ship; v1.0 cannot release without green |
-| **P1 — v1.0 target** | Expected at launch; documented known gaps if slipped |
-| **P2 — post-1.0** | Explicitly out of v1.0 scope |
+| **P0 — v0.30 blocker** | Must ship; v0.30 cannot release without green |
+| **P1 — v0.30 target** | Expected at launch; documented known gaps if slipped |
+| **P2 — v0.31+** | Explicitly out of v0.30 scope |
 
-## P0 — v1.0 blockers
+## P0 — v0.30 blockers
 
 ### OWL 2 DL authoring (hybrid UX)
 
@@ -32,13 +32,13 @@
 |------|------|------------|----------------|
 | Quick forms: labels, comments, deprecated | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-owl` | **Yes** (Turtle + OBO) |
 | Quick forms: `SubClassOf`, domain, range, property characteristics | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-owl` | **Yes** (Turtle) |
-| Manchester editor for complex class expressions | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-functional` | **Yes** (panel + side completions; no inline buffer autocomplete — v1.0 polish) |
+| Manchester editor for complex class expressions | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-functional` | **Yes** (panel + side completions; no inline buffer autocomplete — v0.30 polish) |
 | Axiom types: `SubClassOf`, `EquivalentClasses`, `DisjointClasses` | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-owl` | **Yes** |
 | Object/data property domain, range, characteristics | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-owl` | **Yes** (Turtle) |
 | Class/object/data property assertions on individuals | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-owl` | **Yes** (Turtle) |
 | Annotation assertions | [OWL_AUTHORING_SPEC.md](OWL_AUTHORING_SPEC.md) | `horned-owl` | **Yes** (Turtle) |
 | Horned-OWL manipulation layer + round-trip tests | [ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md) | `horned-owl`, `horned-functional` | **Yes** (Turtle catalog + `protege-roundtrip` fixtures) |
-| Patch-based write-back from OWL objects | [ADR-0006](adr/0006-patch-based-write-back.md) | in-house patches | **Yes** (Turtle + OBO; OWL/XML write-back is v1.0) |
+| Patch-based write-back from OWL objects | [ADR-0006](adr/0006-patch-based-write-back.md) | in-house patches | **Yes** (Turtle + OBO; OWL/XML write-back is v0.30) |
 
 ### Reasoning (Rust-native — [ADR-0014](adr/0014-rust-native-reasoners-only.md))
 
@@ -76,8 +76,8 @@
 | Graph visualization (class, property, import, neighborhood) | [ROADMAP.md](ROADMAP.md) v0.7 | **Yes** (asserted/inferred/combined, export JSON/CSV, expand depth) |
 | Documentation export (Markdown + HTML) | [ROADMAP.md](ROADMAP.md) v0.9 | **Yes** (`strixonomy docs`) |
 | CI validation command | CLI `validate` | **Yes** |
-| VS Code Marketplace publish | [v1.0_BACKLOG.md](v1.0_BACKLOG.md) | **Yes** |
-| Migration guide from Protégé | [v1.0_BACKLOG.md](v1.0_BACKLOG.md) | **Yes** ([protege-migration.md](../guides/protege-migration.md) + honest gaps) |
+| VS Code Marketplace publish | [v0.30_BACKLOG.md](v0.30_BACKLOG.md) | **Yes** |
+| Migration guide from Protégé | [v0.30_BACKLOG.md](v0.30_BACKLOG.md) | **Yes** ([protege-migration.md](../guides/protege-migration.md) + honest gaps) |
 
 ### OBO & biomedical
 
@@ -87,34 +87,34 @@
 | ROBOT interop (`validate`, `merge`, `report`) | [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md) | ROBOT CLI | **Yes** |
 | OBO id rendering in explorer / Manchester autocomplete | [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md) | `fastobo` | **Yes** (explorer `obo_id`; Manchester side completions) |
 
-## P1 — v1.0 targets
+## P1 — v0.30 targets
 
 | Item | Spec | Dependency | Notes |
 |------|------|------------|-------|
 | SHACL validation via adapter | [SHACL_SPEC.md](SHACL_SPEC.md) | `rudof` | Scaffold plugin exists; full rudof adapter open |
 | SWRL rule **viewing** (authoring is P2) | [PROTEGE_PARITY.md](PROTEGE_PARITY.md) | in-house | Open |
 | Instance checking | [REASONER_SPEC.md](REASONER_SPEC.md) | OntoLogos `ontologos-abox` (1.0+) | Open |
-| Plugin API stable + 3 reference plugins | [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) | — | Host MVP + 3 refs shipped; **semver-stable** API is v1.0 |
+| Plugin API stable + 3 reference plugins | [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md) | — | Host MVP + 3 refs shipped; **semver-stable** API is v0.30 |
 | SQL joins and aggregations | [SPEC.md](SPEC.md) | `sqlparser` extend | Open (subset SQL today) |
 | Incremental workspace index | [ARCHITECTURE.md](ARCHITECTURE.md) | — | **Shipped** (v0.9+) |
-| Performance benchmarks (large ontology targets) | [v1.0_BACKLOG.md](v1.0_BACKLOG.md) | — | Open (truncation messaging shipped) |
-| OWL/XML · RDF/XML write-back | [known-limitations](../known-limitations.md) | Horned | Explicit v1.0 authoring gap |
+| Performance benchmarks (large ontology targets) | [v0.30_BACKLOG.md](v0.30_BACKLOG.md) | — | Open (truncation messaging shipped) |
+| OWL/XML · RDF/XML write-back | [known-limitations](../known-limitations.md) | Horned | Explicit v0.30 authoring gap |
 | Full DL axiom catalog UI / inline Manchester autocomplete | [SHIPPED.md](../SHIPPED.md) | — | Open polish |
 | Native DL clash-trace proofs (no EL fallback) | Ontologos | `ontologos-dl` proofs | Blocked on reasoner; fallback labeled today |
 
-## P2 — post-1.0
+## P2 — v0.31+
 
 | Item | Notes |
 |------|-------|
 | WebProtégé / collaborative editing | [PLAN.md](PLAN.md) §9 non-goal |
 | Full SWRL authoring | |
 | Protégé plugin compatibility | |
-| Protégé-scale plugin marketplace | v1.0 ships API + reference plugins only |
+| Protégé-scale plugin marketplace | SDK + reference plugins shipped; curated discovery planned for v0.33 |
 | Reimplementing ROBOT | Interop only per [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md) |
 
 ## Honest scope statement
 
-**“Compete with Protégé” at v1.0 means:**
+**“Compete with Protégé” at v0.30 means:**
 
 - Primary IDE for **ontology engineering in VS Code** (general OWL 2 DL + OBO maintenance).
 - **Hybrid authoring** (forms + Manchester) and **real reasoning** match Protégé’s core loop.
@@ -126,11 +126,11 @@
 - SWRL authoring, WebProtégé, or the full Protégé plugin catalog.
 - Bit-for-bit identical results to HermiT on every ontology (Rust DL engine is test-validated, not JVM-cross-checked).
 
-## Pre-1.0 (Era E) closeout
+## v0.29–v0.30 (Era E) closeout
 
-Through **v0.18**, the Desktop parity gate is closed for the agreed scope (menus/dialogs, reasoner lifecycle + cancel, layout reopen, explanation stale UX, fixtures, migration docs). Remaining P0 **Partial** is DL native clash traces (Ontologos limitation with labeled fallback). Remaining authoring gaps that are still P0-adjacent for v1.0: OWL/XML write-back and full DL axiom catalog polish.
+Through **v0.18**, the Desktop parity gate is closed for the agreed scope (menus/dialogs, reasoner lifecycle + cancel, layout reopen, explanation stale UX, fixtures, migration docs). Remaining P0 **Partial** is DL native clash traces (Ontologos limitation with labeled fallback). Remaining authoring gaps that are still P0-adjacent for v0.30: OWL/XML write-back and full DL axiom catalog polish.
 
-## v1.0 exit criterion
+## v0.30 exit criterion
 
 > Daily ontology engineering (OWL 2 DL + OBO maintenance) is completable in VS Code.
 > Protégé is required only for **P2** features listed above.

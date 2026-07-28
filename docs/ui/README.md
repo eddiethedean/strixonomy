@@ -18,7 +18,7 @@ Move Strixonomy beyond a VS Code ontology extension into a first-class semantic 
 - **OntoUI** — Shared React UI platform ([platform/ONTOUI.md](../platform/ONTOUI.md)) — **v0.13 foundation shipped**
 - **OntoStudio**: Future standalone desktop application (**planned**).
 - **Plugin Platform**: Capability Provider ecosystem (**planned** v0.14).
-- **AI Layer**: Context-aware semantic engineering assistant (**proposed** v1.1+).
+- **AI Layer**: Context-aware semantic engineering assistant (**proposed** v0.35).
 - **Design System**: Shared UI/UX language.
 
 **Terminology:** [Glossary](../glossary.md) · **Architecture hub:** [platform/OVERVIEW.md](../platform/OVERVIEW.md)

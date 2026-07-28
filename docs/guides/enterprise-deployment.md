@@ -65,7 +65,7 @@ Install resulting VSIX internally. Requires Rust + Node toolchains on build host
 | Staged rollout | Pilot group → department → org (see [production readiness](production-readiness.md)) |
 | Rollback | Keep previous VSIX + CLI tarball in internal registry |
 
-Pre-1.0: expect **minor** release API changes — test CI and integrators before org-wide bump.
+v0.29–v0.30: expect **minor** release API changes — test CI and integrators before org-wide bump.
 
 ## CLI on CI agents
 

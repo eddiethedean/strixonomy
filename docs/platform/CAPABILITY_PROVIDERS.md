@@ -14,7 +14,7 @@
 | Query | `QueryProvider` | SQL/SPARQL LSP | v0.14 |
 | Refactoring | `RefactoringProvider` | LSP preview/apply | v0.14 |
 | Diagnostics | `DiagnosticsProvider` | `strixonomy-diagnostics` | v0.14 |
-| AI | `AIProvider` | — | v1.1+ |
+| AI | `AIProvider` | — | v0.35 |
 | Import/Export | `FormatProvider` | Turtle, OBO, ROBOT CLI | v0.14 |
 | Documentation | `DocsProvider` | `strixonomy docs` | v0.14 |
 

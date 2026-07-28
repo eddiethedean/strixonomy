@@ -6,7 +6,7 @@
 
 ## Context
 
-Turtle and OBO write-back use source-text patches (ADR-0006, ADR-0019). RDF/XML and OWL/XML cannot share that strategy without fragile XML span surgery. v0.21 requires open → edit → save → reload **without semantic loss** ([PRE_1_0_PHASES](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md), [BLOCKER_01](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/04_BLOCKERS/BLOCKER_01_FORMAT_INDEPENDENCE.md)).
+Turtle and OBO write-back use source-text patches (ADR-0006, ADR-0019). RDF/XML and OWL/XML cannot share that strategy without fragile XML span surgery. v0.21 requires open → edit → save → reload **without semantic loss** ([V0_30_PHASES](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/V0_30_PHASES.md), [BLOCKER_01](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/04_BLOCKERS/BLOCKER_01_FORMAT_INDEPENDENCE.md)).
 
 Horned-OWL already provides RDF/XML and OWL/XML writers. Strixonomy must adopt them as first-class save backends on top of the semantic transaction layer (ADR-0020).
 

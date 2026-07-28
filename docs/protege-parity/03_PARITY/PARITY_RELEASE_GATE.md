@@ -3,14 +3,14 @@
 # Protégé Desktop Parity Release Gate
 
 **Status:** Normative Release Specification\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
 # Purpose
 
 This document defines the objective release criteria that must be
-satisfied before Strixonomy 1.0.0 may be described as a functional
+satisfied before Strixonomy v0.30.0 may be described as a functional
 replacement for Protégé Desktop.
 
 A release gate is passed only through demonstrable evidence, not
@@ -51,7 +51,7 @@ Automation (v0.25 / EPIC-011):
 
 -   `python3 scripts/check-parity-release-gate.py` prints Gate 3 readiness from `parity/protege-desktop-parity.yaml`
 -   CI enforces **infrastructure** (paths + evidence completeness + docs sync), not full Gate 3
--   `python3 scripts/check-parity-release-gate.py --strict-release` fails when Gate 3 is incomplete (for 1.0.0-rc)
+-   `python3 scripts/check-parity-release-gate.py --strict-release` fails when Gate 3 is incomplete (for v0.29)
 
 ## Gate 4 --- File Formats
 

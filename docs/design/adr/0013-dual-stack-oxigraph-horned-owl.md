@@ -12,7 +12,7 @@ v0.1–v0.2 use Oxigraph RDF parsing and triple-level entity extraction ([ADR-00
 - Patch-based write-back ([ADR-0006](0006-patch-based-write-back.md)) requires OWL-aware round-trip
 - Semantic diff needs axiom-level semantics, not triple grep
 
-[ADR-0002](0002-use-horned-owl.md) originally chose Horned-OWL but was superseded during the MVP. v1.0 requires both layers.
+[ADR-0002](0002-use-horned-owl.md) originally chose Horned-OWL but was superseded during the MVP. v0.30 requires both layers.
 
 ## Decision
 

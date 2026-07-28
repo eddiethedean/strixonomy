@@ -43,14 +43,14 @@ Canonical ADRs live in this directory. The former `adrs/` folder was merged here
 - **Diagnostics:** in-house `strixonomy-diagnostics` + Oxigraph parse errors ([ADR-0016](0016-dependency-first-implementation.md), [DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md))
 - **LSP:** `textDocument/publishDiagnostics` after reindex; `CatalogSnapshot.diagnostics`
 
-### v1.0 target
+### v0.30 target
 
 - **Dependency policy:** [DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md), [ADR-0016](0016-dependency-first-implementation.md)
 - **OWL modeling / write-back:** `horned-owl` + `horned-functional` via `strixonomy-owl` ([ADR-0013](0013-dual-stack-oxigraph-horned-owl.md))
-- **Reasoning:** [OntoLogos](https://github.com/eddiethedean/ontologos) via `strixonomy-reasoner` — 0.9.0 at v0.6, 1.0.0 at v1.0 ([ADR-0014](0014-rust-native-reasoners-only.md), [ADR-0015](0015-adopt-ontologos-reasoner.md))
+- **Reasoning:** [OntoLogos](https://github.com/eddiethedean/ontologos) via `strixonomy-reasoner` — 0.9.0 at v0.6, 1.0.0 at v0.30 ([ADR-0014](0014-rust-native-reasoners-only.md), [ADR-0015](0015-adopt-ontologos-reasoner.md))
 - **Webview UI:** React + Vite in `extension/webview-ui` ([ADR-0017](0017-react-webview-ui.md))
 - **OBO:** `fastobo` / `fastobo-owl` ([DEPENDENCY_MATRIX.md](../DEPENDENCY_MATRIX.md))
 - **SHACL (P1):** `rudof` ([SHACL_SPEC.md](../SHACL_SPEC.md))
 - **Exit bar:** [PROTEGE_PARITY.md](../PROTEGE_PARITY.md)
 
-Horned-OWL and DataFusion ADRs remain for historical context; v1.0 uses Oxigraph + Horned-OWL + sqlparser per ADR-0013 and ADR-0011.
+Horned-OWL and DataFusion ADRs remain for historical context; v0.30 uses Oxigraph + Horned-OWL + sqlparser per ADR-0013 and ADR-0011.

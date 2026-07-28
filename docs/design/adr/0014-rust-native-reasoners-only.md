@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Earlier specs assumed **ELK** and **HermiT** JVM adapters for v1.0 ([ADR-0008](0008-reasoner-adapters-not-built-in-reasoner.md), prior [REASONER_SPEC.md](../REASONER_SPEC.md)). That conflicts with Strixonomy’s Rust-first, local-first goals: Java install friction, packaging complexity, and a hard dependency outside the shipped binary.
+Earlier specs assumed **ELK** and **HermiT** JVM adapters for v0.30 ([ADR-0008](0008-reasoner-adapters-not-built-in-reasoner.md), prior [REASONER_SPEC.md](../REASONER_SPEC.md)). That conflicts with Strixonomy’s Rust-first, local-first goals: Java install friction, packaging complexity, and a hard dependency outside the shipped binary.
 
 Rust OWL reasoners exist today, but none is a drop-in HermiT replacement with identical coverage and battle history:
 
@@ -20,7 +20,7 @@ Full **OWL 2 DL** classification, consistency, and unsatisfiability explanations
 
 ## Decision
 
-1. **Never depend on Java or JVM reasoners** (ELK, HermiT, Pellet, etc.) in Strixonomy or Strixonomy — not at v1.0, not as optional adapters.
+1. **Never depend on Java or JVM reasoners** (ELK, HermiT, Pellet, etc.) in Strixonomy or Strixonomy — not at v0.30, not as optional adapters.
 2. Ship **Rust reasoner adapters** behind the existing `ReasonerAdapter` trait ([REASONER_SPEC.md](../REASONER_SPEC.md)), delegating to **OntoLogos** ([ADR-0015](0015-adopt-ontologos-reasoner.md)):
    - **`el`** — `ontologos-el` for OWL EL classification (default for OBO / large terminologies).
    - **`rl`** / **`rdfs`** — `ontologos-rl` / `ontologos-rdfs` where RL/RDFS semantics suffice.
@@ -39,14 +39,14 @@ Positive:
 
 Negative:
 
-- Strixonomy v1.0 DL timeline **depends on OntoLogos 1.0.0** HermiT parity, not only Strixonomy UI work.
+- Strixonomy v0.30 DL timeline **depends on OntoLogos 1.0.0** HermiT parity, not only Strixonomy UI work.
 - EL-only ontologies may classify faster via `el` than `dl`; users need profile guidance in UI.
 - Parity with every Protégé + HermiT edge case is validated by OntoLogos conformance tests, not assumed.
 
 ## Implementation notes
 
 - v0.6: `strixonomy-reasoner` + `el` / `rl` / `rdfs` adapters; pin `ontologos-* = "0.9"`.
-- v1.0: enable `dl` and `auto` adapters; bump to `ontologos-* = "1.0"`; **real** clash-trace explanations (P0 in [PROTEGE_PARITY.md](../PROTEGE_PARITY.md)).
+- v0.30: enable `dl` and `auto` adapters; bump to `ontologos-* = "1.0"`; **real** clash-trace explanations (P0 in [PROTEGE_PARITY.md](../PROTEGE_PARITY.md)).
 - Do not block on JVM cross-checks in CI; align with [OntoLogos HermiT parity](https://github.com/eddiethedean/ontologos/blob/main/docs/internal/hermit-parity-gap-report.md).
 
 ## Related

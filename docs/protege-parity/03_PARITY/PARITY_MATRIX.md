@@ -3,7 +3,7 @@
 # Protégé Desktop Parity Matrix
 
 **Status:** Living Specification\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -46,9 +46,9 @@ Every parity claim must be traceable to this matrix.
 
   Priority   Description
   ---------- -------------------------------------
-  P0         Required before 1.0 release.
+  P0         Required before v0.30 release.
   P1         Important but not release-blocking.
-  P2         Post-1.0 enhancement.
+  P2         v0.31+ enhancement.
 
 ------------------------------------------------------------------------
 
@@ -93,7 +93,7 @@ Every row should ultimately link to:
 
 # Release Rule
 
-Strixonomy 1.0 may claim Protégé Desktop parity only when:
+Strixonomy v0.30 may claim Protégé Desktop parity only when:
 
 -   Every P0 requirement is VERIFIED.
 -   Release gates are satisfied.

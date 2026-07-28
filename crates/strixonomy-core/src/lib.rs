@@ -5,7 +5,7 @@
 //! # API stability
 //!
 //! **Pre-1.0:** public types and constants may change between minor releases until
-//! [v1.0 stable core](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/v1.0_BACKLOG.md)
+//! [v0.30 stable core](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/v0.30_BACKLOG.md)
 //! is complete. See [workspace limits](https://github.com/eddiethedean/strixonomy/blob/main/docs/workspace-limits.md).
 
 pub mod document_lookup;

@@ -57,7 +57,7 @@ Storage / integration
 | Design tokens | `extension/webview-ui/src/tokens/` | `--oc-*` CSS variables |
 | Schema browser | `extension/webview-ui/src/components/SchemaBrowser.tsx` | LSP `strixonomy/listSqlSchema` |
 
-**Deferred to v1.0:** persistent tabs, bottom dock, full component migration for every panel.
+**Deferred to v0.30:** persistent tabs, bottom dock, full component migration for every panel.
 
 ## Key documents
 

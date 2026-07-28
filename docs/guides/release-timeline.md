@@ -30,7 +30,7 @@ Planning ranges for Strixonomy IDE / Strixonomy engine. **These are product goal
 | **0.11.1** | Previous | 2026-07-06 |
 | **0.11.0** | Previous | 2026-07-05 |
 
-Pre-1.0: minor releases may change library APIs, LSP JSON, and SQL virtual table columns — [README](https://github.com/eddiethedean/strixonomy/blob/main/README.md).
+The v0.x line may change library APIs, LSP JSON, and SQL virtual table columns between minor releases; pin deployed versions — [README](https://github.com/eddiethedean/strixonomy/blob/main/README.md).
 
 ## Documented milestone goals (not dates)
 
@@ -50,11 +50,20 @@ Pre-1.0: minor releases may change library APIs, LSP JSON, and SQL virtual table
 | **v0.24** | Refactoring + DL Query parity | **Shipped** (2026-07-14) |
 | **v0.25** | Viz + plugin SDK 1.0 + a11y + parity CI | **Shipped** (2026-07-15) |
 | **v0.26** | Protégé Desktop JUnit behavioral test port (Waves 1–4) | **Shipped** (2026-07-16) |
-| **v1.0** | Protégé-competitive OWL + OBO in VS Code; full axiom catalog; curated plugin marketplace + production owlmake | Planned |
+| **v0.29** | Trustworthy projects: conformance, recovery, cross-platform confidence, performance budgets | Planned |
+| **v0.30** | Fast daily authoring: cohesive editing, reasoning, undo, and migration flow | Planned |
+| **v0.31** | Large ontology productivity: scale, deeper query, multi-format operations | Planned |
+| **v0.32** | Team review and enforceable semantic policy in CI | Planned |
+| **v0.33** | Automated ontology delivery and production workflow plugins | Planned |
+| **v0.34** | Python/TypeScript SDKs and MCP integration platform | Planned |
+| **v0.35** | Explainable, preview-first assisted modeling | Planned |
+| **v0.36** | Install-free browser workspace and WASM engine | Planned |
+| **v0.37** | Governed collaboration and semantic conflict resolution | Planned |
+| **v0.38+** | Enterprise operations and portfolio scale | Planned |
 
 Canonical forward plan: [Platform roadmap](../roadmap.md). Engineering milestone history: [Milestones (shipped)](../design/ROADMAP.md).
 
-**There is no documented calendar date for v1.0.** Enterprise plans should not assume a quarter or year without maintainer confirmation outside these docs.
+**There are no documented calendar dates for planned phases.** Enterprise plans should not assume a quarter or year without maintainer confirmation outside these docs.
 
 ## What each near-term milestone implies
 
@@ -65,14 +74,14 @@ Canonical forward plan: [Platform roadmap](../roadmap.md). Engineering milestone
 - Stable `strixonomy::Workspace` API
 - Does **not** by itself complete Protégé parity or full OBO write-back
 
-### v1.0 (planned)
+### v0.29–v0.32 (planned adoption sequence)
 
-- Extended OWL 2 DL axiom catalog and Protégé round-trip playbooks per parity matrix
-- Installable plugin host / owlmake-style workflow integration (**SDK 1.0 wire frozen in v0.25**; curated marketplace + production owlmake planned **product 1.0** — [Plugin policy](plugin-policy.md))
-- Formal performance benchmarks (currently v1.0 backlog — [performance sizing](performance-sizing.md))
-- Extended Protégé migration playbooks (today: [first-week guide](protege-migration.md), [coexistence](protege-coexistence.md), [decision matrix](protege-decision.md))
+- **v0.29:** prove trust with conformance evidence, safe recovery, cross-platform distribution, and performance budgets
+- **v0.30:** complete the daily authoring loop across editing, reasoning, undo, navigation, and migration
+- **v0.31:** remove large-project and multi-format productivity barriers
+- **v0.32:** make semantic review and policy enforceable in pull requests
 
-## How to plan enterprise adoption without a v1.0 date
+## How to plan enterprise adoption without roadmap dates
 
 1. **Now (v0.26):** CI gates + controlled IDE pilot — [production readiness](production-readiness.md)
 2. **Run** [production evidence protocol](production-evidence.md) on your corpus

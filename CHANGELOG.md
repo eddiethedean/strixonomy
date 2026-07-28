@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.28.0] - 2026-07-28
 
-**User-facing highlights:** Remove OntoCore/OntoCode compatibility shims from v0.27; reserve official **`strixonomy`** PyPI package identity (reservation wheel only — Python SDK remains v1.1). See [migration/v0.28.md](docs/migration/v0.28.md).
+**User-facing highlights:** Remove OntoCore/OntoCode compatibility shims from v0.27; reserve official **`strixonomy`** PyPI package identity (reservation wheel only — Python SDK is planned for v0.34). See [migration/v0.28.md](docs/migration/v0.28.md).
 
 ### Changed
 
@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **`strixonomy` on PyPI** — reservation distribution with honest README and `status()` metadata; published via `PYPI_API_TOKEN` on GitHub Release tags
 - [Python package status](docs/guides/python-package.md) documentation
-- `python/` packaging skeleton (hatchling; Maturin/PyO3 placeholder for v1.1 SDK)
+- `python/` packaging skeleton (hatchling; Maturin/PyO3 placeholder for v0.34 SDK)
 
 ### Fixed
 
@@ -114,7 +114,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Workspace package and all `ontocore-*` crates bumped to **0.26.0**; extension and webview UI **0.26.0**
-- Parity manifest `test_ids` linkage for Protégé-ported suites; Gate 3 hard-fail remains `--strict-release` at **1.0.0-rc**
+- Parity manifest `test_ids` linkage for Protégé-ported suites; Gate 3 hard-fail remains `--strict-release` at **v0.29**
 
 ### Fixed
 
@@ -132,7 +132,7 @@ v0.25.0 — UX completion + executable verification (viz, Plugin SDK 1.0, a11y, 
 - Graph truncation caps documented in workspace limits; scale regression test for class-graph build
 - EPIC-009 / Plugin SDK 1.0 (`PAR-PLG-001`): frozen extension-point matrix; `depends_on` / `activation` lifecycle with topo-sorted activate and cascade disable; provider actions `reasoner.classify` / `query.run` / `refactor.preview` / `graph.build`; CLI `plugins info|enable|disable`; compat harness `tests/plugin_sdk_compat.rs`; reference providers in `examples/plugin-workspace/`
 - EPIC-010 / accessibility parity (`PAR-ACC-001`): shared webview a11y layer (focus trap/restore, live announcer, reduced motion); DialogShell trap + labelled dialogs; P0 panel landmarks/announcements; axe-core Vitest harness (serious/critical); filled ACCESSIBILITY_REPORT + P0 audit inventory
-- EPIC-011 / parity verification (`PAR-TST-001`): evidence path validation, release-gate metrics report (`check-parity-release-gate.py`), YAML→matrix/metrics sync (`generate-parity-docs.py`), CI wiring; Gate 3 hard-fail reserved for `--strict-release` at 1.0.0-rc
+- EPIC-011 / parity verification (`PAR-TST-001`): evidence path validation, release-gate metrics report (`check-parity-release-gate.py`), YAML→matrix/metrics sync (`generate-parity-docs.py`), CI wiring; Gate 3 hard-fail reserved for `--strict-release` at v0.29
 - Migration guide: [docs/migration/v0.25.md](docs/migration/v0.25.md)
 
 ### Changed
@@ -569,7 +569,7 @@ v0.23.0 — Reasoning parity + SWRL.
 - **`ontocore docs` CLI** — `--output`, `--format markdown|html`, optional `--ontology-id` filter
 - **Import patch ops** — `add_import` and `remove_import` for Turtle `owl:imports`
 - **Imports management UI** — Ontologies tree context menu **Manage Imports** with React panel and patch preview
-- **OBO read path via `fastobo`** — richer synonyms, definitions, and property values in catalog; ADR-0019 documents v1.0 OBO write-back patch schema
+- **OBO read path via `fastobo`** — richer synonyms, definitions, and property values in catalog; ADR-0019 documents v0.30 OBO write-back patch schema
 - Migration guide [docs/migration/v0.11.md](docs/migration/v0.11.md); user guide [docs/guides/docs-export.md](docs/guides/docs-export.md)
 
 ### Changed
@@ -882,7 +882,7 @@ v0.23.0 — Reasoning parity + SWRL.
 - LSP smoke integration test and CI jobs for LSP + extension builds
 - Release workflow assets for `ontoindex-lsp` binary and multi-platform extension VSIX (Linux, macOS, Windows)
 - User docs: `docs/lsp-api.md`, `docs/vscode-install.md`, `docs/release-integrity.md`
-- Design docs under `docs/design/` including v1.0 Protégé parity matrix and Rust-native reasoner strategy (ADR-0014)
+- Design docs under `docs/design/` including v0.30 Protégé parity matrix and Rust-native reasoner strategy (ADR-0014)
 
 ### Fixed
 

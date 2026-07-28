@@ -104,7 +104,7 @@ cargo run -- validate fixtures
 
 Platform docs: [Vision](https://strixonomy.readthedocs.io/en/latest/vision/) · [Architecture](ARCHITECTURE.md) · [Roadmap hub](https://strixonomy.readthedocs.io/en/latest/roadmap-hub/) · [Protégé vs Strixonomy](https://strixonomy.readthedocs.io/en/latest/guides/protege-decision/)
 
-**v0.28.0** removes OntoCore / OntoCode compatibility shims from v0.27 and reserves the official **`strixonomy`** PyPI package (Python SDK remains v1.1). Protégé-aligned oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy shipped in **v0.26.x**. **Not a Protégé replacement** — see [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy.readthedocs.io/en/latest/SHIPPED/), [v0.28 migration](docs/migration/v0.28.md).
+**v0.28.0** removes OntoCore / OntoCode compatibility shims from v0.27 and reserves the official **`strixonomy`** PyPI package (Python SDK is planned for v0.34). Protégé-aligned oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy shipped in **v0.26.x**. **Not a Protégé replacement** — see [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy.readthedocs.io/en/latest/SHIPPED/), [v0.28 migration](docs/migration/v0.28.md).
 
 ## Development
 

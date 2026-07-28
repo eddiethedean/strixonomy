@@ -1,10 +1,10 @@
 # EXECUTION_ORDER
 
-# Strixonomy 1.0 Protégé Parity Execution Order
+# Strixonomy v0.30 Protégé Parity Execution Order
 
 **Status:** Master Sequencing Document\
-**Target Release:** Strixonomy 1.0.0\
-**Versioned releases:** [PRE_1_0_PHASES.md](../07_BACKLOG/PRE_1_0_PHASES.md) (v0.19–v0.25 → 1.0.0-rc → 1.0.0)
+**Target Release:** Strixonomy v0.30.0\
+**Versioned releases:** [V0_30_PHASES.md](../07_BACKLOG/V0_30_PHASES.md) (v0.19–v0.25 → v0.29 → v0.30)
 
 ------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@
 | 5–6 | v0.23 | Reasoning parity + SWRL |
 | 7 | v0.24 | Semantic services (refactor + query) |
 | 8–9 | v0.25 | Viz, plugins, a11y + parity verification |
-| 10 | 1.0.0-rc | Release candidate stabilization |
+| 10 | v0.29 | Release candidate stabilization |
 
 ------------------------------------------------------------------------
 
@@ -524,7 +524,7 @@ The next five implementation sessions should be:
 
 # Related Documents
 
--   PRE_1_0_PHASES.md — **versioned release phases (canonical)**
+-   V0_30_PHASES.md — **versioned release phases (canonical)**
 -   IMPLEMENTATION_PLAN.md
 -   DEPENDENCY_GRAPH.md
 -   PARITY_MATRIX.md

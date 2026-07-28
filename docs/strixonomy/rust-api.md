@@ -8,8 +8,8 @@ Strixonomy exposes a Rust library through the [`strixonomy`](https://crates.io/c
 |---------|--------|
 | `strixonomy::Workspace` | **Stable since v0.10** — preferred high-level API |
 | `strixonomy::catalog::IndexBuilder` | Stable for custom pipelines |
-| LSP JSON (`strixonomy/*` methods) | Pre-1.0 — may change between minor releases |
-| SQL virtual table columns | Pre-1.0 — pin versions in production |
+| LSP JSON (`strixonomy/*` methods) | v0.29–v0.30 — may change between minor releases |
+| SQL virtual table columns | v0.29–v0.30 — pin versions in production |
 
 Pin dependencies in `Cargo.toml`:
 

@@ -38,7 +38,7 @@ UI: hierarchy mode (asserted | inferred | combined)
 | Run on workspace open (configurable) | Planned |
 | Incremental re-classify on edit | Planned |
 | Problems panel for unsatisfiable classes | Planned v0.13 |
-| Reasoning history in store | Planned v1.0 |
+| Reasoning history in store | Planned v0.30 |
 | Quick fixes linked to diagnostics | Partial (LSP codeAction) |
 
 ## Store integration (planned)

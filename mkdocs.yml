@@ -214,7 +214,7 @@ nav:
       - Enterprise deployment: guides/enterprise-deployment.md
       - Enterprise week-2: guides/enterprise-week-2.md
       - Performance and sizing: guides/performance-sizing.md
-      - API stability (pre-1.0): guides/api-stability.md
+      - API stability (v0.x): guides/api-stability.md
       - Release timeline: guides/release-timeline.md
       - Direction:
           - Vision: vision.md

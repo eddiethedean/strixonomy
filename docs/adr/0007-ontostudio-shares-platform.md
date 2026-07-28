@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — **planned post v1.0**
+Accepted — **planned post v0.30**
 
 ## Context
 
@@ -22,7 +22,7 @@ OntoStudio implements **WorkspaceHost** for Electron/Tauri; it does not use VS C
 
 **Positive:** One UI codebase; faster desktop delivery after OntoUI matures in VS Code.
 
-**Negative:** OntoUI must be host-agnostic before desktop work starts (v0.13–v1.0 prerequisite).
+**Negative:** OntoUI must be host-agnostic before desktop work starts (v0.13–v0.30 prerequisite).
 
 ## References
 

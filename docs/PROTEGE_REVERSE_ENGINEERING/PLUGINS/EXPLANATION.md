@@ -224,15 +224,15 @@ Recommended enhancements:
 Core
 
 - [x] Explain inference (unsatisfiable class justifications)
-- [ ] Explain inconsistency (dedicated inconsistency workspace — v1.0)
+- [ ] Explain inconsistency (dedicated inconsistency workspace — v0.30)
 - [x] Multiple justifications (EL alternatives)
 - [x] Minimal justifications (trace-based; not full HermiT hitting sets)
 
 Navigation
 
 - [x] Open entity
-- [ ] Highlight graph (explanation overlay — v1.0)
-- [ ] Export (file export — v1.0; copy shipped)
+- [ ] Highlight graph (explanation overlay — v0.30)
+- [ ] Export (file export — v0.30; copy shipped)
 - [x] Copy
 
 Platform
@@ -240,7 +240,7 @@ Platform
 - [x] Background execution (progress UI + client cancel)
 - [x] Caching
 - [x] Accessibility (basic ARIA / focus on Explanation panel)
-- [ ] Plugin support (stable marketplace API — v1.0)
+- [ ] Plugin support (stable marketplace API — v0.33)
 
 ---
 

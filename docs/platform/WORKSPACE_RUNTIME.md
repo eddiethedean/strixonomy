@@ -23,7 +23,7 @@ interface WorkspaceStore {
   reasoning: ReasoningState
   refactor: RefactorState
   navigation: NavigationState
-  // tabs, layout, diagnostics, ai, plugins — stubs for v1.0+
+  // tabs, layout, diagnostics, ai, plugins — stubs for v0.30+
 }
 ```
 
@@ -87,13 +87,13 @@ sequenceDiagram
   Graph->>Graph: hydrateFocus → store
 ```
 
-## Deferred (v1.0)
+## Deferred (v0.30)
 
 | Item | Target |
 |------|--------|
-| Persistent tabs + bottom dock | v1.0 |
-| Full command registry in store | v1.0 |
-| Manchester / Semantic Diff on store | v1.0 |
+| Persistent tabs + bottom dock | v0.30 |
+| Full command registry in store | v0.30 |
+| Manchester / Semantic Diff on store | v0.30 |
 
 ## Links
 

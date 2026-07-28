@@ -1,9 +1,9 @@
 # Strixonomy LSP API (v0.28)
 
-> **Status:** Documents behavior in **Strixonomy v0.28.0**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.28.0**. v0.29–v0.30 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
-This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix. Legacy **`ontocore/*`** was removed in [v0.28](migration/v0.28.md). For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
+This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix. Legacy **`ontocore/*`** was removed in [v0.28](migration/v0.28.md). For the **v0.30 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
 
 ## Start here: index a workspace
 
@@ -59,11 +59,11 @@ If you are integrating Strixonomy outside VS Code (custom editor, scripts, autom
 
 ### Schema vs product version
 
-The schema file is the wire contract for the **current product release**. Until v1.0, minor product releases may add or change fields — always pin Strixonomy and consume the schema from the **same tagged release**. Historical labels such as “v0.17 schema” in older docs referred to the product release that last expanded the contract, not a separate schema versioning scheme.
+The schema file is the wire contract for the **current product release**. Until v0.30, minor product releases may add or change fields — always pin Strixonomy and consume the schema from the **same tagged release**. Historical labels such as “v0.17 schema” in older docs referred to the product release that last expanded the contract, not a separate schema versioning scheme.
 
-### Versioning and pinning (pre-1.0)
+### Versioning and pinning (v0.29–v0.30)
 
-Until v1.0, minor releases may change request/response fields.
+Until v0.30, minor releases may change request/response fields.
 For stable integrations:
 
 - Pin Strixonomy to **0.28.0** in your tooling.

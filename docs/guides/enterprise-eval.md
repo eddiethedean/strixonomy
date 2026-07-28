@@ -1,17 +1,17 @@
 # Evaluating Strixonomy for your organization
 
-This page helps security, platform, and ontology teams decide whether Strixonomy **v0.28.0** (latest tagged) fits your workflow. It is honest about **what ships today** vs the v1.0 Protégé-competitive target.
+This page helps security, platform, and ontology teams decide whether Strixonomy **v0.28.0** (latest tagged) fits your workflow. It is honest about **what ships today** vs the v0.30 Protégé-competitive target.
 
 Canonical capability matrix: [What ships today](../SHIPPED.md).
 
 ## When not to use Strixonomy (today)
 
-Prefer Protégé or other tools (or wait for product **1.0**) if you need any of the following. Full list: [Known limitations](../known-limitations.md).
+Prefer Protégé or other tools (or wait for **v0.30**) if you need any of the following. Full list: [Known limitations](../known-limitations.md).
 
 - Full **SQL** analytics (JOINs, aggregates) — only SQL-like virtual tables ship today
 - **Byte-identical** OWL/XML or RDF/XML that matches Protégé layout
 - **JSON-LD / TriG / N-Triples write-back** (read-only today)
-- A **curated plugin marketplace** or **production owlmake** without accepting the subprocess SDK — Plugin **SDK 1.0** freezes the wire contract today; marketplace/owlmake hardening remain product **1.0** — [Plugin policy](plugin-policy.md)
+- A **curated plugin marketplace** or **production owlmake** without accepting the subprocess SDK — Plugin **SDK 1.0** freezes the wire contract today; production workflow integration is planned for **v0.33** — [Plugin policy](plugin-policy.md)
 - **HermiT-identical** DL explanations or certified Protégé+HermiT equivalence
 - **WebProtégé** collaboration
 - Move / extract / ontology-merge refactor on **non-Turtle** files (rename/merge/replace already multi-format)
@@ -29,7 +29,7 @@ Prefer Protégé or other tools (or wait for product **1.0**) if you need any of
 | [Platform compatibility](platform-compatibility.md) | Platform — VS Code versions, OS/arch, remote dev |
 | [Performance and sizing](performance-sizing.md) | DevOps — limits, pilot benchmarks |
 | [Governance](governance.md) | Leadership — sustainability, releases, security policy |
-| [Release timeline (non-commitment)](release-timeline.md) | Planning — v0.9/v1.0 goals without fixed dates |
+| [Release timeline (non-commitment)](release-timeline.md) | Planning — v0.9/v0.30 goals without fixed dates |
 | [LGPL compliance](lgpl-compliance.md) | Legal — horned-owl obligations |
 | [Protégé coexistence](protege-coexistence.md) | Ontology teams — split workflow with Protégé |
 | [Plugin authoring](plugins.md) | Platform — Plugin SDK 1.0 (frozen wire, lifecycle, providers); see [Plugin policy](plugin-policy.md) |
@@ -79,13 +79,13 @@ Highlights for evaluators: Turtle/OBO/RDF/XML/OWL/XML write-back; Query Workbenc
 
 ## Protégé coexistence
 
-A [first-week Protégé migration guide](protege-migration.md) ships today. Round-trip workflows (Protégé export → Strixonomy edit → Protégé verify) and byte-identical XML playbooks are **v1.0 targets**. Today:
+A [first-week Protégé migration guide](protege-migration.md) ships today. Round-trip workflows (Protégé export → Strixonomy edit → Protégé verify) and byte-identical XML playbooks are **v0.30 targets**. Today:
 
 - [Protégé coexistence guide](protege-coexistence.md) — split workflow when keeping Protégé for specific features
 - [OWL/XML and RDF/XML write-back](owl-xml-workflow.md) — semantic re-serialize caveats
 
 - Use Strixonomy for **Turtle / OBO / RDF/XML / OWL/XML editing in VS Code** (XML with caveats), **CI validation**, **SQL/SPARQL + DL Query Workbench**, **Manchester axioms** (richest on Turtle), **workspace refactoring** (rename/merge/replace multi-format; move/extract Turtle-first), **property chain editing**, and **EL/RL/RDFS/DL classification**
-- Keep Protégé for **byte-identical XML layout**, **Protégé-specific plugins**, and axiom types still listed under [known limitations](../known-limitations.md) until v1.0
+- Keep Protégé for **byte-identical XML layout**, **Protégé-specific plugins**, and axiom types still listed under [known limitations](../known-limitations.md) until v0.30
 - See [Protégé vs Strixonomy](protege-decision.md) and [What ships today](../SHIPPED.md)
 
 ## Evaluation checklist
@@ -98,7 +98,7 @@ A [first-week Protégé migration guide](protege-migration.md) ships today. Roun
 6. Trial Query Workbench **DL** mode / `strixonomy dl-query` against your Manchester expressions — [dl-query.md](dl-query.md)
 7. Review [Protégé decision matrix](protege-decision.md) and [platform compatibility](platform-compatibility.md)
 8. Review [security policy](../security.md) and [governance](governance.md) with your platform team
-9. Compare [What ships today](../SHIPPED.md) and [known limitations](../known-limitations.md) against your requirements; read [release timeline](release-timeline.md) for planning (no fixed v1.0 date)
+9. Compare [What ships today](../SHIPPED.md) and [known limitations](../known-limitations.md) against your requirements; read [release timeline](release-timeline.md) for planning (no fixed v0.30 date)
 
 ## Questions
 

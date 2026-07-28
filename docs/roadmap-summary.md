@@ -2,7 +2,7 @@
 
 > **Not a capability matrix.** For what ships today, read **[What ships today](SHIPPED.md)** and **[Known limitations](known-limitations.md)** only.
 
-Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protégé replacement for many OWL/OBO workflows. **Today (v0.28.0)** supports pilot and coexistence — not org-wide Protégé retirement.
+Strixonomy’s forward roadmap is organized around independently valuable user outcomes: trustworthy projects, fast authoring, large-ontology productivity, team review, automated delivery, integrations, assisted modeling, browser access, and governed operations. **Today (v0.28.0)** supports pilot and coexistence.
 
 ## Current release
 
@@ -29,8 +29,16 @@ Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protég�
 
 | Target | Examples |
 |--------|----------|
-| **1.0.0** | Protégé-competitive polish, curated plugin marketplace, production owlmake |
-| **Post-1.0** | OntoStudio desktop, AI-native surfaces, MCP server, cloud collaboration |
+| **v0.29** | Trustworthy projects: conformance, recovery, cross-platform confidence, performance budgets |
+| **v0.30** | Fast daily authoring: cohesive entity workspace, reasoning flow, undo, migration |
+| **v0.31** | Large ontology productivity: scale, query depth, multi-format operations |
+| **v0.32** | Team review and enforceable semantic policy |
+| **v0.33** | Automated ontology delivery and production workflow plugins |
+| **v0.34** | Python/TypeScript SDKs and MCP integration platform |
+| **v0.35** | Explainable, preview-first assisted modeling |
+| **v0.36** | Install-free browser workspace and WASM engine |
+| **v0.37** | Governed collaboration and semantic conflict resolution |
+| **v0.38+** | Enterprise deployment, security, portfolio operations, and measured scale |
 
 !!! warning "Planned — not shipped"
     Items in the full [Platform roadmap](roadmap.md) and GitHub engineering specs (`docs/ui/`, `docs/platform/`, `docs/protege-parity/`) are **targets**, not product claims.
@@ -42,7 +50,7 @@ Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protég�
 | What works **today** | [SHIPPED.md](SHIPPED.md) |
 | Pick the right planning doc | [Roadmap hub](roadmap-hub.md) |
 | Full release timeline (661 lines) | [Platform roadmap](roadmap.md) — contributors / deep planning |
-| Protégé 1.0 engineering program | [protege-parity on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) |
+| Protégé replacement engineering program | [protege-parity on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/README.md) |
 | Release dates (non-commitment) | [Release timeline](guides/release-timeline.md) |
 
 ## Related

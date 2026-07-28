@@ -2,9 +2,9 @@
 
 # Blocker 11 --- Executable Parity Verification
 
-**Status:** Resolved for v0.25 (EPIC-011) — verification machinery VERIFIED; Gate 3 (all P0 VERIFIED) deferred to 1.0.0-rc `--strict-release`\
+**Status:** Resolved for v0.25 (EPIC-011) — verification machinery VERIFIED; Gate 3 (all P0 VERIFIED) deferred to v0.29 `--strict-release`\
 **Priority:** Critical\
-**Target Release:** Strixonomy 1.0.0 / infrastructure delivered in **v0.25**
+**Target Release:** Strixonomy v0.30.0 / infrastructure delivered in **v0.25**
 
 ------------------------------------------------------------------------
 

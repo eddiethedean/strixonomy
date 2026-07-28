@@ -50,4 +50,4 @@ Product code (LSP `applyAxiomPatch`, CLI `strixonomy patch`) routes through `Tra
 - [ADR-0006](0006-patch-based-write-back.md) — patch write-back
 - [ADR-0019](0019-obo-write-back.md) — OBO patches
 - [BLOCKER_01](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/04_BLOCKERS/BLOCKER_01_FORMAT_INDEPENDENCE.md)
-- [PRE_1_0_PHASES](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) § v0.19
+- [V0_30_PHASES](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/V0_30_PHASES.md) § v0.19

@@ -34,7 +34,7 @@ parity requirements, implementation evidence, and release milestones.
 | EPIC-010 | Accessibility | v0.25 | [#256](https://github.com/eddiethedean/strixonomy/issues/256) | BLOCKER_10_ACCESSIBILITY.md |
 | EPIC-011 | Parity Verification | v0.19 (skeleton), v0.25 (complete) | [#257](https://github.com/eddiethedean/strixonomy/issues/257) | BLOCKER_11_PARITY_VERIFICATION.md |
 
-Release plan: [PRE_1_0_PHASES.md](PRE_1_0_PHASES.md)
+Release plan: [V0_30_PHASES.md](V0_30_PHASES.md)
 
 ------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ Release plan: [PRE_1_0_PHASES.md](PRE_1_0_PHASES.md)
 
 ------------------------------------------------------------------------
 
-# Post-1.0 Epics
+# v0.31+ Epics
 
   Epic ID    Epic
   ---------- ----------------------------------
@@ -107,7 +107,7 @@ The Epic Index is complete when:
 
 # Related Documents
 
--   PRE_1_0_PHASES.md — versioned release phases
+-   V0_30_PHASES.md — versioned release phases
 -   IMPLEMENTATION_PLAN.md
 -   EXECUTION_ORDER.md
 -   DEPENDENCY_GRAPH.md

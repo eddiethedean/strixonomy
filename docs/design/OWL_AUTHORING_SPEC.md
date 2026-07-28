@@ -1,6 +1,6 @@
-# OWL Authoring Specification (v1.0)
+# OWL Authoring Specification (v0.30)
 
-> **Status: Historical / target UX for remaining v1.0 polish.** Do **not** implement from this page as if authoring were still an MVP.
+> **Status: Historical / target UX for remaining v0.30 polish.** Do **not** implement from this page as if authoring were still an MVP.
 >
 > **Shipped today:** complete OWL 2 authoring (`PAR-OWL-001`, v0.22+), Turtle/OBO/RDF/XML/OWL/XML write-back, Manchester editor, Entity Inspector — see [What ships today](../SHIPPED.md), [authoring.md](../authoring.md), and [Supported formats](../supported-formats.md).
 >
@@ -8,7 +8,7 @@
 
 ## 1. Purpose
 
-Specify **hybrid authoring** for Protégé-competitive v1.0:
+Specify **hybrid authoring** for Protégé-competitive v0.30:
 
 - **Quick forms** for common axioms and annotations
 - **Manchester OWL Syntax editor** for complex class expressions
@@ -23,7 +23,7 @@ Specify **hybrid authoring** for Protégé-competitive v1.0:
 | **Manchester editor** (webview) | `ObjectIntersectionOf`, `ObjectUnionOf`, `ObjectSomeValuesFrom`, cardinality (`min`/`max`/`exact`), nested restrictions |
 | **Text buffer** | Direct Turtle/Manchester edit; LSP completion and diagnostics |
 
-## 3. P0 axiom types (v1.0)
+## 3. P0 axiom types (v0.30)
 
 | Axiom | Quick form | Manchester editor |
 |-------|------------|-------------------|
@@ -56,7 +56,7 @@ Patches are generated from **Horned-OWL axiom objects**, not string templates.
 3. Show diff preview in VS Code before multi-file changes
 4. All edits undoable via VS Code
 
-### Round-trip test suite (required for v1.0)
+### Round-trip test suite (required for v0.30)
 
 - Fixtures: Protégé-exported Turtle ontologies in `examples/protege-roundtrip/`
 - Flow: load → index → edit axiom via API → save → semantic equivalence (formatting variance allowed)

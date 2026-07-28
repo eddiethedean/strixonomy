@@ -105,7 +105,7 @@ Generate Markdown:
 - validation status
 - docs impact
 
-## 8. v1.0 Requirements
+## 8. v0.30 Requirements
 
 - Git branch comparison
 - entity-level diff

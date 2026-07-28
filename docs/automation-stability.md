@@ -1,4 +1,4 @@
-# Automation and stability (pre-1.0)
+# Automation and stability (v0.29–v0.30)
 
 This page answers one question: **what can you safely automate against Strixonomy today?**
 
@@ -8,7 +8,7 @@ These are documented and intentionally stable for automation:
 
 - **`strixonomy validate`** — exit code gates on diagnostic **errors**
 - **`strixonomy classify`** — exit code gates on consistency/unsatisfiable classes
-- **`strixonomy diff`** — documented CLI usage (pin version pre-1.0)
+- **`strixonomy diff`** — documented CLI usage (pin version v0.29–v0.30)
 
 See:
 
@@ -17,13 +17,13 @@ See:
 
 ## Pinning guidance (strongly recommended)
 
-Until v1.0, minor releases may change non-gate details. For reproducible pipelines:
+Until v0.30, minor releases may change non-gate details. For reproducible pipelines:
 
 - Pin the CLI in CI:
   - `cargo install strixonomy-cli --locked --version 0.28.0`, or
   - Linux x64: pinned release binary + SHA256 verification
 
-## Surfaces that may change pre-1.0
+## Surfaces that may change v0.29–v0.30
 
 - SQL virtual table column names and supported SQL subset
 - LSP `strixonomy/*` JSON payload shapes

@@ -1,9 +1,9 @@
 # DEPENDENCY_GRAPH
 
-# Strixonomy 1.0 Protégé Parity Dependency Graph
+# Strixonomy v0.30 Protégé Parity Dependency Graph
 
 **Status:** Master Architecture Dependency Specification\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ Reasoning     SWRL     Refactoring    Query   Serializer Support
         Parity Verification (B11)
                          │
                          ▼
-                 Strixonomy 1.0 Release
+                 Strixonomy v0.30 Release
 ```
 
 ------------------------------------------------------------------------

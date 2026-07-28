@@ -4,7 +4,7 @@
 
 **Epic ID:** EPIC-011\
 **GitHub:** https://github.com/eddiethedean/strixonomy/issues/257\
-**Status:** Done for v0.25 (`PAR-TST-001` VERIFIED; Gate 3 hard-fail deferred to 1.0.0-rc)\
+**Status:** Done for v0.25 (`PAR-TST-001` VERIFIED; Gate 3 hard-fail deferred to v0.29)\
 **Priority:** P0 (Release Blocking)\
 **Target Release:** v0.19 (skeleton), v0.25 (complete)
 
@@ -24,4 +24,4 @@ CI release-gate reporting.
 -   ../03_PARITY/PARITY_RELEASE_GATE.md
 -   ../03_PARITY/PARITY_METRICS.md
 -   EPIC_INDEX.md
--   PRE_1_0_PHASES.md
+-   V0_30_PHASES.md

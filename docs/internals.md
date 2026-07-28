@@ -56,4 +56,4 @@ Start with **[Architecture tour](guides/architecture-tour.md)** (~15 min) for a 
 
 ## Plugin model
 
-Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace and production owlmake integration remain **product 1.0** goals. See [plugin model](strixonomy/plugin-model.md), [Plugin policy](guides/plugin-policy.md), and **[Plugin authoring guide](guides/plugins.md)** (canonical).
+Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace and production owlmake integration are planned for **v0.33** goals. See [plugin model](strixonomy/plugin-model.md), [Plugin policy](guides/plugin-policy.md), and **[Plugin authoring guide](guides/plugins.md)** (canonical).

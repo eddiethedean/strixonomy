@@ -4,7 +4,7 @@ Embed **Strixonomy** in tools, pipelines, or custom CLIs via the [`strixonomy`](
 
 > Strixonomy (previously branded **OntoIndex** / `ontoindex-*`) is implemented by the `strixonomy-*` crates. See [v0.9 migration](../migration/v0.9.md).
 
-Pre-1.0: public APIs may change between minor releases until v1.0. Pin minors in production. Crates are at **0.28.x**.
+v0.29–v0.30: public APIs may change between minor releases until v0.30. Pin minors in production. Crates are at **0.28.x**.
 
 !!! tip "Prefer `Workspace`"
     For new code, use the **`Workspace` API** (`strixonomy = "0.28"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../strixonomy/rust-api.md).
@@ -105,7 +105,7 @@ See [Strixonomy crate map](../strixonomy/crate-map.md) for the full table. Summa
 | Crate | Role |
 |-------|------|
 | `strixonomy` | Public façade — `Workspace`, module re-exports |
-| `strixonomy-*` | Implementation crates (stable names until v1.0) |
+| `strixonomy-*` | Implementation crates (stable names until v0.30) |
 
 ## Classification example
 

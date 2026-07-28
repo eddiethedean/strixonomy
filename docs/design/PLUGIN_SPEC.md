@@ -214,13 +214,13 @@ pub trait WorkflowPlugin {
 
 ## 7. Stability
 
-v1.0 plugin APIs should be semver-stable.
+v0.30 plugin APIs should be semver-stable.
 
-Before v1.0, plugin APIs may change. See [strixonomy/plugin-model.md](../strixonomy/plugin-model.md).
+Before v0.30, plugin APIs may change. See [strixonomy/plugin-model.md](../strixonomy/plugin-model.md).
 
-## 8. v1.0 reference plugins (P1)
+## 8. v0.30 reference plugins (P1)
 
-Ship with v1.0 as examples and optional builtins:
+Ship with v0.30 as examples and optional builtins:
 
 | Plugin | Kind | Purpose |
 |--------|------|---------|

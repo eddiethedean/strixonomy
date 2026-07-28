@@ -3,7 +3,7 @@
 # Protégé to Strixonomy Migration Plan
 
 **Status:** Migration Strategy\
-**Target:** Strixonomy 1.0.0
+**Target:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 

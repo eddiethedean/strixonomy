@@ -3,7 +3,7 @@
 # Strixonomy UI Workflow Specification
 
 **Status:** Normative UX Specification\
-**Target Release:** Strixonomy 1.0.0
+**Target Release:** Strixonomy v0.30.0
 
 ------------------------------------------------------------------------
 

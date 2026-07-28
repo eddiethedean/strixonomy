@@ -25,7 +25,7 @@
 
 **Store-integrated panels:** Entity Inspector, Graph, Query Workbench, Refactor Preview.
 
-**Still per-panel local state:** Manchester editor, Semantic Diff, Manage Imports (full migration → v1.0).
+**Still per-panel local state:** Manchester editor, Semantic Diff, Manage Imports (full migration → v0.30).
 
 ## Architecture
 

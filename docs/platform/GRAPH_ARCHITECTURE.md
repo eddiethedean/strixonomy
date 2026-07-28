@@ -46,7 +46,7 @@ interface GraphEdge {
 }
 ```
 
-## Planned (v0.13–v1.0)
+## Planned (v0.13–v0.30)
 
 - Progressive loading: focus neighborhood first, expand on demand
 - Saved layouts and filters ([ui/GRAPH_WORKSPACE.md](../ui/GRAPH_WORKSPACE.md))
