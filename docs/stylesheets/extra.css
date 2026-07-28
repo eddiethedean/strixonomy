@@ -709,7 +709,6 @@ input,
   box-shadow: 0 28px 70px -30px rgba(0, 0, 0, 0.85);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  transform: rotate(1deg);
 }
 
 .oc-console-bar {
@@ -906,6 +905,28 @@ input,
   background: rgba(124, 58, 237, 0.07);
 }
 
+/* Keep reference-heavy pages usable on narrow screens. */
+.md-typeset img,
+.md-typeset video {
+  max-width: 100%;
+  height: auto;
+}
+
+.md-typeset .highlight,
+.md-typeset pre,
+.md-typeset .md-typeset__table {
+  max-width: 100%;
+}
+
+.md-typeset .md-typeset__table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.md-typeset a {
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 800px) {
   .oc-hero-grid {
     grid-template-columns: 1fr;
@@ -914,7 +935,6 @@ input,
 
   .oc-hero-console {
     max-width: 30rem;
-    transform: none;
   }
 
   .oc-proof-strip {
@@ -947,18 +967,29 @@ input,
 
   .oc-hero .oc-hero-actions .md-button {
     width: 100%;
+    min-height: 2.75rem;
+  }
+
+  /* The console is a decorative desktop preview; removing it keeps the
+     primary action and first proof points above the fold on phones. */
+  .oc-hero-console {
+    display: none;
   }
 
   .oc-proof-strip {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .oc-proof-strip > div {
-    border-right: 0;
+    border-right: 1px solid var(--sx-line);
     border-bottom: 1px solid var(--sx-line);
   }
 
-  .oc-proof-strip > div:last-child {
+  .oc-proof-strip > div:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .oc-proof-strip > div:nth-last-child(-n + 2) {
     border-bottom: 0;
   }
 }

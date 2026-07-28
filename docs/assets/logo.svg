@@ -1,27 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Strixonomy owl">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Strixonomy owl and knowledge graph">
   <defs>
-    <linearGradient id="night" x1="18" y1="8" x2="102" y2="112" gradientUnits="userSpaceOnUse">
+    <linearGradient id="night" x1="14" y1="8" x2="108" y2="114" gradientUnits="userSpaceOnUse">
       <stop stop-color="#312e81"/>
-      <stop offset="1" stop-color="#0f172a"/>
+      <stop offset=".52" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#0b0a22"/>
     </linearGradient>
-    <linearGradient id="gold" x1="38" y1="40" x2="82" y2="78" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fbbf24"/>
-      <stop offset="1" stop-color="#f59e0b"/>
+    <linearGradient id="iris" x1="36" y1="38" x2="82" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#f3a712"/>
+    </linearGradient>
+    <linearGradient id="feather" x1="28" y1="28" x2="86" y2="91" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#c7d2fe"/>
     </linearGradient>
   </defs>
-  <rect width="120" height="120" rx="28" fill="url(#night)"/>
-  <path d="M27 33 35 17 49 28a48 48 0 0 1 22 0l14-11 8 16c8 9 12 20 12 33 0 25-20 39-45 39S15 91 15 66c0-13 4-24 12-33Z" fill="#e2e8f0"/>
-  <path d="M24 45c10-13 24-17 36-8 12-9 26-5 36 8-4 25-19 42-36 51-17-9-32-26-36-51Z" fill="#cbd5e1"/>
-  <path d="M29 46c10-12 23-13 31-2 8-11 21-10 31 2-5 17-17 26-31 27-14-1-26-10-31-27Z" fill="#312e81"/>
-  <circle cx="43" cy="51" r="13" fill="url(#gold)"/>
-  <circle cx="77" cy="51" r="13" fill="url(#gold)"/>
-  <circle cx="43" cy="51" r="5" fill="#0f172a"/>
-  <circle cx="77" cy="51" r="5" fill="#0f172a"/>
-  <circle cx="40" cy="47" r="2" fill="#fff" opacity=".9"/>
-  <circle cx="74" cy="47" r="2" fill="#fff" opacity=".9"/>
-  <path d="m60 57 8 10-8 6-8-6 8-10Z" fill="#f59e0b"/>
-  <path d="M38 82h44M38 82l22 14 22-14" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="38" cy="82" r="4" fill="#312e81"/>
-  <circle cx="60" cy="96" r="4" fill="#312e81"/>
-  <circle cx="82" cy="82" r="4" fill="#312e81"/>
+
+  <rect width="120" height="120" rx="26" fill="url(#night)"/>
+  <path d="M17 0h77c14.4 0 26 11.6 26 26v68c0 14.4-11.6 26-26 26H79C48 94 27 55 17 0Z" fill="#fff" opacity=".025"/>
+
+  <!-- A single, symmetrical silhouette stays legible at favicon size. -->
+  <path d="M25 36 33 16l18 13c3-.8 6-1.2 9-1.2s6 .4 9 1.2l18-13 8 20c6.7 8 10 18 10 29 0 22-18.8 36-45 36S15 87 15 65c0-11 3.3-21 10-29Z" fill="url(#feather)"/>
+  <path d="M23 47c9-14 23-18 37-8 14-10 28-6 37 8-4 21-17 37-37 47-20-10-33-26-37-47Z" fill="#a5b4fc"/>
+
+  <!-- Brow and eye mask form an abstract W for wisdom/workspace. -->
+  <path d="M27 47c9-11 22-14 33-5 11-9 24-6 33 5-5 17-17 26-33 27-16-1-28-10-33-27Z" fill="#262262"/>
+  <path d="m31 40 29 12 29-12-12 24-17 10-17-10-12-24Z" fill="#312e81" opacity=".72"/>
+
+  <circle cx="42.5" cy="51" r="12.5" fill="url(#iris)"/>
+  <circle cx="77.5" cy="51" r="12.5" fill="url(#iris)"/>
+  <circle cx="42.5" cy="51" r="5.5" fill="#0b0a22"/>
+  <circle cx="77.5" cy="51" r="5.5" fill="#0b0a22"/>
+  <circle cx="39.5" cy="47.5" r="2" fill="#fff" opacity=".92"/>
+  <circle cx="74.5" cy="47.5" r="2" fill="#fff" opacity=".92"/>
+  <path d="m60 57 8 8-8 7-8-7 8-8Z" fill="#f3a712"/>
+
+  <!-- Three connected nodes turn the owl's breast into a knowledge graph. -->
+  <path d="M38 82h44M38 82l22 14 22-14" fill="none" stroke="#4f46e5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="38" cy="82" r="5" fill="#4f46e5" stroke="#eef2ff" stroke-width="2"/>
+  <circle cx="60" cy="96" r="5" fill="#f3a712" stroke="#fff7db" stroke-width="2"/>
+  <circle cx="82" cy="82" r="5" fill="#4f46e5" stroke="#eef2ff" stroke-width="2"/>
 </svg>
