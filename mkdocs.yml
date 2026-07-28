@@ -45,14 +45,14 @@ theme:
   favicon: assets/logo.svg
   palette:
     - scheme: default
-      primary: indigo
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -71,6 +71,7 @@ theme:
     - content.code.copy
     - content.action.edit
     - content.tabs.link
+    - content.tooltips
     - toc.follow
 
 plugins:

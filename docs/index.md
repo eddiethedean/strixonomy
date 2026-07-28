@@ -6,58 +6,48 @@ hide:
 
 <div class="oc-hero">
 
-<div class="oc-hero-badges">
-  <span class="oc-badge oc-badge--accent">Latest tagged v0.27.0</span>
-  <span class="oc-badge">VS Code</span>
-  <span class="oc-badge">CLI · LSP</span>
+<div class="oc-hero-grid">
+  <div class="oc-hero-copy">
+    <p class="oc-hero-kicker"><span class="oc-status-dot"></span> Open-source ontology engineering</p>
+    <p class="oc-hero-title">Make structured knowledge <span>clear.</span></p>
+    <p class="oc-hero-lead">Strixonomy brings ontology authoring, queries, validation, visualization, and reasoning into VS Code—powered by a fast Rust workspace engine.</p>
+    <div class="oc-hero-actions">
+      <a class="md-button md-button--primary" href="guides/first-success/">Get started in 10 minutes</a>
+      <a class="md-button" href="ide/feature-tour/">Explore the feature tour</a>
+    </div>
+    <p class="oc-hero-meta">
+      <a href="SHIPPED/">v0.27.0</a><span>·</span>
+      <a href="known-limitations/">Known limitations</a><span>·</span>
+      <a href="https://github.com/eddiethedean/strixonomy">GitHub</a>
+    </p>
+  </div>
+  <div class="oc-hero-console" aria-label="Strixonomy capability preview">
+    <div class="oc-console-bar"><span></span><span></span><span></span><strong>strixonomy · workspace</strong></div>
+    <div class="oc-console-body">
+      <p><span class="oc-prompt">›</span> index <strong>organization.ttl</strong></p>
+      <p><span class="oc-ok">✓</span> 1,284 axioms · 186 entities</p>
+      <p><span class="oc-prompt">›</span> classify <strong>--profile auto</strong></p>
+      <p><span class="oc-ok">✓</span> consistent · 24 inferred edges</p>
+      <div class="oc-console-rule"></div>
+      <p class="oc-console-label">WORK WITH</p>
+      <div class="oc-format-list"><span>OWL</span><span>RDF</span><span>OBO</span><span>SPARQL</span></div>
+    </div>
+  </div>
+</div>
 </div>
 
-<p class="oc-hero-kicker">Latest tagged v0.27.0</p>
-
-<p class="oc-hero-title">Strixonomy</p>
-
-<p class="oc-hero-lead">
-Edit OWL, RDF, and OBO ontologies in VS Code—browse, query, reason, and validate—backed by a Rust workspace engine and language server.
-</p>
-
-<p class="oc-hero-ctas">
-  <a class="oc-hero-cta" href="guides/first-success/">First success (~10 min) →</a>
-</p>
-
-<p class="oc-hero-subcta"><a href="guides/day-2/">Your next steps</a> · <a href="install/">Install</a> · <a href="SHIPPED/">What ships today</a> · <a href="known-limitations/">Known limitations</a></p>
-
-<div class="oc-hero-links">
-  <a href="ide/feature-tour/">Feature tour</a>
-  <a href="ide/">IDE overview</a>
-  <a href="guides/versions-and-channels/">Versions &amp; channels</a>
+<div class="oc-proof-strip">
+  <div><strong>4</strong><span>editable ontology formats</span></div>
+  <div><strong>3</strong><span>query modes</span></div>
+  <div><strong>EL–DL</strong><span>reasoning profiles</span></div>
+  <div><strong>1.0</strong><span>plugin wire contract</span></div>
 </div>
 
-</div>
+<div class="oc-start-card" markdown>
 
-<div class="oc-callout" markdown>
-
-**Primary path:** **[First success (~10 min)](guides/first-success.md)** — install the extension, open sample ontologies, browse and edit. No clone required. Then **[Your next steps](guides/day-2.md)**.
+**New to Strixonomy?** Start with **[First success (~10 min)](guides/first-success.md)**—install the extension, open sample ontologies, browse, and edit. No clone or separate CLI required.
 
 Pins follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0**). Channel lag: [Versions & channels](guides/versions-and-channels.md).
-
-**Also:** [Install](install.md) · [Examples](examples/index.md) · [Feature tour](ide/feature-tour.md) · [What ships today](SHIPPED.md)
-
-![Strixonomy product tour](assets/screenshots/product-tour.gif)
-
-<details markdown>
-<summary>Formats and names</summary>
-
-Writable: **`.ttl`**, **`.obo`**, **`.owl`/`.rdf`**, **`.owx`** (XML = semantic re-serialize). JSON-LD / TriG / N-Triples stay read-only — [Supported formats](supported-formats.md). Catalog SQL is a subset — [SQL reference](sql-reference.md).
-
-| Name | What |
-|------|------|
-| **Strixonomy IDE** | VS Code / Cursor extension |
-| **Strixonomy engine** | CLI + LSP + crates (`cargo install strixonomy-cli`) |
-| **Ontologos** | Bundled reasoner |
-
-[Product identity](guides/product-identity.md)
-
-</details>
 
 </div>
 
@@ -90,6 +80,11 @@ Writable: **`.ttl`**, **`.obo`**, **`.owl`/`.rdf`**, **`.owx`** (XML = semantic 
     [:octicons-arrow-right-24: What ships today](SHIPPED.md)
 
 </div>
+
+<figure class="oc-product-shot">
+  <img src="assets/screenshots/product-tour.gif" alt="Strixonomy product tour showing the ontology explorer and entity inspector">
+  <figcaption>Browse, edit, query, and reason without leaving your editor.</figcaption>
+</figure>
 
 ## What ships today
 
