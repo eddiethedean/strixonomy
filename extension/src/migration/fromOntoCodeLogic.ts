@@ -42,3 +42,26 @@ export function rewritePanelRestore(
   }
   return out;
 }
+
+/** Rewrite the recoverable `.ontocode/session.json` payload for Strixonomy. */
+export function rewriteWorkspaceSession(
+  value: unknown
+): Record<string, unknown> | undefined {
+  if (!value || typeof value !== "object") {
+    return undefined;
+  }
+  const session = { ...(value as Record<string, unknown>) };
+  if (session.panelRestore !== undefined) {
+    session.panelRestore =
+      rewritePanelRestore(session.panelRestore) ?? session.panelRestore;
+  }
+  return session;
+}
+
+/** Map a contributed Strixonomy command ID to its compatibility alias. */
+export function legacyCommandId(command: string): string | undefined {
+  if (!command.startsWith("strixonomy.")) {
+    return undefined;
+  }
+  return `ontocode.${command.slice("strixonomy.".length)}`;
+}

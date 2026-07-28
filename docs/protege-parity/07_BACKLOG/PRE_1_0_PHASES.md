@@ -37,7 +37,7 @@ objective of the phases below.
 | **v0.24** | D (services) | 7 | EPIC-006, EPIC-007 | BLOCKER_06, BLOCKER_07 | Shipped |
 | **v0.25** | E + F | 8–9 | EPIC-008–011 | BLOCKER_08–011 | Shipped |
 | **v0.26** | F (test port) | — | Protégé JUnit behavioral port | BLOCKER_11 (corpus) | Shipped |
-| **v0.27** | Product identity | — | Strixonomy Rust + VS Code rename | Package and extension migration | Shipped |
+| **v0.27** | Product identity | — | Strixonomy Rust + VS Code rename | Package and extension migration | Planned |
 | **1.0.0-rc** | Stabilize | 10 | — | — | Planned |
 | **1.0.0** | Ship | — | — | [PARITY_RELEASE_GATE.md](../03_PARITY/PARITY_RELEASE_GATE.md) | Planned |
 
@@ -344,8 +344,8 @@ Rust semantic oracles (rewrite specs — do not run the JVM suite).
 
 # v0.27 — Strixonomy rename
 
-**Status:** Shipped (v0.27.0)\
-**Theme:** Rename OntoCore and OntoCode to Strixonomy before the 1.0 release freeze.
+**Status:** Planned\
+**Theme:** Rename Strixonomy and Strixonomy to Strixonomy before the 1.0 release freeze.
 
 ## Objective
 
@@ -359,7 +359,7 @@ migration path.
 -   `strixonomy` CLI and `strixonomy-lsp` language-server binaries
 -   Strixonomy for VS Code publisher, listing, commands, settings, views,
     bundled assets, Marketplace metadata, and Open VSX metadata
--   Compatibility and deprecation policy for OntoCore/OntoCode package,
+-   Compatibility and deprecation policy for Strixonomy/Strixonomy package,
     binary, configuration, extension-state, plugin, and automation names
 -   v0.27 migration guide and CI coverage for clean installs and v0.26
     upgrades

@@ -28,7 +28,9 @@ interface StrixonomyTestApi {
   __test: StrixonomyTestHooks;
 }
 
-const CAPTURE = process.env.ONTOCODE_CAPTURE_SCREENSHOTS === "1";
+const CAPTURE =
+  (process.env.STRIXONOMY_CAPTURE_SCREENSHOTS ??
+    process.env.ONTOCODE_CAPTURE_SCREENSHOTS) === "1";
 
 suite("Strixonomy screenshot capture", function () {
   if (!CAPTURE) {
@@ -129,7 +131,9 @@ suite("Strixonomy screenshot capture", function () {
   });
 
   test("assemble product-tour.gif from captured frames", async () => {
-    const dir = process.env.ONTOCODE_SCREENSHOT_DIR;
+    const dir =
+      process.env.STRIXONOMY_SCREENSHOT_DIR ??
+      process.env.ONTOCODE_SCREENSHOT_DIR;
     assert.ok(dir, "ONTOCODE_SCREENSHOT_DIR required");
     const frames = [
       "explorer-inspector.png",

@@ -8,7 +8,7 @@ Honesty and limits: [DL Query guide](../guides/dl-query.md).
 
 Expressions accept **prefix:local** QNames (resolved from indexed ontology prefixes) or angle-bracket IRIs `<http://…>`. There is **no** `--prefix` CLI flag. Prefer `<…>` when several files bind the same short prefix (for example both tutorial fixtures use `ex:`).
 
-Samples use the repo [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures) corpus. Flags: `--workspace`, `--profile`, `--mode`, `--format` only — [CLI reference](../cli-reference.md).
+Samples use the repo [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/v0.26.2/fixtures) corpus. Flags: `--workspace`, `--profile`, `--mode`, `--format` only — [CLI reference](../cli-reference.md).
 
 ## Named class (inferred)
 
@@ -21,7 +21,7 @@ strixonomy dl-query '<http://example.org/clinic#ClinicPerson>' --workspace fixtu
   --format json
 ```
 
-(`ex:` comes from [`complex-classes.ttl`](https://github.com/eddiethedean/strixonomy/blob/v0.27.0/fixtures/complex-classes.ttl).)
+(`ex:` comes from [`complex-classes.ttl`](https://github.com/eddiethedean/strixonomy/blob/v0.26.2/fixtures/complex-classes.ttl).)
 
 ## Asserted instances
 
@@ -44,4 +44,4 @@ strixonomy dl-query \
 
 ## CI tip
 
-Pin CLI with `--version 0.27.0` (or the release tarball for Linux x64). Treat results as OntoLogos-backed — dual-check critical audits against Protégé when required.
+Pin CLI with `--version 0.26.2` (or the release tarball for Linux x64). Treat results as OntoLogos-backed — dual-check critical audits against Protégé when required.

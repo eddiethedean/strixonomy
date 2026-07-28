@@ -15,7 +15,9 @@
 >
 > **Contributor crate layout:** [Implementation architecture](design/ARCHITECTURE.md) (internal modules only).
 >
-> **Latest tagged: v0.27.0** — v0.27 ships today. Strixonomy (VS Code) + Strixonomy (CLI/LSP/library).
+> **Latest tagged: v0.26.2** — v0.26 ships today under OntoCode/OntoCore names.
+>
+> **v0.27 in progress (unreleased):** renames the platform to Strixonomy.
 >
 > **Planned v1.0:** curated plugin marketplace, production owlmake integration, language SDKs, MCP server. Plugin **SDK 1.0** wire is frozen today — [Plugin policy](guides/plugin-policy.md). See [Platform roadmap](roadmap.md) ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)).
 >

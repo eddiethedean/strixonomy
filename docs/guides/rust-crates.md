@@ -4,12 +4,12 @@
 >
 > This page is a short CLI-oriented index. For VS Code only, see [Strixonomy VS Code extension](../ide/vscode-extension.md).
 
-**Strixonomy** is the Rust semantic workspace engine: `strixonomy` CLI, `strixonomy-*` crates on [crates.io](https://crates.io/search?q=strixonomy), and `strixonomy-lsp` (bundled in the VS Code extension).
+**Strixonomy** is the Rust semantic workspace engine: `strixonomy` CLI, `strixonomy-*` crates on [crates.io](https://crates.io/search?q=ontocore), and `strixonomy-lsp` (bundled in the VS Code extension).
 
 ## Quick start
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.27.0
+cargo install ontocore-cli --locked --version 0.26.2
 strixonomy query /path/to/ontologies "SELECT * FROM classes"
 strixonomy validate /path/to/ontologies
 ```
@@ -39,7 +39,7 @@ strixonomy validate /path/to/ontologies
 | Crate map | [strixonomy/crate-map.md](../strixonomy/crate-map.md) |
 | `Workspace` example | [`examples/strixonomy_workspace.rs`](https://github.com/eddiethedean/strixonomy/blob/main/examples/strixonomy_workspace.rs) |
 
-Primary dependency: `strixonomy = "0.27"`.
+Primary dependency: `ontocore = "0.26"`.
 
 ## Related
 

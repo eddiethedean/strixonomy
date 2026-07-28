@@ -2,7 +2,7 @@
 
 Master index for Strixonomy / Strixonomy planning, architecture, and user documentation.
 
-**Latest tagged release:** v0.27.0 · **Canonical capabilities:** [What ships today](SHIPPED.md) · **Limits:** [Known limitations](known-limitations.md) · **Terms:** [Glossary](glossary.md)
+**Latest tagged release:** v0.26.2 · **Canonical capabilities:** [What ships today](SHIPPED.md) · **Limits:** [Known limitations](known-limitations.md) · **Terms:** [Glossary](glossary.md)
 
 The public site navigation is defined in [`mkdocs.yml`](https://github.com/eddiethedean/strixonomy/blob/main/mkdocs.yml). This page is a reading-order map — not a second nav.
 
@@ -65,16 +65,16 @@ Deep planning docs (`docs/ui/`, `docs/platform/`, `docs/cursor-prompts/`, `docs/
 
 | Document | Purpose | Audience | Status |
 |----------|---------|----------|--------|
-| [SHIPPED.md](SHIPPED.md) | Canonical capability matrix | All | Shipped v0.27 |
+| [SHIPPED.md](SHIPPED.md) | Canonical capability matrix | All | Shipped v0.26 |
 | [known-limitations.md](known-limitations.md) | Honest limits | All | Active |
 | [glossary.md](glossary.md) | Canonical terminology | All | Active |
 | [roadmap-hub.md](roadmap-hub.md) | Which roadmap doc to read | All | Active |
 | [roadmap.md](roadmap.md) | Platform release plan | All | Active |
 | [design/adr/README.md](design/adr/README.md) | Engineering ADRs | Contributor | Active |
-| [architecture.md](architecture.md) | User-facing ecosystem overview | Evaluator | Shipped v0.27 |
+| [architecture.md](architecture.md) | User-facing ecosystem overview | Evaluator | Shipped v0.26 |
 | [vision.md](vision.md) | Mission and direction | Evaluator | Active |
 | [engineering.md](engineering.md) | Pointer to GitHub engineering corpus | Implementer | Active |
-| [platform/OVERVIEW.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI / platform (GitHub) | Implementer | Shipped v0.27 |
+| [platform/OVERVIEW.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI / platform (GitHub) | Implementer | Shipped v0.26 |
 
 ---
 

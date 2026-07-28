@@ -15,7 +15,7 @@ Strixonomy was previously branded **OntoIndex** (`ontoindex` CLI, `ontoindex-*` 
 
 **Is the API stable?**
 
-Pre-1.0. Published crates are at **0.27.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin versions in CI with `cargo install strixonomy-cli --locked --version 0.27.0`. See [API stability](guides/api-stability.md). Upgrading from **0.17.x**? See [v0.18 migration](migration/v0.18.md). Upgrading from **0.16.x**? See [v0.17 migration](migration/v0.17.md). Upgrading from **0.15.x**? See [v0.16 migration](migration/v0.16.md). Upgrading from **0.14.x** (or earlier)? Start at the [migration index](migration/README.md). The `validate` and `classify` exit codes are documented in [workspace-limits.md](workspace-limits.md).
+Pre-1.0. Published crates are at **0.26.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases until v1.0. Pin versions in CI with `cargo install ontocore-cli --locked --version 0.26.2`. See [API stability](guides/api-stability.md). Upgrading from **0.17.x**? See [v0.18 migration](migration/v0.18.md). Upgrading from **0.16.x**? See [v0.17 migration](migration/v0.17.md). Upgrading from **0.15.x**? See [v0.16 migration](migration/v0.16.md). Upgrading from **0.14.x** (or earlier)? Start at the [migration index](migration/README.md). The `validate` and `classify` exit codes are documented in [workspace-limits.md](workspace-limits.md).
 
 **What ships in the current release?**
 
@@ -25,13 +25,13 @@ See [What ships today](SHIPPED.md) for the canonical capability matrix.
 
 **Is Strixonomy production-ready?**
 
-**Pilot-ready for many OWL/OBO workflows in VS Code and CI** — not a full Protégé replacement for every profile. Use [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md) for the capability matrix, [Production readiness](guides/production-readiness.md) for pilot vs production tiers, and [Protégé decision guide](guides/protege-decision.md) for gap analysis. Pin releases in CI (`--version 0.27.0`) and review [API stability](guides/api-stability.md) before embedding Rust libraries.
+**Pilot-ready for many OWL/OBO workflows in VS Code and CI** — not a full Protégé replacement for every profile. Use [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md) for the capability matrix, [Production readiness](guides/production-readiness.md) for pilot vs production tiers, and [Protégé decision guide](guides/protege-decision.md) for gap analysis. Pin releases in CI (`--version 0.26.2`) and review [API stability](guides/api-stability.md) before embedding Rust libraries.
 
 ## Installation
 
 **Which version should I install?**
 
-Pin to the tagged release in [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.27.0**). See [Versions and channels](guides/versions-and-channels.md) for Marketplace vs GitHub Releases vs crates.io vs Read the Docs `latest`.
+Pin to the tagged release in [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.26.2**). See [Versions and channels](guides/versions-and-channels.md) for Marketplace vs GitHub Releases vs crates.io vs Read the Docs `latest`.
 
 **Why might Marketplace lag GitHub Releases?**
 
@@ -57,11 +57,11 @@ The `fixtures/` directory exists only in a git clone. Use your own ontology path
 strixonomy query /path/to/your/ontologies "SELECT * FROM classes"
 ```
 
-See [Install CLI & CI (detail)](install-cli-ci.md). Always pin with `--version 0.27.0` in CI so you do not surprise-upgrade.
+See [Install CLI & CI (detail)](install-cli-ci.md). Always pin with `--version 0.26.2` in CI so you do not surprise-upgrade.
 
 **Do I need Rust to use VS Code?**
 
-No. Install the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or a release VSIX. The language server is bundled.
+No. Install the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or a release VSIX. The language server is bundled.
 
 **Can I install without cargo?**
 
@@ -99,7 +99,7 @@ Since **v0.10**, the language server indexes **all workspace folders** on open. 
 
 - Check **Output → Strixonomy Language Server** and uninstall duplicate Strixonomy versions.
 - Strixonomy’s **bundled** language server works in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
-- Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install strixonomy-lsp --locked --version 0.27.0`) when debugging a custom build — trusted workspaces only.
+- Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install ontocore-lsp --locked --version 0.26.2`) when debugging a custom build — trusted workspaces only.
 - See [vscode-install.md](vscode-install.md) and [Troubleshooting](troubleshooting.md) (symptom table).
 
 **Does `strixonomy.autoIndexOnOpen` do anything?**

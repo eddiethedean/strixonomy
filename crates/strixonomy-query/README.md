@@ -7,7 +7,7 @@ SQL-like virtual tables and SPARQL query engine for [Strixonomy](https://github.
 ## Install
 
 ```toml
-strixonomy-query = "0.27"
+strixonomy-query = "0.26"
 ```
 
 ## Quick example

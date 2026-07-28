@@ -54,8 +54,8 @@ Download tutorial files without cloning:
 
 ```bash
 mkdir strixonomy-tutorial && cd strixonomy-tutorial
-curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/example.ttl
-curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/complex-classes.ttl
+curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/example.ttl
+curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/complex-classes.ttl
 ```
 
 ## VS Code tutorial

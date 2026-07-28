@@ -13,7 +13,7 @@ This is the **canonical tutorial** for new Strixonomy users. You do not need to 
 
 **VS Code:** Extensions → search **Strixonomy** (`strixonomy.strixonomy`) → **Install** → reload if prompted.
 
-**Cursor:** install from [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy).
+**Cursor:** install from [Open VSX](https://open-vsx.org/extension/ontocode/ontocode).
 
 For offline VSIX installs, see [Install VS Code](../vscode-install.md).
 
@@ -25,23 +25,23 @@ For offline VSIX installs, see [Install VS Code](../vscode-install.md).
 
     ```bash
     mkdir strixonomy-tutorial && cd strixonomy-tutorial
-    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/example.ttl
-    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/complex-classes.ttl
-    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/examples/obo-workflow/demo.obo
+    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/example.ttl
+    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/complex-classes.ttl
+    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/examples/obo-workflow/demo.obo
     ```
 
 === "Windows (PowerShell)"
 
     ```powershell
     mkdir strixonomy-tutorial; cd strixonomy-tutorial
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/example.ttl -OutFile example.ttl
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/complex-classes.ttl -OutFile complex-classes.ttl
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/examples/obo-workflow/demo.obo -OutFile demo.obo
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/example.ttl -OutFile example.ttl
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/fixtures/complex-classes.ttl -OutFile complex-classes.ttl
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.26.2/examples/obo-workflow/demo.obo -OutFile demo.obo
     ```
 
-**Offline pack:** Prefer the curl/PowerShell commands above when you have network access. For offline sample files, download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) from the [v0.27.0 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0), unzip, and **File → Open Folder…**. For offline extension install, download `strixonomy-v0.27.0.vsix` from that Release. Alternatively open `fixtures/` from a clone.
+**Offline pack:** Prefer the curl/PowerShell commands above when you have network access. For offline sample files, download [`ontocode-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.26.2/ontocode-tutorial.zip) from the [v0.26.2 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.26.2), unzip, and **File → Open Folder…**. For offline extension install, download `ontocode-v0.26.2.vsix` from that Release. Alternatively open `fixtures/` from a clone.
 
-Or browse [v0.27.0 fixtures](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures).
+Or browse [v0.26.2 fixtures](https://github.com/eddiethedean/strixonomy/tree/v0.26.2/fixtures).
 
 !!! tip "Workspace Trust"
     The **bundled** language server works in Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.

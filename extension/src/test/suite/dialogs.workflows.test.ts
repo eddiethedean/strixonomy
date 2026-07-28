@@ -49,7 +49,9 @@ interface StrixonomyTestApi {
 }
 
 function fixturesDir(): string {
-  const fromEnv = process.env.ONTOCODE_TEST_FIXTURES;
+  const fromEnv =
+    process.env.STRIXONOMY_TEST_FIXTURES ??
+    process.env.ONTOCODE_TEST_FIXTURES;
   if (fromEnv) {
     return fromEnv;
   }

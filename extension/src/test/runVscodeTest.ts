@@ -10,6 +10,7 @@ async function main(): Promise<void> {
   const extensionRoot = path.resolve(__dirname, "..", "..");
   const extensionTestsPath = path.resolve(__dirname, "suite", "index");
   const fixturesPath =
+    process.env.STRIXONOMY_TEST_FIXTURES ??
     process.env.ONTOCODE_TEST_FIXTURES ??
     path.resolve(extensionRoot, "..", "fixtures");
   const version = process.env.VSCODE_VERSION ?? "stable";
@@ -20,27 +21,31 @@ async function main(): Promise<void> {
   // Isolated user-data dir avoids "another instance of Code is running" when a
   // previous e2e host is still alive, and keeps capture runs reproducible.
   const userDataDir =
+    process.env.STRIXONOMY_VSCODE_USER_DATA ??
     process.env.ONTOCODE_VSCODE_USER_DATA ??
     path.join(
       extensionRoot,
       ".vscode-test",
-      process.env.ONTOCODE_CAPTURE_SCREENSHOTS === "1"
+      (process.env.STRIXONOMY_CAPTURE_SCREENSHOTS ??
+        process.env.ONTOCODE_CAPTURE_SCREENSHOTS) === "1"
         ? "user-data-screenshots"
         : "user-data"
     );
   fs.mkdirSync(userDataDir, { recursive: true });
 
   const extensionTestsEnv: Record<string, string> = {
+    STRIXONOMY_TEST_FIXTURES: fixturesPath,
     ONTOCODE_TEST_FIXTURES: fixturesPath,
   };
-  for (const key of [
-    "ONTOCODE_CAPTURE_SCREENSHOTS",
-    "ONTOCODE_SCREENSHOT_DIR",
-    "ONTOCODE_CAPTURE_SCRIPT",
+  for (const [primary, legacy] of [
+    ["STRIXONOMY_CAPTURE_SCREENSHOTS", "ONTOCODE_CAPTURE_SCREENSHOTS"],
+    ["STRIXONOMY_SCREENSHOT_DIR", "ONTOCODE_SCREENSHOT_DIR"],
+    ["STRIXONOMY_CAPTURE_SCRIPT", "ONTOCODE_CAPTURE_SCRIPT"],
   ] as const) {
-    const value = process.env[key];
+    const value = process.env[primary] ?? process.env[legacy];
     if (value) {
-      extensionTestsEnv[key] = value;
+      extensionTestsEnv[primary] = value;
+      extensionTestsEnv[legacy] = value;
     }
   }
 

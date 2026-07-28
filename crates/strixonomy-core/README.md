@@ -7,7 +7,7 @@ Core types, workspace scanner, path sandboxing, and resource limits for [Strixon
 ## Install
 
 ```toml
-strixonomy-core = "0.27"
+strixonomy-core = "0.26"
 ```
 
 ## Documentation

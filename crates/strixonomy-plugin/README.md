@@ -11,7 +11,7 @@ Plugin host for Strixonomy:
 - Provider actions: validate, export, workflow, UI view, reasoner, query, refactor, graph
 
 ```toml
-strixonomy-plugin = "0.27"
+strixonomy-plugin = "0.26"
 ```
 
 Enable via the `strixonomy` façade feature:
@@ -24,4 +24,4 @@ Reserved future kinds (`editor`, `language_service`, `tool_window`) and AI provi
 
 Historical design notes only (do not implement from): [PLUGIN_SPEC.md](../../docs/design/PLUGIN_SPEC.md).
 
-**Current crate version: 0.27.0 (SDK 1.0 surface)**
+**Current crate version: 0.26.2 (SDK 1.0 surface)**

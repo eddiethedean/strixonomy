@@ -34,7 +34,7 @@ Start with **[Architecture tour](guides/architecture-tour.md)** (~15 min) for a 
 ### LSP / custom editor integrators
 
 1. [LSP hello world](guides/lsp-hello-world.md) — minimal stdio client
-2. [LSP API reference](lsp-api.md) — shipped methods through the current tagged release (**v0.27**)
+2. [LSP API reference](lsp-api.md) — shipped methods through the current tagged release (**v0.26**)
 3. Do **not** use [design/LSP_SPEC.md](design/LSP_SPEC.md) for current behavior (future target)
 
 ## Start here for contributors

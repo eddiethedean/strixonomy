@@ -7,7 +7,7 @@ Semantic ontology diff for [Strixonomy](https://github.com/eddiethedean/strixono
 ## Install
 
 ```toml
-strixonomy-diff = "0.27"
+strixonomy-diff = "0.26"
 ```
 
 ## Quick example

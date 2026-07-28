@@ -39,7 +39,7 @@ After 1.0, the roadmap shifts from parity to modernization.
 | [PRODUCT_ROADMAP_2.0.md](docs/ui/PRODUCT_ROADMAP_2.0.md) | UI phases with milestone acceptance criteria |
 | [ui/README.md](docs/ui/README.md) | Product design specification pack (UX, design system, OntoStudio target) |
 
-**Current release:** v0.27.0
+**Current release:** v0.26.2
 
 ---
 
@@ -48,8 +48,8 @@ After 1.0, the roadmap shifts from parity to modernization.
 ### Timeline
 
 ```text
-SHIPPED (v0.1–v0.27) ─────────────────────────────────────────────────►
-v0.1–v0.4          v0.5–v0.8              v0.9–v0.12           v0.13–v0.27
+SHIPPED (v0.1–v0.26) ─────────────────────────────────────────────────►
+v0.1–v0.4          v0.5–v0.8              v0.9–v0.12           v0.13–v0.26
 Engine foundation    IDE depth                Platform & authoring   OntoUI → formats → OWL 2
   │                    │                        │                      │
   Foundation           Query, reason,           Identity, diff,      UX shell + semantic txn
@@ -59,12 +59,11 @@ Engine foundation    IDE depth                Platform & authoring   OntoUI → 
                                                                        + refactor/DL Query (v0.24)
                                                                        + viz/SDK/a11y/CI (v0.25)
                                                                        + Protégé test port (v0.26)
-                                                                       + Strixonomy rename (v0.27)
 
-PLANNED (1.0.0-rc → 1.0) ─────────────────────────────────────────────►
-1.0.0-rc               1.0.0
-Stabilize              Protégé replacement
-All P0 VERIFIED        Full parity ship
+PLANNED (v0.27 → 1.0) ────────────────────────────────────────────────►
+v0.27                  1.0.0-rc            1.0.0
+Strixonomy rename      Stabilize            Protégé replacement
+Package migration      All P0 VERIFIED      Full parity ship
 
 WEBAPP PATH (post-1.2) ───────────────────────────────────────────────►
 v1.3                 v1.4                    v1.5+
@@ -85,7 +84,7 @@ Web foundation       Team workspaces          Cloud collaboration
 | **C — Platform & authoring** | v0.9–v0.12 | Shipped | OntoCore identity, semantic workspace, authoring parity |
 | **D — OntoUI platform** | v0.13–v0.14 | Shipped | v0.13: WorkspaceStore, focus relay; v0.14: plugin host MVP |
 | **E — Desktop UX shell gate** | v0.15–v0.18 | Shipped | Menus, layouts, workflows, migration readiness (not full parity) |
-| **F — Full Protégé parity path** | v0.19–v0.27 | Shipped through v0.27 | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename |
+| **F — Full Protégé parity path** | v0.19–v0.27 | Shipped through v0.26 (v0.27 next) | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename |
 | **G — Protégé replacement** | 1.0.0 | Planned | Daily OWL/OBO engineering without Protégé |
 | **H — Ecosystem** | v1.1–v1.2 | Planned | SDKs, AI, toolchain & collaboration |
 | **I — Webapp platform** | v1.3–v1.5+ | Planned | Browser-first ontology engineering: hosted webapp, React app (no backend) via WASM, team workspaces, cloud collaboration |
@@ -118,7 +117,7 @@ Web foundation       Team workspaces          Cloud collaboration
 | 24 | v0.24 | F | Shipped | 3†, 6† | Refactoring + DL Query parity |
 | 25 | v0.25 | F | Shipped | 4†, 8† | Viz + plugin SDK 1.0 + a11y + parity CI |
 | 26 | v0.26 | F | Shipped | — | Protégé Desktop JUnit behavioral test port (Waves 1–4) |
-| 27 | v0.27 | F | Shipped | — | Rename OntoCore and OntoCode to Strixonomy |
+| 27 | v0.27 | F | Planned | — | Rename OntoCore and OntoCode to Strixonomy |
 | 28 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
 | 29 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
 | 30 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
@@ -681,11 +680,9 @@ See [migration/v0.26.md](docs/migration/v0.26.md) and [SHIPPED.md](docs/SHIPPED.
 
 ---
 
-### v0.27 — Strixonomy rename (shipped)
+### v0.27 — Strixonomy rename (planned)
 
-**Released:** v0.27.0 (2026-07-27)
-
-**Theme:** Rename the OntoCore Rust engine and OntoCode VS Code extension to **Strixonomy**.
+**Theme:** Rename the OntoCore Rust engine and OntoCode VS Code extension to **Strixonomy** before the 1.0 identity and APIs are frozen.
 
 | Area | Deliverables |
 |------|--------------|
@@ -694,7 +691,7 @@ See [migration/v0.26.md](docs/migration/v0.26.md) and [SHIPPED.md](docs/SHIPPED.
 | **VS Code extension** | Publish **Strixonomy for VS Code** under the Strixonomy publisher and extension identity; rename the activity-bar surface, commands, settings, view IDs, context keys, walkthroughs, icons, Marketplace/Open VSX metadata, telemetry-free diagnostics, and bundled server assets |
 | **Compatibility** | Keep time-bounded `ontocore` crate/binary shims or migration packages where registries permit; accept legacy settings and workspace locations with deprecation messages; migrate saved webview state, plugin manifests, command invocations, and CI examples |
 | **Distribution** | Reserve and verify GitHub, crates.io, npm, Marketplace, Open VSX, documentation, domain, and release-artifact namespaces before public cutover; document extension-listing migration and supply-chain ownership |
-| **Documentation** | Add a v0.27 migration guide and mechanical rename table; update current product/install documentation while retaining historical release notes; `docs/TAGGED_RELEASE` and install pins set to **0.27.0** on the ship commit (tag the same day) |
+| **Documentation** | Add a v0.27 migration guide and mechanical rename table; update current product/install documentation while retaining historical release notes; do not bump `docs/TAGGED_RELEASE` or version-pinned download URLs until the matching tag and artifacts are ready |
 | **Verification** | Add clean-install, v0.26-upgrade, CLI compatibility, LSP launch, extension-state migration, plugin compatibility, package publication dry-run, and stale-identifier audits to CI |
 
 **Exit criteria:**

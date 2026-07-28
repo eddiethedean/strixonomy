@@ -1,6 +1,6 @@
 # Production readiness and pilot criteria
 
-This page states what Strixonomy **v0.27.0** (latest tagged) is appropriate for in production-like environments. It is not legal advice and does not replace your organization's risk review.
+This page states what Strixonomy / Strixonomy **v0.26.2** (latest tagged) is appropriate for in production-like environments. It is not legal advice and does not replace your organization's risk review.
 
 Canonical capability matrix: [What ships today](../SHIPPED.md). Follow-on pilot weeks: [Enterprise week-2 playbook](enterprise-week-2.md).
 
@@ -8,16 +8,16 @@ Canonical capability matrix: [What ships today](../SHIPPED.md). Follow-on pilot 
 
 | Level | Version | Meaning |
 |-------|---------|---------|
-| **Pre-1.0** | **0.27.x (latest tagged)** | Pin `cargo install strixonomy-cli --locked --version 0.27.0` in CI. Library APIs may change until [v1.0](../design/v1.0_BACKLOG.md). |
-| **Stable CI gates** | 0.27.x | `strixonomy validate`, `strixonomy classify`, `strixonomy realize`, `strixonomy check-instance`, and `strixonomy diff` are documented for CI — see [workspace limits](../workspace-limits.md). |
+| **Pre-1.0** | **0.26.x (latest tagged)** | Pin `cargo install ontocore-cli --locked --version 0.26.2` in CI. Library APIs may change until [v1.0](../design/v1.0_BACKLOG.md). |
+| **Stable CI gates** | 0.26.x | `strixonomy validate`, `strixonomy classify`, `strixonomy realize`, `strixonomy check-instance`, and `strixonomy diff` are documented for CI — see [workspace limits](../workspace-limits.md). |
 | **In development** | Next unreleased minor on `main` | May preview upcoming work — pin installs to [TAGGED_RELEASE](../TAGGED_RELEASE), not workspace `Cargo.toml`. |
 | **v1.0 target** | Planned | Protégé-competitive OWL 2 DL + OBO in VS Code — [Protégé vs Strixonomy](protege-decision.md); capability truth: [SHIPPED](../SHIPPED.md) + [known limitations](../known-limitations.md). |
 
-Strixonomy **v0.27** is suitable for pilot IDE editing, Linux CI validate/classify/realize/dl-query, and coexistence with Protégé — **not** an org-wide Protégé retirement. RDF/XML and OWL/XML write-back are semantic re-serialize (ships since v0.21). Realization, instance checking, and SWRL (DLSafe + classify materialize) ship since v0.23. Query Workbench **DL** mode / `strixonomy dl-query` ships in v0.24 — see honesty notes in [DL Query vs Query Workbench](dl-query.md) (not full Protégé DL Query tab parity).
+Strixonomy **v0.26** is suitable for pilot IDE editing, Linux CI validate/classify/realize/dl-query, and coexistence with Protégé — **not** an org-wide Protégé retirement. RDF/XML and OWL/XML write-back are semantic re-serialize (ships since v0.21). Realization, instance checking, and SWRL (DLSafe + classify materialize) ship since v0.23. Query Workbench **DL** mode / `strixonomy dl-query` ships in v0.24 — see honesty notes in [DL Query vs Query Workbench](dl-query.md) (not full Protégé DL Query tab parity).
 
 ## Approved use cases (pilot or production)
 
-| Use case | v0.27 readiness | Notes |
+| Use case | v0.26 readiness | Notes |
 |----------|-----------------|-------|
 | CI lint gate on ontology repos | **Suitable** | `strixonomy validate` — [CI integration](../ci-integration.md) |
 | CI consistency gate (EL profile) | **Suitable** | `strixonomy classify --profile el` — profile must match ontology |
@@ -50,7 +50,7 @@ Suggested pilot duration: **4–8 weeks** with 3–10 engineers on one ontology 
 
 ## What is stable enough for automation
 
-| Surface | Stability (v0.27 tagged) |
+| Surface | Stability (v0.26 tagged) |
 |---------|--------------------------|
 | `strixonomy validate` exit codes | Documented for CI |
 | `strixonomy classify` exit codes | Documented for CI |
@@ -61,17 +61,17 @@ Suggested pilot duration: **4–8 weeks** with 3–10 engineers on one ontology 
 | LSP `strixonomy/*` JSON | May change pre-1.0 |
 | Rust `strixonomy-*` crate APIs | May change pre-1.0 |
 
-Pin CLI version in CI: release binary with `VERSION=0.27.0` or `cargo install strixonomy-cli --locked --version 0.27.0`.
+Pin CLI version in CI: release binary with `VERSION=0.26.2` or `cargo install ontocore-cli --locked --version 0.26.2`.
 
 ## Support and incident response
 
-| Topic | v0.27 policy |
+| Topic | v0.26 policy |
 |-------|-------------|
 | Commercial support | **Not offered** — community / GitHub issues |
 | Security reports | [GitHub Security Advisories](https://github.com/eddiethedean/strixonomy/security/advisories/new) — not public issues |
 | Acknowledgment target | Within a few business days ([SECURITY.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/SECURITY.md)) |
 | Patch SLA | **No committed SLA** — track [GitHub Security Advisories](https://github.com/eddiethedean/strixonomy/security/advisories) for your version |
-| Supported versions | 0.27.x latest tagged; prior minors per [security policy](../security.md) |
+| Supported versions | 0.26.x latest tagged; prior minors per [security policy](../security.md) |
 
 Enterprises requiring contractual SLAs should treat Strixonomy as **internal OSS adoption** with your own escalation path to maintainers via GitHub.
 

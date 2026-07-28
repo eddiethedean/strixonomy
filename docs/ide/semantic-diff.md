@@ -72,7 +72,7 @@ Full flags: [CLI reference](../cli-reference.md#diff) · [migration v0.10](../mi
 Fail or annotate PRs when breaking ontology changes appear:
 
 ```yaml
-- run: cargo install strixonomy-cli --locked --version 0.27.0
+- run: cargo install ontocore-cli --locked --version 0.26.2
 - run: strixonomy diff --pr-summary main..HEAD
 ```
 

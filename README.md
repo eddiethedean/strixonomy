@@ -1,23 +1,25 @@
 # Strixonomy
 
-**Strixonomy** edits OWL/RDF/OBO ontologies in VS Code (**1.85+**). Install the [extension](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (publisher **Strixonomy**, id `strixonomy.strixonomy`), open a folder of `.ttl` / `.obo` / `.owl` files, and use the **Strixonomy** activity bar.
+> **Development version: v0.27.0 (unreleased).** This branch contains the Strixonomy rename. The latest public release remains **OntoCode/OntoCore v0.26.2**; use the published identifiers in the install table below until v0.27.0 is tagged and its artifacts exist.
 
-**Next:** [First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/) — no clone required.
+**Strixonomy** edits OWL/RDF/OBO ontologies in VS Code (**1.85+**). In the current tagged release, install [OntoCode](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) (publisher/id `ontocode.ontocode`); the new `strixonomy.strixonomy` identity ships with v0.27.0.
 
-**Current release: v0.27.0** · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy-vs.readthedocs.io/en/latest/)
+**Next:** [First success (~10 min)](https://ontocode-vs.readthedocs.io/en/latest/guides/first-success/) — no clone required.
+
+**Current release: v0.26.2** · [What ships today](https://ontocode-vs.readthedocs.io/en/latest/SHIPPED/) · [Changelog](CHANGELOG.md) · [Docs](https://ontocode-vs.readthedocs.io/en/latest/)
 
 [![CI](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml/badge.svg)](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](https://github.com/eddiethedean/strixonomy/blob/main/LICENSE-MIT)
-[![Docs](https://readthedocs.org/projects/strixonomy-vs/badge/?version=latest)](https://strixonomy-vs.readthedocs.io/en/latest/)
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
-[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
-[![crates.io](https://img.shields.io/crates/v/strixonomy?logo=rust)](https://crates.io/crates/strixonomy)
+[![Docs](https://readthedocs.org/projects/ontocode-vs/badge/?version=latest)](https://ontocode-vs.readthedocs.io/en/latest/)
+[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/ontocode.ontocode.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode)
+[![Open VSX](https://img.shields.io/open-vsx/v/ontocode/ontocode)](https://open-vsx.org/extension/ontocode/ontocode)
+[![crates.io](https://img.shields.io/crates/v/ontocore?logo=rust)](https://crates.io/crates/ontocore)
 
 ![Strixonomy product tour](docs/assets/screenshots/product-tour.gif)
 
 ## Start here
 
-**Primary path:** Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)**.
+**Primary path:** Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) → **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)**.
 
 | I want to… | Start here |
 |------------|------------|
@@ -43,10 +45,10 @@ Full documentation: **[Read the Docs](https://strixonomy-vs.readthedocs.io/en/la
 
 | Install | Command / link |
 |---------|----------------|
-| **VS Code extension** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) `strixonomy-v0.27.0.vsix` |
+| **VS Code extension** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) `ontocode-v0.26.2.vsix` |
 | **CLI (Linux x64)** | Release tarball — full steps: [CI integration](https://strixonomy-vs.readthedocs.io/en/latest/ci-integration/) |
-| **CLI (macOS/Windows)** | `cargo install strixonomy-cli --locked --version 0.27.0` (Rust 1.88+; 15–30+ min cold) — [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/) |
-| **Crates** | [`strixonomy`](https://crates.io/crates/strixonomy) on [crates.io](https://crates.io/search?q=strixonomy) |
+| **CLI (macOS/Windows)** | `cargo install ontocore-cli --locked --version 0.26.2` (Rust 1.88+; 15–30+ min cold) — [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/) |
+| **Crates** | [`strixonomy`](https://crates.io/crates/ontocore) on [crates.io](https://crates.io/search?q=ontocore) |
 
 Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`.
 
@@ -58,7 +60,7 @@ Evaluators: use [What ships today](https://strixonomy-vs.readthedocs.io/en/lates
 
 ## Quick start
 
-**VS Code:** Install [Strixonomy](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → open a folder of **`.ttl` / `.obo` / `.owl` / `.rdf` / `.owx`** (editable) or JSON-LD / TriG / N-Triples (browse/query only) → click the **Strixonomy** activity bar. Edit in the Entity Inspector. XML write-back is semantic re-serialize — see [OWL/XML and RDF/XML write-back](https://strixonomy-vs.readthedocs.io/en/latest/guides/owl-xml-workflow/) and [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/).
+**VS Code:** Install [Strixonomy](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) → open a folder of **`.ttl` / `.obo` / `.owl` / `.rdf` / `.owx`** (editable) or JSON-LD / TriG / N-Triples (browse/query only) → click the **Strixonomy** activity bar. Edit in the Entity Inspector. XML write-back is semantic re-serialize — see [OWL/XML and RDF/XML write-back](https://strixonomy-vs.readthedocs.io/en/latest/guides/owl-xml-workflow/) and [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/).
 
 > **Workspace Trust:** The **bundled** language server works in Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
 
@@ -68,7 +70,7 @@ Evaluators: use [What ships today](https://strixonomy-vs.readthedocs.io/en/lates
 - **macOS/Windows or from source:** [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/). Cold `cargo install` may take **15–30+ minutes** (Rust 1.88+).
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.27.0
+cargo install ontocore-cli --locked --version 0.26.2
 strixonomy validate /path/to/ontologies
 ```
 
@@ -95,7 +97,7 @@ cargo run -- validate fixtures
 
 Platform docs: [Vision](https://strixonomy-vs.readthedocs.io/en/latest/vision/) · [Architecture](ARCHITECTURE.md) · [Roadmap hub](https://strixonomy-vs.readthedocs.io/en/latest/roadmap-hub/) · [Protégé vs Strixonomy](https://strixonomy-vs.readthedocs.io/en/latest/guides/protege-decision/)
 
-**v0.27.0** adds Protégé-aligned edit/hierarchy oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy support. **Not a Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/), [v0.26 migration](docs/migration/v0.26.md).
+**v0.26.2** adds Protégé-aligned edit/hierarchy oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy support. **Not a Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/), [v0.26 migration](docs/migration/v0.26.md).
 
 ## Development
 

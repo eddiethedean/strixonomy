@@ -18,6 +18,21 @@ if [[ -z "$TAGGED_VERSION" ]]; then
   exit 1
 fi
 TAGGED_MINOR="${TAGGED_VERSION%.*}"
+MINOR_VERSION="${VERSION%.*}"
+
+# During the v0.27 identity cut, the latest tagged v0.26 artifacts still use
+# OntoCore/OntoCode names. Public pins must follow the tagged artifact identity,
+# while workspace/package checks continue to use Strixonomy.
+TAGGED_FACADE="strixonomy"
+TAGGED_OWL="strixonomy-owl"
+TAGGED_TUTORIAL="strixonomy-tutorial.zip"
+TAGGED_RTD_PROJECT="strixonomy-vs"
+if [[ "$VERSION" != "$TAGGED_VERSION" ]] && [[ -f docs/migration/v0.27.md ]]; then
+  TAGGED_FACADE="ontocore"
+  TAGGED_OWL="ontocore-owl"
+  TAGGED_TUTORIAL="ontocode-tutorial.zip"
+  TAGGED_RTD_PROJECT="ontocode-vs"
+fi
 
 echo "Checking documentation for workspace ${VERSION} (latest tagged: ${TAGGED_VERSION})..."
 
@@ -104,7 +119,6 @@ else
   echo "ok: extension lockfile version matches package.json"
 fi
 check_file_contains "docs/guides/enterprise-eval.md" "v${TAGGED_VERSION}" "enterprise eval version"
-MINOR_VERSION="${VERSION%.*}"
 check_file_contains "SECURITY.md" "${TAGGED_MINOR}\.x" "SECURITY.md tagged supported version"
 if [[ "$VERSION" != "$TAGGED_VERSION" ]]; then
   check_file_contains "SECURITY.md" "${MINOR_VERSION}\.x.*unreleased" "SECURITY.md unreleased workspace version note"
@@ -112,7 +126,7 @@ fi
 check_file_contains "docs/release-integrity.md" "VERSION=${TAGGED_VERSION}" "release-integrity example version"
 check_file_contains "docs/TAGGED_RELEASE" "${TAGGED_VERSION}" "TAGGED_RELEASE file"
 check_file_contains "mkdocs.yml" "site_url: https://strixonomy-vs.readthedocs.io/" "mkdocs site_url matches RTD"
-check_file_contains "README.md" "readthedocs.org/projects/strixonomy-vs/badge" "RTD docs badge slug"
+check_file_contains "README.md" "readthedocs.org/projects/${TAGGED_RTD_PROJECT}/badge" "RTD docs badge slug"
 
 # Reference page titles must match latest tagged release (public install target)
 for file in docs/authoring.md docs/sql-reference.md docs/sparql-reference.md docs/patch-reference.md docs/cli-reference.md docs/errors.md; do
@@ -563,8 +577,8 @@ fi
 
 check_file_contains "docs/guides/production-readiness.md" "${TAGGED_MINOR}\.x \\(latest tagged\\)" "production-readiness tagged minor"
 check_file_contains "docs/strixonomy/index.md" "v${TAGGED_VERSION}" "ontocore index tagged version"
-check_file_contains "docs/strixonomy/rust-api.md" "strixonomy = \"${TAGGED_MINOR}\"" "rust-api version pin"
-check_file_contains "docs/strixonomy/crate-map.md" "strixonomy = \"${TAGGED_MINOR}\"" "crate-map version pin"
+check_file_contains "docs/strixonomy/rust-api.md" "${TAGGED_FACADE} = \"${TAGGED_MINOR}\"" "rust-api version pin"
+check_file_contains "docs/strixonomy/crate-map.md" "${TAGGED_FACADE} = \"${TAGGED_MINOR}\"" "crate-map version pin"
 check_file_contains "docs/ide/manage-imports.md" "Manage Imports" "manage-imports guide"
 check_file_contains "mkdocs.yml" "ide/manage-imports.md" "mkdocs manage-imports guide"
 check_file_contains "mkdocs.yml" "migration/v0.14.md" "mkdocs v0.14 migration guide"
@@ -584,7 +598,7 @@ check_file_contains "mkdocs.yml" "documentation-index.md" "mkdocs documentation 
 check_file_contains "mkdocs.yml" "guides/plugins.md" "mkdocs plugins guide in Contribute"
 check_file_contains "mkdocs.yml" "known-limitations.md" "mkdocs known limitations"
 check_file_contains "mkdocs.yml" "Reference:" "mkdocs Reference tab"
-check_file_contains "docs/guides/rust-crates.md" "strixonomy = \"${TAGGED_MINOR}\"" "rust-crates version pin"
+check_file_contains "docs/guides/rust-crates.md" "${TAGGED_FACADE} = \"${TAGGED_MINOR}\"" "rust-crates version pin"
 
 # Stale protege-coexistence version banner
 if grep -qE 'evaluating Strixonomy \*\*v0\.6\*\*|v0\.6 support' docs/guides/protege-coexistence.md; then
@@ -872,7 +886,7 @@ else
   echo "ok: no stale v0.14–v0.16 release tag references"
 fi
 check_file_contains "docs/install-cli-ci.md" "latest \\*\\*v${TAGGED_MINOR}\\.x\\*\\* tag" "install-cli-ci Path D current tag"
-check_file_contains "docs/guides/which-artifact.md" "strixonomy = \"${TAGGED_MINOR}\"" "which-artifact crate pin"
+check_file_contains "docs/guides/which-artifact.md" "${TAGGED_FACADE} = \"${TAGGED_MINOR}\"" "which-artifact crate pin"
 check_file_contains "docs/guides/api-stability.md" "Published crates use \\*\\*${TAGGED_MINOR}\\.x\\*\\*" "api-stability published crates minor"
 check_file_contains "docs/ci-integration.md" "VERSION=${TAGGED_VERSION}" "ci-integration release binary pin"
 check_file_contains "docs/faq.md" "version ${TAGGED_VERSION}" "faq CI version pin"
@@ -1055,12 +1069,12 @@ for file in docs/vision.md VISION.md; do
     fail=1
   fi
 done
-if ! grep -qF "what ships in **v${VERSION%.*}**" docs/vision.md 2>/dev/null || \
-   ! grep -qF "what ships in **v${VERSION%.*}**" VISION.md 2>/dev/null; then
-  echo "FAIL: docs/vision.md and VISION.md must say what ships in v${VERSION%.*}" >&2
+if ! grep -qF "what ships in **v${TAGGED_MINOR}**" docs/vision.md 2>/dev/null || \
+   ! grep -qF "what ships in **v${TAGGED_MINOR}**" VISION.md 2>/dev/null; then
+  echo "FAIL: docs/vision.md and VISION.md must say what ships in tagged v${TAGGED_MINOR}" >&2
   fail=1
 else
-  echo "ok: vision banner sync v${VERSION%.*}"
+  echo "ok: vision banner sync tagged v${TAGGED_MINOR}"
 fi
 
 check_file_contains "docs/glossary.md" "\\*\\*Implemented\\*\\* \\(v${TAGGED_MINOR}\\)" "glossary OntoCore/Strixonomy version"
@@ -1361,7 +1375,7 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
     else
       echo "ok: rust-library strixonomy-owl pin not stale"
     fi
-    check_file_contains "docs/guides/rust-library.md" "strixonomy-owl = \"${TAGGED_MINOR}\"" "rust-library strixonomy-owl pin"
+    check_file_contains "docs/guides/rust-library.md" "${TAGGED_OWL} = \"${TAGGED_MINOR}\"" "rust-library tagged OWL crate pin"
     check_file_contains "docs/cli-reference.md" "plugins info" "cli-reference plugins info"
     check_file_contains "docs/cli-reference.md" "plugins enable" "cli-reference plugins enable"
     if grep -qE 'DL Query UI → \*\*v0\.2[0-9]\*\*|DL Query UI → \*\*v0\.25\*\*' docs/guides/protege-coexistence.md docs/guides/protege-migration.md 2>/dev/null; then
@@ -1404,8 +1418,8 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
     else
       echo "ok: faq/architecture plugin stability wording"
     fi
-    if ! grep -qiE 'strixonomy-tutorial\.zip' docs/vscode-install.md 2>/dev/null; then
-      echo "FAIL: docs/vscode-install.md must mention strixonomy-tutorial.zip" >&2
+    if ! grep -qiF "${TAGGED_TUTORIAL}" docs/vscode-install.md 2>/dev/null; then
+      echo "FAIL: docs/vscode-install.md must mention ${TAGGED_TUTORIAL}" >&2
       fail=1
     else
       echo "ok: vscode-install tutorial zip"

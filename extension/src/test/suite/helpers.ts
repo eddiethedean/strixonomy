@@ -3,7 +3,9 @@ import * as vscode from "vscode";
 
 /** Fixture workspace path (set by runVscodeTest / CI). */
 export function fixturesWorkspaceUri(): string {
-  const fromEnv = process.env.ONTOCODE_TEST_FIXTURES;
+  const fromEnv =
+    process.env.STRIXONOMY_TEST_FIXTURES ??
+    process.env.ONTOCODE_TEST_FIXTURES;
   if (fromEnv) {
     return vscode.Uri.file(fromEnv).toString();
   }

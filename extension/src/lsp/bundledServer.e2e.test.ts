@@ -57,7 +57,10 @@ describe("bundledServer e2e", () => {
   });
 
   it("spawns from unpacked VSIX extension root when ONTOCODE_E2E_EXTENSION_ROOT is set", async (t) => {
-    const extensionRoot = process.env.ONTOCODE_E2E_EXTENSION_ROOT?.trim();
+    const extensionRoot = (
+      process.env.STRIXONOMY_E2E_EXTENSION_ROOT ??
+      process.env.ONTOCODE_E2E_EXTENSION_ROOT
+    )?.trim();
     if (!extensionRoot) {
       t.skip("ONTOCODE_E2E_EXTENSION_ROOT not set");
       return;

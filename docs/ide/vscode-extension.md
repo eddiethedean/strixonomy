@@ -1,7 +1,7 @@
 # Strixonomy VS Code extension
 
-[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
+[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/ontocode/ontocode)
+[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode)
 
 **Strixonomy** is the VS Code ontology IDE powered by **Strixonomy**. It provides the explorer sidebar, Entity Inspector, Query Workbench, Manchester editor, graph panels, reasoner views, and inline diagnostics.
 
@@ -11,7 +11,7 @@ The extension talks to the bundled **Strixonomy LSP** (`strixonomy-lsp`) — you
 
 ## Quick start
 
-1. Install Strixonomy from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor).
+1. Install Strixonomy from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) or [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor).
 2. Open a folder with `.ttl`, `.obo`, `.owl`, or other ontology files. Bundled language server works in Restricted Mode — **Trust** only if you set custom `strixonomy.lspPath` or `strixonomy.robotPath`.
 3. Open the **Strixonomy** activity bar → **Classes** → click an entity.
 

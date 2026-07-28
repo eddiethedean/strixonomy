@@ -7,20 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.27.0] - 2026-07-27
-
-**For pilots / adopters:** product identity rename — **OntoCore** / **OntoCode** → **Strixonomy**. Primary crates, CLI, LSP, extension, and docs use Strixonomy names; legacy identifiers remain in a compatibility window through at least 1.0. No format write-back regression vs v0.26.2 — [migration/v0.27.md](docs/migration/v0.27.md).
-
 ### Changed
 
-- **Strixonomy rename:** OntoCore / OntoCode product identity → **Strixonomy** across Rust crates (`strixonomy` / `strixonomy-*`), CLI (`strixonomy`, deprecated `ontocore` alias), LSP (`strixonomy-lsp`, deprecated `ontocore-lsp` alias; methods `strixonomy/*` with legacy `ontocore/*`), VS Code extension (`strixonomy.strixonomy`), workspace config (`.strixonomy/` with dual-read of `.ontocore/` / `.ontocode/`), docs, and CI. See [migration/v0.27.md](docs/migration/v0.27.md) and [ADR-0022](docs/design/adr/0022-strixonomy-identity.md).
-- Workspace package and all `strixonomy-*` crates bumped to **0.27.0**; extension and webview UI **0.27.0**; thin crates.io compat façade `ontocore` still re-exports `strixonomy`
-
-### Added
-
-- Path dual-read for `.strixonomy/` vs legacy `.ontocore/` / `.ontocode/`
-- Extension settings/state migration from `ontocode.*` on first activate
-- Rename audit script `scripts/check-strixonomy-rename.sh` in CI
+- **Strixonomy rename (v0.27):** OntoCore / OntoCode product identity → **Strixonomy** across Rust crates (`strixonomy` / `strixonomy-*`), CLI (`strixonomy`, deprecated `ontocore` alias), LSP (`strixonomy-lsp`, deprecated `ontocore-lsp` alias; methods `strixonomy/*` with legacy `ontocore/*`), VS Code extension (`strixonomy.strixonomy`), workspace config (`.strixonomy/` with dual-read of `.ontocore/` / `.ontocode/`), docs, and CI. See [migration/v0.27.md](docs/migration/v0.27.md) and [ADR-0022](docs/design/adr/0022-strixonomy-identity.md).
 
 ## [0.26.2] - 2026-07-17
 

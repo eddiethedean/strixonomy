@@ -209,11 +209,15 @@ export function createStrixonomyTestHooks(): StrixonomyTestHooks {
     },
 
     async captureScreenshot(name: string): Promise<void> {
-      const script = process.env.ONTOCODE_CAPTURE_SCRIPT;
-      const dir = process.env.ONTOCODE_SCREENSHOT_DIR;
+      const script =
+        process.env.STRIXONOMY_CAPTURE_SCRIPT ??
+        process.env.ONTOCODE_CAPTURE_SCRIPT;
+      const dir =
+        process.env.STRIXONOMY_SCREENSHOT_DIR ??
+        process.env.ONTOCODE_SCREENSHOT_DIR;
       if (!script || !dir) {
         throw new Error(
-          "ONTOCODE_CAPTURE_SCRIPT and ONTOCODE_SCREENSHOT_DIR must be set"
+          "STRIXONOMY_CAPTURE_SCRIPT and STRIXONOMY_SCREENSHOT_DIR must be set"
         );
       }
       const safe = name.replace(/[^a-zA-Z0-9._-]/g, "_");

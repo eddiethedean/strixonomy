@@ -13,7 +13,9 @@ const REPO_ROOT = (() => {
 })();
 
 export function resolveLspBinaryForTests(): string {
-  const fromEnv = process.env.ONTOCORE_LSP_BIN?.trim();
+  const fromEnv = (
+    process.env.STRIXONOMY_LSP_BIN ?? process.env.ONTOCORE_LSP_BIN
+  )?.trim();
   if (fromEnv && fs.existsSync(fromEnv)) {
     return fromEnv;
   }
@@ -29,7 +31,7 @@ export function resolveLspBinaryForTests(): string {
   }
 
   throw new Error(
-    "strixonomy-lsp binary not found; run `cargo build -p strixonomy-lsp --bins` or set ONTOCORE_LSP_BIN"
+    "strixonomy-lsp binary not found; run `cargo build -p strixonomy-lsp --bins` or set STRIXONOMY_LSP_BIN"
   );
 }
 

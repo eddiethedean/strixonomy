@@ -8,6 +8,15 @@ cd "$ROOT"
 
 ALLOW_REGEX='(scripts/check-strixonomy-rename\.sh|scripts/check-doc-versions\.sh|scripts/parity_|scripts/check-parity|parity/|examples/protege-roundtrip/|tests/protege_port_|docs/migration/|docs/design/adr/0018|docs/design/adr/0022|docs/design/v0\.27|docs/changelog|CHANGELOG\.md|crates/compat/|ontocode\.dev/ns#swrlRule|OntoIndex|historical|superseded|deprecated|compat window|legacy|Legacy OntoCore|OntoCore →|OntoCode →|OntoCore name|OntoCore/Strixonomy|migratedFromOntoCode|fromOntoCode|migration/v0\.|PRE_1_0|ROADMAP\.md|docs/roadmap\.md|docs/protege-parity/|docs/PROTEGE_REVERSE|docs/design/v0\.|mutants\.|site/|target/|Cargo\.lock|node_modules|extension/(dist|out)/|webview-ui/dist|\.git/|LICENSE|name = "ontocore"|name = "ontocore-lsp"|argv0|warn_if_legacy|dual-read|dual.bin|compatibility|abbreviate_string)'
 
+WORKSPACE_VERSION="$(sed -nE 's/^version = "([^"]+)"/\1/p' Cargo.toml | head -1)"
+TAGGED_VERSION="$(tr -d '[:space:]' < docs/TAGGED_RELEASE)"
+if [[ "$WORKSPACE_VERSION" != "$TAGGED_VERSION" ]]; then
+  # Before the v0.27 tag exists, public install/shipped surfaces must continue
+  # to name the real v0.26 OntoCode/OntoCore artifacts. Code and manifests are
+  # still audited against the Strixonomy primary identity below.
+  ALLOW_REGEX="${ALLOW_REGEX%?}|docs/SHIPPED\\.md|latest tagged|[Cc]urrent tagged|latest public release|published extension|v0\\.26\\.2|marketplace\\.visualstudio\\.com|open-vsx\\.org|crates\\.io)"
+fi
+
 FAIL=0
 
 check_pattern() {

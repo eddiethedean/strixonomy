@@ -1,6 +1,6 @@
 # Publishing Strixonomy to the VS Code Marketplace
 
-Strixonomy is on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy). This checklist is for maintainers publishing new versions.
+Strixonomy is on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode). This checklist is for maintainers publishing new versions.
 
 !!! warning "CI does not publish to VS Code Marketplace"
     The [release workflow](https://github.com/eddiethedean/strixonomy/blob/main/.github/workflows/release.yml) publishes **Open VSX** automatically when `OVSX_PAT` is set. **VS Code Marketplace** requires a **manual** `vsce publish` step **after** the release tag and automated artifacts are complete.
@@ -72,6 +72,6 @@ ovsx publish dist/strixonomy-v0.12.0.vsix -p "$OVSX_PAT"
 
 ### After Open VSX publish
 
-1. Verify listing at [open-vsx.org/extension/strixonomy/strixonomy](https://open-vsx.org/extension/strixonomy/strixonomy) (badge: `https://img.shields.io/open-vsx/v/strixonomy/strixonomy`)
+1. Verify listing at [open-vsx.org/extension/ontocode/ontocode](https://open-vsx.org/extension/ontocode/ontocode) (badge: `https://img.shields.io/open-vsx/v/strixonomy/strixonomy`)
 2. Confirm Cursor Extensions search finds **Strixonomy**
 3. Document Cursor install path in [vscode-install.md](vscode-install.md) Option E

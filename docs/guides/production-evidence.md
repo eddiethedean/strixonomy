@@ -14,7 +14,7 @@ Canonical limits: [workspace limits](../workspace-limits.md). Pilot criteria: [p
 
 ## Prerequisites
 
-- Pin Strixonomy **0.27.0** — `cargo install strixonomy-cli --locked --version 0.27.0` or release binary with SHA256 verification — [release integrity](../release-integrity.md)
+- Pin Strixonomy **0.26.2** — `cargo install ontocore-cli --locked --version 0.26.2` or release binary with SHA256 verification — [release integrity](../release-integrity.md)
 - A **representative clone** of your production ontology tree (not sanitized tutorial data)
 - Record host OS, CPU, RAM, and CI runner specs
 

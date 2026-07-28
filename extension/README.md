@@ -1,15 +1,17 @@
 # Strixonomy
 
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
-[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
+> **Development version: v0.27.0 (unreleased).** The published extension remains `ontocode.ontocode` v0.26.2 until the Strixonomy Marketplace/Open VSX listing is live.
+
+[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/ontocode.ontocode.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode)
+[![Open VSX](https://img.shields.io/open-vsx/v/ontocode/ontocode)](https://open-vsx.org/extension/ontocode/ontocode)
 
 **Ontology IDE for VS Code** — browse and edit Turtle/OBO/RDF/XML/OWL/XML, query, reason, validate, and diff. **Not a full Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) and [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/).
 
-**Current release: v0.27.0**
+**Current release: v0.26.2**
 
 ## Start here
 
-1. Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor).
+1. Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) or [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor).
 2. Follow **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)** on Read the Docs (sample files + edit `Person`).
 
 You do **not** need to Trust the workspace for the default bundled language server.

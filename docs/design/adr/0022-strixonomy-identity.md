@@ -14,7 +14,7 @@ v0.9 renamed OntoIndex → OntoCore with **no** compatibility aliases. v0.27 mus
 
 1. **Strixonomy** is the primary brand for the Rust semantic workspace engine and the VS Code IDE.
 2. Publish crates as **`strixonomy`** / **`strixonomy-*`**; binaries **`strixonomy`** and **`strixonomy-lsp`**; LSP methods **`strixonomy/*`**; extension id **`strixonomy.strixonomy`**.
-3. Through at least **1.0**, dual-read legacy surfaces: `ontocore/*` LSP methods, `ontocode.*` settings/commands (via migration), `.ontocore/` / `.ontocode/` paths, deprecated CLI/LSP binary aliases (`ontocore`, `ontocore-lsp`). Emit actionable deprecation warnings.
+3. Through at least **1.0**, dual-read legacy surfaces: `ontocore/*` LSP methods, migrated `ontocode.*` settings, forwarding `ontocode.*` command aliases, `.ontocore/` / `.ontocode/` paths, and deprecated CLI/LSP binary aliases (`ontocore`, `ontocore-lsp`). Emit actionable deprecation warnings. VS Code Memento state is private to an extension ID, so the new listing cannot directly read Memento-only state owned by `ontocode.ontocode`; the migration guide documents that limitation.
 4. Publish thin crates.io compat packages only for **`ontocore`** (façade re-export), with legacy binary aliases shipped from the primary CLI/LSP packages. Direct `ontocore-*` implementation dependencies migrate via the rename table — no 22-crate shim farm.
 5. **Not renamed:** Ontologos (separate reasoner product); stored ontology IRIs such as `http://ontocode.dev/ns#swrlRule` (data compatibility).
 6. ADR-0018 remains historical for the OntoIndex → OntoCore cut; brand identity going forward is this ADR.

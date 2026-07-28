@@ -22,7 +22,7 @@ CLI equivalent: `strixonomy classify <workspace> --profile dl`.
 ## Install
 
 ```toml
-strixonomy-reasoner = "0.27"
+strixonomy-reasoner = "0.26"
 ```
 
 ## Profiles

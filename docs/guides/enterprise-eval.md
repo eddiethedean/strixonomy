@@ -1,6 +1,6 @@
 # Evaluating Strixonomy for your organization
 
-This page helps security, platform, and ontology teams decide whether Strixonomy **v0.27.0** (latest tagged) fits your workflow. It is honest about **what ships today** vs the v1.0 Protégé-competitive target.
+This page helps security, platform, and ontology teams decide whether Strixonomy **v0.26.2** (latest tagged) fits your workflow. It is honest about **what ships today** vs the v1.0 Protégé-competitive target.
 
 Canonical capability matrix: [What ships today](../SHIPPED.md).
 
@@ -34,7 +34,7 @@ Prefer Protégé or other tools (or wait for product **1.0**) if you need any of
 | [Protégé coexistence](protege-coexistence.md) | Ontology teams — split workflow with Protégé |
 | [Plugin authoring](plugins.md) | Platform — Plugin SDK 1.0 (frozen wire, lifecycle, providers); see [Plugin policy](plugin-policy.md) |
 
-## What ships today (v0.27.0)
+## What ships today (v0.26.2)
 
 Use the canonical matrix: **[What ships today](../SHIPPED.md)**. Do not maintain a second capability table here — it drifts.
 
@@ -90,7 +90,7 @@ A [first-week Protégé migration guide](protege-migration.md) ships today. Roun
 
 ## Evaluation checklist
 
-1. Install from [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or offline VSIX
+1. Install from [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or offline VSIX
 2. Complete [First success in 10 minutes](first-success.md) on a representative `.ttl` project
 3. Run the [production evidence protocol](production-evidence.md) on your corpus
 4. Run `strixonomy validate` and optionally `strixonomy classify --profile el` or `--profile dl` in a test CI job ([ci-integration.md](../ci-integration.md))

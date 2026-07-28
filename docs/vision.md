@@ -1,6 +1,6 @@
 # Modernizing the Ontology Ecosystem
 
-> **Long-term vision.** For what ships in **v0.27**, see [What ships today](SHIPPED.md). **Protégé replacement is the 1.0 goal — not supported for org-wide retirement today.** Use [Protégé decision guide](guides/protege-decision.md) and [Known limitations](known-limitations.md) for current gaps. Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) today; a curated marketplace and production owlmake integration remain **product 1.0** goals — [Plugin policy](guides/plugin-policy.md).
+> **Long-term vision.** For what ships in **v0.26**, see [What ships today](SHIPPED.md). **v0.27 is in progress (unreleased)** and contains the Strixonomy rename. **Protégé replacement is the 1.0 goal — not supported for org-wide retirement today.** Use [Protégé decision guide](guides/protege-decision.md) and [Known limitations](known-limitations.md) for current gaps. Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) today; a curated marketplace and production owlmake integration remain **product 1.0** goals — [Plugin policy](guides/plugin-policy.md).
 
 ## Mission
 

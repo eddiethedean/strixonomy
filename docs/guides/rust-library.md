@@ -1,13 +1,13 @@
 # Using Strixonomy as a Rust library
 
-Embed **Strixonomy** in tools, pipelines, or custom CLIs via the [`strixonomy`](https://crates.io/crates/strixonomy) façade crate from **crates.io**. You do **not** need to clone this repository.
+Embed **Strixonomy** in tools, pipelines, or custom CLIs via the [`strixonomy`](https://crates.io/crates/ontocore) façade crate from **crates.io**. You do **not** need to clone this repository.
 
 > Strixonomy (previously branded **OntoIndex** / `ontoindex-*`) is implemented by the `strixonomy-*` crates. See [v0.9 migration](../migration/v0.9.md).
 
-Pre-1.0: public APIs may change between minor releases until v1.0. Pin minors in production. Crates are at **0.27.x**.
+Pre-1.0: public APIs may change between minor releases until v1.0. Pin minors in production. Crates are at **0.26.x**.
 
 !!! tip "Prefer `Workspace`"
-    For new code, use the **`Workspace` API** (`strixonomy = "0.27"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../strixonomy/rust-api.md).
+    For new code, use the **`Workspace` API** (`ontocore = "0.26"`). Lower-level `IndexBuilder` remains available for specialized pipelines — see [Rust API](../strixonomy/rust-api.md).
 
 ## crates.io first (5 minutes)
 
@@ -16,7 +16,7 @@ Pre-1.0: public APIs may change between minor releases until v1.0. Pin minors in
 
 ```toml
 [dependencies]
-strixonomy = "0.27"
+ontocore = "0.26"
 ```
 
 3. Point `Workspace::open` at **your** ontology directory (any folder of `.ttl` / `.obo` / other indexed formats):
@@ -46,14 +46,14 @@ Method-level params / returns / side effects: [Rust API — Workspace methods](.
 
 ```toml
 [dependencies]
-strixonomy = "0.27"
+ontocore = "0.26"
 ```
 
 **Classify + explain** (same crate — reasoner is included):
 
 ```toml
 [dependencies]
-strixonomy = "0.27"
+ontocore = "0.26"
 ```
 
 ```rust
@@ -68,9 +68,9 @@ let result = ws.classify(ReasonerId::El)?;
 
 ```toml
 [dependencies]
-strixonomy = "0.27"
-strixonomy-edit = "0.27"
-strixonomy-owl = "0.27"
+ontocore = "0.26"
+strixonomy-edit = "0.26"
+ontocore-owl = "0.26"
 ```
 
 See [Semantic transactions](#semantic-transactions-strixonomy-edit) below.
@@ -157,7 +157,7 @@ let txn = Transaction::from_turtle(vec![
 let undo = txn.invert()?;
 ```
 
-Dependency: `strixonomy-edit = "0.27"`. Full API: [Rust API — semantic transactions](../strixonomy/rust-api.md#semantic-transactions-strixonomy-edit-v019) · [docs.rs/strixonomy-edit](https://docs.rs/strixonomy-edit).
+Dependency: `strixonomy-edit = "0.26"`. Full API: [Rust API — semantic transactions](../strixonomy/rust-api.md#semantic-transactions-strixonomy-edit-v019) · [docs.rs/strixonomy-edit](https://docs.rs/strixonomy-edit).
 
 ## Next steps
 
