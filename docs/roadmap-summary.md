@@ -31,11 +31,11 @@ Strixonomy’s forward roadmap is organized around independently valuable user o
 |--------|----------|
 | **v0.29** | Trustworthy projects: conformance, recovery, cross-platform confidence, performance budgets |
 | **v0.30** | Fast daily authoring: cohesive entity workspace, reasoning flow, undo, migration |
-| **v0.31** | Large ontology productivity: scale, query depth, multi-format operations |
-| **v0.32** | Team review and enforceable semantic policy |
-| **v0.33** | Automated ontology delivery and production workflow plugins |
-| **v0.34** | Python/TypeScript SDKs and MCP integration platform |
-| **v0.35** | Explainable, preview-first assisted modeling |
+| **v0.31** | Large ontology productivity, plus DataFusion query and Tantivy search provider experiments |
+| **v0.32** | Team review and enforceable semantic policy through a Regorus provider |
+| **v0.33** | Automated delivery, dependable plugin management, and rudof/Typst/mdBook/owlmake adapters |
+| **v0.34** | Python/TypeScript/MCP integration, signed official registry, and WASI sandbox pilot |
+| **v0.35** | Explainable assisted modeling and a governed public plugin marketplace |
 | **v0.36** | Install-free browser workspace and WASM engine |
 | **v0.37** | Governed collaboration and semantic conflict resolution |
 | **v0.38+** | Enterprise deployment, security, portfolio operations, and measured scale |

@@ -17,7 +17,7 @@ The following modules are **documented and intended to stabilize** toward v0.30:
 | Semantic diff | `strixonomy-diff` | `DiffResult`, `format_diff_*` |
 | Docs export | `strixonomy-docs` | `export_workspace`, hierarchy/property renderers |
 | OWL / OBO patch | `strixonomy-owl`, `strixonomy-obo` | Patch op JSON shapes |
-| Plugin host (SDK 1.0 wire) | `strixonomy-plugin` | Manifest schema, `PluginHost` — wire frozen as SDK 1.0; marketplace/owlmake are planned for **v0.33** — [Plugin policy](plugin-policy.md) |
+| Plugin host (SDK 1.0 wire) | `strixonomy-plugin` | Manifest schema, `PluginHost` — wire frozen as SDK 1.0; manager/owlmake v0.33, official registry v0.34, public marketplace v0.35+ — [Plugin policy](plugin-policy.md) |
 
 **May still change v0.29–v0.30:** internal indexer modules, LSP field additions, webview `postMessage` types (ship with extension), SQL column additions (additive).
 

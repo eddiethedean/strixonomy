@@ -13,7 +13,7 @@ Strixonomy IDE (VS Code) ──strixonomy-lsp──► Strixonomy engine
                                               ├── Ontologos (EL / RL / RDFS / DL)
                                               └── Oxigraph / Horned-OWL
 Applications that ship today: VS Code extension · CLI · GitHub Actions (via CLI)
-Plugin SDK 1.0 wire (TOML + subprocess) ships; curated marketplace → v0.33
+Plugin SDK 1.0 wire (TOML + subprocess) ships; manager → v0.33; official registry → v0.34; marketplace → v0.35+
 ```
 
 | Layer | Role |
@@ -31,7 +31,7 @@ Curated plugin marketplace, production owlmake hardening, language SDKs, MCP ser
 Engineering-only trees (`docs/design/`, `docs/platform/`, `docs/ui/`) are targets or implementer notes — not the capability matrix.
 
 !!! note "Plugin platform"
-    Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Marketplace / production owlmake are planned for **v0.33** — [Plugin policy](guides/plugin-policy.md) · [Plugin authoring](guides/plugins.md).
+    Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Manager/owlmake, official registry, and public marketplace are planned for **v0.33**, **v0.34**, and **v0.35+** respectively — [Plugin policy](guides/plugin-policy.md) · [Plugin authoring](guides/plugins.md).
 
 ## Responsibilities
 
@@ -46,13 +46,13 @@ Reusable semantic workspace platform: index, query, diagnostics, refactoring, an
 **Plugin platform status:**
 
 - **Shipped (SDK 1.0):** frozen wire contract — workspace manifest discovery, reference plugins, CLI/LSP hooks, subprocess workflow runner, UI views/commands/preferences/context actions, lifecycle (`depends_on` / `activation`), provider actions (see [Plugin authoring](guides/plugins.md)).
-- **v0.30 targets:** curated marketplace/discovery and production owlmake hardening.
+- **v0.33 targets:** curated plugin discovery and a maintained EBISPOT/owlmake adapter.
 
 The engine is **not** a workflow engine; build, release, and QC automation should live in external tools and workflow plugins rather than becoming core engine dependencies.
 
 ### External workflow plugins (e.g. owlmake)
 
-**SDK 1.0 wire ships today; production workflow integration is planned for v0.33.** [owlmake](https://github.com/INCATools/owlmake) is the reference workflow plugin design — ROBOT/ODK-style pipelines without becoming a core Strixonomy dependency. Today, ROBOT interop is the `strixonomy robot` CLI wrapper plus the subprocess workflow scaffold.
+**SDK 1.0 wire ships today; production workflow integration is planned for v0.33.** [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) is the target for the maintained reference adapter—ROBOT/ODK-style pipelines without becoming a core Strixonomy dependency. Today, Strixonomy ships the ROBOT CLI wrapper and a generic subprocess workflow scaffold, not the owlmake adapter.
 
 ### Strixonomy IDE
 

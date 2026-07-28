@@ -4,7 +4,7 @@
 >
 > **Do not implement from this page.** Categories and manifest sketches below are overview/background. The shipped host uses `.strixonomy/plugins/*.toml` + subprocess entries (not native `.so` libraries).
 
-> **Status:** Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace and production owlmake integration are planned for **v0.33** goals. See [Plugin policy](../guides/plugin-policy.md).
+> **Status:** Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Dependable management and the owlmake adapter are planned for **v0.33**, the official registry for **v0.34**, and the public marketplace for **v0.35+**. See [Plugin policy](../guides/plugin-policy.md).
 
 The plugin system allows users and organizations to extend **Strixonomy** and **Strixonomy** without modifying the core project. **Plugins integrate with Strixonomy; they are not part of Strixonomy.**
 
@@ -21,7 +21,7 @@ Strixonomy (workspace engine + plugin host)
      └── External plugins (owlmake, validators, exporters, …)
 ```
 
-[owlmake](https://github.com/INCATools/owlmake) is the **reference external workflow plugin** — ROBOT/ODK-style build, QC, and release automation without becoming a core dependency.
+[EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) is the target for the **reference external workflow adapter** — ROBOT/ODK-style build, QC, and release automation without becoming a core dependency. The generic subprocess scaffold ships today; the maintained adapter is planned for v0.33.
 
 ## Plugin categories (overview — not an implementation contract)
 

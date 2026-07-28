@@ -33,7 +33,7 @@ Interactive editing does **not** need the CLI — use the [VS Code / Cursor exte
 
 ## Plugins and owlmake
 
-Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Production workflow integration and curated discovery are planned for **v0.33**. See [Plugin authoring](guides/plugins.md) and [Plugin policy](guides/plugin-policy.md).
+Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Production workflow integration and dependable management are planned for **v0.33**, the signed official registry for **v0.34**, and the public marketplace for **v0.35+**. See [Plugin authoring](guides/plugins.md) and [Plugin policy](guides/plugin-policy.md).
 
 ## API stability (v0.x)
 
@@ -61,7 +61,7 @@ Graphs may be **truncated** (badge in the Graph panel). Prefer narrower search, 
 - You need **JSON-LD / TriG / N-Triples write-back** — still read-only; use Turtle or convert.
 - You need **move / extract / ontology-merge refactor on non-Turtle files** — those operations stay Turtle-first (rename/merge/replace already multi-format). See [v0.24 migration](migration/v0.24.md).
 - You need **full SQL analytics** — use SPARQL or an external store.
-- You need a **curated plugin marketplace** or **production owlmake** without accepting the subprocess SDK — these are planned for **v0.33** — [Plugin policy](guides/plugin-policy.md) (wire contract is already frozen as SDK 1.0).
+- You need **production owlmake**, a **signed official registry**, or a **public plugin marketplace** without accepting the subprocess SDK — these are planned for **v0.33**, **v0.34**, and **v0.35+**, respectively — [Plugin policy](guides/plugin-policy.md) (wire contract is already frozen as SDK 1.0).
 - You need **WebProtégé-style collaboration** — governed collaboration is planned for **v0.37**.
 - You need **HermiT-identical** DL explanations or certified Protégé+HermiT equivalence — dual-tool checks remain recommended for critical audits.
 

@@ -78,7 +78,7 @@ External Workflow Plugins (not core)     owlmake · ROBOT/ODK adapters
 
 **Reasoning ([ADR-0015](adr/0015-adopt-ontologos-reasoner.md)):** `strixonomy-reasoner` delegates to [OntoLogos](https://github.com/eddiethedean/ontologos) crates (`ontologos-el`, `ontologos-rl`, `ontologos-dl`, etc.). OntoLogos **1.0.0** ships in Strixonomy v0.9 for DL/auto profiles.
 
-**Workflow plugins:** [owlmake](https://github.com/INCATools/owlmake) is the reference external workflow plugin — see [PLUGIN_SPEC.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md), [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md). Strixonomy does not embed workflow engines.
+**Workflow plugins:** [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) is the target for the planned v0.33 reference adapter—see [PLUGIN_SPEC.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md), [OBO_ROBOT_SPEC.md](OBO_ROBOT_SPEC.md). Strixonomy does not embed workflow engines.
 
 **Sync rule ([ADR-0013](adr/0013-dual-stack-oxigraph-horned-owl.md)):** Catalog entities/axioms for edit and diff come from Horned-OWL; triple counts and SPARQL from Oxigraph; CI consistency tests detect drift.
 

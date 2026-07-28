@@ -31,7 +31,7 @@ You do **not** need to Trust the workspace for the default bundled language serv
 
 ## Features (summary)
 
-Explorer, Entity Inspector, Query Workbench (SQL subset + SPARQL + DL), Manchester editor, graphs, reasoner (EL–DL profiles, realize / instance check), SWRL Rule Browser/Editor, semantic diff, Manage Imports, refactoring preview, Plugin SDK 1.0 (frozen wire — marketplace planned v0.33).
+Explorer, Entity Inspector, Query Workbench (SQL subset + SPARQL + DL), Manchester editor, graphs, reasoner (EL–DL profiles, realize / instance check), SWRL Rule Browser/Editor, semantic diff, Manage Imports, refactoring preview, Plugin SDK 1.0 (frozen wire — manager v0.33, official registry v0.34, marketplace v0.35+).
 
 Details: [Feature tour](https://strixonomy.readthedocs.io/en/latest/strixonomy/feature-tour/) · [Supported formats](https://strixonomy.readthedocs.io/en/latest/supported-formats/) · [Protégé vs Strixonomy](https://strixonomy.readthedocs.io/en/latest/guides/protege-decision/)
 

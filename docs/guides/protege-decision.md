@@ -5,7 +5,7 @@ Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, an
 !!! note "Non-goals today (v0.28.0)"
     - **WebProtégé-style collaboration** — out of scope until v0.31+
     - **Byte-identical Protégé OWL/XML / RDF/XML layout** — Strixonomy re-serializes for semantic fidelity ([ADR-0021](../design/adr/0021-deterministic-xml-serializers.md)); write-back itself **ships** in v0.21
-    - **Curated plugin marketplace / production owlmake** — Plugin SDK 1.0 freezes the wire contract today; production workflow integration is planned for **v0.33** — [Plugin policy](plugin-policy.md)
+    - **Plugin ecosystem / production owlmake** — Plugin SDK 1.0 freezes the wire contract today; owlmake and dependable management are planned for **v0.33**, the signed official registry for **v0.34**, and the public marketplace for **v0.35+** — [Plugin policy](plugin-policy.md)
     - **Language SDKs** (Python/TypeScript ontology clients) — embed via Rust `strixonomy`, CLI, or LSP instead
     - **Certified HermiT-identical results** — OntoLogos DL is not certified HermiT-identical; dual-tool check critical audits
 

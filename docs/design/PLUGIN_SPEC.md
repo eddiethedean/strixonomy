@@ -10,7 +10,7 @@ The plugin system allows users and organizations to extend Strixonomy and Strixo
 
 **Strixonomy hosts plugins; plugins are not part of Strixonomy.** Build, release, workflow orchestration, and toolchain-specific validation live in external plugins that integrate through stable Strixonomy APIs. Strixonomy provides the semantic workspace (index, query, diagnostics, refactoring, LSP); plugins add domain-specific automation on top.
 
-[owlmake](https://github.com/INCATools/owlmake) is the **reference external workflow plugin** — it demonstrates how ROBOT/ODK-style build, QC, and release pipelines integrate with Strixonomy without becoming a core dependency.
+[EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) is the target for the **reference external workflow adapter**. The adapter is planned for v0.33; the generic subprocess workflow host ships today.
 
 ## 2. Architecture
 
@@ -60,7 +60,7 @@ Version, tag, and publish ontology artifacts for releases.
 
 ### 3.3 Workflow plugins
 
-Orchestrate multi-step pipelines (ROBOT/ODK-style). **owlmake** is the reference implementation.
+Orchestrate multi-step pipelines (ROBOT/ODK-style). The planned **EBISPOT/owlmake adapter** is the reference integration.
 
 **Example capabilities:**
 
@@ -140,7 +140,7 @@ Future extension point for VS Code views or custom inspectors.
 
 ## 4. Reference external workflow plugin: owlmake
 
-[owlmake](https://github.com/INCATools/owlmake) is **not** a core Strixonomy dependency. It is the first reference plugin showing how external workflow tools integrate:
+[EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) is **not** a core Strixonomy dependency. The planned v0.33 adapter will be the first maintained reference showing how external workflow tools integrate:
 
 | Integration point | How owlmake uses Strixonomy |
 |-------------------|---------------------------|
@@ -210,7 +210,7 @@ pub trait WorkflowPlugin {
 }
 ```
 
-`WorkflowRequest` may specify `step` (`build`, `qc`, `release`, `report`), config path, and dry-run flag. **owlmake** implements this trait as the reference external workflow plugin.
+`WorkflowRequest` may specify `step` (`build`, `qc`, `release`, `report`), config path, and dry-run flag. The v0.33 adapter will translate these requests to EBISPOT/owlmake and return structured results through the frozen subprocess wire.
 
 ## 7. Stability
 

@@ -23,7 +23,7 @@
 | Strixonomy VS Code | [PRODUCT_DESIGN_SPECIFICATION.md](PRODUCT_DESIGN_SPECIFICATION.md) | **Shipped** — `extension/` + React `webview-ui/` |
 | Shared React UI | [COMPONENT_LIBRARY.md](COMPONENT_LIBRARY.md), [UX_PATTERNS.md](UX_PATTERNS.md) | **Partial** — per-panel React webviews; no shared WorkspaceStore yet |
 | OntoStudio desktop | [ONTOSTUDIO_DESKTOP.md](ONTOSTUDIO_DESKTOP.md) | **Planned** — post v0.30 |
-| Plugin platform | [PLUGIN_PLATFORM.md](PLUGIN_PLATFORM.md), [PLUGIN_API_SPEC.md](PLUGIN_API_SPEC.md) | **Planned** — v0.14 |
+| Plugin platform | [PLUGIN_PLATFORM.md](PLUGIN_PLATFORM.md), [PLUGIN_API_SPEC.md](PLUGIN_API_SPEC.md), [Plugin manager plan](../plugin-manager-plan.md) | Runtime shipped v0.14; manager v0.33; official registry v0.34; marketplace v0.35+ |
 | AI layer | [AI_EXPERIENCE.md](AI_EXPERIENCE.md), [AI_ORCHESTRATION_ARCHITECTURE.md](AI_ORCHESTRATION_ARCHITECTURE.md) | **Planned** — v0.35 ([ADR-0010](../design/adr/0010-ai-features-opt-in.md)) |
 
 ---
@@ -104,10 +104,10 @@ Every item from [PRODUCT_ROADMAP_2.0.md](PRODUCT_ROADMAP_2.0.md), with release a
 | **10** | Tauri app shell | Planned | v0.38+ | [ONTOSTUDIO_DESKTOP.md](ONTOSTUDIO_DESKTOP.md) |
 | **10** | Shared React UI | Partial | v0.13–v0.38+ | [COMPONENT_LIBRARY.md](COMPONENT_LIBRARY.md) |
 | **10** | Native graph performance | Planned | v0.31 | [GRAPH_RENDERING_ARCHITECTURE.md](GRAPH_RENDERING_ARCHITECTURE.md) |
-| **10** | Plugin marketplace | Planned | v0.33 | [PLUGIN_PLATFORM.md](PLUGIN_PLATFORM.md) |
+| **10** | Plugin marketplace | Planned | v0.35+ | [Plugin manager plan](../plugin-manager-plan.md) |
 | **10** | Local AI support | Planned | v0.35 | [AI_ORCHESTRATION_ARCHITECTURE.md](AI_ORCHESTRATION_ARCHITECTURE.md) |
 | **10** | Enterprise packaging | Planned | v0.38+ | [ONTOSTUDIO_DESKTOP.md](ONTOSTUDIO_DESKTOP.md) |
-| **11** | Public plugin registry | Planned | v0.33 | [PLUGIN_PLATFORM.md](PLUGIN_PLATFORM.md) |
+| **11** | Official signed plugin registry | Planned | v0.34 | [Plugin manager plan](../plugin-manager-plan.md) |
 | **11** | Documentation site | Shipped | v0.9+ | Read the Docs |
 | **11** | Sample domain plugins | Planned | v0.33 | [design/PLUGIN_SPEC.md](../design/PLUGIN_SPEC.md) |
 | **11** | Tutorials | Partial | ongoing | [first-success](../guides/first-success.md) |
@@ -193,6 +193,7 @@ Full list: [roadmap.md § v0.30](../roadmap.md)
 | Large-result filtering and virtualization | 3, 4 |
 | Progress, cancellation, and resource-budget UX | 3, 5 |
 | Multi-format refactor previews | 6 |
+| DataFusion query and Tantivy search provider experiments | 3, 8 |
 
 ### v0.32 — Team review and policy
 
@@ -202,15 +203,17 @@ Full list: [roadmap.md § v0.30](../roadmap.md)
 | Semantic PR summaries and impact graph | 9 |
 | GitHub Checks annotations and merge policy | 9 |
 | Reviewer notes, approvals, and evidence bundle | 9 |
+| Regorus-backed Rego policy findings | 8, 9 |
 
 ### v0.33 — Automated ontology delivery
 
 | Deliverable | UI phase |
 |-------------|----------|
 | Workflow/QC status dashboard | 8, 11 |
-| Plugin registry and permission review | 8, 10, 11 |
+| Plugin manager, scopes, lockfile, permission review, rollback, and quarantine | 8, 10, 11 |
 | Release pipeline logs and artifacts | 8, 11 |
 | Workflow templates | 11 |
+| rudof, Typst, mdBook, and EBISPOT/owlmake adapters | 8, 11 |
 
 ### v0.34 — Integration platform
 
@@ -219,6 +222,8 @@ Full list: [roadmap.md § v0.30](../roadmap.md)
 | Typed webview/client protocol package | 8 |
 | MCP context bridge and capability negotiation | 7, 8 |
 | Custom-editor integration examples | 11 |
+| Signed official registry and publisher verification | 8, 10, 11 |
+| Wasmtime/WASI sandbox pilot | 8 |
 
 ### v0.35 — Assisted modeling
 
@@ -228,6 +233,7 @@ Full list: [roadmap.md § v0.30](../roadmap.md)
 | Entity, query, graph, and reasoner explanations | 2, 3, 4, 7 |
 | Review and diagnostic repair proposals | 7, 9 |
 | Preview/approve/apply and provenance UX | 7, 8 |
+| Governed public marketplace and permission-change consent | 8, 10, 11 |
 
 ### v0.36 — Install-free ontology workspace
 

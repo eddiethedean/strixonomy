@@ -4,7 +4,7 @@
 >
 > **Shipped today:** OBO index + write-back, ROBOT CLI wrappers, OBO workflows — see [What ships today](../SHIPPED.md), [OBO workflows](../guides/obo-workflow.md), and [ROBOT interop](../guides/robot-interop.md). Historical P0 framing: [PROTEGE_PARITY.md](PROTEGE_PARITY.md).
 >
-> Strixonomy does **not** reimplement ROBOT or ODK — it wraps the official ROBOT CLI today and integrates external workflow plugins (such as [owlmake](https://github.com/INCATools/owlmake)) for future Java-free pipelines.
+> Strixonomy does **not** reimplement ROBOT or ODK — it wraps the official ROBOT CLI today and integrates external workflow plugins (such as [owlmake](https://github.com/EBISPOT/owlmake)) for future Java-free pipelines.
 
 ## 1. Purpose
 
@@ -16,7 +16,7 @@ Enable biomedical ontology maintainers to use Strixonomy as a **primary IDE** al
 |-------|----------------|--------|
 | **`strixonomy-robot`** | Thin wrapper around the official ROBOT Java CLI | **Shipped** (v0.7) |
 | **Strixonomy diagnostics** | Built-in lint and parse checks | **Shipped** |
-| **owlmake** (external) | Rust-native portable ROBOT/ODK-style workflows | **Reference plugin** (v0.33 integration target) |
+| **EBISPOT/owlmake** (external) | Portable ROBOT/ODK-style workflows | **Maintained adapter planned for v0.33** |
 | **Strixonomy core** | Does **not** reimplement ROBOT merge/template/report or ODK Makefile logic | By design |
 
 Strixonomy should integrate with the ontology toolchain, not absorb it. See [PLUGIN_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/PLUGIN_SPEC.md).
@@ -63,7 +63,7 @@ strixonomy robot report ./ontology --report report.tsv
 
 ## 5. owlmake — future external integration path
 
-[owlmake](https://github.com/INCATools/owlmake) provides **Rust-native, portable** ROBOT/ODK-style workflow execution. It is a **reference external workflow plugin**, not a core Strixonomy crate.
+[EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) provides portable ROBOT/ODK-style workflow execution. It is not a core Strixonomy crate. Strixonomy currently provides only the generic subprocess scaffold; a maintained adapter is planned for v0.33.
 
 ```text
 Strixonomy IDE

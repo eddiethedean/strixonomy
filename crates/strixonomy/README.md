@@ -41,7 +41,7 @@ for row in &result.rows {
 | **Strixonomy** (`strixonomy`, `strixonomy-*`) | Semantic workspace engine — this crate |
 | **Ontologos** | Reasoning engine (classification, consistency, explanations) |
 | **Strixonomy IDE** | VS Code extension powered by the Strixonomy engine |
-| **External plugins** (e.g. [owlmake](https://github.com/INCATools/owlmake)) | Workflow/build/release automation — integrate via Strixonomy plugin APIs, not core dependencies |
+| **External plugins** (e.g. [owlmake](https://github.com/EBISPOT/owlmake)) | Workflow/build/release automation — integrate via Strixonomy plugin APIs, not core dependencies |
 
 ## Features
 

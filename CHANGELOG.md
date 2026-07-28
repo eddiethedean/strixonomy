@@ -606,7 +606,7 @@ v0.23.0 — Reasoning parity + SWRL.
 - Release pipeline publishes `ontocore` façade; extended `check-doc-versions.sh`
 - **OntoLogos 1.0.0** integration — real `dl` and `auto` reasoner adapters (`ontocore-reasoner`)
 - DL/auto classification tests (library, CLI, LSP) and reasoner panel enablement in VS Code extension
-- Plugin platform design — [PLUGIN_SPEC.md](docs/design/PLUGIN_SPEC.md) with build/workflow/release plugin categories; [owlmake](https://github.com/INCATools/owlmake) as reference external workflow plugin
+- Plugin platform design — [PLUGIN_SPEC.md](docs/design/PLUGIN_SPEC.md) with build/workflow/release plugin categories; [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) as the target reference external workflow adapter
 - OBO/ROBOT spec — owlmake integration path and ODK workflow goals ([OBO_ROBOT_SPEC.md](docs/design/OBO_ROBOT_SPEC.md))
 
 ### Changed

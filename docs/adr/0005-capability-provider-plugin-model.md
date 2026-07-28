@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted — **shipped**; Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`). Curated discovery and production workflows are planned for **v0.33** — [Plugin policy](../guides/plugin-policy.md).
+Accepted — **shipped**; Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`). Dependable management/workflows, the official registry, and the public marketplace are planned for **v0.33**, **v0.34**, and **v0.35+** — [Plugin policy](../guides/plugin-policy.md).
 
 ## Context
 

@@ -170,6 +170,7 @@ nav:
       - Python package (PyPI reservation): guides/python-package.md
       - Rust & CLI guide: guides/rust-crates.md
       - Plugin authoring: guides/plugins.md
+      - Plugin manager plan: plugin-manager-plan.md
       - ROBOT interop: guides/robot-interop.md
       - Documentation export: guides/docs-export.md
       - Crate map: strixonomy/crate-map.md

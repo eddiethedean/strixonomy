@@ -17,7 +17,7 @@ Move Strixonomy beyond a VS Code ontology extension into a first-class semantic 
 - **Strixonomy**: VS Code extension experience.
 - **OntoUI** — Shared React UI platform ([platform/ONTOUI.md](../platform/ONTOUI.md)) — **v0.13 foundation shipped**
 - **OntoStudio**: Future standalone desktop application (**planned**).
-- **Plugin Platform**: Capability Provider ecosystem (**planned** v0.14).
+- **Plugin Platform**: Runtime shipped; management and ecosystem expansion planned for v0.33–v0.35+.
 - **AI Layer**: Context-aware semantic engineering assistant (**proposed** v0.35).
 - **Design System**: Shared UI/UX language.
 
@@ -34,10 +34,11 @@ Move Strixonomy beyond a VS Code ontology extension into a first-class semantic 
 7. `COMPONENT_INTERFACES.md`
 8. `EVENT_SEQUENCE_DIAGRAMS.md`
 9. `PLUGIN_API_SPEC.md`
-10. `AI_ORCHESTRATION_ARCHITECTURE.md`
-11. `GRAPH_RENDERING_ARCHITECTURE.md`
-12. `ACCESSIBILITY_SPEC.md`
-13. `KEYBOARD_SHORTCUTS.md`
+10. [`plugin-manager-plan.md`](../plugin-manager-plan.md)
+11. `AI_ORCHESTRATION_ARCHITECTURE.md`
+12. `GRAPH_RENDERING_ARCHITECTURE.md`
+13. `ACCESSIBILITY_SPEC.md`
+14. `KEYBOARD_SHORTCUTS.md`
 14. `TESTING_STRATEGY.md`
 15. `TELEMETRY_ANALYTICS.md`
 16. `PRODUCT_ROADMAP_2.0.md`

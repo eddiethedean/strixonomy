@@ -6,6 +6,7 @@
 > |-----|------|
 > | **This guide** | Canonical — ship plugins from here |
 > | [Plugin policy](plugin-policy.md) | SDK 1.0 compatibility / support stance |
+> | [Plugin manager plan](../plugin-manager-plan.md) | Planned install, lockfile, registry, trust, and marketplace behavior — not shipped |
 > | [plugin-model.md](../strixonomy/plugin-model.md) | Overview only — do not implement sketches |
 > | [ui/PLUGIN_API_SPEC.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_API_SPEC.md) | Future OntoUI host — **not** the shipped VS Code contract |
 > | [ui/PLUGIN_PLATFORM.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLUGIN_PLATFORM.md) | Future Capability Providers — **not** the shipped host |
@@ -209,7 +210,20 @@ Reference in-process plugins:
 | `org.example.demo-query` | query | Fixed tabular rows |
 | `org.example.demo-refactor` | refactor | Preview-only rename tip |
 | `org.example.demo-graph` | graph | Custom `graph_kind` seed IRIs |
-| `owlmake` (external) | workflow | Invoke [owlmake](https://github.com/INCATools/owlmake) from manifest `entry` |
+| `owlmake` (external) | workflow | Current manifest scaffold invokes an `owlmake` executable; a maintained [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) adapter is planned for v0.33 |
+
+Planned maintained integrations (not shipped):
+
+| Project | Target | Role and decision gate |
+|---------|--------|------------------------|
+| [DataFusion](https://github.com/apache/datafusion) | v0.31 experiment | Advanced analytical query provider; move into `strixonomy-query` if the provider boundary harms performance or coherent query planning |
+| [Tantivy](https://github.com/quickwit-oss/tantivy) | v0.31 experiment | Ranked multilingual entity-search provider; move into the engine if index lifecycle and latency require it |
+| [Regorus](https://github.com/microsoft/regorus) | v0.32 | Rego policy provider over semantic diff, catalog, and diagnostic facts |
+| [rudof](https://github.com/rudof-project/rudof) | v0.33 | SHACL, ShEx, and DCTAP validation/conversion adapter |
+| [Typst](https://github.com/typst/typst) | v0.33 | Publication-quality evidence and ontology reports |
+| [mdBook](https://github.com/rust-lang/mdBook) | v0.33 | Searchable documentation-site export |
+| [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) | v0.33 | Maintained ODK/ROBOT-style workflow adapter |
+| [Wasmtime](https://github.com/bytecodealliance/wasmtime) | v0.34 infrastructure | WASI sandbox runtime pilot; infrastructure, not an end-user plugin |
 
 ## CLI
 
@@ -225,6 +239,11 @@ strixonomy validate /path/to/workspace
 strixonomy docs /path/to/workspace -o out --plugin strixonomy.markdown-export
 strixonomy workflow --plugin owlmake --step qc /path/to/workspace
 ```
+
+The `owlmake` command is currently a generic subprocess scaffold, not a
+bundled EBISPOT/owlmake adapter. The v0.33 adapter must translate Strixonomy
+workflow requests into owlmake commands and return structured diagnostics,
+logs, and artifact paths through Plugin SDK 1.0.
 
 ## LSP / Strixonomy
 

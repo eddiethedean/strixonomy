@@ -21,6 +21,11 @@ plugin-workspace/
     owlmake.toml
 ```
 
+`owlmake.toml` demonstrates workflow manifest wiring only. It expects an
+`owlmake` executable on `PATH`; the maintained
+[EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) adapter is a planned
+v0.33 deliverable.
+
 ## Try it (git clone)
 
 ```bash

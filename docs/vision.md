@@ -1,6 +1,6 @@
 # Modernizing the Ontology Ecosystem
 
-> **Long-term vision.** For what ships in **v0.28**, see [What ships today](SHIPPED.md). **Protégé replacement is the v0.30 goal — not supported for org-wide retirement today.** Use [Protégé decision guide](guides/protege-decision.md) and [Known limitations](known-limitations.md) for current gaps. Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) today; a curated marketplace and production owlmake integration are planned for **v0.33** goals — [Plugin policy](guides/plugin-policy.md).
+> **Long-term vision.** For what ships in **v0.28**, see [What ships today](SHIPPED.md). **Protégé replacement is the v0.30 goal — not supported for org-wide retirement today.** Use [Protégé decision guide](guides/protege-decision.md) and [Known limitations](known-limitations.md) for current gaps. Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) today; dependable management and the owlmake adapter are planned for **v0.33**, the official registry for **v0.34**, and the public marketplace for **v0.35+** — [Plugin policy](guides/plugin-policy.md).
 
 ## Mission
 
@@ -23,7 +23,7 @@ Together they enable modern workflows including CI/CD, team collaboration on ver
 
 The **Strixonomy engine** is the **platform** — workspace indexing, query, diagnostics, refactoring, and **plugin hosting**. It does not absorb every tool in the ontology stack.
 
-**External workflow tools** integrate through Strixonomy's plugin APIs. [owlmake](https://github.com/INCATools/owlmake) is the first reference workflow plugin: it demonstrates ROBOT/ODK-style build, validation, and release automation **outside** Strixonomy, while the **Strixonomy IDE** surfaces those workflows. ROBOT and ODK remain the semantic standards for many operations; Strixonomy integrates with them rather than rewriting them.
+**External workflow tools** integrate through Strixonomy's plugin APIs. [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake) is the target for the first maintained reference workflow adapter: ROBOT/ODK-style build, validation, and release automation stays **outside** Strixonomy while the **Strixonomy IDE** surfaces it. The generic subprocess scaffold ships today; the adapter is planned for v0.33.
 
 - **Ontologos** — reasoning (classification, consistency, explanations).
 - **Strixonomy engine** — semantic workspace and plugin platform.

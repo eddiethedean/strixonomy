@@ -4,6 +4,8 @@
 >
 > **Do not implement from this page.** Canonical plugin authoring: [guides/plugins.md](../guides/plugins.md). Capability-provider sketches below describe a future OntoUI layer; the VS Code host today uses TOML manifests + subprocess plugins (shipped since v0.14).
 >
+> Plugin installation, locking, trust, registry, marketplace, and VS Code management UX are planned in [Plugin manager and registry specification](../plugin-manager-plan.md).
+>
 > See [ROADMAP_MAPPING.md](ROADMAP_MAPPING.md) for release mapping and [SHIPPED.md](../SHIPPED.md) for what works today.
 
 
@@ -226,7 +228,9 @@ No plugin should manipulate another plugin's data directly.
 
 # Marketplace
 
-Future marketplace features:
+Marketplace delivery is staged: dependable management in v0.33, the signed official
+registry in v0.34, and public discovery/publishing in v0.35+. The normative plan is
+[Plugin manager and registry specification](../plugin-manager-plan.md).
 
 -   Ratings
 -   Reviews

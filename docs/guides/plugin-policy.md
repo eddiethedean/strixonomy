@@ -1,6 +1,6 @@
 # Plugin SDK 1.0 compatibility policy
 
-Strixonomy ships **Plugin SDK 1.0** as a frozen TOML + subprocess JSON host (`api_version = "1"`) — safe to author against today. A curated marketplace, commercial support, and production owlmake integration are planned for **v0.33** goals. This page states the **product policy** — not how to author a plugin. For authoring, see [Plugin authoring](plugins.md).
+Strixonomy ships **Plugin SDK 1.0** as a frozen TOML + subprocess JSON host (`api_version = "1"`) — safe to author against today. Dependable plugin management and a maintained EBISPOT/owlmake adapter are planned for **v0.33**, the signed official registry for **v0.34**, and the governed public marketplace for **v0.35+**. This page states the **product policy** — not how to author a plugin. For authoring, see [Plugin authoring](plugins.md); for the staged management plan, see [Plugin manager and registry specification](../plugin-manager-plan.md).
 
 ## Support stance
 
@@ -10,7 +10,7 @@ Strixonomy ships **Plugin SDK 1.0** as a frozen TOML + subprocess JSON host (`ap
 | Marketplace / app store | **None** — no curated marketplace SLA |
 | Compatibility promise | Within major version **1.x**, the wire contract (`api_version = "1"`) is **additive**; breaking removals require a new major |
 | Security review | Third-party plugins run as **subprocesses** with declared permissions — treat untrusted plugins as untrusted code |
-| Stability target | **SDK 1.0** freezes the wire contract for authoring today; curated discovery and production workflows are planned for **v0.33** — see [API stability](api-stability.md) |
+| Stability target | **SDK 1.0** freezes the wire contract for authoring today; management/workflows are v0.33, the official registry is v0.34, and the public marketplace is v0.35+ — see [API stability](api-stability.md) |
 
 ## What must not change in 1.x
 

@@ -101,11 +101,11 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy
 | 28 | v0.28 | F | Shipped | — | Reserve the `strixonomy` Python package identity and establish packaging/release ownership |
 | 29 | v0.29 | G | Planned | 0, 5, 8 | Trustworthy projects: release hardening, recovery, conformance |
 | 30 | v0.30 | G | Planned | 1, 2, 4, 5, 6 | Fast daily authoring: cohesive editing, reasoning, and undo |
-| 31 | v0.31 | G | Planned | 3, 4, 6 | Large ontology productivity: scale, query depth, multi-format operations |
-| 32 | v0.32 | G | Planned | 9 | Team review: semantic change review and enforceable CI policy |
-| 33 | v0.33 | H | Planned | 8, 11 | Automated delivery: ODK/ROBOT/owlmake workflows and plugin discovery |
-| 34 | v0.34 | H | Planned | 8, 11 | Integration platform: Python/TypeScript SDKs and MCP |
-| 35 | v0.35 | H | Planned | 2, 3, 4, 7, 9 | Assisted modeling: explainable, preview-first AI workflows |
+| 31 | v0.31 | G | Planned | 3, 4, 6 | Large ontology productivity, with DataFusion query and Tantivy search provider experiments |
+| 32 | v0.32 | G | Planned | 9 | Team review and enforceable semantic policy, including a Regorus policy provider |
+| 33 | v0.33 | H | Planned | 8, 11 | Automated delivery, dependable plugin management, and maintained workflow/report adapters |
+| 34 | v0.34 | H | Planned | 8, 11 | Integration platform, signed official plugin registry, and WASI sandbox pilot |
+| 35 | v0.35 | H | Planned | 2, 3, 4, 7, 9 | Assisted modeling and a governed public plugin marketplace |
 | 36 | v0.36 | I | Planned | 10, 12 | Everywhere access: WASM and install-free browser workspace |
 | 37 | v0.37 | I | Planned | 9, 12 | Governed collaboration: shared review, approvals, provenance |
 | 38 | v0.38+ | I | Planned | 10–12 | Enterprise operations: deployment, policy, observability, scale |
@@ -126,10 +126,10 @@ OntoUI work uses **UI phases 0–12** from [Product Roadmap 2.0](https://github.
 | **5** | Reasoning experience | v0.9–v0.13† (store integration shipped); v0.30 (pipeline UI, history) |
 | **6** | Semantic refactoring | v0.8+ (shipped); v0.30 (merge, batch, undo) |
 | **7** | AI experience | v0.35 |
-| **8** | Plugin platform | v0.14 (runtime shipped); v0.33 (registry/workflows); v0.35† (AI provider API) |
+| **8** | Plugin platform | v0.14 (runtime shipped); v0.33 (manager/workflows); v0.34 (official registry); v0.35+ (marketplace and AI provider API) |
 | **9** | Collaboration | v0.10+ (diff); v0.13† (PR summary CLI shipped); v0.32 (review/CI); v0.37 (governed collaboration) |
 | **10** | Desktop/browser shells | v0.36 (browser); v0.38+ (enterprise packaging) |
-| **11** | Ecosystem & docs | v0.11+ (guides); v0.33 (registry, workflow templates) |
+| **11** | Ecosystem & docs | v0.11+ (guides); v0.33 (reference plugins/workflow templates); v0.34 (official registry); v0.35+ (marketplace) |
 | **12** | Semantic engineering platform | v0.36 (offline browser); v0.37 (team governance); v0.38+ (enterprise operations) |
 
 > **Note on v0.13–v0.18 (retired labels):** Earlier drafts used v0.13–v0.18 for capabilities that **shipped in v0.3–v0.11** (diagnostics, SQL virtual tables, refactoring, Ontologos reasoning, semantic diff, docs export). Those labels are retired. Forward work from v0.13 onward is defined in the phases below.
@@ -611,6 +611,7 @@ Track trust and parity work in [V0_30_PHASES.md on GitHub](https://github.com/ed
 | Multi-format operations | Move, extract, flatten, cleanup, and ontology merge for RDF/XML, OWL/XML, and OBO where semantics permit |
 | Navigation | Workspace-wide symbol/search ranking, import-aware dependency exploration, large-result filtering |
 | Performance UX | Progress, cancellation, partial results, resource-budget warnings, and benchmark regression gates |
+| Provider experiments | Prototype DataFusion for advanced analytical queries and Tantivy for ranked multilingual entity search behind Plugin SDK 1.0; promote either into the core engine only if benchmarks, index lifecycle, and UX show that a plugin boundary is the wrong fit |
 
 **Non-goals:** A distributed database or remote execution service.
 
@@ -627,6 +628,7 @@ Track trust and parity work in [V0_30_PHASES.md on GitHub](https://github.com/ed
 | Pull requests | GitHub Checks annotations and semantic PR summaries with links back to entities and evidence |
 | Governance basics | Ownership rules by ontology/module/namespace, required approvals, deprecation and IRI policy checks |
 | Reproducibility | Pin and report engine, reasoner, plugin, import, and policy versions in every review |
+| Rego policy provider | Maintained Microsoft Regorus adapter evaluates repository Rego policy over semantic diffs, catalog facts, and diagnostics; returns machine-readable violations to the Review workspace and CI |
 
 **Non-goals:** Real-time co-editing.
 
@@ -640,15 +642,19 @@ Track trust and parity work in [V0_30_PHASES.md on GitHub](https://github.com/ed
 
 | High-value investment | Deliverables |
 |-----------------------|--------------|
-| Workflow execution | Production owlmake integration; import existing Makefile, ODK, ROBOT, and GitHub Actions workflows |
+| Workflow execution | Maintained adapter for [EBISPOT/owlmake](https://github.com/EBISPOT/owlmake), including executable discovery, version checks, workspace configuration, and `build`/`qc`/`release`/`report` step mapping; import existing Makefile, ODK, ROBOT, and GitHub Actions workflows |
 | Release pipeline | Merge, materialize, validate, report, version, package, and publish stages with preview and resumable logs |
-| Plugin discovery | Signed registry metadata, compatibility checks, permission review, install/update/disable UX |
+| Dependable plugin manager | Explicit registries and organization catalogs; workspace/user/organization/bundled scopes; deterministic compatibility and dependency resolution; `.strixonomy/plugins.toml` declarations plus a reproducible lockfile |
+| Safe lifecycle | Permission review, external-tool mode selection, transactional install/update/rollback, disable/uninstall, health checks, failure quarantine, and matching VS Code/CLI/CI behavior |
+| Maintained adapters | [rudof](https://github.com/rudof-project/rudof) for SHACL/ShEx/DCTAP validation and conversion; Typst for publication-quality reports; mdBook for searchable documentation; pinned EBISPOT/owlmake workflow integration |
 | Results | Unified HTML/Markdown/JSON QC reports linked to source entities and CI evidence |
 | Templates | Maintained OBO, OWL, and mixed-project starter workflows |
 
 **Non-goals:** Reimplementing ROBOT, ODK, or every workflow engine inside Strixonomy.
 
-**Exit criterion:** A maintained ODK-style repository can produce a reproducible release artifact and QC report locally and in CI through the same declared workflow.
+Implementation contract: [Plugin manager and registry specification](plugin-manager-plan.md).
+
+**Exit criterion:** A fresh workstation restores the same pinned plugin set from declarations and lockfile, survives a failed update without losing the previous version, and a maintained ODK-style fixture runs a real pinned EBISPOT/owlmake workflow locally and in CI with equivalent artifacts, diagnostics, logs, and QC evidence.
 
 ### v0.34 — Integration platform
 
@@ -661,10 +667,12 @@ Track trust and parity work in [V0_30_PHASES.md on GitHub](https://github.com/ed
 | MCP server | Read, query, validate, explain, diff, and preview-change tools with workspace trust and explicit write approval |
 | Compatibility | Capability negotiation, deprecation windows, contract tests, generated schemas, migration guides |
 | Examples | CI bot, notebook analysis, documentation generator, and custom editor integrations |
+| Official plugin registry | Signed, cross-platform artifacts; verified publisher namespaces; compatibility and permission metadata; revocation, mirrors, and offline lockfile restoration |
+| Sandbox pilot | Wasmtime/WASI execution tier with explicit filesystem/network capabilities and resource limits; native subprocess plugins remain clearly labeled as unsandboxed code |
 
 **Non-goals:** AI-generated changes; this release supplies dependable integration primitives.
 
-**Exit criterion:** Python, TypeScript, and MCP consumers complete the same reference index/query/validate/diff workflow with contract-tested equivalent results.
+**Exit criterion:** Python, TypeScript, and MCP consumers complete the same reference index/query/validate/diff workflow with contract-tested equivalent results, and the official registry rejects tampered or revoked artifacts while restoring a verified pinned set offline.
 
 ### v0.35 — Assisted modeling
 
@@ -677,10 +685,11 @@ Track trust and parity work in [V0_30_PHASES.md on GitHub](https://github.com/ed
 | Review | Project-wide ontology review with citations to affected entities, confidence, policy checks, and impact analysis |
 | Providers | Local and remote model providers through an opt-in provider API; budgets and data-boundary controls |
 | Safety | No silent writes; preview/approve/apply lifecycle, provenance record, reversible change sets, prompt-injection boundaries |
+| Governed marketplace | Public discovery, verified publisher onboarding, ratings/reviews, compatibility evidence, security reporting, moderation and takedown, and explicit re-consent when permissions expand |
 
 **Non-goals:** Autonomous publishing or unreviewed ontology mutation.
 
-**Exit criterion:** Every generated change is evidence-linked, policy-checked, previewable as a semantic diff, explicitly approved, and reversible.
+**Exit criterion:** Every generated change is evidence-linked, policy-checked, previewable as a semantic diff, explicitly approved, and reversible; public marketplace publication also passes publisher, artifact, compatibility, permission, and moderation gates.
 
 ### Era I — Reach and governance (v0.36–v0.38+)
 

@@ -15,7 +15,7 @@ This guide helps ontology teams adopt Strixonomy **v0.28.0** alongside or instea
 
 - **Byte-identical OWL/XML or RDF/XML layout** after save
 - A **full DL axiom catalog UI** for every axiom kind and format
-- Protégé-specific plugins or a **curated plugin marketplace** (Strixonomy Plugin SDK 1.0 freezes the subprocess wire today; marketplace is planned for **v0.33** — [Plugin policy](plugin-policy.md))
+- Protégé-specific plugins or a **public plugin marketplace** (Strixonomy Plugin SDK 1.0 freezes the subprocess wire today; manager v0.33, official registry v0.34, marketplace v0.35+ — [Plugin policy](plugin-policy.md))
 - WebProtégé-style live collaboration
 - **HermiT-identical** DL explanations (OntoLogos is not certified HermiT-identical)
 
@@ -32,7 +32,9 @@ See [Versions & channels](versions-and-channels.md) if Marketplace lags behind t
 | Full OntoGraf filter/layout suite | Partial graphs shipped (v0.26 parity expanded); polish → **v0.30** |
 | Explain all inference kinds (not only unsat) | Unsat explanations shipped |
 | Mid-classify thread kill on the Rust reasoner | Client cancel + ignore late results (v0.18); server may finish CPU work |
-| Curated plugin marketplace / production owlmake | **v0.33** (SDK 1.0 wire is frozen today) |
+| Production owlmake adapter / dependable plugin manager | **v0.33** (SDK 1.0 wire is frozen today) |
+| Signed official plugin registry | **v0.34** |
+| Governed public plugin marketplace | **v0.35+** |
 
 Full matrix: [known-limitations](../known-limitations.md) · [SHIPPED](../SHIPPED.md).
 
