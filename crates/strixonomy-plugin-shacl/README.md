@@ -19,7 +19,7 @@ Looks for a shapes directory (`shapes_dir` in the plugin config) and emits infor
 
 ## Authoring docs
 
-[Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/) — TOML + subprocess JSON only.
+[Plugin authoring](https://strixonomy.readthedocs.io/en/latest/guides/plugins/) — TOML + subprocess JSON only.
 
 ## License
 

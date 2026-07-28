@@ -19,10 +19,10 @@ For **user-facing guides**, pick a path:
 
 | Path | Audience | Start |
 |------|----------|-------|
-| [VS Code extension](https://strixonomy-vs.readthedocs.io/en/latest/ide/vscode-extension/) | Explorer, inspector, Query Workbench, reasoner panels | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or VSIX — no Rust required |
-| [Rust & CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/) | `strixonomy` CLI, crates.io libraries, CI, LSP integrators | `cargo install strixonomy-cli` |
+| [VS Code extension](https://strixonomy.readthedocs.io/en/latest/ide/vscode-extension/) | Explorer, inspector, Query Workbench, reasoner panels | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or VSIX — no Rust required |
+| [Rust & CLI](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/) | `strixonomy` CLI, crates.io libraries, CI, LSP integrators | `cargo install strixonomy-cli` |
 
-[Documentation home](https://strixonomy-vs.readthedocs.io/en/latest/) · [What ships today](../SHIPPED.md)
+[Documentation home](https://strixonomy.readthedocs.io/en/latest/) · [What ships today](../SHIPPED.md)
 
 Two related products:
 
@@ -41,10 +41,10 @@ Two related products:
 
 Many specs describe **target** behavior. Check the banner at the top of each doc, or:
 
-- **Implemented v0.6 LSP:** [LSP API](https://strixonomy-vs.readthedocs.io/en/latest/lsp-api/) — includes `query`, `sparql`, `parseManchester`, `runReasoner`, `getExplanation`
-- **Implemented reasoner:** [Reasoner guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/reasoner/)
-- **Implemented SQL tables:** [SQL reference](https://strixonomy-vs.readthedocs.io/en/latest/sql-reference/)
-- **Implemented authoring:** [authoring guide](https://strixonomy-vs.readthedocs.io/en/latest/authoring/)
+- **Implemented v0.6 LSP:** [LSP API](https://strixonomy.readthedocs.io/en/latest/lsp-api/) — includes `query`, `sparql`, `parseManchester`, `runReasoner`, `getExplanation`
+- **Implemented reasoner:** [Reasoner guide](https://strixonomy.readthedocs.io/en/latest/guides/reasoner/)
+- **Implemented SQL tables:** [SQL reference](https://strixonomy.readthedocs.io/en/latest/sql-reference/)
+- **Implemented authoring:** [authoring guide](https://strixonomy.readthedocs.io/en/latest/authoring/)
 - **ADRs (canonical):** [adr/README.md](adr/README.md)
 
 ## Documents

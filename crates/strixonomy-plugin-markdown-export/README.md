@@ -14,7 +14,7 @@ Produces Markdown export artifacts when run via `strixonomy plugins run` / expor
 
 ## Try it
 
-See [examples/plugin-workspace](https://github.com/eddiethedean/strixonomy/tree/main/examples/plugin-workspace) and [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/).
+See [examples/plugin-workspace](https://github.com/eddiethedean/strixonomy/tree/main/examples/plugin-workspace) and [Plugin authoring](https://strixonomy.readthedocs.io/en/latest/guides/plugins/).
 
 ## License
 

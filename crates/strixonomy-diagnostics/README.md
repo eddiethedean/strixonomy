@@ -12,9 +12,9 @@ strixonomy-diagnostics = "0.27"
 
 ## Documentation
 
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [Errors reference](https://strixonomy-vs.readthedocs.io/en/latest/errors/)
-- [CI integration](https://strixonomy-vs.readthedocs.io/en/latest/ci-integration/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [Errors reference](https://strixonomy.readthedocs.io/en/latest/errors/)
+- [CI integration](https://strixonomy.readthedocs.io/en/latest/ci-integration/)
 - [docs.rs](https://docs.rs/strixonomy-diagnostics)
 
 ## License

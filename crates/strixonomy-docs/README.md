@@ -23,8 +23,8 @@ export_workspace(&catalog, ExportOptions::markdown("./out"))?;
 
 ## Documentation
 
-- [CLI reference](https://strixonomy-vs.readthedocs.io/en/latest/cli-reference/)
-- [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/)
+- [CLI reference](https://strixonomy.readthedocs.io/en/latest/cli-reference/)
+- [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/)
 
 ## License
 

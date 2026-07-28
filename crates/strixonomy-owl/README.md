@@ -38,11 +38,11 @@ ex:Person a owl:Class .
 
 ## Documentation
 
-- [Patch reference](https://strixonomy-vs.readthedocs.io/en/latest/patch-reference/)
-- [Authoring guide](https://strixonomy-vs.readthedocs.io/en/latest/authoring/)
+- [Patch reference](https://strixonomy.readthedocs.io/en/latest/patch-reference/)
+- [Authoring guide](https://strixonomy.readthedocs.io/en/latest/authoring/)
 - [docs.rs](https://docs.rs/strixonomy-owl)
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
 
 ## License
 
-MIT OR Apache-2.0 (links LGPL `horned-owl` — see [LICENSES](https://strixonomy-vs.readthedocs.io/en/latest/design/LICENSES/))
+MIT OR Apache-2.0 (links LGPL `horned-owl` — see [LICENSES](https://strixonomy.readthedocs.io/en/latest/design/LICENSES/))

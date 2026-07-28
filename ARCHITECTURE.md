@@ -1,6 +1,6 @@
 # Ecosystem Architecture
 
-> **Canonical copy:** [docs/architecture.md](docs/architecture.md) (also on [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/architecture/)).
+> **Canonical copy:** [docs/architecture.md](docs/architecture.md) (also on [Read the Docs](https://strixonomy.readthedocs.io/en/latest/architecture/)).
 >
 > Edit **`docs/architecture.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 

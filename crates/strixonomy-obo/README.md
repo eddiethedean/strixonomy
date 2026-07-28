@@ -8,12 +8,12 @@ OBO Format read/write for [Strixonomy](https://github.com/eddiethedean/strixonom
 strixonomy-obo = "0.27"
 ```
 
-Re-exported from the `strixonomy` façade as `strixonomy::obo` for patch operations. Not all OBO workflows require this crate directly — see [OBO authoring guide](https://strixonomy-vs.readthedocs.io/en/latest/strixonomy/obo-authoring/).
+Re-exported from the `strixonomy` façade as `strixonomy::obo` for patch operations. Not all OBO workflows require this crate directly — see [OBO authoring guide](https://strixonomy.readthedocs.io/en/latest/strixonomy/obo-authoring/).
 
 ## Documentation
 
-- [OBO authoring](https://strixonomy-vs.readthedocs.io/en/latest/strixonomy/obo-authoring/)
-- [OBO workflows](https://strixonomy-vs.readthedocs.io/en/latest/guides/obo-workflow/)
+- [OBO authoring](https://strixonomy.readthedocs.io/en/latest/strixonomy/obo-authoring/)
+- [OBO workflows](https://strixonomy.readthedocs.io/en/latest/guides/obo-workflow/)
 - [docs.rs](https://docs.rs/strixonomy-obo)
 
 **Current version: 0.27.0**

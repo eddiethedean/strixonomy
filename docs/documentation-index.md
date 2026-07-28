@@ -80,4 +80,4 @@ Deep planning docs (`docs/ui/`, `docs/platform/`, `docs/cursor-prompts/`, `docs/
 
 ## User documentation
 
-Published site: [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/) · Start at [index.md](index.md).
+Published site: [Read the Docs](https://strixonomy.readthedocs.io/en/latest/) · Start at [index.md](index.md).

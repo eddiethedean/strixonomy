@@ -1,6 +1,6 @@
 # Contributing to Strixonomy
 
-> **Canonical guide:** [docs/contributing.md](docs/contributing.md) (also on [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/contributing/)).
+> **Canonical guide:** [docs/contributing.md](docs/contributing.md) (also on [Read the Docs](https://strixonomy.readthedocs.io/en/latest/contributing/)).
 >
 > Edit **`docs/contributing.md`** first, then keep this root file as a short GitHub landing pointer — not a second full guide.
 

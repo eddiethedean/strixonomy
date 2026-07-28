@@ -29,7 +29,7 @@ Re-exported from `strixonomy::diff` and `Workspace::diff` / `diff_against_path`.
 - [Migration v0.9 → v0.10](https://github.com/eddiethedean/strixonomy/blob/main/docs/migration/v0.10.md)
 - [Migration v0.10 → v0.11](https://github.com/eddiethedean/strixonomy/blob/main/docs/migration/v0.11.md)
 - [Semantic diff spec](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/SEMANTIC_DIFF_SPEC.md)
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
 
 ## License
 

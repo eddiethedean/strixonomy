@@ -33,9 +33,9 @@ strixonomy-reasoner = "0.27"
 
 ## Documentation
 
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [Reasoner guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/reasoner/)
-- [REASONER_SPEC](https://strixonomy-vs.readthedocs.io/en/latest/design/REASONER_SPEC/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [Reasoner guide](https://strixonomy.readthedocs.io/en/latest/guides/reasoner/)
+- [REASONER_SPEC](https://strixonomy.readthedocs.io/en/latest/design/REASONER_SPEC/)
 
 ## License
 

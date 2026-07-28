@@ -16,10 +16,10 @@ cargo install strixonomy-lsp --locked
 
 ## Documentation
 
-- [VS Code extension docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/vscode-extension/)
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [LSP API](https://strixonomy-vs.readthedocs.io/en/latest/lsp-api/)
-- [Install VS Code](https://strixonomy-vs.readthedocs.io/en/latest/vscode-install/)
+- [VS Code extension docs](https://strixonomy.readthedocs.io/en/latest/guides/vscode-extension/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [LSP API](https://strixonomy.readthedocs.io/en/latest/lsp-api/)
+- [Install VS Code](https://strixonomy.readthedocs.io/en/latest/vscode-install/)
 - [docs.rs](https://docs.rs/strixonomy-lsp)
 
 **Current version: 0.27.0**

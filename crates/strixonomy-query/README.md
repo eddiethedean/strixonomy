@@ -22,10 +22,10 @@ let result = query_catalog(&catalog, "SELECT short_name FROM classes")?;
 
 ## Documentation
 
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [SQL reference](https://strixonomy-vs.readthedocs.io/en/latest/sql-reference/)
-- [SPARQL reference](https://strixonomy-vs.readthedocs.io/en/latest/sparql-reference/)
-- [Query cookbook](https://strixonomy-vs.readthedocs.io/en/latest/examples/queries/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [SQL reference](https://strixonomy.readthedocs.io/en/latest/sql-reference/)
+- [SPARQL reference](https://strixonomy.readthedocs.io/en/latest/sparql-reference/)
+- [Query cookbook](https://strixonomy.readthedocs.io/en/latest/examples/queries/)
 - [docs.rs](https://docs.rs/strixonomy-query)
 
 ## License

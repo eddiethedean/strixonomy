@@ -6,7 +6,7 @@ Aggregates **built-in reference plugins** shipped with Strixonomy (naming, markd
 
 Contributors and plugin authors who want working reference implementations next to the host.
 
-- End users: enable plugins via `.strixonomy/plugins/*.toml` — [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/)
+- End users: enable plugins via `.strixonomy/plugins/*.toml` — [Plugin authoring](https://strixonomy.readthedocs.io/en/latest/guides/plugins/)
 - Individual crates: `strixonomy-plugin-naming`, `strixonomy-plugin-markdown-export`, `strixonomy-plugin-shacl`
 
 ## Status

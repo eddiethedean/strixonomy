@@ -11,7 +11,7 @@
 
 ## Test plan
 
-Check **only** what applies — see [testing matrix](https://strixonomy-vs.readthedocs.io/en/latest/guides/testing-matrix/) and [CONTRIBUTING.md](../CONTRIBUTING.md).
+Check **only** what applies — see [testing matrix](https://strixonomy.readthedocs.io/en/latest/guides/testing-matrix/) and [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 **Docs-only / specs-only**
 

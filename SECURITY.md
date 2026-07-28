@@ -31,7 +31,7 @@ Out of scope for private reporting: general product bugs, feature requests, and 
 | Trust boundary | Behavior |
 |----------------|----------|
 | **Local disk** | Indexing, parse, query, reason, and write-back operate on workspace files. Content stays on the machine unless the user or an external tool moves it. |
-| **Path jail** | File operations are constrained to configured workspace root(s). See [workspace limits](https://strixonomy-vs.readthedocs.io/en/latest/workspace-limits/). |
+| **Path jail** | File operations are constrained to configured workspace root(s). See [workspace limits](https://strixonomy.readthedocs.io/en/latest/workspace-limits/). |
 | **Resource limits** | Caps on file count, file size, entities, triples, and query rows reduce DoS risk when opening large or untrusted repos. |
 | **LSP** | `strixonomy-lsp` runs as a **stdio child** of the editor. Do **not** expose it on a network socket without authentication. |
 | **VS Code Restricted Mode** | Bundled language server works without Workspace Trust. Custom `strixonomy.lspPath` and `strixonomy.robotPath` are **ignored** until the folder is trusted. |
@@ -46,4 +46,4 @@ Out of scope for private reporting: general product bugs, feature requests, and 
 - Opening an **untrusted ontology repository** can still consume disk/CPU within limits and, after Trust + custom paths, can run binaries you configured.
 - XML write-back is **semantic re-serialize** (not byte-identical); that is a fidelity concern, not a network trust boundary.
 
-Related public docs: [Security on Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/security/), [Enterprise evaluation](https://strixonomy-vs.readthedocs.io/en/latest/guides/enterprise-eval/), [Release integrity](https://strixonomy-vs.readthedocs.io/en/latest/release-integrity/).
+Related public docs: [Security on Read the Docs](https://strixonomy.readthedocs.io/en/latest/security/), [Enterprise evaluation](https://strixonomy.readthedocs.io/en/latest/guides/enterprise-eval/), [Release integrity](https://strixonomy.readthedocs.io/en/latest/release-integrity/).

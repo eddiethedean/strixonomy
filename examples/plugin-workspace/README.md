@@ -2,7 +2,7 @@
 
 Minimal ontology folder with `.strixonomy/plugins/` manifests for Strixonomy Plugin SDK 1.0 — UI contributions, lifecycle deps, and reference providers.
 
-Full authoring guide: [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/).
+Full authoring guide: [Plugin authoring](https://strixonomy.readthedocs.io/en/latest/guides/plugins/).
 
 ## Layout
 

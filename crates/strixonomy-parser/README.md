@@ -12,9 +12,9 @@ strixonomy-parser = "0.27"
 
 ## Documentation
 
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [Rust library guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-library/)
-- [SPARQL reference](https://strixonomy-vs.readthedocs.io/en/latest/sparql-reference/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [Rust library guide](https://strixonomy.readthedocs.io/en/latest/guides/rust-library/)
+- [SPARQL reference](https://strixonomy.readthedocs.io/en/latest/sparql-reference/)
 - [docs.rs](https://docs.rs/strixonomy-parser)
 
 ## License

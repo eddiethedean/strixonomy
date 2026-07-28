@@ -171,7 +171,7 @@ export async function migrateFromOntoCode(
         if (choice === "Open guide") {
           void vscode.env.openExternal(
             vscode.Uri.parse(
-              "https://strixonomy-vs.readthedocs.io/en/latest/migration/v0.27/"
+              "https://strixonomy.readthedocs.io/en/latest/migration/v0.27/"
             )
           );
         }

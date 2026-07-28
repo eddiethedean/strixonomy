@@ -11,7 +11,7 @@
 
 site_name: Strixonomy
 site_description: Edit OWL, RDF, and OBO ontologies in VS Code — Strixonomy IDE, CLI, and library docs
-site_url: https://strixonomy-vs.readthedocs.io/
+site_url: https://strixonomy.readthedocs.io/
 repo_url: https://github.com/eddiethedean/strixonomy
 repo_name: eddiethedean/strixonomy
 edit_uri: edit/main/docs/  # default branch (main); RTD "Edit this page" opens main

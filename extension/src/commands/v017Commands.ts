@@ -426,7 +426,7 @@ export function registerV017Commands(
   });
   command("strixonomy.openDocumentation", () =>
     vscode.env.openExternal(
-      vscode.Uri.parse("https://strixonomy-vs.readthedocs.io/en/latest/")
+      vscode.Uri.parse("https://strixonomy.readthedocs.io/en/latest/")
     )
   );
   command("strixonomy.openSupport", () =>

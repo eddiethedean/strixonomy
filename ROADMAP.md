@@ -1,6 +1,6 @@
 # Strixonomy Roadmap
 
-> **Canonical copy:** [docs/roadmap.md](docs/roadmap.md) (also on [Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/roadmap/)).
+> **Canonical copy:** [docs/roadmap.md](docs/roadmap.md) (also on [Read the Docs](https://strixonomy.readthedocs.io/en/latest/roadmap/)).
 >
 > Edit **`docs/roadmap.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 

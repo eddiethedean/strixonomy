@@ -1,7 +1,7 @@
 # PLUGIN_SPEC.md
 
 > **Historical design spec — not the shipping contract.**  
-> **Authoring plugins today:** [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/) (TOML manifest + subprocess host).  
+> **Authoring plugins today:** [Plugin authoring](https://strixonomy.readthedocs.io/en/latest/guides/plugins/) (TOML manifest + subprocess host).  
 > This file is **excluded from the public Read the Docs site** so adopters do not discover the wrong API via search. Trait-based sketches below are background only; the shipped host uses `.strixonomy/plugins/*.toml`.
 
 ## 1. Purpose

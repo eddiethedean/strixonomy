@@ -23,9 +23,9 @@ println!("{:?}", catalog.data().stats());
 
 ## Documentation
 
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [Rust library guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-library/)
-- [SQL reference](https://strixonomy-vs.readthedocs.io/en/latest/sql-reference/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [Rust library guide](https://strixonomy.readthedocs.io/en/latest/guides/rust-library/)
+- [SQL reference](https://strixonomy.readthedocs.io/en/latest/sql-reference/)
 - [docs.rs](https://docs.rs/strixonomy-catalog)
 
 ## License

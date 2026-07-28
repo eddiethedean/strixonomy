@@ -17,7 +17,7 @@ cargo install strixonomy-cli --locked --version 0.27.0
 
 ## Linux x64 without Rust
 
-Download `strixonomy-v*-x86_64-unknown-linux-gnu.tar.gz` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) and verify `SHA256SUMS` — [release integrity](https://strixonomy-vs.readthedocs.io/en/latest/release-integrity/).
+Download `strixonomy-v*-x86_64-unknown-linux-gnu.tar.gz` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) and verify `SHA256SUMS` — [release integrity](https://strixonomy.readthedocs.io/en/latest/release-integrity/).
 
 ## Quick example
 
@@ -33,14 +33,14 @@ strixonomy diff --left-ref main --right-ref feature --format markdown --breaking
 strixonomy docs /path/to/ontologies --format markdown --output ./docs-out
 ```
 
-Semantic diff compares catalogs from git refs, directories, or workspace snapshots. See [semantic diff guide](https://strixonomy-vs.readthedocs.io/en/latest/strixonomy/semantic-diff/).
+Semantic diff compares catalogs from git refs, directories, or workspace snapshots. See [semantic diff guide](https://strixonomy.readthedocs.io/en/latest/strixonomy/semantic-diff/).
 
 ## Documentation
 
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
-- [CLI reference](https://strixonomy-vs.readthedocs.io/en/latest/cli-reference/)
-- [Install CLI & CI (detail)](https://strixonomy-vs.readthedocs.io/en/latest/install-cli-ci/)
-- [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
+- [CLI reference](https://strixonomy.readthedocs.io/en/latest/cli-reference/)
+- [Install CLI & CI (detail)](https://strixonomy.readthedocs.io/en/latest/install-cli-ci/)
+- [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/)
 
 See [crates.io](https://crates.io/crates/strixonomy-cli) for the latest published version.
 

@@ -99,11 +99,11 @@ Report vulnerabilities per [security.md](security.md) — not via public issues.
 
 ## Read the Docs
 
-The documentation site is built with [MkDocs](https://www.mkdocs.org/) and hosted at [strixonomy-vs.readthedocs.io](https://strixonomy-vs.readthedocs.io/en/latest/).
+The documentation site is built with [MkDocs](https://www.mkdocs.org/) and hosted at [strixonomy.readthedocs.io](https://strixonomy.readthedocs.io/en/latest/).
 
-1. Read the Docs project slug: **`strixonomy-vs`** (this sets the `*.readthedocs.io` subdomain; it cannot be renamed after import — the display name can be “Strixonomy” in RTD settings).
+1. Read the Docs project slug: **`strixonomy`** (this sets the `*.readthedocs.io` subdomain).
 2. RTD reads [`.readthedocs.yaml` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/.readthedocs.yaml) and installs [docs/requirements.txt](requirements.txt).
-3. `mkdocs.yml` `site_url` must match the live subdomain (`https://strixonomy-vs.readthedocs.io/`).
+3. `mkdocs.yml` `site_url` must match the live subdomain (`https://strixonomy.readthedocs.io/`).
 4. Pushes to `main` rebuild the `latest` version.
 
 ### Versioning model
@@ -124,7 +124,7 @@ The [readthedocs workflow](https://github.com/eddiethedean/strixonomy/blob/main/
 - a **release branch** (`release/v*`), or
 - a **semver tag** (`v*.*.*`).
 
-**One-time setup:** add repository secret `READTHEDOCS_API_TOKEN` ([RTD account token](https://app.readthedocs.org/account/tokens/)) with access to project `strixonomy-vs`.
+**One-time setup:** add repository secret `READTHEDOCS_API_TOKEN` ([RTD account token](https://app.readthedocs.org/account/tokens/)) with access to project `strixonomy`.
 
 To activate an existing release branch immediately (e.g. after adding the secret):
 

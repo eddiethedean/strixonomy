@@ -10,7 +10,7 @@
     "url": "https://github.com/eddiethedean/strixonomy.git",
     "directory": "extension"
   },
-  "homepage": "https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/",
+  "homepage": "https://strixonomy.readthedocs.io/en/latest/guides/first-success/",
   "bugs": {
     "url": "https://github.com/eddiethedean/strixonomy/issues"
   },

@@ -25,7 +25,7 @@ MINOR_VERSION="${VERSION%.*}"
 TAGGED_FACADE="strixonomy"
 TAGGED_OWL="strixonomy-owl"
 TAGGED_TUTORIAL="strixonomy-tutorial.zip"
-TAGGED_RTD_PROJECT="strixonomy-vs"
+TAGGED_RTD_PROJECT="strixonomy"
 
 echo "Checking documentation for workspace ${VERSION} (latest tagged: ${TAGGED_VERSION})..."
 
@@ -118,7 +118,7 @@ if [[ "$VERSION" != "$TAGGED_VERSION" ]]; then
 fi
 check_file_contains "docs/release-integrity.md" "VERSION=${TAGGED_VERSION}" "release-integrity example version"
 check_file_contains "docs/TAGGED_RELEASE" "${TAGGED_VERSION}" "TAGGED_RELEASE file"
-check_file_contains "mkdocs.yml" "site_url: https://strixonomy-vs.readthedocs.io/" "mkdocs site_url matches RTD"
+check_file_contains "mkdocs.yml" "site_url: https://strixonomy.readthedocs.io/" "mkdocs site_url matches RTD"
 check_file_contains "README.md" "readthedocs.org/projects/${TAGGED_RTD_PROJECT}/badge" "RTD docs badge slug"
 
 # Reference page titles must match latest tagged release (public install target)
@@ -742,17 +742,27 @@ else
   echo "ok: no dead onto-code RTD slug"
 fi
 
-if rg -q 'https://strixonomy-vs\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}"; then
+if rg -q 'strixonomy-vs\.readthedocs|readthedocs\.org/projects/strixonomy-vs' \
+  --glob '!scripts/check-doc-versions.sh' "${RTD_SEARCH_PATHS[@]}"; then
+  echo "FAIL: stale strixonomy-vs RTD slug found (use https://strixonomy.readthedocs.io)" >&2
+  rg -n 'strixonomy-vs\.readthedocs|readthedocs\.org/projects/strixonomy-vs' \
+    --glob '!scripts/check-doc-versions.sh' "${RTD_SEARCH_PATHS[@]}" >&2 || true
+  fail=1
+else
+  echo "ok: no dead strixonomy-vs RTD slug"
+fi
+
+if rg -q 'https://strixonomy\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}"; then
   echo "FAIL: absolute RTD URLs must not use .md extension (use trailing slash paths)" >&2
-  rg -n 'https://strixonomy-vs\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}" >&2 || true
+  rg -n 'https://strixonomy\.readthedocs\.io/en/latest/[^)"[:space:]]+\.md' "${RTD_SEARCH_PATHS[@]}" >&2 || true
   fail=1
 else
   echo "ok: RTD URLs without .md extension"
 fi
 
-if rg -q 'https://strixonomy-vs\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs; then
+if rg -q 'https://strixonomy\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs; then
   echo "FAIL: RTD page URLs must include /en/latest/ (not bare project root)" >&2
-  rg -n 'https://strixonomy-vs\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs >&2 || true
+  rg -n 'https://strixonomy\.readthedocs\.io/"' README.md CONTRIBUTING.md extension crates docs >&2 || true
   fail=1
 else
   echo "ok: RTD page URLs use /en/latest/"

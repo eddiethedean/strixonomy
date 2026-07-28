@@ -19,7 +19,7 @@ Emits diagnostics when classes/properties are missing `rdfs:label` or IRIs fail 
 
 ## Authoring docs
 
-Canonical contract: [Plugin authoring](https://strixonomy-vs.readthedocs.io/en/latest/guides/plugins/). Do **not** implement against historical trait specs or the future OntoUI TypeScript Plugin API.
+Canonical contract: [Plugin authoring](https://strixonomy.readthedocs.io/en/latest/guides/plugins/). Do **not** implement against historical trait specs or the future OntoUI TypeScript Plugin API.
 
 ## License
 

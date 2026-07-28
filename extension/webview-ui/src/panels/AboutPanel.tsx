@@ -22,7 +22,7 @@ export function AboutPanel(): JSX.Element {
         <p><strong>Strixonomy 0.17.0</strong></p>
         <p>Ontology engineering for VS Code, powered by Strixonomy.</p>
         <p>
-          <a href="https://strixonomy-vs.readthedocs.io/en/latest/">Documentation</a>
+          <a href="https://strixonomy.readthedocs.io/en/latest/">Documentation</a>
           {" · "}
           <a href="https://github.com/eddiethedean/strixonomy">Source code</a>
           {" · "}

@@ -28,4 +28,4 @@ cargo run -- robot validate examples/obo-workflow/demo.obo
   run: strixonomy robot validate examples/obo-workflow/demo.obo
 ```
 
-See [OBO workflow guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/obo-workflow/).
+See [OBO workflow guide](https://strixonomy.readthedocs.io/en/latest/guides/obo-workflow/).

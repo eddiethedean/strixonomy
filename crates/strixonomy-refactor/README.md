@@ -26,8 +26,8 @@ strixonomy-refactor = "0.27"
 
 ## Documentation
 
-- [Refactoring guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/refactoring/)
-- [Rust & CLI docs](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/)
+- [Refactoring guide](https://strixonomy.readthedocs.io/en/latest/guides/refactoring/)
+- [Rust & CLI docs](https://strixonomy.readthedocs.io/en/latest/guides/rust-crates/)
 
 ## License
 
