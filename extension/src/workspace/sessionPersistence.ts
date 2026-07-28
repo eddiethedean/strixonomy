@@ -289,19 +289,13 @@ export class WorkspaceSessionPersistence {
     if (!folder) {
       return undefined;
     }
-    const candidates = [
-      path.join(folder.uri.fsPath, SESSION_FILE),
-      path.join(folder.uri.fsPath, ".ontocode", "session.json"),
-    ];
-    for (const file of candidates) {
-      try {
-        const raw = await fs.promises.readFile(file, "utf8");
-        return JSON.parse(raw) as WorkspaceSessionSnapshot;
-      } catch {
-        // try next
-      }
+    const file = path.join(folder.uri.fsPath, ".strixonomy", "session.json");
+    try {
+      const raw = await fs.promises.readFile(file, "utf8");
+      return JSON.parse(raw) as WorkspaceSessionSnapshot;
+    } catch {
+      return undefined;
     }
-    return undefined;
   }
 
   resetForTests(): void {

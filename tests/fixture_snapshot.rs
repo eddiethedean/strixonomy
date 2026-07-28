@@ -54,7 +54,7 @@ fn extension_fixture_catalog_snapshot_matches_committed_file() {
 
     let actual = extension_fixture_snapshot_json();
 
-    if std::env::var("ONTOINDEX_UPDATE_FIXTURE_SNAPSHOT").is_ok() {
+    if std::env::var("STRIXONOMY_UPDATE_FIXTURE_SNAPSHOT").is_ok() {
         fs::write(&snapshot_path, format!("{actual}\n")).expect("write snapshot");
         return;
     }
@@ -64,6 +64,6 @@ fn extension_fixture_catalog_snapshot_matches_committed_file() {
     assert_eq!(
         expected.trim_end(),
         actual,
-        "extension fixture snapshot out of date; run ONTOINDEX_UPDATE_FIXTURE_SNAPSHOT=1 cargo test extension_fixture_catalog_snapshot_matches_committed_file"
+        "extension fixture snapshot out of date; run STRIXONOMY_UPDATE_FIXTURE_SNAPSHOT=1 cargo test extension_fixture_catalog_snapshot_matches_committed_file"
     );
 }

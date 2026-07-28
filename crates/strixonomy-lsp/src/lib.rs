@@ -162,7 +162,7 @@ fn handle_lsp_request(
         return Some(ok_response(id, Value::Null));
     }
 
-    if req.method == "strixonomy/runReasoner" || req.method == "ontocore/runReasoner" {
+    if req.method == "strixonomy/runReasoner" {
         let params: RunReasonerParams = match parse_params(Some(req.params)) {
             Ok(p) => p,
             Err(e) => return Some(error_response(id, e)),

@@ -277,8 +277,6 @@ jobs:
           publish_crate strixonomy-lsp
           publish_crate strixonomy
           publish_crate strixonomy-cli
-          # Deprecated OntoCore façade re-export (compat window through 1.0)
-          publish_crate ontocore
 
           echo "Disk after crate publish:"
           df -h

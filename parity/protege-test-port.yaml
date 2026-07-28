@@ -35,7 +35,7 @@ entries:
     area: util
     case_themes:
       - "string abbreviation"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_utils.rs
     notes: "Wave 3 implemented"
   - class: BundleInfo_TestCase
@@ -63,7 +63,7 @@ entries:
       - "simpleLoop cycle"
       - "twoParents multi-parent"
       - "GCI edge cases"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_hierarchy.rs
   - class: CollectingHierarchyListener
     module: protege-editor-owl
@@ -79,7 +79,7 @@ entries:
     area: hierarchy
     case_themes:
       - "data property SubDataPropertyOf parents/children"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_hierarchy.rs
   - class: ObjectPropertyHierarchyProvider_TestCase
     module: protege-editor-owl
@@ -88,7 +88,7 @@ entries:
     area: hierarchy
     case_themes:
       - "object property SubObjectPropertyOf parents/children"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_hierarchy.rs
   - class: CreateHierarchyChangeGenerator_TestCase
     module: protege-editor-owl
@@ -97,7 +97,7 @@ entries:
     area: hierarchy
     case_themes:
       - "tabbed hierarchy edges → SubClassOf axioms"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_hierarchy.rs
   - class: Edge_TestCase
     module: protege-editor-owl
@@ -114,7 +114,7 @@ entries:
     area: hierarchy
     case_themes:
       - "parse indented text → parent/child edges"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_hierarchy.rs
   - class: HistoryTest
     module: protege-editor-owl
@@ -123,7 +123,7 @@ entries:
     area: history
     case_themes:
       - "multi-ontology undo/redo of axiom add/remove"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_history.rs
       - crates/strixonomy-edit/tests/transaction.rs
   - class: ChangeListMinimizer_TestCase
@@ -134,7 +134,7 @@ entries:
     case_themes:
       - "add+remove cancel"
       - "preserve non-axiom changes"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_history.rs
   - class: MergeEntitiesChangeListGenerator_TestCase
     module: protege-editor-owl
@@ -145,7 +145,7 @@ entries:
       - "IRI replace"
       - "rdfs:label → altLabel/synonym"
       - "delete source declaration"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_merge.rs
       - crates/strixonomy-refactor/tests/refactor_integration.rs
   - class: EntityDeprecator_TestCase
@@ -157,7 +157,7 @@ entries:
       - "owl:deprecated"
       - "replaced-by annotation"
       - "reason annotation"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_deprecation.rs
       - tests/owl_patch_oracles.rs
   - class: GOProfile_TestCase
@@ -167,7 +167,7 @@ entries:
     area: deprecation
     case_themes:
       - "GO-style deprecation annotations"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_deprecation.rs
     gap: "Full GO YAML profile policy not a first-class OntoCode product surface; semantic annotations covered"
   - class: OBIProfile_TestCase
@@ -177,7 +177,7 @@ entries:
     area: deprecation
     case_themes:
       - "OBI-style deprecation annotations"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_deprecation.rs
     gap: "OBI profile YAML not first-class; annotation pattern covered"
   - class: ActiveOntologyLocationStrategy_TestCase
@@ -187,7 +187,7 @@ entries:
     area: axiom_location
     case_themes:
       - "new axioms land in active ontology"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_axiom_location.rs
   - class: SubjectDefinitionLocationStrategy_TestCase
     module: protege-editor-owl
@@ -196,7 +196,7 @@ entries:
     area: axiom_location
     case_themes:
       - "axiom home by subject definition ontology in imports closure"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_axiom_location.rs
   - class: FreshAxiomLocation_TestCase
     module: protege-editor-owl
@@ -205,7 +205,7 @@ entries:
     area: axiom_location
     case_themes:
       - "fresh axiom location enum/config"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_axiom_location.rs
   - class: FreshActionStrategySelector_TestCase
     module: protege-editor-owl
@@ -222,7 +222,7 @@ entries:
     area: refs
     case_themes:
       - "find axioms/usages mentioning entity"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_refs.rs
       - crates/strixonomy-refactor/tests/refactor_integration.rs
   - class: DefinedClassPredicate_TestCase
@@ -232,7 +232,7 @@ entries:
     area: refs
     case_themes:
       - "EquivalentClasses / DisjointUnion defined-class predicate"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_refs.rs
   - class: OWLLiteralParser_TestCase
     module: protege-editor-owl
@@ -241,7 +241,7 @@ entries:
     area: parsers
     case_themes:
       - "lexical → typed literals"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_parsers.rs
   - class: OboUtilities_TestCase
     module: protege-editor-owl
@@ -250,7 +250,7 @@ entries:
     area: parsers
     case_themes:
       - "OBO id ↔ IRI"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_parsers.rs
   - class: RDFExtractorTest
     module: protege-editor-owl
@@ -259,7 +259,7 @@ entries:
     area: parsers
     case_themes:
       - "OntologyIRI/VersionIRI from RDF/XML vs TTL"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_parsers.rs
   - class: IdPolicyParser_GO_TestCase
     module: protege-editor-owl
@@ -268,7 +268,7 @@ entries:
     area: parsers
     case_themes:
       - "GO idranges parse / validation errors"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_idpolicy.rs
   - class: IdPolicyParser_EmptyRangesList_TestCase
     module: protege-editor-owl
@@ -277,7 +277,7 @@ entries:
     area: parsers
     case_themes:
       - "GO idranges parse / validation errors"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_idpolicy.rs
   - class: IdPolicyParser_MissingIdDigitCount_TestCase
     module: protege-editor-owl
@@ -286,7 +286,7 @@ entries:
     area: parsers
     case_themes:
       - "GO idranges parse / validation errors"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_idpolicy.rs
   - class: IdPolicyParser_MissingIdPrefix_TestCase
     module: protege-editor-owl
@@ -295,7 +295,7 @@ entries:
     area: parsers
     case_themes:
       - "GO idranges parse / validation errors"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_idpolicy.rs
   - class: IdPolicyParser_MissingPolicyFor_TestCase
     module: protege-editor-owl
@@ -304,7 +304,7 @@ entries:
     area: parsers
     case_themes:
       - "GO idranges parse / validation errors"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_idpolicy.rs
   - class: IdRange_TestCase
     module: protege-editor-owl
@@ -319,7 +319,7 @@ entries:
     path: protege-editor-owl/src/test/java/org/protege/editor/owl/model/DocumentFormatMapper_TestCase.java
     tag: COVERED
     area: formats
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_roundtrip.rs
       - crates/strixonomy-owl/src/serialize.rs
     notes: "Format routing already covered by OntoCode write-back oracles"
@@ -328,7 +328,7 @@ entries:
     path: protege-editor-owl/src/test/java/org/protege/editor/owl/model/annotation/AnnotationProvider_TestCase.java
     tag: COVERED
     area: annotations
-    ontocode_tests:
+    strixonomy_tests:
       - tests/owl_patch_oracles.rs
     notes: "AddAnnotation/RemoveAnnotation PatchOps"
   - class: NoOpReasoner_TestCase
@@ -344,7 +344,7 @@ entries:
     area: catalog
     case_themes:
       - "catalog-v001.xml URI redirect for local imports"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_catalog.rs
   - class: XmlBaseTest
     module: protege-editor-owl
@@ -353,7 +353,7 @@ entries:
     area: catalog
     case_themes:
       - "xml:base relative uri resolution in catalog"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_catalog.rs
   - class: IdentifiersDotOrg_IT
     module: protege-editor-owl
@@ -368,7 +368,7 @@ entries:
     area: obofoundry
     case_themes:
       - "registry JSON model"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_obofoundry.rs
     notes: "Wave 3 implemented"
   - class: OboFoundryEntry_TestCase
@@ -378,7 +378,7 @@ entries:
     area: obofoundry
     case_themes:
       - "registry JSON model"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_obofoundry.rs
     notes: "Wave 3 implemented"
   - class: OboFoundryLicenseDetails_TestCase
@@ -388,7 +388,7 @@ entries:
     area: obofoundry
     case_themes:
       - "registry JSON model"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_obofoundry.rs
     notes: "Wave 3 implemented"
   - class: OboFoundryRegistry_TestCase
@@ -398,7 +398,7 @@ entries:
     area: obofoundry
     case_themes:
       - "registry JSON model"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_obofoundry.rs
     notes: "Wave 3 implemented"
   - class: OboFoundryRegistryParser_IT
@@ -408,7 +408,7 @@ entries:
     area: obofoundry
     case_themes:
       - "parse OboFoundry.json"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_obofoundry.rs
     notes: "Wave 3 implemented"
   - class: Prefix_TestCase
@@ -418,7 +418,7 @@ entries:
     area: rendering
     case_themes:
       - "prefix match"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: PrefixNameRenderer_TestCase
@@ -428,7 +428,7 @@ entries:
     area: rendering
     case_themes:
       - "prefix render"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: IRIExpanderTestCase
@@ -438,7 +438,7 @@ entries:
     area: rendering
     case_themes:
       - "IRI expand"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: PrefixMapping_TestCase
@@ -448,7 +448,7 @@ entries:
     area: rendering
     case_themes:
       - "prefix mapping VO"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: OWLEntityRendererImpl_TestCase
@@ -459,7 +459,7 @@ entries:
     case_themes:
       - "entity display names"
       - "built-in prefixes"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: RenderingEscapeUtils_TestCase
@@ -469,7 +469,7 @@ entries:
     area: rendering
     case_themes:
       - "Manchester escape"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: DOILinkExtractor_TestCase
@@ -479,7 +479,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
       - extension/webview-ui/src/utils/annotationLinks.test.ts
     notes: "Wave 2 implemented"
@@ -490,7 +490,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
       - extension/webview-ui/src/utils/annotationLinks.test.ts
     notes: "Wave 2 implemented"
@@ -501,7 +501,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: OMIMPSLinkExtractor_TestCase
@@ -511,7 +511,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: ORCIDLinkExtractor_TestCase
@@ -521,7 +521,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: OrphanetLinkExtractor_TestCase
@@ -531,7 +531,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: PubMedLinkExtractor_TestCase
@@ -541,7 +541,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: RegExBasedLinkExtractor_TestCase
@@ -551,7 +551,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: WikipediaLinkExtractor_TestCase
@@ -561,7 +561,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: WikipediaVersionedLinkExtractor_TestCase
@@ -571,7 +571,7 @@ entries:
     area: rendering
     case_themes:
       - "annotation hyperlink regex"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: OWLEntitySelectionModel_OWLClass_TestCase
@@ -607,7 +607,7 @@ entries:
     area: prefs
     case_themes:
       - "ORCID parse/validate"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_links.rs
     notes: "Wave 2 implemented"
   - class: UserNamePreferencesManager_TestCase
@@ -622,7 +622,7 @@ entries:
     area: util
     case_themes:
       - "annotation property sort order"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_utils.rs
       - extension/webview-ui/src/utils/annotationOrder.test.ts
     notes: "Wave 3 implemented"
@@ -633,7 +633,7 @@ entries:
     area: rendering
     case_themes:
       - "markdown render"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_utils.rs
     notes: "Wave 3 implemented"
   - class: ISO8601Formatter_TestCase
@@ -643,7 +643,7 @@ entries:
     area: util
     case_themes:
       - "ISO8601 format"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_utils.rs
     notes: "Wave 3 implemented"
   - class: IriSplitter_TestCase
@@ -653,7 +653,7 @@ entries:
     area: util
     case_themes:
       - "IRI fragment/namespace split"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_render.rs
     notes: "Wave 2 implemented"
   - class: LiteralLexicalValueReplacer_TestCase
@@ -663,7 +663,7 @@ entries:
     area: util
     case_themes:
       - "literal lexical replace"
-    ontocode_tests:
+    strixonomy_tests:
       - tests/protege_port_utils.rs
     notes: "Wave 3 implemented"
   - class: OWLPropertyAssertionRowComparator_TestCase

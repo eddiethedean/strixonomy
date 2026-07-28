@@ -17,10 +17,6 @@ import { ExplorerTreeProvider } from "./treeviews/explorer";
 import { registerWebviewPanelSerializers } from "./webviews/layoutPersistence";
 import { registerErrorLog } from "./logging/errorLog";
 import { initializeWorkspaceRuntime } from "./workspace";
-import {
-  migrateFromOntoCode,
-  registerLegacyCommandAliases,
-} from "./migration/fromOntoCode";
 
 let providers: {
   ontologies: ExplorerTreeProvider;
@@ -36,7 +32,6 @@ export async function activate(
   context: vscode.ExtensionContext
 ): Promise<StrixonomyApi> {
   try {
-    await migrateFromOntoCode(context);
     await startLanguageClient(context);
 
     providers = {
@@ -75,7 +70,7 @@ export async function activate(
         const ours = event.uris.some((uri) =>
           vscode.languages
             .getDiagnostics(uri)
-            .some((d) => d.source === "strixonomy" || d.source === "ontocore")
+            .some((d) => d.source === "strixonomy")
         );
         if (!ours) {
           return;
@@ -90,7 +85,6 @@ export async function activate(
     );
 
     registerCommands(context, providers);
-    await registerLegacyCommandAliases(context);
     registerErrorLog(context);
     registerWebviewPanelSerializers(context);
     initializeWorkspaceRuntime(context);
@@ -127,8 +121,7 @@ export async function activate(
           entity_iri: entityIri,
           document_uri: documentUri,
         }),
-      ...(process.env.STRIXONOMY_TEST_FIXTURES ||
-      process.env.ONTOCODE_TEST_FIXTURES
+      ...(process.env.STRIXONOMY_TEST_FIXTURES
         ? { __test: createStrixonomyTestHooks() }
         : {}),
     };

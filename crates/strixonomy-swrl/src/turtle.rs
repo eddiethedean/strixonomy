@@ -9,7 +9,7 @@
 use crate::model::SwrlRule;
 use crate::{Result, SwrlError};
 
-const ONTOCORE_SWRL_PRED: &str = "http://ontocode.dev/ns#swrlRule";
+const SWRL_RULE_PRED: &str = "http://ontocode.dev/ns#swrlRule";
 
 pub fn parse_swrl_rule_json(text: &str) -> Result<SwrlRule> {
     Ok(serde_json::from_str(text)?)
@@ -63,14 +63,14 @@ pub fn rule_to_turtle_fragment(ontology_iri: &str, rule: &SwrlRule) -> Result<St
     let json = compact_json(rule)?;
     let escaped = escape_turtle_string(&json);
     Ok(format!(
-        "<{ontology_iri}> <{ONTOCORE_SWRL_PRED}> \"{escaped}\"^^<http://www.w3.org/2001/XMLSchema#string> .\n"
+        "<{ontology_iri}> <{SWRL_RULE_PRED}> \"{escaped}\"^^<http://www.w3.org/2001/XMLSchema#string> .\n"
     ))
 }
 
 /// Extract rules stored as `strixonomy:swrlRule` JSON literals from Turtle text.
 pub fn rules_from_turtle_document(text: &str) -> Vec<SwrlRule> {
     let mut rules = Vec::new();
-    let marker = ONTOCORE_SWRL_PRED;
+    let marker = SWRL_RULE_PRED;
     for line in text.lines() {
         if !line.contains(marker) {
             continue;
@@ -110,12 +110,12 @@ pub fn rules_from_turtle_document(text: &str) -> Vec<SwrlRule> {
 ///
 /// Returns updated text and number of rules remapped. Leaves non-SWRL content unchanged.
 pub fn rewrite_swrl_iris_in_turtle(text: &str, from_iri: &str, to_iri: &str) -> (String, usize) {
-    if from_iri == to_iri || !text.contains(ONTOCORE_SWRL_PRED) {
+    if from_iri == to_iri || !text.contains(SWRL_RULE_PRED) {
         return (text.to_string(), 0);
     }
     let mut result = text.to_string();
     let mut remapped = 0usize;
-    let marker = ONTOCORE_SWRL_PRED;
+    let marker = SWRL_RULE_PRED;
     // Walk occurrences from the end so byte offsets stay valid.
     let mut occ: Vec<(usize, usize, String)> = Vec::new();
     let mut search_from = 0usize;

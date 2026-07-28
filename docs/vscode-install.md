@@ -3,7 +3,7 @@
 # Installing Strixonomy in VS Code
 
 [![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
+[![VS Code Marketplace](https://badgen.net/vs-marketplace/v/strixonomy.strixonomy?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
 
 **Primary path:** [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) for Cursor) → [First success (~10 min)](guides/first-success.md).
 
@@ -151,7 +151,7 @@ Indexing runs on workspace open. `strixonomy.autoIndexOnOpen` is a legacy settin
 | Symptom | Fix |
 |---------|-----|
 | Bundled LSP missing in dev host | `cargo build -p strixonomy-lsp --bins` then set `strixonomy.lspPath` or run `./scripts/package-extension.sh` |
-| Extension tests fail to spawn LSP | `export STRIXONOMY_LSP_BIN="$(pwd)/target/debug/strixonomy-lsp"` before `npm test` (legacy `ONTOCORE_LSP_BIN` may still work — [v0.27 migration](migration/v0.27.md)) |
+| Extension tests fail to spawn LSP | `export STRIXONOMY_LSP_BIN="$(pwd)/target/debug/strixonomy-lsp"` before `npm test` |
 
 See [Debugging guide](debugging.md) for F5, webview-ui, and E2E workflows.
 

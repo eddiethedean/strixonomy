@@ -810,7 +810,7 @@ fn apply_one_patch(
     }
 }
 
-const ONTOCORE_SWRL_PRED: &str = "http://ontocode.dev/ns#swrlRule";
+const SWRL_RULE_PRED: &str = "http://ontocode.dev/ns#swrlRule";
 
 fn add_swrl_rule_json(text: &mut String, ontology_iri: &str, rule_json: &str) -> Result<()> {
     if !is_safe_iri(ontology_iri) {
@@ -827,9 +827,9 @@ fn add_swrl_rule_json(text: &mut String, ontology_iri: &str, rule_json: &str) ->
         })?;
     let escaped = escape_turtle_string(&compact);
     let triple = format!(
-        "<{ontology_iri}> <{ONTOCORE_SWRL_PRED}> \"{escaped}\"^^<http://www.w3.org/2001/XMLSchema#string> .\n"
+        "<{ontology_iri}> <{SWRL_RULE_PRED}> \"{escaped}\"^^<http://www.w3.org/2001/XMLSchema#string> .\n"
     );
-    let needle = format!("<{ontology_iri}> <{ONTOCORE_SWRL_PRED}> \"{escaped}\"");
+    let needle = format!("<{ontology_iri}> <{SWRL_RULE_PRED}> \"{escaped}\"");
     if text.lines().any(|line| line.contains(&needle)) {
         return Ok(());
     }
@@ -885,7 +885,7 @@ fn remove_swrl_rule_json(text: &mut String, ontology_iri: &str, rule_json: &str)
 /// Extract the JSON string literal from an `strixonomy:swrlRule` triple line for `ontology_iri`.
 fn swrl_rule_literal_on_line(line: &str, ontology_iri: &str) -> Option<String> {
     let subj = format!("<{ontology_iri}>");
-    let pred = format!("<{ONTOCORE_SWRL_PRED}>");
+    let pred = format!("<{SWRL_RULE_PRED}>");
     let trimmed = line.trim();
     if !(trimmed.contains(&subj) && trimmed.contains(&pred)) {
         return None;

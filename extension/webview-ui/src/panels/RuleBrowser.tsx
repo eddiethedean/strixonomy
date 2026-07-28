@@ -62,7 +62,7 @@ export function RuleBrowserPanel(): JSX.Element {
   return (
     <Panel>
       <PanelMain label="SWRL Rule Browser">
-      <PanelHeader title="SWRL Rule Browser" subtitle="Workspace ontocore:swrlRule annotations" />
+      <PanelHeader title="SWRL Rule Browser" subtitle="Workspace swrlRule annotations" />
       {error ? <Callout variant="error">{error}</Callout> : null}
       <Toolbar>
         <ToolbarGroup>

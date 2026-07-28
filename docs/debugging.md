@@ -124,8 +124,8 @@ If `strixonomy-robot` tests fail locally without Java/ROBOT, run crate tests exc
 ### Golden / fixture snapshots
 
 ```bash
-ONTOINDEX_UPDATE_GOLDEN=1 cargo test golden_classes
-ONTOINDEX_UPDATE_FIXTURE_SNAPSHOT=1 cargo test -p strixonomy --test fixture_snapshot
+STRIXONOMY_UPDATE_GOLDEN=1 cargo test golden_classes
+STRIXONOMY_UPDATE_FIXTURE_SNAPSHOT=1 cargo test -p strixonomy --test fixture_snapshot
 ```
 
 ## Documentation and release debugging

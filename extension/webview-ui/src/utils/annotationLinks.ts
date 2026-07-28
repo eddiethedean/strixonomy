@@ -1,6 +1,6 @@
 /**
  * Annotation hyperlink extractors (Protégé *LinkExtractor ports).
- * Keep pattern tables in sync with crates/ontocore-owl/src/links.rs.
+ * Keep pattern tables in sync with crates/strixonomy-owl/src/links.rs.
  */
 
 export type AnnotationLink = {

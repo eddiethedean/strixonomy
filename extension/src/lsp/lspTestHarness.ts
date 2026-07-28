@@ -13,9 +13,7 @@ const REPO_ROOT = (() => {
 })();
 
 export function resolveLspBinaryForTests(): string {
-  const fromEnv = (
-    process.env.STRIXONOMY_LSP_BIN ?? process.env.ONTOCORE_LSP_BIN
-  )?.trim();
+  const fromEnv = process.env.STRIXONOMY_LSP_BIN?.trim();
   if (fromEnv && fs.existsSync(fromEnv)) {
     return fromEnv;
   }

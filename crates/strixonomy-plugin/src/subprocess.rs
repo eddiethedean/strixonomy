@@ -65,11 +65,11 @@ pub fn resolve_entry_path(
 }
 
 fn infer_workspace_root(manifest_path: &Path) -> Option<std::path::PathBuf> {
-    // Manifests live under `{workspace}/.strixonomy/plugins/*.toml` or legacy `.ontocore/plugins/`.
+    // Manifests live under `{workspace}/.strixonomy/plugins/*.toml`.
     let plugins_dir = manifest_path.parent()?;
     let config_dir = plugins_dir.parent()?;
     let name = config_dir.file_name().and_then(|n| n.to_str())?;
-    if name != ".strixonomy" && name != ".ontocore" {
+    if name != ".strixonomy" {
         return None;
     }
     config_dir.parent().map(|p| p.to_path_buf())
@@ -161,7 +161,6 @@ pub(crate) fn run_plugin_subprocess_with_timeout(
         .arg("--workspace")
         .arg(request.workspace)
         .env("STRIXONOMY_PLUGIN_ACTION", request.action)
-        .env("ONTOCORE_PLUGIN_ACTION", request.action) // legacy alias through 1.0
         .stdin(Stdio::null())
         .stdout(Stdio::piped())
         .stderr(Stdio::piped());

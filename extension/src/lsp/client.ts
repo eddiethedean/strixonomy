@@ -333,7 +333,7 @@ export async function getEntity(iri: string): Promise<GetEntityResult> {
   return assertGetEntityResult(result);
 }
 
-/** LSP applies patch ops as an atomic ontocore-edit Transaction (v0.19+). */
+/** LSP applies patch ops as an atomic strixonomy-edit Transaction (v0.19+). */
 export async function applyAxiomPatch(
   params: ApplyAxiomPatchParams
 ): Promise<ApplyAxiomPatchClientResult> {

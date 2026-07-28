@@ -22,10 +22,6 @@ path = "src/lib.rs"
 name = "strixonomy-lsp"
 path = "src/main.rs"
 
-[[bin]]
-name = "ontocore-lsp"
-path = "src/main.rs"
-
 [dependencies]
 strixonomy-catalog = { workspace = true }
 strixonomy-core = { workspace = true }

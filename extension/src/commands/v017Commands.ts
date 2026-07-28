@@ -446,7 +446,7 @@ export function registerV017Commands(
 
 /**
  * Open New Ontology dialog for a concrete path (skips showSaveDialog).
- * Used by VS Code e2e hooks when ONTOCODE_TEST_FIXTURES is set.
+ * Used by VS Code e2e hooks when STRIXONOMY_TEST_FIXTURES is set.
  */
 export function openNewOntologyDialog(targetPath: string): void {
   if (!dialogRuntime) {
@@ -461,7 +461,7 @@ export function openNewOntologyDialog(targetPath: string): void {
 
 /**
  * Open Prefix Manager for a catalog document path (skips multi-doc quick pick).
- * Used by VS Code e2e hooks when ONTOCODE_TEST_FIXTURES is set.
+ * Used by VS Code e2e hooks when STRIXONOMY_TEST_FIXTURES is set.
  */
 export async function openPrefixManager(documentPath: string): Promise<void> {
   if (!dialogRuntime) {

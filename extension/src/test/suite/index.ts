@@ -18,9 +18,7 @@ function collectTestFiles(dir: string): string[] {
 export function run(): Promise<void> {
   const mocha = new Mocha({ ui: "tdd", timeout: 120_000 });
   const suiteRoot = __dirname;
-  const captureOnly =
-    (process.env.STRIXONOMY_CAPTURE_SCREENSHOTS ??
-      process.env.ONTOCODE_CAPTURE_SCREENSHOTS) === "1";
+  const captureOnly = process.env.STRIXONOMY_CAPTURE_SCREENSHOTS === "1";
 
   for (const file of collectTestFiles(suiteRoot)) {
     if (captureOnly && !file.endsWith("screenshots.capture.test.js")) {

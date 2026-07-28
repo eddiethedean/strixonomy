@@ -33,7 +33,7 @@ suite("Strixonomy React webviews", () => {
     const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
     assert.ok(ext, "Strixonomy extension must be loaded");
     const activated = await ext.activate();
-    assert.ok(activated.__test, "ONTOCODE_TEST_FIXTURES must enable __test hooks");
+    assert.ok(activated.__test, "STRIXONOMY_TEST_FIXTURES must enable __test hooks");
     api = activated as StrixonomyTestApi;
   });
 

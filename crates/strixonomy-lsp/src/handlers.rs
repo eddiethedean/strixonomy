@@ -2871,9 +2871,9 @@ fn parse_custom_params<T: serde::de::DeserializeOwned>(
         .map_err(|e| LspErrorPayload::invalid_params(format!("invalid params: {e}")))
 }
 
-/// Accept `strixonomy/*` (primary) and legacy `ontocore/*` method names.
+/// Accept `strixonomy/*` custom method names.
 pub fn normalize_custom_method(method: &str) -> Option<&str> {
-    method.strip_prefix("strixonomy/").or_else(|| method.strip_prefix("ontocore/"))
+    method.strip_prefix("strixonomy/")
 }
 
 #[cfg(test)]
@@ -2881,9 +2881,9 @@ mod normalize_custom_method_tests {
     use super::normalize_custom_method;
 
     #[test]
-    fn accepts_primary_and_legacy_prefixes() {
+    fn accepts_primary_prefix() {
         assert_eq!(normalize_custom_method("strixonomy/query"), Some("query"));
-        assert_eq!(normalize_custom_method("ontocore/query"), Some("query"));
+        assert_eq!(normalize_custom_method("ontocore/query"), None);
         assert_eq!(normalize_custom_method("other/query"), None);
     }
 }

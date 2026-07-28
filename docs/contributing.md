@@ -10,7 +10,7 @@ Thank you for contributing. This repository contains:
 
 Naming: [Product identity](guides/product-identity.md).
 
-**Env vars:** prefer `STRIXONOMY_LSP_BIN` (legacy `ONTOCORE_LSP_BIN` may still be dual-read — [v0.27 migration](migration/v0.27.md)).
+**Env vars:** use `STRIXONOMY_LSP_BIN` ([v0.28 migration](migration/v0.28.md) removed legacy `ONTOCORE_*` / `ONTOCODE_*` names).
 
 ### Docs-only contributors (~15 minutes)
 
@@ -209,14 +209,14 @@ Full extension packaging (bundles LSP for current platform):
 
 ### Golden and fixture snapshots
 
-Some tests compare output to committed snapshots. To update (env var names retain the legacy `ONTOINDEX_*` prefix):
+Some tests compare output to committed snapshots. To update:
 
 ```bash
 # SQL/query golden snapshots (tests/golden/snapshots/)
-ONTOINDEX_UPDATE_GOLDEN=1 cargo test golden_classes
+STRIXONOMY_UPDATE_GOLDEN=1 cargo test golden_classes
 
 # Extension catalog fixture snapshot
-ONTOINDEX_UPDATE_FIXTURE_SNAPSHOT=1 cargo test -p strixonomy --test fixture_snapshot
+STRIXONOMY_UPDATE_FIXTURE_SNAPSHOT=1 cargo test -p strixonomy --test fixture_snapshot
 ```
 
 Review the diffs before committing.

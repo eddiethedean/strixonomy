@@ -1,6 +1,6 @@
 /**
  * Default annotation-property IRI ordering (Protégé AnnotationPropertyComparator).
- * Keep in sync with crates/ontocore-owl/src/util.rs DEFAULT_ANNOTATION_PROPERTY_ORDER.
+ * Keep in sync with crates/strixonomy-owl/src/util.rs DEFAULT_ANNOTATION_PROPERTY_ORDER.
  */
 
 export const DEFAULT_ANNOTATION_PROPERTY_ORDER: readonly string[] = [

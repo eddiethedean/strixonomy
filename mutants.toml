@@ -1,8 +1,8 @@
-# cargo-mutants scope for OntoCore security-sensitive / patch surfaces.
+# cargo-mutants scope for Strixonomy security-sensitive / patch surfaces.
 # Local / nightly only — not a PR-blocking gate. See scripts/run-mutants.sh.
 # examine_re matches mutant names (which include the source path).
 
 examine_re = [
-  "crates/ontocore-core/src/path_jail\\.rs",
-  "crates/ontocore-owl/src/patch\\.rs",
+  "crates/strixonomy-core/src/path_jail\\.rs",
+  "crates/strixonomy-owl/src/patch\\.rs",
 ]

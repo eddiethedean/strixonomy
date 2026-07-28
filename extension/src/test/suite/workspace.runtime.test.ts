@@ -30,7 +30,7 @@ suite("Strixonomy workspace runtime (VS Code e2e)", () => {
     assert.ok(ext, "Strixonomy extension must be loaded");
     api = await ext.activate();
     assert.ok(ext.isActive);
-    assert.ok(api.__test, "test hooks require ONTOCODE_TEST_FIXTURES");
+    assert.ok(api.__test, "test hooks require STRIXONOMY_TEST_FIXTURES");
   });
 
   test("registry tracks indexed ontologies after indexWorkspace", async function () {

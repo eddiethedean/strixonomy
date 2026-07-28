@@ -9,7 +9,7 @@ use crate::result::{
 use ontologos_core::{EntityKind, Ontology, SwrlAtom, SwrlDArg, SwrlIArg, SwrlRule};
 use std::time::Instant;
 
-const ONTOCORE_SWRL_PRED: &str = "http://ontocode.dev/ns#swrlRule";
+const SWRL_RULE_PRED: &str = "http://ontocode.dev/ns#swrlRule";
 
 /// Classify with SWRL materialization when the ontology contains SWRL rules.
 pub fn classify_with_swrl(input: &ReasonerInput) -> Result<ClassificationResult> {
@@ -111,7 +111,7 @@ pub fn input_has_swrl_rules(input: &ReasonerInput) -> bool {
 }
 
 fn input_mentions_authored_swrl(input: &ReasonerInput) -> bool {
-    input.document_overrides.values().any(|t| t.contains(ONTOCORE_SWRL_PRED))
+    input.document_overrides.values().any(|t| t.contains(SWRL_RULE_PRED))
 }
 
 /// Inject authored SWRL from live document overrides into the Ontologos store.

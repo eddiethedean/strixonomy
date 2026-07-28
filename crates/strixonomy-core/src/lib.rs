@@ -24,10 +24,6 @@ pub use document_lookup::{
     document_matches_ontology_id, file_uri_for_path, normalize_iri,
 };
 pub use error::{Result, StrixonomyError};
-
-/// Deprecated alias for [`StrixonomyError`] (OntoCore name).
-#[deprecated(since = "0.27.0", note = "renamed to StrixonomyError")]
-pub type OntoCoreError = StrixonomyError;
 pub use io::{atomic_write, read_file_capped, read_to_string_capped, replace_file};
 pub use limits::{
     MAX_ENTITIES, MAX_FILE_BYTES, MAX_OPEN_DOCUMENTS, MAX_QUERY_BYTES, MAX_SCAN_FILES,
@@ -57,9 +53,8 @@ pub use path_jail::{
 };
 pub use paths::{
     cache_dir, diagnostics_config_path, plugin_search_dirs, plugins_dir, resolve_config_path,
-    resolve_dotted_config_path, CACHE_SUBDIR, CONFIG_DIR, DIAGNOSTICS_FILE, LEGACY_CONFIG_DIR,
-    LEGACY_PLUGIN_DISABLED_REL, LEGACY_PLUGIN_OUT_REL, PLUGINS_SUBDIR, PLUGIN_DISABLED_REL,
-    PLUGIN_OUT_REL,
+    resolve_dotted_config_path, CACHE_SUBDIR, CONFIG_DIR, DIAGNOSTICS_FILE, PLUGINS_SUBDIR,
+    PLUGIN_DISABLED_REL, PLUGIN_OUT_REL,
 };
 pub use quick_fix::QuickFix;
 pub use rdf_literals::parse_boolean_literal;

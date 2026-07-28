@@ -36,14 +36,14 @@ def main() -> int:
         name = entry.get("class", f"entries[{i}]")
         if tag in PORT_TAGS:
             counts[tag] += 1
-            tests = entry.get("ontocode_tests") or []
+            tests = entry.get("strixonomy_tests") or []
             gap = entry.get("gap")
             if not tests and not gap:
-                errors.append(f"{name}: {tag} requires ontocode_tests or gap")
+                errors.append(f"{name}: {tag} requires strixonomy_tests or gap")
             for t in tests:
                 path = ROOT / t
                 if not path.exists():
-                    errors.append(f"{name}: missing ontocode_tests path {t}")
+                    errors.append(f"{name}: missing strixonomy_tests path {t}")
         if tag not in (*PORT_TAGS, "SKIP", "COVERED"):
             errors.append(f"{name}: invalid tag {tag!r}")
 

@@ -463,18 +463,7 @@ enum OutputFormat {
     Csv,
 }
 
-fn warn_if_legacy_argv0() {
-    let argv0 = std::env::args().next().unwrap_or_default();
-    let name = std::path::Path::new(&argv0).file_stem().and_then(|s| s.to_str()).unwrap_or("");
-    if name == "ontocore" {
-        eprintln!(
-            "warning: `ontocore` is deprecated; use `strixonomy` instead (see docs/migration/v0.27.md)"
-        );
-    }
-}
-
 fn main() -> Result<()> {
-    warn_if_legacy_argv0();
     let cli = Cli::parse();
     match cli.command {
         Commands::New { path, ontology_iri, version_iri, force } => {

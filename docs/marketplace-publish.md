@@ -46,7 +46,7 @@ npx vsce package --no-dependencies
 ## After publish
 
 1. Update root README **Choose your path → VS Code** to link Marketplace and Open VSX listings first, VSIX as fallback
-2. Verify Open VSX and Marketplace badges on README and [docs/index.md](index.md) (Marketplace: `https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg` — shields.io `visual-studio-marketplace` badges are retired)
+2. Verify Open VSX and Marketplace badges on README and [docs/index.md](index.md) (Marketplace: `https://badgen.net/vs-marketplace/v/strixonomy.strixonomy?label=VS%20Code%20Marketplace` — shields.io and vsmarketplacebadges.dev endpoints are retired/unreliable)
 3. Confirm the release tag and GitHub Release VSIX are already attached (tag **before** publish — do not tag after manual Marketplace publish)
 
 ## Token handling

@@ -18,11 +18,10 @@ cargo mutants -p strixonomy-core \
   "$@"
 
 # Include workspace package so tests/owl_patch_oracles.rs kills apply_one_patch no-ops.
-echo "==> mutants: strixonomy-owl patch.rs (tests: strixonomy-owl + ontocode)"
+echo "==> mutants: strixonomy-owl patch.rs (tests: strixonomy-owl)"
 cargo mutants -p strixonomy-owl \
   --file 'crates/strixonomy-owl/src/patch.rs' \
   --test-package strixonomy-owl \
-  --test-package ontocode \
   --test-tool=cargo \
   "$@"
 

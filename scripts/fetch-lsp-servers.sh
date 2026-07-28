@@ -6,7 +6,7 @@ set -euo pipefail
 TAG="${1:?Usage: $0 <tag> e.g. v0.3.0}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SERVER_DIR="$ROOT/extension/server"
-REPO="eddiethedean/ontocode"
+REPO="eddiethedean/strixonomy"
 
 mkdir -p "$SERVER_DIR"
 

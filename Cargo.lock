@@ -1051,13 +1051,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "384b8ab6d37215f3c5301a95a4accb5d64aa607f1fcb26a11b5303878451b4fe"
 
 [[package]]
-name = "ontocore"
-version = "0.27.0"
-dependencies = [
- "strixonomy",
-]
-
-[[package]]
 name = "ontologos-alc"
 version = "1.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2111,7 +2104,7 @@ checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
 name = "strixonomy"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "strixonomy-catalog",
  "strixonomy-core",
@@ -2134,7 +2127,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-catalog"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "hex",
  "oxigraph",
@@ -2151,7 +2144,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-cli"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "anyhow",
  "clap",
@@ -2172,7 +2165,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-core"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "hex",
  "ignore",
@@ -2186,7 +2179,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-diagnostics"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "regex",
  "serde",
@@ -2198,7 +2191,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-diff"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "git2",
  "serde",
@@ -2211,7 +2204,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-docs"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "minijinja",
  "serde",
@@ -2223,7 +2216,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-edit"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -2235,7 +2228,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-lsp"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "crossbeam-channel",
  "lsp-server",
@@ -2262,7 +2255,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-obo"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "fastobo",
  "serde",
@@ -2274,7 +2267,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-owl"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "curie",
  "horned-owl",
@@ -2289,7 +2282,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-parser"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "fastobo",
  "oxigraph",
@@ -2302,7 +2295,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-plugin"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "libc",
  "serde",
@@ -2317,7 +2310,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-plugin-builtins"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "strixonomy-plugin",
  "strixonomy-plugin-markdown-export",
@@ -2327,7 +2320,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-plugin-markdown-export"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "clap",
  "serde_json",
@@ -2338,7 +2331,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-plugin-naming"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "clap",
  "serde_json",
@@ -2350,7 +2343,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-plugin-shacl"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "clap",
  "serde_json",
@@ -2361,7 +2354,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-query"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "csv",
  "oxigraph",
@@ -2375,7 +2368,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-reasoner"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "hex",
  "horned-owl",
@@ -2403,7 +2396,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-refactor"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "serde",
  "strixonomy-catalog",
@@ -2417,7 +2410,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-robot"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "libc",
  "tempfile",
@@ -2426,7 +2419,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-swrl"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "horned-owl",
  "serde",
@@ -2437,7 +2430,7 @@ dependencies = [
 
 [[package]]
 name = "strixonomy-workspace"
-version = "0.27.0"
+version = "0.28.0"
 dependencies = [
  "fastobo",
  "regex",

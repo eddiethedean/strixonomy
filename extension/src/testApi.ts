@@ -59,7 +59,7 @@ function extensionUri(): vscode.Uri {
   return ext.extensionUri;
 }
 
-/** Test hooks exposed when ONTOCODE_TEST_FIXTURES is set (VS Code e2e). */
+/** Test hooks exposed when STRIXONOMY_TEST_FIXTURES is set (VS Code e2e). */
 export function createStrixonomyTestHooks(): StrixonomyTestHooks {
   return {
     async openEntityInspector(iri: string): Promise<void> {
@@ -209,12 +209,8 @@ export function createStrixonomyTestHooks(): StrixonomyTestHooks {
     },
 
     async captureScreenshot(name: string): Promise<void> {
-      const script =
-        process.env.STRIXONOMY_CAPTURE_SCRIPT ??
-        process.env.ONTOCODE_CAPTURE_SCRIPT;
-      const dir =
-        process.env.STRIXONOMY_SCREENSHOT_DIR ??
-        process.env.ONTOCODE_SCREENSHOT_DIR;
+      const script = process.env.STRIXONOMY_CAPTURE_SCRIPT;
+      const dir = process.env.STRIXONOMY_SCREENSHOT_DIR;
       if (!script || !dir) {
         throw new Error(
           "STRIXONOMY_CAPTURE_SCRIPT and STRIXONOMY_SCREENSHOT_DIR must be set"

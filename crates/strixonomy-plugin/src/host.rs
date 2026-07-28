@@ -23,7 +23,6 @@ use thiserror::Error;
 const DEFAULT_PLUGIN_EXPORT_DIR: &str = ".strixonomy/plugin-out";
 /// Persisted user-disabled plugin ids (workspace-relative).
 const DISABLED_STATE_FILE: &str = ".strixonomy/plugin-disabled.json";
-const LEGACY_DISABLED_STATE_FILE: &str = ".ontocore/plugin-disabled.json";
 
 #[derive(Debug, Error)]
 pub enum PluginHostError {
@@ -850,11 +849,7 @@ fn wire_to_diagnostics(plugin_id: &str, workspace: &Path, output: PluginOutput) 
 }
 
 fn load_disabled_ids(workspace: &Path) -> HashSet<String> {
-    let path = strixonomy_core::resolve_dotted_config_path(
-        workspace,
-        DISABLED_STATE_FILE,
-        LEGACY_DISABLED_STATE_FILE,
-    );
+    let path = workspace.join(DISABLED_STATE_FILE);
     let Ok(bytes) = std::fs::read(&path) else {
         return HashSet::new();
     };

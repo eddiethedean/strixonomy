@@ -23,9 +23,9 @@ fi
 echo "ok: tag ${TAG} exists"
 
 SAMPLES=(
-  "https://raw.githubusercontent.com/eddiethedean/ontocode/${TAG}/fixtures/example.ttl"
-  "https://raw.githubusercontent.com/eddiethedean/ontocode/${TAG}/fixtures/complex-classes.ttl"
-  "https://raw.githubusercontent.com/eddiethedean/ontocode/${TAG}/examples/obo-workflow/demo.obo"
+  "https://raw.githubusercontent.com/eddiethedean/strixonomy/${TAG}/fixtures/example.ttl"
+  "https://raw.githubusercontent.com/eddiethedean/strixonomy/${TAG}/fixtures/complex-classes.ttl"
+  "https://raw.githubusercontent.com/eddiethedean/strixonomy/${TAG}/examples/obo-workflow/demo.obo"
 )
 
 for url in "${SAMPLES[@]}"; do

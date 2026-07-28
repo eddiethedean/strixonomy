@@ -18,7 +18,7 @@ Strixonomy is one brand with two shipping surfaces. Use these labels in docs and
 | `ontocore-cli` / `ontocore` | `strixonomy-cli` / `strixonomy` ([v0.27 migration](../migration/v0.27.md)) |
 | `ontocode-v*.vsix` | `strixonomy-v*.vsix` |
 
-Deprecated binary aliases (`ontocore`, `ontocore-lsp`) may still exist for a compatibility window — prefer the Strixonomy names.
+v0.27 shipped a short compatibility window (binary aliases, LSP `ontocore/*`, dual-read paths). **v0.28 removed those shims** — see [v0.28 migration](../migration/v0.28.md).
 
 ## Install gotcha
 
@@ -30,3 +30,4 @@ The GitHub repository and façade crate are named `strixonomy`. The **CLI packag
 - [Install](../install.md)
 - [Glossary](../glossary.md)
 - [v0.27 migration](../migration/v0.27.md)
+- [v0.28 migration](../migration/v0.28.md)

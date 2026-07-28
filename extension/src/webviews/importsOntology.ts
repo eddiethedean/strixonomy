@@ -4,7 +4,7 @@ export function normalizeOntologyIri(iri: string): string {
   return iri.replace(/[#/]+$/, "");
 }
 
-/** Mirror `document_matches_entity` in ontocore-core (no IRI prefix matching). */
+/** Mirror `document_matches_entity` in strixonomy-core (no IRI prefix matching). */
 export function entityBelongsToDocument(
   entity: Entity,
   doc: OntologyDocument

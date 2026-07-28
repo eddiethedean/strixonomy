@@ -17,7 +17,7 @@ export type InjectablePanelKind =
   | "reasoner"
   | "semanticDiff";
 
-/** VS Code integration test hooks (only when ONTOCODE_TEST_FIXTURES is set). */
+/** VS Code integration test hooks (only when STRIXONOMY_TEST_FIXTURES is set). */
 export interface StrixonomyTestHooks {
   openEntityInspector(iri: string): Promise<void>;
   getInspectorWebviewHtml(): string | undefined;
@@ -54,8 +54,8 @@ export interface StrixonomyTestHooks {
   /** Open Semantic Diff for left/right refs (skips input boxes). */
   openSemanticDiff(leftRef: string, rightRef: string): Promise<void>;
   /**
-   * Capture the VS Code window via ONTOCODE_CAPTURE_SCRIPT into
-   * ONTOCODE_SCREENSHOT_DIR/<name>.png (macOS screenshot pipeline).
+   * Capture the VS Code window via STRIXONOMY_CAPTURE_SCRIPT into
+   * STRIXONOMY_SCREENSHOT_DIR/<name>.png (macOS screenshot pipeline).
    */
   captureScreenshot(name: string): Promise<void>;
   /** Brief UI settle delay for animations / layout. */
@@ -85,6 +85,6 @@ export interface StrixonomyApi {
     entityIri?: string,
     documentUri?: string
   ): Promise<ParseManchesterResult>;
-  /** Present when ONTOCODE_TEST_FIXTURES is set. */
+  /** Present when STRIXONOMY_TEST_FIXTURES is set. */
   __test?: StrixonomyTestHooks;
 }

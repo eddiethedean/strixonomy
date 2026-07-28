@@ -19,7 +19,7 @@ pub fn assert_golden_snapshot(workspace: &str, query: &str, golden_path: &Path) 
     }
     let actual = format!("{}\n", lines.join("\n"));
 
-    if std::env::var("ONTOINDEX_UPDATE_GOLDEN").is_ok() {
+    if std::env::var("STRIXONOMY_UPDATE_GOLDEN").is_ok() {
         if let Some(parent) = golden_path.parent() {
             fs::create_dir_all(parent).expect("create golden dir");
         }

@@ -1,6 +1,6 @@
 # Strixonomy
 
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
+[![VS Code Marketplace](https://badgen.net/vs-marketplace/v/strixonomy.strixonomy?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
 [![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
 
 **Ontology IDE for VS Code** — browse and edit Turtle/OBO/RDF/XML/OWL/XML, query, reason, validate, and diff. **Not a full Protégé replacement** — see [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/) and [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/).

@@ -7,7 +7,7 @@ describe("capability registry", () => {
     clearRegistryForTests();
   });
 
-  it("registers built-in ontocore provider", () => {
+  it("registers built-in strixonomy provider", () => {
     registerBuiltinProviders();
     const providers = list();
     expect(providers.some((p) => p.id === "strixonomy")).toBe(true);

@@ -28,9 +28,7 @@ interface StrixonomyTestApi {
   __test: StrixonomyTestHooks;
 }
 
-const CAPTURE =
-  (process.env.STRIXONOMY_CAPTURE_SCREENSHOTS ??
-    process.env.ONTOCODE_CAPTURE_SCREENSHOTS) === "1";
+const CAPTURE = process.env.STRIXONOMY_CAPTURE_SCREENSHOTS === "1";
 
 suite("Strixonomy screenshot capture", function () {
   if (!CAPTURE) {
@@ -47,7 +45,7 @@ suite("Strixonomy screenshot capture", function () {
     const ext = vscode.extensions.getExtension("strixonomy.strixonomy");
     assert.ok(ext, "Strixonomy extension must be loaded");
     const activated = await ext.activate();
-    assert.ok(activated.__test, "ONTOCODE_TEST_FIXTURES must enable __test hooks");
+    assert.ok(activated.__test, "STRIXONOMY_TEST_FIXTURES must enable __test hooks");
     api = activated as StrixonomyTestApi;
 
     const client = api.getClient();
@@ -131,10 +129,8 @@ suite("Strixonomy screenshot capture", function () {
   });
 
   test("assemble product-tour.gif from captured frames", async () => {
-    const dir =
-      process.env.STRIXONOMY_SCREENSHOT_DIR ??
-      process.env.ONTOCODE_SCREENSHOT_DIR;
-    assert.ok(dir, "ONTOCODE_SCREENSHOT_DIR required");
+    const dir = process.env.STRIXONOMY_SCREENSHOT_DIR;
+    assert.ok(dir, "STRIXONOMY_SCREENSHOT_DIR required");
     const frames = [
       "explorer-inspector.png",
       "query-workbench.png",

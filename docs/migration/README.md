@@ -30,6 +30,7 @@ Upgrade notes between Strixonomy releases (historically OntoCore / OntoCode).
 | v0.26.0 → v0.26.1 | [Migration v0.26.0 → v0.26.1](v0.26.1.md) — OWL remove/match + annotation/range/XML write-back fixes |
 | v0.26.1 → v0.26.2 | [Migration v0.26.1 → v0.26.2](v0.26.2.md) — host focus/transaction integrity + residual false positives |
 | v0.26.2 → v0.27.0 | [Migration v0.26 → v0.27](v0.27.md) — **Strixonomy rename** (OntoCore/OntoCode → Strixonomy) |
+| v0.27.0 → v0.28.0 | [Migration v0.27 → v0.28](v0.28.md) — **Remove OntoCore/OntoCode compat shims** |
 
 Pre-1.0: library APIs, LSP JSON, and SQL virtual table columns may change between minor releases. See [API stability](../guides/api-stability.md) and [workspace limits](../workspace-limits.md).
 

@@ -3,7 +3,7 @@
 > **Status:** Documents behavior in **Strixonomy v0.27.0**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
-This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix; servers also accept legacy **`ontocore/*`** through at least 1.0 ([migration/v0.27.md](migration/v0.27.md)). For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
+This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix. Legacy **`ontocore/*`** was removed in [v0.28](migration/v0.28.md). For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
 
 ## Start here: index a workspace
 
