@@ -1,6 +1,6 @@
 # Strixonomy + Strixonomy Documentation Package
 
-> **Note:** This folder contains **engineering specs, ADRs, and shipped milestone detail**. Canonical platform direction lives in **[Vision](../vision.md)**, **[Architecture](../architecture.md)**, and **[Roadmap](../roadmap.md)** ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)). For **what ships in v0.26.2**, see [What ships today](../SHIPPED.md).
+> **Note:** This folder contains **engineering specs, ADRs, and shipped milestone detail**. Canonical platform direction lives in **[Vision](../vision.md)**, **[Architecture](../architecture.md)**, and **[Roadmap](../roadmap.md)** ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)). For **what ships in v0.27.0**, see [What ships today](../SHIPPED.md).
 
 ## Documentation layers
 
@@ -15,7 +15,7 @@ For **user-facing guides**, pick a path:
 
 | Path | Audience | Start |
 |------|----------|-------|
-| [VS Code extension](https://strixonomy-vs.readthedocs.io/en/latest/ide/vscode-extension/) | Explorer, inspector, Query Workbench, reasoner panels | [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) (Cursor), or VSIX — no Rust required |
+| [VS Code extension](https://strixonomy-vs.readthedocs.io/en/latest/ide/vscode-extension/) | Explorer, inspector, Query Workbench, reasoner panels | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or VSIX — no Rust required |
 | [Rust & CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-crates/) | `strixonomy` CLI, crates.io libraries, CI, LSP integrators | `cargo install strixonomy-cli` |
 
 [Documentation home](https://strixonomy-vs.readthedocs.io/en/latest/) · [What ships today](../SHIPPED.md)

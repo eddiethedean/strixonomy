@@ -1,6 +1,6 @@
 # Rust API reference
 
-Strixonomy exposes a Rust library through the [`strixonomy`](https://crates.io/crates/ontocore) façade crate and individual `strixonomy-*` implementation crates.
+Strixonomy exposes a Rust library through the [`strixonomy`](https://crates.io/crates/strixonomy) façade crate and individual `strixonomy-*` implementation crates.
 
 ## Stability
 
@@ -15,10 +15,10 @@ Pin dependencies in `Cargo.toml`:
 
 ```toml
 [dependencies]
-ontocore = "0.26"
+strixonomy = "0.27"
 ```
 
-For CI and reproducible builds: `cargo install ontocore-cli --locked --version 0.26.2`.
+For CI and reproducible builds: `cargo install strixonomy-cli --locked --version 0.27.0`.
 
 ## docs.rs
 
@@ -44,7 +44,7 @@ Generated API documentation is published on [docs.rs](https://docs.rs/strixonomy
 | `strixonomy-plugin` | [docs.rs/strixonomy-plugin](https://docs.rs/strixonomy-plugin) (Plugin SDK 1.0 wire; see [Plugin policy](../guides/plugin-policy.md)) |
 | `strixonomy-cli` | [docs.rs/strixonomy-cli](https://docs.rs/strixonomy-cli) |
 
-Search all crates: [crates.io search?q=strixonomy](https://crates.io/search?q=ontocore).
+Search all crates: [crates.io search?q=strixonomy](https://crates.io/search?q=strixonomy).
 
 ## Book ↔ docs.rs crosswalk
 

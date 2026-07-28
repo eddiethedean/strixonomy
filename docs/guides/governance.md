@@ -8,7 +8,7 @@ What enterprise evaluators can determine from **published documentation and repo
 |--------|--------|
 | **Product** | Open-source Strixonomy (VS Code IDE) + Strixonomy (Rust engine) |
 | **License** | MIT OR Apache-2.0 (application crates); third-party licenses in [LICENSES.md](../design/LICENSES.md) |
-| **Distribution** | GitHub Releases (VSIX, CLI, LSP), [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode), [Open VSX](https://open-vsx.org/extension/ontocode/ontocode), [crates.io](https://crates.io/search?q=ontocore) |
+| **Distribution** | GitHub Releases (VSIX, CLI, LSP), [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy), [crates.io](https://crates.io/search?q=strixonomy) |
 | **Commercial support** | **Not offered** — community via [GitHub issues](https://github.com/eddiethedean/strixonomy/issues) |
 | **Vendor / company** | Not documented as a separate legal entity |
 
@@ -18,12 +18,11 @@ Fortune 500 teams should plan **internal OSS adoption** with their own escalatio
 
 Recent documented releases (see [changelog](../changelog.md)):
 
-- **0.27.x** — In progress (unreleased); Strixonomy rename and compatibility migration.
-- **0.26.x** — Current tagged release under OntoCode/OntoCore identifiers.
+- **0.27.x** — Current tagged release (Strixonomy rename; legacy OntoCore/OntoCode compatibility through ≥1.0).
 
 | Version | Date (changelog) |
 |---------|------------------|
-| 0.26.2 | 2026-07-16 |
+| 0.27.0 | 2026-07-27 |
 | 0.25.0 | 2026-07-15 |
 | 0.24.0 | 2026-07-14 |
 | 0.22.0 | 2026-07-13 |
@@ -55,7 +54,7 @@ Maintainers follow [releasing.md](../releasing.md): version bump, CHANGELOG, SHI
 | Stream | Security support (documented) |
 |--------|-------------------------------|
 | **0.27.x** | In progress (unreleased) |
-| **0.26.x** | Yes — current tagged release |
+| **0.27.x** | Yes — current tagged release |
 | **0.19.x** | Yes |
 | **0.14.x** | Best effort |
 | **0.11.x** | No |

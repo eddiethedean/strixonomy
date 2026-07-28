@@ -2,7 +2,7 @@
 
 Strixonomy and Strixonomy publish several roadmap documents. **Use this page to pick the right one** — they serve different audiences and must not be read as a single capability list.
 
-**Current tagged release:** v0.26.2 · **Development:** v0.27.0 (unreleased) · [What ships today](SHIPPED.md)
+**Current tagged release:** v0.27.0 · **Development:** v0.27.0 (unreleased) · [What ships today](SHIPPED.md)
 
 ## Which document should I read?
 
@@ -51,6 +51,6 @@ flowchart TB
 
 ## Current release
 
-**v0.26.2** — see [Migration v0.24.0 → v0.26.2](migration/v0.26.md), [Migration v0.23.0 → v0.24.0](migration/v0.24.md), and [Changelog](changelog.md).
+**v0.27.0** — see [Migration v0.24.0 → v0.27.0](migration/v0.26.md), [Migration v0.23.0 → v0.24.0](migration/v0.24.md), and [Changelog](changelog.md).
 
 > **Design docs under `docs/platform/`, `docs/ui/`, `docs/protege-parity/`, and `docs/PROTEGE_REVERSE_ENGINEERING/` are not a shipped feature list.** Evaluators and procurement should use [SHIPPED.md](SHIPPED.md) and [Known limitations](known-limitations.md) only — ignore internal parity percentage assessments on GitHub.

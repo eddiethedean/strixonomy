@@ -7,7 +7,7 @@ Planning ranges for Strixonomy / Strixonomy. **These are product goals, not cont
 | Version | Status | Date (changelog) |
 |---------|--------|------------------|
 | **0.27.0** | Current development (unreleased) | — |
-| **0.26.2** | Current (tagged) | 2026-07-16 |
+| **0.27.0** | Current (tagged) | 2026-07-16 |
 | **0.25.0** | Previous | 2026-07-15 |
 | **0.24.0** | Previous | 2026-07-14 |
 | **0.23.0** | Previous | 2026-07-14 |

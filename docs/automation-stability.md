@@ -20,7 +20,7 @@ See:
 Until v1.0, minor releases may change non-gate details. For reproducible pipelines:
 
 - Pin the CLI in CI:
-  - `cargo install ontocore-cli --locked --version 0.26.2`, or
+  - `cargo install ontocore-cli --locked --version 0.27.0`, or
   - Linux x64: pinned release binary + SHA256 verification
 
 ## Surfaces that may change pre-1.0

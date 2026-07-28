@@ -1,6 +1,6 @@
 # Platform and VS Code compatibility
 
-Supported platforms and environments for Strixonomy **v0.26.2** (latest tagged). This page states **what is documented and tested in project CI** — not a formal certification.
+Supported platforms and environments for Strixonomy **v0.27.0** (latest tagged). This page states **what is documented and tested in project CI** — not a formal certification.
 
 Canonical matrix: [What ships today](../SHIPPED.md).
 
@@ -11,7 +11,7 @@ Canonical matrix: [What ships today](../SHIPPED.md).
 | Minimum VS Code | **1.85+** — [enterprise deployment](enterprise-deployment.md), [vscode-install](../vscode-install.md) |
 | Maximum VS Code tested | **Not documented** — test your target VS Code version in pilot |
 | Marketplace ID | `strixonomy.strixonomy` |
-| Open VSX ID | `strixonomy.strixonomy` — [open-vsx.org/extension/ontocode/ontocode](https://open-vsx.org/extension/ontocode/ontocode) (Cursor, v0.11+) |
+| Open VSX ID | `strixonomy.strixonomy` — [open-vsx.org/extension/strixonomy/strixonomy](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor, v0.11+) |
 | Offline install | Release VSIX + SHA256 — [release integrity](../release-integrity.md) |
 | Workspace trust | **Required** for custom `strixonomy.lspPath`; Restricted Mode uses bundled LSP |
 
@@ -38,7 +38,7 @@ No separate LSP install required for standard Marketplace, Open VSX, or VSIX use
 | macOS | **No** — use `cargo install strixonomy-cli --locked` |
 | Windows | **No** — use `cargo install` or CI on Linux runners |
 
-Pin version: `VERSION=0.26.2` — [Install CLI & CI (detail)](../install-cli-ci.md).
+Pin version: `VERSION=0.27.0` — [Install CLI & CI (detail)](../install-cli-ci.md).
 
 ## `cargo install` prerequisites
 

@@ -8,13 +8,13 @@ IDE tutorial: [First success (~10 min)](guides/first-success.md). Canonical prod
     A cold Rust toolchain may take **15–30+ minutes** to compile Strixonomy on first run. The VS Code extension bundles `strixonomy-lsp` and does not require Rust. **Linux x64 CI should prefer the release tarball** ([CI integration](ci-integration.md)) over `cargo install`.
 
 !!! note "Linux arm64 and non-x64"
-    Prebuilt CLI tarballs are **`x86_64-unknown-linux-gnu` only**. On Linux arm64 (and other unsupported targets), use `cargo install ontocore-cli --locked --version 0.26.2` or the language server bundled in the VSIX — see [platform compatibility](guides/platform-compatibility.md).
+    Prebuilt CLI tarballs are **`x86_64-unknown-linux-gnu` only**. On Linux arm64 (and other unsupported targets), use `cargo install ontocore-cli --locked --version 0.27.0` or the language server bundled in the VSIX — see [platform compatibility](guides/platform-compatibility.md).
 
 ## Install matrix (CLI)
 
 | Method | Linux x64 | macOS | Windows | Needs Rust? |
 |--------|-----------|-------|---------|-------------|
-| `cargo install ontocore-cli --locked --version 0.26.2` | Yes | Yes | Yes | Yes (1.88+) |
+| `cargo install ontocore-cli --locked --version 0.27.0` | Yes | Yes | Yes | Yes (1.88+) |
 | Release CLI tarball (`strixonomy-v*-x86_64-unknown-linux-gnu`) | Yes | No | No | No |
 | Git clone + `cargo run --` | Yes | Yes | Yes | Yes (1.88+) |
 
@@ -62,10 +62,10 @@ The `fixtures/` directory is included in the repository for examples and tests.
 ## `cargo install` (no clone)
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
+cargo install ontocore-cli --locked --version 0.27.0
 ```
 
-**Version pinning:** Always pin an exact release in CI with `--version 0.26.2` (see [TAGGED_RELEASE](TAGGED_RELEASE)). Prefer `--locked` for reproducible crates.io installs — see [API stability](guides/api-stability.md) and [release integrity](release-integrity.md). For a longer macOS/Windows walkthrough, see [Install CLI](guides/install-cli.md).
+**Version pinning:** Always pin an exact release in CI with `--version 0.27.0` (see [TAGGED_RELEASE](TAGGED_RELEASE)). Prefer `--locked` for reproducible crates.io installs — see [API stability](guides/api-stability.md) and [release integrity](release-integrity.md). For a longer macOS/Windows walkthrough, see [Install CLI](guides/install-cli.md).
 
 Use **your own ontology directory** — there is no `fixtures/` folder outside a clone:
 
@@ -79,13 +79,13 @@ strixonomy validate /path/to/your/ontologies
 
 **CLI pre-builds are Linux x64 only.** On macOS or Windows, use `cargo install strixonomy-cli` or install the VS Code extension (bundled LSP). Full CI copy-paste: [CI integration](ci-integration.md).
 
-1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) for the latest **v0.26.x** tag.
+1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) for the latest **v0.27.x** tag.
 2. Download `strixonomy-v<version>-x86_64-unknown-linux-gnu.tar.gz`.
 3. Verify with `SHA256SUMS` — see [release-integrity.md](release-integrity.md).
-4. Extract and run (replace `0.26.2` with your tag):
+4. Extract and run (replace `0.27.0` with your tag):
 
 ```bash
-VERSION=0.26.2
+VERSION=0.27.0
 ASSET="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
 BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
 tar xzf "${ASSET}"

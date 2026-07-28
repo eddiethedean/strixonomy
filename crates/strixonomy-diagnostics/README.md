@@ -7,7 +7,7 @@ Ontology lint rules and diagnostic collection for [Strixonomy](https://github.co
 ## Install
 
 ```toml
-strixonomy-diagnostics = "0.26"
+strixonomy-diagnostics = "0.27"
 ```
 
 ## Documentation

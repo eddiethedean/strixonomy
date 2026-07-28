@@ -38,7 +38,7 @@ Full matrix: [known-limitations](../known-limitations.md) · [SHIPPED](../SHIPPE
 
 ## Day 1 — Install and open your project
 
-1. Install [Strixonomy from the Marketplace](../vscode-install.md) or [Open VSX](https://open-vsx.org/extension/ontocode/ontocode).
+1. Install [Strixonomy from the Marketplace](../vscode-install.md) or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy).
 2. **File → Open Folder…** and select your ontology repository (not a single file).
 3. Strixonomy’s **bundled** language server works in Restricted Mode — **Trust** only if you set custom `strixonomy.lspPath` or `strixonomy.robotPath`.
 4. Open the **Strixonomy** activity bar and confirm **Ontologies** lists your `.ttl` / `.owl` files.
@@ -68,7 +68,7 @@ Follow the [first success core path](../guides/first-success.md) if anything is 
 ## Day 3 — Validate in CI
 
 ```yaml
-- run: cargo install ontocore-cli --locked --version 0.26.2
+- run: cargo install ontocore-cli --locked --version 0.27.0
 - run: strixonomy validate ./src/ontologies
 ```
 

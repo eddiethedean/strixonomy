@@ -4,9 +4,7 @@
 >
 > Edit **`docs/architecture.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 
-**Latest tagged: v0.26.2** — v0.26 ships today under OntoCode/OntoCore names.
-
-**v0.27 in progress (unreleased):** renames the platform to Strixonomy.
+**Latest tagged: v0.27.0** — v0.27 ships today. Strixonomy (VS Code) + Strixonomy (CLI/LSP/library).
 
 ## Quick map
 

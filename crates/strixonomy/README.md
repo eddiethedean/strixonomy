@@ -67,4 +67,4 @@ strixonomy = { version = "0.26", features = ["lsp"] }
 - [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
 - [docs/strixonomy/](https://github.com/eddiethedean/strixonomy/tree/main/docs/strixonomy) in this repository
 
-**Current version: 0.26.2**
+**Current version: 0.27.0**

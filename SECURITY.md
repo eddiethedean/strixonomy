@@ -1,15 +1,14 @@
 # Security Policy
 
-Strixonomy and Strixonomy are **local-first** tools: they index and parse ontology files on disk and do **not** upload workspace content by default. There is **no telemetry**.
+Strixonomy is a **local-first** tool: they index and parse ontology files on disk and do **not** upload workspace content by default. There is **no telemetry**.
 
 ## Supported versions
 
 | Version | Supported |
 |---------|-----------|
-| 0.27.x   | In progress (unreleased) — not supported for adoption |
-| 0.26.x   | Yes — latest tagged release |
-| 0.25.x   | Yes (N−1) |
-| ≤ 0.24.x | No — upgrade to a tagged 0.25.x or 0.26.x release |
+| 0.27.x   | Yes — latest tagged release |
+| 0.26.x   | Yes (N−1) |
+| ≤ 0.25.x | No — upgrade to a tagged 0.26.x or 0.27.x release |
 
 Pin production and CI to the latest **tagged** release (`docs/TAGGED_RELEASE` in the repository). Unreleased minors on `main` are not supported for adoption until tagged.
 

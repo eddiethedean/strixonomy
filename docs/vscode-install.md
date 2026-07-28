@@ -2,10 +2,10 @@
 
 # Installing Strixonomy in VS Code
 
-[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/ontocode/ontocode)
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode)
+[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
+[![VS Code Marketplace](https://vsmarketplacebadges.dev/version/strixonomy.strixonomy.svg?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy)
 
-**Primary path:** [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) (or [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) for Cursor) → [First success (~10 min)](guides/first-success.md).
+**Primary path:** [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) for Cursor) → [First success (~10 min)](guides/first-success.md).
 
 > **Multi-root workspaces (v0.10+):** All workspace folders are indexed on open. **Strixonomy: Index Workspace** may prompt you to pick a folder when multiple roots are open.
 
@@ -28,18 +28,18 @@ CLI install options (separate from the extension): [Install](install.md) · [Ins
 
 ## Option A — VS Code Marketplace (recommended)
 
-1. Install [Strixonomy from the Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) (or [Open VSX](https://open-vsx.org/extension/ontocode/ontocode) for Cursor). If the store lags the latest GitHub tag, use the VSIX under Option B — see [Versions and channels](guides/versions-and-channels.md).
+1. Install [Strixonomy from the Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (or [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) for Cursor). If the store lags the latest GitHub tag, use the VSIX under Option B — see [Versions and channels](guides/versions-and-channels.md).
 2. **File → Open Folder…** and choose a directory with ontology files.
 3. Strixonomy’s **bundled** language server runs without Trust; **do not Trust** unless you need custom `strixonomy.lspPath` / `strixonomy.robotPath`.
 4. Open the **Strixonomy** activity bar and browse ontologies, classes, properties, individuals, and **Diagnostics**.
 
 For a full walkthrough, see [First success in 10 minutes](guides/first-success.md).
 
-**Sample ontology files:** prefer the curl/PowerShell commands in [First success](guides/first-success.md). Offline: download [`ontocode-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.26.2/ontocode-tutorial.zip) from the [v0.26.2 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.26.2), unzip, and open that folder — or open `fixtures/` from a clone.
+**Sample ontology files:** prefer the curl/PowerShell commands in [First success](guides/first-success.md). Offline: download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) from the [v0.27.0 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0), unzip, and open that folder — or open `fixtures/` from a clone.
 
 ## Option B — GitHub Release VSIX (offline / air-gapped)
 
-1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) and download the latest `strixonomy-v*.vsix` (example: `ontocode-v0.26.2.vsix`).
+1. Open [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) and download the latest `strixonomy-v*.vsix` (example: `ontocode-v0.27.0.vsix`).
 2. In VS Code: **Extensions** → **…** menu → **Install from VSIX…**
 3. Verify against `SHA256SUMS` — see [release-integrity.md](release-integrity.md).
 4. Open a folder containing ontology files (`.ttl`, `.obo`, `.owl`, `.rdf`, `.owx` editable; `.jsonld`, `.nt`, `.nq`, `.trig` browse/query only).
@@ -64,14 +64,14 @@ Install the generated `.vsix` via **Install from VSIX…**, or press **F5** in V
 Use this only when the bundled server is missing or you are developing the LSP:
 
 ```bash
-cargo install ontocore-lsp --locked --version 0.26.2
+cargo install ontocore-lsp --locked --version 0.27.0
 ```
 
 Set **Strixonomy: Lsp Path** (`strixonomy.lspPath`) to the absolute path of your `strixonomy-lsp` binary. **Trusted workspaces only** — ignored in Restricted Mode.
 
 ## Option E — Cursor / Open VSX (v0.11+)
 
-[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/ontocode/ontocode)
+[![Open VSX](https://img.shields.io/open-vsx/v/strixonomy/strixonomy)](https://open-vsx.org/extension/strixonomy/strixonomy)
 
 [Cursor](https://cursor.com/) uses the [Open VSX](https://open-vsx.org/) registry instead of the Microsoft VS Code Marketplace.
 
@@ -81,7 +81,7 @@ Set **Strixonomy: Lsp Path** (`strixonomy.lspPath`) to the absolute path of your
 
 If Strixonomy does not appear in search (before v0.11 or if Open VSX sync is delayed):
 
-1. Download `strixonomy-v*.vsix` (example: `ontocode-v0.26.2.vsix`) from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
+1. Download `strixonomy-v*.vsix` (example: `ontocode-v0.27.0.vsix`) from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases).
 2. **Cmd+Shift+P** / **Ctrl+Shift+P** → **Extensions: Install from VSIX…**
 
 Release tags from v0.11.3 onward publish automatically to Open VSX.

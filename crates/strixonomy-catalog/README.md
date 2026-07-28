@@ -7,7 +7,7 @@ Semantic catalog and index builder for [Strixonomy](https://github.com/eddiethed
 ## Install
 
 ```toml
-strixonomy-catalog = "0.26"
+strixonomy-catalog = "0.27"
 ```
 
 Supports incremental rebuilds (content-hash reuse), optional disk cache (`.strixonomy/cache/`), and config fingerprinting for CI.

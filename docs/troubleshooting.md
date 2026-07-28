@@ -52,7 +52,7 @@ flowchart TD
 1. Check **Output → Strixonomy Language Server** for the exact error.
 2. Uninstall duplicate Strixonomy extension versions.
 3. Strixonomy’s **bundled** language server works in trusted and Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath` (Restricted Mode ignores those settings).
-4. Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install ontocore-lsp --locked --version 0.26.2`) — trusted workspaces only.
+4. Set `strixonomy.lspPath` to a local `strixonomy-lsp` binary (`cargo install ontocore-lsp --locked --version 0.27.0`) — trusted workspaces only.
 5. See [Install VS Code](vscode-install.md#troubleshooting).
 
 ## VS Code: cannot edit in inspector
@@ -78,13 +78,13 @@ Patches write the **source file on disk** first (`.ttl`, `.obo`, `.owl`/`.rdf`, 
 
 **Fix:**
 
-1. Pin the latest tagged release from [docs/TAGGED_RELEASE](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.26.2**):
+1. Pin the latest tagged release from [docs/TAGGED_RELEASE](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.27.0**):
 
    ```bash
-   cargo install ontocore-cli --locked --version 0.26.2
+   cargo install ontocore-cli --locked --version 0.27.0
    ```
 
-2. For release tarballs, download assets from the matching tag (e.g. `v0.26.2`). Prefer the tagged release over docs that may preview a future minor on `main`.
+2. For release tarballs, download assets from the matching tag (e.g. `v0.27.0`). Prefer the tagged release over docs that may preview a future minor on `main`.
 
 3. Ensure Cargo’s bin directory is on your `PATH` — see [Install CLI](guides/install-cli.md).
 
@@ -104,10 +104,10 @@ strixonomy query /path/to/your/ontologies "SELECT * FROM classes"
 |---------|-----|
 | `strixonomy: command not found` after `cargo install` | **Unix/macOS:** add `$HOME/.cargo/bin` to `PATH`. **Windows (PowerShell):** `$env:Path += ";$env:USERPROFILE\.cargo\bin"` then open a new terminal — see [Install CLI](guides/install-cli.md) |
 | `cargo install` fails with MSRV / edition error | Run `rustup update stable`; require Rust **1.88+** (`rustc --version`) |
-| `cargo install` network / crates.io errors | Retry with `--locked`; pin `--version 0.26.2` in CI |
+| `cargo install` network / crates.io errors | Retry with `--locked`; pin `--version 0.27.0` in CI |
 | Release tarball on macOS/Windows | CLI pre-builds are **Linux x64 only** — use `cargo install` or the VSIX extension |
 | macOS Gatekeeper blocks bundled `strixonomy-lsp` | Prefer Marketplace install; for sideloaded VSIX see [VS Code install](vscode-install.md) (`xattr -d com.apple.quarantine` when needed) |
-| Corporate Marketplace blocked / lag | Install `ontocode-v0.26.2.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) — [VS Code install](vscode-install.md) |
+| Corporate Marketplace blocked / lag | Install `ontocode-v0.27.0.vsix` from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) — [VS Code install](vscode-install.md) |
 | `strixonomy diff HEAD..WORKTREE` fails | Run from a **git repository** root containing ontology files |
 
 ## CLI: `validate` exits non-zero

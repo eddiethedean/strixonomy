@@ -55,8 +55,8 @@ Source of truth: **[docs/SHIPPED.md](SHIPPED.md)** and **[docs/supported-formats
 - [ ] [docs/design/ARCHITECTURE.md](design/ARCHITECTURE.md) / [OWL_AUTHORING_SPEC.md](design/OWL_AUTHORING_SPEC.md) — shipped vs target banners
 - [ ] [docs/design/LICENSES.md](design/LICENSES.md) — dependency sections
 - [ ] Run `./scripts/build-docs.sh` locally before tagging
-- [ ] Build tutorial pack: `./scripts/package-tutorial-zip.sh` and **attach** `ontocode-tutorial.zip` to the GitHub Release (required — First success / versions-and-channels link the asset)
-- [ ] **Verify** the Release page lists `ontocode-tutorial.zip`
+- [ ] Build tutorial pack: `./scripts/package-tutorial-zip.sh` and **attach** `strixonomy-tutorial.zip` to the GitHub Release (required — First success / versions-and-channels link the asset)
+- [ ] **Verify** the Release page lists `strixonomy-tutorial.zip`
 - [ ] Ensure **CI is green on the release commit** before tagging (the release workflow **requires** a successful `ci.yml` run on that SHA; it does not re-run the full test suite)
 - [ ] Immediately after `git push origin vX.Y.Z`: run `./scripts/check-tagged-release-published.sh` and confirm GitHub Release / crates.io / Marketplace (manual) progress
 
@@ -87,7 +87,7 @@ Requires the `CARGO_REGISTRY_TOKEN` repository secret. For Open VSX (Cursor), se
 !!! warning "P0 — manual Marketplace publish"
     The [release workflow](https://github.com/eddiethedean/strixonomy/blob/main/.github/workflows/release.yml) publishes crates.io, GitHub Release assets, and **Open VSX** automatically. **VS Code Marketplace publish is manual** — run `npx vsce publish` after the tag (see [marketplace-publish.md](marketplace-publish.md)).
 
-See [marketplace-publish.md](marketplace-publish.md). Open VSX listing: [open-vsx.org/extension/ontocode/ontocode](https://open-vsx.org/extension/ontocode/ontocode).
+See [marketplace-publish.md](marketplace-publish.md). Open VSX listing: [open-vsx.org/extension/strixonomy/strixonomy](https://open-vsx.org/extension/strixonomy/strixonomy).
 
 ## Verify artifacts
 

@@ -1,4 +1,4 @@
-# Patch reference (Strixonomy v0.26)
+# Patch reference (Strixonomy v0.27)
 
 > **Status:** Documents behavior in **Strixonomy v0.26**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).

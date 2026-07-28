@@ -1,6 +1,6 @@
 # Strixonomy crate map
 
-Strixonomy is currently implemented by the `strixonomy-*` crates. The [`strixonomy`](https://crates.io/crates/ontocore) crate is the public façade.
+Strixonomy is currently implemented by the `strixonomy-*` crates. The [`strixonomy`](https://crates.io/crates/strixonomy) crate is the public façade.
 
 ## Façade
 
@@ -10,7 +10,7 @@ Strixonomy is currently implemented by the `strixonomy-*` crates. The [`strixono
 
 ```toml
 [dependencies]
-ontocore = "0.26"
+strixonomy = "0.27"
 # Optional: strixonomy = { version = "0.19", features = ["lsp", "plugins"] }
 ```
 

@@ -1,74 +1,74 @@
-# What ships today (v0.26.2 — latest tagged)
+# What ships today (v0.27.0 — latest tagged)
 
 > **Canonical capability matrix.** Update this page on every release. Design specs under [Project](design/README.md) may describe future targets — check here for what is actually available.
 >
 > **Format write-back truth:** this page and [Supported formats](supported-formats.md) are the source of truth. Tier-1 user docs (README, Home, First success, FAQ, Evaluate pack, LSP/patch/CLI refs) must match them — see [Releasing — Tier-1 capability truth](releasing.md#documentation-sync-checklist-every-release).
 >
-> **Latest tagged release: v0.26.2** (crates.io, GitHub Releases; Marketplace/Open VSX may lag — see [Versions & channels](guides/versions-and-channels.md)). Pin installs: `cargo install ontocore-cli --locked --version 0.26.2`.
+> **Latest tagged release: v0.27.0** (crates.io, GitHub Releases; Marketplace/Open VSX may lag — see [Versions & channels](guides/versions-and-channels.md)). Pin installs: `cargo install strixonomy-cli --locked --version 0.27.0`.
 
-**Latest tagged: v0.26.2** · [v0.26 migration](migration/v0.26.md) · [v0.26.2 patch](migration/v0.26.2.md) · [CHANGELOG](https://github.com/eddiethedean/ontocode/blob/main/CHANGELOG.md)
+**Latest tagged: v0.27.0** · [v0.27 migration](migration/v0.27.md) · [v0.26.2 patch](migration/v0.26.2.md) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
 
 ## Products
 
 | Product | What it is |
 |---------|------------|
-| **OntoCode** | VS Code IDE — explorer, React inspector, graphs (asserted/inferred modes), Query Workbench (SQL/SPARQL/DL), Manchester editor, refactor preview, reasoner, explanation panel, plugin commands/views/preferences/context actions |
-| **OntoCore** | Rust semantic workspace engine — `ontocore` façade, `ontocore-*` crates, `ontocore` CLI, `ontocore-lsp`, plugin host |
+| **Strixonomy (IDE)** | VS Code IDE — explorer, React inspector, graphs (asserted/inferred modes), Query Workbench (SQL/SPARQL/DL), Manchester editor, refactor preview, reasoner, explanation panel, plugin commands/views/preferences/context actions |
+| **Strixonomy (engine)** | Rust semantic workspace engine — `strixonomy` façade, `strixonomy-*` crates, `strixonomy` CLI, `strixonomy-lsp`, plugin host |
 
-## Capability matrix (v0.26.2 tagged)
+## Capability matrix (v0.27.0 tagged)
 
 | Capability | VS Code | CLI |
 |------------|---------|-----|
 | Browse classes, properties, individuals | Yes | via SQL |
-| Edit labels, comments, parents (`.ttl`, `.obo`, `.owl`/`.rdf`, `.owx`) | Yes (React inspector) | `ontocore patch` |
-| Create / delete entities (`.ttl`, XML required formats) | Yes | `ontocore patch` |
-| Complex `SubClassOf` / `EquivalentClasses` (Manchester) | Yes (Turtle) | `ontocore patch` |
-| Disjoint classes (author + view) | Yes (inspector + Manchester) | `ontocore patch` |
-| Domain / range / characteristics / property chains | Yes (inspector + patch; Turtle) | `ontocore patch` |
-| Individual assertions (class/object/data) | Yes (Turtle; class assertion on XML) | `ontocore patch` |
-| Generic annotation assertions | Yes | `ontocore patch` |
-| OBO term edit (name, synonym, def, is_a, …) | Yes (inspector) | `ontocore patch` |
-| Find usages / rename IRI / namespace migration / move / extract module | Yes (preview + apply) | `ontocore refactor` |
-| Merge entities / replace entity references | Yes (preview + apply) | `ontocore refactor merge` / `replace` |
-| New ontology scaffold / export (ROBOT convert or copy) | Yes | `ontocore new` / export LSP |
-| Prefix manager / ontology metadata patches | Yes | `ontocore patch` |
+| Edit labels, comments, parents (`.ttl`, `.obo`, `.owl`/`.rdf`, `.owx`) | Yes (React inspector) | `strixonomy patch` |
+| Create / delete entities (`.ttl`, XML required formats) | Yes | `strixonomy patch` |
+| Complex `SubClassOf` / `EquivalentClasses` (Manchester) | Yes (Turtle) | `strixonomy patch` |
+| Disjoint classes (author + view) | Yes (inspector + Manchester) | `strixonomy patch` |
+| Domain / range / characteristics / property chains | Yes (inspector + patch; Turtle) | `strixonomy patch` |
+| Individual assertions (class/object/data) | Yes (Turtle; class assertion on XML) | `strixonomy patch` |
+| Generic annotation assertions | Yes | `strixonomy patch` |
+| OBO term edit (name, synonym, def, is_a, …) | Yes (inspector) | `strixonomy patch` |
+| Find usages / rename IRI / namespace migration / move / extract module | Yes (preview + apply) | `strixonomy refactor` |
+| Merge entities / replace entity references | Yes (preview + apply) | `strixonomy refactor merge` / `replace` |
+| New ontology scaffold / export (ROBOT convert or copy) | Yes | `strixonomy new` / export LSP |
+| Prefix manager / ontology metadata patches | Yes | `strixonomy patch` |
 | Active ontology selector | Yes | LSP `setActiveOntology` |
 | Workspace runtime (registry, dirty/save, transactions, session) | Yes | — |
 | Menus / toolbars / keybindings / perspectives | Yes | — |
-| SQL-like queries | Query Workbench (React) + schema browser | `ontocore query` |
-| SPARQL | Query Workbench (React) | `ontocore sparql` |
-| DL Query (Manchester class expressions) | Query Workbench **DL** mode | `ontocore dl-query` |
-| Graph visualization (class, property hierarchies, individual, import, dependency, neighborhood; query/refactor result graphs) | Yes (React; asserted/inferred/combined; filters; unsatisfiable overlay; Graph\|List; virtualized; export JSON/CSV; expand depth) | LSP `ontocore/getGraph` |
-| OWL EL classification (`el` profile) | Reasoner panel + hierarchy toggle | `ontocore classify` |
-| RL / RDFS classification | Reasoner panel | `ontocore classify --profile rl\|rdfs` |
-| OWL 2 DL classification (`dl` profile) | Reasoner panel + hierarchy toggle | `ontocore classify --profile dl` |
-| Auto profile routing (`auto`) | Reasoner panel | `ontocore classify --profile auto` |
-| Realization / instance checking (ABox) | Reasoner panel realization + LSP `checkInstance` | `ontocore realize` / `check-instance` |
+| SQL-like queries | Query Workbench (React) + schema browser | `strixonomy query` |
+| SPARQL | Query Workbench (React) | `strixonomy sparql` |
+| DL Query (Manchester class expressions) | Query Workbench **DL** mode | `strixonomy dl-query` |
+| Graph visualization (class, property hierarchies, individual, import, dependency, neighborhood; query/refactor result graphs) | Yes (React; asserted/inferred/combined; filters; unsatisfiable overlay; Graph\|List; virtualized; export JSON/CSV; expand depth) | LSP `strixonomy/getGraph` |
+| OWL EL classification (`el` profile) | Reasoner panel + hierarchy toggle | `strixonomy classify` |
+| RL / RDFS classification | Reasoner panel | `strixonomy classify --profile rl\|rdfs` |
+| OWL 2 DL classification (`dl` profile) | Reasoner panel + hierarchy toggle | `strixonomy classify --profile dl` |
+| Auto profile routing (`auto`) | Reasoner panel | `strixonomy classify --profile auto` |
+| Realization / instance checking (ABox) | Reasoner panel realization + LSP `checkInstance` | `strixonomy realize` / `check-instance` |
 | Full consistency (TBox + ABox) | Reasoner panel clashes + snapshot detail | via classify / consistency |
-| EL / DL explanations (DL-first + alternatives) | Explanation panel (multiple alternatives, staleness detection) | `ontocore explain` |
+| EL / DL explanations (DL-first + alternatives) | Explanation panel (multiple alternatives, staleness detection) | `strixonomy explain` |
 | SWRL rule browser / editor / validate | Rule Browser + Rule Editor | patch + LSP SWRL methods |
 | Engine-level reasoner cancel | Stop Reasoner | LSP `$/cancelRequest` |
-| OBO format index + `obo_id` in explorer | Yes | `ontocore inspect` |
-| ROBOT interop | — | `ontocore robot validate\|merge\|report` |
-| Diagnostics / lint | Problems panel | `ontocore validate` |
+| OBO format index + `obo_id` in explorer | Yes | `strixonomy inspect` |
+| ROBOT interop | — | `strixonomy robot validate\|merge\|report` |
+| Diagnostics / lint | Problems panel | `strixonomy validate` |
 | Hover, go-to-definition, symbols, find references, rename | Yes (hover linkifies labels/comments) | — |
 | Annotation hyperlinks + Protégé-default annotation-property order | Yes (Entity Inspector) | — |
 | `catalog-v001.xml` import redirects | Yes (index / resolve) | via workspace index |
-| Ontology `version_iri` | Yes (inspector / catalog) | `ontocore inspect` / catalog |
+| Ontology `version_iri` | Yes (inspector / catalog) | `strixonomy inspect` / catalog |
 | Turtle completion (prefix, QName, IRI) | Yes (LSP) | — |
 | Diagnostic quick fixes (code actions) | Yes | — |
-| Turtle imports add/remove | Yes (Manage Imports panel) | `ontocore patch` (`add_import`, `remove_import`) |
-| Documentation export (Markdown / HTML) | — | `ontocore docs` |
-| Patch preview | Inspector / Manchester editor / refactor preview / imports panel | `ontocore patch --preview` |
-| Semantic diff (versions / workspace compare) | Semantic Diff panel (React) | `ontocore diff` / `--pr-summary` |
+| Turtle imports add/remove | Yes (Manage Imports panel) | `strixonomy patch` (`add_import`, `remove_import`) |
+| Documentation export (Markdown / HTML) | — | `strixonomy docs` |
+| Patch preview | Inspector / Manchester editor / refactor preview / imports panel | `strixonomy patch --preview` |
+| Semantic diff (versions / workspace compare) | Semantic Diff panel (React) | `strixonomy diff` / `--pr-summary` |
 | Cross-panel focus sync | Explorer → Inspector + Graph (relay) | — |
 | LSP semantic tokens (Turtle, OBO) | Editor highlighting | — |
-| Configurable diagnostics | Problems panel + `.ontocore/diagnostics.toml` | `ontocore validate` |
+| Configurable diagnostics | Problems panel + `.strixonomy/diagnostics.toml` | `strixonomy validate` |
 | React webview UI | Inspector, graphs, Query Workbench (SQL/SPARQL/DL), Manchester editor, refactor preview, semantic diff, imports | — |
 | Accessibility (WCAG 2.2 AA owned surfaces) | Keyboard + SR patterns, DialogShell focus trap, reduced motion, axe Vitest harness | — |
-| Plugin SDK 1.0 (manifest + lifecycle + providers) | Plugin commands, views, inspector cards, preferences, context actions; provider pickers via `listPlugins` | `ontocore plugins` (list/info/enable/disable/run) / `workflow` |
+| Plugin SDK 1.0 (manifest + lifecycle + providers) | Plugin commands, views, inspector cards, preferences, context actions; provider pickers via `listPlugins` | `strixonomy plugins` (list/info/enable/disable/run) / `workflow` |
 | Plugin permissions (`api_version = "1"`) | Enforced on plugin load/run | Enforced on CLI/LSP plugin host |
-| Reference plugins (naming, Markdown export, SHACL scaffold + reasoner/query/refactor/graph stubs) | Via validate + plugins | `ontocore plugins run` |
+| Reference plugins (naming, Markdown export, SHACL scaffold + reasoner/query/refactor/graph stubs) | Via validate + plugins | `strixonomy plugins run` |
 
 ## Format support
 
@@ -85,16 +85,14 @@
 > **¹ Rename / merge / replace:** format-specific IRI remaps (XML re-serialize; OBO id/reference rewrite). Other refactor ops stay Turtle-first.  
 > Deeper capability grid (Manchester, refactor, XML re-serialize): [Capabilities by format](guides/capabilities-by-format.md).
 
-## New in v0.26.2 (latest tagged)
+## New in v0.27.0 (latest tagged)
 
 | Capability | Status |
 |------------|--------|
-| Protégé Desktop behavioral test port (Waves 1–4 oracles + inventory CI) | Shipped |
-| Annotation linkification (LSP hover + Entity Inspector) | Shipped |
-| Protégé-default annotation-property order (Entity Inspector) | Shipped |
-| `catalog-v001.xml` import redirects | Shipped |
-| IdPolicy parse + OBO Foundry registry JSON (vendored; no live HTTP) | Shipped |
-| Ontology `version_iri` on documents | Shipped |
+| Strixonomy product identity (`strixonomy` / `strixonomy-*`, CLI, LSP, extension) | Shipped |
+| Legacy OntoCore/OntoCode compatibility (bins, LSP methods, paths, thin `ontocore` façade) | Shipped |
+| Extension settings/state migration from `ontocode.*` | Shipped |
+| Dual-read `.strixonomy/` vs `.ontocore/` / `.ontocode/` | Shipped |
 
 ## Previously in v0.25.0
 
@@ -110,7 +108,7 @@
 | Capability | Status |
 |------------|--------|
 | DL Query (Workbench DL mode, CLI, LSP) | Shipped |
-| Workspace search LSP (`ontocore/search`) | Shipped |
+| Workspace search LSP (`strixonomy/search`) | Shipped |
 | Rename / merge / replace (Turtle + RDF/XML + OWL/XML + OBO) | Shipped |
 | Move axioms / ontology merge | Shipped (Turtle-first) |
 | Flatten / cleanup imports; locality module extract | Shipped (Turtle-first) |
@@ -155,18 +153,18 @@
 | Token-aware type / characteristic detection (ignores comment substrings) | Yes |
 | `SetOntologyIri` rewrites `rdf:type owl:Ontology` in place | Yes |
 
-Full user-facing delta for the latest tagged release: [CHANGELOG 0.26.2](https://github.com/eddiethedean/ontocode/blob/main/CHANGELOG.md#0262---2026-07-17).
+Full user-facing delta for the latest tagged release: [CHANGELOG 0.27.0](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0262---2026-07-17).
 
 ## Release history
 
-Detailed notes for v0.9–v0.21 are in the [CHANGELOG](https://github.com/eddiethedean/ontocode/blob/main/CHANGELOG.md). This page lists **what is available in the latest tagged release**, not every past milestone.
+Detailed notes for v0.9–v0.21 are in the [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md). This page lists **what is available in the latest tagged release**, not every past milestone.
 
 ## Manchester scope (v0.22)
 
 **Shipped:** named classes; `and` / `or` / `not`; `some` / `only` / `value` / `Self`; OneOf `{…}`; `min` / `max` / `exact` cardinality; nested restrictions; data restrictions on xsd types; `SubClassOf`, `EquivalentClasses`, and `DisjointClasses` via Manchester editor or patch JSON; domain/range; property chains; HasKey and remaining RBox/ABox ops via patch JSON / inspector.
 
 **Not shipped:** inline Manchester autocomplete in the text buffer.
-Remaining 1.0 targets: [known limitations](known-limitations.md) · [Protégé vs OntoCode](guides/protege-decision.md).
+Remaining 1.0 targets: [known limitations](known-limitations.md) · [Protégé vs Strixonomy](guides/protege-decision.md).
 
 ## Known limitations
 
@@ -182,7 +180,7 @@ Remaining 1.0 targets: [known limitations](known-limitations.md) · [Protégé v
 
 ## What's next
 
-Forward: Protégé-competitive release (**1.0**). **v0.26.2** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
+Forward: Protégé-competitive release (**1.0**). **v0.27.0** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
 
 ## Where to learn more
 

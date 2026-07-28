@@ -11,7 +11,7 @@ Maintainer and contributor helpers at the repo root. Prefer [CONTRIBUTING.md](..
 | `package-extension.sh` | Build / package the VS Code VSIX (maintainers). |
 | `prepare-extension-server.sh` | Stage `strixonomy-lsp` into `extension/server/`. |
 | `fetch-lsp-servers.sh` | Fetch platform LSP binaries for packaging. |
-| `package-tutorial-zip.sh` | Build `ontocode-tutorial.zip` for GitHub Releases. |
+| `package-tutorial-zip.sh` | Build `strixonomy-tutorial.zip` for GitHub Releases. |
 | `run-mutants.sh` | Optional mutation testing — see [mutants baseline](https://strixonomy-vs.readthedocs.io/en/latest/mutants-baseline/). |
 | `validate-parity-manifest.py` | Internal Protégé parity YAML checks (contributors on that program). |
 

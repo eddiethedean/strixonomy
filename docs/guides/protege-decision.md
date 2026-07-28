@@ -1,6 +1,6 @@
 # Protégé vs Strixonomy decision matrix
 
-Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, and **when to run both**. It reflects **v0.26.2** (latest tagged) — see [What ships today](../SHIPPED.md). A [first-week migration guide](protege-migration.md) ships today; extended round-trip playbooks are planned for **v1.0**.
+Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, and **when to run both**. It reflects **v0.27.0** (latest tagged) — see [What ships today](../SHIPPED.md). A [first-week migration guide](protege-migration.md) ships today; extended round-trip playbooks are planned for **v1.0**.
 
 !!! note "Non-goals today (v0.26)"
     - **WebProtégé-style collaboration** — out of scope until post-1.0
@@ -51,7 +51,7 @@ Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, an
 
 ### Path A — CI only (lowest risk)
 
-1. Pin `strixonomy-cli` **0.26.2** in Linux CI
+1. Pin `strixonomy-cli` **0.27.0** in Linux CI
 2. Gate merges with `strixonomy validate`
 3. Optional: `strixonomy classify --profile el` when ontology is EL; `strixonomy dl-query` for class-expression checks
 4. Keep Protégé on engineer desktops unchanged

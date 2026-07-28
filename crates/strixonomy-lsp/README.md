@@ -22,7 +22,7 @@ cargo install strixonomy-lsp --locked
 - [Install VS Code](https://strixonomy-vs.readthedocs.io/en/latest/vscode-install/)
 - [docs.rs](https://docs.rs/strixonomy-lsp)
 
-**Current version: 0.26.2**
+**Current version: 0.27.0**
 
 ## License
 

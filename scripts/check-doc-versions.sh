@@ -30,7 +30,7 @@ TAGGED_RTD_PROJECT="strixonomy-vs"
 if [[ "$VERSION" != "$TAGGED_VERSION" ]] && [[ -f docs/migration/v0.27.md ]]; then
   TAGGED_FACADE="ontocore"
   TAGGED_OWL="ontocore-owl"
-  TAGGED_TUTORIAL="ontocode-tutorial.zip"
+  TAGGED_TUTORIAL="strixonomy-tutorial.zip"
   TAGGED_RTD_PROJECT="ontocode-vs"
 fi
 

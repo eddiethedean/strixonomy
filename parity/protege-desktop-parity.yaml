@@ -35,7 +35,7 @@ requirements:
     test_ids:
       - extension/src/test/suite/workspace.runtime.test.ts
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/249
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/249
     documentation:
       - docs/protege-parity/ONTOCODE_CURRENT_PROTEGE_PARITY_AUDIT.md
       - docs/protege-parity/03_PARITY/PARITY_TEST_PLAN.md
@@ -56,7 +56,7 @@ requirements:
       - tests/protege_port_history.rs
       - crates/strixonomy-edit/tests/transaction.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/247
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/247
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
       - docs/protege-parity/03_PARITY/PROTEGE_TEST_PORT.md
@@ -77,7 +77,7 @@ requirements:
       - tests/obo_patch_roundtrip.rs
       - crates/strixonomy-edit/tests/transaction.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/247
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/247
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
     notes: OBO apply routed through strixonomy-edit Transaction (v0.20)
@@ -98,7 +98,7 @@ requirements:
       - crates/strixonomy-edit/tests/xml_writeback.rs
       - tests/protege_roundtrip.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/247
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/247
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
       - docs/guides/owl-xml-workflow.md
@@ -121,7 +121,7 @@ requirements:
       - crates/strixonomy-edit/tests/xml_writeback.rs
       - tests/protege_roundtrip.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/247
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/247
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
       - docs/guides/owl-xml-workflow.md
@@ -158,7 +158,7 @@ requirements:
       - Manchester not value Self OneOf data restrictions parse
       - XML mutate covers expanded PatchOp set
       - Inspector UI for new families
-    github_issue: https://github.com/eddiethedean/ontocode/issues/248
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/248
     documentation:
       - docs/protege-parity/06_SUBSYSTEMS/OWL2_AUTHORING.md
       - docs/protege-parity/06_SUBSYSTEMS/OWL2_AUTHORING_GAPS.md
@@ -183,7 +183,7 @@ requirements:
       - extension/src/workspace/navigationManager.test.ts
       - extension/src/test/suite/workspace.runtime.test.ts
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/249
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/249
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_03_WORKSPACE.md
     notes: v0.20 workspace runtime
@@ -198,7 +198,7 @@ requirements:
     test_ids:
       - tests/reasoner_el.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/250
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/250
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
   - id: PAR-RSN-002
@@ -214,7 +214,7 @@ requirements:
     test_ids:
       - tests/reasoner_abox.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/250
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/250
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_04_REASONING.md
     notes: Shipped v0.23.0
@@ -229,7 +229,7 @@ requirements:
     test_ids:
       - crates/strixonomy-reasoner/src/explain.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/250
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/250
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_04_REASONING.md
     notes: Shipped v0.23.0 DL-first path
@@ -245,7 +245,7 @@ requirements:
     test_ids:
       - tests/integration_test.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/253
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/253
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
   - id: PAR-QRY-002
@@ -261,7 +261,7 @@ requirements:
     test_ids:
       - tests/dl_query.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/253
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/253
     documentation:
       - docs/guides/dl-query.md
       - docs/protege-parity/04_BLOCKERS/BLOCKER_07_QUERY.md
@@ -281,7 +281,7 @@ requirements:
       - tests/swrl_validate.rs
       - tests/swrl_patch.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/251
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/251
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_05_SWRL.md
     notes: Shipped v0.23.0
@@ -303,7 +303,7 @@ requirements:
       - crates/strixonomy-owl/src/remap.rs
       - crates/strixonomy-obo/src/remap.rs
     acceptance_criteria: []
-    github_issue: https://github.com/eddiethedean/ontocode/issues/252
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/252
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
       - docs/protege-parity/03_PARITY/PROTEGE_TEST_PORT.md
@@ -324,7 +324,7 @@ requirements:
       - extension/webview-ui/src/panels/GraphPanel.test.tsx
     acceptance_criteria:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_08_VISUALIZATION.md
-    github_issue: https://github.com/eddiethedean/ontocode/issues/254
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/254
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_08_VISUALIZATION.md
       - docs/ide/graph-view.md
@@ -353,7 +353,7 @@ requirements:
       - tests/cli_plugins_security.rs
     acceptance_criteria:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_09_PLUGIN_PLATFORM.md
-    github_issue: https://github.com/eddiethedean/ontocode/issues/255
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/255
     documentation:
       - docs/protege-parity/IMPLEMENTATION_EVIDENCE.md
       - docs/guides/plugins.md
@@ -380,7 +380,7 @@ requirements:
       - extension/webview-ui/src/components/DialogShell.test.tsx
     acceptance_criteria:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_10_ACCESSIBILITY.md
-    github_issue: https://github.com/eddiethedean/ontocode/issues/256
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/256
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_10_ACCESSIBILITY.md
       - docs/protege-parity/08_RELEASE/ACCESSIBILITY_REPORT.md
@@ -423,7 +423,7 @@ requirements:
     acceptance_criteria:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_11_PARITY_VERIFICATION.md
       - docs/protege-parity/03_PARITY/PARITY_RELEASE_GATE.md
-    github_issue: https://github.com/eddiethedean/ontocode/issues/257
+    github_issue: https://github.com/eddiethedean/strixonomy/issues/257
     documentation:
       - docs/protege-parity/04_BLOCKERS/BLOCKER_11_PARITY_VERIFICATION.md
       - docs/protege-parity/03_PARITY/PARITY_METRICS.md

@@ -12,7 +12,7 @@ Command-line interface for [Strixonomy](https://github.com/eddiethedean/strixono
 ## Install (pinned)
 
 ```bash
-cargo install ontocore-cli --locked --version 0.26.2
+cargo install ontocore-cli --locked --version 0.27.0
 ```
 
 ## Linux x64 without Rust

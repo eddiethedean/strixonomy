@@ -2,7 +2,7 @@
 
 **Strixonomy** is the VS Code / Cursor IDE for OWL, RDF, and OBO — explorer, React Entity Inspector, Query Workbench (SQL / SPARQL / DL), graphs, reasoner, refactor preview, and plugin UI — powered by **Strixonomy**.
 
-**Latest tagged: v0.26.2** · [Marketplace](https://marketplace.visualstudio.com/items?itemName=ontocode.ontocode) · [Open VSX](https://open-vsx.org/extension/ontocode/ontocode)
+**Latest tagged: v0.27.0** · [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) · [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy)
 
 Start here if you have not installed yet: **[First success (~10 min)](../guides/first-success.md)**.
 
