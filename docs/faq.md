@@ -69,6 +69,10 @@ No. Install the extension from the [Marketplace](https://marketplace.visualstudi
 
 Yes. Download release binaries and VSIX from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases). Linux x64 CLI tarballs are published; macOS/Windows CLI uses `cargo install`. See [release-integrity.md](release-integrity.md).
 
+**I ran `cargo install strixonomy` and something went wrong.**
+
+Install the CLI with **`cargo install strixonomy-cli`** (binary name `strixonomy`). The `strixonomy` crates.io package is the **library** façade, not the CLI. See [Product identity](guides/product-identity.md).
+
 ## VS Code
 
 **The explorer is empty.**

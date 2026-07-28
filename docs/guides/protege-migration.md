@@ -1,6 +1,6 @@
 # Migrating from Protégé — first week
 
-This guide helps ontology teams adopt Strixonomy **v0.26** alongside or instead of [Protégé](https://protege.stanford.edu/). For a capability comparison, see [Protégé vs Strixonomy](protege-decision.md) and [What ships today](../SHIPPED.md).
+This guide helps ontology teams adopt Strixonomy **v0.27.0** alongside or instead of [Protégé](https://protege.stanford.edu/). For a capability comparison, see [Protégé vs Strixonomy](protege-decision.md) and [What ships today](../SHIPPED.md).
 
 ## Before you start
 
@@ -21,7 +21,7 @@ This guide helps ontology teams adopt Strixonomy **v0.26** alongside or instead 
 
 Many teams use **both**: Protégé for heavy axiom authoring or Protégé-only plugins, Strixonomy for browse, light edit, lint, diff, reasoning, DL Query, and CI. See [Protégé coexistence](protege-coexistence.md).
 
-## Honest desktop known gaps (v0.26 tagged)
+## Honest desktop known gaps (v0.27.0 tagged)
 
 See [Versions & channels](versions-and-channels.md) if Marketplace lags behind the GitHub Release VSIX.
 
@@ -48,7 +48,7 @@ Follow the [first success core path](../guides/first-success.md) if anything is 
 
 ## Day 2 — Map Protégé habits to Strixonomy
 
-| In Protégé | In Strixonomy v0.26 |
+| In Protégé | In Strixonomy v0.27 |
 |------------|-------------------|
 | Class hierarchy tab | **Classes** explorer; toggle **asserted / inferred / combined** after reasoner |
 | Entity editor (labels, parents) | **Entity Inspector** (`.ttl`, `.obo`, `.owl`/`.rdf`, `.owx`) |

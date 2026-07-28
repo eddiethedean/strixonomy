@@ -574,10 +574,15 @@ check_file_contains "docs/strixonomy/rust-api.md" "${TAGGED_FACADE} = \"${TAGGED
 check_file_contains "docs/strixonomy/crate-map.md" "${TAGGED_FACADE} = \"${TAGGED_MINOR}\"" "crate-map version pin"
 check_file_contains "docs/ide/manage-imports.md" "Manage Imports" "manage-imports guide"
 check_file_contains "mkdocs.yml" "ide/manage-imports.md" "mkdocs manage-imports guide"
-check_file_contains "mkdocs.yml" "migration/v0.14.md" "mkdocs v0.14 migration guide"
-check_file_contains "mkdocs.yml" "migration/v0.17.md" "mkdocs v0.17 migration guide"
-check_file_contains "mkdocs.yml" "migration/v0.18.md" "mkdocs v0.18 migration guide"
-check_file_contains "mkdocs.yml" "v0\\.15 → v0\\.16" "mkdocs v0.16 migration in Help nav"
+# Migrations listed in docs/migration/README.md (Help → Migration index only)
+check_file_contains "mkdocs.yml" "migration/README.md" "mkdocs migration index"
+check_file_contains "docs/migration/README.md" "v0.14.md" "migration index links v0.14"
+check_file_contains "docs/migration/README.md" "v0.17.md" "migration index links v0.17"
+check_file_contains "docs/migration/README.md" "v0.18.md" "migration index links v0.18"
+check_file_contains "docs/migration/README.md" "v0.15 → v0.16" "migration index v0.15→v0.16 row"
+check_file_contains "docs/migration/README.md" "v0.14 → v0.15" "migration index v0.14→v0.15 row"
+check_file_contains "docs/migration/README.md" "v0.16.md" "migration index links v0.16"
+check_file_contains "docs/migration/README.md" "v0.15.md" "migration index links v0.15"
 check_file_contains "docs/guides/production-readiness.md" "v${TAGGED_VERSION}" "production-readiness version"
 check_file_contains "mkdocs.yml" "strixonomy/rust-api.md" "mkdocs Rust API reference"
 check_file_contains "mkdocs.yml" "guides/protege-migration.md" "mkdocs Protégé migration guide"
@@ -760,33 +765,18 @@ check_file_contains "docs/guides/rust-crates.md" "ide/vscode-extension" "rust hu
 check_file_contains "crates/strixonomy-cli/src/main.rs" "Strixonomy v${VERSION%.*}" "CLI about string version"
 check_file_contains "docs/changelog.md" "v${VERSION}" "docs changelog current release"
 
-for pair in "VISION.md:docs/vision.md:Build the modern open-source platform" \
-              "ROADMAP.md:docs/roadmap.md:v0.11 — Editor depth & distribution"; do
-  root_file="${pair%%:*}"
-  rest="${pair#*:}"
-  doc_file="${rest%%:*}"
-  phrase="${rest#*:}"
-  if [[ ! -f "$root_file" ]] || [[ ! -f "$doc_file" ]]; then
-    echo "FAIL: missing platform doc $root_file or $doc_file" >&2
-    fail=1
-  elif ! grep -qF "$phrase" "$root_file" || ! grep -qF "$phrase" "$doc_file"; then
-    echo "FAIL: platform doc sync — expected '$phrase' in $root_file and $doc_file" >&2
-    fail=1
-  else
-    echo "ok: platform doc sync $root_file ↔ $doc_file"
-  fi
-done
-
-# ARCHITECTURE.md is a root pointer; canonical body lives in docs/architecture.md
+# Root VISION / ROADMAP / CONTRIBUTING / ARCHITECTURE are pointers; bodies live under docs/
 check_file_contains "ARCHITECTURE.md" "docs/architecture.md" "ARCHITECTURE.md points to canonical docs copy"
+check_file_contains "VISION.md" "docs/vision.md" "VISION.md points to canonical docs copy"
+check_file_contains "ROADMAP.md" "docs/roadmap.md" "ROADMAP.md points to canonical docs copy"
+check_file_contains "CONTRIBUTING.md" "docs/contributing.md" "CONTRIBUTING.md points to canonical docs copy"
 check_file_contains "docs/architecture.md" "Ontologos thinks" "docs architecture responsibility line"
-
-check_file_contains "docs/roadmap.md" "Shipped releases \\(v0.1–v0.19\\)" "docs roadmap shipped section"
-check_file_contains "ROADMAP.md" "Shipped releases \\(v0.1–v0.19\\)" "ROADMAP.md shipped section"
-check_file_contains "ROADMAP.md" "v0.14 — Plugin host MVP \\(shipped\\)" "ROADMAP.md v0.14 shipped section"
-check_file_contains "ROADMAP.md" "v1.2 — Ontology Toolchain Platform" "roadmap v1.2 toolchain milestone"
+check_file_contains "docs/vision.md" "Build the modern open-source platform" "docs vision mission phrase"
+check_file_contains "docs/roadmap.md" "v0.11 — Editor depth & distribution" "docs roadmap v0.11 section"
+check_file_contains "docs/roadmap.md" "Shipped releases \(v0.1–v0.19\)" "docs roadmap shipped section"
+check_file_contains "docs/roadmap.md" "v0.14 — Plugin host MVP \(shipped\)" "docs roadmap v0.14 shipped section"
 check_file_contains "docs/roadmap.md" "v1.2 — Ontology Toolchain Platform" "docs roadmap v1.2 milestone"
-check_file_contains "ROADMAP.md" "owlmake" "roadmap owlmake integration"
+check_file_contains "docs/roadmap.md" "owlmake" "docs roadmap owlmake integration"
 check_file_contains "mkdocs.yml" "vision.md" "mkdocs Platform nav"
 
 # User-facing guides must not claim dl/auto are stubbed or not shipped
@@ -1050,25 +1040,28 @@ check_file_contains "docs/known-limitations.md" "Known limitations" "known limit
 check_file_contains "docs/ui/README.md" "OntoUI" "ui readme OntoUI term"
 
 check_file_contains "mkdocs.yml" "guides/owl-xml-workflow.md" "mkdocs owl-xml workflow guide"
-check_file_contains "mkdocs.yml" "v0\\.14 → v0\\.15" "mkdocs v0.15 migration in Help nav"
 check_file_contains "docs/guides/owl-xml-workflow.md" "Horned full-document re-serialize" "owl-xml workflow guide"
 check_file_contains "docs/strixonomy/rust-api.md" "Book ↔ docs.rs crosswalk" "rust-api docs.rs crosswalk"
 check_file_contains "docs/troubleshooting.md" "Where to start" "troubleshooting decision tree"
 check_file_contains "docs/platform/OVERVIEW.md" "v0.20 foundation shipped" "platform overview shipped banner"
 
 # vision.md must reference current shipped release (not v0.11 or v0.12)
-for file in docs/vision.md VISION.md; do
-  if grep -qE 'what ships in \*\*v0\.11\*\*|what ships in \*\*v0\.12\*\*|ships in \*\*v0\.11\*\*|ships in \*\*v0\.12\*\*' "$file" 2>/dev/null; then
-    echo "FAIL: $file vision banner references stale release (expected v${VERSION%.*})" >&2
-    fail=1
-  fi
-done
-if ! grep -qF "what ships in **v${TAGGED_MINOR}**" docs/vision.md 2>/dev/null || \
-   ! grep -qF "what ships in **v${TAGGED_MINOR}**" VISION.md 2>/dev/null; then
-  echo "FAIL: docs/vision.md and VISION.md must say what ships in tagged v${TAGGED_MINOR}" >&2
+if grep -qE 'what ships in \*\*v0\.11\*\*|what ships in \*\*v0\.12\*\*|ships in \*\*v0\.11\*\*|ships in \*\*v0\.12\*\*' docs/vision.md 2>/dev/null; then
+  echo "FAIL: docs/vision.md vision banner references stale release (expected v${VERSION%.*})" >&2
+  fail=1
+fi
+if ! grep -qF "what ships in **v${TAGGED_MINOR}**" docs/vision.md 2>/dev/null; then
+  echo "FAIL: docs/vision.md must say what ships in tagged v${TAGGED_MINOR}" >&2
   fail=1
 else
-  echo "ok: vision banner sync tagged v${TAGGED_MINOR}"
+  echo "ok: vision banner tagged v${TAGGED_MINOR}"
+fi
+# Root VISION.md is a pointer; still mention current minor for GitHub readers
+if ! grep -qF "what ships in **v${TAGGED_MINOR}**" VISION.md 2>/dev/null; then
+  echo "FAIL: VISION.md pointer must mention what ships in tagged v${TAGGED_MINOR}" >&2
+  fail=1
+else
+  echo "ok: VISION.md pointer mentions tagged minor"
 fi
 
 check_file_contains "docs/glossary.md" "\\*\\*Implemented\\*\\* \\(v${TAGGED_MINOR}\\)" "glossary OntoCore/Strixonomy version"
@@ -1173,9 +1166,9 @@ if [[ "$VERSION" != "$TAGGED_VERSION" ]]; then
   fi
 fi
 
-# MkDocs must surface v0.15 migration in Get started / Help
-check_file_contains "mkdocs.yml" "migration/v0.16.md" "mkdocs v0.16 migration guide"
-check_file_contains "mkdocs.yml" "migration/v0.15.md" "mkdocs v0.15 migration guide"
+# Migration pages are indexed from docs/migration/README.md (not expanded in mkdocs nav)
+check_file_contains "docs/migration/README.md" "v0.16.md" "migration index links v0.16"
+check_file_contains "docs/migration/README.md" "v0.15.md" "migration index links v0.15"
 
 # Adoption trust: primary surfaces must not contradict TAGGED_RELEASE
 check_file_contains "docs/index.md" "\\*\\*Latest tagged: v${TAGGED_VERSION}\\.\\*\\*" "docs index What ships today tagged line"
@@ -1325,7 +1318,7 @@ if [[ "$TAGGED_MINOR" =~ ^0\.([0-9]+)$ ]]; then
     else
       echo "ok: docs/roadmap.md v${TAGGED_MINOR} not Planned"
     fi
-    check_file_contains "mkdocs.yml" "migration/v${TAGGED_MINOR}.md" "mkdocs current migration guide"
+    check_file_contains "docs/migration/README.md" "v${TAGGED_MINOR}.md" "migration index links current minor"
 
     # Content-drift guards (readiness columns, mixed crate pins, pilot wording)
     if grep -qE "v${STALE_PREV_MINOR} readiness|Stability \(v${STALE_PREV_FULL}|Stability \(v${STALE_PREV_MINOR}|v${STALE_PREV_MINOR} policy" docs/guides/production-readiness.md 2>/dev/null; then

@@ -1,10 +1,10 @@
 # Strixonomy
 
-**Strixonomy** edits OWL/RDF/OBO ontologies in VS Code (**1.85+**). Install the [extension](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) (publisher **Strixonomy**, id `strixonomy.strixonomy`), open a folder of `.ttl` / `.obo` / `.owl` files, and use the **Strixonomy** activity bar.
+**Strixonomy** edits OWL, RDF, and OBO ontologies in VS Code—browse entities, change labels and axioms, query, reason, and validate—without leaving Git.
 
-**Next:** [First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/) — no clone required.
+**Install the extension → [First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)** (no Rust, no clone).
 
-**Current release: v0.27.0** · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy-vs.readthedocs.io/en/latest/)
+**Current release: v0.27.0** · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy-vs.readthedocs.io/en/latest/)
 
 [![CI](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml/badge.svg)](https://github.com/eddiethedean/strixonomy/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](https://github.com/eddiethedean/strixonomy/blob/main/LICENSE-MIT)
@@ -17,18 +17,29 @@
 
 ## Start here
 
-**Primary path:** Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)**.
-
 | I want to… | Start here |
 |------------|------------|
-| **Edit ontologies in VS Code** | **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)** |
+| **Edit ontologies in VS Code** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) → **[First success (~10 min)](https://strixonomy-vs.readthedocs.io/en/latest/guides/first-success/)** |
 | **CI / automation only** | **Linux x64:** release tarball → [CI guide](https://strixonomy-vs.readthedocs.io/en/latest/ci-integration/). **macOS/Windows:** [Install CLI](https://strixonomy-vs.readthedocs.io/en/latest/guides/install-cli/) (`cargo install` 15–30+ min — not needed for the IDE) |
-| Decide if it fits | [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Versions & channels](https://strixonomy-vs.readthedocs.io/en/latest/guides/versions-and-channels/) · [Evaluate pack](https://strixonomy-vs.readthedocs.io/en/latest/guides/enterprise-eval/) |
+| Decide if it fits | [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) · [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) · [Evaluate pack](https://strixonomy-vs.readthedocs.io/en/latest/guides/enterprise-eval/) · [Procurement appendix](https://strixonomy-vs.readthedocs.io/en/latest/guides/procurement-appendix/) |
 | Try examples | [Examples](https://strixonomy-vs.readthedocs.io/en/latest/examples/) · repo [`examples/`](examples/) |
 | Embed in Rust | [Rust library guide](https://strixonomy-vs.readthedocs.io/en/latest/guides/rust-library/) |
 | Contribute | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Support | [Support](https://strixonomy-vs.readthedocs.io/en/latest/support/) |
 
 Full documentation: **[Read the Docs](https://strixonomy-vs.readthedocs.io/en/latest/)**. You do not need to clone this repo to use the extension or installed CLI.
+
+<details>
+<summary>Names in 10 seconds</summary>
+
+| Name | What it is |
+|------|------------|
+| **Strixonomy IDE** | VS Code / Cursor extension |
+| **Strixonomy engine** | Rust CLI (`strixonomy`), LSP, crates — install CLI with **`cargo install strixonomy-cli`** (not `strixonomy`) |
+| **Ontologos** | Bundled reasoner (not a separate install) |
+
+Details: [Product identity](https://strixonomy-vs.readthedocs.io/en/latest/guides/product-identity/). Writable formats and limits: [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/) · [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/).
+</details>
 
 ## See it in action
 
@@ -50,11 +61,7 @@ Full documentation: **[Read the Docs](https://strixonomy-vs.readthedocs.io/en/la
 
 Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`.
 
-> **Names:** **Strixonomy IDE** = VS Code extension. **Strixonomy engine** = Rust CLI + LSP. **Ontologos** = external reasoner. Install CLI: **`cargo install strixonomy-cli`** (not `strixonomy`). Details: [Product identity](https://strixonomy-vs.readthedocs.io/en/latest/guides/product-identity/).
-
-**Editable today:** Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), and OWL/XML (`.owx`). XML saves are **semantic re-serialize** (not byte-identical to Protégé). JSON-LD / N-Triples / TriG remain read-only — [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/) · [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/).
-
-Evaluators: use [What ships today](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) and [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/) as the capability source of truth. GitHub trees `docs/protege-parity/` and `docs/PROTEGE_REVERSE_ENGINEERING/` are engineering notes, not product claims.
+> **Writable formats:** `.ttl`, `.obo`, `.owl`/`.rdf`, `.owx` (XML = semantic re-serialize). JSON-LD / N-Triples / TriG are read-only — [Supported formats](https://strixonomy-vs.readthedocs.io/en/latest/supported-formats/). Evaluators: [SHIPPED](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/) is capability truth; `docs/protege-parity/` is engineering notes only.
 
 ## Quick start
 
@@ -95,7 +102,7 @@ cargo run -- validate fixtures
 
 Platform docs: [Vision](https://strixonomy-vs.readthedocs.io/en/latest/vision/) · [Architecture](ARCHITECTURE.md) · [Roadmap hub](https://strixonomy-vs.readthedocs.io/en/latest/roadmap-hub/) · [Protégé vs Strixonomy](https://strixonomy-vs.readthedocs.io/en/latest/guides/protege-decision/)
 
-**v0.27.0** adds Protégé-aligned edit/hierarchy oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy support. **Not a Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/), [v0.26 migration](docs/migration/v0.26.md).
+**v0.27.0** renames OntoCore / OntoCode to **Strixonomy** (compat window for legacy bins, LSP methods, and paths). Protégé-aligned oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy shipped in **v0.26.x**. **Not a Protégé replacement** — see [Known limitations](https://strixonomy-vs.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy-vs.readthedocs.io/en/latest/SHIPPED/), [v0.27 migration](docs/migration/v0.27.md).
 
 ## Development
 
@@ -104,7 +111,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Quick checks:
 ```bash
 cargo test --workspace
 cargo build -p strixonomy-lsp --bins
-cd extension && npm ci && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm test
+cd extension && npm ci && STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp npm test
 cd extension/webview-ui && npm ci && npm test
 cargo fmt --all && cargo clippy --workspace --all-targets --all-features -- -D warnings
 ```

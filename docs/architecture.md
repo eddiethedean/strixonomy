@@ -2,74 +2,36 @@
 
 > **Audience:** Evaluators, adopters, and new contributors — **canonical user-facing architecture**.
 >
-> **Which architecture doc?**
->
-> | Read this | When |
-> |-----------|------|
-> | **This page** (`architecture.md`) | Product/ecosystem overview — Ontologos, Strixonomy engine, Strixonomy IDE |
-> | [Implementation architecture](design/ARCHITECTURE.md) | Contributor crate layout and internal modules |
-> | [Product design / UI platform](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PLATFORM_ARCHITECTURE.md) | Shared **OntoUI**, OntoStudio target, design system |
-> | [Platform architecture (implementation)](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI, WorkspaceStore, plugin host — **shipped v0.13–v0.17** |
-> | [Plugin authoring](guides/plugins.md) | Workspace manifests, reference plugins, subprocess workflows (v0.17) |
-> | [Strixonomy architecture](strixonomy/architecture.md) | Short Strixonomy stack summary (links here for detail) |
->
-> **Contributor crate layout:** [Implementation architecture](design/ARCHITECTURE.md) (internal modules only).
->
-> **Latest tagged: v0.27.0** — v0.27 ships today. **Strixonomy IDE** (VS Code) + **Strixonomy engine** (CLI/LSP/library).
->
-> **Planned v1.0:** curated plugin marketplace, production owlmake integration, language SDKs, MCP server. Plugin **SDK 1.0** wire is frozen today — [Plugin policy](guides/plugin-policy.md). See [Platform roadmap](roadmap.md) ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)).
->
-> **Planned post-1.0:** OntoStudio desktop, AI-native workflows — [UI roadmap mapping](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ROADMAP_MAPPING.md).
->
-> **Implementers only:** `docs/design/`, `docs/platform/`, and `docs/ui/` architecture specs are engineering targets — not the product capability matrix. Use [What ships today](SHIPPED.md) for adoption decisions.
+> **Capability truth:** [What ships today](SHIPPED.md). Contributor crate layout: [Implementation architecture](design/ARCHITECTURE.md). Short stack: [Strixonomy architecture](strixonomy/architecture.md).
 
+**Latest tagged: v0.27.0** — v0.27 ships today. **Strixonomy IDE** (VS Code) + **Strixonomy engine** (CLI / LSP / library) + **Ontologos** (reasoning).
+
+## Shipped today
+
+```text
+Strixonomy IDE (VS Code) ──strixonomy-lsp──► Strixonomy engine
+                                              ├── Ontologos (EL / RL / RDFS / DL)
+                                              └── Oxigraph / Horned-OWL
+Applications that ship today: VS Code extension · CLI · GitHub Actions (via CLI)
+Plugin SDK 1.0 wire (TOML + subprocess) ships; curated marketplace → product 1.0
 ```
-External Workflow Plugins (SDK 1.0)  ← TOML + subprocess plugins; api_version = "1"
-├── owlmake (reference design; production hardening → product 1.0)
-├── ROBOT / ODK workflow adapters
-└── Future build, validation, doc plugins
-          │
-          ▼
-Applications
-├── Strixonomy IDE (VS Code)       ← ships today
-├── OntoStudio (desktop)           ← planned post v1.0 ([UI spec](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/ONTOSTUDIO_DESKTOP.md))
-├── Strixonomy CLI                 ← ships today
-├── GitHub Actions (via CLI)       ← ships today
-├── Python / TypeScript SDKs       ← planned
-├── MCP Server                     ← planned
-└── Future Desktop/Web Apps
-          │
-          ▼
-      Strixonomy engine (ships today)
-────────────────────────
-Workspace Engine
-Parser
-Semantic Index
-Query Engine
-SQL/SPARQL (SQL-like virtual tables)
-Diagnostics
-Navigation
-Refactoring
-Plugin host (SDK 1.0 wire frozen; marketplace → product 1.0)
-Persistent Cache
-LSP
-          │
-          ▼
-      Ontologos
-────────────────────────
-Reasoning
-Classification
-Consistency
-Inference
-Explanations
-          │
-          ▼
-OWL • RDF • Turtle • OBO
-(SHACL: plugin scaffold)
-```
+
+| Layer | Role |
+|-------|------|
+| **Strixonomy IDE** | Explorer, inspector, Query Workbench, graphs, reasoner UI, plugins |
+| **Strixonomy engine** | Index, query, diagnostics, patch, refactor, diff, LSP, CLI |
+| **Ontologos** | Classification, consistency, explanations |
+
+Writable formats and limits: [Supported formats](supported-formats.md) · [Known limitations](known-limitations.md).
+
+## Future (not shipped)
+
+Curated plugin marketplace, production owlmake hardening, language SDKs, MCP server, OntoStudio desktop, AI-native surfaces — see [Platform roadmap](roadmap.md). Do **not** treat these as product claims.
+
+Engineering-only trees (`docs/design/`, `docs/platform/`, `docs/ui/`) are targets or implementer notes — not the capability matrix.
 
 !!! note "Plugin platform"
-    Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. A curated marketplace and production owlmake integration remain **product 1.0** goals. See [Plugin policy](guides/plugin-policy.md) and [Plugin authoring](guides/plugins.md).
+    Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`) — safe to author against today. Marketplace / production owlmake remain **product 1.0** — [Plugin policy](guides/plugin-policy.md) · [Plugin authoring](guides/plugins.md).
 
 ## Responsibilities
 
@@ -83,7 +45,7 @@ Reusable semantic workspace platform: index, query, diagnostics, refactoring, an
 
 **Plugin platform status:**
 
-- **Shipped (SDK 1.0 / v0.26):** frozen wire contract — workspace manifest discovery, reference plugins, CLI/LSP hooks, subprocess workflow runner, UI views/commands/preferences/context actions, lifecycle (`depends_on` / `activation`), provider actions (see [Plugin authoring](guides/plugins.md)).
+- **Shipped (SDK 1.0):** frozen wire contract — workspace manifest discovery, reference plugins, CLI/LSP hooks, subprocess workflow runner, UI views/commands/preferences/context actions, lifecycle (`depends_on` / `activation`), provider actions (see [Plugin authoring](guides/plugins.md)).
 - **Product 1.0 targets:** curated marketplace/discovery and production owlmake hardening.
 
 The engine is **not** a workflow engine; build, release, and QC automation should live in external tools and workflow plugins rather than becoming core engine dependencies.
@@ -106,15 +68,10 @@ Strixonomy IDE presents.
 
 Workflow plugins automate.
 
-## Future Extensions
+## Further reading
 
-- Plugin marketplace and discovery
-- owlmake and third-party workflow plugins
-- AI assistants
-- Enterprise governance
-- Documentation generators (via plugin APIs)
-- Visualization tools
-- Collaborative editing
-- JetBrains and web clients
-
-For implementation-level crate layout and diagrams, see [Implementation architecture](https://strixonomy-vs.readthedocs.io/en/latest/design/ARCHITECTURE/) (also [docs/design/ARCHITECTURE.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/design/ARCHITECTURE.md) on GitHub).
+| Document | When |
+|----------|------|
+| [Implementation architecture](design/ARCHITECTURE.md) | Crate layout (contributors) |
+| [Platform overview (GitHub)](https://github.com/eddiethedean/strixonomy/blob/main/docs/platform/OVERVIEW.md) | OntoUI / WorkspaceStore implementers |
+| [Plugin authoring](guides/plugins.md) | Workspace manifests and reference plugins |

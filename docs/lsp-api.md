@@ -5,6 +5,14 @@
 
 This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix; servers also accept legacy **`ontocore/*`** through at least 1.0 ([migration/v0.27.md](migration/v0.27.md)). For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
 
+## Start here: index a workspace
+
+Minimal custom-client flow after `initialize`:
+
+1. Call `strixonomy/indexWorkspace` with `{ "rootUri": "file:///path/to/ontologies" }`.
+2. Call `strixonomy/query` with `{ "sql": "SELECT short_name FROM classes" }` (or open [LSP hello world](guides/lsp-hello-world.md)).
+3. Treat [`lsp-protocol.schema.json`](lsp-protocol.schema.json) as the machine-readable contract.
+
 ## Methods at a glance
 
 | Method | Status | Since |

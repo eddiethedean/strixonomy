@@ -3,28 +3,36 @@
 > **Status:** Documents behavior in **Strixonomy v0.27.0**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
+## Start here: smallest patch
+
+Change a label on Turtle with a bare JSON **array** (most callers use this — CLI `--file` / LSP `patches`):
+
+```json
+[
+  {
+    "op": "set_label",
+    "entity_iri": "http://example.org/people#Person",
+    "value": "Human"
+  }
+]
+```
+
+```bash
+# Preview, then apply (point at your ontology folder / First success tutorial)
+strixonomy patch /path/to/strixonomy-tutorial/example.ttl --file label.json --preview
+strixonomy patch /path/to/strixonomy-tutorial/example.ttl --file label.json
+strixonomy validate /path/to/strixonomy-tutorial
+```
+
+More samples: [Sample patches](examples/patches.md). Full op tables below.
+
+---
+
 Patch write-back uses a JSON array of patch operations. The CLI (`strixonomy patch`) and LSP (`strixonomy/applyAxiomPatch`) accept the same envelope; operation sets differ by file extension.
 
 Supported formats: **Turtle (`.ttl`)**, **OBO (`.obo`)**, **RDF/XML (`.owl`/`.rdf`)**, **OWL/XML (`.owx`)**. XML uses full-document re-serialize ([ADR-0021](design/adr/0021-deterministic-xml-serializers.md)). See [Supported formats](supported-formats.md).
 
-**Apply path (v0.20):** inbound patch JSON is wrapped as an `strixonomy_edit::Transaction` and applied through format adapters (`TurtleAdapter` / `OboAdapter`) before the existing `apply_patches_to_text` engines run. Legacy patch arrays remain accepted; an optional forward envelope `{ "transaction": { "changes": [...] } }` is also supported:
-
-```json
-{
-  "transaction": {
-    "changes": [
-      {
-        "document_uri": "file:///path/to/ontology.ttl",
-        "patches": [
-          { "op": "add_label", "entity_iri": "http://ex#Person", "value": "Human" }
-        ]
-      }
-    ]
-  }
-}
-```
-
-Most callers still pass a bare JSON **array** of ops (CLI `--file` / LSP `patches`).
+**Optional transaction envelope (v0.20+):** inbound patches may be wrapped as `{ "transaction": { "changes": [...] } }`. Most callers still pass a bare JSON **array**.
 
 **Source of truth:** [`patch.rs` on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/crates/strixonomy-owl/src/patch.rs)
 
@@ -333,7 +341,7 @@ Method: `strixonomy/applyAxiomPatch`
 
 See [lsp-api.md](lsp-api.md) and [authoring.md](authoring.md).
 
-## Limitations (v0.26)
+## Limitations (v0.27)
 
 - Write-back: **Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), OWL/XML (`.owx`)**; JSON-LD and line-oriented RDF are read-only. XML is semantic re-serialize — [OWL/XML write-back](guides/owl-xml-workflow.md)
 - **OBO:** patch ops edit an existing `term_id` — there is **no** create-term / new-stanza op (create terms in the file or via other tools, then patch)

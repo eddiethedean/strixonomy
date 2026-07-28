@@ -2,9 +2,6 @@
 
 You finished [First success](first-success.md). This page is a **~15 minute day-2 path** with three copy-paste wins: query → reason → validate. Keep the same tutorial folder from First success (or re-download the samples).
 
-!!! tip "Docs vs Marketplace"
-    Read the Docs `latest` may describe work **after** the last tag. Install pins follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (currently **0.27.0**). See [Versions & channels](versions-and-channels.md).
-
 ## Prerequisites
 
 - Strixonomy IDE installed ([First success](first-success.md) step 1)
@@ -34,24 +31,33 @@ Optional SPARQL: switch to SPARQL mode and try a simple `SELECT ?s WHERE { ?s a 
 
 **Success looks like:** a completed classification with no hard failure for the tutorial samples; you can toggle asserted/inferred hierarchy in the explorer. Details: [Reasoner guide](reasoner.md).
 
-## 3. Validate outside the editor (optional, ~5 min)
+## 3. Validate (~5 min)
 
-Most IDE users stop after steps 1–2. For CI-like validation:
+Most IDE users validate in the editor:
 
-**Linux x64 (preferred):** [CI integration](../ci-integration.md) — download the release tarball, then:
+1. Open **View → Problems** (or the Strixonomy diagnostics tree).
+2. Confirm tutorial samples show no fatal parse errors.
+
+**Success looks like:** no blocking ontology errors for `example.ttl` / `demo.obo`.
+
+### Optional: CLI validate (CI teams)
+
+Skip this on a laptop unless you need CI parity. Prefer the **Linux x64** release tarball — [CI integration](../ci-integration.md):
 
 ```bash
-./strixonomy validate /path/to/strixonomy-tutorial
+VERSION=0.27.0
+BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
+./${BIN} validate /path/to/strixonomy-tutorial
 ```
 
-**macOS / Windows:** [Install CLI](install-cli.md) (15–30+ min cold compile), then:
+**macOS / Windows:** cold `cargo install` is **15–30+ minutes** — only for CI authors who need the CLI locally: [Install CLI](install-cli.md).
 
 ```bash
 cargo install strixonomy-cli --locked --version 0.27.0
 strixonomy validate /path/to/strixonomy-tutorial
 ```
 
-**Success looks like:** exit code `0` and a short OK / summary line (no fatal parse errors).
+**Success looks like:** exit code `0` and a short OK / summary line.
 
 ## Edit more (when you have time)
 
@@ -71,7 +77,9 @@ strixonomy validate /path/to/strixonomy-tutorial
 
 ## Related
 
-- [Feature tour](../ide/feature-tour.md)
+**Next:** [Feature tour](../ide/feature-tour.md) (week-1 IDE depth).
+
 - [Documentation index](../documentation-index.md)
 - [Troubleshooting](../troubleshooting.md)
 - [Examples](../examples/index.md)
+- [Uninstall](uninstall.md)

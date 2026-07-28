@@ -30,7 +30,7 @@ cargo build -p strixonomy-lsp --bins
 cd extension
 npm ci
 npm run compile          # builds webview-ui + esbuild bundle
-ONTOCORE_LSP_BIN="../target/debug/strixonomy-lsp" npm test
+STRIXONOMY_LSP_BIN="../target/debug/strixonomy-lsp" npm test
 ```
 
 Press **F5** in VS Code with the `extension/` folder open (or use **Run Extension** launch config) after `npm run compile`.
@@ -58,7 +58,7 @@ cargo fmt --all --check
 cargo clippy --workspace --all-targets --all-features -- -D warnings
 cargo build -p strixonomy-lsp --bins
 cd extension/webview-ui && npm ci && npm test
-cd extension && ONTOCORE_LSP_BIN=../target/debug/strixonomy-lsp npm ci && npm run compile && npm test
+cd extension && STRIXONOMY_LSP_BIN=../target/debug/strixonomy-lsp npm ci && npm run compile && npm test
 ./scripts/check-doc-versions.sh
 ```
 

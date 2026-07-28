@@ -11,7 +11,7 @@ For end-user problems, see [Troubleshooting](troubleshooting.md).
 | Language server | **View → Output → Strixonomy Language Server** |
 | Extension host | **View → Output → Extension Host** (filter `Strixonomy`) |
 | Rust backtraces | `RUST_BACKTRACE=1` when running `strixonomy-lsp` or tests |
-| Custom LSP binary | `strixonomy.lspPath` (trusted workspaces) or `ONTOCORE_LSP_BIN` for tests |
+| Custom LSP binary | `strixonomy.lspPath` (trusted workspaces) or `STRIXONOMY_LSP_BIN` for tests |
 
 ## Language server (`strixonomy-lsp`)
 
@@ -35,7 +35,7 @@ Set **Strixonomy: Lsp Path** (`strixonomy.lspPath`) to the absolute path of `tar
 Extension tests use:
 
 ```bash
-export ONTOCORE_LSP_BIN="$(pwd)/target/debug/strixonomy-lsp"
+export STRIXONOMY_LSP_BIN="$(pwd)/target/debug/strixonomy-lsp"
 cd extension && npm test
 ```
 
@@ -65,7 +65,7 @@ Optional: set `strixonomy.lspPath` in the dev host to your debug `strixonomy-lsp
 ```bash
 cargo build -p strixonomy-lsp --bins
 cd extension
-export ONTOCORE_LSP_BIN="$(pwd)/../target/debug/strixonomy-lsp"
+export STRIXONOMY_LSP_BIN="$(pwd)/../target/debug/strixonomy-lsp"
 npm ci && npm test
 ```
 

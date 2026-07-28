@@ -14,13 +14,11 @@ The **Strixonomy engine** CLI is optional (CI / scripting).
 !!! tip "Most IDE users never need Rust"
     The Strixonomy IDE bundles `strixonomy-lsp`. Install the extension and skip the CLI unless you need `strixonomy` for CI, scripting, or validation outside the editor.
 
-!!! tip "Docs vs Marketplace"
-    Read the Docs `latest` may describe work **after** the last tag. Pins follow [`docs/TAGGED_RELEASE`](TAGGED_RELEASE) (**0.27.0**). See [Versions & channels](guides/versions-and-channels.md).
+!!! danger "Wrong cargo package"
+    Install the CLI with `cargo install strixonomy-cli` (binary name: `strixonomy`).
+    `cargo install strixonomy` installs the library crate, not the CLI.
 
-!!! warning "CLI crate name"
-    The binary is `strixonomy`. Install with `cargo install strixonomy-cli`, never `cargo install strixonomy`.
-
-Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)).
+Canonical pin: **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)). Channel lag (Marketplace vs crates.io vs docs): [Versions & channels](guides/versions-and-channels.md).
 
 ## 1. VS Code / Cursor extension (recommended)
 

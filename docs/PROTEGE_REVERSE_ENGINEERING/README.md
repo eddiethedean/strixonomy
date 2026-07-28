@@ -1,6 +1,8 @@
 # Protégé Reverse Engineering
 
-> **NOT PRODUCT CLAIMS.** Engineering notes only — **excluded from public Read the Docs**. For adoption decisions use [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md).
+> **NOT PRODUCT CLAIMS — engineering notes only.** This tree is **excluded from public Read the Docs**. Do **not** cite it as shipped capability.
+>
+> **For adoption decisions use only:** [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md).
 
 This documentation set captures the architecture, workflows, UI, plugins, reasoning, and extension mechanisms of Protégé and WebProtégé, then uses those findings to define the design of Strixonomy.
 

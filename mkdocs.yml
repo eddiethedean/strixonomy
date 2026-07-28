@@ -10,7 +10,7 @@
 # `--strict` itself is cheap; cost is page render + optional plugins.
 
 site_name: Strixonomy
-site_description: Ontology-as-code for Git and VS Code — Strixonomy engine and Strixonomy extension docs
+site_description: Edit OWL, RDF, and OBO ontologies in VS Code — Strixonomy IDE, CLI, and library docs
 site_url: https://strixonomy-vs.readthedocs.io/
 repo_url: https://github.com/eddiethedean/strixonomy
 repo_name: eddiethedean/strixonomy
@@ -125,20 +125,18 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Get started:
+  - Start:
       - "First success (~10 min)": guides/first-success.md
       - "Your next steps (day 2)": guides/day-2.md
       - Install: install.md
       - Supported formats: supported-formats.md
       - Versions and channels: guides/versions-and-channels.md
-      - Which artifact?: guides/which-artifact.md
-      - Product identity: guides/product-identity.md
-      - Documentation index: documentation-index.md
       - More install detail:
+          - Which artifact?: guides/which-artifact.md
           - Install CLI & CI (not the IDE tutorial): install-cli-ci.md
           - VS Code install (detail): vscode-install.md
           - Install CLI (macOS/Windows): guides/install-cli.md
-  - Use the IDE:
+  - IDE:
       - Overview: ide/index.md
       - Feature tour: ide/feature-tour.md
       - Extension detail: ide/vscode-extension.md
@@ -162,14 +160,14 @@ nav:
           - Capabilities by format: guides/capabilities-by-format.md
           - Protégé coexistence: guides/protege-coexistence.md
           - Best practices: guides/best-practices.md
-  - Use the engine & CLI:
+  - CLI & library:
       - Overview: strixonomy/index.md
+      - CI integration: ci-integration.md
       - Rust library: guides/rust-library.md
       - Rust & CLI guide: guides/rust-crates.md
-      - CI integration: ci-integration.md
+      - Plugin authoring: guides/plugins.md
       - ROBOT interop: guides/robot-interop.md
       - Documentation export: guides/docs-export.md
-      - Plugin authoring: guides/plugins.md
       - Crate map: strixonomy/crate-map.md
       - Workspace engine: strixonomy/workspace-engine.md
       - Strixonomy architecture: strixonomy/architecture.md
@@ -199,22 +197,18 @@ nav:
       - Webview protocol: webview-protocol.md
       - Errors: errors.md
       - Workspace limits: workspace-limits.md
-      - Supported formats: supported-formats.md
       - Strixonomy SQL views: strixonomy/sql-views.md
-      - Architecture decisions:
-          - Engineering ADRs: design/adr/README.md
-          - Product ADRs: adr/README.md
   - Evaluate:
       - What ships today: SHIPPED.md
       - Known limitations: known-limitations.md
       - Protégé vs Strixonomy: guides/protege-decision.md
       - Enterprise evaluation: guides/enterprise-eval.md
-      - Enterprise week-2: guides/enterprise-week-2.md
+      - Procurement appendix: guides/procurement-appendix.md
       - Production readiness: guides/production-readiness.md
       - Enterprise deployment: guides/enterprise-deployment.md
+      - Enterprise week-2: guides/enterprise-week-2.md
       - Performance and sizing: guides/performance-sizing.md
       - API stability (pre-1.0): guides/api-stability.md
-      - Procurement appendix: guides/procurement-appendix.md
       - Release timeline: guides/release-timeline.md
       - Direction:
           - Vision: vision.md
@@ -223,37 +217,21 @@ nav:
           - Platform roadmap: roadmap.md
   - Help:
       - FAQ: faq.md
-      - Ontology concepts: concepts.md
-      - Glossary: glossary.md
       - Troubleshooting: troubleshooting.md
       - Support and contact: support.md
+      - Uninstall and cleanup: guides/uninstall.md
       - Migrating from Protégé: guides/protege-migration.md
+      - Ontology concepts: concepts.md
+      - Glossary: glossary.md
+      - Product identity: guides/product-identity.md
       - Security: security.md
       - Changelog: changelog.md
-      - Migrations:
-          - Migration index: migration/README.md
-          - v0.26.2 → v0.27.0: migration/v0.27.md
-          - v0.26.1 → v0.26.2: migration/v0.26.2.md
-          - v0.26.0 → v0.26.1: migration/v0.26.1.md
-          - v0.25.0 → v0.26.0: migration/v0.26.md
-          - v0.24.0 → v0.25.0: migration/v0.25.md
-          - v0.23.0 → v0.24.0: migration/v0.24.md
-          - v0.22.0 → v0.23.0: migration/v0.23.md
-          - v0.21.0 → v0.22.0: migration/v0.22.md
-          - v0.20.0 → v0.21.0: migration/v0.21.md
-          - v0.19.0 → v0.20.0: migration/v0.20.md
-          - v0.18.2 → v0.19.0: migration/v0.19.md
-          - v0.18.1 → v0.18.2: migration/v0.18.2.md
-          - v0.18.0 → v0.18.1: migration/v0.18.1.md
-          - v0.17 → v0.18: migration/v0.18.md
-          - v0.16 → v0.17: migration/v0.17.md
-          - v0.15 → v0.16: migration/v0.16.md
-          - v0.14 → v0.15: migration/v0.15.md
-          - v0.13 → v0.14: migration/v0.14.md
+      - Migrations: migration/README.md
       - Legacy guide URLs: guides/legacy-guide-urls.md
       - Release integrity: release-integrity.md
   - Contribute:
       - Guide: contributing.md
+      - Documentation index: documentation-index.md
       - Architecture tour: guides/architecture-tour.md
       - Testing matrix: guides/testing-matrix.md
       - Extension development: guides/extension-development.md
@@ -263,6 +241,8 @@ nav:
       - Marketplace publish: marketplace-publish.md
       - Plugin policy: guides/plugin-policy.md
       - Internals: internals.md
+      - Engineering ADRs: design/adr/README.md
+      - Product ADRs: adr/README.md
       - Licenses: design/LICENSES.md
       - Engineering docs (GitHub): engineering.md
 extra:

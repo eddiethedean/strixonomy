@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.27.0] - 2026-07-27
 
-**For pilots / adopters:** product identity rename — **OntoCore** / **OntoCode** → **Strixonomy**. Primary crates, CLI, LSP, extension, and docs use Strixonomy names; legacy identifiers remain in a compatibility window through at least 1.0. No format write-back regression vs v0.26.2 — [migration/v0.27.md](docs/migration/v0.27.md).
+**User-facing highlights:** OntoCore / OntoCode → **Strixonomy** (extension `strixonomy.strixonomy`, CLI `strixonomy`, crates `strixonomy` / `strixonomy-*`). Legacy names remain compatible through ≥1.0. No format write-back regression vs v0.26.2 — [migration/v0.27.md](docs/migration/v0.27.md).
 
 ### Changed
 

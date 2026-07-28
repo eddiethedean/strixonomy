@@ -2,8 +2,8 @@
 
 Runnable examples for the Strixonomy engine CLI, Rust embedding, and IDE workflows.
 
-!!! note "Clone vs tutorial pack"
-    Paths like `fixtures/` and `examples/plugin-workspace/` exist **only in a git clone**. After `cargo install strixonomy-cli`, point commands at **your** ontology directory (or the [First success](../guides/first-success.md) tutorial folder / [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip)). IDE-only users can skip CLI cookbooks.
+!!! tip "Prefer the tutorial folder"
+    After [First success](../guides/first-success.md), point CLI commands at your **`strixonomy-tutorial`** directory (or unzipped [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip)). Paths like `fixtures/` exist **only in a git clone**. IDE-only users can skip CLI cookbooks.
 
 ## CLI cookbooks (copy-paste)
 
@@ -21,7 +21,15 @@ Runnable examples for the Strixonomy engine CLI, Rust embedding, and IDE workflo
 | [Docs export](docs-export.md) | Markdown/HTML documentation export |
 | [Index vs inspect](inspect.md) | Stats-only vs diagnostic summary |
 
-From a git clone, prefix commands with `cargo run --` (e.g. `cargo run -- query fixtures "SELECT * FROM classes"`). With `cargo install strixonomy-cli`, use `strixonomy` directly.
+```bash
+# Tutorial folder (recommended)
+strixonomy validate ~/strixonomy-tutorial
+strixonomy query ~/strixonomy-tutorial "SELECT short_name FROM classes"
+
+# Git clone (secondary)
+cargo run -- validate fixtures
+cargo run -- query fixtures "SELECT short_name FROM classes"
+```
 
 ## End-to-end workflow (clone)
 
@@ -37,11 +45,11 @@ Then try a patch preview: [Sample patches](patches.md). VS Code path: [First suc
 
 | Example | Run | Description |
 |---------|-----|-------------|
-| `index_and_query` | `cargo run -p strixonomy --example index_and_query` | `Workspace` + SQL query on `fixtures/` |
-| `strixonomy_workspace` | `cargo run -p strixonomy --example strixonomy_workspace` | High-level `Workspace` API |
-| `workspace_operations` | `cargo run -p strixonomy --example workspace_operations` | Classify, import graph, docs export |
-| `error_handling` | `cargo run -p strixonomy --example error_handling` | `strixonomy::Error` handling |
-| `semantic_diff` | `cargo run -p strixonomy --example semantic_diff` | Git/workspace semantic diff (optional git repo) |
+| `index_and_query` | `cargo run -p strixonomy-workspace --example index_and_query` | `Workspace` + SQL query on `fixtures/` |
+| `strixonomy_workspace` | `cargo run -p strixonomy-workspace --example strixonomy_workspace` | High-level `Workspace` API |
+| `workspace_operations` | `cargo run -p strixonomy-workspace --example workspace_operations` | Classify, import graph, docs export |
+| `error_handling` | `cargo run -p strixonomy-workspace --example error_handling` | `strixonomy::Error` handling |
+| `semantic_diff` | `cargo run -p strixonomy-workspace --example semantic_diff` | Git/workspace semantic diff (optional git repo) |
 
 ## Fixture workspaces
 

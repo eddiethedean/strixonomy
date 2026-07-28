@@ -151,7 +151,7 @@ Indexing runs on workspace open. `strixonomy.autoIndexOnOpen` is a legacy settin
 | Symptom | Fix |
 |---------|-----|
 | Bundled LSP missing in dev host | `cargo build -p strixonomy-lsp --bins` then set `strixonomy.lspPath` or run `./scripts/package-extension.sh` |
-| Extension tests fail to spawn LSP | `export ONTOCORE_LSP_BIN="$(pwd)/target/debug/strixonomy-lsp"` before `npm test` |
+| Extension tests fail to spawn LSP | `export STRIXONOMY_LSP_BIN="$(pwd)/target/debug/strixonomy-lsp"` before `npm test` (legacy `ONTOCORE_LSP_BIN` may still work — [v0.27 migration](migration/v0.27.md)) |
 
 See [Debugging guide](debugging.md) for F5, webview-ui, and E2E workflows.
 

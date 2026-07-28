@@ -16,11 +16,11 @@ Do **not** treat `docs/design/*` target specs, `docs/protege-parity/`, or `docs/
 |----------|----------|
 | `docs/design/OWL_AUTHORING_SPEC.md`, `OBO_ROBOT_SPEC.md`, `SHACL_SPEC.md`, React integration plan, `PLUGIN_SPEC.md` | Historical / target — banners say so; prefer SHIPPED + user guides |
 | `docs/design/LSP_SPEC.md` | Mix of shipped + planned — cross-check [docs/lsp-api.md](docs/lsp-api.md) |
-| Root `VISION.md` / `ROADMAP.md` | Prefer `docs/vision.md` / `docs/roadmap.md` then sync mirrors |
+| Root `VISION.md` / `ROADMAP.md` / `ARCHITECTURE.md` / `CONTRIBUTING.md` | Prefer `docs/vision.md` / `docs/roadmap.md` / `docs/architecture.md` / `docs/contributing.md` — root files are short pointers |
 
 ## Contributor entry points
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) · [docs/contributing.md](docs/contributing.md) (edit docs copy first)
+- [CONTRIBUTING.md](CONTRIBUTING.md) (pointer) · [docs/contributing.md](docs/contributing.md) (canonical)
 - Testing scopes: [docs/guides/testing-matrix.md](docs/guides/testing-matrix.md)
 - Internals map: [docs/internals.md](docs/internals.md)
 - Plugins: [docs/guides/plugins.md](docs/guides/plugins.md) (canonical; not PLUGIN_SPEC)

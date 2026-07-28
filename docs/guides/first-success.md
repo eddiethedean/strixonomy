@@ -5,23 +5,27 @@ This is the **canonical tutorial** for new Strixonomy users. You do not need to 
 **Prerequisites:** VS Code **1.85+**; network access to download tutorial files (step 2). New to OWL/RDF? Skim [Ontology concepts](../concepts.md).
 
 !!! warning "Write-back formats"
-    Inspector write-back: **`.ttl`, `.obo`, `.owl`/`.rdf`, `.owx`**. XML is **semantic re-serialize** (not byte-identical to Protégé). JSON-LD / TriG / N-Triples are read-only — [Supported formats](../supported-formats.md).
+    Inspector write-back: **`.ttl`, `.obo`, `.owl`/`.rdf`, `.owx`**. Details: [Supported formats](../supported-formats.md).
 
 ## Core path (~10 minutes)
 
 ### 1. Install Strixonomy
 
-**VS Code:** Extensions → search **Strixonomy** (`strixonomy.strixonomy`) → **Install** → reload if prompted.
+**VS Code:** Extensions → search **Strixonomy** → **Install** → reload if prompted. Extension id: `strixonomy.strixonomy`.
 
 **Cursor:** install from [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy).
 
-For offline VSIX installs, see [Install VS Code](../vscode-install.md).
+Coming from **OntoCode**? See [v0.27 migration](../migration/v0.27.md). Offline VSIX: [Install VS Code](../vscode-install.md).
 
 ### 2. Open a folder
 
-**Canonical (online):** download the three sample files below, then **File → Open Folder…**.
+Download samples, then **File → Open Folder…** (open the **folder**, not a single file).
 
-=== "macOS / Linux"
+=== "Offline zip (any OS)"
+
+    Download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) from the [v0.27.0 Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0), unzip, and open that folder.
+
+=== "macOS / Linux (curl)"
 
     ```bash
     mkdir strixonomy-tutorial && cd strixonomy-tutorial
@@ -39,18 +43,15 @@ For offline VSIX installs, see [Install VS Code](../vscode-install.md).
     Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/examples/obo-workflow/demo.obo -OutFile demo.obo
     ```
 
-**Offline pack:** Prefer the curl/PowerShell commands above when you have network access. For offline sample files, download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip) from the [v0.27.0 GitHub Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0), unzip, and **File → Open Folder…**. For offline extension install, download `strixonomy-v0.27.0.vsix` from that Release. Alternatively open `fixtures/` from a clone.
-
-Or browse [v0.27.0 fixtures](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures).
-
 !!! tip "Workspace Trust"
-    The **bundled** language server works in Restricted Mode. **Do not Trust the workspace** unless you configured `strixonomy.lspPath` or `strixonomy.robotPath`.
+    Leave the folder **Restricted** unless you set a custom language-server path.
+    The **bundled** server already works; Trust is only required for `strixonomy.lspPath` / `strixonomy.robotPath`.
 
 ### 3. Browse the explorer
 
 ![Strixonomy explorer with Classes and Entity Inspector](../assets/screenshots/explorer-inspector.png)
 
-1. Click the **Strixonomy** Activity Bar icon (ontology / book-like icon on the left sidebar; or run **Strixonomy: Index Workspace**).
+1. Click the **Strixonomy** Activity Bar icon on the **left** sidebar (same strip as Explorer / Search — owl / book-style product icon). Or Command Palette → **Strixonomy: Index Workspace**.
 2. Expand **Ontologies**, then **Classes** / **Properties** / **Individuals**.
 3. Click **`Person`** to open the **Entity Inspector**.
 

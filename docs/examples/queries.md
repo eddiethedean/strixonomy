@@ -1,16 +1,25 @@
 # Query cookbook
 
-Runnable examples against an ontology workspace. Replace `/path/to/ontologies` with your project folder (or the [First success](../guides/first-success.md) tutorial directory).
+Runnable examples against an ontology workspace.
+
+=== "Tutorial folder (recommended)"
+
+    After [First success](../guides/first-success.md):
+
+    ```bash
+    strixonomy query ~/strixonomy-tutorial "SELECT * FROM classes"
+    strixonomy query ~/strixonomy-tutorial "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
+    ```
+
+=== "Git clone"
+
+    ```bash
+    cargo run -- query fixtures "SELECT * FROM classes"
+    cargo run -- query fixtures "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
+    ```
 
 !!! note "Clone vs install"
     `fixtures/` exists only in a git clone. After `cargo install strixonomy-cli`, do not run `strixonomy query ./fixtures` unless you cloned the repo.
-
-```bash
-strixonomy query /path/to/ontologies "SELECT * FROM classes"
-strixonomy query /path/to/ontologies "SELECT short_name, labels FROM classes WHERE short_name = 'Person'"
-```
-
-From a git clone, use `fixtures` instead of `/path/to/ontologies`, or `cargo run --` from the repo root.
 
 ## Classes and entities
 
@@ -21,7 +30,7 @@ strixonomy query /path/to/ontologies "SELECT * FROM individuals"
 strixonomy query /path/to/ontologies "SELECT * FROM entities"
 ```
 
-**Expected (`fixtures/`, filtered query):** 1 row with `short_name` = `Person`.
+**Expected (`fixtures/` or tutorial `example.ttl`, filtered query):** 1 row with `short_name` = `Person`.
 
 ## Properties
 

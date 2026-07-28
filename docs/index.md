@@ -12,24 +12,24 @@ hide:
   <span class="oc-badge">CLI · LSP</span>
 </div>
 
-<p class="oc-hero-kicker">Strixonomy documentation</p>
+<p class="oc-hero-kicker">Latest tagged v0.27.0</p>
 
-<p class="oc-hero-title">Ontology IDE for VS Code</p>
+<p class="oc-hero-title">Strixonomy</p>
 
 <p class="oc-hero-lead">
-Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS Code — powered by <strong>Strixonomy</strong> (Rust workspace engine + LSP).
+Edit OWL, RDF, and OBO ontologies in VS Code—browse, query, reason, and validate—backed by a Rust workspace engine and language server.
 </p>
 
 <p class="oc-hero-ctas">
   <a class="oc-hero-cta" href="guides/first-success/">First success (~10 min) →</a>
 </p>
 
-<p class="oc-hero-subcta"><a href="SHIPPED/">Evaluate · What ships today</a> · <a href="install/">Install</a> · <a href="guides/day-2/">Your next steps</a> · <a href="guides/versions-and-channels/">Versions &amp; channels</a> · <a href="known-limitations/">Known limitations</a> · Latest tagged: <strong>v0.27.0</strong></p>
+<p class="oc-hero-subcta"><a href="guides/day-2/">Your next steps</a> · <a href="install/">Install</a> · <a href="SHIPPED/">What ships today</a> · <a href="known-limitations/">Known limitations</a></p>
 
 <div class="oc-hero-links">
-  <a href="ide/">Strixonomy overview</a>
   <a href="ide/feature-tour/">Feature tour</a>
-  <a href="glossary/">Glossary</a>
+  <a href="ide/">IDE overview</a>
+  <a href="guides/versions-and-channels/">Versions &amp; channels</a>
 </div>
 
 </div>
@@ -38,26 +38,24 @@ Index and explore OWL/RDF/OBO, run queries, refactors, and reasoning — in VS C
 
 **Primary path:** **[First success (~10 min)](guides/first-success.md)** — install the extension, open sample ontologies, browse and edit. No clone required. Then **[Your next steps](guides/day-2.md)**.
 
-!!! tip "Docs vs Marketplace"
-    Read the Docs `latest` may describe work **after** the last tag. Pins and Marketplace follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0**). See [Versions & channels](guides/versions-and-channels.md).
+Pins follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0**). Channel lag: [Versions & channels](guides/versions-and-channels.md).
 
-**Also:** [Install](install.md) · [Examples](examples/index.md) · [Feature tour](ide/feature-tour.md) · [What ships today](SHIPPED.md) · [Documentation index](documentation-index.md)
+**Also:** [Install](install.md) · [Examples](examples/index.md) · [Feature tour](ide/feature-tour.md) · [What ships today](SHIPPED.md)
 
 ![Strixonomy product tour](assets/screenshots/product-tour.gif)
 
 <details markdown>
-<summary>Formats, SQL subset, and names</summary>
+<summary>Formats and names</summary>
 
-!!! warning "Editable formats"
-    Entity Inspector write-back applies to **`.ttl`, `.obo`, `.owl`/`.rdf` (RDF/XML), and `.owx` (OWL/XML)**. XML is **semantic re-serialize** (not Protégé byte-identical). JSON-LD / TriG / N-Triples stay read-only — [Supported formats](supported-formats.md).
+Writable: **`.ttl`**, **`.obo`**, **`.owl`/`.rdf`**, **`.owx`** (XML = semantic re-serialize). JSON-LD / TriG / N-Triples stay read-only — [Supported formats](supported-formats.md). Catalog SQL is a subset — [SQL reference](sql-reference.md).
 
-!!! note "Catalog SQL (subset)"
-    Query Workbench SQL mode is **not** full SQL (no `JOIN` / `ORDER BY` / `LIMIT`). Prefer SPARQL for graph patterns — [SQL reference](sql-reference.md). Query Workbench also has **DL** mode for Manchester class expressions — [DL Query](guides/dl-query.md).
+| Name | What |
+|------|------|
+| **Strixonomy IDE** | VS Code / Cursor extension |
+| **Strixonomy engine** | CLI + LSP + crates (`cargo install strixonomy-cli`) |
+| **Ontologos** | Bundled reasoner |
 
-!!! tip "CLI on macOS/Windows?"
-    Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`. If you need `strixonomy` for CI or scripting, see [Install](install.md).
-
-> **Names:** **Strixonomy IDE** = VS Code extension. **Strixonomy engine** = Rust CLI + language server. **Ontologos** = external reasoner. See [Product identity](guides/product-identity.md).
+[Product identity](guides/product-identity.md)
 
 </details>
 

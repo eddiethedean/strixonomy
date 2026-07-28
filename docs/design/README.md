@@ -1,6 +1,10 @@
-# Strixonomy + Strixonomy Documentation Package
+# Strixonomy engineering specs (design/)
 
-> **Note:** This folder contains **engineering specs, ADRs, and shipped milestone detail**. Canonical platform direction lives in **[Vision](../vision.md)**, **[Architecture](../architecture.md)**, and **[Roadmap](../roadmap.md)** ([full ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md)). For **what ships in v0.27.0**, see [What ships today](../SHIPPED.md).
+> **NOT PRODUCT CLAIMS.** Specs, ADRs, and milestone notes for **contributors**. Many pages describe **targets**, not shipped behavior.
+>
+> **For adoption decisions use only:** [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md).
+>
+> Canonical platform direction: [Vision](../vision.md), [Architecture](../architecture.md), [Roadmap](../roadmap.md).
 
 ## Documentation layers
 

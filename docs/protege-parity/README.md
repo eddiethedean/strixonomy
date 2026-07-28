@@ -1,6 +1,8 @@
 # Protégé Parity Program
 
-> **Engineering program (GitHub only).** This tree is **excluded from the public Read the Docs site**. Evaluators should use [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md) — not parity drafts — for adoption decisions.
+> **NOT PRODUCT CLAIMS — engineering notes only.** This tree is **excluded from the public Read the Docs site**. Do **not** use it to evaluate what Strixonomy ships.
+>
+> **For adoption decisions use only:** [What ships today](../SHIPPED.md) and [Known limitations](../known-limitations.md).
 
 This directory contains the engineering specifications, audits, and
 implementation plans that drive **Strixonomy 1.0.0** toward **full

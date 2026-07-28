@@ -16,14 +16,14 @@ Naming: [Product identity](guides/product-identity.md).
 
 **No Rust or Node required** for documentation-only PRs. Expect **under one hour** end-to-end including review prep:
 
-1. Edit pages under `docs/` (this site). Update root `README.md`, `CONTRIBUTING.md`, or `extension/README.md` when install or marketplace text changes.
+1. Edit pages under `docs/` (this site). Update root `README.md` or `extension/README.md` when install or marketplace text changes. Root `CONTRIBUTING.md` is a pointer — edit this page instead.
 2. Run `./scripts/check-doc-versions.sh`.
 3. Optional preview: `pip install -r docs/requirements.txt && ./scripts/serve-docs.sh`
 4. Open a focused PR.
 
 **Public install pins** must match [`docs/TAGGED_RELEASE`](TAGGED_RELEASE) — not the unreleased workspace version in `Cargo.toml`.
 
-Platform content: edit [vision.md](vision.md), [roadmap.md](roadmap.md), and [architecture.md](architecture.md) here first; keep [GitHub root mirrors](https://github.com/eddiethedean/strixonomy/blob/main/CONTRIBUTING.md#canonical-documentation-paths) in sync when those change.
+Platform content: edit [vision.md](vision.md), [roadmap.md](roadmap.md), and [architecture.md](architecture.md) here. Root `VISION.md` / `ROADMAP.md` / `ARCHITECTURE.md` / `CONTRIBUTING.md` are **short pointers** to these pages.
 
 ### Canonical documentation paths
 
@@ -38,9 +38,9 @@ Platform content: edit [vision.md](vision.md), [roadmap.md](roadmap.md), and [ar
 | Engineering ADRs | — | [design/adr/README.md](design/adr/README.md) |
 | Documentation map | — | [documentation-index.md](documentation-index.md) |
 
-Root `VISION.md`, `ARCHITECTURE.md`, and `ROADMAP.md` are mirrored under `docs/` for Read the Docs. **Prefer editing this `docs/` copy first**, then update root mirrors when platform-facing content changes. **Release pin truth** is a single file: [`TAGGED_RELEASE`](TAGGED_RELEASE) — run `./scripts/check-doc-versions.sh` to catch drift (including stale “latest tagged” claims).
+Root `VISION.md`, `ARCHITECTURE.md`, `ROADMAP.md`, and `CONTRIBUTING.md` are **pointers** to the `docs/` copies. Prefer editing this `docs/` copy. **Release pin truth** is a single file: [`TAGGED_RELEASE`](TAGGED_RELEASE) — run `./scripts/check-doc-versions.sh` to catch drift.
 
-**Contributor process (this page):** Edit [`docs/contributing.md`](contributing.md) first for Read the Docs; keep root [`CONTRIBUTING.md`](https://github.com/eddiethedean/strixonomy/blob/main/CONTRIBUTING.md) in sync as the GitHub mirror. Do not treat both as independent sources of truth — one edit, then mirror.
+**Contributor process (this page):** Edit [`docs/contributing.md`](contributing.md) first for Read the Docs. Root [`CONTRIBUTING.md`](https://github.com/eddiethedean/strixonomy/blob/main/CONTRIBUTING.md) is a **short pointer** to this page — do not maintain a second full guide at the root.
 
 - **Specs** — product and architecture docs under `docs/design/` ([DEPENDENCY_MATRIX.md](design/DEPENDENCY_MATRIX.md) for external crates)
 
@@ -109,11 +109,13 @@ Open an issue or discussion before large features. Follow existing commit messag
 
 ### Good first issues
 
-Look for GitHub labels `good first issue` and `docs`. Useful first PRs:
+Look for GitHub labels `good first issue` and `docs`. Starter tasks:
 
-- Docs clarity / broken links / version pin nits under `docs/`
-- Small unit-test additions next to existing tests in a single crate
-- Copy fixes in `extension/README.md` or tutorial steps in [first-success](guides/first-success.md)
+1. Docs clarity / broken links / version pin nits under `docs/` (run `./scripts/check-doc-versions.sh`)
+2. Copy fixes in [first-success](guides/first-success.md) or `extension/README.md`
+3. Small unit-test additions next to existing tests in a single `strixonomy-*` crate (`cargo test -p strixonomy-core --lib`)
+
+Open a focused PR with a short description of what confused you.
 
 ## Prerequisites
 
@@ -127,7 +129,7 @@ Look for GitHub labels `good first issue` and `docs`. Useful first PRs:
 - **Java 11+** and **[ROBOT](http://robot.obolibrary.org/)** on `PATH` — optional; needed only for manual `strixonomy robot` / ROBOT interop development (not required for `cargo test --workspace`)
 - **Python 3.12** — for MkDocs doc site (`pip install -r docs/requirements.txt`)
 
-> **Canonical contributor guide (this page):** Edit [`docs/contributing.md`](contributing.md) for Read the Docs, then sync root [`CONTRIBUTING.md`](https://github.com/eddiethedean/strixonomy/blob/main/CONTRIBUTING.md) on GitHub. Do not treat them as independent sources of truth.
+> **Canonical contributor guide (this page):** Edit [`docs/contributing.md`](contributing.md). Root [`CONTRIBUTING.md`](https://github.com/eddiethedean/strixonomy/blob/main/CONTRIBUTING.md) is a short pointer — keep the pointer accurate, not a second full guide.
 
 ## Build and test
 
@@ -267,13 +269,13 @@ This runs rustfmt, `./scripts/check-doc-versions.sh`, clippy, workspace tests, M
 | Audience | Where to write |
 |----------|----------------|
 | New users (install, SQL, LSP) | `docs/` |
-| Product vision / platform roadmap | Root `VISION.md` / `ROADMAP.md` **and** mirrors under `docs/` (edit both) |
+| Product vision / platform roadmap | `docs/vision.md` / `docs/roadmap.md` (root files are pointers) |
 | Product & platform ADRs | `docs/adr/` |
 | Engineering ADRs (crate/design decisions) | `docs/design/adr/` (do not add a top-level `adrs/` folder) |
 | Engineering specs / dependency matrix | `docs/design/` |
 | Extension settings and commands | `extension/README.md` |
 
-**Mirror policy:** Root `VISION.md`, `ARCHITECTURE.md`, `ROADMAP.md`, `SECURITY.md`, `CONTRIBUTING.md`, and `CHANGELOG.md` are mirrored under `docs/` for Read the Docs. When you change platform-facing content, update **both** copies (or expect `./scripts/check-doc-versions.sh` to fail).
+**Mirror policy:** Root `VISION.md`, `ARCHITECTURE.md`, `ROADMAP.md`, and `CONTRIBUTING.md` are **pointers** to `docs/` (edit the docs copies). `SECURITY.md` is canonical at the repo root; `docs/security.md` is a stub. `CHANGELOG.md` remains mirrored to `docs/changelog.md` (summaries). Run `./scripts/check-doc-versions.sh` before PRs.
 
 ### Adding dependencies
 

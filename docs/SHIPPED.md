@@ -8,6 +8,12 @@
 
 **Latest tagged: v0.27.0** · [v0.27 migration](migration/v0.27.md) · [v0.26.2 patch](migration/v0.26.2.md) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
 
+## Evaluator summary
+
+- **Edit in VS Code:** Turtle, OBO, RDF/XML, and OWL/XML write-back (XML is semantic re-serialize, not Protégé byte-identical). Browse/query JSON-LD / TriG / N-Triples.
+- **Query and reason:** Query Workbench (SQL subset, SPARQL, DL), EL–DL classification, realize, explanations, semantic diff, refactor preview.
+- **Not a full Protégé replacement today** — coexistence and pilots are the supported path. Gaps: [Known limitations](known-limitations.md) · decision guide: [Protégé vs Strixonomy](guides/protege-decision.md).
+
 ## Products
 
 | Product | What it is |

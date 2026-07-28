@@ -2,7 +2,7 @@
 
 > **Latest tagged release: v0.27.0** — canonical capability matrix: [What ships today](SHIPPED.md).
 
-This page is the canonical reference for **what Strixonomy/Strixonomy can do with each file format** today.
+This page is the canonical reference for **what Strixonomy can do with each file format** today.
 
 ## Quick summary
 
