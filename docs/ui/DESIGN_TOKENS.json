@@ -48,6 +48,12 @@
     "slow": "250ms"
   },
   "color": {
+    "brand": {
+      "night": "#0f172a",
+      "indigo": "#4338ca",
+      "eye": "#f59e0b",
+      "feather": "#e2e8f0"
+    },
     "status": {
       "success": "semantic-success",
       "warning": "semantic-warning",
