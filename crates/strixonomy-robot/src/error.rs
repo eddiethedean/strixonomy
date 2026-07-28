@@ -14,6 +14,9 @@ pub enum RobotError {
     #[error("ROBOT timed out after {0}s")]
     TimedOut(u64),
 
+    #[error("ROBOT subprocess output exceeded {0} bytes")]
+    OutputTooLarge(usize),
+
     #[error("{0}")]
     Run(String),
 }

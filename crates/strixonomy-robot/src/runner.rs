@@ -18,6 +18,9 @@ const ALLOWED_SUBCOMMANDS: &[&str] =
 /// Default kill deadline for ROBOT subprocesses (#341).
 pub const DEFAULT_ROBOT_TIMEOUT_SECS: u64 = 300;
 
+/// Max bytes buffered per stdout/stderr stream (#423). Matches plugin host default.
+pub const MAX_STDIO_BYTES: usize = 1024 * 1024; // 1 MiB per stream
+
 /// Resolve a ROBOT executable. Explicit paths must be named `robot` / `robot.cmd` / `robot.bat`.
 pub fn detect_robot(explicit_path: Option<&str>) -> Result<String> {
     if let Some(path) = explicit_path.filter(|p| !p.is_empty()) {
@@ -52,6 +55,22 @@ fn robot_exists_on_path(name: &str) -> bool {
     }
 }
 
+fn read_capped(mut reader: impl Read, cap: usize) -> Result<Vec<u8>> {
+    let mut buf = Vec::new();
+    let mut chunk = [0u8; 8192];
+    loop {
+        let n = reader.read(&mut chunk)?;
+        if n == 0 {
+            break;
+        }
+        if buf.len().saturating_add(n) > cap {
+            return Err(RobotError::OutputTooLarge(cap));
+        }
+        buf.extend_from_slice(&chunk[..n]);
+    }
+    Ok(buf)
+}
+
 pub fn run_robot(robot_path: Option<&str>, args: &[String]) -> Result<RobotOutput> {
     run_robot_with_timeout(robot_path, args, Duration::from_secs(DEFAULT_ROBOT_TIMEOUT_SECS))
 }
@@ -79,14 +98,8 @@ pub(crate) fn run_robot_with_timeout(
     let mut child = cmd.spawn()?;
     let mut stdout = child.stdout.take().expect("stdout piped");
     let mut stderr = child.stderr.take().expect("stderr piped");
-    let out_handle = thread::spawn(move || {
-        let mut buf = Vec::new();
-        stdout.read_to_end(&mut buf).map(|_| buf)
-    });
-    let err_handle = thread::spawn(move || {
-        let mut buf = Vec::new();
-        stderr.read_to_end(&mut buf).map(|_| buf)
-    });
+    let out_handle = thread::spawn(move || read_capped(&mut stdout, MAX_STDIO_BYTES));
+    let err_handle = thread::spawn(move || read_capped(&mut stderr, MAX_STDIO_BYTES));
 
     let deadline = Instant::now() + timeout;
     loop {
@@ -94,12 +107,10 @@ pub(crate) fn run_robot_with_timeout(
             Ok(Some(status)) => {
                 let out = out_handle
                     .join()
-                    .map_err(|_| RobotError::Run("stdout reader panicked".into()))?
-                    .map_err(RobotError::Io)?;
+                    .map_err(|_| RobotError::Run("stdout reader panicked".into()))??;
                 let err = err_handle
                     .join()
-                    .map_err(|_| RobotError::Run("stderr reader panicked".into()))?
-                    .map_err(RobotError::Io)?;
+                    .map_err(|_| RobotError::Run("stderr reader panicked".into()))??;
                 return Ok(RobotOutput {
                     exit_code: status.code().unwrap_or(1),
                     stdout: String::from_utf8_lossy(&out).into_owned(),
@@ -214,6 +225,7 @@ pub fn robot_report(
 mod tests {
     use super::*;
     use crate::error::RobotError;
+    use std::io::Cursor;
 
     #[test]
     fn rejects_disallowed_robot_subcommand() {
@@ -286,6 +298,20 @@ mod tests {
         assert!(!robot_exists_on_path("strixonomy-definitely-missing-robot-bin-xyz"));
     }
 
+    #[test]
+    fn read_capped_rejects_oversize() {
+        let data = vec![b'x'; 40];
+        let err = read_capped(Cursor::new(data), 32).unwrap_err();
+        assert!(matches!(err, RobotError::OutputTooLarge(32)));
+    }
+
+    #[test]
+    fn read_capped_accepts_exact_cap() {
+        let data = vec![b'y'; 32];
+        let out = read_capped(Cursor::new(data), 32).expect("exact cap ok");
+        assert_eq!(out.len(), 32);
+    }
+
     #[cfg(unix)]
     #[test]
     fn robot_timeout_kills_hanging_binary() {
@@ -305,5 +331,28 @@ mod tests {
         )
         .expect_err("must time out");
         assert!(matches!(err, RobotError::TimedOut(_)), "got {err:?}");
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn robot_rejects_oversized_stdout() {
+        use std::os::unix::fs::PermissionsExt;
+
+        let dir = tempfile::tempdir().unwrap();
+        let robot = dir.path().join("robot");
+        // Emit just over the stdio cap then exit (allowlisted subcommand is ignored).
+        let script = format!("#!/bin/sh\nhead -c {} /dev/zero\n", MAX_STDIO_BYTES + 1);
+        std::fs::write(&robot, script).unwrap();
+        let mut perms = std::fs::metadata(&robot).unwrap().permissions();
+        perms.set_mode(0o755);
+        std::fs::set_permissions(&robot, perms).unwrap();
+
+        let err = run_robot_with_timeout(
+            Some(robot.to_str().unwrap()),
+            &[String::from("report")],
+            Duration::from_secs(10),
+        )
+        .expect_err("must reject oversized stdout");
+        assert!(matches!(err, RobotError::OutputTooLarge(MAX_STDIO_BYTES)), "got {err:?}");
     }
 }
