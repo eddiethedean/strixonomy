@@ -14,13 +14,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **Strixonomy rename:** OntoCore / OntoCode product identity → **Strixonomy** across Rust crates (`strixonomy` / `strixonomy-*`), CLI (`strixonomy`, deprecated `ontocore` alias), LSP (`strixonomy-lsp`, deprecated `ontocore-lsp` alias; methods `strixonomy/*` with legacy `ontocore/*`), VS Code extension (`strixonomy.strixonomy`), workspace config (`.strixonomy/` with dual-read of `.ontocore/` / `.ontocode/`), docs, and CI. See [migration/v0.27.md](docs/migration/v0.27.md) and [ADR-0022](docs/design/adr/0022-strixonomy-identity.md).
+- Owl-themed Strixonomy identity assets (logo / docs branding)
 - Workspace package and all `strixonomy-*` crates bumped to **0.27.0**; extension and webview UI **0.27.0**; thin crates.io compat façade `ontocore` still re-exports `strixonomy`
 
 ### Added
 
 - Path dual-read for `.strixonomy/` vs legacy `.ontocore/` / `.ontocode/`
 - Extension settings/state migration from `ontocode.*` on first activate
-- Rename audit script `scripts/check-strixonomy-rename.sh` in CI
+- Rename audit script `scripts/check-strixonomy-rename.sh` in CI (requires ripgrep)
+
+### Fixed
+
+- `atomic_write` / `replace_file` preserve destination file permissions ([#422](https://github.com/eddiethedean/strixonomy/issues/422), [#429](https://github.com/eddiethedean/strixonomy/pull/429))
+- ROBOT subprocess stdout/stderr capped to prevent OOM ([#423](https://github.com/eddiethedean/strixonomy/issues/423), [#430](https://github.com/eddiethedean/strixonomy/pull/430))
 
 ## [0.26.2] - 2026-07-17
 

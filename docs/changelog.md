@@ -8,7 +8,7 @@ Migration guides: [Migration index](migration/README.md)
 
 ## [0.27.0] - 2026-07-27
 
-**v0.27.0** — **Strixonomy rename:** OntoCore / OntoCode → Strixonomy (crates, CLI, LSP, extension, docs) with compatibility shims through ≥1.0. See [CHANGELOG.md](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration/v0.27.md](migration/v0.27.md).
+**v0.27.0** — **Strixonomy rename:** OntoCore / OntoCode → Strixonomy (crates, CLI, LSP, extension, docs) with compatibility shims through ≥1.0; `atomic_write` permission preserve; ROBOT stdio cap. See [CHANGELOG.md](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration/v0.27.md](migration/v0.27.md).
 
 ## [0.26.2] - 2026-07-17
 

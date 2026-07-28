@@ -39,6 +39,13 @@ jobs:
           chmod +x scripts/check-doc-versions.sh
           ./scripts/check-doc-versions.sh
 
+      - name: Strixonomy rename audit
+        run: |
+          set -euo pipefail
+          sudo apt-get update && sudo apt-get install -y ripgrep
+          chmod +x scripts/check-strixonomy-rename.sh
+          ./scripts/check-strixonomy-rename.sh
+
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt

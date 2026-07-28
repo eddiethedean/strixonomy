@@ -6,7 +6,15 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-ALLOW_REGEX='(scripts/check-strixonomy-rename\.sh|scripts/check-doc-versions\.sh|scripts/parity_|scripts/check-parity|parity/|examples/protege-roundtrip/|tests/protege_port_|docs/migration/|docs/design/adr/0018|docs/design/adr/0022|docs/design/v0\.27|docs/changelog|CHANGELOG\.md|crates/compat/|ontocode\.dev/ns#swrlRule|OntoIndex|historical|superseded|deprecated|compat window|legacy|Legacy OntoCore|OntoCore →|OntoCode →|OntoCore name|OntoCore/Strixonomy|migratedFromOntoCode|fromOntoCode|migration/v0\.|PRE_1_0|ROADMAP\.md|docs/roadmap\.md|docs/protege-parity/|docs/PROTEGE_REVERSE|docs/design/v0\.|mutants\.|site/|target/|Cargo\.lock|node_modules|extension/(dist|out)/|webview-ui/dist|\.git/|LICENSE|name = "ontocore"|name = "ontocore-lsp"|argv0|warn_if_legacy|dual-read|dual.bin|compatibility|abbreviate_string)'
+if ! command -v rg >/dev/null 2>&1; then
+  echo "FAIL: ripgrep (rg) is required for the Strixonomy rename audit" >&2
+  echo "Install: https://github.com/BurntSushi/ripgrep#installation" >&2
+  exit 1
+fi
+
+# Intentional rename / migration / historical mentions. Paths and phrases only —
+# do not allowlist whole trees that should stay Strixonomy-primary.
+ALLOW_REGEX='(scripts/check-strixonomy-rename\.sh|scripts/check-doc-versions\.sh|scripts/parity_|scripts/check-parity|parity/|examples/protege-roundtrip/|tests/protege_port_|docs/migration/|docs/guides/product-identity|docs/glossary\.md|docs/design/adr/0018|docs/design/adr/0022|docs/design/v0\.27|docs/design/ARCHITECTURE|docs/changelog|CHANGELOG\.md|crates/compat/|ontocode\.dev/ns#swrlRule|OntoIndex|historical|superseded|deprecated|compat window|[Ll]egacy|formerly OntoCore|Legacy OntoCore|OntoCore →|OntoCode →|OntoCore name|OntoCore/Strixonomy|migratedFromOntoCode|fromOntoCode|migration/v0\.|PRE_1_0|ROADMAP\.md|docs/roadmap\.md|docs/protege-parity/|docs/PROTEGE_REVERSE|docs/design/v0\.|mutants\.|site/|target/|Cargo\.lock|node_modules|extension/(dist|out)/|webview-ui/dist|\.git/|LICENSE|name = "ontocore"|name = "ontocore-lsp"|argv0|warn_if_legacy|dual-read|dual.bin|compatibility|abbreviate_string)'
 
 WORKSPACE_VERSION="$(sed -nE 's/^version = "([^"]+)"/\1/p' Cargo.toml | head -1)"
 TAGGED_VERSION="$(tr -d '[:space:]' < docs/TAGGED_RELEASE)"
@@ -23,12 +31,13 @@ check_pattern() {
   local pattern="$1"
   local label="$2"
   local hits
+  # pipefail: rg exit 1 (no matches) → empty hits via || true; real rg errors still surface if rg missing (guarded above).
   hits="$(rg -n --hidden \
     --glob '!target/**' --glob '!site/**' --glob '!node_modules/**' \
     --glob '!mutants.out*/**' --glob '!.git/**' --glob '!Cargo.lock' \
     --glob '!extension/out/**' --glob '!extension/dist/**' \
     --glob '!extension/webview-ui/dist/**' \
-    -e "$pattern" . 2>/dev/null | grep -Ev "$ALLOW_REGEX" || true)"
+    -e "$pattern" . | grep -Ev "$ALLOW_REGEX" || true)"
   if [[ -n "$hits" ]]; then
     echo "FAIL: stale $label found outside allowlist:" >&2
     echo "$hits" | head -40 >&2
@@ -44,7 +53,7 @@ check_pattern 'ontocode\.ontocode' 'legacy extension id'
 check_pattern '"publisher": "ontocode"' 'legacy publisher'
 check_pattern 'name = "ontocore-cli"' 'legacy CLI package'
 
-if rg -n 'const CACHE_DIR: &str = "\.ontocore' crates --glob '!**/compat/**' 2>/dev/null | grep -v allow; then
+if rg -n 'const CACHE_DIR: &str = "\.ontocore' crates --glob '!**/compat/**' | grep -v allow; then
   echo "FAIL: primary cache still .ontocore" >&2
   FAIL=1
 else
