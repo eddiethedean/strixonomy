@@ -28,7 +28,7 @@ pub use error::{Result, StrixonomyError};
 /// Deprecated alias for [`StrixonomyError`] (OntoCore name).
 #[deprecated(since = "0.27.0", note = "renamed to StrixonomyError")]
 pub type OntoCoreError = StrixonomyError;
-pub use io::{read_file_capped, read_to_string_capped};
+pub use io::{atomic_write, read_file_capped, read_to_string_capped, replace_file};
 pub use limits::{
     MAX_ENTITIES, MAX_FILE_BYTES, MAX_OPEN_DOCUMENTS, MAX_QUERY_BYTES, MAX_SCAN_FILES,
     MAX_SCAN_WALK_ENTRIES, MAX_SPARQL_RESULT_ROWS, MAX_SQL_RESULT_ROWS, MAX_TOTAL_TRIPLES,

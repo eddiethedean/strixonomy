@@ -7,10 +7,7 @@ use crate::span::{
 use crate::turtle_lex::{advance_turtle_scan, turtle_literal_lexical_value, TurtleScanState};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
-use std::fs;
-use std::io::Write;
 use std::path::Path;
-use std::time::{SystemTime, UNIX_EPOCH};
 use strixonomy_core::{read_to_string_capped, OntologyFormat, MAX_FILE_BYTES};
 
 /// A single authoring patch operation (v0.4 Turtle scope).
@@ -420,55 +417,9 @@ pub fn apply_patches(
     Ok(result)
 }
 
+/// Atomically replace `path` with `contents`, preserving existing permission bits (#422).
 pub fn atomic_write(path: &Path, contents: &str) -> Result<()> {
-    let parent =
-        path.parent().filter(|p| !p.as_os_str().is_empty()).unwrap_or_else(|| Path::new("."));
-    fs::create_dir_all(parent)?;
-    let nanos = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_nanos()).unwrap_or(0);
-    let stem = path.file_name().and_then(|s| s.to_str()).unwrap_or("file");
-    let tmp_path = parent.join(format!(".strixonomy-{stem}-{nanos}.tmp"));
-    // Best-effort remove temp on mid-write failure (#343).
-    let write_result = (|| -> Result<()> {
-        let mut file = fs::File::create(&tmp_path)?;
-        file.write_all(contents.as_bytes())?;
-        file.sync_all()?;
-        Ok(())
-    })();
-    if let Err(e) = write_result {
-        let _ = fs::remove_file(&tmp_path);
-        return Err(e);
-    }
-    replace_file(&tmp_path, path)?;
-    Ok(())
-}
-
-/// Replace `path` with `tmp_path` (tmp is consumed). Works on Windows where `rename` cannot
-/// overwrite an existing destination.
-fn replace_file(tmp_path: &Path, path: &Path) -> std::io::Result<()> {
-    match fs::rename(tmp_path, path) {
-        Ok(()) => Ok(()),
-        Err(_) if path.exists() => {
-            // Windows (and some network FS): rename refuses to replace. Move the existing
-            // file aside, then rename; restore on failure.
-            let bak_path = tmp_path.with_extension("bak");
-            fs::rename(path, &bak_path)?;
-            match fs::rename(tmp_path, path) {
-                Ok(()) => {
-                    let _ = fs::remove_file(&bak_path);
-                    Ok(())
-                }
-                Err(rename_err) => {
-                    let _ = fs::rename(&bak_path, path);
-                    let _ = fs::remove_file(tmp_path);
-                    Err(rename_err)
-                }
-            }
-        }
-        Err(e) => {
-            let _ = fs::remove_file(tmp_path);
-            Err(e)
-        }
-    }
+    Ok(strixonomy_core::atomic_write(path, contents)?)
 }
 
 /// Apply patches to in-memory Turtle text.

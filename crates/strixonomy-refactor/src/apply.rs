@@ -1,11 +1,10 @@
 use crate::error::{RefactorError, Result};
 use crate::model::{FileChange, RefactorPlan};
 use std::fs;
-use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::time::{SystemTime, UNIX_EPOCH};
 use strixonomy_core::{
-    canonical_workspace_root, read_to_string_capped, validate_workspace_scope_any, MAX_FILE_BYTES,
+    atomic_write, canonical_workspace_root, read_to_string_capped, validate_workspace_scope_any,
+    MAX_FILE_BYTES,
 };
 
 /// Validate every path in a refactor plan is within at least one workspace root.
@@ -41,48 +40,6 @@ pub fn plans_equivalent(server: &RefactorPlan, client: &RefactorPlan) -> bool {
         }
     }
     true
-}
-
-fn atomic_write(path: &Path, contents: &str) -> std::io::Result<()> {
-    let parent =
-        path.parent().filter(|p| !p.as_os_str().is_empty()).unwrap_or_else(|| Path::new("."));
-    fs::create_dir_all(parent)?;
-    let nanos = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_nanos()).unwrap_or(0);
-    let stem = path.file_name().and_then(|s| s.to_str()).unwrap_or("file");
-    let tmp_path = parent.join(format!(".strixonomy-{stem}-{nanos}.tmp"));
-    {
-        let mut file = fs::File::create(&tmp_path)?;
-        file.write_all(contents.as_bytes())?;
-        file.sync_all()?;
-    }
-    replace_file(&tmp_path, path)
-}
-
-/// Replace `path` with `tmp_path` (tmp is consumed). Works on Windows where `rename` cannot
-/// overwrite an existing destination.
-fn replace_file(tmp_path: &Path, path: &Path) -> std::io::Result<()> {
-    match fs::rename(tmp_path, path) {
-        Ok(()) => Ok(()),
-        Err(_) if path.exists() => {
-            let bak_path = tmp_path.with_extension("bak");
-            fs::rename(path, &bak_path)?;
-            match fs::rename(tmp_path, path) {
-                Ok(()) => {
-                    let _ = fs::remove_file(&bak_path);
-                    Ok(())
-                }
-                Err(rename_err) => {
-                    let _ = fs::rename(&bak_path, path);
-                    let _ = fs::remove_file(tmp_path);
-                    Err(rename_err)
-                }
-            }
-        }
-        Err(e) => {
-            let _ = fs::remove_file(tmp_path);
-            Err(e)
-        }
-    }
 }
 
 struct FileBackup {
