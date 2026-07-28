@@ -6,7 +6,8 @@ Planning ranges for Strixonomy IDE / Strixonomy engine. **These are product goal
 
 | Version | Status | Date (changelog) |
 |---------|--------|------------------|
-| **0.28.0** | Current (tagged) | 2026-07-27 |
+| **0.28.0** | Current (tagged) | 2026-07-28 |
+| **0.27.0** | Previous | 2026-07-27 |
 | **0.26.2** | Previous | 2026-07-17 |
 | **0.26.1** | Previous | 2026-07-16 |
 | **0.26.0** | Previous | 2026-07-16 |

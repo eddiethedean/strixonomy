@@ -541,13 +541,13 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.27.md](migration/v0.27.md) · full
 |------|--------------|
 | **Package identity** | Confirm the `strixonomy` PyPI project name; establish maintainers, recovery ownership, and project metadata linking only to the official repository and documentation |
 | **Packaging skeleton** | Add the future SDK package layout and Maturin/PyO3 packaging metadata without exposing unstable Rust internals |
-| **Release security** | Configure PyPI Trusted Publishing from the official GitHub repository, require 2FA for maintainers, and document the package release procedure |
+| **Release security** | PyPI upload via GitHub Actions secret `PYPI_API_TOKEN`; 2FA for maintainers; procedure in [releasing.md](releasing.md) |
 | **Preview publication** | Publish only a clearly labeled pre-release reservation artifact; its README and import surface must state that the Python SDK is planned for v1.1 and must not claim workspace, query, validation, diff, or reasoning capabilities |
 | **Documentation** | Add a package-status page that distinguishes the reserved Python distribution from the shipped CLI, LSP, Rust crates, and the planned v1.1 SDK |
 
 **Non-goals:** Python bindings, CLI subprocess wrappers presented as an SDK, stable Python APIs, or production support. Those remain **v1.1** deliverables.
 
-**Exit criteria:** The official project controls the `strixonomy` PyPI identity through a reproducible trusted-publishing workflow; ownership and recovery are documented; the published artifact makes no capability claims beyond package reservation.
+**Exit criteria:** The official project controls the `strixonomy` PyPI identity through a reproducible GitHub Release publish workflow; ownership and recovery are documented; the published artifact makes no capability claims beyond package reservation.
 
 ---
 

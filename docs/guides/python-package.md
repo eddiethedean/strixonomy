@@ -18,7 +18,7 @@ The official **`strixonomy`** project on [PyPI](https://pypi.org/project/strixon
 Before v1.1, the project publishes an honest reservation wheel so:
 
 - The official maintainers control the `strixonomy` PyPI identity
-- Trusted Publishing from GitHub is configured and tested
+- The official maintainers control the `strixonomy` PyPI identity via the release workflow
 - Users and integrators are not misled by unofficial `strixonomy` packages claiming engine capabilities
 
 ## Install the reservation package (optional)
@@ -64,7 +64,7 @@ v1.1 will add Maturin/PyO3 metadata and native bindings without changing the PyP
 
 ## Release and security
 
-- **Publishing:** GitHub Release tags trigger [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishers/) from `.github/workflows/release.yml` (same tag gate as crates.io).
+- **Publishing:** GitHub Release tags trigger PyPI upload from `.github/workflows/release.yml` using the `PYPI_API_TOKEN` repository secret (same tag gate as crates.io).
 - **Maintainers:** PyPI project owners must use **2FA**.
 - **Procedure:** [Releasing](../releasing.md) — Python section.
 

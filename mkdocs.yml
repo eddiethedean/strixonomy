@@ -253,7 +253,7 @@ nav:
       - Engineering docs (GitHub): engineering.md
 extra:
   announcement:
-    text: "Docs track tagged release v0.27.0 — GitHub main may be v0.28.0 in development. Pin installs from TAGGED_RELEASE."
+    text: "Latest tagged release: v0.28.0 — pin installs from TAGGED_RELEASE."
     link: guides/versions-and-channels/
   social:
     - icon: fontawesome/brands/github

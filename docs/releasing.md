@@ -75,16 +75,17 @@ The [release workflow on GitHub](https://github.com/eddiethedean/strixonomy/blob
 2. **LSP matrix** (parallel with publish after preflight): multi-platform `strixonomy-lsp` binaries
 3. **Publish crates.io** (starts after preflight; overlaps LSP builds): workspace crates in dependency order with `--no-verify`, idempotent skip of already-uploaded versions, waiting out 429s (new crate names: burst 5 then ~1/10 min; new versions of existing crates: burst 30 then ~1/min)
 4. **Package + GitHub Release** (after LSP matrix): Linux x64 `strixonomy` CLI, per-platform LSP archives, multi-platform VSIX, Open VSX (if `OVSX_PAT` is set), `SHA256SUMS` + `NOTICES`
+5. **Publish PyPI** (after preflight, parallel with crates): reservation wheel from `python/` via `PYPI_API_TOKEN`
 
-Requires the `CARGO_REGISTRY_TOKEN` repository secret. For Open VSX (Cursor), set `OVSX_PAT` — see [marketplace-publish.md](marketplace-publish.md).
+Requires repository secrets **`CARGO_REGISTRY_TOKEN`** (crates.io) and **`PYPI_API_TOKEN`** (PyPI). For Open VSX (Cursor), set `OVSX_PAT` — see [marketplace-publish.md](marketplace-publish.md).
 
 ## PyPI (`strixonomy` reservation)
 
 The release workflow publishes the **reservation** Python wheel to PyPI after tag gates pass (`publish-pypi` job in [release.yml](https://github.com/eddiethedean/strixonomy/blob/main/.github/workflows/release.yml)).
 
-1. Configure [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishers/) for the `eddiethedean/strixonomy` repository (workflow: `Release`, environment: `pypi`).
-2. Create a GitHub **environment** named `pypi` with required reviewers if desired.
-3. PyPI project maintainers must use **2FA**.
+1. Create a PyPI API token for the `strixonomy` project (or account-scoped token with upload access).
+2. Add repository secret **`PYPI_API_TOKEN`** (Settings → Secrets and variables → Actions).
+3. PyPI project maintainers should use **2FA**.
 4. Source: `python/` (`pyproject.toml` + pure-Python `strixonomy` module). The wheel makes **no** ontology API claims — see [Python package status](guides/python-package.md).
 
 Local smoke build:

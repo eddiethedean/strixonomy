@@ -1,6 +1,6 @@
 # strixonomy (PyPI reservation)
 
-This is the **official reserved** `strixonomy` distribution on PyPI. It secures the package name and establishes trusted publishing for the future Python SDK.
+This is the **official reserved** `strixonomy` distribution on PyPI. It secures the package name and establishes an automated release path for the future Python SDK.
 
 ## What this package is
 

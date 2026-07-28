@@ -120,11 +120,12 @@ run_rust_and_extension_steps() {
     cargo run -- sparql fixtures "SELECT ?s WHERE { ?s ?p ?o } LIMIT 1"
   '
 
-  run_step "release build" bash -c '
+  run_step "release build" bash -c "
     set -euo pipefail
+    export CARGO_TARGET_DIR=\"${CARGO_TARGET_DIR}\"
     cargo build --release --locked -p strixonomy-cli -p strixonomy-lsp --bins
-    ./target/release/strixonomy inspect fixtures
-  '
+    \"\${CARGO_TARGET_DIR}/release/strixonomy\" inspect fixtures
+  "
 
   run_step "LSP smoke + reasoner tests" bash -c '
     cargo build --locked -p strixonomy-lsp --bins
@@ -144,7 +145,9 @@ run_rust_and_extension_steps() {
 
   run_step "extension jobs (unit + e2e)" bash -c "
     set -euo pipefail
+    export CARGO_TARGET_DIR=\"${CARGO_TARGET_DIR}\"
     cargo build -p strixonomy-lsp --bins
+    LSP_BIN=\"\${CARGO_TARGET_DIR}/debug/strixonomy-lsp\"
 
     cd extension
     npm ci
@@ -153,16 +156,16 @@ run_rust_and_extension_steps() {
     npm --prefix webview-ui test
 
     npm run compile
-    STRIXONOMY_LSP_BIN=\"$ROOT/target/debug/strixonomy-lsp\" npm test
+    STRIXONOMY_LSP_BIN=\"\${LSP_BIN}\" npm test
 
-    mkdir -p \"server/linux-x64\"
-    cp \"$ROOT/target/debug/strixonomy-lsp\" \"server/linux-x64/strixonomy-lsp\"
-    chmod +x \"server/linux-x64/strixonomy-lsp\"
+    mkdir -p \"server/${EXT_PLATFORM}\"
+    cp \"\${LSP_BIN}\" \"server/${EXT_PLATFORM}/strixonomy-lsp\"
+    chmod +x \"server/${EXT_PLATFORM}/strixonomy-lsp\"
     npx vsce package --no-dependencies -o /tmp/strixonomy-ci-local.vsix
     rm -rf /tmp/strixonomy-vsix-unpack-local
     unzip -q /tmp/strixonomy-ci-local.vsix -d /tmp/strixonomy-vsix-unpack-local
     export STRIXONOMY_E2E_EXTENSION_ROOT=/tmp/strixonomy-vsix-unpack-local/extension
-    export STRIXONOMY_LSP_BIN=\"$ROOT/target/debug/strixonomy-lsp\"
+    export STRIXONOMY_LSP_BIN=\"\${LSP_BIN}\"
     npm test
 
     cd \"$ROOT\"

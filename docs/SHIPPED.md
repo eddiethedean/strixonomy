@@ -20,7 +20,7 @@
 |---------|------------|
 | **Strixonomy (IDE)** | VS Code IDE — explorer, React inspector, graphs (asserted/inferred modes), Query Workbench (SQL/SPARQL/DL), Manchester editor, refactor preview, reasoner, explanation panel, plugin commands/views/preferences/context actions |
 | **Strixonomy (engine)** | Rust semantic workspace engine — `strixonomy` façade, `strixonomy-*` crates, `strixonomy` CLI, `strixonomy-lsp`, plugin host |
-| **PyPI `strixonomy`** | Reserved Python distribution (name + trusted publishing only; SDK planned v1.1) — [Python package status](guides/python-package.md) |
+| **PyPI `strixonomy`** | Reserved Python distribution (name reservation + release workflow; SDK planned v1.1) — [Python package status](guides/python-package.md) |
 
 ## Capability matrix (v0.28.0 tagged)
 

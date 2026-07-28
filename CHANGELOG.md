@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **`strixonomy` on PyPI** — reservation distribution with honest README and `status()` metadata; Trusted Publishing from GitHub Release tags
+- **`strixonomy` on PyPI** — reservation distribution with honest README and `status()` metadata; published via `PYPI_API_TOKEN` on GitHub Release tags
 - [Python package status](docs/guides/python-package.md) documentation
 - `python/` packaging skeleton (hatchling; Maturin/PyO3 placeholder for v1.1 SDK)
 

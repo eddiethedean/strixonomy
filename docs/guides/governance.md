@@ -18,11 +18,12 @@ Fortune 500 teams should plan **internal OSS adoption** with their own escalatio
 
 Recent documented releases (see [changelog](../changelog.md)):
 
-- **0.28.x** — Current tagged release (Strixonomy rename; legacy OntoCore/OntoCode compatibility through ≥1.0).
+- **0.28.x** — Current tagged release (compat shim removal; PyPI `strixonomy` reservation; Python SDK planned v1.1).
 
 | Version | Date (changelog) |
 |---------|------------------|
-| 0.28.0 | 2026-07-27 |
+| 0.28.0 | 2026-07-28 |
+| 0.27.0 | 2026-07-27 |
 | 0.25.0 | 2026-07-15 |
 | 0.24.0 | 2026-07-14 |
 | 0.22.0 | 2026-07-13 |

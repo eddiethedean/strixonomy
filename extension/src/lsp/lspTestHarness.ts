@@ -18,7 +18,14 @@ export function resolveLspBinaryForTests(): string {
     return fromEnv;
   }
 
+  const cargoTarget = process.env.CARGO_TARGET_DIR?.trim();
   const candidates = [
+    ...(cargoTarget
+      ? [
+          path.join(cargoTarget, "debug", "strixonomy-lsp"),
+          path.join(cargoTarget, "release", "strixonomy-lsp"),
+        ]
+      : []),
     path.join(REPO_ROOT, "target", "debug", "strixonomy-lsp"),
     path.join(REPO_ROOT, "target", "release", "strixonomy-lsp"),
   ];

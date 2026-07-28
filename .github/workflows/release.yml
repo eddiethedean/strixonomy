@@ -285,11 +285,6 @@ jobs:
     name: Publish PyPI (reservation)
     needs: [preflight]
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-    environment:
-      name: pypi
-      url: https://pypi.org/project/strixonomy/
     steps:
       - uses: actions/checkout@v6
 
@@ -303,10 +298,11 @@ jobs:
           python -m pip install --upgrade pip build
           python -m build python/
 
-      - name: Publish to PyPI (Trusted Publishing)
+      - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: python/dist/
+          password: ${{ secrets.PYPI_API_TOKEN }}
 
   # Overlaps with publish-crates once LSP artifacts are ready.
   package-release:

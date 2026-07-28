@@ -8,7 +8,7 @@ Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protég�
 
 | | |
 |---|---|
-| **Latest tagged** | **v0.28.0** — OntoCore/OntoCode compat removal + PyPI `strixonomy` reservation |
+| **Latest tagged** | **v0.28.0** — compat shim removal + PyPI `strixonomy` reservation |
 | **Capability truth** | [SHIPPED.md](SHIPPED.md) |
 
 ## Shipped eras (high level)
