@@ -21,7 +21,7 @@ CLI: `strixonomy refactor usages|rename|migrate-namespace|move|extract`.
 ## Install
 
 ```toml
-strixonomy-refactor = "0.27"
+strixonomy-refactor = "0.28"
 ```
 
 ## Documentation

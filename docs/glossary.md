@@ -4,13 +4,13 @@ Canonical terminology for Strixonomy IDE, Strixonomy engine, OntoUI, and the Ont
 
 | Term | Definition | Status |
 |------|------------|--------|
-| **Strixonomy engine** | Rust semantic workspace engine — indexing, queries, diagnostics, reasoning integration, refactoring, CLI, LSP, plugin host | **Implemented** (v0.27) |
-| **Strixonomy IDE** | VS Code extension — host shell, commands, LSP client, webview hosting | **Implemented** (v0.27) |
+| **Strixonomy engine** | Rust semantic workspace engine — indexing, queries, diagnostics, reasoning integration, refactoring, CLI, LSP, plugin host | **Implemented** (v0.28) |
+| **Strixonomy IDE** | VS Code extension — host shell, commands, LSP client, webview hosting | **Implemented** (v0.28) |
 | **OntoUI** | Shared React UI platform — component library, design tokens, workspace runtime; lives in `extension/webview-ui/` | **Partial** — WorkspaceStore + focus relay **shipped v0.13**; plugin inspector cards **shipped v0.14** |
 | **OntoStudio** | Future standalone desktop application reusing OntoUI + Strixonomy engine | **Planned** (post v1.0) |
 | **Workspace** | Task-oriented product surface (Entity, Graph, Query, Reasoning, Refactoring, …) — **not** a VS Code workspace folder | **Partial** — cross-panel focus sync shipped v0.13; surfaces remain webview panels |
 | **Current Focus** | Active semantic object (entity, axiom, query, diagnostic, graph node) that drives UI synchronization | **Shipped** (v0.13) |
-| **WorkspaceStore** | Single source of truth for OntoUI global state | **Shipped** (v0.27) |
+| **WorkspaceStore** | Single source of truth for OntoUI global state | **Shipped** (v0.28) |
 | **WorkspaceRegistry** | Registry mapping workspace type → factory / component | **Partial** — capability registry shipped v0.14 |
 | **WorkspaceHost** | Host adapter bridging OntoUI to a shell (VS Code webview, future Electron/Tauri) | **Partial** — VS Code extension host only |
 | **Capability Provider** | Plugin-provided implementation of a platform capability (reasoning, querying, AI, refactoring, diagnostics, import/export) | **Shipped** (v0.14) — MVP registry + inspector cards |

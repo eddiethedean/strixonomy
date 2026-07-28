@@ -7,7 +7,7 @@ RDF and OBO parsing and entity extraction for [Strixonomy](https://github.com/ed
 ## Install
 
 ```toml
-strixonomy-parser = "0.27"
+strixonomy-parser = "0.28"
 ```
 
 ## Documentation

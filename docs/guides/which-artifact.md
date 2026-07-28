@@ -7,8 +7,8 @@ Strixonomy is a product family. You usually need **one** primary artifact — no
 | I want to… | Install | Docs |
 |------------|---------|------|
 | Browse and edit ontologies in VS Code | [Strixonomy extension](../install.md) (Marketplace or Open VSX) | [First success (~10 min)](first-success.md) |
-| Validate, query, or classify ontologies in CI | **Linux x64:** release tarball from [Releases](https://github.com/eddiethedean/strixonomy/releases) (preferred). **macOS / Windows / other:** `cargo install strixonomy-cli --locked --version 0.27.0` | [CI integration](../ci-integration.md) · [Install](../install.md) · [Install CLI & CI (detail)](../install-cli-ci.md) |
-| Embed indexing/query in a Rust application | `strixonomy = "0.27"` in `Cargo.toml` | [Rust library guide](rust-library.md) |
+| Validate, query, or classify ontologies in CI | **Linux x64:** release tarball from [Releases](https://github.com/eddiethedean/strixonomy/releases) (preferred). **macOS / Windows / other:** `cargo install strixonomy-cli --locked --version 0.28.0` | [CI integration](../ci-integration.md) · [Install](../install.md) · [Install CLI & CI (detail)](../install-cli-ci.md) |
+| Embed indexing/query in a Rust application | `strixonomy = "0.28"` in `Cargo.toml` | [Rust library guide](rust-library.md) |
 | Build a custom editor on the language server | Bundle or spawn `strixonomy-lsp` | [LSP API](../lsp-api.md) |
 | Run OWL reasoning (classification, explanations) | Included via Strixonomy — no separate install | [Reasoner guide](reasoner.md) |
 

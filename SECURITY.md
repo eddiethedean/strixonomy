@@ -6,10 +6,10 @@ Strixonomy IDE and Strixonomy engine are **local-first** tools: they index and p
 
 | Version | Supported |
 |---------|-----------|
-| 0.28.x   | In progress (unreleased on `main`) |
-| 0.27.x   | Yes — latest tagged release |
-| 0.26.x   | Yes (N−1) |
-| ≤ 0.25.x | No — upgrade to a tagged 0.26.x or 0.27.x release |
+| 0.28.x   | Yes — latest tagged release |
+| 0.27.x   | Yes (N−1) |
+| 0.26.x   | Yes (N−2) |
+| ≤ 0.25.x | No — upgrade to a tagged 0.26.x or 0.28.x release |
 
 Pin production and CI to the latest **tagged** release (`docs/TAGGED_RELEASE` in the repository). Unreleased minors on `main` are not supported for adoption until tagged.
 

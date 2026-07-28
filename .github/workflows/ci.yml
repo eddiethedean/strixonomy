@@ -58,6 +58,28 @@ jobs:
       - name: Parity docs sync check
         run: python3 scripts/generate-parity-docs.py --check
 
+  python-package:
+    name: python package (reservation)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build reservation wheel
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip build
+          python -m build python/
+
+      - name: Smoke import
+        run: |
+          set -euo pipefail
+          pip install python/dist/strixonomy-*.whl
+          python -c "import strixonomy; assert strixonomy.status()['reservation']"
+
   clippy:
     name: clippy
     runs-on: ubuntu-latest

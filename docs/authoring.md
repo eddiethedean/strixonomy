@@ -1,6 +1,6 @@
-# Ontology authoring (Strixonomy v0.27)
+# Ontology authoring (Strixonomy v0.28)
 
-> **Status:** Documents behavior in **Strixonomy v0.27.0**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.28.0**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
 Strixonomy provides **Turtle, OBO, RDF/XML, and OWL/XML write-back** for simple edits and **Manchester** for complex class expressions. It is **not** a full Protégé replacement — see [Known limitations](known-limitations.md) and [Protégé coexistence](guides/protege-coexistence.md).

@@ -6,7 +6,9 @@ Migration guides: [Migration index](migration/README.md)
 
 ## [Unreleased]
 
-Documentation and tooling improvements (adoption audit). **v0.28.0** on `main` removes OntoCore/OntoCode compat — see [migration/v0.28.md](migration/v0.28.md). Public install pin remains **v0.27.0** until the v0.28 tag ships.
+## [0.28.0] - 2026-07-28
+
+**v0.28.0** — Remove OntoCore/OntoCode compat shims; reserve official `strixonomy` PyPI package (SDK v1.1). See [CHANGELOG.md](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration/v0.28.md](migration/v0.28.md).
 
 ## [0.27.0] - 2026-07-27
 

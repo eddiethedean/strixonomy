@@ -1,0 +1,46 @@
+[project]
+name = "strixonomy"
+version = "0.28.0"
+description = "Reserved PyPI package for the official Strixonomy Python SDK (planned v1.1)"
+readme = "README.md"
+license = { text = "MIT OR Apache-2.0" }
+requires-python = ">=3.9"
+authors = [{ name = "Strixonomy contributors" }]
+keywords = ["ontology", "owl", "obo", "strixonomy", "reserved"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://strixonomy.readthedocs.io/"
+Documentation = "https://strixonomy.readthedocs.io/en/latest/guides/python-package/"
+Repository = "https://github.com/eddiethedean/strixonomy"
+Issues = "https://github.com/eddiethedean/strixonomy/issues"
+Changelog = "https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/strixonomy"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/strixonomy", "README.md", "pyproject.toml"]
+
+# v1.1 SDK: switch build backend to maturin and add PyO3 bindings.
+# [tool.maturin]
+# features = ["pyo3/extension-module"]
+# module-name = "strixonomy._native"

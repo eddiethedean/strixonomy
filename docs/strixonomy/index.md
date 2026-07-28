@@ -2,21 +2,21 @@
 
 The **Strixonomy engine** is the semantic workspace for ontology development. It lives in the [Strixonomy repository](https://github.com/eddiethedean/strixonomy) and powers the **Strixonomy IDE** (VS Code).
 
-**Latest tagged: v0.27.0** · [crates.io search](https://crates.io/search?q=strixonomy)
+**Latest tagged: v0.28.0** · [crates.io search](https://crates.io/search?q=strixonomy)
 
-[![strixonomy](https://img.shields.io/badge/strixonomy-0.27.0-blue)](https://crates.io/crates/strixonomy)
-[![core](https://img.shields.io/badge/core-0.27.0-blue)](https://crates.io/crates/strixonomy-core)
-[![parser](https://img.shields.io/badge/parser-0.27.0-blue)](https://crates.io/crates/strixonomy-parser)
-[![catalog](https://img.shields.io/badge/catalog-0.27.0-blue)](https://crates.io/crates/strixonomy-catalog)
-[![query](https://img.shields.io/badge/query-0.27.0-blue)](https://crates.io/crates/strixonomy-query)
-[![cli](https://img.shields.io/badge/cli-0.27.0-blue)](https://crates.io/crates/strixonomy-cli)
-[![lsp](https://img.shields.io/badge/lsp-0.27.0-blue)](https://crates.io/crates/strixonomy-lsp)
-[![owl](https://img.shields.io/badge/owl-0.27.0-blue)](https://crates.io/crates/strixonomy-owl)
-[![edit](https://img.shields.io/badge/edit-0.27.0-blue)](https://crates.io/crates/strixonomy-edit)
-[![reasoner](https://img.shields.io/badge/reasoner-0.27.0-blue)](https://crates.io/crates/strixonomy-reasoner)
-[![diff](https://img.shields.io/badge/diff-0.27.0-blue)](https://crates.io/crates/strixonomy-diff)
-[![refactor](https://img.shields.io/badge/refactor-0.27.0-blue)](https://crates.io/crates/strixonomy-refactor)
-[![docs](https://img.shields.io/badge/docs-0.27.0-blue)](https://crates.io/crates/strixonomy-docs)
+[![strixonomy](https://img.shields.io/badge/strixonomy-0.28.0-blue)](https://crates.io/crates/strixonomy)
+[![core](https://img.shields.io/badge/core-0.28.0-blue)](https://crates.io/crates/strixonomy-core)
+[![parser](https://img.shields.io/badge/parser-0.28.0-blue)](https://crates.io/crates/strixonomy-parser)
+[![catalog](https://img.shields.io/badge/catalog-0.28.0-blue)](https://crates.io/crates/strixonomy-catalog)
+[![query](https://img.shields.io/badge/query-0.28.0-blue)](https://crates.io/crates/strixonomy-query)
+[![cli](https://img.shields.io/badge/cli-0.28.0-blue)](https://crates.io/crates/strixonomy-cli)
+[![lsp](https://img.shields.io/badge/lsp-0.28.0-blue)](https://crates.io/crates/strixonomy-lsp)
+[![owl](https://img.shields.io/badge/owl-0.28.0-blue)](https://crates.io/crates/strixonomy-owl)
+[![edit](https://img.shields.io/badge/edit-0.28.0-blue)](https://crates.io/crates/strixonomy-edit)
+[![reasoner](https://img.shields.io/badge/reasoner-0.28.0-blue)](https://crates.io/crates/strixonomy-reasoner)
+[![diff](https://img.shields.io/badge/diff-0.28.0-blue)](https://crates.io/crates/strixonomy-diff)
+[![refactor](https://img.shields.io/badge/refactor-0.28.0-blue)](https://crates.io/crates/strixonomy-refactor)
+[![docs](https://img.shields.io/badge/docs-0.28.0-blue)](https://crates.io/crates/strixonomy-docs)
 
 Strixonomy indexes ontology workspaces on disk and provides:
 

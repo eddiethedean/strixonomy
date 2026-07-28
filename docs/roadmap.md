@@ -27,7 +27,7 @@ Every feature before 1.0 should answer one question:
 After 1.0, the roadmap shifts from parity to modernization.
 
 !!! warning "Not a Protégé replacement today"
-    **v0.27** supports pilot and coexistence workflows — not org-wide Protégé retirement. See [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md) before planning format or IDE migration.
+    **v0.28** supports pilot and coexistence workflows — not org-wide Protégé retirement. See [What ships today](SHIPPED.md) and [Known limitations](known-limitations.md) before planning format or IDE migration.
 
 ---
 
@@ -46,7 +46,7 @@ After 1.0, the roadmap shifts from parity to modernization.
 | [Product Roadmap 2.0](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md) | UI phases with milestone acceptance criteria |
 | [Product design (UI)](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) | Product design specification pack (UX, design system, OntoStudio target) |
 
-**Current release:** v0.27.0
+**Current release:** v0.28.0
 
 ---
 
@@ -55,18 +55,19 @@ After 1.0, the roadmap shifts from parity to modernization.
 ### Timeline
 
 ```text
-SHIPPED (v0.1–v0.27) ─────────────────────────────────────────────────►
-v0.1–v0.4          v0.5–v0.8              v0.9–v0.12           v0.13–v0.27
+SHIPPED (v0.1–v0.28) ─────────────────────────────────────────────────►
+v0.1–v0.4          v0.5–v0.8              v0.9–v0.12           v0.13–v0.28
 Engine foundation    IDE depth                Platform & authoring   OntoUI → formats → OWL 2
                                                                        + reasoning/SWRL (v0.23)
                                                                        + refactor/DL Query (v0.24)
                                                                        + viz/SDK/a11y/CI (v0.25)
                                                                        + Protégé test port (v0.26)
                                                                        + Strixonomy rename (v0.27)
+                                                                       + Python PyPI reservation (v0.28)
 
-PLANNED (v0.28 → 1.0) ────────────────────────────────────────────────►
-v0.28                  1.0.0-rc               1.0.0
-Reserve Python identity Stabilize              Protégé replacement
+PLANNED (1.0.0-rc → 1.0) ──────────────────────────────────────────────►
+1.0.0-rc               1.0.0
+Stabilize              Protégé replacement
 ```
 
 Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md). Pre-1.0 phases: [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md).
@@ -80,7 +81,7 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy
 | **C — Platform & authoring** | v0.9–v0.12 | Shipped | Strixonomy identity, semantic workspace, authoring parity |
 | **D — OntoUI platform** | v0.13–v0.14 | Shipped | v0.13: WorkspaceStore, focus relay; v0.14: plugin host MVP |
 | **E — Desktop UX shell gate** | v0.15–v0.18 | Shipped | Menus, layouts, workflows, migration readiness (not full parity) |
-| **F — Full Protégé parity path** | v0.19–v0.28 | Shipped through v0.27; v0.28 planned | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename → Python package reservation |
+| **F — Full Protégé parity path** | v0.19–v0.28 | Shipped | Semantic core → formats → OWL 2 → reason/SWRL → services → verify → Protégé JUnit behavioral port → Strixonomy rename → Python package reservation |
 | **G — Protégé replacement** | 1.0.0 | Planned | Daily OWL/OBO engineering without Protégé |
 | **H — Ecosystem** | v1.1–v1.2+ | Planned | SDKs, AI, toolchain & collaboration |
 
@@ -96,7 +97,7 @@ Full timeline: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy
 | 25 | v0.25 | F | Shipped | 4†, 8† | Viz + plugin SDK 1.0 + a11y + parity CI |
 | 26 | v0.26 | F | Shipped | — | Protégé Desktop JUnit behavioral test port (Waves 1–4) |
 | 27 | v0.27 | F | Shipped | — | Rename OntoCore and OntoCode to Strixonomy |
-| 28 | v0.28 | F | Planned | — | Reserve the `strixonomy` Python package identity and establish packaging/release ownership |
+| 28 | v0.28 | F | Shipped | — | Reserve the `strixonomy` Python package identity and establish packaging/release ownership |
 | 29 | 1.0.0-rc | F | Planned | — | Stabilize; all P0 VERIFIED |
 | 30 | v1.0 | G | Planned | 1–6 exit, 9† | Protégé-competitive release |
 | 31 | v1.1 | H | Planned | 7, 2†, 3†, 4†, 8†, 9† | Language bindings & AI primitives |
@@ -530,9 +531,11 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.27.md](migration/v0.27.md) · full
 
 ---
 
-### v0.28 — Python package reservation (planned)
+### v0.28 — Python package reservation + compat removal (shipped)
 
-**Theme:** Secure the official `strixonomy` identity on PyPI and establish a trustworthy release path before the Python SDK ships in v1.1.
+**Released:** v0.28.0 (2026-07-28)
+
+**Theme:** Secure the official `strixonomy` identity on PyPI; remove OntoCore/OntoCode compatibility shims from v0.27.
 
 | Area | Deliverables |
 |------|--------------|
@@ -548,9 +551,9 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.27.md](migration/v0.27.md) · full
 
 ---
 
-## Planned releases (v0.28 → v1.2+)
+## Planned releases (1.0.0-rc → v1.2+)
 
-**Pre-1.0 phases remaining:** Python package reservation in **v0.28**, then [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) (1.0.0-rc → 1.0.0). **v0.27 shipped.** Per-release detail: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) § Era F / Era G.
+**Pre-1.0 phases remaining:** [PRE_1_0_PHASES.md](https://github.com/eddiethedean/strixonomy/blob/main/docs/protege-parity/07_BACKLOG/PRE_1_0_PHASES.md) (1.0.0-rc → 1.0.0). **v0.28 shipped.** Per-release detail: [ROADMAP.md on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/ROADMAP.md) § Era G.
 
 ---
 

@@ -2,14 +2,13 @@
 
 > **Not a capability matrix.** For what ships today, read **[What ships today](SHIPPED.md)** and **[Known limitations](known-limitations.md)** only.
 
-Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protégé replacement for many OWL/OBO workflows. **Today (v0.27.0)** supports pilot and coexistence — not org-wide Protégé retirement.
+Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protégé replacement for many OWL/OBO workflows. **Today (v0.28.0)** supports pilot and coexistence — not org-wide Protégé retirement.
 
 ## Current release
 
 | | |
 |---|---|
-| **Latest tagged** | **v0.27.0** — Strixonomy product identity (rename from OntoCore/OntoCode) |
-| **In development on `main`** | **v0.28.0** — removes OntoCore/OntoCode compat shims ([migration v0.28](migration/v0.28.md)) |
+| **Latest tagged** | **v0.28.0** — OntoCore/OntoCode compat removal + PyPI `strixonomy` reservation |
 | **Capability truth** | [SHIPPED.md](SHIPPED.md) |
 
 ## Shipped eras (high level)
@@ -24,6 +23,7 @@ Strixonomy’s north star: **Strixonomy IDE 1.0** as a production-ready Protég�
 | Reasoning + refactor | v0.22–v0.24 | DL Query, multi-format refactor, SWRL |
 | Viz + a11y + CI | v0.25–v0.26 | Graph parity, plugin SDK freeze, Protégé test port |
 | Identity | v0.27 | Strixonomy rename |
+| PyPI reservation | v0.28 | Official `strixonomy` package on PyPI (reservation only) |
 
 ## Planned (not shipped)
 

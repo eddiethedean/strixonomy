@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.28.0] - 2026-07-28
+
+**User-facing highlights:** Remove OntoCore/OntoCode compatibility shims from v0.27; reserve official **`strixonomy`** PyPI package identity (reservation wheel only — Python SDK remains v1.1). See [migration/v0.28.md](docs/migration/v0.28.md).
+
+### Changed
+
+- **Compat removal:** Drop `ontocore` crates.io façade, `ontocore`/`ontocore-lsp` binaries, LSP `ontocore/*` methods, `.ontocore/` / `.ontocode/` dual-read paths, VS Code `ontocode.*` command aliases, and legacy `ONTOCORE_*` / `ONTOCODE_*` env vars — Strixonomy names only
+- Workspace package and all `strixonomy-*` crates bumped to **0.28.0**; extension and webview UI **0.28.0**
+
+### Added
+
+- **`strixonomy` on PyPI** — reservation distribution with honest README and `status()` metadata; Trusted Publishing from GitHub Release tags
+- [Python package status](docs/guides/python-package.md) documentation
+- `python/` packaging skeleton (hatchling; Maturin/PyO3 placeholder for v1.1 SDK)
+
+### Fixed
+
+- Plugin host re-registers in-process validator/exporter runtimes after disable → enable
+
 ## [0.27.0] - 2026-07-27
 
 **User-facing highlights:** OntoCore / OntoCode → **Strixonomy** (extension `strixonomy.strixonomy`, CLI `strixonomy`, crates `strixonomy` / `strixonomy-*`). Legacy names remain compatible through ≥1.0. No format write-back regression vs v0.26.2 — [migration/v0.27.md](docs/migration/v0.27.md).

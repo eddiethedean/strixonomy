@@ -1,4 +1,4 @@
-# CLI reference (Strixonomy v0.27)
+# CLI reference (Strixonomy v0.28)
 
 The `strixonomy` binary indexes ontology workspaces and exposes query, validation, patch, and reasoning commands.
 
@@ -11,7 +11,7 @@ The `strixonomy` binary indexes ontology workspaces and exposes query, validatio
 Install (pin latest tagged release):
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.27.0
+cargo install strixonomy-cli --locked --version 0.28.0
 ```
 
 From a git clone, use `cargo run --` instead of `strixonomy`.

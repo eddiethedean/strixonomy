@@ -167,6 +167,7 @@ nav:
       - Overview: strixonomy/index.md
       - CI integration: ci-integration.md
       - Rust library: guides/rust-library.md
+      - Python package (PyPI reservation): guides/python-package.md
       - Rust & CLI guide: guides/rust-crates.md
       - Plugin authoring: guides/plugins.md
       - ROBOT interop: guides/robot-interop.md

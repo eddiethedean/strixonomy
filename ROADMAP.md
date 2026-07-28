@@ -4,7 +4,7 @@
 >
 > Edit **`docs/roadmap.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 
-**Current release:** v0.27.0
+**Current release:** v0.28.0
 
 **Not a Protégé replacement today.** See [What ships today](docs/SHIPPED.md) and [Known limitations](docs/known-limitations.md).
 

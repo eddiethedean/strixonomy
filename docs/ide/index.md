@@ -2,7 +2,7 @@
 
 **Strixonomy** is the VS Code / Cursor extension for OWL, RDF, and OBO — explorer, Entity Inspector, Query Workbench (SQL / SPARQL / DL), graphs, reasoner, refactor preview, and plugin UI. The extension talks to the bundled **Strixonomy** language server (`strixonomy-lsp`).
 
-**Latest tagged: v0.27.0** · [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) · [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy)
+**Latest tagged: v0.28.0** · [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) · [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy)
 
 Start here if you have not installed yet: **[First success (~10 min)](../guides/first-success.md)**.
 

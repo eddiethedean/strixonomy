@@ -157,6 +157,14 @@ pub struct PluginHost {
     queries: HashMap<String, Box<dyn QueryPlugin>>,
     refactors: HashMap<String, Box<dyn RefactorPlugin>>,
     graphs: HashMap<String, Box<dyn GraphPlugin>>,
+    /// In-process runtimes stashed while a plugin is user-disabled (restored on enable).
+    validators_stash: HashMap<String, Box<dyn ValidatorPlugin>>,
+    exporters_stash: HashMap<String, Box<dyn ExporterPlugin>>,
+    workflows_stash: HashMap<String, Box<dyn WorkflowPlugin>>,
+    reasoners_stash: HashMap<String, Box<dyn ReasonerPlugin>>,
+    queries_stash: HashMap<String, Box<dyn QueryPlugin>>,
+    refactors_stash: HashMap<String, Box<dyn RefactorPlugin>>,
+    graphs_stash: HashMap<String, Box<dyn GraphPlugin>>,
 }
 
 impl PluginHost {
@@ -176,6 +184,13 @@ impl PluginHost {
             queries: HashMap::new(),
             refactors: HashMap::new(),
             graphs: HashMap::new(),
+            validators_stash: HashMap::new(),
+            exporters_stash: HashMap::new(),
+            workflows_stash: HashMap::new(),
+            reasoners_stash: HashMap::new(),
+            queries_stash: HashMap::new(),
+            refactors_stash: HashMap::new(),
+            graphs_stash: HashMap::new(),
         }
     }
 
@@ -307,6 +322,54 @@ impl PluginHost {
         self.graphs.insert(plugin.id().to_string(), plugin);
     }
 
+    fn stash_in_process_runtime(&mut self, plugin_id: &str) {
+        if let Some(v) = self.validators.remove(plugin_id) {
+            self.validators_stash.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.exporters.remove(plugin_id) {
+            self.exporters_stash.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.workflows.remove(plugin_id) {
+            self.workflows_stash.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.reasoners.remove(plugin_id) {
+            self.reasoners_stash.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.queries.remove(plugin_id) {
+            self.queries_stash.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.refactors.remove(plugin_id) {
+            self.refactors_stash.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.graphs.remove(plugin_id) {
+            self.graphs_stash.insert(plugin_id.to_string(), v);
+        }
+    }
+
+    fn restore_in_process_runtime(&mut self, plugin_id: &str) {
+        if let Some(v) = self.validators_stash.remove(plugin_id) {
+            self.validators.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.exporters_stash.remove(plugin_id) {
+            self.exporters.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.workflows_stash.remove(plugin_id) {
+            self.workflows.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.reasoners_stash.remove(plugin_id) {
+            self.reasoners.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.queries_stash.remove(plugin_id) {
+            self.queries.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.refactors_stash.remove(plugin_id) {
+            self.refactors.insert(plugin_id.to_string(), v);
+        }
+        if let Some(v) = self.graphs_stash.remove(plugin_id) {
+            self.graphs.insert(plugin_id.to_string(), v);
+        }
+    }
+
     pub fn workspace(&self) -> &Path {
         &self.workspace
     }
@@ -327,13 +390,7 @@ impl PluginHost {
         self.disabled.insert(plugin_id.to_string());
         *self.states.entry(plugin_id.to_string()).or_insert(PluginLifecycleState::Disabled) =
             PluginLifecycleState::Disabled;
-        self.validators.remove(plugin_id);
-        self.exporters.remove(plugin_id);
-        self.workflows.remove(plugin_id);
-        self.reasoners.remove(plugin_id);
-        self.queries.remove(plugin_id);
-        self.refactors.remove(plugin_id);
-        self.graphs.remove(plugin_id);
+        self.stash_in_process_runtime(plugin_id);
         persist_disabled_ids(&self.workspace, &self.disabled);
         Ok(())
     }
@@ -342,6 +399,7 @@ impl PluginHost {
         let activation = self.find_plugin(plugin_id)?.manifest.activation;
         self.disabled.remove(plugin_id);
         persist_disabled_ids(&self.workspace, &self.disabled);
+        self.restore_in_process_runtime(plugin_id);
         *self.states.entry(plugin_id.to_string()).or_insert(PluginLifecycleState::Registered) =
             PluginLifecycleState::Registered;
         if matches!(activation, PluginActivation::OnStartup | PluginActivation::OnWorkspaceOpen) {
@@ -977,60 +1035,6 @@ graph = true
         assert_eq!(order, vec!["a".to_string(), "b".to_string()]);
         assert_eq!(host.state_of("a"), PluginLifecycleState::Active);
         assert_eq!(host.state_of("b"), PluginLifecycleState::Active);
-    }
-
-    #[test]
-    fn enable_after_disable_reregisters_in_process_validator() {
-        struct StubValidator;
-        impl crate::traits::ValidatorPlugin for StubValidator {
-            fn id(&self) -> &str {
-                "stub.validator"
-            }
-            fn validate(
-                &self,
-                _catalog: &strixonomy_catalog::OntologyCatalog,
-                _workspace: &std::path::Path,
-            ) -> Vec<strixonomy_core::Diagnostic> {
-                Vec::new()
-            }
-        }
-
-        let dir = tempfile::tempdir().unwrap();
-        let plugins = dir.path().join(".strixonomy/plugins");
-        std::fs::create_dir_all(&plugins).unwrap();
-        std::fs::write(
-            plugins.join("stub.toml"),
-            r#"
-[plugin]
-name = "stub"
-version = "0.1.0"
-kind = "validator"
-id = "stub.validator"
-api_version = "1"
-permissions = ["workspace.read"]
-
-[capabilities]
-validate = true
-"#,
-        )
-        .unwrap();
-        let mut host = PluginHost::new(dir.path());
-        host.discover().unwrap();
-        host.register_validator(Box::new(StubValidator));
-        host.activate_all().unwrap();
-        host.disable_plugin("stub.validator").unwrap();
-        host.enable_plugin("stub.validator").unwrap();
-        let catalog = strixonomy_catalog::IndexBuilder::new()
-            .workspace(dir.path())
-            .build()
-            .expect("catalog");
-        let err = host
-            .run_validate_plugin("stub.validator", &catalog)
-            .expect_err("validator must be re-registered after enable");
-        assert!(
-            err.to_string().contains("no runtime"),
-            "unexpected error: {err}"
-        );
     }
 
     #[test]

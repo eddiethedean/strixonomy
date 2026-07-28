@@ -5,7 +5,7 @@ Manchester class-expression queries via CLI (Query Workbench **DL** mode and LSP
 Honesty and limits: [DL Query guide](../guides/dl-query.md).
 
 !!! note "Requires a clone (or your own files)"
-    Samples below use repo [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/v0.27.0/fixtures). After `cargo install`, replace `fixtures` with your ontology directory or the [First success](../guides/first-success.md) tutorial folder.
+    Samples below use repo [`fixtures/`](https://github.com/eddiethedean/strixonomy/tree/v0.28.0/fixtures). After `cargo install`, replace `fixtures` with your ontology directory or the [First success](../guides/first-success.md) tutorial folder.
 
 **Usage:** `strixonomy dl-query <expression> [--workspace PATH]` — expression is the only positional; workspace defaults to `.` via `--workspace`.
 
@@ -22,7 +22,7 @@ strixonomy dl-query '<http://example.org/clinic#ClinicPerson>' --workspace fixtu
   --format json
 ```
 
-(`ex:` comes from [`complex-classes.ttl`](https://github.com/eddiethedean/strixonomy/blob/v0.27.0/fixtures/complex-classes.ttl).)
+(`ex:` comes from [`complex-classes.ttl`](https://github.com/eddiethedean/strixonomy/blob/v0.28.0/fixtures/complex-classes.ttl).)
 
 ## Asserted instances
 
@@ -45,4 +45,4 @@ strixonomy dl-query \
 
 ## CI tip
 
-Pin CLI with `--version 0.27.0` (or the release tarball for Linux x64). Treat results as OntoLogos-backed — dual-check critical audits against Protégé when required.
+Pin CLI with `--version 0.28.0` (or the release tarball for Linux x64). Treat results as OntoLogos-backed — dual-check critical audits against Protégé when required.

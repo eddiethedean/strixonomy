@@ -7,7 +7,7 @@ Thin wrappers around the [ROBOT](https://github.com/ontodev/robot) CLI for Strix
 ## Install
 
 ```toml
-strixonomy-robot = "0.27"
+strixonomy-robot = "0.28"
 ```
 
 ## CLI

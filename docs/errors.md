@@ -1,6 +1,6 @@
-# Errors reference (Strixonomy v0.27)
+# Errors reference (Strixonomy v0.28)
 
-Unified catalog of error codes, exit behavior, and failure modes for Strixonomy **v0.27.0** (latest tagged).
+Unified catalog of error codes, exit behavior, and failure modes for Strixonomy **v0.28.0** (latest tagged).
 
 ## CLI exit codes
 

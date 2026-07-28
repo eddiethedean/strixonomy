@@ -7,7 +7,7 @@
     **`cargo install strixonomy`** installs the **library** crate, not the CLI.
 
 !!! info "Public install pin"
-    Pin to **`0.27.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)). GitHub `main` may be **0.28.0** in development — see [Versions & channels](guides/versions-and-channels.md).
+    Pin to **`0.28.0`** ([TAGGED_RELEASE](TAGGED_RELEASE)). GitHub `main` may be **0.28.0** in development — see [Versions & channels](guides/versions-and-channels.md).
 
 ## Which path do I need?
 
@@ -19,7 +19,7 @@ flowchart TD
   ext --> fs[First success tutorial]
   edit -->|No| ci{Validate or classify in CI?}
   ci -->|Linux x64| tarball[Download release tarball]
-  ci -->|macOS / Windows / other| cargo["cargo install strixonomy-cli --version 0.27.0"]
+  ci -->|macOS / Windows / other| cargo["cargo install strixonomy-cli --version 0.28.0"]
   ci -->|No| rust{Embed in Rust app?}
   rust -->|Yes| lib["strixonomy = \"0.27\" in Cargo.toml"]
   rust -->|No| lsp[Custom editor on strixonomy-lsp]
@@ -46,7 +46,7 @@ flowchart TD
 | Method | Platforms | Needs Rust? |
 |--------|-----------|-------------|
 | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy) / [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) | Linux, macOS, Windows | No |
-| Release VSIX (`strixonomy-v0.27.0.vsix`) | Same | No |
+| Release VSIX (`strixonomy-v0.28.0.vsix`) | Same | No |
 
 1. Install **Strixonomy** (`strixonomy.strixonomy`).
 2. If the store lags the latest GitHub tag, install the VSIX — [Marketplace lag playbook](guides/versions-and-channels.md#when-marketplace-lags-github).
@@ -62,7 +62,7 @@ flowchart TD
 
 | Method | Linux x64 | macOS | Windows | Needs Rust? |
 |--------|-----------|-------|---------|-------------|
-| `cargo install strixonomy-cli --locked --version 0.27.0` | Yes | Yes | Yes | Yes (1.88+) |
+| `cargo install strixonomy-cli --locked --version 0.28.0` | Yes | Yes | Yes | Yes (1.88+) |
 | Release CLI tarball | Yes | No | No | No |
 | Git clone + `cargo run --` | Yes | Yes | Yes | Yes (1.88+) |
 
@@ -74,7 +74,7 @@ flowchart TD
 Prerequisites: Rust **1.88+**; Windows needs [MSVC Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/); macOS needs Xcode CLT (`xcode-select --install`).
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.27.0
+cargo install strixonomy-cli --locked --version 0.28.0
 export PATH="$HOME/.cargo/bin:$PATH"
 strixonomy validate /path/to/your/ontologies
 ```
@@ -83,7 +83,7 @@ Longer macOS/Windows walkthrough: [Install CLI](guides/install-cli.md).
 
 ### Linux x64 release tarball (CI preferred)
 
-See [CI integration](ci-integration.md) — download `strixonomy-v0.27.0-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
+See [CI integration](ci-integration.md) — download `strixonomy-v0.28.0-x86_64-unknown-linux-gnu.tar.gz`, verify `SHA256SUMS`, run `validate` / `classify`.
 
 ### From a git clone
 

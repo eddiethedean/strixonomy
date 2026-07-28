@@ -3,7 +3,7 @@
 Runnable examples for the Strixonomy engine CLI, Rust embedding, and IDE workflows.
 
 !!! tip "Prefer the tutorial folder"
-    After [First success](../guides/first-success.md), point CLI commands at your **`strixonomy-tutorial`** directory (or unzipped [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.27.0/strixonomy-tutorial.zip)). Paths like `fixtures/` exist **only in a git clone**. IDE-only users can skip CLI cookbooks.
+    After [First success](../guides/first-success.md), point CLI commands at your **`strixonomy-tutorial`** directory (or unzipped [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.28.0/strixonomy-tutorial.zip)). Paths like `fixtures/` exist **only in a git clone**. IDE-only users can skip CLI cookbooks.
 
 ## CLI cookbooks (copy-paste)
 
@@ -65,8 +65,8 @@ Download tutorial files without cloning:
 
 ```bash
 mkdir strixonomy-tutorial && cd strixonomy-tutorial
-curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/example.ttl
-curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.27.0/fixtures/complex-classes.ttl
+curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/fixtures/example.ttl
+curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/fixtures/complex-classes.ttl
 ```
 
 ## VS Code tutorial

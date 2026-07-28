@@ -6,10 +6,10 @@
 
 | Version | Supported |
 |---------|-----------|
-| 0.28.x   | In progress (unreleased on `main`) |
-| 0.27.x   | Yes — latest tagged release |
-| 0.26.x   | Yes (N−1) |
-| ≤ 0.25.x | No — upgrade to a tagged 0.26.x or 0.27.x release |
+| 0.28.x   | Yes — latest tagged release |
+| 0.27.x   | Yes (N−1) |
+| 0.26.x   | Yes (N−2) |
+| ≤ 0.25.x | No — upgrade to a tagged 0.26.x or 0.28.x release |
 
 **Summary:** Strixonomy is **local-first** (no default upload, no telemetry). Report vulnerabilities via [GitHub Security Advisories](https://github.com/eddiethedean/strixonomy/security/advisories/new) — **not** public issues.
 

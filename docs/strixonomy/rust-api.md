@@ -15,10 +15,10 @@ Pin dependencies in `Cargo.toml`:
 
 ```toml
 [dependencies]
-strixonomy = "0.27"
+strixonomy = "0.28"
 ```
 
-For CI and reproducible builds: `cargo install strixonomy-cli --locked --version 0.27.0`.
+For CI and reproducible builds: `cargo install strixonomy-cli --locked --version 0.28.0`.
 
 ## docs.rs
 

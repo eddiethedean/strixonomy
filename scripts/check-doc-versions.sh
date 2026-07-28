@@ -461,6 +461,21 @@ else
   echo "ok: webview-ui version matches extension and lockfile"
 fi
 
+PYPROJECT_VERSION="$(grep -m1 -E '^version = ' python/pyproject.toml | sed -E 's/.*"([^"]+)".*/\1/')"
+if [[ "$PYPROJECT_VERSION" != "$VERSION" ]]; then
+  echo "FAIL: python/pyproject.toml version ($PYPROJECT_VERSION) != workspace ($VERSION)" >&2
+  fail=1
+else
+  echo "ok: python/pyproject.toml version matches workspace"
+fi
+if ! grep -qF "__version__ = \"$VERSION\"" python/src/strixonomy/__init__.py; then
+  echo "FAIL: python/src/strixonomy/__init__.py __version__ must be $VERSION" >&2
+  fail=1
+else
+  echo "ok: python package __version__"
+fi
+check_file_contains "docs/guides/python-package.md" "v${TAGGED_VERSION}" "python-package doc tagged version"
+
 # docs/security.md supported versions must match SECURITY.md for tagged minor
 if ! grep -q "${TAGGED_MINOR}\.x   | Yes" docs/security.md; then
   echo "FAIL: docs/security.md should list ${TAGGED_MINOR}.x as supported (Yes)" >&2

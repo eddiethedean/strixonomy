@@ -1,6 +1,6 @@
 # API stability (pre-1.0)
 
-Strixonomy IDE and Strixonomy engine are **pre-1.0**. Published crates use **0.27.x** on crates.io (latest tagged). Minor releases may add or change APIs until v1.0.0.
+Strixonomy IDE and Strixonomy engine are **pre-1.0**. Published crates use **0.28.x** on crates.io (latest tagged). Minor releases may add or change APIs until v1.0.0.
 
 **Canonical capabilities:** [What ships today](../SHIPPED.md)
 
@@ -27,7 +27,7 @@ The following modules are **documented and intended to stabilize** toward 1.0:
 
 | Tier | Surface | Stability | Notes |
 |------|---------|-----------|-------|
-| **A — Stable enough for CI** | `strixonomy validate`, `query`, `sparql`, `classify`, `realize`, `check-instance`, `dl-query`, `refactor` (incl. merge/replace), `diff`, `docs`, `patch`, `robot`, `plugins`, `workflow` CLI | High for **commands and exit codes** | Pin with `cargo install strixonomy-cli --locked --version 0.27.0`. Exit codes documented in [workspace limits](../workspace-limits.md). No `strixonomy swrl` CLI — SWRL via IDE/LSP/patches. |
+| **A — Stable enough for CI** | `strixonomy validate`, `query`, `sparql`, `classify`, `realize`, `check-instance`, `dl-query`, `refactor` (incl. merge/replace), `diff`, `docs`, `patch`, `robot`, `plugins`, `workflow` CLI | High for **commands and exit codes** | Pin with `cargo install strixonomy-cli --locked --version 0.28.0`. Exit codes documented in [workspace limits](../workspace-limits.md). No `strixonomy swrl` CLI — SWRL via IDE/LSP/patches. |
 | **B — Documented, may evolve** | LSP custom methods (`strixonomy/*`) | Medium | Wire format in [LSP API](../lsp-api.md) and [JSON Schema](../lsp-protocol.schema.json). Minor releases may add fields or methods. |
 | **C — Library APIs** | `strixonomy` and `strixonomy-*` Rust crates | Medium-low | Public types used by CLI/LSP are more stable than internal modules. Pin exact versions in `Cargo.toml`. |
 | **D — Experimental / product-1.0** | Curated plugin marketplace, production owlmake, SHACL full validation, MCP, Python/TS SDKs | Low until product **1.0** | Plugin **SDK 1.0** wire is frozen today — see [Plugin authoring](plugins.md) and [Plugin policy](plugin-policy.md). |
@@ -51,17 +51,17 @@ The following modules are **documented and intended to stabilize** toward 1.0:
 **CI / ops:**
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.27.0
+cargo install strixonomy-cli --locked --version 0.28.0
 ```
 
 **Rust embedding:**
 
 ```toml
-strixonomy = "0.27"
-strixonomy-core = "0.27"
+strixonomy = "0.28"
+strixonomy-core = "0.28"
 ```
 
-**VS Code:** install Strixonomy **0.27.0** (latest tagged) from Marketplace, Open VSX, or a release VSIX — the bundled `strixonomy-lsp` matches the extension version.
+**VS Code:** install Strixonomy **0.28.0** (latest tagged) from Marketplace, Open VSX, or a release VSIX — the bundled `strixonomy-lsp` matches the extension version.
 
 ## Enterprise evaluation
 

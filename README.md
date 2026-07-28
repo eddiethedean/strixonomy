@@ -4,7 +4,7 @@
 
 **Install the extension → [First success (~10 min)](https://strixonomy.readthedocs.io/en/latest/guides/first-success/)** (no Rust, no clone).
 
-**Current release: v0.27.0** · **Development on `main`: v0.28.0** · [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/) · [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy.readthedocs.io/en/latest/)
+**Current release: v0.28.0** · [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/) · [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/) · [Changelog](CHANGELOG.md) · [Docs](https://strixonomy.readthedocs.io/en/latest/)
 
 > **CLI install:** use `cargo install strixonomy-cli` — **not** `strixonomy` (library crate only).
 
@@ -56,9 +56,9 @@ Details: [Product identity](https://strixonomy.readthedocs.io/en/latest/guides/p
 
 | Install | Command / link |
 |---------|----------------|
-| **VS Code extension** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) `strixonomy-v0.27.0.vsix` |
+| **VS Code extension** | [Marketplace](https://marketplace.visualstudio.com/items?itemName=strixonomy.strixonomy), [Open VSX](https://open-vsx.org/extension/strixonomy/strixonomy) (Cursor), or [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) `strixonomy-v0.28.0.vsix` |
 | **CLI (Linux x64)** | Release tarball — full steps: [CI integration](https://strixonomy.readthedocs.io/en/latest/ci-integration/) |
-| **CLI (macOS/Windows)** | `cargo install strixonomy-cli --locked --version 0.27.0` (Rust 1.88+; 15–30+ min cold) — [Install CLI](https://strixonomy.readthedocs.io/en/latest/guides/install-cli/) |
+| **CLI (macOS/Windows)** | `cargo install strixonomy-cli --locked --version 0.28.0` (Rust 1.88+; 15–30+ min cold) — [Install CLI](https://strixonomy.readthedocs.io/en/latest/guides/install-cli/) |
 | **Crates** | [`strixonomy`](https://crates.io/crates/strixonomy) on [crates.io](https://crates.io/search?q=strixonomy) |
 
 Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI — the extension bundles `strixonomy-lsp`.
@@ -77,7 +77,7 @@ Release CLI tarballs are **Linux x64 only**. Most IDE users never need the CLI �
 - **macOS/Windows or from source:** [Install CLI](https://strixonomy.readthedocs.io/en/latest/guides/install-cli/). Cold `cargo install` may take **15–30+ minutes** (Rust 1.88+).
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.27.0
+cargo install strixonomy-cli --locked --version 0.28.0
 strixonomy validate /path/to/ontologies
 ```
 
@@ -104,7 +104,7 @@ cargo run -- validate fixtures
 
 Platform docs: [Vision](https://strixonomy.readthedocs.io/en/latest/vision/) · [Architecture](ARCHITECTURE.md) · [Roadmap hub](https://strixonomy.readthedocs.io/en/latest/roadmap-hub/) · [Protégé vs Strixonomy](https://strixonomy.readthedocs.io/en/latest/guides/protege-decision/)
 
-**v0.27.0** renames OntoCore / OntoCode to **Strixonomy** (compat window for legacy bins, LSP methods, and paths). Protégé-aligned oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy shipped in **v0.26.x**. **Not a Protégé replacement** — see [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy.readthedocs.io/en/latest/SHIPPED/), [v0.27 migration](docs/migration/v0.27.md).
+**v0.28.0** removes OntoCore / OntoCode compatibility shims from v0.27 and reserves the official **`strixonomy`** PyPI package (Python SDK remains v1.1). Protégé-aligned oracles, annotation linkification, `catalog-v001.xml` redirects, and IdPolicy shipped in **v0.26.x**. **Not a Protégé replacement** — see [Known limitations](https://strixonomy.readthedocs.io/en/latest/known-limitations/). Engineering detail: [SHIPPED](https://strixonomy.readthedocs.io/en/latest/SHIPPED/), [v0.28 migration](docs/migration/v0.28.md).
 
 ## Development
 

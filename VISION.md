@@ -4,7 +4,7 @@
 >
 > Edit **`docs/vision.md`** for content changes. This root file is a GitHub landing pointer so links from the repository root stay valid.
 >
-> For what ships in **v0.27**, see [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/).
+> For what ships in **v0.28**, see [What ships today](https://strixonomy.readthedocs.io/en/latest/SHIPPED/).
 
 **Mission (one line):** Build the modern open-source platform for ontology engineering.
 

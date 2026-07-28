@@ -12,7 +12,7 @@
 /site/
 /site-e1/
 /target/
-__pycache__/
+python/dist/
 extension/*.vsix
 extension/.vscode-test/
 extension/dist/

@@ -16,7 +16,7 @@ hide:
       <a class="md-button" href="ide/feature-tour/">Explore the feature tour</a>
     </div>
     <p class="oc-hero-meta">
-      <a href="SHIPPED/">Latest tagged v0.27.0</a><span>·</span>
+      <a href="SHIPPED/">Latest tagged v0.28.0</a><span>·</span>
       <a href="known-limitations/">Known limitations</a><span>·</span>
       <a href="https://github.com/eddiethedean/strixonomy">GitHub</a>
     </p>
@@ -46,7 +46,7 @@ hide:
 <div class="oc-start-card" markdown>
 
 !!! info "Documentation version"
-    **Public install pin:** [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.27.0** — latest tagged release). GitHub `main` may be **0.28.0** in development — pin tagged artifacts unless you build from source. [Versions & channels](guides/versions-and-channels.md) · [v0.28 migration](migration/v0.28.md).
+    **Public install pin:** [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) (**0.28.0** — latest tagged release). GitHub `main` may be **0.28.0** in development — pin tagged artifacts unless you build from source. [Versions & channels](guides/versions-and-channels.md) · [v0.28 migration](migration/v0.28.md).
 
 **New to Strixonomy?** Start with **[First success (~10 min)](guides/first-success.md)**—install the extension, open sample ontologies, browse, and edit. No clone or separate CLI required.
 
@@ -89,7 +89,7 @@ hide:
 
 ## What ships today
 
-**Latest tagged: v0.27.0.** Full capability matrix: **[What ships today](SHIPPED.md)**. For channel lag (Marketplace vs crates.io vs docs), see [Versions & channels](guides/versions-and-channels.md).
+**Latest tagged: v0.28.0.** Full capability matrix: **[What ships today](SHIPPED.md)**. For channel lag (Marketplace vs crates.io vs docs), see [Versions & channels](guides/versions-and-channels.md).
 
 ## Quick start
 
@@ -102,12 +102,12 @@ hide:
 
 === "CI / CLI (optional)"
 
-    Most IDE users skip this. Prefer the [Linux x64 release tarball](https://github.com/eddiethedean/strixonomy/releases/tag/v0.27.0) for CI — [CI integration](ci-integration.md).
+    Most IDE users skip this. Prefer the [Linux x64 release tarball](https://github.com/eddiethedean/strixonomy/releases/tag/v0.28.0) for CI — [CI integration](ci-integration.md).
 
     macOS/Windows `cargo install` needs Rust **1.88+** and often takes **15–30+ minutes** — [Install CLI](guides/install-cli.md):
 
     ```bash
-    cargo install strixonomy-cli --locked --version 0.27.0
+    cargo install strixonomy-cli --locked --version 0.28.0
     strixonomy validate /path/to/ontologies
     ```
 

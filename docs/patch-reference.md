@@ -1,6 +1,6 @@
-# Patch reference (Strixonomy v0.27)
+# Patch reference (Strixonomy v0.28)
 
-> **Status:** Documents behavior in **Strixonomy v0.27.0**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.28.0**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
 ## Start here: smallest patch
@@ -341,7 +341,7 @@ Method: `strixonomy/applyAxiomPatch`
 
 See [lsp-api.md](lsp-api.md) and [authoring.md](authoring.md).
 
-## Limitations (v0.27)
+## Limitations (v0.28)
 
 - Write-back: **Turtle (`.ttl`), OBO (`.obo`), RDF/XML (`.owl`/`.rdf`), OWL/XML (`.owx`)**; JSON-LD and line-oriented RDF are read-only. XML is semantic re-serialize — [OWL/XML write-back](guides/owl-xml-workflow.md)
 - **OBO:** patch ops edit an existing `term_id` — there is **no** create-term / new-stanza op (create terms in the file or via other tools, then patch)

@@ -65,8 +65,8 @@ Source of truth: **[docs/SHIPPED.md](SHIPPED.md)** and **[docs/supported-formats
 Push a tag matching `[workspace.package].version` in `Cargo.toml`:
 
 ```bash
-git tag v0.27.0   # must match [workspace.package].version in Cargo.toml
-git push origin v0.27.0
+git tag v0.28.0   # must match [workspace.package].version in Cargo.toml
+git push origin v0.28.0
 ```
 
 The [release workflow on GitHub](https://github.com/eddiethedean/strixonomy/blob/main/.github/workflows/release.yml):
@@ -77,6 +77,22 @@ The [release workflow on GitHub](https://github.com/eddiethedean/strixonomy/blob
 4. **Package + GitHub Release** (after LSP matrix): Linux x64 `strixonomy` CLI, per-platform LSP archives, multi-platform VSIX, Open VSX (if `OVSX_PAT` is set), `SHA256SUMS` + `NOTICES`
 
 Requires the `CARGO_REGISTRY_TOKEN` repository secret. For Open VSX (Cursor), set `OVSX_PAT` — see [marketplace-publish.md](marketplace-publish.md).
+
+## PyPI (`strixonomy` reservation)
+
+The release workflow publishes the **reservation** Python wheel to PyPI after tag gates pass (`publish-pypi` job in [release.yml](https://github.com/eddiethedean/strixonomy/blob/main/.github/workflows/release.yml)).
+
+1. Configure [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishers/) for the `eddiethedean/strixonomy` repository (workflow: `Release`, environment: `pypi`).
+2. Create a GitHub **environment** named `pypi` with required reviewers if desired.
+3. PyPI project maintainers must use **2FA**.
+4. Source: `python/` (`pyproject.toml` + pure-Python `strixonomy` module). The wheel makes **no** ontology API claims — see [Python package status](guides/python-package.md).
+
+Local smoke build:
+
+```bash
+python -m pip install build
+python -m build python/
+```
 
 ## Published crates (dependency order)
 

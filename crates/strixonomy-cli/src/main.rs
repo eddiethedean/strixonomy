@@ -32,7 +32,7 @@ use strixonomy_refactor::{
 #[command(
     name = "strixonomy",
     version,
-    about = "Local-first ontology index and query engine (Strixonomy v0.27)"
+    about = "Local-first ontology index and query engine (Strixonomy v0.28)"
 )]
 struct Cli {
     #[command(subcommand)]

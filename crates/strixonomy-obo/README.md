@@ -5,7 +5,7 @@ OBO Format read/write for [Strixonomy](https://github.com/eddiethedean/strixonom
 ## Install
 
 ```toml
-strixonomy-obo = "0.27"
+strixonomy-obo = "0.28"
 ```
 
 Re-exported from the `strixonomy` façade as `strixonomy::obo` for patch operations. Not all OBO workflows require this crate directly — see [OBO authoring guide](https://strixonomy.readthedocs.io/en/latest/strixonomy/obo-authoring/).
@@ -16,7 +16,7 @@ Re-exported from the `strixonomy` façade as `strixonomy::obo` for patch operati
 - [OBO workflows](https://strixonomy.readthedocs.io/en/latest/guides/obo-workflow/)
 - [docs.rs](https://docs.rs/strixonomy-obo)
 
-**Current version: 0.27.0**
+**Current version: 0.28.0**
 
 ## License
 

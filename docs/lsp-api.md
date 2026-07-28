@@ -1,6 +1,6 @@
-# Strixonomy LSP API (v0.27)
+# Strixonomy LSP API (v0.28)
 
-> **Status:** Documents behavior in **Strixonomy v0.27.0**. Pre-1.0 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.28.0**. Pre-1.0 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md).
 
 This document describes **what ships today** in `strixonomy-lsp`. Custom methods use the **`strixonomy/*`** prefix. Legacy **`ontocore/*`** was removed in [v0.28](migration/v0.28.md). For the **v1.0 target** (extended plugin methods), see [LSP_SPEC.md](design/LSP_SPEC.md).
@@ -55,7 +55,7 @@ Minimal custom-client flow after `initialize`:
 
 If you are integrating Strixonomy outside VS Code (custom editor, scripts, automation), treat the JSON schema as the **canonical, machine-readable contract** for this release:
 
-- **LSP JSON Schema:** [`lsp-protocol.schema.json`](lsp-protocol.schema.json) (ships with product **v0.27.0**)
+- **LSP JSON Schema:** [`lsp-protocol.schema.json`](lsp-protocol.schema.json) (ships with product **v0.28.0**)
 
 ### Schema vs product version
 
@@ -66,7 +66,7 @@ The schema file is the wire contract for the **current product release**. Until 
 Until v1.0, minor releases may change request/response fields.
 For stable integrations:
 
-- Pin Strixonomy to **0.27.0** in your tooling.
+- Pin Strixonomy to **0.28.0** in your tooling.
 - Prefer consuming `lsp-protocol.schema.json` from the same tagged release you deploy.
 
 ## Wire format
