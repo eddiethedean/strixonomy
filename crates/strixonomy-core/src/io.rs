@@ -55,15 +55,15 @@ pub fn atomic_write(path: &Path, contents: &str) -> std::io::Result<()> {
     let nanos = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_nanos()).unwrap_or(0);
     let stem = path.file_name().and_then(|s| s.to_str()).unwrap_or("file");
     let tmp_path = parent.join(format!(".strixonomy-{stem}-{nanos}.tmp"));
-    let existing_perms = fs::metadata(path).ok().map(|m| m.permissions());
     // Best-effort remove temp on mid-write failure (#343).
     let write_result = (|| -> std::io::Result<()> {
         let mut file = fs::File::create(&tmp_path)?;
         file.write_all(contents.as_bytes())?;
         file.sync_all()?;
-        // Apply mode after write so File::create's umask default cannot stick (#422).
-        if let Some(perms) = existing_perms {
-            fs::set_permissions(&tmp_path, perms)?;
+        // Re-read destination mode immediately before chmod so a file that
+        // appears (or whose mode changes) during the temp write is still honored (#422).
+        if let Ok(meta) = fs::metadata(path) {
+            fs::set_permissions(&tmp_path, meta.permissions())?;
         }
         Ok(())
     })();
