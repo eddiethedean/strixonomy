@@ -59,7 +59,7 @@ From v0.11.3, the [release workflow on GitHub](https://github.com/eddiethedean/s
 
 ### Prerequisites
 
-- [Open VSX publisher](https://open-vsx.org/user-settings/publisher) namespace `strixonomy` (claim before first release)
+- [Open VSX publisher](https://open-vsx.org/user-settings/publisher) namespace `strixonomy` (**required** before first Strixonomy publish — `ovsx` fails with `Unknown publisher: strixonomy` until claimed; the release workflow then continues with a warning so GitHub Release assets still ship)
 - Personal Access Token from Open VSX user settings
 - Repository secret `OVSX_PAT` with publish scope
 

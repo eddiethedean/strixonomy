@@ -73,7 +73,7 @@ The [release workflow on GitHub](https://github.com/eddiethedean/strixonomy/blob
 
 1. **Preflight (tag gates):** tag↔version match, doc version sync, rustfmt, and a green `ci.yml` run on the tagged SHA (waits briefly if CI is still in progress)
 2. **LSP matrix** (parallel with publish after preflight): multi-platform `strixonomy-lsp` binaries
-3. **Publish crates.io** (starts after preflight; overlaps LSP builds): workspace crates in dependency order with `--no-verify`, retrying only on 429 / index lag (no fixed inter-crate sleep — crates.io allows a burst of 30 version updates)
+3. **Publish crates.io** (starts after preflight; overlaps LSP builds): workspace crates in dependency order with `--no-verify`, idempotent skip of already-uploaded versions, waiting out 429s (new crate names: burst 5 then ~1/10 min; new versions of existing crates: burst 30 then ~1/min)
 4. **Package + GitHub Release** (after LSP matrix): Linux x64 `strixonomy` CLI, per-platform LSP archives, multi-platform VSIX, Open VSX (if `OVSX_PAT` is set), `SHA256SUMS` + `NOTICES`
 
 Requires the `CARGO_REGISTRY_TOKEN` repository secret. For Open VSX (Cursor), set `OVSX_PAT` — see [marketplace-publish.md](marketplace-publish.md).

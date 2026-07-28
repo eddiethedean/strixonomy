@@ -172,14 +172,18 @@ jobs:
         with:
           shared-key: release-publish
 
-      # New versions of existing crates: burst 30, then ~1/min
-      # (https://crates.io/docs/rate-limits). Do not sleep proactively —
-      # only back off on 429 / index lag. --no-verify: packaging verified in CI.
+      # New crate names: burst 5, then 1 / 10 min. New versions of existing crates:
+      # burst 30, then ~1/min (https://crates.io/docs/rate-limits). First Strixonomy
+      # publish hits the new-crate path for every `strixonomy-*` name — wait out 429s.
+      # Idempotent: already-uploaded versions are skipped. --no-verify: packaging verified in CI.
       - name: Publish crates to crates.io
+        timeout-minutes: 360
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
           INDEX_RETRY_SECONDS: 30
           RATE_LIMIT_RETRY_SECONDS: 60
+          NEW_CRATE_RATE_LIMIT_SECONDS: 600
+          PUBLISH_MAX_ATTEMPTS: 40
         run: |
           set -euo pipefail
           echo "Disk before crate publish:"
@@ -194,27 +198,33 @@ jobs:
               echo "${secs}"
               return
             fi
-            # Body style: "Please try again after <HTTP-date>"
+            # Exact HTTP-date — do not truncate at '.' (breaks on "crates.io" in the same sentence).
             local when
-            when=$(echo "${output}" | grep -oiE 'try again after [^[:space:]].+' | head -1 | sed -E 's/[Pp]lease try again after //;s/\..*//;s/[[:space:]]+$//' || true)
+            when=$(echo "${output}" | grep -oiE 'try again after [A-Za-z]{3},[[:space:]]+[0-9]{1,2}[[:space:]]+[A-Za-z]{3}[[:space:]]+[0-9]{4}[[:space:]]+[0-9]{2}:[0-9]{2}:[0-9]{2}[[:space:]]+GMT' | head -1 | sed -E 's/[Tt]ry again after[[:space:]]+//' || true)
             if [ -n "${when}" ]; then
               local target now delta
-              target=$(date -u -d "${when}" +%s 2>/dev/null || date -u -j -f "%a, %d %b %Y %H:%M:%S %Z" "${when}" +%s 2>/dev/null || true)
+              target=$(date -u -d "${when}" +%s 2>/dev/null || true)
               now=$(date -u +%s)
               if [ -n "${target}" ] && [ "${target}" -gt "${now}" ]; then
-                delta=$((target - now + 2))
+                delta=$((target - now + 5))
                 echo "${delta}"
                 return
               fi
+            fi
+            if echo "${output}" | grep -q 'too many new crates'; then
+              echo "${NEW_CRATE_RATE_LIMIT_SECONDS}"
+              return
             fi
             echo "${default}"
           }
 
           publish_crate() {
             local crate="$1"
-            local attempt output wait_secs
-            for attempt in 1 2 3 4 5 6 7 8; do
-              echo "Publishing ${crate} (attempt ${attempt})..."
+            local attempt=0
+            local output wait_secs
+            while [ "${attempt}" -lt "${PUBLISH_MAX_ATTEMPTS}" ]; do
+              attempt=$((attempt + 1))
+              echo "Publishing ${crate} (attempt ${attempt}/${PUBLISH_MAX_ATTEMPTS})..."
               if output=$(cargo publish -p "${crate}" --locked --no-verify 2>&1); then
                 echo "${output}"
                 echo "Published ${crate}"
@@ -237,10 +247,8 @@ jobs:
                 sleep "${wait_secs}"
                 continue
               fi
-              if [ "${attempt}" -lt 8 ]; then
-                echo "Waiting ${INDEX_RETRY_SECONDS}s for crates.io index to update..."
-                sleep "${INDEX_RETRY_SECONDS}"
-              fi
+              echo "Waiting ${INDEX_RETRY_SECONDS}s for crates.io index to update..."
+              sleep "${INDEX_RETRY_SECONDS}"
             done
             echo "Failed to publish ${crate}"
             return 1
@@ -358,18 +366,6 @@ jobs:
           echo "Disk after VSIX packaging:"
           df -h
 
-      - name: Publish to Open VSX
-        env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
-        run: |
-          set -euo pipefail
-          if [ -z "${OVSX_PAT:-}" ]; then
-            echo "::warning::OVSX_PAT secret is not set; skipping Open VSX publish"
-            exit 0
-          fi
-          npm install -g ovsx
-          ovsx publish "dist/strixonomy-${GITHUB_REF_NAME}.vsix" -p "${OVSX_PAT}"
-
       - name: Generate SHA256SUMS
         run: |
           set -euo pipefail
@@ -397,4 +393,22 @@ jobs:
               --title "Strixonomy ${GITHUB_REF_NAME}" \
               --generate-notes \
               "${assets[@]}"
+          fi
+
+      # After GitHub Release so a missing Open VSX namespace cannot block assets.
+      # Claim publisher `strixonomy` once: https://open-vsx.org/user-settings/publisher
+      - name: Publish to Open VSX
+        continue-on-error: true
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "${OVSX_PAT:-}" ]; then
+            echo "::warning::OVSX_PAT secret is not set; skipping Open VSX publish"
+            exit 0
+          fi
+          npm install -g ovsx
+          if ! ovsx publish "dist/strixonomy-${GITHUB_REF_NAME}.vsix" -p "${OVSX_PAT}"; then
+            echo "::warning::Open VSX publish failed (claim namespace 'strixonomy' if needed: https://open-vsx.org/user-settings/publisher)"
+            exit 1
           fi
