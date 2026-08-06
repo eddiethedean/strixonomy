@@ -1,6 +1,6 @@
 # Platform and VS Code compatibility
 
-Supported platforms and environments for Strixonomy **v0.28.0** (latest tagged). This page states **what is documented and tested in project CI** — not a formal certification.
+Supported platforms and environments for Strixonomy **v0.28.1** (latest tagged). This page states **what is documented and tested in project CI** — not a formal certification.
 
 Canonical matrix: [What ships today](../SHIPPED.md).
 
@@ -38,7 +38,7 @@ No separate LSP install required for standard Marketplace, Open VSX, or VSIX use
 | macOS | **No** — use `cargo install strixonomy-cli --locked` |
 | Windows | **No** — use `cargo install` or CI on Linux runners |
 
-Pin version: `VERSION=0.28.0` — [Install CLI & CI (detail)](../install-cli-ci.md).
+Pin version: `VERSION=0.28.1` — [Install CLI & CI (detail)](../install-cli-ci.md).
 
 ## `cargo install` prerequisites
 

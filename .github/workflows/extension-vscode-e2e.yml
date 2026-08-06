@@ -68,7 +68,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # @vscode/test-electron@3.1+ requires Node >= 22 (macOS executable path fix for VS Code 1.110+)
+          node-version: "22"
           cache: npm
           cache-dependency-path: extension/package-lock.json
 
@@ -115,8 +116,11 @@ jobs:
               exit 0
             fi
             if [ "${attempt}" -lt 3 ]; then
-              echo "Retrying after transient failure (often VS Code download)..."
-              sleep 30
+              echo "Retrying after transient failure (clearing VS Code download cache)..."
+              # Broken/partial downloads are reused on retry ("Found existing install") and
+              # keep failing with Electron ENOENT — wipe so the next attempt re-downloads.
+              rm -rf .vscode-test/vscode-*
+              sleep 15
             fi
           done
           exit 1

@@ -11,7 +11,7 @@ The `strixonomy` binary indexes ontology workspaces and exposes query, validatio
 Install (pin latest tagged release):
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.28.0
+cargo install strixonomy-cli --locked --version 0.28.1
 ```
 
 From a git clone, use `cargo run --` instead of `strixonomy`.

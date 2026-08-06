@@ -2,13 +2,13 @@
 
 > **Not a capability matrix.** For what ships today, read **[What ships today](SHIPPED.md)** and **[Known limitations](known-limitations.md)** only.
 
-Strixonomy’s forward roadmap is organized around independently valuable user outcomes: trustworthy projects, fast authoring, large-ontology productivity, team review, automated delivery, integrations, assisted modeling, browser access, and governed operations. **Today (v0.28.0)** supports pilot and coexistence.
+Strixonomy’s forward roadmap is organized around independently valuable user outcomes: trustworthy projects, fast authoring, large-ontology productivity, team review, automated delivery, integrations, assisted modeling, browser access, and governed operations. **Today (v0.28.1)** supports pilot and coexistence.
 
 ## Current release
 
 | | |
 |---|---|
-| **Latest tagged** | **v0.28.0** — compat shim removal + PyPI `strixonomy` reservation |
+| **Latest tagged** | **v0.28.1** — compat shim removal + PyPI `strixonomy` reservation |
 | **Capability truth** | [SHIPPED.md](SHIPPED.md) |
 
 ## Shipped eras (high level)

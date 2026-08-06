@@ -46,7 +46,7 @@ After v0.30, the roadmap shifts from parity to modernization.
 | [Product Roadmap 2.0](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/PRODUCT_ROADMAP_2.0.md) | UI phases with milestone acceptance criteria |
 | [Product design (UI)](https://github.com/eddiethedean/strixonomy/blob/main/docs/ui/README.md) | Product design specification pack (UX, design system, OntoStudio target) |
 
-**Current release:** v0.28.0
+**Current release:** v0.28.1
 
 ---
 
@@ -540,7 +540,7 @@ See [SHIPPED.md](SHIPPED.md) · [migration/v0.27.md](migration/v0.27.md) · full
 
 ### v0.28 — Python package reservation + compat removal (shipped)
 
-**Released:** v0.28.0 (2026-07-28)
+**Released:** v0.28.0 (2026-07-28); patch **v0.28.1** (2026-08-06)
 
 **Theme:** Secure the official `strixonomy` identity on PyPI; remove OntoCore/OntoCode compatibility shims from v0.27.
 

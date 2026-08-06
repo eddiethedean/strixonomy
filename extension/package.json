@@ -2,7 +2,7 @@
   "name": "strixonomy",
   "displayName": "Strixonomy",
   "description": "Ontology IDE for VS Code powered by Strixonomy. Browse, edit Turtle, query, reason (EL\u2013DL), validate, and diff OWL/RDF/OBO ontologies from the IDE or CI.",
-  "version": "0.28.0",
+  "version": "0.28.1",
   "publisher": "strixonomy",
   "license": "MIT",
   "repository": {
@@ -796,7 +796,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^20.11.0",
     "@types/vscode": "^1.85.0",
-    "@vscode/test-electron": "^3.0.0",
+    "@vscode/test-electron": "^3.1.0",
     "@vscode/vsce": "^2.22.0",
     "esbuild": "^0.20.0",
     "mocha": "^10.8.2",

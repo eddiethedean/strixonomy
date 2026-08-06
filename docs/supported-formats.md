@@ -1,6 +1,6 @@
 # Supported ontology formats
 
-> **Latest tagged release: v0.28.0** — canonical capability matrix: [What ships today](SHIPPED.md).
+> **Latest tagged release: v0.28.1** — canonical capability matrix: [What ships today](SHIPPED.md).
 
 This page is the canonical reference for **what Strixonomy can do with each file format** today.
 

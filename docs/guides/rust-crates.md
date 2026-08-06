@@ -9,7 +9,7 @@
 ## Quick start
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.28.0
+cargo install strixonomy-cli --locked --version 0.28.1
 strixonomy query /path/to/ontologies "SELECT * FROM classes"
 strixonomy validate /path/to/ontologies
 ```

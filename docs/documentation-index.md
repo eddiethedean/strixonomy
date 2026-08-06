@@ -2,7 +2,7 @@
 
 Master index for Strixonomy IDE / Strixonomy engine planning, architecture, and user documentation.
 
-**Latest tagged release:** v0.28.0 · **Canonical capabilities:** [What ships today](SHIPPED.md) · **Limits:** [Known limitations](known-limitations.md) · **Terms:** [Glossary](glossary.md)
+**Latest tagged release:** v0.28.1 · **Canonical capabilities:** [What ships today](SHIPPED.md) · **Limits:** [Known limitations](known-limitations.md) · **Terms:** [Glossary](glossary.md)
 
 The public site navigation is defined in [`mkdocs.yml`](https://github.com/eddiethedean/strixonomy/blob/main/mkdocs.yml). This page is a reading-order map — not a second nav.
 

@@ -2,7 +2,7 @@
 
 A visual and structural overview of the Strixonomy VS Code IDE. For hands-on setup, start with [First success (~10 min)](../guides/first-success.md).
 
-Capability truth: [What ships today](../SHIPPED.md) · [Known limitations](../known-limitations.md) · [What's new in v0.28](../migration/v0.28.md).
+Capability truth: [What ships today](../SHIPPED.md) · [Known limitations](../known-limitations.md) · [What's new in v0.28.1](../migration/v0.28.1.md) · [v0.28](../migration/v0.28.md).
 
 ![Explorer and Entity Inspector](../assets/screenshots/explorer-inspector.png)
 

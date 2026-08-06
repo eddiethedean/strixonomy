@@ -254,7 +254,7 @@ nav:
       - Engineering docs (GitHub): engineering.md
 extra:
   announcement:
-    text: "Latest tagged release: v0.28.0 — pin installs from TAGGED_RELEASE."
+    text: "Latest tagged release: v0.28.1 — pin installs from TAGGED_RELEASE."
     link: guides/versions-and-channels/
   social:
     - icon: fontawesome/brands/github

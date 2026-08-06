@@ -37,7 +37,7 @@ jobs:
 
       - name: Download strixonomy CLI, verify checksum, validate
         run: |
-          VERSION=0.28.0
+          VERSION=0.28.1
           ASSET="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
           BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
           curl -fsSL -o "${ASSET}" \
@@ -53,7 +53,7 @@ jobs:
 Adjust the validate path (`.` or `ontologies/`) to the directory containing your `.ttl`, `.owl`, etc. Verify checksums per [release-integrity.md](release-integrity.md) in production pipelines.
 
 !!! tip "Pin the CLI version v0.29–v0.30"
-    Set `VERSION=0.28.0` explicitly so CI does not pick up breaking minor releases unexpectedly. See [FAQ](faq.md).
+    Set `VERSION=0.28.1` explicitly so CI does not pick up breaking minor releases unexpectedly. See [FAQ](faq.md).
 
 ## GitHub Actions (cargo install — macOS/Windows or when building from source)
 
@@ -71,7 +71,7 @@ Use when you need a platform without a release tarball, or when developing again
           workspaces: ""
 
       - name: Install strixonomy CLI
-        run: cargo install strixonomy-cli --locked --version 0.28.0
+        run: cargo install strixonomy-cli --locked --version 0.28.1
 
       - name: Validate ontology files
         run: strixonomy validate .
@@ -88,7 +88,7 @@ Fail the job when EL classification finds unsatisfiable classes:
     ```yaml
           - name: Classify ontologies (EL)
             run: |
-              VERSION=0.28.0
+              VERSION=0.28.1
               BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
               curl -fsSL -o "${BIN}.tar.gz" \
                 "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"
@@ -101,7 +101,7 @@ Fail the job when EL classification finds unsatisfiable classes:
 
     ```yaml
           - name: Install strixonomy CLI
-            run: cargo install strixonomy-cli --locked --version 0.28.0
+            run: cargo install strixonomy-cli --locked --version 0.28.1
 
           - name: Classify ontologies (EL)
             run: strixonomy classify . --profile el --format json
@@ -136,7 +136,7 @@ Compare git refs in pull requests (requires a git checkout with history):
 ```yaml
       - name: Semantic diff (breaking changes only)
         run: |
-          VERSION=0.28.0
+          VERSION=0.28.1
           BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
           curl -fsSL -o "${BIN}.tar.gz" \
             "https://github.com/eddiethedean/strixonomy/releases/download/v${VERSION}/strixonomy-v${VERSION}-x86_64-unknown-linux-gnu.tar.gz"

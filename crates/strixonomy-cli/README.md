@@ -12,7 +12,7 @@ Command-line interface for [Strixonomy](https://github.com/eddiethedean/strixono
 ## Install (pinned)
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.28.0
+cargo install strixonomy-cli --locked --version 0.28.1
 ```
 
 ## Linux x64 without Rust

@@ -106,6 +106,9 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const rf = useRef<ReactFlowInstance | null>(null);
   const canvasRef = useRef<HTMLDivElement | null>(null);
+  /** Avoid one-shot fitView / virtualization against a 0×0 webview pane (#442). */
+  const fittedForGraph = useRef<string | null>(null);
+  const [viewportFitted, setViewportFitted] = useState(false);
 
   const buildFilters = useCallback(() => {
     const entity_kinds = entityKindFilter
@@ -278,30 +281,120 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
 
   const unsatSet = useMemo(() => new Set(unsatisfiable), [unsatisfiable]);
 
-  useEffect(() => {
+  const flowNodes = useMemo(() => {
     if (!graph) {
-      return;
+      return [];
     }
-    setNodes(
-      layoutNodes(graph, layout, {
-        searchIds: filteredNodeIds,
-        unsatisfiable: showUnsatOverlay ? unsatSet : new Set(),
-        selectedIds,
-      })
-    );
-    setEdges(toFlowEdges(graph, graphMode, filteredNodeIds, prefersReducedMotion));
+    return layoutNodes(graph, layout, {
+      searchIds: filteredNodeIds,
+      unsatisfiable: showUnsatOverlay ? unsatSet : new Set(),
+      selectedIds,
+    });
   }, [
     graph,
-    graphMode,
     layout,
     filteredNodeIds,
     unsatSet,
     showUnsatOverlay,
     selectedIds,
-    prefersReducedMotion,
-    setNodes,
-    setEdges,
   ]);
+
+  const flowEdges = useMemo(() => {
+    if (!graph) {
+      return [];
+    }
+    return toFlowEdges(graph, graphMode, filteredNodeIds, prefersReducedMotion);
+  }, [graph, graphMode, filteredNodeIds, prefersReducedMotion]);
+
+  useEffect(() => {
+    setNodes(flowNodes);
+    setEdges(flowEdges);
+  }, [flowNodes, flowEdges, setNodes, setEdges]);
+
+  const graphFitKey = useMemo(() => {
+    if (!graph) {
+      return "";
+    }
+    return [
+      graph.graph_kind,
+      rootIri ?? "",
+      graph.nodes.length,
+      graph.edges.length,
+      layout,
+      graphMode,
+    ].join("|");
+  }, [graph, rootIri, layout, graphMode]);
+
+  const graphFitKeyRef = useRef(graphFitKey);
+  graphFitKeyRef.current = graphFitKey;
+
+  const fitGraphIntoView = useCallback(
+    async (
+      instance?: ReactFlowInstance | null,
+      options?: { duration?: number }
+    ): Promise<boolean> => {
+      const api = instance ?? rf.current;
+      const el = canvasRef.current;
+      if (!api || !el || flowNodes.length === 0) {
+        return false;
+      }
+      if (!graphCanvasHasRealSize(el)) {
+        return false;
+      }
+      const keyAtStart = graphFitKeyRef.current;
+      await api.fitView({ padding: 0.2, duration: options?.duration });
+      // RF store width/height can lag the parent canvas by a frame; wait before
+      // arming onlyRenderVisibleElements so large graphs are not culled (#442).
+      await waitAnimationFrame();
+      await waitAnimationFrame();
+      if (rf.current !== api || keyAtStart !== graphFitKeyRef.current) {
+        return false;
+      }
+      if (!graphCanvasHasRealSize(el)) {
+        return false;
+      }
+      fittedForGraph.current = keyAtStart;
+      setViewportFitted(true);
+      return true;
+    },
+    [flowNodes.length]
+  );
+
+  useEffect(() => {
+    fittedForGraph.current = null;
+    setViewportFitted(false);
+  }, [graphFitKey]);
+
+  useEffect(() => {
+    if (viewMode !== "graph") {
+      rf.current = null;
+      fittedForGraph.current = null;
+      setViewportFitted(false);
+    }
+  }, [viewMode]);
+
+  // Remount-safe fit: VS Code webviews often first paint at 0×0; refit once size is real (#442).
+  useEffect(() => {
+    if (flowNodes.length === 0 || viewMode !== "graph") {
+      return;
+    }
+    const el = canvasRef.current;
+    if (!el) {
+      return;
+    }
+    const tryFit = (): void => {
+      if (fittedForGraph.current === graphFitKeyRef.current) {
+        return;
+      }
+      void fitGraphIntoView();
+    };
+    tryFit();
+    const ro = new ResizeObserver(() => {
+      tryFit();
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [flowNodes.length, viewMode, graphFitKey, fitGraphIntoView]);
 
   const selectedNode = useMemo(
     () => graph?.nodes.find((n) => n.id === selectedId),
@@ -401,17 +494,21 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
         onKeyDown={onCanvasKeyDown}
         onClick={() => setContextMenu(null)}
       >
-        {viewMode === "graph" && graph && graph.nodes.length > 0 ? (
+        {viewMode === "graph" && nodes.length > 0 ? (
           <ReactFlow
             nodes={nodes}
             edges={edges}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
-            onlyRenderVisibleElements
-            fitView
+            // Virtualize only after a successful fit: culling against a 0×0 pane
+            // permanently hides nodes on first open in VS Code webviews (#442).
+            onlyRenderVisibleElements={viewportFitted && nodes.length > 200}
             multiSelectionKeyCode="Shift"
             onInit={(instance) => {
               rf.current = instance;
+              requestAnimationFrame(() => {
+                void fitGraphIntoView(instance);
+              });
             }}
             onNodeClick={(event, node) => {
               if (event.shiftKey) {
@@ -701,7 +798,11 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
             <button
               type="button"
               aria-label="Fit to view"
-              onClick={() => rf.current?.fitView({ padding: 0.2, duration: 200 })}
+              onClick={() => {
+                fittedForGraph.current = null;
+                setViewportFitted(false);
+                void fitGraphIntoView(undefined, { duration: 200 });
+              }}
             >
               Fit to view
             </button>
@@ -835,6 +936,26 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
       </aside>
     </PanelMain>
   );
+}
+
+function waitAnimationFrame(): Promise<void> {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => resolve());
+  });
+}
+
+/** True when the canvas and mounted React Flow pane both have a real layout box. */
+function graphCanvasHasRealSize(el: HTMLElement): boolean {
+  const { width, height } = el.getBoundingClientRect();
+  if (width < 2 || height < 2) {
+    return false;
+  }
+  const flow = el.querySelector(".react-flow");
+  if (!(flow instanceof HTMLElement)) {
+    return false;
+  }
+  const flowBox = flow.getBoundingClientRect();
+  return flowBox.width >= 2 && flowBox.height >= 2;
 }
 
 function layoutNodes(

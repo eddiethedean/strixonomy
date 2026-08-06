@@ -1,6 +1,6 @@
 # Known limitations
 
-> **Latest tagged release: v0.28.0.** Pin CI to a tagged version from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) or crates.io — see [What ships today](SHIPPED.md) and [Versions & channels](guides/versions-and-channels.md). **Not a full Protégé replacement today** — coexistence and pilot workflows are the supported path until **v0.30**.
+> **Latest tagged release: v0.28.1.** Pin CI to a tagged version from [GitHub Releases](https://github.com/eddiethedean/strixonomy/releases) or crates.io — see [What ships today](SHIPPED.md) and [Versions & channels](guides/versions-and-channels.md). **Not a full Protégé replacement today** — coexistence and pilot workflows are the supported path until **v0.30**.
 
 Honest limits for evaluators and new users.
 
@@ -37,7 +37,7 @@ Plugin **SDK 1.0** freezes the TOML + subprocess JSON wire (`api_version = "1"`)
 
 ## API stability (v0.x)
 
-Published crates are **0.28.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases on the v0.x line; compatibility guarantees are stated per surface. Pin in CI: `cargo install strixonomy-cli --locked --version 0.28.0`.
+Published crates are **0.28.x**. Library APIs, LSP JSON, and SQL table columns may change between minor releases on the v0.x line; compatibility guarantees are stated per surface. Pin in CI: `cargo install strixonomy-cli --locked --version 0.28.1`.
 
 ## Reasoning
 

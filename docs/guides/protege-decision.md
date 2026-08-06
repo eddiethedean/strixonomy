@@ -1,8 +1,8 @@
 # Protégé vs Strixonomy decision matrix
 
-Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, and **when to run both**. It reflects **v0.28.0** (latest tagged) — see [What ships today](../SHIPPED.md). A [first-week migration guide](protege-migration.md) ships today; extended round-trip playbooks are planned for **v0.30**.
+Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, and **when to run both**. It reflects **v0.28.1** (latest tagged) — see [What ships today](../SHIPPED.md). A [first-week migration guide](protege-migration.md) ships today; extended round-trip playbooks are planned for **v0.30**.
 
-!!! note "Non-goals today (v0.28.0)"
+!!! note "Non-goals today (v0.28.1)"
     - **WebProtégé-style collaboration** — out of scope until v0.31+
     - **Byte-identical Protégé OWL/XML / RDF/XML layout** — Strixonomy re-serializes for semantic fidelity ([ADR-0021](../design/adr/0021-deterministic-xml-serializers.md)); write-back itself **ships** in v0.21
     - **Plugin ecosystem / production owlmake** — Plugin SDK 1.0 freezes the wire contract today; owlmake and dependable management are planned for **v0.33**, the signed official registry for **v0.34**, and the public marketplace for **v0.35+** — [Plugin policy](plugin-policy.md)
@@ -23,7 +23,7 @@ Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, an
 | Enterprise requires vendor SLA / SOC 2 | **Defer** or run limited CI pilot — [Production readiness](production-readiness.md) |
 | Air-gapped VS Code + internal artifact mirror | **Pilot** — [Enterprise deployment](enterprise-deployment.md) |
 
-## Capability comparison (v0.28.0 tagged)
+## Capability comparison (v0.28.1 tagged)
 
 | Capability | Protégé | Strixonomy v0.27 | Notes |
 |------------|---------|----------------|-------|
@@ -51,7 +51,7 @@ Use this page to decide **when Strixonomy fits**, **when to keep Protégé**, an
 
 ### Path A — CI only (lowest risk)
 
-1. Pin `strixonomy-cli` **0.28.0** in Linux CI
+1. Pin `strixonomy-cli` **0.28.1** in Linux CI
 2. Gate merges with `strixonomy validate`
 3. Optional: `strixonomy classify --profile el` when ontology is EL; `strixonomy dl-query` for class-expression checks
 4. Keep Protégé on engineer desktops unchanged

@@ -1,6 +1,6 @@
 # Catalog SQL query reference (Strixonomy v0.28)
 
-> **Status:** Documents behavior in **Strixonomy v0.28.0**. v0.29–v0.30 APIs may change.
+> **Status:** Documents behavior in **Strixonomy v0.28.1**. v0.29–v0.30 APIs may change.
 > Canonical feature list: [What ships today](SHIPPED.md) · [Known limitations](known-limitations.md).
 
 !!! warning "Not full SQL"

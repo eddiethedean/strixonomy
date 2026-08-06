@@ -4,7 +4,7 @@
 >
 > **Capability truth:** [What ships today](SHIPPED.md). Contributor crate layout: [Implementation architecture](design/ARCHITECTURE.md). Short stack: [Strixonomy architecture](strixonomy/architecture.md).
 
-**Latest tagged: v0.28.0** — v0.27 ships today. **v0.28 in progress** on `main` (compat shim removal). **Strixonomy IDE** (VS Code) + **Strixonomy engine** (CLI / LSP / library) + **Ontologos** (reasoning).
+**Latest tagged: v0.28.1** — v0.27 ships today. **v0.28 in progress** on `main` (compat shim removal). **Strixonomy IDE** (VS Code) + **Strixonomy engine** (CLI / LSP / library) + **Ontologos** (reasoning).
 
 ## Shipped today
 

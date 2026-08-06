@@ -1,6 +1,6 @@
 # Capabilities by format
 
-> **Latest tagged: v0.28.0** — matrix truth: [Supported formats](../supported-formats.md) · [What ships today](../SHIPPED.md).
+> **Latest tagged: v0.28.1** — matrix truth: [Supported formats](../supported-formats.md) · [What ships today](../SHIPPED.md).
 
 One-page view of what each format can do in Strixonomy IDE / Strixonomy engine. Prefer this when deciding whether to keep Turtle, OBO, or Protégé-style XML.
 

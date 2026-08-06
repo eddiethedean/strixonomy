@@ -53,5 +53,6 @@ There is no standalone `strixonomy graph` CLI command; use the VS Code panel or 
 | Problem | What to try |
 |---------|-------------|
 | Empty graph | Re-index workspace; check ontology has relevant axioms |
+| Blank canvas (controls/minimap only) | Upgrade to **v0.28.1+** ([#442](https://github.com/eddiethedean/strixonomy/issues/442)); on older builds, **Developer: Reload Webviews** recovers the pane |
 | Truncation notice | Narrow filter, reduce depth, or open neighborhood from a specific entity |
 | Panel won't open | Check Output → Strixonomy for LSP errors |

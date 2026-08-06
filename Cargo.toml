@@ -31,7 +31,7 @@ default-members = ["crates/strixonomy-cli"]
 # Package name must not collide with the published façade crate `strixonomy`.
 [package]
 name = "strixonomy-workspace"
-version = "0.28.0"
+version = "0.28.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 publish = false
@@ -80,7 +80,7 @@ regex = "1"
 tempfile = "3"
 
 [workspace.package]
-version = "0.28.0"
+version = "0.28.1"
 edition = "2021"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
@@ -91,27 +91,27 @@ keywords = ["ontology", "owl", "rdf", "sparql", "turtle"]
 categories = ["command-line-utilities", "science", "parser-implementations"]
 
 [workspace.dependencies]
-strixonomy = { path = "crates/strixonomy", version = "0.28.0" }
-strixonomy-core = { path = "crates/strixonomy-core", version = "0.28.0" }
-strixonomy-parser = { path = "crates/strixonomy-parser", version = "0.28.0" }
-strixonomy-owl = { path = "crates/strixonomy-owl", version = "0.28.0" }
-strixonomy-obo = { path = "crates/strixonomy-obo", version = "0.28.0" }
-strixonomy-catalog = { path = "crates/strixonomy-catalog", version = "0.28.0" }
-strixonomy-diagnostics = { path = "crates/strixonomy-diagnostics", version = "0.28.0" }
-strixonomy-query = { path = "crates/strixonomy-query", version = "0.28.0" }
-strixonomy-lsp = { path = "crates/strixonomy-lsp", version = "0.28.0" }
-strixonomy-reasoner = { path = "crates/strixonomy-reasoner", version = "0.28.0" }
-strixonomy-robot = { path = "crates/strixonomy-robot", version = "0.28.0" }
-strixonomy-refactor = { path = "crates/strixonomy-refactor", version = "0.28.0" }
-strixonomy-diff = { path = "crates/strixonomy-diff", version = "0.28.0" }
-strixonomy-docs = { path = "crates/strixonomy-docs", version = "0.28.0" }
-strixonomy-plugin = { path = "crates/strixonomy-plugin", version = "0.28.0" }
-strixonomy-plugin-naming = { path = "crates/strixonomy-plugin-naming", version = "0.28.0" }
-strixonomy-plugin-markdown-export = { path = "crates/strixonomy-plugin-markdown-export", version = "0.28.0" }
-strixonomy-plugin-shacl = { path = "crates/strixonomy-plugin-shacl", version = "0.28.0" }
-strixonomy-edit = { path = "crates/strixonomy-edit", version = "0.28.0" }
-strixonomy-plugin-builtins = { path = "crates/strixonomy-plugin-builtins", version = "0.28.0" }
-strixonomy-swrl = { path = "crates/strixonomy-swrl", version = "0.28.0" }
+strixonomy = { path = "crates/strixonomy", version = "0.28.1" }
+strixonomy-core = { path = "crates/strixonomy-core", version = "0.28.1" }
+strixonomy-parser = { path = "crates/strixonomy-parser", version = "0.28.1" }
+strixonomy-owl = { path = "crates/strixonomy-owl", version = "0.28.1" }
+strixonomy-obo = { path = "crates/strixonomy-obo", version = "0.28.1" }
+strixonomy-catalog = { path = "crates/strixonomy-catalog", version = "0.28.1" }
+strixonomy-diagnostics = { path = "crates/strixonomy-diagnostics", version = "0.28.1" }
+strixonomy-query = { path = "crates/strixonomy-query", version = "0.28.1" }
+strixonomy-lsp = { path = "crates/strixonomy-lsp", version = "0.28.1" }
+strixonomy-reasoner = { path = "crates/strixonomy-reasoner", version = "0.28.1" }
+strixonomy-robot = { path = "crates/strixonomy-robot", version = "0.28.1" }
+strixonomy-refactor = { path = "crates/strixonomy-refactor", version = "0.28.1" }
+strixonomy-diff = { path = "crates/strixonomy-diff", version = "0.28.1" }
+strixonomy-docs = { path = "crates/strixonomy-docs", version = "0.28.1" }
+strixonomy-plugin = { path = "crates/strixonomy-plugin", version = "0.28.1" }
+strixonomy-plugin-naming = { path = "crates/strixonomy-plugin-naming", version = "0.28.1" }
+strixonomy-plugin-markdown-export = { path = "crates/strixonomy-plugin-markdown-export", version = "0.28.1" }
+strixonomy-plugin-shacl = { path = "crates/strixonomy-plugin-shacl", version = "0.28.1" }
+strixonomy-edit = { path = "crates/strixonomy-edit", version = "0.28.1" }
+strixonomy-plugin-builtins = { path = "crates/strixonomy-plugin-builtins", version = "0.28.1" }
+strixonomy-swrl = { path = "crates/strixonomy-swrl", version = "0.28.1" }
 
 git2 = { version = "0.20", features = ["vendored-openssl"] }
 

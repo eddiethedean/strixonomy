@@ -45,7 +45,7 @@ Most IDE users validate in the editor:
 Skip this on a laptop unless you need CI parity. Prefer the **Linux x64** release tarball — [CI integration](../ci-integration.md):
 
 ```bash
-VERSION=0.28.0
+VERSION=0.28.1
 BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
 ./${BIN} validate /path/to/strixonomy-tutorial
 ```
@@ -53,7 +53,7 @@ BIN="strixonomy-v${VERSION}-x86_64-unknown-linux-gnu"
 **macOS / Windows:** cold `cargo install` is **15–30+ minutes** — only for CI authors who need the CLI locally: [Install CLI](install-cli.md).
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.28.0
+cargo install strixonomy-cli --locked --version 0.28.1
 strixonomy validate /path/to/strixonomy-tutorial
 ```
 

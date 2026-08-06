@@ -27,7 +27,7 @@ The following modules are **documented and intended to stabilize** toward v0.30:
 
 | Tier | Surface | Stability | Notes |
 |------|---------|-----------|-------|
-| **A — Stable enough for CI** | `strixonomy validate`, `query`, `sparql`, `classify`, `realize`, `check-instance`, `dl-query`, `refactor` (incl. merge/replace), `diff`, `docs`, `patch`, `robot`, `plugins`, `workflow` CLI | High for **commands and exit codes** | Pin with `cargo install strixonomy-cli --locked --version 0.28.0`. Exit codes documented in [workspace limits](../workspace-limits.md). No `strixonomy swrl` CLI — SWRL via IDE/LSP/patches. |
+| **A — Stable enough for CI** | `strixonomy validate`, `query`, `sparql`, `classify`, `realize`, `check-instance`, `dl-query`, `refactor` (incl. merge/replace), `diff`, `docs`, `patch`, `robot`, `plugins`, `workflow` CLI | High for **commands and exit codes** | Pin with `cargo install strixonomy-cli --locked --version 0.28.1`. Exit codes documented in [workspace limits](../workspace-limits.md). No `strixonomy swrl` CLI — SWRL via IDE/LSP/patches. |
 | **B — Documented, may evolve** | LSP custom methods (`strixonomy/*`) | Medium | Wire format in [LSP API](../lsp-api.md) and [JSON Schema](../lsp-protocol.schema.json). Minor releases may add fields or methods. |
 | **C — Library APIs** | `strixonomy` and `strixonomy-*` Rust crates | Medium-low | Public types used by CLI/LSP are more stable than internal modules. Pin exact versions in `Cargo.toml`. |
 | **D — Experimental / roadmap** | Workflow registry, production owlmake, MCP, Python/TS SDKs, assisted modeling | Low until each surface ships | Plugin **SDK 1.0** wire is frozen today; forward targets are defined per phase in the [roadmap](../roadmap.md). |
@@ -51,7 +51,7 @@ The following modules are **documented and intended to stabilize** toward v0.30:
 **CI / ops:**
 
 ```bash
-cargo install strixonomy-cli --locked --version 0.28.0
+cargo install strixonomy-cli --locked --version 0.28.1
 ```
 
 **Rust embedding:**
@@ -61,7 +61,7 @@ strixonomy = "0.28"
 strixonomy-core = "0.28"
 ```
 
-**VS Code:** install Strixonomy **0.28.0** (latest tagged) from Marketplace, Open VSX, or a release VSIX — the bundled `strixonomy-lsp` matches the extension version.
+**VS Code:** install Strixonomy **0.28.1** (latest tagged) from Marketplace, Open VSX, or a release VSIX — the bundled `strixonomy-lsp` matches the extension version.
 
 ## Enterprise evaluation
 

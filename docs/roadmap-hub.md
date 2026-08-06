@@ -2,7 +2,7 @@
 
 Strixonomy IDE and Strixonomy engine publish several roadmap documents. **Use this page to pick the right one** — they serve different audiences and must not be read as a single capability list.
 
-**Current tagged release:** v0.28.0 · **In development on `main`:** v0.28.0 · [What ships today](SHIPPED.md)
+**Current tagged release:** v0.28.1 · **In development on `main`:** v0.28.1 · [What ships today](SHIPPED.md)
 
 Development on `main` may be ahead of the tagged pin — follow [`docs/TAGGED_RELEASE`](https://github.com/eddiethedean/strixonomy/blob/main/docs/TAGGED_RELEASE) for install versions.
 
@@ -54,6 +54,6 @@ flowchart TB
 
 ## Current release
 
-**v0.28.0** — see [Migration v0.24.0 → v0.28.0](migration/v0.26.md), [Migration v0.23.0 → v0.24.0](migration/v0.24.md), and [Changelog](changelog.md).
+**v0.28.1** — see [Migration v0.24.0 → v0.28.1](migration/v0.26.md), [Migration v0.23.0 → v0.24.0](migration/v0.24.md), and [Changelog](changelog.md).
 
 > **Design docs under `docs/platform/`, `docs/ui/`, `docs/protege-parity/`, and `docs/PROTEGE_REVERSE_ENGINEERING/` are not a shipped feature list.** Evaluators and procurement should use [SHIPPED.md](SHIPPED.md) and [Known limitations](known-limitations.md) only — ignore internal parity percentage assessments on GitHub.
