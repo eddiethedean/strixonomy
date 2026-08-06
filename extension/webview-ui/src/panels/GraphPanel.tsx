@@ -325,26 +325,48 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
     ].join("|");
   }, [graph, rootIri, layout, graphMode]);
 
-  const fitGraphIntoView = useCallback((instance?: ReactFlowInstance | null) => {
-    const api = instance ?? rf.current;
-    const el = canvasRef.current;
-    if (!api || !el || flowNodes.length === 0) {
-      return false;
-    }
-    const { width, height } = el.getBoundingClientRect();
-    if (width < 2 || height < 2) {
-      return false;
-    }
-    void api.fitView({ padding: 0.2 });
-    fittedForGraph.current = graphFitKey;
-    setViewportFitted(true);
-    return true;
-  }, [flowNodes.length, graphFitKey]);
+  const graphFitKeyRef = useRef(graphFitKey);
+  graphFitKeyRef.current = graphFitKey;
+
+  const fitGraphIntoView = useCallback(
+    async (
+      instance?: ReactFlowInstance | null,
+      options?: { duration?: number }
+    ): Promise<boolean> => {
+      const api = instance ?? rf.current;
+      const el = canvasRef.current;
+      if (!api || !el || flowNodes.length === 0) {
+        return false;
+      }
+      const { width, height } = el.getBoundingClientRect();
+      if (width < 2 || height < 2) {
+        return false;
+      }
+      const keyAtStart = graphFitKeyRef.current;
+      await api.fitView({ padding: 0.2, duration: options?.duration });
+      // Drop stale fits after navigation or React Flow remount (list ↔ graph).
+      if (rf.current !== api || keyAtStart !== graphFitKeyRef.current) {
+        return false;
+      }
+      fittedForGraph.current = keyAtStart;
+      setViewportFitted(true);
+      return true;
+    },
+    [flowNodes.length]
+  );
 
   useEffect(() => {
     fittedForGraph.current = null;
     setViewportFitted(false);
   }, [graphFitKey]);
+
+  useEffect(() => {
+    if (viewMode !== "graph") {
+      rf.current = null;
+      fittedForGraph.current = null;
+      setViewportFitted(false);
+    }
+  }, [viewMode]);
 
   // Remount-safe fit: VS Code webviews often first paint at 0×0; refit once size is real (#442).
   useEffect(() => {
@@ -356,10 +378,10 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
       return;
     }
     const tryFit = (): void => {
-      if (fittedForGraph.current === graphFitKey) {
+      if (fittedForGraph.current === graphFitKeyRef.current) {
         return;
       }
-      fitGraphIntoView();
+      void fitGraphIntoView();
     };
     tryFit();
     const ro = new ResizeObserver(() => {
@@ -480,7 +502,7 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
             onInit={(instance) => {
               rf.current = instance;
               requestAnimationFrame(() => {
-                fitGraphIntoView(instance);
+                void fitGraphIntoView(instance);
               });
             }}
             onNodeClick={(event, node) => {
@@ -773,7 +795,7 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
               aria-label="Fit to view"
               onClick={() => {
                 fittedForGraph.current = null;
-                fitGraphIntoView();
+                void fitGraphIntoView(undefined, { duration: 200 });
               }}
             >
               Fit to view

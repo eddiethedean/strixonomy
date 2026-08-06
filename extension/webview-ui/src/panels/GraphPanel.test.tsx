@@ -1,7 +1,7 @@
 import { screen, waitFor, fireEvent } from "@testing-library/react";
 import { renderWithProviders } from "../test/render";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { GraphPanel } from "./GraphPanel";
 import {
   graphPayload,
@@ -66,6 +66,85 @@ describe("GraphPanel", () => {
     expect(
       document.querySelector('.react-flow__node[data-id="http://example.org#Person"]')
     ).toBeInTheDocument();
+  });
+
+  it("keeps nodes when canvas size goes from zero to laid out", async () => {
+    let size = { width: 0, height: 0 };
+    let roCallback: ResizeObserverCallback | null = null;
+    vi.stubGlobal(
+      "ResizeObserver",
+      class {
+        constructor(cb: ResizeObserverCallback) {
+          roCallback = cb;
+        }
+        observe(): void {}
+        unobserve(): void {}
+        disconnect(): void {}
+      }
+    );
+    HTMLElement.prototype.getBoundingClientRect = () =>
+      ({
+        width: size.width,
+        height: size.height,
+        top: 0,
+        left: 0,
+        bottom: size.height,
+        right: size.width,
+        x: 0,
+        y: 0,
+        toJSON: () => ({}),
+      }) as DOMRect;
+
+    renderWithProviders(<GraphPanel />);
+    postHostMessage({ type: "graphData", graph: graphPayload });
+
+    await waitFor(() => {
+      expect(document.querySelectorAll(".react-flow__node").length).toBeGreaterThan(0);
+    });
+
+    size = { width: 800, height: 600 };
+    roCallback?.(
+      [
+        {
+          target: document.createElement("div"),
+          contentRect: {
+            width: 800,
+            height: 600,
+            top: 0,
+            left: 0,
+            bottom: 600,
+            right: 800,
+            x: 0,
+            y: 0,
+            toJSON: () => ({}),
+          },
+          borderBoxSize: [],
+          contentBoxSize: [],
+          devicePixelContentBoxSize: [],
+        },
+      ],
+      {} as ResizeObserver
+    );
+
+    await waitFor(() => {
+      expect(document.querySelectorAll(".react-flow__node").length).toBeGreaterThan(0);
+    });
+  });
+
+  it("remounts React Flow when switching back from list view", async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<GraphPanel />);
+    postHostMessage({ type: "graphData", graph: graphPayload });
+    await waitFor(() => expect(document.querySelector(".react-flow")).toBeInTheDocument());
+
+    await user.selectOptions(screen.getByLabelText("View mode"), "list");
+    expect(document.querySelector(".react-flow")).not.toBeInTheDocument();
+
+    await user.selectOptions(screen.getByLabelText("View mode"), "graph");
+    await waitFor(() => {
+      expect(document.querySelector(".react-flow")).toBeInTheDocument();
+      expect(document.querySelectorAll(".react-flow__node").length).toBeGreaterThan(0);
+    });
   });
 
   it("shows truncated badge when graph is truncated", async () => {

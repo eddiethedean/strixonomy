@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Ontology Graph blank canvas on first open (VS Code webview): wait for laid-out nodes before mounting React Flow, defer virtualization until a successful fit against a non-zero pane, and give the graph canvas definite height so Reload Webviews is no longer required ([#442](https://github.com/eddiethedean/strixonomy/issues/442))
+- Ontology Graph blank canvas on first open (VS Code webview): wait for laid-out nodes before mounting React Flow, await fit before enabling virtualization, clear the flow instance on list view, keep graph height scoped to the panel (not global `#root`), and give the canvas definite size so Reload Webviews is no longer required ([#442](https://github.com/eddiethedean/strixonomy/issues/442))
 
 ## [0.28.0] - 2026-07-28
 

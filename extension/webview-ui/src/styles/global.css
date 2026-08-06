@@ -76,7 +76,6 @@
 html,
 body,
 #root {
-  height: 100%;
   min-height: 100%;
 }
 
@@ -1224,8 +1223,8 @@ ul {
 
 .graph-layout {
   display: flex;
-  height: 100%;
-  min-height: 100%;
+  /* Viewport-relative: avoid locking global #root height (breaks other panels' scroll). */
+  height: 100vh;
   background: var(--vscode-editor-background);
 }
 
