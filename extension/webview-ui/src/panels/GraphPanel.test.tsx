@@ -46,7 +46,26 @@ describe("GraphPanel", () => {
     await waitFor(() => {
       expect(document.querySelector(".react-flow")).toBeInTheDocument();
     });
+    await waitFor(() => {
+      expect(document.querySelectorAll(".react-flow__node").length).toBeGreaterThan(0);
+    });
     expect(screen.getByLabelText("Graph kind")).toHaveValue("class");
+    expect(screen.getByText("Person")).toBeInTheDocument();
+  });
+
+  it("does not mount React Flow until laid-out nodes are ready", async () => {
+    renderWithProviders(<GraphPanel />);
+    expect(document.querySelector(".react-flow")).not.toBeInTheDocument();
+
+    postHostMessage({ type: "graphData", graph: graphPayload });
+
+    await waitFor(() => {
+      expect(document.querySelector(".react-flow")).toBeInTheDocument();
+    });
+    // IRI node ids with '#' must still appear as RF nodes (#442).
+    expect(
+      document.querySelector('.react-flow__node[data-id="http://example.org#Person"]')
+    ).toBeInTheDocument();
   });
 
   it("shows truncated badge when graph is truncated", async () => {

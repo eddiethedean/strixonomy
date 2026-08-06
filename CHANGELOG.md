@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Ontology Graph blank canvas on first open (VS Code webview): wait for laid-out nodes before mounting React Flow, defer virtualization until a successful fit against a non-zero pane, and give the graph canvas definite height so Reload Webviews is no longer required ([#442](https://github.com/eddiethedean/strixonomy/issues/442))
+
 ## [0.28.0] - 2026-07-28
 
 **User-facing highlights:** Remove OntoCore/OntoCode compatibility shims from v0.27; reserve official **`strixonomy`** PyPI package identity (reservation wheel only — Python SDK is planned for v0.34). See [migration/v0.28.md](docs/migration/v0.28.md).

@@ -106,6 +106,9 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const rf = useRef<ReactFlowInstance | null>(null);
   const canvasRef = useRef<HTMLDivElement | null>(null);
+  /** Avoid one-shot fitView / virtualization against a 0×0 webview pane (#442). */
+  const fittedForGraph = useRef<string | null>(null);
+  const [viewportFitted, setViewportFitted] = useState(false);
 
   const buildFilters = useCallback(() => {
     const entity_kinds = entityKindFilter
@@ -278,30 +281,93 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
 
   const unsatSet = useMemo(() => new Set(unsatisfiable), [unsatisfiable]);
 
-  useEffect(() => {
+  const flowNodes = useMemo(() => {
     if (!graph) {
-      return;
+      return [];
     }
-    setNodes(
-      layoutNodes(graph, layout, {
-        searchIds: filteredNodeIds,
-        unsatisfiable: showUnsatOverlay ? unsatSet : new Set(),
-        selectedIds,
-      })
-    );
-    setEdges(toFlowEdges(graph, graphMode, filteredNodeIds, prefersReducedMotion));
+    return layoutNodes(graph, layout, {
+      searchIds: filteredNodeIds,
+      unsatisfiable: showUnsatOverlay ? unsatSet : new Set(),
+      selectedIds,
+    });
   }, [
     graph,
-    graphMode,
     layout,
     filteredNodeIds,
     unsatSet,
     showUnsatOverlay,
     selectedIds,
-    prefersReducedMotion,
-    setNodes,
-    setEdges,
   ]);
+
+  const flowEdges = useMemo(() => {
+    if (!graph) {
+      return [];
+    }
+    return toFlowEdges(graph, graphMode, filteredNodeIds, prefersReducedMotion);
+  }, [graph, graphMode, filteredNodeIds, prefersReducedMotion]);
+
+  useEffect(() => {
+    setNodes(flowNodes);
+    setEdges(flowEdges);
+  }, [flowNodes, flowEdges, setNodes, setEdges]);
+
+  const graphFitKey = useMemo(() => {
+    if (!graph) {
+      return "";
+    }
+    return [
+      graph.graph_kind,
+      rootIri ?? "",
+      graph.nodes.length,
+      graph.edges.length,
+      layout,
+      graphMode,
+    ].join("|");
+  }, [graph, rootIri, layout, graphMode]);
+
+  const fitGraphIntoView = useCallback((instance?: ReactFlowInstance | null) => {
+    const api = instance ?? rf.current;
+    const el = canvasRef.current;
+    if (!api || !el || flowNodes.length === 0) {
+      return false;
+    }
+    const { width, height } = el.getBoundingClientRect();
+    if (width < 2 || height < 2) {
+      return false;
+    }
+    void api.fitView({ padding: 0.2 });
+    fittedForGraph.current = graphFitKey;
+    setViewportFitted(true);
+    return true;
+  }, [flowNodes.length, graphFitKey]);
+
+  useEffect(() => {
+    fittedForGraph.current = null;
+    setViewportFitted(false);
+  }, [graphFitKey]);
+
+  // Remount-safe fit: VS Code webviews often first paint at 0×0; refit once size is real (#442).
+  useEffect(() => {
+    if (flowNodes.length === 0 || viewMode !== "graph") {
+      return;
+    }
+    const el = canvasRef.current;
+    if (!el) {
+      return;
+    }
+    const tryFit = (): void => {
+      if (fittedForGraph.current === graphFitKey) {
+        return;
+      }
+      fitGraphIntoView();
+    };
+    tryFit();
+    const ro = new ResizeObserver(() => {
+      tryFit();
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [flowNodes.length, viewMode, graphFitKey, fitGraphIntoView]);
 
   const selectedNode = useMemo(
     () => graph?.nodes.find((n) => n.id === selectedId),
@@ -401,17 +467,21 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
         onKeyDown={onCanvasKeyDown}
         onClick={() => setContextMenu(null)}
       >
-        {viewMode === "graph" && graph && graph.nodes.length > 0 ? (
+        {viewMode === "graph" && nodes.length > 0 ? (
           <ReactFlow
             nodes={nodes}
             edges={edges}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
-            onlyRenderVisibleElements
-            fitView
+            // Virtualize only after a successful fit: culling against a 0×0 pane
+            // permanently hides nodes on first open in VS Code webviews (#442).
+            onlyRenderVisibleElements={viewportFitted && nodes.length > 200}
             multiSelectionKeyCode="Shift"
             onInit={(instance) => {
               rf.current = instance;
+              requestAnimationFrame(() => {
+                fitGraphIntoView(instance);
+              });
             }}
             onNodeClick={(event, node) => {
               if (event.shiftKey) {
@@ -701,7 +771,10 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
             <button
               type="button"
               aria-label="Fit to view"
-              onClick={() => rf.current?.fitView({ padding: 0.2, duration: 200 })}
+              onClick={() => {
+                fittedForGraph.current = null;
+                fitGraphIntoView();
+              }}
             >
               Fit to view
             </button>
