@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Ontology Graph blank canvas on first open (VS Code webview): wait for laid-out nodes before mounting React Flow, await fit + confirm React Flow pane size before enabling virtualization, clear the flow instance on list view, keep graph height scoped to the panel (not global `#root`), and give the canvas definite size so Reload Webviews is no longer required ([#442](https://github.com/eddiethedean/strixonomy/issues/442))
+- VS Code e2e on macOS stable: bump `@vscode/test-electron` to 3.1.0 (resolves post-1.110 `Contents/MacOS/Electron` ENOENT) and clear broken `.vscode-test` downloads on retry
 
 ## [0.28.0] - 2026-07-28
 
