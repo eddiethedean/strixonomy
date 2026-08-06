@@ -24,4 +24,4 @@ Reserved future kinds (`editor`, `language_service`, `tool_window`) and AI provi
 
 Historical design notes only (do not implement from): [PLUGIN_SPEC.md](../../docs/design/PLUGIN_SPEC.md).
 
-**Current crate version: 0.28.0 (SDK 1.0 surface)**
+**Current crate version: 0.28.1 (SDK 1.0 surface)**

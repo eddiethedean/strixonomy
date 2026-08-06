@@ -23,24 +23,24 @@ Download samples, then **File → Open Folder…** (open the **folder**, not a s
 
 === "Offline zip (any OS)"
 
-    Download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.28.0/strixonomy-tutorial.zip) from the [v0.28.0 Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.28.0), unzip, and open that folder.
+    Download [`strixonomy-tutorial.zip`](https://github.com/eddiethedean/strixonomy/releases/download/v0.28.1/strixonomy-tutorial.zip) from the [v0.28.1 Release](https://github.com/eddiethedean/strixonomy/releases/tag/v0.28.1), unzip, and open that folder.
 
 === "macOS / Linux (curl)"
 
     ```bash
     mkdir strixonomy-tutorial && cd strixonomy-tutorial
-    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/fixtures/example.ttl
-    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/fixtures/complex-classes.ttl
-    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/examples/obo-workflow/demo.obo
+    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.1/fixtures/example.ttl
+    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.1/fixtures/complex-classes.ttl
+    curl -fsSLO https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.1/examples/obo-workflow/demo.obo
     ```
 
 === "Windows (PowerShell)"
 
     ```powershell
     mkdir strixonomy-tutorial; cd strixonomy-tutorial
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/fixtures/example.ttl -OutFile example.ttl
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/fixtures/complex-classes.ttl -OutFile complex-classes.ttl
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.0/examples/obo-workflow/demo.obo -OutFile demo.obo
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.1/fixtures/example.ttl -OutFile example.ttl
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.1/fixtures/complex-classes.ttl -OutFile complex-classes.ttl
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/eddiethedean/strixonomy/v0.28.1/examples/obo-workflow/demo.obo -OutFile demo.obo
     ```
 
 !!! tip "Restricted Mode works out of the box"

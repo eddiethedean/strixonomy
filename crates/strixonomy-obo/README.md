@@ -16,7 +16,7 @@ Re-exported from the `strixonomy` façade as `strixonomy::obo` for patch operati
 - [OBO workflows](https://strixonomy.readthedocs.io/en/latest/guides/obo-workflow/)
 - [docs.rs](https://docs.rs/strixonomy-obo)
 
-**Current version: 0.28.0**
+**Current version: 0.28.1**
 
 ## License
 

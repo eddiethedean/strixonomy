@@ -1,10 +1,10 @@
-Strixonomy third-party notices (v0.28.0)
+Strixonomy third-party notices (v0.28.1)
 
 This product includes software developed by third parties. Strixonomy and
 Strixonomy are licensed under MIT OR Apache-2.0 at your option (see LICENSE-MIT
 and LICENSE-APACHE-2.0 in this repository).
 
-Direct runtime dependencies (v0.28.0 workspace):
+Direct runtime dependencies (v0.28.1 workspace):
 
 - Oxigraph (MIT OR Apache-2.0) — https://github.com/oxigraph/oxigraph
 - sqlparser (Apache-2.0) — https://github.com/sqlparser-rs/sqlparser-rs

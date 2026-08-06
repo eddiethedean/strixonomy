@@ -1,12 +1,12 @@
-# What ships today (v0.28.0 — latest tagged)
+# What ships today (v0.28.1 — latest tagged)
 
 > **Canonical capability matrix.** Update this page on every release. Design specs under [Project](design/README.md) may describe future targets — check here for what is actually available.
 >
 > **Format write-back truth:** this page and [Supported formats](supported-formats.md) are the source of truth. Tier-1 user docs (README, Home, First success, FAQ, Evaluate pack, LSP/patch/CLI refs) must match them — see [Releasing — Tier-1 capability truth](releasing.md#documentation-sync-checklist-every-release).
 >
-> **Latest tagged release: v0.28.0** (crates.io, GitHub Releases; Marketplace/Open VSX may lag — see [Versions & channels](guides/versions-and-channels.md)). Pin installs: `cargo install strixonomy-cli --locked --version 0.28.0`.
+> **Latest tagged release: v0.28.1** (crates.io, GitHub Releases; Marketplace/Open VSX may lag — see [Versions & channels](guides/versions-and-channels.md)). Pin installs: `cargo install strixonomy-cli --locked --version 0.28.1`.
 
-**Latest tagged: v0.28.0** · [v0.28 migration](migration/v0.28.md) · [v0.27 migration](migration/v0.27.md) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
+**Latest tagged: v0.28.1** · [v0.28.1 patch](migration/v0.28.1.md) · [v0.28 migration](migration/v0.28.md) · [v0.27 migration](migration/v0.27.md) · [CHANGELOG](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md)
 
 ## Evaluator summary
 
@@ -22,7 +22,7 @@
 | **Strixonomy (engine)** | Rust semantic workspace engine — `strixonomy` façade, `strixonomy-*` crates, `strixonomy` CLI, `strixonomy-lsp`, plugin host |
 | **PyPI `strixonomy`** | Reserved Python distribution (name reservation + release workflow; SDK planned v0.34) — [Python package status](guides/python-package.md) |
 
-## Capability matrix (v0.28.0 tagged)
+## Capability matrix (v0.28.1 tagged)
 
 | Capability | VS Code | CLI |
 |------------|---------|-----|
@@ -92,12 +92,14 @@
 > **¹ Rename / merge / replace:** format-specific IRI remaps (XML re-serialize; OBO id/reference rewrite). Other refactor ops stay Turtle-first.  
 > Deeper capability grid (Manchester, refactor, XML re-serialize): [Capabilities by format](guides/capabilities-by-format.md).
 
-## New in v0.28.0 (latest tagged)
+## New in v0.28.1 (latest tagged)
 
 | Capability | Status |
 |------------|--------|
+| Ontology Graph first-open blank-canvas fix (await layout + fit before virtualization) | Shipped |
 | Strixonomy product identity (`strixonomy` / `strixonomy-*`, CLI, LSP, extension) | Shipped |
-| Legacy OntoCore/OntoCode compatibility (bins, LSP methods, paths, thin `ontocore` façade) | Shipped |
+| Official `strixonomy` PyPI reservation (no Python SDK yet) | Shipped |
+| OntoCore/OntoCode compat shims removed (Strixonomy names only) | Shipped |
 | Extension settings/state migration from `ontocode.*` | Shipped |
 | Dual-read `.strixonomy/` vs `.ontocore/` / `.ontocode/` | Shipped |
 
@@ -160,7 +162,7 @@
 | Token-aware type / characteristic detection (ignores comment substrings) | Yes |
 | `SetOntologyIri` rewrites `rdf:type owl:Ontology` in place | Yes |
 
-Full user-facing delta for the latest tagged release: [CHANGELOG 0.28.0](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0270---2026-07-27).
+Full user-facing delta for the latest tagged release: [CHANGELOG 0.28.1](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md#0281---2026-08-06).
 
 ## Release history
 
@@ -187,7 +189,7 @@ Remaining v0.30 targets: [known limitations](known-limitations.md) · [Protégé
 
 ## What's next
 
-Forward: Protégé-competitive release (**v0.30**). **v0.28.0** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
+Forward: Protégé-competitive release (**v0.30**). **v0.28.1** is the current tagged release. See **[Platform roadmap](roadmap.md)** · **[Known limitations](known-limitations.md)**.
 
 ## Where to learn more
 

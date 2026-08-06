@@ -6,6 +6,10 @@ Migration guides: [Migration index](migration/README.md)
 
 ## [Unreleased]
 
+## [0.28.1] - 2026-08-06
+
+**v0.28.1** — Ontology Graph blank-canvas fix on first open; macOS stable VS Code e2e harness. See [CHANGELOG.md](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration/v0.28.1.md](migration/v0.28.1.md).
+
 ## [0.28.0] - 2026-07-28
 
 **v0.28.0** — Remove OntoCore/OntoCode compat shims; reserve official `strixonomy` PyPI package (SDK v0.31). See [CHANGELOG.md](https://github.com/eddiethedean/strixonomy/blob/main/CHANGELOG.md) and [migration/v0.28.md](migration/v0.28.md).

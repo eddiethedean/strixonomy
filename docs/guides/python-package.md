@@ -2,7 +2,7 @@
 
 # Python package (PyPI reservation)
 
-The official **`strixonomy`** project on [PyPI](https://pypi.org/project/strixonomy/) is a **name reservation** artifact shipped in **v0.28.0**. It does **not** ship the Python SDK.
+The official **`strixonomy`** project on [PyPI](https://pypi.org/project/strixonomy/) is a **name reservation** artifact shipped in **v0.28.1**. It does **not** ship the Python SDK.
 
 | Artifact | Status in v0.28 | Capabilities |
 |----------|-----------------|--------------|
@@ -30,9 +30,9 @@ pip install strixonomy
 ```python
 import strixonomy
 
-strixonomy.__version__  # e.g. "0.28.0"
+strixonomy.__version__  # e.g. "0.28.1"
 strixonomy.status()
-# {'package': 'strixonomy', 'version': '0.28.0', 'reservation': True,
+# {'package': 'strixonomy', 'version': '0.28.1', 'reservation': True,
 #  'sdk_planned_release': '1.1', ...}
 ```
 
@@ -43,7 +43,7 @@ Importing `strixonomy` does **not** load the Rust engine or provide ontology API
 | Goal | Use |
 |------|-----|
 | Edit ontologies in VS Code | [Install the extension](../vscode-install.md) |
-| Automation / CI | [CLI](../cli-reference.md) — `cargo install strixonomy-cli --locked --version 0.28.0` |
+| Automation / CI | [CLI](../cli-reference.md) — `cargo install strixonomy-cli --locked --version 0.28.1` |
 | Custom editor | [LSP](../lsp-api.md) |
 | Rust integration | [Rust library](rust-library.md) |
 

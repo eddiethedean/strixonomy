@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import TypedDict
 
-__version__ = "0.28.0"
+__version__ = "0.28.1"
 __all__ = ["__version__", "status"]
 
 

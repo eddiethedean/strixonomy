@@ -20,7 +20,7 @@ See:
 Until v0.30, minor releases may change non-gate details. For reproducible pipelines:
 
 - Pin the CLI in CI:
-  - `cargo install strixonomy-cli --locked --version 0.28.0`, or
+  - `cargo install strixonomy-cli --locked --version 0.28.1`, or
   - Linux x64: pinned release binary + SHA256 verification
 
 ## Surfaces that may change v0.29–v0.30

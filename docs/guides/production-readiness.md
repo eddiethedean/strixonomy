@@ -1,6 +1,6 @@
 # Production readiness and pilot criteria
 
-This page states what Strixonomy **v0.28.0** (latest tagged) is appropriate for in production-like environments. It is not legal advice and does not replace your organization's risk review.
+This page states what Strixonomy **v0.28.1** (latest tagged) is appropriate for in production-like environments. It is not legal advice and does not replace your organization's risk review.
 
 Canonical capability matrix: [What ships today](../SHIPPED.md). Follow-on pilot weeks: [Enterprise week-2 playbook](enterprise-week-2.md).
 
@@ -8,7 +8,7 @@ Canonical capability matrix: [What ships today](../SHIPPED.md). Follow-on pilot 
 
 | Level | Version | Meaning |
 |-------|---------|---------|
-| **v0.29–v0.30** | **0.28.x (latest tagged)** | Pin `cargo install strixonomy-cli --locked --version 0.28.0` in CI. Library APIs may change until [v0.30](../design/v0.30_BACKLOG.md). |
+| **v0.29–v0.30** | **0.28.x (latest tagged)** | Pin `cargo install strixonomy-cli --locked --version 0.28.1` in CI. Library APIs may change until [v0.30](../design/v0.30_BACKLOG.md). |
 | **Stable CI gates** | 0.28.x | `strixonomy validate`, `strixonomy classify`, `strixonomy realize`, `strixonomy check-instance`, and `strixonomy diff` are documented for CI — see [workspace limits](../workspace-limits.md). |
 | **In development** | Next unreleased minor on `main` | May preview upcoming work — pin installs to [TAGGED_RELEASE](../TAGGED_RELEASE), not workspace `Cargo.toml`. |
 | **v0.30 target** | Planned | Protégé-competitive OWL 2 DL + OBO in VS Code — [Protégé vs Strixonomy](protege-decision.md); capability truth: [SHIPPED](../SHIPPED.md) + [known limitations](../known-limitations.md). |
@@ -61,7 +61,7 @@ Suggested pilot duration: **4–8 weeks** with 3–10 engineers on one ontology 
 | LSP `strixonomy/*` JSON | May change v0.29–v0.30 |
 | Rust `strixonomy-*` crate APIs | May change v0.29–v0.30 |
 
-Pin CLI version in CI: release binary with `VERSION=0.28.0` or `cargo install strixonomy-cli --locked --version 0.28.0`.
+Pin CLI version in CI: release binary with `VERSION=0.28.1` or `cargo install strixonomy-cli --locked --version 0.28.1`.
 
 ## Support and incident response
 

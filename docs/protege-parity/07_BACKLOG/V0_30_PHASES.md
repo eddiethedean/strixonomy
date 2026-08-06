@@ -344,7 +344,7 @@ Rust semantic oracles (rewrite specs — do not run the JVM suite).
 
 # v0.27 — Strixonomy rename
 
-**Status:** Shipped (v0.28.0)\
+**Status:** Shipped (v0.28.1)\
 **Theme:** Rename OntoCore and OntoCode to Strixonomy before the v0.30 release freeze.
 
 ## Objective

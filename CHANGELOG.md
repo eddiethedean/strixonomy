@@ -7,10 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.28.1] - 2026-08-06
+
+**User-facing highlights:** Ontology Graph no longer opens as a blank canvas on first open in VS Code webviews ([#442](https://github.com/eddiethedean/strixonomy/issues/442)). See [migration/v0.28.1.md](docs/migration/v0.28.1.md).
+
 ### Fixed
 
-- Ontology Graph blank canvas on first open (VS Code webview): wait for laid-out nodes before mounting React Flow, await fit + confirm React Flow pane size before enabling virtualization, clear the flow instance on list view, keep graph height scoped to the panel (not global `#root`), and give the canvas definite size so Reload Webviews is no longer required ([#442](https://github.com/eddiethedean/strixonomy/issues/442))
+- Ontology Graph blank canvas on first open (VS Code webview): wait for laid-out nodes before mounting React Flow, await fit + confirm React Flow pane size before enabling virtualization, clear the flow instance on list view, keep graph height scoped to the panel (not global `#root`), and give the canvas definite size so Reload Webviews is no longer required ([#442](https://github.com/eddiethedean/strixonomy/issues/442), [#443](https://github.com/eddiethedean/strixonomy/pull/443))
 - VS Code e2e on macOS stable: bump `@vscode/test-electron` to 3.1.0 (resolves post-1.110 `Contents/MacOS/Electron` ENOENT) and clear broken `.vscode-test` downloads on retry
+
+### Changed
+
+- Workspace package and all `strixonomy-*` crates bumped to **0.28.1**; extension and webview UI **0.28.1**
 
 ## [0.28.0] - 2026-07-28
 
