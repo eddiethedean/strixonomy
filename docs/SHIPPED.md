@@ -99,7 +99,7 @@
 | Ontology Graph first-open blank-canvas fix (await layout + fit before virtualization) | Shipped |
 | Strixonomy product identity (`strixonomy` / `strixonomy-*`, CLI, LSP, extension) | Shipped |
 | Official `strixonomy` PyPI reservation (no Python SDK yet) | Shipped |
-| OntoCore/OntoCode compat shims removed (Strixonomy names only) | Shipped |
+| Legacy OntoCore/OntoCode compat shims removed (Strixonomy names only) | Shipped |
 | Extension settings/state migration from `ontocode.*` | Shipped |
 | Dual-read `.strixonomy/` vs `.ontocore/` / `.ontocode/` | Shipped |
 
