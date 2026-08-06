@@ -338,14 +338,19 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
       if (!api || !el || flowNodes.length === 0) {
         return false;
       }
-      const { width, height } = el.getBoundingClientRect();
-      if (width < 2 || height < 2) {
+      if (!graphCanvasHasRealSize(el)) {
         return false;
       }
       const keyAtStart = graphFitKeyRef.current;
       await api.fitView({ padding: 0.2, duration: options?.duration });
-      // Drop stale fits after navigation or React Flow remount (list ↔ graph).
+      // RF store width/height can lag the parent canvas by a frame; wait before
+      // arming onlyRenderVisibleElements so large graphs are not culled (#442).
+      await waitAnimationFrame();
+      await waitAnimationFrame();
       if (rf.current !== api || keyAtStart !== graphFitKeyRef.current) {
+        return false;
+      }
+      if (!graphCanvasHasRealSize(el)) {
         return false;
       }
       fittedForGraph.current = keyAtStart;
@@ -795,6 +800,7 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
               aria-label="Fit to view"
               onClick={() => {
                 fittedForGraph.current = null;
+                setViewportFitted(false);
                 void fitGraphIntoView(undefined, { duration: 200 });
               }}
             >
@@ -930,6 +936,26 @@ export function GraphPanel(_props?: WorkspaceProps): JSX.Element {
       </aside>
     </PanelMain>
   );
+}
+
+function waitAnimationFrame(): Promise<void> {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => resolve());
+  });
+}
+
+/** True when the canvas and mounted React Flow pane both have a real layout box. */
+function graphCanvasHasRealSize(el: HTMLElement): boolean {
+  const { width, height } = el.getBoundingClientRect();
+  if (width < 2 || height < 2) {
+    return false;
+  }
+  const flow = el.querySelector(".react-flow");
+  if (!(flow instanceof HTMLElement)) {
+    return false;
+  }
+  const flowBox = flow.getBoundingClientRect();
+  return flowBox.width >= 2 && flowBox.height >= 2;
 }
 
 function layoutNodes(
